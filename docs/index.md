@@ -20,6 +20,7 @@ We coordinate using the channel [#ro-crate on seek4science.slack.com](https://se
 - Laura Rodriguez Navas
 - Stian Soiland-Reyes
 - Paul Brack
+- ...you?
 <!-- Rudolf Wittner -->
 
 
