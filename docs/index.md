@@ -32,7 +32,7 @@ We coordinate using the channel [#ro-crate on seek4science.slack.com](https://se
 
 - [RO-Crate homepage](https://w3id.org/ro/crate)
 - [RO-Crate specification 1.1](https://www.researchobject.org/ro-crate/1.1/)
-- [](https://www.researchobject.org/ro-crate/1.2-DRAFT/profiles) (draft)
+- [RO-Crate profiles](https://www.researchobject.org/ro-crate/1.2-DRAFT/profiles) (from 1.2-DRAFT -- feedback welcome)
 - [Workflow Crate](https://w3id.org/workflowhub/workflow-ro-crate/)  (profile for a workflow _definition_)
 - [Workflow Testing Crate](https://lifemonitor.eu/workflow_testing_ro_crate) (profile for defining workflow tests)
 - [ComputationalWorkflow in RO-Crate](https://www.researchobject.org/ro-crate/1.1/workflows.html)
