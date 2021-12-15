@@ -1,0 +1,486 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "conformsTo": {
+        "@id": "https://w3id.org/ro/crate/1.1"
+      },
+      "about": {
+        "@id": "./"
+      },
+      "identifier": "ro-crate-metadata.json",
+      "license": {
+        "@id": "https://spdx.org/licenses/CC0-1.0"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "author": {
+        "@id": "#5e315624-48d2-4a64-b472-6e3b210a2f0b"
+      },
+      "contactPoint": {
+        "@id": "#1cc5c070-13cc-4d90-b135-c3428c7afc63"
+      },
+      "mainEntity": {
+        "@id": "#pipeline"
+      },
+      "hasPart": [
+        {
+          "@id": "#pipeline"
+        },
+        {
+          "@id": "input/"
+        },
+        {
+          "@id": "output/"
+        },
+        {
+          "@id": "src/"
+        }
+      ],
+      "mentions": [
+        {"@id": "#example-workflow-run"}
+      ],
+      "name": "Crate of Digital pathology machine learning pipeline",
+      "publisher": {
+        "@id": "https://ror.org/02j46qs45"
+      }
+    },
+    {
+      "@id": "#microscope3",
+      "@type": "IndividualProduct",
+      "description": "The Microscope used to capture images",
+      "name": "Microscope #3"
+    },
+    { "@id": "#scan1",
+      "@type": "CreateAction",
+      "name": "Scan of sample",
+      "agent": {"@id": "#hospital1"},
+      "instrument": { "@id": "#microscope3" },
+      "object": { 
+        "@id": "#patient1"
+      },
+      "endTime": "2019-06-11T12:56:14+10:00",
+      "result": [
+        {
+          "@id": "input/arbitrary-file-A"
+        },
+        {
+          "@id": "input/arbitrary-file-B"
+        },
+        {
+          "@id": "input/training_1.mrxs"
+        }
+      ]  
+    },
+    { "@id": "#example-workflow-run",
+      "@type": "CreateAction",
+      "name": "Example run of pipeline",
+      "startTime": "2020-06-11T12:51:14+10:00",
+      "endTime": "2020-06-11T12:56:14+10:00",
+      "agent": {"@id": "https://orcid.org/0000-0001-9842-9718"},
+      "instrument": { "@id": "#pipeline" },
+      "object": [
+        {
+          "@id": "input/training_1.mrxs"
+        },
+        {
+          "@id": "input/training_1.xml"
+        },
+        {
+          "@id": "input/training_2.mrxs"
+        },
+        {
+          "@id": "input/training_2.xml"
+        },
+        {
+          "@id": "input/testing_3.mrxs"
+        },
+        {
+          "@id": "input/testing_3.xml"
+        },
+        {
+          "@id": "input/testing_4.mrxs"
+        },
+        {
+          "@id": "input/testing_4.xml"
+        }
+
+      ],
+      "result": [
+        {
+          "@id": "output/gztable"
+        }, 
+        {
+          "@id": "output/gzindex"
+        }
+      ],
+      "subjectOf": [
+        {
+         "@id": "provenance/preprocessing.prov.ttl"         
+        },
+        {
+          "@id": "provenance/training_and_testing.prov.ttl"         
+        },
+        {
+          "@id": "provenance/evaluation.prov.ttl"         
+        }  
+      ]
+    },
+    {
+      "@id": "#1cc5c070-13cc-4d90-b135-c3428c7afc63",
+      "@type": "ContactPoint",
+      "email": "petr.holub@bbmri-eric.eu",
+      "name": "Petr Holub"
+    },
+    {
+      "@id": "#5e315624-48d2-4a64-b472-6e3b210a2f0b",
+      "@type": "Person",
+      "name": "Matej Gallo"
+    },
+    {
+      "@id": "https://orcid.org/0000-0001-9842-9718",
+      "@type": "Person",
+      "name": "Stian Soiland-Reyes"
+    },
+    {
+      "@id": "#patient1",
+      "@type": "Person",
+      "name": "(patient #1)"
+    },
+    {
+      "@id": "input/",
+      "@type": "Dataset",
+      "dateModified": "2021-10-18T09:30:52.185Z",
+      "hasPart": [
+        {
+          "@id": "input/arbitrary-file-A"
+        },
+        {
+          "@id": "input/arbitrary-file-B"
+        },
+        {
+          "@id": "input/testing_3.mrxs"
+        },
+        {
+          "@id": "input/testing_3.xml"
+        },
+        {
+          "@id": "input/testing_4.mrxs"
+        },
+        {
+          "@id": "input/testing_4.xml"
+        },
+        {
+          "@id": "input/training_1.mrxs"
+        },
+        {
+          "@id": "input/training_1.xml"
+        },
+        {
+          "@id": "input/training_2.mrxs"
+        },
+        {
+          "@id": "input/training_2.xml"
+        }
+      ],
+      "name": "Example pipeline inputs"
+    },
+    {
+      "@id": "src/",
+      "@type": "Dataset",
+      "name": "Pipeline scripts",
+      "hasPart": [
+        {
+          "@id": "src/preprocessing.py"
+        },
+        {
+          "@id": "src/training_and_testing.py"
+        },
+        {
+          "@id": "src/evaluation.py"
+        }
+      ]
+    },
+    {
+      "@id": "output/",
+      "@type": "Dataset",
+      "name": "Example pipeline outputs",
+      "hasPart": [
+        {
+          "@id": "output/gztable"
+        }, 
+        {
+          "@id": "output/gzindex"
+        }
+      ]
+    },
+    {
+      "@id": "input/arbitrary-file-A",
+      "@type": "File",
+      "dateModified": "2021-10-18T09:30:47.225Z",
+      "name": "arbitrary-file-A"
+    },
+    {
+      "@id": "input/arbitrary-file-B",
+      "@type": "File",
+      "dateModified": "2021-10-18T09:30:52.185Z",
+      "name": "arbitrary-file-B"
+    },
+    {
+      "@id": "input/testing_3.mrxs",
+      "@type": "File",
+      "dateModified": "2021-10-18T09:24:11.038Z",
+      "encodingFormat": { "@id": "https://openslide.org/formats/mirax/"},
+      "name": "testing_3.mrxs"
+    },
+    {
+      "@id": "input/testing_3.xml",
+      "@type": "File",
+      "dateModified": "2021-10-18T09:24:35.960Z",
+      "encodingFormat": "appliation/xml",
+      "name": "testing_3.xml"
+    },
+    {
+      "@id": "input/testing_4.mrxs",
+      "@type": "File",
+      "dateModified": "2021-10-18T09:24:23.159Z",
+      "encodingFormat": { "@id": "https://openslide.org/formats/mirax/"},
+      "name": "testing_4.mrxs"
+    },
+    {
+      "@id": "input/testing_4.xml",
+      "@type": "File",
+      "dateModified": "2021-10-18T09:24:37.713Z",
+      "encodingFormat": "appliation/xml",
+      "name": "testing_4.xml"
+    },
+    {
+      "@id": "input/training_1.mrxs",
+      "@type": "File",
+      "dateModified": "2021-10-18T09:30:56.515Z",
+      "name": "training_1.mrxs",
+      "encodingFormat": { "@id": "https://openslide.org/formats/mirax/"},      
+      "mentions": [
+        {
+          "@id": "input/arbitrary-file-A"
+        },
+        {
+          "@id": "input/arbitrary-file-B"
+        }
+      ]
+    },
+    {
+      "@id": "input/training_1.xml",
+      "@type": "File",
+      "dateModified": "2021-10-18T09:24:39.504Z",
+      "encodingFormat": "appliation/xml",
+      "name": "training_1.xml"
+    },
+    {
+      "@id": "input/training_2.mrxs",
+      "@type": "File",
+      "dateModified": "2021-10-18T09:23:56.977Z",
+      "encodingFormat": { "@id": "https://openslide.org/formats/mirax/"},
+      "name": "training_2.mrxs"
+    },
+    {
+      "@id": "input/training_2.xml",
+      "@type": "File",
+      "dateModified": "2021-10-18T09:24:40.684Z",
+      "encodingFormat": "appliation/xml",
+      "name": "training_2.xml"
+    },
+    {
+      "@id": "output/gztable",
+      "@type": "File",      
+      "name": "gztable"
+    }, 
+    {
+      "@id": "output/gzindex",
+      "@type": "File",
+      "name": "gzindex",
+      "encodingFormat": {"@id": "https://www.nationalarchives.gov.uk/PRONOM/fmt/287"}
+    },
+    {"@id": "https://www.nationalarchives.gov.uk/PRONOM/fmt/287",
+      "@type": "DefinedTerm",
+      "name": "HDF5",
+      "description": "HDF5 is a data model, library, and file format for storing and managing data.",
+      "url": "https://www.hdfgroup.org/solutions/hdf5/"
+    },
+    {
+      "@id": "https://openslide.org/formats/mirax/",
+      "name": "MIRAX Virtual Slide Format",
+      "url": "https://openslide.org/formats/mirax/"
+    },    
+    {
+      "@id": "provenance/preprocessing.prov.ttl",
+      "@type": "File",
+      "conformsTo": {"@id": "#ISO-23494"},
+      "encodingFormat": [
+        "text/turtle",
+        {"@id": "http://www.w3.org/TR/prov-o/"}
+      ]
+     },
+     {
+       "@id": "provenance/training_and_testing.prov.ttl",
+       "@type": "File",
+       "conformsTo": {"@id": "#ISO-23494"},
+       "encodingFormat": [
+        "text/turtle",
+        {"@id": "http://www.w3.org/TR/prov-o/"}
+      ]
+
+     },
+     {
+       "@id": "provenance/evaluation.prov.ttl",
+       "@type": "File",
+       "conformsTo": {"@id": "#ISO-23494"},
+       "encodingFormat": [
+        "text/turtle",
+        {"@id": "http://www.w3.org/TR/prov-o/"}
+      ]
+    },
+    {
+      "@id": "http://www.w3.org/TR/prov-o/",
+      "@type": "WebPage",
+      "name": "PROV-O: The PROV Ontology"
+    },
+    {
+      "@id": "#ISO-23494",
+      "@type": "CreativeWork",
+      "name": "ISO 23494 Part 2"
+    },
+    {
+      "@id": "#pipeline",
+      "@type":  "HowTo",
+      "name": "Digital pathology machine learning pipeline",
+      "description": "The overall pipeline is executing the three Python scripts manually, checking results along the way",
+      "step": [
+        {
+          "@id": "src/preprocessing.py"
+        },
+        {
+          "@id": "src/training_and_testing.py"
+        },
+        {
+          "@id": "src/evaluation.py"
+        }
+      ]
+    },
+    {
+      "@id": "src/preprocessing.py",
+      "name": "Preprocessing of scans",
+      "description": "Goal of the first part is to split the input images into tiles, in order to make it usable for machine learning based processing in the consecutive steps. The preprocessing algorithm firstly computes background and annotation masks for each scan1. Then a gz-table is computed for each scan, representing how the scan is split to tiles. Each record in a gz-table consists of the x and y coordinates of a particular tile (tile coordinates in the original scan) and a label (true/false, depending on whether the  particular tile contains carcinogenic cells). Size of a tile is determined in a configuration file. All the gz-tables are then indexed in a HDF5 index2.",
+      "@type":  ["File", "SoftwareSourceCode", "ComputationalWorkflow"],
+      "programmingLanguage": { "@id": "https://www.python.org/downloads/release/python-380/"},
+      "author": { "@id": "#5e315624-48d2-4a64-b472-6e3b210a2f0b" },
+      "license": {
+        "@id": "#unknown-license"
+      },
+      "input": [
+        {
+          "@id": "#slide-mrxs"
+        },
+        {
+          "@id": "#slide-annotations"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#tiles-gz"
+        },
+        {
+          "@id": "#tiles-index-hdf5"
+        }
+      ]
+    },
+    {
+      "@id": "#slide-mrxs",
+      "@type": "FormalParameter",
+      "name": "MRXS slides",
+      "encodingFormat": { "@id": "https://openslide.org/formats/mirax/"},
+      "valueRequired": true
+    },
+    {
+      "@id": "#slide-annotations",
+      "@type": "FormalParameter",
+      "name": "annotations",
+      "encodingFormat": "application/xml",
+      "valueRequired": true
+    },
+    {
+      "@id": "#tiles-gz",
+      "@type": "FormalParameter",
+      "name": "gz-table",
+      "description": "gz-table is computed for each scan, representing how the scan is split to tiles. Each record in a gz-table consists of the x and y coordinates of a particular tile (tile coordinates in the original scan) and a label (true/false, depending on whether the particular tile contains carcinogenic cells).",
+      "encodingFormat": "????/gz-table"
+    },
+    {
+      "@id": "#tiles-index-hdf5",
+      "@type": "FormalParameter",
+      "name": "tiles-index",
+      "description": "All the gz-tables are then indexed in a HDF5 index. In the new version of the pipeline, the gz-tables will not be stored as separate files, but will become part of the HDF5 index.",
+      "encodingFormat": {"@id": "https://www.nationalarchives.gov.uk/PRONOM/fmt/287"}
+
+    },
+    {
+      "@id": "src/training_and_testing.py",
+      "name": "Training and Testing",
+      "description": "This part processes a subset of the raw dataset (scans and their annotations) and the HDF5 table in order to train the machine learning model to detect carcinogen cells. Result of this step is a train_output directory with stored weights of the trained net (so that the result is a trained model).\n\nTesting part uses the learned model from the training part and evaluates how precise it is on the level of tiles (testing applies the trained model for a tile set and compares these results with the original annotations from raw dataset using the corresponding table inside the HDF5 index). Testing part uses a different subset of the input image data than the training part. Result of the testing part is asummary file containing a description about the model performance for each testing slide and a gz-table-new, containing the original columns (coordinates + label) and prediction result (a number between 0 and 1).",
+      "@type":  ["File", "SoftwareSourceCode", "ComputationalWorkflow"],
+      "programmingLanguage": { "@id": "https://www.python.org/downloads/release/python-380/"},
+      "author": { "@id": "#5e315624-48d2-4a64-b472-6e3b210a2f0b" },
+      "license": {
+        "@id": "#unknown-license"
+      }
+    },
+    {
+      "@id": "src/evaluation.py",
+      "name": "Evaluation",
+      "description": "Goal of this part is evaluation of the trained model performance. While the testing part deals with evaluation on tile level, this part focuses on an evaluation of the whole scan. The evaluation part has two main inputs - 1) the raw dataset and 2) the result of the previous step (gz-table-new and the summary file). The gz-table-new and the summary file are used to generate a heatmap by iterating through the table and putting particular tiles together to build the whole scans (using the “prediction” column of the table, corresponding colour for the heatmap “tile” is determined). The “prediction result” column of the gzTableNew determines the colour of the resulting tile in the heatmap. In the consecutive step, the algorithm takes the heatmap (the gz-table-new would be enough, but slower than heatmap) and compares it with the annotations from the raw data set. Result of this step are statistics that are used for calculations of slide-level and tumour-level metrics, AUC and FROC score, respectively..",
+      "@type":  ["File", "SoftwareSourceCode", "ComputationalWorkflow"],
+      "programmingLanguage": { "@id": "https://www.python.org/downloads/release/python-380/"},
+      "author": { "@id": "#5e315624-48d2-4a64-b472-6e3b210a2f0b" },
+      "license": {
+        "@id": "#unknown-license"
+      }
+    },
+    {
+      "@id": "https://www.python.org/downloads/release/python-380/",
+      "@type": [
+        "ComputerLanguage",
+        "SoftwareApplication"
+      ],
+      "name": "Python 3.8.0",
+      "url": "https://www.python.org/downloads/release/python-380/",
+      "version": "3.8.0"
+    },
+    {
+      "@id": "https://ror.org/02j46qs45",
+      "@type": "Organization",
+      "name": "Masaryk University"
+    },
+    {
+      "@id": "#hospital1",
+      "@type": "Organization",
+      "name": "(Some hospital)"
+    },
+    {
+      "@id": "#unknown-license",
+      "@type": "CreativeWork",
+      "name": "(unknown license)",
+      "description": "You are probably NOT allowed to copy this file."
+    },
+    {
+      "@id": "https://spdx.org/licenses/CC0-1.0",
+      "@type": "CreativeWork",
+      "identifier": "CC0-1.0",
+      "name": "Creative Commons Zero v1.0 Universal",
+      "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+    }
+  ]
+}
