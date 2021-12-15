@@ -46,10 +46,10 @@ We coordinate using the channel [#ro-crate on seek4science.slack.com](https://se
 - [BioComputeObject in RO-Crate](https://biocompute-objects.github.io/bco-ro-crate/tutorial/starting.html#skeleton-ro-crate)
 
 ### Related Work
-- [Packaging research artefacts with RO-Crate](https://www.researchobject.org/2021-packaging-research-artefacts-with-ro-crate/manuscript.html)
+- [Packaging research artefacts with RO-Crate](https://www.researchobject.org/2021-packaging-research-artefacts-with-ro-crate/manuscript.html) (RO-rate article)
 - [Sharing interoperable workflow provenance: A review of best practices and their practical application in CWLProv ](https://doi.org/10.1093/gigascience/giz095) (RO-Bundle+PROV for CWL, -- see also [examples](https://w3id.org/cwl/prov/0.6.0))
-- [Towards a Common Standard for Data and Specimen Provenance in Life Sciences](https://doi.org/10.5281/zenodo.5093125) (paper on ISO 23494 Common Provenance Model)
-- [ISO 23494: Biotechnology - Provenance Information Model for Biological Specimen and Data](https://doi.org/10.1007/978-3-030-80960-7_16) (briefer on ISO 23494)
-- [EOSC-Life Common Provenance Model](https://doi.org/10.5281/zenodo.4705074)
+- [Towards a Common Standard for Data and Specimen Provenance in Life Sciences](https://doi.org/10.5281/zenodo.5093125) (article on ISO 23494 Common Provenance Model)
+- [ISO 23494: Biotechnology - Provenance Information Model for Biological Specimen and Data](https://doi.org/10.1007/978-3-030-80960-7_16) (poster article on ISO 23494)
+- [EOSC-Life Common Provenance Model](https://doi.org/10.5281/zenodo.4705074) (deliverable showing ISO 23494 model)
 - [P-Plan ontology](https://www.opmw.org/model/p-plan/), [OPMW ontology](https://www.opmw.org/model/OPMW/) and [OPMW-PROV](https://www.opmw.org/interoperability.html)
 - [ProvONE+: A Provenance Model for Scientific Workflows](https://doi.org/10.1007/978-3-030-62008-0_30) (not Open Access) [[PROV-One ontology](https://purl.dataone.org/provone-v1-dev)]
