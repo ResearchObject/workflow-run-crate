@@ -28,6 +28,7 @@ We coordinate using the channel [#ro-crate on seek4science.slack.com](https://se
 
 - [Requirements for Workflow Run Crate](requirements)
 - [Profile for recording workflow runs](https://www.researchobject.org/2021-packaging-research-artefacts-with-ro-crate/manuscript.html#profile-for-recording-workflow-runs) (conceptual ideas from RO-Crate paper)
+- [Machine learning pipeline example](examples/draft/ml-pipeline/) (conceptual draft from EOSC-Life WP6)
 
 ## RO-Crate links
 
