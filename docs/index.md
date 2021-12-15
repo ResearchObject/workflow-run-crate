@@ -38,6 +38,7 @@ We coordinate using the channel [#ro-crate on seek4science.slack.com](https://se
 - [ComputationalWorkflow in RO-Crate](https://www.researchobject.org/ro-crate/1.1/workflows.html)
 - [ComputationalWorkflow in BioSchemas](https://bioschemas.org/profiles/ComputationalWorkflow/)
 - [Provenance of software run in RO-Crate](https://www.researchobject.org/ro-crate/1.1/provenance.html)
+- [BioComputeObject in RO-Crate](https://biocompute-objects.github.io/bco-ro-crate/tutorial/starting.html#skeleton-ro-crate)
 - [Sharing interoperable workflow provenance: A review of best practices and their practical application in CWLProv ](https://doi.org/10.1093/gigascience/giz095) (RO-Bundle+PROV for CWL, -- see also [examples](https://w3id.org/cwl/prov/0.6.0))
 - [Towards a Common Standard for Data and Specimen Provenance in Life Sciences](https://doi.org/10.5281/zenodo.5093125) (paper on ISO 23494 Common Provenance Model)
 - [ISO 23494: Biotechnology - Provenance Information Model for Biological Specimen and Data](https://doi.org/10.1007/978-3-030-80960-7_16) (briefer on ISO 23494)
