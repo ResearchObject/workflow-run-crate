@@ -1,7 +1,10 @@
 ---
-title: Workflow Run Crate profile
+title: About Workflow Run Crate profile
 ---
 
-# Workflow Run Crate profile
-
 **Work in progress**
+
+## Community
+
+Co-chairs: Simone Leo, Laura Rodriguez-Navas
+
