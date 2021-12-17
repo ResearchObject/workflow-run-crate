@@ -21,6 +21,7 @@ We coordinate using the channel [#ro-crate on seek4science.slack.com](https://se
 - Stian Soiland-Reyes
 - Paul Brack
 - José María Fernández
+- Alan Williams
 - ...you?
 <!-- Rudolf Wittner -->
 
