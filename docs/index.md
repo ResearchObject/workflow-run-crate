@@ -26,7 +26,7 @@ Post [here](https://github.com/ResearchObject/workflow-run-crate/issues/1) to jo
 - Alan Williams
 - Ignacio Eguinoa
 - Daniel Garijo
-- ...you?
+- ...[you](https://github.com/ResearchObject/workflow-run-crate/issues/1)?
 <!-- Rudolf Wittner -->
 
 
