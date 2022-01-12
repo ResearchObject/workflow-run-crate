@@ -18,15 +18,16 @@ Post [here](https://github.com/ResearchObject/workflow-run-crate/issues/1) to jo
 **Co-chairs**: Simone Leo, Laura Rodríguez-Navas
 
 **Members**:
-- Simone Leo
-- Laura Rodríguez-Navas
-- Stian Soiland-Reyes
-- Paul Brack
-- José María Fernández
-- Alan Williams
-- Ignacio Eguinoa
-- Daniel Garijo
-- ...[you](https://github.com/ResearchObject/workflow-run-crate/issues/1)?
+- Simone Leo <https://orcid.org/0000-0001-8271-5429>
+- Laura Rodríguez-Navas <https://orcid.org/0000-0003-4929-1219>
+- Stian Soiland-Reyes <https://orcid.org/0000-0001-9842-9718>
+- Paul Brack <https://orcid.org/0000-0002-5432-2748>
+- José María Fernández <https://orcid.org/0000-0002-4806-5140>
+- Alan R Williams <https://orcid.org/0000-0003-3156-2105>
+- Ignacio Eguinoa <https://orcid.org/0000-0002-6190-122X>
+- Daniel Garijo <https://orcid.org/0000-0003-0454-7145>
+- Paul De Geest
+- ... [you](https://github.com/ResearchObject/workflow-run-crate/issues/1)?
 <!-- Rudolf Wittner -->
 
 
