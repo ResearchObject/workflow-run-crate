@@ -24,6 +24,8 @@ Post [here](https://github.com/ResearchObject/workflow-run-crate/issues/1) to jo
 - Paul Brack
 - José María Fernández
 - Alan Williams
+- Ignacio Eguinoa
+- Daniel Garijo
 - ...you?
 <!-- Rudolf Wittner -->
 
