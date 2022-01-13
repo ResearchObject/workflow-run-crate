@@ -27,6 +27,7 @@ Post [here](https://github.com/ResearchObject/workflow-run-crate/issues/1) to jo
 - Ignacio Eguinoa <https://orcid.org/0000-0002-6190-122X>
 - Daniel Garijo <https://orcid.org/0000-0003-0454-7145>
 - Paul De Geest <https://orcid.org/0000-0002-8940-4946>
+- Raül Sirvent <https://orcid.org/0000-0003-0606-2512>
 - ... [you](https://github.com/ResearchObject/workflow-run-crate/issues/1)?
 <!-- Rudolf Wittner -->
 
