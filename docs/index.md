@@ -30,6 +30,7 @@ Post [here](https://github.com/ResearchObject/workflow-run-crate/issues/1) to jo
 - Raül Sirvent <https://orcid.org/0000-0003-0606-2512>
 - Alexander Kanitz <https://orcid.org/0000-0002-3468-0652>
 - Michael R Crusoe <https://orcid.org/0000-0002-2961-9670>
+- LJ Garcia Castro <https://orcid.org/0000-0003-3986-0510>
 - ... [you](https://github.com/ResearchObject/workflow-run-crate/issues/1)?
 <!-- Rudolf Wittner -->
 
