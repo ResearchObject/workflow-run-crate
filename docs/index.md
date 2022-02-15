@@ -13,6 +13,8 @@ This profile is managed by a working group of the [RO-Crate community](https://w
 
 We coordinate using the channel [#ro-crate on seek4science.slack.com](https://seek4science.slack.com/archives/C01LQQAAAS1) ([join](https://join.slack.com/t/seek4science/shared_invite/zt-csqh94qb-kf~kFbZxuHl1Hpxhbc8avw)) and the [RO-Crate mailing list](https://lists.elixir-europe.org/mailman/listinfo/ro-crate_elixir-europe.org). Material from or related to the group's activity is available from the [GitHub repository](https://github.com/ResearchObject/workflow-run-crate).
 
+Currently we have [bi-weekly meetings](https://docs.google.com/document/d/1shvkoowuCVUy8E2ujnVPclaoQO4jGKmZpafjOR0OfBw/edit) you are welcome to attend.
+
 Post [here](https://github.com/ResearchObject/workflow-run-crate/issues/1) to join the working group.
 
 **Co-chairs**: Simone Leo, Laura Rodríguez-Navas
@@ -37,6 +39,7 @@ Post [here](https://github.com/ResearchObject/workflow-run-crate/issues/1) to jo
 
 ## Content
 
+- [WORKING DRAFT of Workflow Run Crate profile](https://docs.google.com/document/d/14IaXEMdi0Ue8zRSZcPP1_H6seusefavYdettgX2X1YY/edit)
 - [Requirements for Workflow Run Crate](requirements)
 - [Profile for recording workflow runs](https://www.researchobject.org/2021-packaging-research-artefacts-with-ro-crate/manuscript.html#profile-for-recording-workflow-runs) (conceptual ideas from RO-Crate paper)
 - [Machine learning pipeline example](examples/draft/ml-pipeline/) (conceptual draft from EOSC-Life WP6)
@@ -59,6 +62,7 @@ Post [here](https://github.com/ResearchObject/workflow-run-crate/issues/1) to jo
 - [BioComputeObject in RO-Crate](https://biocompute-objects.github.io/bco-ro-crate/tutorial/starting.html#skeleton-ro-crate)
 
 ### Related Work
+
 - [Packaging research artefacts with RO-Crate](https://www.researchobject.org/2021-packaging-research-artefacts-with-ro-crate/manuscript.html) (RO-rate article)
 - [Sharing interoperable workflow provenance: A review of best practices and their practical application in CWLProv ](https://doi.org/10.1093/gigascience/giz095) (RO-Bundle+PROV for CWL, -- see also [examples](https://w3id.org/cwl/prov/0.6.0))
 - [Towards a Common Standard for Data and Specimen Provenance in Life Sciences](https://doi.org/10.5281/zenodo.5093125) (article on ISO 23494 Common Provenance Model)
