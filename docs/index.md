@@ -34,6 +34,7 @@ Post [here](https://github.com/ResearchObject/workflow-run-crate/issues/1) to jo
 - Michael R Crusoe <https://orcid.org/0000-0002-2961-9670>
 - LJ Garcia Castro <https://orcid.org/0000-0003-3986-0510>
 - Rudolf Wittner <https://orcid.org/0000-0002-0003-2024>
+- Wolfgang Maier <https://orcid.org/0000-0002-9464-6640>
 - ... [you](https://github.com/ResearchObject/workflow-run-crate/issues/1)?
 
 
