@@ -1,0 +1,395 @@
+{
+    "@context": "https://w3id.org/ro/crate/1.1/context",
+    "@graph": [
+        {
+            "@id": "./",
+            "@type": "Dataset",
+            "datePublished": "2022-02-17T11:41:11+00:00",
+            "hasPart": [
+                {
+                    "@id": "predictions.cwl"
+                },
+                {
+                    "@id": "http://slide-repository:5000/slides/DHT00001-1.mrxs"
+                },
+                {
+                    "@id": "tissue_high.zip"
+                },
+                {
+                    "@id": "tumor.zip"
+                }
+            ],
+            "isBasedOn": "https://github.com/crs4/deephealth-pipelines",
+            "license": "MIT",
+            "mainEntity": {
+                "@id": "predictions.cwl"
+            },
+            "mentions": [
+                {
+                    "@id": "#41fc6e05-2578-4b0e-9f65-0bcb7db8d87f"
+                }
+            ],
+            "name": "Promort tissue and tumor prediction"
+        },
+        {
+            "@id": "ro-crate-metadata.json",
+            "@type": "CreativeWork",
+            "about": {
+                "@id": "./"
+            },
+            "conformsTo": [
+                {
+                    "@id": "https://w3id.org/ro/crate/1.1"
+                },
+                {
+                    "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+                }
+            ]
+        },
+        {
+            "@id": "predictions.cwl",
+            "@type": [
+                "File",
+                "SoftwareSourceCode",
+                "ComputationalWorkflow"
+            ],
+            "input": [
+                {
+                    "@id": "#param-slide"
+                },
+                {
+                    "@id": "#param-mode"
+                },
+                {
+                    "@id": "#param-tissue-low-level"
+                },
+                {
+                    "@id": "#param-tissue-low-label"
+                },
+                {
+                    "@id": "#param-tissue-high-level"
+                },
+                {
+                    "@id": "#param-tissue-low-chunk"
+                },
+                {
+                    "@id": "#param-tissue-high-label"
+                },
+                {
+                    "@id": "#param-tissue-high-filter"
+                },
+                {
+                    "@id": "#param-tissue-high-chunk"
+                },
+                {
+                    "@id": "#param-tumor-chunk"
+                },
+                {
+                    "@id": "#param-gpu"
+                },
+                {
+                    "@id": "#param-tumor-level"
+                },
+                {
+                    "@id": "#param-tumor-label"
+                },
+                {
+                    "@id": "#param-tumor-filter"
+                }
+            ],
+            "name": "Promort tissue and tumor prediction",
+            "output": [
+                {
+                    "@id": "#param-tissue"
+                },
+                {
+                    "@id": "#param-tumor"
+                }
+            ],
+            "programmingLanguage": {
+                "@id": "https://w3id.org/workflowhub/workflow-ro-crate#cwl"
+            },
+            "url": "https://github.com/crs4/deephealth-pipelines",
+            "version": "0.1.0b1"
+        },
+        {
+            "@id": "https://w3id.org/workflowhub/workflow-ro-crate#cwl",
+            "@type": "ComputerLanguage",
+            "alternateName": "CWL",
+            "identifier": {
+                "@id": "https://w3id.org/cwl/v1.2/"
+            },
+            "name": "Common Workflow Language",
+            "url": {
+                "@id": "https://www.commonwl.org/"
+            },
+            "version": "v1.2"
+        },
+        {
+            "@id": "#41fc6e05-2578-4b0e-9f65-0bcb7db8d87f",
+            "@type": "CreateAction",
+            "endTime": "2021-06-29T16:09:45.814390+00:00",
+            "instrument": {
+                "@id": "predictions.cwl"
+            },
+            "name": "Promort prediction run on 2021-06-29T16:07:14.873427+00:00",
+            "object": [
+                {
+                    "@id": "http://slide-repository:5000/slides/DHT00001-1.mrxs"
+                },
+                {
+                    "@id": "#pv-mode"
+                },
+                {
+                    "@id": "#pv-tissue-low-level"
+                },
+                {
+                    "@id": "#pv-tissue-low-label"
+                },
+                {
+                    "@id": "#pv-tissue-high-level"
+                },
+                {
+                    "@id": "#pv-tissue-low-chunk"
+                },
+                {
+                    "@id": "#pv-tissue-high-label"
+                },
+                {
+                    "@id": "#pv-tissue-high-filter"
+                },
+                {
+                    "@id": "#pv-tissue-high-chunk"
+                },
+                {
+                    "@id": "#pv-tumor-chunk"
+                },
+                {
+                    "@id": "#pv-gpu"
+                },
+                {
+                    "@id": "#pv-tumor-level"
+                },
+                {
+                    "@id": "#pv-tumor-label"
+                },
+                {
+                    "@id": "#pv-tumor-filter"
+                }
+            ],
+            "result": [
+                {
+                    "@id": "tissue_high.zip"
+                },
+                {
+                    "@id": "tumor.zip"
+                }
+            ],
+            "startTime": "2021-06-29T16:07:14.873427+00:00"
+        },
+        {
+            "@id": "#param-slide",
+            "@type": "FormalParameter",
+            "additionalType": "https://openslide.org/formats/mirax/",
+            "name": "slide"
+        },
+        {
+            "@id": "http://slide-repository:5000/slides/DHT00001-1.mrxs",
+            "@type": "File",
+            "additionalType": "https://openslide.org/formats/mirax/",
+            "name": "slide",
+            "url": "http://slide-repository:5000/slides/DHT00001-1.mrxs"
+        },
+        {
+            "@id": "#param-mode",
+            "@type": "FormalParameter",
+            "additionalType": "Text",
+            "name": "mode"
+        },
+        {
+            "@id": "#pv-mode",
+            "@type": "PropertyValue",
+            "additionalType": "Text",
+            "name": "mode",
+            "value": "serial"
+        },
+        {
+            "@id": "#param-tissue-low-level",
+            "@type": "FormalParameter",
+            "additionalType": "Integer",
+            "name": "tissue-low-level"
+        },
+        {
+            "@id": "#pv-tissue-low-level",
+            "@type": "PropertyValue",
+            "additionalType": "Integer",
+            "name": "tissue-low-level",
+            "value": 9
+        },
+        {
+            "@id": "#param-tissue-low-label",
+            "@type": "FormalParameter",
+            "additionalType": "Text",
+            "name": "tissue-low-label"
+        },
+        {
+            "@id": "#pv-tissue-low-label",
+            "@type": "PropertyValue",
+            "additionalType": "Text",
+            "name": "tissue-low-label",
+            "value": "tissue_low"
+        },
+        {
+            "@id": "#param-tissue-high-level",
+            "@type": "FormalParameter",
+            "additionalType": "Integer",
+            "name": "tissue-high-level"
+        },
+        {
+            "@id": "#pv-tissue-high-level",
+            "@type": "PropertyValue",
+            "additionalType": "Integer",
+            "name": "tissue-high-level",
+            "value": 8
+        },
+        {
+            "@id": "#param-tissue-low-chunk",
+            "@type": "FormalParameter",
+            "additionalType": "Integer",
+            "name": "tissue-low-chunk"
+        },
+        {
+            "@id": "#pv-tissue-low-chunk",
+            "@type": "PropertyValue",
+            "additionalType": "Integer",
+            "name": "tissue-low-chunk",
+            "value": 256
+        },
+        {
+            "@id": "#param-tissue-high-label",
+            "@type": "FormalParameter",
+            "additionalType": "Text",
+            "name": "tissue-high-label"
+        },
+        {
+            "@id": "#pv-tissue-high-label",
+            "@type": "PropertyValue",
+            "additionalType": "Text",
+            "name": "tissue-high-label",
+            "value": "tissue_high"
+        },
+        {
+            "@id": "#param-tissue-high-filter",
+            "@type": "FormalParameter",
+            "additionalType": "Text",
+            "name": "tissue-high-filter"
+        },
+        {
+            "@id": "#pv-tissue-high-filter",
+            "@type": "PropertyValue",
+            "additionalType": "Text",
+            "name": "tissue-high-filter",
+            "value": "tissue_low>1"
+        },
+        {
+            "@id": "#param-tissue-high-chunk",
+            "@type": "FormalParameter",
+            "additionalType": "Integer",
+            "name": "tissue-high-chunk"
+        },
+        {
+            "@id": "#pv-tissue-high-chunk",
+            "@type": "PropertyValue",
+            "additionalType": "Integer",
+            "name": "tissue-high-chunk",
+            "value": 1536
+        },
+        {
+            "@id": "#param-tumor-chunk",
+            "@type": "FormalParameter",
+            "additionalType": "Integer",
+            "name": "tumor-chunk"
+        },
+        {
+            "@id": "#pv-tumor-chunk",
+            "@type": "PropertyValue",
+            "additionalType": "Integer",
+            "name": "tumor-chunk",
+            "value": 1536
+        },
+        {
+            "@id": "#param-gpu",
+            "@type": "FormalParameter",
+            "additionalType": "Integer",
+            "name": "gpu"
+        },
+        {
+            "@id": "#pv-gpu",
+            "@type": "PropertyValue",
+            "additionalType": "Integer",
+            "name": "gpu",
+            "value": 0
+        },
+        {
+            "@id": "#param-tumor-level",
+            "@type": "FormalParameter",
+            "additionalType": "Integer",
+            "name": "tumor-level"
+        },
+        {
+            "@id": "#pv-tumor-level",
+            "@type": "PropertyValue",
+            "additionalType": "Integer",
+            "name": "tumor-level",
+            "value": 1
+        },
+        {
+            "@id": "#param-tumor-label",
+            "@type": "FormalParameter",
+            "additionalType": "Text",
+            "name": "tumor-label"
+        },
+        {
+            "@id": "#pv-tumor-label",
+            "@type": "PropertyValue",
+            "additionalType": "Text",
+            "name": "tumor-label",
+            "value": "tumor"
+        },
+        {
+            "@id": "#param-tumor-filter",
+            "@type": "FormalParameter",
+            "additionalType": "Text",
+            "name": "tumor-filter"
+        },
+        {
+            "@id": "#pv-tumor-filter",
+            "@type": "PropertyValue",
+            "additionalType": "Text",
+            "name": "tumor-filter",
+            "value": "tissue_low>1"
+        },
+        {
+            "@id": "#param-tissue",
+            "@type": "FormalParameter",
+            "additionalType": "https://zarr.readthedocs.io/en/stable/spec/v2.html",
+            "name": "tissue"
+        },
+        {
+            "@id": "tissue_high.zip",
+            "@type": "File",
+            "contentSize": 4099
+        },
+        {
+            "@id": "#param-tumor",
+            "@type": "FormalParameter",
+            "additionalType": "https://zarr.readthedocs.io/en/stable/spec/v2.html",
+            "name": "tumor"
+        },
+        {
+            "@id": "tumor.zip",
+            "@type": "File",
+            "contentSize": 70100
+        }
+    ]
+}
