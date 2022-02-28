@@ -11,7 +11,7 @@
     {
       "@id": "./",
       "@type": "Dataset",
-      "datePublished": "2022-02-17T11:41:11+00:00",
+      "datePublished": "2022-02-28T15:35:39+00:00",
       "hasPart": [
         {
           "@id": "predictions.cwl"
@@ -33,7 +33,7 @@
       },
       "mentions": [
         {
-          "@id": "#41fc6e05-2578-4b0e-9f65-0bcb7db8d87f"
+          "@id": "#b5aa3374-235a-4741-b20d-99434d5b046d"
         }
       ],
       "name": "Promort tissue and tumor prediction",
@@ -138,7 +138,7 @@
         ],
         "instrument": [
           {
-            "@id": "#41fc6e05-2578-4b0e-9f65-0bcb7db8d87f"
+            "@id": "#b5aa3374-235a-4741-b20d-99434d5b046d"
           }
         ]
       }
@@ -164,7 +164,7 @@
       }
     },
     {
-      "@id": "#41fc6e05-2578-4b0e-9f65-0bcb7db8d87f",
+      "@id": "#b5aa3374-235a-4741-b20d-99434d5b046d",
       "@type": "CreateAction",
       "endTime": "2021-06-29T16:09:45.814390+00:00",
       "instrument": {
@@ -235,12 +235,18 @@
     {
       "@id": "#param-slide",
       "@type": "FormalParameter",
-      "additionalType": "https://openslide.org/formats/mirax/",
+      "additionalType": "ImageObject",
+      "encodingFormat": "https://openslide.org/formats/mirax/",
       "name": "slide",
       "@reverse": {
         "input": [
           {
             "@id": "predictions.cwl"
+          }
+        ],
+        "exampleOfWork": [
+          {
+            "@id": "http://slide-repository:5000/slides/DHT00001-1.mrxs"
           }
         ]
       }
@@ -248,8 +254,10 @@
     {
       "@id": "http://slide-repository:5000/slides/DHT00001-1.mrxs",
       "@type": "File",
-      "additionalType": "https://openslide.org/formats/mirax/",
-      "name": "slide",
+      "encodingFormat": "https://openslide.org/formats/mirax/",
+      "exampleOfWork": {
+        "@id": "#param-slide"
+      },
       "url": "http://slide-repository:5000/slides/DHT00001-1.mrxs",
       "@reverse": {
         "hasPart": [
@@ -259,7 +267,7 @@
         ],
         "object": [
           {
-            "@id": "#41fc6e05-2578-4b0e-9f65-0bcb7db8d87f"
+            "@id": "#b5aa3374-235a-4741-b20d-99434d5b046d"
           }
         ]
       }
@@ -274,19 +282,26 @@
           {
             "@id": "predictions.cwl"
           }
+        ],
+        "exampleOfWork": [
+          {
+            "@id": "#pv-mode"
+          }
         ]
       }
     },
     {
       "@id": "#pv-mode",
       "@type": "PropertyValue",
-      "additionalType": "Text",
+      "exampleOfWork": {
+        "@id": "#param-mode"
+      },
       "name": "mode",
       "value": "serial",
       "@reverse": {
         "object": [
           {
-            "@id": "#41fc6e05-2578-4b0e-9f65-0bcb7db8d87f"
+            "@id": "#b5aa3374-235a-4741-b20d-99434d5b046d"
           }
         ]
       }
@@ -301,19 +316,26 @@
           {
             "@id": "predictions.cwl"
           }
+        ],
+        "exampleOfWork": [
+          {
+            "@id": "#pv-tissue-low-level"
+          }
         ]
       }
     },
     {
       "@id": "#pv-tissue-low-level",
       "@type": "PropertyValue",
-      "additionalType": "Integer",
+      "exampleOfWork": {
+        "@id": "#param-tissue-low-level"
+      },
       "name": "tissue-low-level",
       "value": 9,
       "@reverse": {
         "object": [
           {
-            "@id": "#41fc6e05-2578-4b0e-9f65-0bcb7db8d87f"
+            "@id": "#b5aa3374-235a-4741-b20d-99434d5b046d"
           }
         ]
       }
@@ -328,19 +350,26 @@
           {
             "@id": "predictions.cwl"
           }
+        ],
+        "exampleOfWork": [
+          {
+            "@id": "#pv-tissue-low-label"
+          }
         ]
       }
     },
     {
       "@id": "#pv-tissue-low-label",
       "@type": "PropertyValue",
-      "additionalType": "Text",
+      "exampleOfWork": {
+        "@id": "#param-tissue-low-label"
+      },
       "name": "tissue-low-label",
       "value": "tissue_low",
       "@reverse": {
         "object": [
           {
-            "@id": "#41fc6e05-2578-4b0e-9f65-0bcb7db8d87f"
+            "@id": "#b5aa3374-235a-4741-b20d-99434d5b046d"
           }
         ]
       }
@@ -355,19 +384,26 @@
           {
             "@id": "predictions.cwl"
           }
+        ],
+        "exampleOfWork": [
+          {
+            "@id": "#pv-tissue-high-level"
+          }
         ]
       }
     },
     {
       "@id": "#pv-tissue-high-level",
       "@type": "PropertyValue",
-      "additionalType": "Integer",
+      "exampleOfWork": {
+        "@id": "#param-tissue-high-level"
+      },
       "name": "tissue-high-level",
       "value": 8,
       "@reverse": {
         "object": [
           {
-            "@id": "#41fc6e05-2578-4b0e-9f65-0bcb7db8d87f"
+            "@id": "#b5aa3374-235a-4741-b20d-99434d5b046d"
           }
         ]
       }
@@ -382,19 +418,26 @@
           {
             "@id": "predictions.cwl"
           }
+        ],
+        "exampleOfWork": [
+          {
+            "@id": "#pv-tissue-low-chunk"
+          }
         ]
       }
     },
     {
       "@id": "#pv-tissue-low-chunk",
       "@type": "PropertyValue",
-      "additionalType": "Integer",
+      "exampleOfWork": {
+        "@id": "#param-tissue-low-chunk"
+      },
       "name": "tissue-low-chunk",
       "value": 256,
       "@reverse": {
         "object": [
           {
-            "@id": "#41fc6e05-2578-4b0e-9f65-0bcb7db8d87f"
+            "@id": "#b5aa3374-235a-4741-b20d-99434d5b046d"
           }
         ]
       }
@@ -409,19 +452,26 @@
           {
             "@id": "predictions.cwl"
           }
+        ],
+        "exampleOfWork": [
+          {
+            "@id": "#pv-tissue-high-label"
+          }
         ]
       }
     },
     {
       "@id": "#pv-tissue-high-label",
       "@type": "PropertyValue",
-      "additionalType": "Text",
+      "exampleOfWork": {
+        "@id": "#param-tissue-high-label"
+      },
       "name": "tissue-high-label",
       "value": "tissue_high",
       "@reverse": {
         "object": [
           {
-            "@id": "#41fc6e05-2578-4b0e-9f65-0bcb7db8d87f"
+            "@id": "#b5aa3374-235a-4741-b20d-99434d5b046d"
           }
         ]
       }
@@ -436,19 +486,26 @@
           {
             "@id": "predictions.cwl"
           }
+        ],
+        "exampleOfWork": [
+          {
+            "@id": "#pv-tissue-high-filter"
+          }
         ]
       }
     },
     {
       "@id": "#pv-tissue-high-filter",
       "@type": "PropertyValue",
-      "additionalType": "Text",
+      "exampleOfWork": {
+        "@id": "#param-tissue-high-filter"
+      },
       "name": "tissue-high-filter",
       "value": "tissue_low>1",
       "@reverse": {
         "object": [
           {
-            "@id": "#41fc6e05-2578-4b0e-9f65-0bcb7db8d87f"
+            "@id": "#b5aa3374-235a-4741-b20d-99434d5b046d"
           }
         ]
       }
@@ -463,19 +520,26 @@
           {
             "@id": "predictions.cwl"
           }
+        ],
+        "exampleOfWork": [
+          {
+            "@id": "#pv-tissue-high-chunk"
+          }
         ]
       }
     },
     {
       "@id": "#pv-tissue-high-chunk",
       "@type": "PropertyValue",
-      "additionalType": "Integer",
+      "exampleOfWork": {
+        "@id": "#param-tissue-high-chunk"
+      },
       "name": "tissue-high-chunk",
       "value": 1536,
       "@reverse": {
         "object": [
           {
-            "@id": "#41fc6e05-2578-4b0e-9f65-0bcb7db8d87f"
+            "@id": "#b5aa3374-235a-4741-b20d-99434d5b046d"
           }
         ]
       }
@@ -490,19 +554,26 @@
           {
             "@id": "predictions.cwl"
           }
+        ],
+        "exampleOfWork": [
+          {
+            "@id": "#pv-tumor-chunk"
+          }
         ]
       }
     },
     {
       "@id": "#pv-tumor-chunk",
       "@type": "PropertyValue",
-      "additionalType": "Integer",
+      "exampleOfWork": {
+        "@id": "#param-tumor-chunk"
+      },
       "name": "tumor-chunk",
       "value": 1536,
       "@reverse": {
         "object": [
           {
-            "@id": "#41fc6e05-2578-4b0e-9f65-0bcb7db8d87f"
+            "@id": "#b5aa3374-235a-4741-b20d-99434d5b046d"
           }
         ]
       }
@@ -517,19 +588,26 @@
           {
             "@id": "predictions.cwl"
           }
+        ],
+        "exampleOfWork": [
+          {
+            "@id": "#pv-gpu"
+          }
         ]
       }
     },
     {
       "@id": "#pv-gpu",
       "@type": "PropertyValue",
-      "additionalType": "Integer",
+      "exampleOfWork": {
+        "@id": "#param-gpu"
+      },
       "name": "gpu",
       "value": 0,
       "@reverse": {
         "object": [
           {
-            "@id": "#41fc6e05-2578-4b0e-9f65-0bcb7db8d87f"
+            "@id": "#b5aa3374-235a-4741-b20d-99434d5b046d"
           }
         ]
       }
@@ -544,19 +622,26 @@
           {
             "@id": "predictions.cwl"
           }
+        ],
+        "exampleOfWork": [
+          {
+            "@id": "#pv-tumor-level"
+          }
         ]
       }
     },
     {
       "@id": "#pv-tumor-level",
       "@type": "PropertyValue",
-      "additionalType": "Integer",
+      "exampleOfWork": {
+        "@id": "#param-tumor-level"
+      },
       "name": "tumor-level",
       "value": 1,
       "@reverse": {
         "object": [
           {
-            "@id": "#41fc6e05-2578-4b0e-9f65-0bcb7db8d87f"
+            "@id": "#b5aa3374-235a-4741-b20d-99434d5b046d"
           }
         ]
       }
@@ -571,19 +656,26 @@
           {
             "@id": "predictions.cwl"
           }
+        ],
+        "exampleOfWork": [
+          {
+            "@id": "#pv-tumor-label"
+          }
         ]
       }
     },
     {
       "@id": "#pv-tumor-label",
       "@type": "PropertyValue",
-      "additionalType": "Text",
+      "exampleOfWork": {
+        "@id": "#param-tumor-label"
+      },
       "name": "tumor-label",
       "value": "tumor",
       "@reverse": {
         "object": [
           {
-            "@id": "#41fc6e05-2578-4b0e-9f65-0bcb7db8d87f"
+            "@id": "#b5aa3374-235a-4741-b20d-99434d5b046d"
           }
         ]
       }
@@ -598,19 +690,26 @@
           {
             "@id": "predictions.cwl"
           }
+        ],
+        "exampleOfWork": [
+          {
+            "@id": "#pv-tumor-filter"
+          }
         ]
       }
     },
     {
       "@id": "#pv-tumor-filter",
       "@type": "PropertyValue",
-      "additionalType": "Text",
+      "exampleOfWork": {
+        "@id": "#param-tumor-filter"
+      },
       "name": "tumor-filter",
       "value": "tissue_low>1",
       "@reverse": {
         "object": [
           {
-            "@id": "#41fc6e05-2578-4b0e-9f65-0bcb7db8d87f"
+            "@id": "#b5aa3374-235a-4741-b20d-99434d5b046d"
           }
         ]
       }
@@ -618,12 +717,18 @@
     {
       "@id": "#param-tissue",
       "@type": "FormalParameter",
-      "additionalType": "https://zarr.readthedocs.io/en/stable/spec/v2.html",
+      "additionalType": "ImageObject",
+      "encodingFormat": "https://zarr.readthedocs.io/en/stable/spec/v2.html",
       "name": "tissue",
       "@reverse": {
         "output": [
           {
             "@id": "predictions.cwl"
+          }
+        ],
+        "exampleOfWork": [
+          {
+            "@id": "tissue_high.zip"
           }
         ]
       }
@@ -632,6 +737,10 @@
       "@id": "tissue_high.zip",
       "@type": "File",
       "contentSize": 4099,
+      "encodingFormat": "https://zarr.readthedocs.io/en/stable/spec/v2.html",
+      "exampleOfWork": {
+        "@id": "#param-tissue"
+      },
       "@reverse": {
         "hasPart": [
           {
@@ -640,7 +749,7 @@
         ],
         "result": [
           {
-            "@id": "#41fc6e05-2578-4b0e-9f65-0bcb7db8d87f"
+            "@id": "#b5aa3374-235a-4741-b20d-99434d5b046d"
           }
         ]
       }
@@ -648,12 +757,18 @@
     {
       "@id": "#param-tumor",
       "@type": "FormalParameter",
-      "additionalType": "https://zarr.readthedocs.io/en/stable/spec/v2.html",
+      "additionalType": "ImageObject",
+      "encodingFormat": "https://zarr.readthedocs.io/en/stable/spec/v2.html",
       "name": "tumor",
       "@reverse": {
         "output": [
           {
             "@id": "predictions.cwl"
+          }
+        ],
+        "exampleOfWork": [
+          {
+            "@id": "tumor.zip"
           }
         ]
       }
@@ -662,6 +777,10 @@
       "@id": "tumor.zip",
       "@type": "File",
       "contentSize": 70100,
+      "encodingFormat": "https://zarr.readthedocs.io/en/stable/spec/v2.html",
+      "exampleOfWork": {
+        "@id": "#param-tumor"
+      },
       "@reverse": {
         "hasPart": [
           {
@@ -670,7 +789,7 @@
         ],
         "result": [
           {
-            "@id": "#41fc6e05-2578-4b0e-9f65-0bcb7db8d87f"
+            "@id": "#b5aa3374-235a-4741-b20d-99434d5b046d"
           }
         ]
       }
@@ -744,13 +863,13 @@ table.table {
             <td style='text-align:left'><span>Dataset</span></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">datePublished<span>&nbsp;</span><a href="http://schema.org/datePublished">[?]</a></th>
-            <td style='text-align:left'><span>2022-02-17T11:41:11+00:00</span></td>
+            <td style='text-align:left'><span>2022-02-28T15:35:39+00:00</span></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
             <td style='text-align:left'><ul>
                         <li><a href="#predictions.cwl">Promort tissue and tumor prediction</a></li>
                         
-                        <li><a href="#http%3A//slide-repository%3A5000/slides/DHT00001-1.mrxs">slide</a></li>
+                        <li><a href="#http%3A//slide-repository%3A5000/slides/DHT00001-1.mrxs">http://slide-repository:5000/slides/DHT00001-1.mrxs</a></li>
                         
                         <li><a href="#tissue_high.zip">tissue_high.zip</a></li>
                         
@@ -767,7 +886,7 @@ table.table {
             <td style='text-align:left'><a href="#predictions.cwl">Promort tissue and tumor prediction</a></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
-            <td style='text-align:left'><a href="#%2341fc6e05-2578-4b0e-9f65-0bcb7db8d87f">Promort prediction run on 2021-06-29T16:07:14.873427+00:00</a></td>
+            <td style='text-align:left'><a href="#%23b5aa3374-235a-4741-b20d-99434d5b046d">Promort prediction run on 2021-06-29T16:07:14.873427+00:00</a></td>
             </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
             <th style="text-align:left;" class="prop">about<span>&nbsp;</span><a href="http://schema.org/about">[?]</a></th>
             <td style='text-align:left'><a href="#ro-crate-metadata.json">ro-crate-metadata.json</a></td>
@@ -856,7 +975,7 @@ table.table {
             <td style='text-align:left'><a href="#./">Promort tissue and tumor prediction</a></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">instrument<span>&nbsp;</span><a href="http://schema.org/instrument">[?]</a></th>
-            <td style='text-align:left'><a href="#%2341fc6e05-2578-4b0e-9f65-0bcb7db8d87f">Promort prediction run on 2021-06-29T16:07:14.873427+00:00</a></td>
+            <td style='text-align:left'><a href="#%23b5aa3374-235a-4741-b20d-99434d5b046d">Promort prediction run on 2021-06-29T16:07:14.873427+00:00</a></td>
             </tr></tbody>
             </table>
         </div>
@@ -864,7 +983,7 @@ table.table {
         </div>
         <hr/><br/><br/>
            <div>
-            <h3><a href="http://slide-repository:5000/slides/DHT00001-1.mrxs">Go to: </a> slide</h3>
+            <h3><a href="http://slide-repository:5000/slides/DHT00001-1.mrxs">Go to: </a> http://slide-repository:5000/slides/DHT00001-1.mrxs</h3>
             
             
             
@@ -876,14 +995,14 @@ table.table {
             <th style="text-align:left;" class="prop">@id</th>
             <td style='text-align:left'><a href="http://slide-repository:5000/slides/DHT00001-1.mrxs">http://slide-repository:5000/slides/DHT00001-1.mrxs</a></td>
             </tr><tr>
-            <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
-            <td style='text-align:left'><span>slide</span></td>
-            </tr><tr>
             <th style="text-align:left;" class="prop">@type</th>
             <td style='text-align:left'><span>File</span></td>
             </tr><tr>
-            <th style="text-align:left;" class="prop">additionalType<span>&nbsp;</span><a href="http://schema.org/additionalType">[?]</a></th>
+            <th style="text-align:left;" class="prop">encodingFormat<span>&nbsp;</span><a href="http://schema.org/encodingFormat">[?]</a></th>
             <td style='text-align:left'><a href="https://openslide.org/formats/mirax/">https://openslide.org/formats/mirax/</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">exampleOfWork<span>&nbsp;</span><a href="http://schema.org/exampleOfWork">[?]</a></th>
+            <td style='text-align:left'><a href="#%23param-slide">slide</a></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">url<span>&nbsp;</span><a href="http://schema.org/url">[?]</a></th>
             <td style='text-align:left'><a href="http://slide-repository:5000/slides/DHT00001-1.mrxs">http://slide-repository:5000/slides/DHT00001-1.mrxs</a></td>
@@ -892,7 +1011,7 @@ table.table {
             <td style='text-align:left'><a href="#./">Promort tissue and tumor prediction</a></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">object<span>&nbsp;</span><a href="http://schema.org/object">[?]</a></th>
-            <td style='text-align:left'><a href="#%2341fc6e05-2578-4b0e-9f65-0bcb7db8d87f">Promort prediction run on 2021-06-29T16:07:14.873427+00:00</a></td>
+            <td style='text-align:left'><a href="#%23b5aa3374-235a-4741-b20d-99434d5b046d">Promort prediction run on 2021-06-29T16:07:14.873427+00:00</a></td>
             </tr></tbody>
             </table>
         </div>
@@ -915,14 +1034,20 @@ table.table {
             <th style="text-align:left;" class="prop">@type</th>
             <td style='text-align:left'><span>File</span></td>
             </tr><tr>
+            <th style="text-align:left;" class="prop">encodingFormat<span>&nbsp;</span><a href="http://schema.org/encodingFormat">[?]</a></th>
+            <td style='text-align:left'><a href="https://zarr.readthedocs.io/en/stable/spec/v2.html">https://zarr.readthedocs.io/en/stable/spec/v2.html</a></td>
+            </tr><tr>
             <th style="text-align:left;" class="prop">contentSize<span>&nbsp;</span><a href="http://schema.org/contentSize">[?]</a></th>
             <td style='text-align:left'><span>4099</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">exampleOfWork<span>&nbsp;</span><a href="http://schema.org/exampleOfWork">[?]</a></th>
+            <td style='text-align:left'><a href="#%23param-tissue">tissue</a></td>
             </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
             <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
             <td style='text-align:left'><a href="#./">Promort tissue and tumor prediction</a></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">result<span>&nbsp;</span><a href="http://schema.org/result">[?]</a></th>
-            <td style='text-align:left'><a href="#%2341fc6e05-2578-4b0e-9f65-0bcb7db8d87f">Promort prediction run on 2021-06-29T16:07:14.873427+00:00</a></td>
+            <td style='text-align:left'><a href="#%23b5aa3374-235a-4741-b20d-99434d5b046d">Promort prediction run on 2021-06-29T16:07:14.873427+00:00</a></td>
             </tr></tbody>
             </table>
         </div>
@@ -945,14 +1070,20 @@ table.table {
             <th style="text-align:left;" class="prop">@type</th>
             <td style='text-align:left'><span>File</span></td>
             </tr><tr>
+            <th style="text-align:left;" class="prop">encodingFormat<span>&nbsp;</span><a href="http://schema.org/encodingFormat">[?]</a></th>
+            <td style='text-align:left'><a href="https://zarr.readthedocs.io/en/stable/spec/v2.html">https://zarr.readthedocs.io/en/stable/spec/v2.html</a></td>
+            </tr><tr>
             <th style="text-align:left;" class="prop">contentSize<span>&nbsp;</span><a href="http://schema.org/contentSize">[?]</a></th>
             <td style='text-align:left'><span>70100</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">exampleOfWork<span>&nbsp;</span><a href="http://schema.org/exampleOfWork">[?]</a></th>
+            <td style='text-align:left'><a href="#%23param-tumor">tumor</a></td>
             </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
             <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
             <td style='text-align:left'><a href="#./">Promort tissue and tumor prediction</a></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">result<span>&nbsp;</span><a href="http://schema.org/result">[?]</a></th>
-            <td style='text-align:left'><a href="#%2341fc6e05-2578-4b0e-9f65-0bcb7db8d87f">Promort prediction run on 2021-06-29T16:07:14.873427+00:00</a></td>
+            <td style='text-align:left'><a href="#%23b5aa3374-235a-4741-b20d-99434d5b046d">Promort prediction run on 2021-06-29T16:07:14.873427+00:00</a></td>
             </tr></tbody>
             </table>
         </div>
@@ -965,12 +1096,12 @@ table.table {
             
             
             
-        <div id="#41fc6e05-2578-4b0e-9f65-0bcb7db8d87f">
+        <div id="#b5aa3374-235a-4741-b20d-99434d5b046d">
             
             <table class="table metadata table-striped" >
                 <tbody><tr>
             <th style="text-align:left;" class="prop">@id</th>
-            <td style='text-align:left'><span>#41fc6e05-2578-4b0e-9f65-0bcb7db8d87f</span></td>
+            <td style='text-align:left'><span>#b5aa3374-235a-4741-b20d-99434d5b046d</span></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
             <td style='text-align:left'><span>Promort prediction run on 2021-06-29T16:07:14.873427+00:00</span></td>
@@ -986,7 +1117,7 @@ table.table {
             </tr><tr>
             <th style="text-align:left;" class="prop">object<span>&nbsp;</span><a href="http://schema.org/object">[?]</a></th>
             <td style='text-align:left'><ul>
-                        <li><a href="#http%3A//slide-repository%3A5000/slides/DHT00001-1.mrxs">slide</a></li>
+                        <li><a href="#http%3A//slide-repository%3A5000/slides/DHT00001-1.mrxs">http://slide-repository:5000/slides/DHT00001-1.mrxs</a></li>
                         
                         <li>mode: serial</li>
                         
