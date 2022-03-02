@@ -4,7 +4,7 @@
         {
             "@id": "./",
             "@type": "Dataset",
-            "datePublished": "2022-02-17T11:41:11+00:00",
+            "datePublished": "2022-02-28T15:35:39+00:00",
             "hasPart": [
                 {
                     "@id": "predictions.cwl"
@@ -26,7 +26,7 @@
             },
             "mentions": [
                 {
-                    "@id": "#41fc6e05-2578-4b0e-9f65-0bcb7db8d87f"
+                    "@id": "#b5aa3374-235a-4741-b20d-99434d5b046d"
                 }
             ],
             "name": "Promort tissue and tumor prediction"
@@ -126,7 +126,7 @@
             "version": "v1.2"
         },
         {
-            "@id": "#41fc6e05-2578-4b0e-9f65-0bcb7db8d87f",
+            "@id": "#b5aa3374-235a-4741-b20d-99434d5b046d",
             "@type": "CreateAction",
             "endTime": "2021-06-29T16:09:45.814390+00:00",
             "instrument": {
@@ -190,14 +190,17 @@
         {
             "@id": "#param-slide",
             "@type": "FormalParameter",
-            "additionalType": "https://openslide.org/formats/mirax/",
+            "additionalType": "ImageObject",
+            "encodingFormat": "https://openslide.org/formats/mirax/",
             "name": "slide"
         },
         {
             "@id": "http://slide-repository:5000/slides/DHT00001-1.mrxs",
             "@type": "File",
-            "additionalType": "https://openslide.org/formats/mirax/",
-            "name": "slide",
+            "encodingFormat": "https://openslide.org/formats/mirax/",
+            "exampleOfWork": {
+                "@id": "#param-slide"
+            },
             "url": "http://slide-repository:5000/slides/DHT00001-1.mrxs"
         },
         {
@@ -209,7 +212,9 @@
         {
             "@id": "#pv-mode",
             "@type": "PropertyValue",
-            "additionalType": "Text",
+            "exampleOfWork": {
+                "@id": "#param-mode"
+            },
             "name": "mode",
             "value": "serial"
         },
@@ -222,7 +227,9 @@
         {
             "@id": "#pv-tissue-low-level",
             "@type": "PropertyValue",
-            "additionalType": "Integer",
+            "exampleOfWork": {
+                "@id": "#param-tissue-low-level"
+            },
             "name": "tissue-low-level",
             "value": 9
         },
@@ -235,7 +242,9 @@
         {
             "@id": "#pv-tissue-low-label",
             "@type": "PropertyValue",
-            "additionalType": "Text",
+            "exampleOfWork": {
+                "@id": "#param-tissue-low-label"
+            },
             "name": "tissue-low-label",
             "value": "tissue_low"
         },
@@ -248,7 +257,9 @@
         {
             "@id": "#pv-tissue-high-level",
             "@type": "PropertyValue",
-            "additionalType": "Integer",
+            "exampleOfWork": {
+                "@id": "#param-tissue-high-level"
+            },
             "name": "tissue-high-level",
             "value": 8
         },
@@ -261,7 +272,9 @@
         {
             "@id": "#pv-tissue-low-chunk",
             "@type": "PropertyValue",
-            "additionalType": "Integer",
+            "exampleOfWork": {
+                "@id": "#param-tissue-low-chunk"
+            },
             "name": "tissue-low-chunk",
             "value": 256
         },
@@ -274,7 +287,9 @@
         {
             "@id": "#pv-tissue-high-label",
             "@type": "PropertyValue",
-            "additionalType": "Text",
+            "exampleOfWork": {
+                "@id": "#param-tissue-high-label"
+            },
             "name": "tissue-high-label",
             "value": "tissue_high"
         },
@@ -287,7 +302,9 @@
         {
             "@id": "#pv-tissue-high-filter",
             "@type": "PropertyValue",
-            "additionalType": "Text",
+            "exampleOfWork": {
+                "@id": "#param-tissue-high-filter"
+            },
             "name": "tissue-high-filter",
             "value": "tissue_low>1"
         },
@@ -300,7 +317,9 @@
         {
             "@id": "#pv-tissue-high-chunk",
             "@type": "PropertyValue",
-            "additionalType": "Integer",
+            "exampleOfWork": {
+                "@id": "#param-tissue-high-chunk"
+            },
             "name": "tissue-high-chunk",
             "value": 1536
         },
@@ -313,7 +332,9 @@
         {
             "@id": "#pv-tumor-chunk",
             "@type": "PropertyValue",
-            "additionalType": "Integer",
+            "exampleOfWork": {
+                "@id": "#param-tumor-chunk"
+            },
             "name": "tumor-chunk",
             "value": 1536
         },
@@ -326,7 +347,9 @@
         {
             "@id": "#pv-gpu",
             "@type": "PropertyValue",
-            "additionalType": "Integer",
+            "exampleOfWork": {
+                "@id": "#param-gpu"
+            },
             "name": "gpu",
             "value": 0
         },
@@ -339,7 +362,9 @@
         {
             "@id": "#pv-tumor-level",
             "@type": "PropertyValue",
-            "additionalType": "Integer",
+            "exampleOfWork": {
+                "@id": "#param-tumor-level"
+            },
             "name": "tumor-level",
             "value": 1
         },
@@ -352,7 +377,9 @@
         {
             "@id": "#pv-tumor-label",
             "@type": "PropertyValue",
-            "additionalType": "Text",
+            "exampleOfWork": {
+                "@id": "#param-tumor-label"
+            },
             "name": "tumor-label",
             "value": "tumor"
         },
@@ -365,31 +392,43 @@
         {
             "@id": "#pv-tumor-filter",
             "@type": "PropertyValue",
-            "additionalType": "Text",
+            "exampleOfWork": {
+                "@id": "#param-tumor-filter"
+            },
             "name": "tumor-filter",
             "value": "tissue_low>1"
         },
         {
             "@id": "#param-tissue",
             "@type": "FormalParameter",
-            "additionalType": "https://zarr.readthedocs.io/en/stable/spec/v2.html",
+            "additionalType": "ImageObject",
+            "encodingFormat": "https://zarr.readthedocs.io/en/stable/spec/v2.html",
             "name": "tissue"
         },
         {
             "@id": "tissue_high.zip",
             "@type": "File",
-            "contentSize": 4099
+            "contentSize": 4099,
+            "encodingFormat": "https://zarr.readthedocs.io/en/stable/spec/v2.html",
+            "exampleOfWork": {
+                "@id": "#param-tissue"
+            }
         },
         {
             "@id": "#param-tumor",
             "@type": "FormalParameter",
-            "additionalType": "https://zarr.readthedocs.io/en/stable/spec/v2.html",
+            "additionalType": "ImageObject",
+            "encodingFormat": "https://zarr.readthedocs.io/en/stable/spec/v2.html",
             "name": "tumor"
         },
         {
             "@id": "tumor.zip",
             "@type": "File",
-            "contentSize": 70100
+            "contentSize": 70100,
+            "encodingFormat": "https://zarr.readthedocs.io/en/stable/spec/v2.html",
+            "exampleOfWork": {
+                "@id": "#param-tumor"
+            }
         }
     ]
 }
