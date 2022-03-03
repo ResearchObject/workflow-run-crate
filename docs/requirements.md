@@ -18,7 +18,8 @@ title: Requirements for Workflow Run Crate
 
 ## Competenency Questions / User stories
 
-| Q  |  Existing/new terms | Issue # |
-| -- | -- | -- |
-| What containers do I need to rerun this workflow? | container ID, image URL | |
-| How much memory/cpu/disk was used, so that I can find the right hardware for running? | memory, disk, cpu, architecture, gpu |  |
+id | CQ description | Existing/new terms | Rationale | Issue # |
+ | -- | -- | -- | -- | -- |
+ CQ1 | What containers do I need to rerun this workflow? | container ID, image URL | |
+ CQ2 | How much memory/cpu/disk was used, so that I can find the right hardware for running? | memory, disk, cpu, architecture, gpu |  |
+ 
