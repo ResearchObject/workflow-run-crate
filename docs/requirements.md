@@ -22,4 +22,9 @@ id | CQ description | Existing/new terms | Rationale | Issue # |
  | -- | -- | -- | -- | -- |
  CQ1 | What containers do I need to rerun this workflow? | container ID, image URL | |
  CQ2 | How much memory/cpu/disk was used, so that I can find the right hardware for running? | memory, disk, cpu, architecture, gpu |  |
- 
+ CQ3 | What are the configuration files used in a workflow execution step? | | I would like to capture configuration files for reproducibility purposes |  |
+ CQ4 | What is the environment/container file used in a specific workflow execution step? | | Knowing the environment helps debugging and reproducing the setup |  |
+ CQ5 | How long does this workflow component takes to run? (estimate) | | If a workflow step is computationally expensive, I may need to get an estimate for impatient users, or show a warning |  |
+ CQ6 | How long does this workflow take to run? | | Same as CQ5, but with the full workflow |  |
+ CQ7 | Was the workflow execution successful? | | Needed to know whether or not retrieve the results |  |
+ CQ8 | What are the inputs and outputs of the overall workflow (I don't care about the intermediate results) |  | High level representation of the workflow execution |
