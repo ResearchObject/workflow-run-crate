@@ -15,3 +15,10 @@ title: Requirements for Workflow Run Crate
 - Use [Provenance of software run](https://www.researchobject.org/ro-crate/1.1/provenance.html) to detail that a workflow run has occurred
 - Recommend [CWLProv-like](https://w3id.org/cwl/prov/0.6.0) structure of RO-Crate folders for inputs/outputs/intermediate?
 - Optional detailed workflow run provenance in separate PROV files
+
+## Competenency Questions / User stories
+
+| Q  |  New terms? | Issue |
+| -- | -- | -- |
+| What containers do I need to rerun this workflow? | container ID, image URL |
+
