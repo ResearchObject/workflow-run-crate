@@ -28,3 +28,5 @@ id | CQ description | Existing/new terms | Rationale | Issue # |
  CQ6 | How long does this workflow take to run? | | Same as CQ5, but with the full workflow |  |
  CQ7 | Was the workflow execution successful? | | Needed to know whether or not retrieve the results |  |
  CQ8 | What are the inputs and outputs of the overall workflow (I don't care about the intermediate results) |  | High level representation of the workflow execution |
+ CQ9 | What is the source code version of the component executed in a workflow step? Is it a script? and executable? | | Knowing which release/software version was used (reproducibility) |
+ CQ10 | What is the script used to wrap up a software component? | | Many executables are complicated, and need an additional script to wrap them up or simplify. For example a "run.sh" script that exposes a simpler set of parameters and fixes another set. |
