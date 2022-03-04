@@ -20,9 +20,9 @@ title: Requirements for Workflow Run Crate
 
 id | CQ description | Existing/new terms | Rationale | Issue # |
  | -- | -- | -- | -- | -- |
- CQ1 | What containers do I need to rerun this workflow? | container ID, image URL | |
- CQ2 | How much memory/cpu/disk was used, so that I can find the right hardware for running? | memory, disk, cpu, architecture, gpu |  |
- CQ3 | What are the configuration files used in a workflow execution step? | | I would like to capture configuration files for reproducibility purposes |  |
+ CQ1 | What containers were used by run? | container ID, image URL | To archive images before they disappear so workflow can run later in time | |
+ CQ2 | How much memory/cpu/disk was used in run? | memory, disk, cpu, architecture, gpu  | To find the right hardware for running workflow |  |
+ CQ3 | What are the configuration files used in a workflow execution step? | |For reproducibility purposes, the values/settings inside config files can have big impact on output |  |
  CQ4 | What is the environment/container file used in a specific workflow execution step? | | Knowing the environment helps debugging and reproducing the setup |  |
  CQ5 | How long does this workflow component takes to run? (estimate) | | If a workflow step is computationally expensive, I may need to get an estimate for impatient users, or show a warning |  |
  CQ6 | How long does this workflow take to run? | | Same as CQ5, but with the full workflow |  |
