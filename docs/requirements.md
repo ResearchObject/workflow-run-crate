@@ -21,12 +21,12 @@ title: Requirements for Workflow Run Crate
 id | CQ description | Existing/new terms | Rationale | Issue # |
  | -- | -- | -- | -- | -- |
  CQ1 | What containers were used by run? | container ID, image URL | To archive images before they disappear so workflow can run later in time | |
- CQ2 | How much memory/cpu/disk was used in run? | memory, disk, cpu, architecture, gpu  | To find the right hardware for running workflow |  |
- CQ3 | What are the configuration files used in a workflow execution step? | |For reproducibility purposes, the values/settings inside config files can have big impact on output |  |
+ CQ2 | How much memory/cpu/disk was used in run? | memory, disk, cpu, architecture, gpu  (possibly http://schema.org/memoryRequirements http://schema.org/storageRequirements ) | To find the right hardware for running workflow |  |
+ CQ3 | What are the configuration files used in a workflow execution step? | http://schema.org/actionOption ? |For reproducibility purposes, the values/settings inside config files can have big impact on output |  |
  CQ4 | What is the environment/container file used in a specific workflow execution step? | | Knowing the environment helps debugging and reproducing the setup |  |
  CQ5 | How long does this workflow component takes to run? (estimate) | | If a workflow step is computationally expensive, I may need to get an estimate for impatient users, or show a warning |  |
  CQ6 | How long does this workflow take to run? | | Same as CQ5, but with the full workflow |  |
- CQ7 | Was the workflow execution successful? | | Needed to know whether or not retrieve the results |  |
+ CQ7 | Was the workflow execution successful? | http://schema.org/actionStatus to http://schema.org/FailedActionStatus or http://schema.org/CompletedActionStatus  - can also provide https://schema.org/error | Needed to know whether or not retrieve the results |  |
  CQ8 | What are the inputs and outputs of the overall workflow (I don't care about the intermediate results) |  | High level representation of the workflow execution |
  CQ9 | What is the source code version of the component executed in a workflow step? Is it a script? and executable? | | Knowing which release/software version was used (reproducibility) |
  CQ10 | What is the script used to wrap up a software component? | | Many executables are complicated, and need an additional script to wrap them up or simplify. For example a "run.sh" script that exposes a simpler set of parameters and fixes another set. |
