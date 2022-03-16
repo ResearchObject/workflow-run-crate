@@ -16,7 +16,7 @@ title: Requirements for Workflow Run Crate
 - Recommend [CWLProv-like](https://w3id.org/cwl/prov/0.6.0) structure of RO-Crate folders for inputs/outputs/intermediate?
 - Optional detailed workflow run provenance in separate PROV files
 
-## Competenency Questions / User stories
+## Competency Questions / User stories
 
 id | CQ description | Existing/new terms | Rationale | Issue # |
  | -- | -- | -- | -- | -- |
