@@ -36,6 +36,7 @@ Post [here](https://github.com/ResearchObject/workflow-run-crate/issues/1) to jo
 - Rudolf Wittner <https://orcid.org/0000-0002-0003-2024>
 - Wolfgang Maier <https://orcid.org/0000-0002-9464-6640>
 - Sebastiaan Huber <https://orcid.org/0000-0001-5845-8880>
+- Kevin Jablonka <https://orcid.org/0000-0003-4894-4660>
 - ... [you](https://github.com/ResearchObject/workflow-run-crate/issues/1)?
 
 
