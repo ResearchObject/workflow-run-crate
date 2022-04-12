@@ -75,6 +75,39 @@ class WorkflowRun(Activity):
         self.steps = []
 
 
+class Entity(Thing):
+
+    def __init__(self, id_, label=None, value=None):
+        super().__init__(id_, label=label)
+        self.value = value
+
+
+class Plan(Entity):
+
+    def __init__(self, id_, label=None):
+        super().__init__(id_, label=label)
+        self.subprocesses = []
+
+
+class Process(Plan):
+    pass
+
+
+class Workflow(Plan):
+    pass
+
+
+class Artifact(Entity):
+    pass
+
+
+class File(Artifact):
+
+    def __init__(self, id_, basename=None):
+        super().__init__(id_)
+        self.basename = basename
+
+
 class Provenance:
 
     def __init__(self, path_or_file):
@@ -85,17 +118,22 @@ class Provenance:
                 self.data = json.load(f)
         self.agents = self.__read_agents()
         self.activities = self.__read_activities()
+        self.entities = self.__read_entities()
         self.__read_start_end()
 
     @staticmethod
-    def get_types(record):
-        entry = record.get("prov:type", [])
-        if not isinstance(entry, list):
-            entry = [entry]
+    def get_list(entry, key):
+        value = entry.get(key, [])
+        if not isinstance(value, list):
+            value = [value]
         try:
-            return [_["$"] for _ in entry]
+            return [_["$"] if isinstance(_, dict) else _ for _ in value]
         except (TypeError, KeyError):
-            raise ValueError(f"Unexpected type entry: {entry!r}")
+            raise ValueError(f"Malformed value for {key!r}: {entry.get(key)!r}")
+
+    @staticmethod
+    def get_types(record):
+        return Provenance.get_list(record, "prov:type")
 
     def __read_agents(self):
         agents = {}
@@ -130,6 +168,43 @@ class Provenance:
             else:
                 activities[id_] = Activity(id_, label=record.get("prov:label"))
         return activities
+
+    def __read_entities(self):
+        entities = {}
+        for id_, entry in self.data["entity"].items():
+            # FIXME: assumes "prov:value" values are scalar
+            if not isinstance(entry, list):
+                record = {k: Provenance.get_list(entry, k) for k in entry}
+            else:
+                record = {}
+                for d in entry:
+                    for k in d:
+                        record.setdefault(k, []).extend(Provenance.get_list(d, k))
+            types = set(record.get("prov:type", []))
+            if "wfdesc:Workflow" in types:
+                entities[id_] = Workflow(id_, label=record.get("prov:label", [None])[0])
+            elif "wfdesc:Process" in types:
+                entities[id_] = Process(id_, label=record.get("prov:label", [None])[0])
+            elif "wf4ever:File" in types:
+                entities[id_] = File(id_, basename=record.get("cwlprov:basename", [None])[0])
+            elif "wfprov:Artifact" in types:
+                entities[id_] = Artifact(id_, label=record.get("prov:label", [None])[0])
+            else:
+                entities[id_] = Entity(
+                    id_,
+                    label=record.get("prov:label", [None])[0],
+                    value=record.get("prov:value", [None])[0],
+                )
+            try:
+                entities[id_].subprocesses = record["wfdesc:hasSubProcess"]
+            except KeyError:
+                pass
+        for id_, e in entities.items():
+            try:
+                e.subprocesses = [entities[_] for _ in e.subprocesses]
+            except AttributeError:
+                pass
+        return entities
 
     def __read_start_end(self):
         for dummy, record in self.data["wasStartedBy"].items():
