@@ -62,6 +62,8 @@ class Activity(Thing):
         self.ender = None
         self.start_time = None
         self.end_time = None
+        self.in_params = {}
+        self.out_params = {}
 
 
 class ProcessRun(Activity):
@@ -80,6 +82,18 @@ class Entity(Thing):
     def __init__(self, id_, label=None, value=None):
         super().__init__(id_, label=label)
         self.value = value
+        self.general_entity = None
+
+    def get_path(self):
+        if not (self.general_entity and getattr(self, "basename", None)):
+            return None
+        try:
+            prefix, hash_ = self.general_entity.id_.strip().split(":")
+        except ValueError:
+            return None
+        if prefix != "data":
+            return None
+        return Path("data") / hash_[:2] / hash_
 
 
 class Plan(Entity):
@@ -119,7 +133,9 @@ class Provenance:
         self.agents = self.__read_agents()
         self.activities = self.__read_activities()
         self.entities = self.__read_entities()
+        self.__read_specializations()
         self.__read_start_end()
+        self.__read_params()
 
     @staticmethod
     def get_list(entry, key):
@@ -206,6 +222,15 @@ class Provenance:
                 pass
         return entities
 
+    def __read_specializations(self):
+        for dummy, record in self.data["specializationOf"].items():
+            specific = self.entities.get(record.get("prov:specificEntity"))
+            if not specific:
+                continue
+            general = self.entities.get(record.get("prov:generalEntity"))
+            if general:
+                specific.general_entity = general
+
     def __read_start_end(self):
         for dummy, record in self.data["wasStartedBy"].items():
             activity = self.activities.get(record.get("prov:activity"))
@@ -217,6 +242,22 @@ class Provenance:
             if activity:
                 activity.ender = self.agents.get(record.get("prov:ender"))
                 activity.end_time = record.get("prov:time")
+
+    def __read_params(self):
+        for dummy, record in self.data["used"].items():
+            activity = self.activities.get(record.get("prov:activity"))
+            if not activity:
+                continue
+            entity = self.entities.get(record.get("prov:entity"))
+            if entity:
+                activity.in_params[record["prov:role"]["$"]] = entity
+        for dummy, record in self.data["wasGeneratedBy"].items():
+            activity = self.activities.get(record.get("prov:activity"))
+            if not activity:
+                continue
+            entity = self.entities.get(record.get("prov:entity"))
+            if entity:
+                activity.out_params[record["prov:role"]["$"]] = entity
 
 
 def get_workflow(root_dir):
@@ -238,7 +279,8 @@ def read_prov(root_dir):
         return json.load(f)
 
 
-def add_action(crate, prov):
+def add_action(crate, source, prov):
+    workflow = crate.mainEntity
     sel = [_ for _ in prov.activities.values() if type(_) == WorkflowRun]
     if len(sel) != 1:
         raise ValueError(f"Unexpected number of workflow runs: {len(sel)}")
@@ -249,7 +291,49 @@ def add_action(crate, prov):
         "startTime": wf_run.start_time,
         "endTime": wf_run.end_time,
     }))
-    action["instrument"] = crate.mainEntity
+    action["instrument"] = workflow
+    inputs, outputs, objects, results = [], [], [], []
+    for k, v in wf_run.in_params.items():
+        path = v.get_path()
+        if not path and not v.value:
+            continue
+        k = k.split(":", 1)[-1]
+        in_ = crate.add(ContextEntity(crate, f"#param-{k}", properties={
+            "@type": "FormalParameter",
+            "name": k,
+        }))
+        inputs.append(in_)
+        if path:
+            obj = crate.add_file(source / path, v.basename)
+        elif v.value:
+            obj = crate.add(ContextEntity(crate, f"#pv-{k}", properties={
+                "@type": "PropertyValue", "name": k, "value": v.value,
+            }))
+        obj["exampleOfWork"] = in_
+        objects.append(obj)
+    workflow["input"] = inputs
+    action["object"] = objects
+    for k, v in wf_run.out_params.items():
+        path = v.get_path()
+        if not path and not v.value:
+            continue
+        k = k.split(":", 1)[-1]
+        out = crate.add(ContextEntity(crate, f"#param-{k}", properties={
+            "@type": "FormalParameter",
+            "name": k,
+        }))
+        outputs.append(out)
+        if path:
+            res = crate.add_file(source / path, v.basename)
+        elif v.value:
+            # can output parameters not be files or directories?
+            res = crate.add(ContextEntity(crate, f"#pv-{k}", properties={
+                "@type": "PropertyValue", "name": k, "value": v.value,
+            }))
+        res["exampleOfWork"] = out
+        results.append(res)
+    workflow["output"] = outputs
+    action["result"] = results
     return action
 
 
@@ -267,7 +351,7 @@ def make_crate(args):
     if args.license:
         crate.root_dataset["license"] = args.license
     prov = Provenance(args.root / "metadata" / "provenance" / "primary.cwlprov.json")
-    action = add_action(crate, prov)
+    action = add_action(crate, args.root, prov)
     crate.root_dataset["mentions"] = [action]
     if args.output.endswith(".zip"):
         crate.write_zip(args.output)
@@ -288,7 +372,7 @@ if __name__ == "__main__":
         description=__doc__, formatter_class=argparse.RawTextHelpFormatter
     )
     parser.add_argument("root", metavar="ROOT_DIR",
-                        help="top-level directory (workflow repository)")
+                        help="top-level directory of the CWLProv RO")
     parser.add_argument("-o", "--output", metavar="DIR OR ZIP",
                         help="output RO-Crate directory or zip file")
     parser.add_argument("-l", "--license", metavar="STRING",
