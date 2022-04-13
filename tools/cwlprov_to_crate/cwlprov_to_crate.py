@@ -23,6 +23,7 @@ from pathlib import Path
 # from cwl_utils.parser import load_document_by_uri
 from rocrate.rocrate import ROCrate
 from rocrate.model.contextentity import ContextEntity
+from rocrate.model.softwareapplication import SoftwareApplication
 
 
 class Thing:
@@ -58,12 +59,15 @@ class Activity(Thing):
 
     def __init__(self, id_, label=None):
         super().__init__(id_, label=label)
+        self.agent = None
+        self.plan = None
         self.starter = None
         self.ender = None
         self.start_time = None
         self.end_time = None
         self.in_params = {}
         self.out_params = {}
+        self.steps = []
 
 
 class ProcessRun(Activity):
@@ -71,10 +75,7 @@ class ProcessRun(Activity):
 
 
 class WorkflowRun(Activity):
-
-    def __init__(self, id_, label=None):
-        super().__init__(id_, label=label)
-        self.steps = []
+    pass
 
 
 class Entity(Thing):
@@ -136,6 +137,7 @@ class Provenance:
         self.__read_specializations()
         self.__read_start_end()
         self.__read_params()
+        self.__read_associations()
 
     @staticmethod
     def get_list(entry, key):
@@ -259,6 +261,24 @@ class Provenance:
             if entity:
                 activity.out_params[record["prov:role"]["$"]] = entity
 
+    def __read_associations(self):
+        is_plan_for = {}
+        for dummy, record in self.data["wasAssociatedWith"].items():
+            activity = self.activities.get(record.get("prov:activity"))
+            if not activity:
+                continue
+            # TODO: agents; note that there can be many agents for an activity
+            plan = self.entities.get(record.get("prov:plan"))
+            if plan:
+                activity.plan = plan  # assuming one plan per activity
+                is_plan_for.setdefault(plan.id_, []).append(activity)
+        for plan_id, activities in is_plan_for.items():
+            plan = self.entities.get(plan_id)
+            for act in activities:
+                for sp in plan.subprocesses:
+                    for step in is_plan_for[sp.id_]:
+                        act.steps.append(step)
+
 
 def get_workflow(root_dir):
     wf_dir = root_dir / "workflow"
@@ -279,21 +299,40 @@ def read_prov(root_dir):
         return json.load(f)
 
 
-def add_action(crate, source, prov):
+# add to ro-crate-py?
+def update_property(entity, name, item):
+    """\
+    Add ``item`` to the values of property ``name`` in ``entity``
+    """
+    value = entity.get(name, [])
+    if not isinstance(value, list):
+        value = [value]
+    value = list(set(value + [item]))
+    entity[name] = value[0] if len(value) == 1 else value
+
+
+def add_action(crate, source, activity, parent_instrument=None):
     workflow = crate.mainEntity
-    sel = [_ for _ in prov.activities.values() if type(_) == WorkflowRun]
-    if len(sel) != 1:
-        raise ValueError(f"Unexpected number of workflow runs: {len(sel)}")
-    wf_run = sel[0]
     action = crate.add(ContextEntity(crate, properties={
         "@type": "CreateAction",
-        "name": wf_run.label,
-        "startTime": wf_run.start_time,
-        "endTime": wf_run.end_time,
+        "name": activity.label,
+        "startTime": activity.start_time,
+        "endTime": activity.end_time,
     }))
-    action["instrument"] = workflow
+    try:
+        step = activity.plan.id_.strip().split("/", 1)[1]
+    except IndexError:
+        instrument = workflow
+    else:
+        instrument_id = f"{workflow.id}#{step}"
+        instrument = crate.add(SoftwareApplication(crate, instrument_id, properties={
+            "name": instrument_id,
+        }))
+    action["instrument"] = instrument
+    if parent_instrument:
+        update_property(parent_instrument, "hasPart", instrument)
     inputs, outputs, objects, results = [], [], [], []
-    for k, v in wf_run.in_params.items():
+    for k, v in activity.in_params.items():
         path = v.get_path()
         if not path and not v.value:
             continue
@@ -304,16 +343,18 @@ def add_action(crate, source, prov):
         }))
         inputs.append(in_)
         if path:
-            obj = crate.add_file(source / path, v.basename)
+            obj = crate.dereference(path.as_posix())
+            if not obj:
+                obj = crate.add_file(source / path, path)
         elif v.value:
             obj = crate.add(ContextEntity(crate, f"#pv-{k}", properties={
                 "@type": "PropertyValue", "name": k, "value": v.value,
             }))
-        obj["exampleOfWork"] = in_
+        update_property(obj, "exampleOfWork", in_)
         objects.append(obj)
-    workflow["input"] = inputs
+    instrument["input"] = inputs
     action["object"] = objects
-    for k, v in wf_run.out_params.items():
+    for k, v in activity.out_params.items():
         path = v.get_path()
         if not path and not v.value:
             continue
@@ -324,16 +365,20 @@ def add_action(crate, source, prov):
         }))
         outputs.append(out)
         if path:
-            res = crate.add_file(source / path, v.basename)
+            res = crate.dereference(path.as_posix())
+            if not res:
+                res = crate.add_file(source / path, path)
         elif v.value:
             # can output parameters not be files or directories?
             res = crate.add(ContextEntity(crate, f"#pv-{k}", properties={
                 "@type": "PropertyValue", "name": k, "value": v.value,
             }))
-        res["exampleOfWork"] = out
+        update_property(res, "exampleOfWork", out)
         results.append(res)
-    workflow["output"] = outputs
+    instrument["output"] = outputs
     action["result"] = results
+    for step in activity.steps:
+        add_action(crate, source, step, parent_instrument=instrument)
     return action
 
 
@@ -351,7 +396,11 @@ def make_crate(args):
     if args.license:
         crate.root_dataset["license"] = args.license
     prov = Provenance(args.root / "metadata" / "provenance" / "primary.cwlprov.json")
-    action = add_action(crate, args.root, prov)
+    sel = [_ for _ in prov.activities.values() if type(_) == WorkflowRun]
+    if len(sel) != 1:
+        raise ValueError(f"Unexpected number of workflow runs: {len(sel)}")
+    workflow_run = sel[0]
+    action = add_action(crate, args.root, workflow_run)
     crate.root_dataset["mentions"] = [action]
     if args.output.endswith(".zip"):
         crate.write_zip(args.output)
