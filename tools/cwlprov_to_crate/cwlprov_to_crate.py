@@ -402,7 +402,7 @@ def make_crate(args):
     workflow_run = sel[0]
     action = add_action(crate, args.root, workflow_run)
     crate.root_dataset["mentions"] = [action]
-    if args.output.endswith(".zip"):
+    if args.output.suffix == ".zip":
         crate.write_zip(args.output)
     else:
         crate.write(args.output)
@@ -413,6 +413,7 @@ def main(args):
     if not args.output:
         args.output = f"{args.root.name}.crate.zip"
     print(f"generating {args.output}")
+    args.output = Path(args.output)
     make_crate(args)
 
 
