@@ -311,6 +311,12 @@ def update_property(entity, name, item):
     entity[name] = value[0] if len(value) == 1 else value
 
 
+def convert_value(value):
+    # str(True) == "True" (same for False), so booleans map to Schema.org types.
+    # Is there any type for which str() might be inappropriate?
+    return str(value)
+
+
 def add_action(crate, source, activity, parent_instrument=None):
     workflow = crate.mainEntity
     action = crate.add(ContextEntity(crate, properties={
@@ -348,7 +354,9 @@ def add_action(crate, source, activity, parent_instrument=None):
                 obj = crate.add_file(source / path, path)
         elif v.value:
             obj = crate.add(ContextEntity(crate, f"#pv-{k}", properties={
-                "@type": "PropertyValue", "name": k, "value": v.value,
+                "@type": "PropertyValue",
+                "name": k,
+                "value": convert_value(v.value),
             }))
         update_property(obj, "exampleOfWork", in_)
         objects.append(obj)
@@ -371,7 +379,9 @@ def add_action(crate, source, activity, parent_instrument=None):
         elif v.value:
             # can output parameters not be files or directories?
             res = crate.add(ContextEntity(crate, f"#pv-{k}", properties={
-                "@type": "PropertyValue", "name": k, "value": v.value,
+                "@type": "PropertyValue",
+                "name": k,
+                "value": convert_value(v.value),
             }))
         update_property(res, "exampleOfWork", out)
         results.append(res)
