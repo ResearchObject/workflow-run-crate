@@ -317,6 +317,33 @@ def convert_value(value):
     return str(value)
 
 
+def add_params(crate, source, prov_params):
+    wf_params, action_params = [], []
+    for k, v in prov_params.items():
+        path = v.get_path()
+        if not path and not v.value:
+            continue
+        k = k.split(":", 1)[-1]
+        wf_p = crate.add(ContextEntity(crate, f"#param-{k}", properties={
+            "@type": "FormalParameter",
+            "name": k,
+        }))
+        wf_params.append(wf_p)
+        if path:
+            action_p = crate.dereference(path.as_posix())
+            if not action_p:
+                action_p = crate.add_file(source / path, path)
+        elif v.value:
+            action_p = crate.add(ContextEntity(crate, f"#pv-{k}", properties={
+                "@type": "PropertyValue",
+                "name": k,
+                "value": convert_value(v.value),
+            }))
+        update_property(action_p, "exampleOfWork", wf_p)
+        action_params.append(action_p)
+    return wf_params, action_params
+
+
 def add_action(crate, source, activity, parent_instrument=None):
     workflow = crate.mainEntity
     action = crate.add(ContextEntity(crate, properties={
@@ -337,56 +364,8 @@ def add_action(crate, source, activity, parent_instrument=None):
     action["instrument"] = instrument
     if parent_instrument:
         update_property(parent_instrument, "hasPart", instrument)
-    inputs, outputs, objects, results = [], [], [], []
-    for k, v in activity.in_params.items():
-        path = v.get_path()
-        if not path and not v.value:
-            continue
-        k = k.split(":", 1)[-1]
-        in_ = crate.add(ContextEntity(crate, f"#param-{k}", properties={
-            "@type": "FormalParameter",
-            "name": k,
-        }))
-        inputs.append(in_)
-        if path:
-            obj = crate.dereference(path.as_posix())
-            if not obj:
-                obj = crate.add_file(source / path, path)
-        elif v.value:
-            obj = crate.add(ContextEntity(crate, f"#pv-{k}", properties={
-                "@type": "PropertyValue",
-                "name": k,
-                "value": convert_value(v.value),
-            }))
-        update_property(obj, "exampleOfWork", in_)
-        objects.append(obj)
-    instrument["input"] = inputs
-    action["object"] = objects
-    for k, v in activity.out_params.items():
-        path = v.get_path()
-        if not path and not v.value:
-            continue
-        k = k.split(":", 1)[-1]
-        out = crate.add(ContextEntity(crate, f"#param-{k}", properties={
-            "@type": "FormalParameter",
-            "name": k,
-        }))
-        outputs.append(out)
-        if path:
-            res = crate.dereference(path.as_posix())
-            if not res:
-                res = crate.add_file(source / path, path)
-        elif v.value:
-            # can output parameters not be files or directories?
-            res = crate.add(ContextEntity(crate, f"#pv-{k}", properties={
-                "@type": "PropertyValue",
-                "name": k,
-                "value": convert_value(v.value),
-            }))
-        update_property(res, "exampleOfWork", out)
-        results.append(res)
-    instrument["output"] = outputs
-    action["result"] = results
+    instrument["input"], action["object"] = add_params(crate, source, activity.in_params)
+    instrument["output"], action["result"] = add_params(crate, source, activity.out_params)
     for step in activity.steps:
         add_action(crate, source, step, parent_instrument=instrument)
     return action
