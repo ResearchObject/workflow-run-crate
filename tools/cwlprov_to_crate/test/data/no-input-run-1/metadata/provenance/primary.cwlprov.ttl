@@ -1,0 +1,44 @@
+@prefix id: <urn:uuid:> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix wf: <arcp://uuid,ff8308a9-2969-40aa-a5ea-677a825875f5/workflow/packed.cwl#> .
+@prefix wfdesc: <http://purl.org/wf4ever/wfdesc#> .
+@prefix wfprov: <http://purl.org/wf4ever/wfprov#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+id:33b2e84e-0029-411e-abb1-9fb3e896f1b5 a prov:Entity ;
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity id:ff8308a9-2969-40aa-a5ea-677a825875f5 ;
+            prov:atTime "2022-04-22T10:51:15.446530"^^xsd:dateTime ;
+            prov:hadRole <arcp://uuid,ff8308a9-2969-40aa-a5ea-677a825875f5/workflow/packed.cwl#main/primary/answer> ] ;
+    prov:value "42"^^xsd:int .
+
+wf:main a wfdesc:Process,
+        prov:Entity,
+        prov:Plan ;
+    rdfs:label "Prospective provenance"^^xsd:string .
+
+id:76d93a53-de66-4cf8-af65-7c04d86438c5 a prov:Agent .
+
+id:ff8308a9-2969-40aa-a5ea-677a825875f5 a wfprov:WorkflowRun,
+        prov:Activity ;
+    rdfs:label "Run of workflow/packed.cwl#main"^^xsd:string ;
+    prov:qualifiedAssociation [ a prov:Association ;
+            prov:hadPlan wf:main ] ;
+    prov:qualifiedEnd [ a prov:End ;
+            prov:atTime "2022-04-22T10:51:15.446793"^^xsd:dateTime ;
+            prov:hadActivity id:1303176b-f446-4e57-b9f4-67e2a3a506d4 ] ;
+    prov:qualifiedStart [ a prov:Start ;
+            prov:atTime "2022-04-22T10:51:15.441604"^^xsd:dateTime ;
+            prov:hadActivity id:1303176b-f446-4e57-b9f4-67e2a3a506d4 ] ;
+    prov:startedAtTime "2022-04-22T10:51:15.441544"^^xsd:dateTime ;
+    prov:wasAssociatedWith id:1303176b-f446-4e57-b9f4-67e2a3a506d4 .
+
+id:1303176b-f446-4e57-b9f4-67e2a3a506d4 a wfprov:WorkflowEngine,
+        prov:Agent,
+        prov:SoftwareAgent ;
+    rdfs:label "cwltool 3.1.20220224085855"^^xsd:string ;
+    prov:qualifiedStart [ a prov:Start ;
+            prov:atTime "2022-04-22T10:51:15.441515"^^xsd:dateTime ;
+            prov:hadActivity id:76d93a53-de66-4cf8-af65-7c04d86438c5 ] .
+

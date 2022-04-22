@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='ASCII'?>
+<prov:document xmlns:wfprov="http://purl.org/wf4ever/wfprov#" xmlns:wfdesc="http://purl.org/wf4ever/wfdesc#" xmlns:cwlprov="https://w3id.org/cwl/prov#" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:schema="http://schema.org/" xmlns:orcid="https://orcid.org/" xmlns:id="urn:uuid:" xmlns:data="urn:hash::sha1:" xmlns:sha256="nih:sha-256;" xmlns:researchobject="arcp://uuid,ff8308a9-2969-40aa-a5ea-677a825875f5/" xmlns:metadata="arcp://uuid,ff8308a9-2969-40aa-a5ea-677a825875f5/metadata/" xmlns:provenance="arcp://uuid,ff8308a9-2969-40aa-a5ea-677a825875f5/metadata/provenance/" xmlns:wf="arcp://uuid,ff8308a9-2969-40aa-a5ea-677a825875f5/workflow/packed.cwl#" xmlns:input="arcp://uuid,ff8308a9-2969-40aa-a5ea-677a825875f5/workflow/primary-job.json#" xmlns:prov="http://www.w3.org/ns/prov#" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <prov:agent prov:id="id:76d93a53-de66-4cf8-af65-7c04d86438c5"/>
+  <prov:softwareAgent prov:id="id:1303176b-f446-4e57-b9f4-67e2a3a506d4">
+    <prov:label>cwltool 3.1.20220224085855</prov:label>
+    <prov:type xsi:type="xsd:QName">wfprov:WorkflowEngine</prov:type>
+  </prov:softwareAgent>
+  <prov:wasStartedBy>
+    <prov:activity prov:ref="id:1303176b-f446-4e57-b9f4-67e2a3a506d4"/>
+    <prov:starter prov:ref="id:76d93a53-de66-4cf8-af65-7c04d86438c5"/>
+    <prov:time>2022-04-22T10:51:15.441515</prov:time>
+  </prov:wasStartedBy>
+  <prov:activity prov:id="id:ff8308a9-2969-40aa-a5ea-677a825875f5">
+    <prov:startTime>2022-04-22T10:51:15.441544</prov:startTime>
+    <prov:label>Run of workflow/packed.cwl#main</prov:label>
+    <prov:type xsi:type="xsd:QName">wfprov:WorkflowRun</prov:type>
+  </prov:activity>
+  <prov:wasAssociatedWith>
+    <prov:activity prov:ref="id:ff8308a9-2969-40aa-a5ea-677a825875f5"/>
+    <prov:agent prov:ref="id:1303176b-f446-4e57-b9f4-67e2a3a506d4"/>
+    <prov:plan prov:ref="wf:main"/>
+  </prov:wasAssociatedWith>
+  <prov:wasStartedBy>
+    <prov:activity prov:ref="id:ff8308a9-2969-40aa-a5ea-677a825875f5"/>
+    <prov:starter prov:ref="id:1303176b-f446-4e57-b9f4-67e2a3a506d4"/>
+    <prov:time>2022-04-22T10:51:15.441604</prov:time>
+  </prov:wasStartedBy>
+  <prov:plan prov:id="wf:main">
+    <prov:label>Prospective provenance</prov:label>
+    <prov:type xsi:type="xsd:QName">wfdesc:Process</prov:type>
+  </prov:plan>
+  <prov:entity prov:id="id:33b2e84e-0029-411e-abb1-9fb3e896f1b5">
+    <prov:value xsi:type="xsd:int">42</prov:value>
+  </prov:entity>
+  <prov:wasGeneratedBy>
+    <prov:entity prov:ref="id:33b2e84e-0029-411e-abb1-9fb3e896f1b5"/>
+    <prov:activity prov:ref="id:ff8308a9-2969-40aa-a5ea-677a825875f5"/>
+    <prov:time>2022-04-22T10:51:15.446530</prov:time>
+    <prov:role xsi:type="xsd:QName">wf:main/primary/answer</prov:role>
+  </prov:wasGeneratedBy>
+  <prov:wasEndedBy>
+    <prov:activity prov:ref="id:ff8308a9-2969-40aa-a5ea-677a825875f5"/>
+    <prov:ender prov:ref="id:1303176b-f446-4e57-b9f4-67e2a3a506d4"/>
+    <prov:time>2022-04-22T10:51:15.446793</prov:time>
+  </prov:wasEndedBy>
+</prov:document>

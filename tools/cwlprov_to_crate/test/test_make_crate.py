@@ -94,3 +94,33 @@ def test_make_crate(data_dir, tmpdir):
             assert sorted_output_file is wf_output_file
         else:
             assert False, f"unexpected instrument for action {a.id}"
+
+
+def test_no_input(data_dir, tmpdir):
+    args = Args()
+    args.root = data_dir / "no-input-run-1"
+    args.output = tmpdir / "no-input-run-1-crate"
+    args.license = "Apache-2.0"
+    args.workflow_name = None
+    make_crate(args)
+    crate = ROCrate(args.output)
+    # The "workflow" is actually a single tool; should we generate a Process
+    # Run Crate instead in this case?
+    workflow = crate.mainEntity
+    assert not workflow.get("hasPart")
+    assert not workflow.get("input")
+    outputs = workflow["output"]
+    assert len(outputs) == 1
+    out = outputs[0]
+    assert "FormalParameter" in out.type
+    actions = [_ for _ in crate.contextual_entities if "CreateAction" in _.type]
+    assert len(actions) == 1
+    wf_action = actions[0]
+    assert crate.root_dataset["mentions"] == [wf_action]
+    assert not wf_action.get("object")
+    wf_results = wf_action["result"]
+    assert len(wf_results) == 1
+    res = wf_results[0]
+    assert "PropertyValue" in res.type
+    assert res["value"] == "42"
+    assert res["exampleOfWork"] == out

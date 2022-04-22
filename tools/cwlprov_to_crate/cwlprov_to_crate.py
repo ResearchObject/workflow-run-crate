@@ -225,7 +225,7 @@ class Provenance:
         return entities
 
     def __read_specializations(self):
-        for dummy, record in self.data["specializationOf"].items():
+        for dummy, record in self.data.get("specializationOf", {}).items():
             specific = self.entities.get(record.get("prov:specificEntity"))
             if not specific:
                 continue
@@ -246,7 +246,7 @@ class Provenance:
                 activity.end_time = record.get("prov:time")
 
     def __read_params(self):
-        for dummy, record in self.data["used"].items():
+        for dummy, record in self.data.get("used", {}).items():
             activity = self.activities.get(record.get("prov:activity"))
             if not activity:
                 continue
