@@ -1,0 +1,1 @@
+--in-any tar --in-bool --in-double 3.142 --in-enum B --in-float 3.14 --in-int 42 --in-long 420 --in-multi 9.99 --in-record-A Tom --in-record-B Jerry --in-str spam foo bar

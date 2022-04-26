@@ -1,0 +1,13 @@
+{
+    "cl_dump": {
+        "location": "../data/4b/4bd8e7e358488e833bf32cf5028695292cecb05b",
+        "basename": "output.txt",
+        "nameroot": "output",
+        "nameext": ".txt",
+        "class": "File",
+        "checksum": "sha1$4bd8e7e358488e833bf32cf5028695292cecb05b",
+        "size": 171,
+        "http://commonwl.org/cwltool#generation": 0,
+        "@id": "urn:uuid:54e2333d-77d8-4d41-9367-d12d05a81b08"
+    }
+}

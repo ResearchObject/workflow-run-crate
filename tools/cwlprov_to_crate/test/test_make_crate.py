@@ -124,3 +124,65 @@ def test_no_input(data_dir, tmpdir):
     assert "PropertyValue" in res.type
     assert res["value"] == "42"
     assert res["exampleOfWork"] == out
+
+
+def test_param_types(data_dir, tmpdir):
+    args = Args()
+    args.root = data_dir / "type-zoo-run-1"
+    args.output = tmpdir / "type-zoo-run-1-crate"
+    args.license = "Apache-2.0"
+    args.workflow_name = None
+    make_crate(args)
+    crate = ROCrate(args.output)
+    workflow = crate.mainEntity
+    inputs = workflow["input"]
+    outputs = workflow["output"]
+    assert len(inputs) == 11
+    assert len(outputs) == 1
+    for entity in inputs + outputs:
+        assert "FormalParameter" in entity.type
+    input_map = {_.id.rsplit("/", 1)[-1]: _ for _ in inputs}
+    # For in_any and in_multi, the type is that of the actual value:
+    # the additional information is not reported by cwltool
+    assert input_map["in_array"]["additionalType"] == "Text"
+    assert input_map["in_any"]["additionalType"] == "Text"
+    assert input_map["in_str"]["additionalType"] == "Text"
+    assert input_map["in_bool"]["additionalType"] == "Boolean"
+    assert input_map["in_int"]["additionalType"] == "Integer"
+    assert input_map["in_long"]["additionalType"] == "Integer"
+    assert input_map["in_float"]["additionalType"] == "Float"
+    assert input_map["in_double"]["additionalType"] == "Float"
+    assert input_map["in_enum"]["additionalType"] == "Text"
+    assert input_map["in_record"]["additionalType"] == "PropertyValue"
+    assert input_map["in_multi"]["additionalType"] == "Float"
+    out = outputs[0]
+    assert out["additionalType"] == "File"
+    actions = [_ for _ in crate.contextual_entities if "CreateAction" in _.type]
+    assert len(actions) == 1
+    action = actions[0]
+    assert crate.root_dataset["mentions"] == [action]
+    objects = action["object"]
+    assert len(objects) == 11
+    for obj in objects:
+        assert "PropertyValue" in obj.type
+    obj_map = {_.id.rsplit("/", 1)[-1]: _ for _ in objects}
+    # assert obj_map["in_array"]["value"] == ["foo", "bar"]
+    assert obj_map["in_any"]["value"] == "tar"
+    assert obj_map["in_str"]["value"] == "spam"
+    assert obj_map["in_bool"]["value"] == "True"
+    assert obj_map["in_int"]["value"] == "42"
+    assert obj_map["in_long"]["value"] == "420"
+    assert obj_map["in_float"]["value"] == "3.14"
+    assert obj_map["in_double"]["value"] == "3.142"
+    assert obj_map["in_enum"]["value"] == "B"
+    record_pv = obj_map["in_record"]
+    v_A = crate.dereference(f"{record_pv.id}/in_record_A")
+    assert v_A["value"] == "Tom"
+    v_B = crate.dereference(f"{record_pv.id}/in_record_B")
+    assert v_B["value"] == "Jerry"
+    assert set(record_pv["value"]) == {v_A, v_B}
+    assert obj_map["in_multi"]["value"] == "9.99"
+    results = action["result"]
+    assert len(results) == 1
+    res = results[0]
+    assert "File" in res.type

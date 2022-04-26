@@ -283,13 +283,20 @@ class Provenance:
                 activity.end_time = record.get("prov:time")
 
     def __read_params(self):
+        # In the case of a single tool run, cwltool reports one WorkflowRun
+        # and no ProcessRun. In this case, some parameters are duplicated and
+        # the duplicate's role has the original workflow name as the step part
+        single_tool = not any(type(_) is ProcessRun for _ in self.activities.values())
         for dummy, record in self.data.get("used", {}).items():
             activity = self.activities.get(record.get("prov:activity"))
             if not activity:
                 continue
             entity = self.entities.get(record.get("prov:entity"))
             if entity:
-                activity.in_params[record["prov:role"]["$"]] = entity
+                role = record["prov:role"]["$"]
+                if single_tool and len(role.split("/")) > 2:
+                    continue
+                activity.in_params[role] = entity
         for dummy, record in self.data["wasGeneratedBy"].items():
             activity = self.activities.get(record.get("prov:activity"))
             if not activity:
@@ -305,6 +312,8 @@ class Provenance:
                         role = "/".join(parts)
                 except IndexError:
                     pass
+                if single_tool and len(parts) > 2:
+                    continue
                 activity.out_params[role] = entity
 
     def __read_associations(self):
