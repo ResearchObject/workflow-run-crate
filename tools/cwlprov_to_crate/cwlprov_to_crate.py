@@ -80,9 +80,9 @@ class WorkflowRun(Activity):
 
 class Entity(Thing):
 
-    def __init__(self, id_, label=None, value=None):
+    def __init__(self, id_, label=None):
         super().__init__(id_, label=label)
-        self.value = value
+        self.value = None
         self.general_entity = None
 
     def get_path(self):
@@ -123,6 +123,28 @@ class File(Artifact):
         self.basename = basename
 
 
+class Collection(Artifact):
+
+    def __init__(self, id_):
+        super().__init__(id_)
+        self.members = []
+
+
+class KeyEntityPair(Entity):
+
+    def __init__(self, id_, key, entity):
+        super().__init__(id_)
+        self.key = key
+        self.entity = entity
+
+
+class Dictionary(Collection):
+
+    def __init__(self, id_, dict_members):
+        super().__init__(id_)
+        self.dict_members = dict_members
+
+
 class Provenance:
 
     def __init__(self, path_or_file):
@@ -134,6 +156,7 @@ class Provenance:
         self.agents = self.__read_agents()
         self.activities = self.__read_activities()
         self.entities = self.__read_entities()
+        self.__read_members()
         self.__read_specializations()
         self.__read_start_end()
         self.__read_params()
@@ -205,24 +228,38 @@ class Provenance:
                 entities[id_] = Process(id_, label=record.get("prov:label", [None])[0])
             elif "wf4ever:File" in types:
                 entities[id_] = File(id_, basename=record.get("cwlprov:basename", [None])[0])
+            elif "prov:KeyEntityPair" in types:
+                key = record["prov:pairKey"][0]
+                entity = record["prov:pairEntity"][0]
+                entities[id_] = KeyEntityPair(id_, key, entity)
+            elif "prov:Dictionary" in types:
+                entities[id_] = Dictionary(id_, record["prov:hadDictionaryMember"])
+            elif "prov:Collection" in types:
+                entities[id_] = Collection(id_)
             elif "wfprov:Artifact" in types:
                 entities[id_] = Artifact(id_, label=record.get("prov:label", [None])[0])
             else:
-                entities[id_] = Entity(
-                    id_,
-                    label=record.get("prov:label", [None])[0],
-                    value=record.get("prov:value", [None])[0],
-                )
+                entities[id_] = Entity(id_, label=record.get("prov:label", [None])[0])
+            entities[id_].value = record.get("prov:value", [None])[0]
             try:
                 entities[id_].subprocesses = record["wfdesc:hasSubProcess"]
             except KeyError:
                 pass
         for id_, e in entities.items():
-            try:
+            if hasattr(e, "subprocesses"):
                 e.subprocesses = [entities[_] for _ in e.subprocesses]
-            except AttributeError:
-                pass
+            if hasattr(e, "entity"):
+                e.entity = entities[e.entity]
+            if hasattr(e, "dict_members"):
+                e.dict_members = [entities[_] for _ in e.dict_members]
         return entities
+
+    def __read_members(self):
+        for dummy, record in self.data.get("hadMember", {}).items():
+            collection = self.entities.get(record.get("prov:collection"))
+            assert isinstance(collection, Collection)
+            member = self.entities.get(record.get("prov:entity"))
+            collection.members.append(member)
 
     def __read_specializations(self):
         for dummy, record in self.data.get("specializationOf", {}).items():
@@ -311,34 +348,65 @@ def update_property(entity, name, item):
     entity[name] = value[0] if len(value) == 1 else value
 
 
-def convert_value(value):
-    # str(True) == "True" (same for False), so booleans map to Schema.org types.
-    # Is there any type for which str() might be inappropriate?
-    return str(value)
+# FIXME: this should probably build and add the appropriate ro-crate entity directly
+def convert_value(prov_param):
+    type_ = "Text"
+    if prov_param.value:
+        if isinstance(prov_param.value, bool):
+            type_ = "Boolean"
+        elif isinstance(prov_param.value, float):
+            type_ = "Float"
+        elif isinstance(prov_param.value, int):
+            type_ = "Integer"
+        # str(True) == "True" (same for False), so str() maps to Schema.org types
+        return type_, str(prov_param.value)
+    elif hasattr(prov_param, "dict_members"):
+        return "PropertyValue", dict(
+            (_.key, convert_value(_.entity)) for _ in prov_param.dict_members if _.key != "@id"
+        )
+    elif hasattr(prov_param, "members"):
+        types, values = zip(*[convert_value(_) for _ in prov_param.members])
+        assert len(set(types)) == 1
+        return types[0], list(values)
+    else:
+        raise RuntimeError(f"No value to convert for {prov_param}")
 
 
 def add_params(crate, source, prov_params):
     wf_params, action_params = [], []
     for k, v in prov_params.items():
         path = v.get_path()
-        if not path and not v.value:
+        if path:
+            # TODO: check if there's additional info, e.g. EDAM tags
+            add_type = "File"
+        else:
+            add_type, value = convert_value(v)
+        if not path and not value:
             continue
         k = k.split(":", 1)[-1]
         wf_p = crate.add(ContextEntity(crate, f"#param-{k}", properties={
             "@type": "FormalParameter",
             "name": k,
+            "additionalType": add_type,
         }))
         wf_params.append(wf_p)
         if path:
             action_p = crate.dereference(path.as_posix())
             if not action_p:
                 action_p = crate.add_file(source / path, path)
-        elif v.value:
+        else:
+            # FIXME: assuming arrays and records don't have nested structured types
+            if add_type == "PropertyValue":
+                value = [crate.add(ContextEntity(crate, f"#pv-{k}/{nk}", properties={
+                    "@type": "PropertyValue",
+                    "name": f"{k}/{nk}",
+                    "value": nv[1],
+                })) for nk, nv in value.items()]
             action_p = crate.add(ContextEntity(crate, f"#pv-{k}", properties={
                 "@type": "PropertyValue",
                 "name": k,
-                "value": convert_value(v.value),
             }))
+            action_p["value"] = value
         update_property(action_p, "exampleOfWork", wf_p)
         action_params.append(action_p)
     return wf_params, action_params
