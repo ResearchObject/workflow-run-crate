@@ -296,7 +296,16 @@ class Provenance:
                 continue
             entity = self.entities.get(record.get("prov:entity"))
             if entity:
-                activity.out_params[record["prov:role"]["$"]] = entity
+                role = record["prov:role"]["$"]
+                # workflow output roles have a phantom "primary" step (cwltool bug?)
+                parts = role.split("/")
+                try:
+                    p = parts.pop(1)
+                    if p == "primary":
+                        role = "/".join(parts)
+                except IndexError:
+                    pass
+                activity.out_params[role] = entity
 
     def __read_associations(self):
         is_plan_for = {}
