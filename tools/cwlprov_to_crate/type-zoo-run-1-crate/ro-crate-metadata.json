@@ -1,0 +1,357 @@
+{
+    "@context": "https://w3id.org/ro/crate/1.1/context",
+    "@graph": [
+        {
+            "@id": "./",
+            "@type": "Dataset",
+            "datePublished": "2022-04-27T07:46:54+00:00",
+            "hasPart": [
+                {
+                    "@id": "packed.cwl"
+                },
+                {
+                    "@id": "data/4b/4bd8e7e358488e833bf32cf5028695292cecb05b"
+                }
+            ],
+            "license": "Apache-2.0",
+            "mainEntity": {
+                "@id": "packed.cwl"
+            },
+            "mentions": [
+                {
+                    "@id": "#2d7e7fa2-5262-468d-beb8-fcaab72896db"
+                }
+            ]
+        },
+        {
+            "@id": "ro-crate-metadata.json",
+            "@type": "CreativeWork",
+            "about": {
+                "@id": "./"
+            },
+            "conformsTo": [
+                {
+                    "@id": "https://w3id.org/ro/crate/1.1"
+                },
+                {
+                    "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+                }
+            ]
+        },
+        {
+            "@id": "packed.cwl",
+            "@type": [
+                "File",
+                "SoftwareSourceCode",
+                "ComputationalWorkflow"
+            ],
+            "input": [
+                {
+                    "@id": "#param-main/in_array"
+                },
+                {
+                    "@id": "#param-main/in_any"
+                },
+                {
+                    "@id": "#param-main/in_str"
+                },
+                {
+                    "@id": "#param-main/in_bool"
+                },
+                {
+                    "@id": "#param-main/in_int"
+                },
+                {
+                    "@id": "#param-main/in_long"
+                },
+                {
+                    "@id": "#param-main/in_float"
+                },
+                {
+                    "@id": "#param-main/in_double"
+                },
+                {
+                    "@id": "#param-main/in_enum"
+                },
+                {
+                    "@id": "#param-main/in_record"
+                },
+                {
+                    "@id": "#param-main/in_multi"
+                }
+            ],
+            "name": "type-zoo-run-1",
+            "output": [
+                {
+                    "@id": "#param-main/cl_dump"
+                }
+            ],
+            "programmingLanguage": {
+                "@id": "https://w3id.org/workflowhub/workflow-ro-crate#cwl"
+            }
+        },
+        {
+            "@id": "https://w3id.org/workflowhub/workflow-ro-crate#cwl",
+            "@type": "ComputerLanguage",
+            "alternateName": "CWL",
+            "identifier": {
+                "@id": "https://w3id.org/cwl/v1.0/"
+            },
+            "name": "Common Workflow Language",
+            "url": {
+                "@id": "https://www.commonwl.org/"
+            },
+            "version": "v1.0"
+        },
+        {
+            "@id": "#2d7e7fa2-5262-468d-beb8-fcaab72896db",
+            "@type": "CreateAction",
+            "endTime": "2022-04-22T12:27:13.328912",
+            "instrument": {
+                "@id": "packed.cwl"
+            },
+            "name": "Run of workflow/packed.cwl#main",
+            "object": [
+                {
+                    "@id": "#pv-main/in_array"
+                },
+                {
+                    "@id": "#pv-main/in_any"
+                },
+                {
+                    "@id": "#pv-main/in_str"
+                },
+                {
+                    "@id": "#pv-main/in_bool"
+                },
+                {
+                    "@id": "#pv-main/in_int"
+                },
+                {
+                    "@id": "#pv-main/in_long"
+                },
+                {
+                    "@id": "#pv-main/in_float"
+                },
+                {
+                    "@id": "#pv-main/in_double"
+                },
+                {
+                    "@id": "#pv-main/in_enum"
+                },
+                {
+                    "@id": "#pv-main/in_record"
+                },
+                {
+                    "@id": "#pv-main/in_multi"
+                }
+            ],
+            "result": [
+                {
+                    "@id": "data/4b/4bd8e7e358488e833bf32cf5028695292cecb05b"
+                }
+            ],
+            "startTime": "2022-04-22T12:27:13.313422"
+        },
+        {
+            "@id": "#param-main/in_array",
+            "@type": "FormalParameter",
+            "additionalType": "Text",
+            "name": "main/in_array"
+        },
+        {
+            "@id": "#pv-main/in_array",
+            "@type": "PropertyValue",
+            "exampleOfWork": {
+                "@id": "#param-main/in_array"
+            },
+            "name": "main/in_array",
+            "value": [
+                "foo",
+                "bar"
+            ]
+        },
+        {
+            "@id": "#param-main/in_any",
+            "@type": "FormalParameter",
+            "additionalType": "Text",
+            "name": "main/in_any"
+        },
+        {
+            "@id": "#pv-main/in_any",
+            "@type": "PropertyValue",
+            "exampleOfWork": {
+                "@id": "#param-main/in_any"
+            },
+            "name": "main/in_any",
+            "value": "tar"
+        },
+        {
+            "@id": "#param-main/in_str",
+            "@type": "FormalParameter",
+            "additionalType": "Text",
+            "name": "main/in_str"
+        },
+        {
+            "@id": "#pv-main/in_str",
+            "@type": "PropertyValue",
+            "exampleOfWork": {
+                "@id": "#param-main/in_str"
+            },
+            "name": "main/in_str",
+            "value": "spam"
+        },
+        {
+            "@id": "#param-main/in_bool",
+            "@type": "FormalParameter",
+            "additionalType": "Boolean",
+            "name": "main/in_bool"
+        },
+        {
+            "@id": "#pv-main/in_bool",
+            "@type": "PropertyValue",
+            "exampleOfWork": {
+                "@id": "#param-main/in_bool"
+            },
+            "name": "main/in_bool",
+            "value": "True"
+        },
+        {
+            "@id": "#param-main/in_int",
+            "@type": "FormalParameter",
+            "additionalType": "Integer",
+            "name": "main/in_int"
+        },
+        {
+            "@id": "#pv-main/in_int",
+            "@type": "PropertyValue",
+            "exampleOfWork": {
+                "@id": "#param-main/in_int"
+            },
+            "name": "main/in_int",
+            "value": "42"
+        },
+        {
+            "@id": "#param-main/in_long",
+            "@type": "FormalParameter",
+            "additionalType": "Integer",
+            "name": "main/in_long"
+        },
+        {
+            "@id": "#pv-main/in_long",
+            "@type": "PropertyValue",
+            "exampleOfWork": {
+                "@id": "#param-main/in_long"
+            },
+            "name": "main/in_long",
+            "value": "420"
+        },
+        {
+            "@id": "#param-main/in_float",
+            "@type": "FormalParameter",
+            "additionalType": "Float",
+            "name": "main/in_float"
+        },
+        {
+            "@id": "#pv-main/in_float",
+            "@type": "PropertyValue",
+            "exampleOfWork": {
+                "@id": "#param-main/in_float"
+            },
+            "name": "main/in_float",
+            "value": "3.14"
+        },
+        {
+            "@id": "#param-main/in_double",
+            "@type": "FormalParameter",
+            "additionalType": "Float",
+            "name": "main/in_double"
+        },
+        {
+            "@id": "#pv-main/in_double",
+            "@type": "PropertyValue",
+            "exampleOfWork": {
+                "@id": "#param-main/in_double"
+            },
+            "name": "main/in_double",
+            "value": "3.142"
+        },
+        {
+            "@id": "#param-main/in_enum",
+            "@type": "FormalParameter",
+            "additionalType": "Text",
+            "name": "main/in_enum"
+        },
+        {
+            "@id": "#pv-main/in_enum",
+            "@type": "PropertyValue",
+            "exampleOfWork": {
+                "@id": "#param-main/in_enum"
+            },
+            "name": "main/in_enum",
+            "value": "B"
+        },
+        {
+            "@id": "#param-main/in_record",
+            "@type": "FormalParameter",
+            "additionalType": "PropertyValue",
+            "name": "main/in_record"
+        },
+        {
+            "@id": "#pv-main/in_record/in_record_A",
+            "@type": "PropertyValue",
+            "name": "main/in_record/in_record_A",
+            "value": "Tom"
+        },
+        {
+            "@id": "#pv-main/in_record/in_record_B",
+            "@type": "PropertyValue",
+            "name": "main/in_record/in_record_B",
+            "value": "Jerry"
+        },
+        {
+            "@id": "#pv-main/in_record",
+            "@type": "PropertyValue",
+            "exampleOfWork": {
+                "@id": "#param-main/in_record"
+            },
+            "name": "main/in_record",
+            "value": [
+                {
+                    "@id": "#pv-main/in_record/in_record_A"
+                },
+                {
+                    "@id": "#pv-main/in_record/in_record_B"
+                }
+            ]
+        },
+        {
+            "@id": "#param-main/in_multi",
+            "@type": "FormalParameter",
+            "additionalType": "Float",
+            "name": "main/in_multi"
+        },
+        {
+            "@id": "#pv-main/in_multi",
+            "@type": "PropertyValue",
+            "exampleOfWork": {
+                "@id": "#param-main/in_multi"
+            },
+            "name": "main/in_multi",
+            "value": "9.99"
+        },
+        {
+            "@id": "#param-main/cl_dump",
+            "@type": "FormalParameter",
+            "additionalType": "File",
+            "name": "main/cl_dump"
+        },
+        {
+            "@id": "data/4b/4bd8e7e358488e833bf32cf5028695292cecb05b",
+            "@type": "File",
+            "exampleOfWork": {
+                "@id": "#param-main/cl_dump"
+            }
+        }
+    ]
+}
