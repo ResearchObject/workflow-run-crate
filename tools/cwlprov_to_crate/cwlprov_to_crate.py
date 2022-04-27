@@ -23,7 +23,7 @@ from pathlib import Path
 # from cwl_utils.parser import load_document_by_uri
 from rocrate.rocrate import ROCrate
 from rocrate.model.contextentity import ContextEntity
-from rocrate.model.softwareapplication import SoftwareApplication
+from rocrate.model.data_entity import DataEntity
 
 
 class Thing:
@@ -444,7 +444,8 @@ def add_action(crate, source, activity, parent_instrument=None):
         instrument = workflow
     else:
         instrument_id = f"{workflow.id}#{step}"
-        instrument = crate.add(SoftwareApplication(crate, instrument_id, properties={
+        instrument = crate.add(DataEntity(crate, instrument_id, properties={
+            "@type": "SoftwareApplication",
             "name": instrument_id,
         }))
     action["instrument"] = instrument

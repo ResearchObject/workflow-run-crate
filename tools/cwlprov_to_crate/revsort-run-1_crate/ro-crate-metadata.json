@@ -4,7 +4,7 @@
         {
             "@id": "./",
             "@type": "Dataset",
-            "datePublished": "2022-04-13T16:02:51+00:00",
+            "datePublished": "2022-04-27T11:03:44+00:00",
             "hasPart": [
                 {
                     "@id": "packed.cwl"
@@ -16,7 +16,13 @@
                     "@id": "data/b9/b9214658cc453331b62c2282b772a5c063dbd284"
                 },
                 {
+                    "@id": "packed.cwl#rev"
+                },
+                {
                     "@id": "data/97/97fe1b50b4582cebc7d853796ebd62e3e163aa3f"
+                },
+                {
+                    "@id": "packed.cwl#sorted"
                 }
             ],
             "mainEntity": {
@@ -24,7 +30,7 @@
             },
             "mentions": [
                 {
-                    "@id": "#5d36d907-2a8a-4acd-b344-b83072701c52"
+                    "@id": "#9d739860-47af-4064-bf55-5f0de03226d8"
                 }
             ]
         },
@@ -52,10 +58,10 @@
             ],
             "hasPart": [
                 {
-                    "@id": "#packed.cwl#sorted"
+                    "@id": "packed.cwl#rev"
                 },
                 {
-                    "@id": "#packed.cwl#rev"
+                    "@id": "packed.cwl#sorted"
                 }
             ],
             "input": [
@@ -69,7 +75,7 @@
             "name": "revsort-run-1",
             "output": [
                 {
-                    "@id": "#param-main/primary/output"
+                    "@id": "#param-main/output"
                 }
             ],
             "programmingLanguage": {
@@ -90,7 +96,7 @@
             "version": "v1.0"
         },
         {
-            "@id": "#5d36d907-2a8a-4acd-b344-b83072701c52",
+            "@id": "#9d739860-47af-4064-bf55-5f0de03226d8",
             "@type": "CreateAction",
             "endTime": "2018-10-25T15:46:43.020168",
             "instrument": {
@@ -115,6 +121,7 @@
         {
             "@id": "#param-main/input",
             "@type": "FormalParameter",
+            "additionalType": "File",
             "name": "main/input"
         },
         {
@@ -132,6 +139,7 @@
         {
             "@id": "#param-main/reverse_sort",
             "@type": "FormalParameter",
+            "additionalType": "Boolean",
             "name": "main/reverse_sort"
         },
         {
@@ -141,31 +149,32 @@
                 "@id": "#param-main/reverse_sort"
             },
             "name": "main/reverse_sort",
-            "value": true
+            "value": "True"
         },
         {
-            "@id": "#param-main/primary/output",
+            "@id": "#param-main/output",
             "@type": "FormalParameter",
-            "name": "main/primary/output"
+            "additionalType": "File",
+            "name": "main/output"
         },
         {
             "@id": "data/b9/b9214658cc453331b62c2282b772a5c063dbd284",
             "@type": "File",
             "exampleOfWork": [
                 {
-                    "@id": "#param-main/sorted/output"
+                    "@id": "#param-main/output"
                 },
                 {
-                    "@id": "#param-main/primary/output"
+                    "@id": "#param-main/sorted/output"
                 }
             ]
         },
         {
-            "@id": "#8cafa083-984e-4801-a0cc-b71315804281",
+            "@id": "#4242f049-43ab-4e2a-bfce-472c52386fcd",
             "@type": "CreateAction",
             "endTime": "2018-10-25T15:46:36.967359",
             "instrument": {
-                "@id": "#packed.cwl#rev"
+                "@id": "packed.cwl#rev"
             },
             "name": "Run of workflow/packed.cwl#main/rev",
             "object": [
@@ -181,7 +190,7 @@
             "startTime": "2018-10-25T15:46:35.314101"
         },
         {
-            "@id": "#packed.cwl#rev",
+            "@id": "packed.cwl#rev",
             "@type": "SoftwareApplication",
             "input": [
                 {
@@ -198,11 +207,13 @@
         {
             "@id": "#param-main/rev/input",
             "@type": "FormalParameter",
+            "additionalType": "File",
             "name": "main/rev/input"
         },
         {
             "@id": "#param-main/rev/output",
             "@type": "FormalParameter",
+            "additionalType": "File",
             "name": "main/rev/output"
         },
         {
@@ -210,19 +221,19 @@
             "@type": "File",
             "exampleOfWork": [
                 {
-                    "@id": "#param-main/sorted/input"
+                    "@id": "#param-main/rev/output"
                 },
                 {
-                    "@id": "#param-main/rev/output"
+                    "@id": "#param-main/sorted/input"
                 }
             ]
         },
         {
-            "@id": "#1e8d2c4b-d2e2-4db9-9f0d-dc319f308b4a",
+            "@id": "#4efd5178-0990-4ff1-92d2-94ed0b4823e6",
             "@type": "CreateAction",
             "endTime": "2018-10-25T15:46:38.069110",
             "instrument": {
-                "@id": "#packed.cwl#sorted"
+                "@id": "packed.cwl#sorted"
             },
             "name": "Run of workflow/packed.cwl#main/sorted",
             "object": [
@@ -241,7 +252,7 @@
             "startTime": "2018-10-25T15:46:36.975235"
         },
         {
-            "@id": "#packed.cwl#sorted",
+            "@id": "packed.cwl#sorted",
             "@type": "SoftwareApplication",
             "input": [
                 {
@@ -261,11 +272,13 @@
         {
             "@id": "#param-main/sorted/input",
             "@type": "FormalParameter",
+            "additionalType": "File",
             "name": "main/sorted/input"
         },
         {
             "@id": "#param-main/sorted/reverse",
             "@type": "FormalParameter",
+            "additionalType": "Boolean",
             "name": "main/sorted/reverse"
         },
         {
@@ -275,11 +288,12 @@
                 "@id": "#param-main/sorted/reverse"
             },
             "name": "main/sorted/reverse",
-            "value": true
+            "value": "True"
         },
         {
             "@id": "#param-main/sorted/output",
             "@type": "FormalParameter",
+            "additionalType": "File",
             "name": "main/sorted/output"
         }
     ]
