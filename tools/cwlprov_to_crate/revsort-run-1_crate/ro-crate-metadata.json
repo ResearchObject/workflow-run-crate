@@ -4,7 +4,7 @@
         {
             "@id": "./",
             "@type": "Dataset",
-            "datePublished": "2022-04-27T11:03:44+00:00",
+            "datePublished": "2022-05-06T10:10:52+00:00",
             "hasPart": [
                 {
                     "@id": "packed.cwl"
@@ -16,13 +16,7 @@
                     "@id": "data/b9/b9214658cc453331b62c2282b772a5c063dbd284"
                 },
                 {
-                    "@id": "packed.cwl#rev"
-                },
-                {
                     "@id": "data/97/97fe1b50b4582cebc7d853796ebd62e3e163aa3f"
-                },
-                {
-                    "@id": "packed.cwl#sorted"
                 }
             ],
             "mainEntity": {
@@ -30,7 +24,7 @@
             },
             "mentions": [
                 {
-                    "@id": "#9d739860-47af-4064-bf55-5f0de03226d8"
+                    "@id": "#c164c8b5-1860-4168-a9e3-bd9dfe55ef36"
                 }
             ]
         },
@@ -58,10 +52,10 @@
             ],
             "hasPart": [
                 {
-                    "@id": "packed.cwl#rev"
+                    "@id": "packed.cwl#main/sorted"
                 },
                 {
-                    "@id": "packed.cwl#sorted"
+                    "@id": "packed.cwl#main/rev"
                 }
             ],
             "input": [
@@ -96,7 +90,7 @@
             "version": "v1.0"
         },
         {
-            "@id": "#9d739860-47af-4064-bf55-5f0de03226d8",
+            "@id": "#c164c8b5-1860-4168-a9e3-bd9dfe55ef36",
             "@type": "CreateAction",
             "endTime": "2018-10-25T15:46:43.020168",
             "instrument": {
@@ -170,11 +164,11 @@
             ]
         },
         {
-            "@id": "#4242f049-43ab-4e2a-bfce-472c52386fcd",
+            "@id": "#9d2c8783-cb98-4108-bf67-db7146b47e49",
             "@type": "CreateAction",
             "endTime": "2018-10-25T15:46:36.967359",
             "instrument": {
-                "@id": "packed.cwl#rev"
+                "@id": "packed.cwl#main/rev"
             },
             "name": "Run of workflow/packed.cwl#main/rev",
             "object": [
@@ -190,14 +184,14 @@
             "startTime": "2018-10-25T15:46:35.314101"
         },
         {
-            "@id": "packed.cwl#rev",
+            "@id": "packed.cwl#main/rev",
             "@type": "SoftwareApplication",
             "input": [
                 {
                     "@id": "#param-main/rev/input"
                 }
             ],
-            "name": "packed.cwl#rev",
+            "name": "packed.cwl#main/rev",
             "output": [
                 {
                     "@id": "#param-main/rev/output"
@@ -229,11 +223,11 @@
             ]
         },
         {
-            "@id": "#4efd5178-0990-4ff1-92d2-94ed0b4823e6",
+            "@id": "#ed21d24d-7e0c-4e09-9a7a-ee7eeb7ac459",
             "@type": "CreateAction",
             "endTime": "2018-10-25T15:46:38.069110",
             "instrument": {
-                "@id": "packed.cwl#sorted"
+                "@id": "packed.cwl#main/sorted"
             },
             "name": "Run of workflow/packed.cwl#main/sorted",
             "object": [
@@ -252,7 +246,7 @@
             "startTime": "2018-10-25T15:46:36.975235"
         },
         {
-            "@id": "packed.cwl#sorted",
+            "@id": "packed.cwl#main/sorted",
             "@type": "SoftwareApplication",
             "input": [
                 {
@@ -262,7 +256,7 @@
                     "@id": "#param-main/sorted/reverse"
                 }
             ],
-            "name": "packed.cwl#sorted",
+            "name": "packed.cwl#main/sorted",
             "output": [
                 {
                     "@id": "#param-main/sorted/output"

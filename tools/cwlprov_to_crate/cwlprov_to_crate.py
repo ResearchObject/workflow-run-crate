@@ -23,7 +23,7 @@ from pathlib import Path
 # from cwl_utils.parser import load_document_by_uri
 from rocrate.rocrate import ROCrate
 from rocrate.model.contextentity import ContextEntity
-from rocrate.model.data_entity import DataEntity
+from rocrate.model.softwareapplication import SoftwareApplication
 
 
 class Thing:
@@ -438,14 +438,12 @@ def add_action(crate, source, activity, parent_instrument=None):
         "startTime": activity.start_time,
         "endTime": activity.end_time,
     }))
-    try:
-        step = activity.plan.id_.strip().split("/", 1)[1]
-    except IndexError:
+    if isinstance(activity, WorkflowRun):
         instrument = workflow
     else:
+        step = activity.plan.id_.strip().split(":", 1)[-1]
         instrument_id = f"{workflow.id}#{step}"
-        instrument = crate.add(DataEntity(crate, instrument_id, properties={
-            "@type": "SoftwareApplication",
+        instrument = crate.add(SoftwareApplication(crate, instrument_id, properties={
             "name": instrument_id,
         }))
     action["instrument"] = instrument
