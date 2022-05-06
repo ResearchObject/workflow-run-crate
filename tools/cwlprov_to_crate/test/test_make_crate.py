@@ -166,7 +166,7 @@ def test_param_types(data_dir, tmpdir):
     for obj in objects:
         assert "PropertyValue" in obj.type
     obj_map = {_.id.rsplit("/", 1)[-1]: _ for _ in objects}
-    # assert obj_map["in_array"]["value"] == ["foo", "bar"]
+    assert obj_map["in_array"]["value"] == ["foo", "bar"]
     assert obj_map["in_any"]["value"] == "tar"
     assert obj_map["in_str"]["value"] == "spam"
     assert obj_map["in_bool"]["value"] == "True"
