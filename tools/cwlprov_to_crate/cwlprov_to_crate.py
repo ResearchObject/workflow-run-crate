@@ -488,13 +488,15 @@ def make_crate(args):
     crate = ROCrate(gen_preview=False)
     wf_source = args.root / "workflow" / WORKFLOW_BASENAME
     cwl_defs = get_workflow(wf_source)
-    workflow = crate.add_workflow(
-        wf_source, wf_source.name, main=True, lang="cwl",
+    properties = {
+        "@type": ["File", "SoftwareSourceCode", "ComputationalWorkflow", "HowTo"],
+        # How to map to the original workflow file in "snapshot"?
+        "name": args.workflow_name or args.root.name
+    }
+    crate.add_workflow(
+        wf_source, wf_source.name, main=True, lang="cwl", properties=properties,
         lang_version=cwl_defs["main"].cwlVersion, gen_cwl=False
     )
-    workflow["@type"].append("HowTo")
-    # How to map to the original workflow file in "snapshot"?
-    workflow["name"] = args.workflow_name or args.root.name
     if args.license:
         crate.root_dataset["license"] = args.license
     prov = Provenance(args.root / "metadata" / "provenance" / "primary.cwlprov.json")
