@@ -4,7 +4,7 @@
         {
             "@id": "./",
             "@type": "Dataset",
-            "datePublished": "2022-05-06T10:10:52+00:00",
+            "datePublished": "2022-05-10T08:24:16+00:00",
             "hasPart": [
                 {
                     "@id": "packed.cwl"
@@ -24,7 +24,7 @@
             },
             "mentions": [
                 {
-                    "@id": "#c164c8b5-1860-4168-a9e3-bd9dfe55ef36"
+                    "@id": "#814d809d-b858-4fc5-9587-f4f9220d477e"
                 }
             ]
         },
@@ -48,14 +48,15 @@
             "@type": [
                 "File",
                 "SoftwareSourceCode",
-                "ComputationalWorkflow"
+                "ComputationalWorkflow",
+                "HowTo"
             ],
             "hasPart": [
                 {
-                    "@id": "packed.cwl#main/sorted"
+                    "@id": "packed.cwl#sorttool.cwl"
                 },
                 {
-                    "@id": "packed.cwl#main/rev"
+                    "@id": "packed.cwl#revtool.cwl"
                 }
             ],
             "input": [
@@ -74,7 +75,15 @@
             ],
             "programmingLanguage": {
                 "@id": "https://w3id.org/workflowhub/workflow-ro-crate#cwl"
-            }
+            },
+            "step": [
+                {
+                    "@id": "packed.cwl#main/rev"
+                },
+                {
+                    "@id": "packed.cwl#main/sorted"
+                }
+            ]
         },
         {
             "@id": "https://w3id.org/workflowhub/workflow-ro-crate#cwl",
@@ -90,7 +99,7 @@
             "version": "v1.0"
         },
         {
-            "@id": "#c164c8b5-1860-4168-a9e3-bd9dfe55ef36",
+            "@id": "#814d809d-b858-4fc5-9587-f4f9220d477e",
             "@type": "CreateAction",
             "endTime": "2018-10-25T15:46:43.020168",
             "instrument": {
@@ -123,10 +132,10 @@
             "@type": "File",
             "exampleOfWork": [
                 {
-                    "@id": "#param-main/input"
+                    "@id": "#param-main/rev/input"
                 },
                 {
-                    "@id": "#param-main/rev/input"
+                    "@id": "#param-main/input"
                 }
             ]
         },
@@ -156,19 +165,19 @@
             "@type": "File",
             "exampleOfWork": [
                 {
-                    "@id": "#param-main/output"
+                    "@id": "#param-main/sorted/output"
                 },
                 {
-                    "@id": "#param-main/sorted/output"
+                    "@id": "#param-main/output"
                 }
             ]
         },
         {
-            "@id": "#9d2c8783-cb98-4108-bf67-db7146b47e49",
+            "@id": "#d06a5ab3-4bc3-4766-b10a-44f001677b4c",
             "@type": "CreateAction",
             "endTime": "2018-10-25T15:46:36.967359",
             "instrument": {
-                "@id": "packed.cwl#main/rev"
+                "@id": "packed.cwl#revtool.cwl"
             },
             "name": "Run of workflow/packed.cwl#main/rev",
             "object": [
@@ -184,19 +193,27 @@
             "startTime": "2018-10-25T15:46:35.314101"
         },
         {
-            "@id": "packed.cwl#main/rev",
+            "@id": "packed.cwl#revtool.cwl",
             "@type": "SoftwareApplication",
+            "description": "Reverse each line using the `rev` command",
             "input": [
                 {
                     "@id": "#param-main/rev/input"
                 }
             ],
-            "name": "packed.cwl#main/rev",
+            "name": "revtool.cwl",
             "output": [
                 {
                     "@id": "#param-main/rev/output"
                 }
             ]
+        },
+        {
+            "@id": "packed.cwl#main/rev",
+            "@type": "HowToStep",
+            "itemListElement": {
+                "@id": "packed.cwl#revtool.cwl"
+            }
         },
         {
             "@id": "#param-main/rev/input",
@@ -223,11 +240,11 @@
             ]
         },
         {
-            "@id": "#ed21d24d-7e0c-4e09-9a7a-ee7eeb7ac459",
+            "@id": "#d32577f7-f729-42b5-965a-ef215f9621c8",
             "@type": "CreateAction",
             "endTime": "2018-10-25T15:46:38.069110",
             "instrument": {
-                "@id": "packed.cwl#main/sorted"
+                "@id": "packed.cwl#sorttool.cwl"
             },
             "name": "Run of workflow/packed.cwl#main/sorted",
             "object": [
@@ -246,8 +263,9 @@
             "startTime": "2018-10-25T15:46:36.975235"
         },
         {
-            "@id": "packed.cwl#main/sorted",
+            "@id": "packed.cwl#sorttool.cwl",
             "@type": "SoftwareApplication",
+            "description": "Sort lines using the `sort` command",
             "input": [
                 {
                     "@id": "#param-main/sorted/input"
@@ -256,12 +274,19 @@
                     "@id": "#param-main/sorted/reverse"
                 }
             ],
-            "name": "packed.cwl#main/sorted",
+            "name": "sorttool.cwl",
             "output": [
                 {
                     "@id": "#param-main/sorted/output"
                 }
             ]
+        },
+        {
+            "@id": "packed.cwl#main/sorted",
+            "@type": "HowToStep",
+            "itemListElement": {
+                "@id": "packed.cwl#sorttool.cwl"
+            }
         },
         {
             "@id": "#param-main/sorted/input",

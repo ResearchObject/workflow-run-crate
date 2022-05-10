@@ -65,12 +65,20 @@ def test_make_crate(data_dir, tmpdir):
             wf_input_file = entity
     wf_output_file = wf_results[0]
     assert "File" in wf_output_file.type
+    steps = workflow["step"]
+    assert len(steps) == 2
+    implements = {}
+    for s in steps:
+        assert "HowToStep" in s.type
+        instrument = s["itemListElement"]
+        implements[instrument.id] = s
     for a in actions:
         if a is wf_action:
             continue
         instrument = a["instrument"]
         assert instrument in tools
-        if instrument.id.endswith("rev"):
+        step = implements[instrument.id]
+        if step.id.endswith("rev"):
             objects = a["object"]
             results = a["result"]
             assert len(objects) == 1
@@ -79,7 +87,7 @@ def test_make_crate(data_dir, tmpdir):
             assert rev_input_file is wf_input_file
             rev_output_file = results[0]
             assert "File" in rev_output_file.type
-        elif instrument.id.endswith("sorted"):
+        elif step.id.endswith("sorted"):
             objects = a["object"]
             results = a["result"]
             assert len(objects) == 2
@@ -93,7 +101,7 @@ def test_make_crate(data_dir, tmpdir):
             sorted_output_file = results[0]
             assert sorted_output_file is wf_output_file
         else:
-            assert False, f"unexpected instrument for action {a.id}"
+            assert False, f"unexpected step id for action {a.id}: {step.id}"
 
 
 def test_no_input(data_dir, tmpdir):

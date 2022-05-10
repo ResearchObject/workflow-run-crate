@@ -20,10 +20,12 @@ import argparse
 import json
 from pathlib import Path
 
-# from cwl_utils.parser import load_document_by_uri
+from cwl_utils.parser import load_document_by_yaml
 from rocrate.rocrate import ROCrate
 from rocrate.model.contextentity import ContextEntity
 from rocrate.model.softwareapplication import SoftwareApplication
+
+WORKFLOW_BASENAME = "packed.cwl"
 
 
 class Thing:
@@ -335,17 +337,25 @@ class Provenance:
                         act.steps.append(step)
 
 
-def get_workflow(root_dir):
-    wf_dir = root_dir / "workflow"
-    wf_path = wf_dir / "packed.cwl"
-    # wf_def = load_document_by_uri(wf_path)
-    input_path = wf_dir / "primary-job.json"
-    output_path = wf_dir / "primary-output.json"
-    with open(input_path) as f:
-        input_data = json.load(f)
-    with open(output_path) as f:
-        output_data = json.load(f)
-    return wf_path, input_data, output_data
+def get_workflow(wf_path):
+    """\
+    Read the packed CWL workflow.
+
+    Returns a dictionary where tools / workflows are mapped by their ids.
+
+    Does not use load_document_by_uri, so we can hack the json to work around
+    issues.
+    """
+    with open(wf_path, "rt") as f:
+        json_wf = json.load(f)
+    graph = json_wf.get("$graph", [json_wf])
+    # https://github.com/common-workflow-language/cwltool/pull/1506
+    for n in graph:
+        n.pop("$namespaces", None)
+    defs = load_document_by_yaml(json_wf, str(wf_path))
+    if not isinstance(defs, list):
+        defs = [defs]
+    return {_.id.rsplit("#", 1)[-1]: _ for _ in defs}
 
 
 def read_prov(root_dir):
@@ -430,7 +440,7 @@ def add_params(crate, source, prov_params):
     return wf_params, action_params
 
 
-def add_action(crate, source, activity, parent_instrument=None):
+def add_action(crate, source, activity, cwl_defs, parent_instrument=None):
     workflow = crate.mainEntity
     action = crate.add(ContextEntity(crate, properties={
         "@type": "CreateAction",
@@ -441,30 +451,48 @@ def add_action(crate, source, activity, parent_instrument=None):
     if isinstance(activity, WorkflowRun):
         instrument = workflow
     else:
-        step = activity.plan.id_.strip().split(":", 1)[-1]
-        instrument_id = f"{workflow.id}#{step}"
-        instrument = crate.add(SoftwareApplication(crate, instrument_id, properties={
-            "name": instrument_id,
+        step_fragment = activity.plan.id_.strip().split(":", 1)[-1]
+        step_id = f"{workflow.id}#{step_fragment}"
+        parent_instrument_id = parent_instrument.id
+        if parent_instrument_id == workflow.id:
+            parent_instrument_id = "main"
+        cwl_wf = cwl_defs.get(parent_instrument_id)
+        if cwl_wf:
+            tool_map = {s.id.rsplit("#", 1)[-1]: s.run.rsplit("#", 1)[-1]
+                        for s in cwl_wf.steps}
+            tool_name = tool_map[step_fragment]
+            instrument_id = f"{workflow.id}#{tool_name}"
+            properties = {"name": tool_name}
+            cwl_tool = cwl_defs.get(tool_name)
+            if cwl_tool and cwl_tool.doc:
+                properties["description"] = cwl_tool.doc
+        else:
+            instrument_id = properties = None
+        instrument = crate.add(SoftwareApplication(crate, instrument_id, properties=properties))
+        step = crate.add(ContextEntity(crate, step_id, properties={
+            "@type": "HowToStep"
         }))
+        step["itemListElement"] = instrument
     action["instrument"] = instrument
     if parent_instrument:
         update_property(parent_instrument, "hasPart", instrument)
+        update_property(parent_instrument, "step", step)
     instrument["input"], action["object"] = add_params(crate, source, activity.in_params)
     instrument["output"], action["result"] = add_params(crate, source, activity.out_params)
     for step in activity.steps:
-        add_action(crate, source, step, parent_instrument=instrument)
+        add_action(crate, source, step, cwl_defs, parent_instrument=instrument)
     return action
 
 
 def make_crate(args):
     crate = ROCrate(gen_preview=False)
-    wf_source, input_data, output_data = get_workflow(args.root)
-    with open(wf_source) as f:
-        wf_data = json.load(f)
+    wf_source = args.root / "workflow" / WORKFLOW_BASENAME
+    cwl_defs = get_workflow(wf_source)
     workflow = crate.add_workflow(
         wf_source, wf_source.name, main=True, lang="cwl",
-        lang_version=wf_data["cwlVersion"], gen_cwl=False
+        lang_version=cwl_defs["main"].cwlVersion, gen_cwl=False
     )
+    workflow["@type"].append("HowTo")
     # How to map to the original workflow file in "snapshot"?
     workflow["name"] = args.workflow_name or args.root.name
     if args.license:
@@ -474,7 +502,7 @@ def make_crate(args):
     if len(sel) != 1:
         raise ValueError(f"Unexpected number of workflow runs: {len(sel)}")
     workflow_run = sel[0]
-    action = add_action(crate, args.root, workflow_run)
+    action = add_action(crate, args.root, workflow_run, cwl_defs)
     crate.root_dataset["mentions"] = [action]
     if args.output.suffix == ".zip":
         crate.write_zip(args.output)
