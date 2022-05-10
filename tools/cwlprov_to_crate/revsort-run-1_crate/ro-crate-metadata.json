@@ -4,7 +4,7 @@
         {
             "@id": "./",
             "@type": "Dataset",
-            "datePublished": "2022-05-10T08:24:16+00:00",
+            "datePublished": "2022-05-10T12:53:12+00:00",
             "hasPart": [
                 {
                     "@id": "packed.cwl"
@@ -24,7 +24,7 @@
             },
             "mentions": [
                 {
-                    "@id": "#814d809d-b858-4fc5-9587-f4f9220d477e"
+                    "@id": "#9b2bf88a-52c3-488d-b5e4-2606f0ff79fe"
                 }
             ]
         },
@@ -53,10 +53,10 @@
             ],
             "hasPart": [
                 {
-                    "@id": "packed.cwl#sorttool.cwl"
+                    "@id": "packed.cwl#revtool.cwl"
                 },
                 {
-                    "@id": "packed.cwl#revtool.cwl"
+                    "@id": "packed.cwl#sorttool.cwl"
                 }
             ],
             "input": [
@@ -99,7 +99,7 @@
             "version": "v1.0"
         },
         {
-            "@id": "#814d809d-b858-4fc5-9587-f4f9220d477e",
+            "@id": "#9b2bf88a-52c3-488d-b5e4-2606f0ff79fe",
             "@type": "CreateAction",
             "endTime": "2018-10-25T15:46:43.020168",
             "instrument": {
@@ -165,15 +165,15 @@
             "@type": "File",
             "exampleOfWork": [
                 {
-                    "@id": "#param-main/sorted/output"
+                    "@id": "#param-main/output"
                 },
                 {
-                    "@id": "#param-main/output"
+                    "@id": "#param-main/sorted/output"
                 }
             ]
         },
         {
-            "@id": "#d06a5ab3-4bc3-4766-b10a-44f001677b4c",
+            "@id": "#c8bc7ed1-f8e2-400b-a252-100863b68f8c",
             "@type": "CreateAction",
             "endTime": "2018-10-25T15:46:36.967359",
             "instrument": {
@@ -196,6 +196,9 @@
             "@id": "packed.cwl#revtool.cwl",
             "@type": "SoftwareApplication",
             "description": "Reverse each line using the `rev` command",
+            "exampleOfWork": {
+                "@id": "packed.cwl#main/rev"
+            },
             "input": [
                 {
                     "@id": "#param-main/rev/input"
@@ -210,10 +213,7 @@
         },
         {
             "@id": "packed.cwl#main/rev",
-            "@type": "HowToStep",
-            "itemListElement": {
-                "@id": "packed.cwl#revtool.cwl"
-            }
+            "@type": "HowToStep"
         },
         {
             "@id": "#param-main/rev/input",
@@ -240,7 +240,7 @@
             ]
         },
         {
-            "@id": "#d32577f7-f729-42b5-965a-ef215f9621c8",
+            "@id": "#161e20e0-1d17-4de9-9acb-29b236e0de2c",
             "@type": "CreateAction",
             "endTime": "2018-10-25T15:46:38.069110",
             "instrument": {
@@ -266,6 +266,9 @@
             "@id": "packed.cwl#sorttool.cwl",
             "@type": "SoftwareApplication",
             "description": "Sort lines using the `sort` command",
+            "exampleOfWork": {
+                "@id": "packed.cwl#main/sorted"
+            },
             "input": [
                 {
                     "@id": "#param-main/sorted/input"
@@ -283,10 +286,7 @@
         },
         {
             "@id": "packed.cwl#main/sorted",
-            "@type": "HowToStep",
-            "itemListElement": {
-                "@id": "packed.cwl#sorttool.cwl"
-            }
+            "@type": "HowToStep"
         },
         {
             "@id": "#param-main/sorted/input",

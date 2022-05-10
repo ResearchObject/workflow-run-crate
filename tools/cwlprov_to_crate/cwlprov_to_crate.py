@@ -472,7 +472,7 @@ def add_action(crate, source, activity, cwl_defs, parent_instrument=None):
         step = crate.add(ContextEntity(crate, step_id, properties={
             "@type": "HowToStep"
         }))
-        step["itemListElement"] = instrument
+        instrument["exampleOfWork"] = step
     action["instrument"] = instrument
     if parent_instrument:
         update_property(parent_instrument, "hasPart", instrument)

@@ -67,17 +67,12 @@ def test_make_crate(data_dir, tmpdir):
     assert "File" in wf_output_file.type
     steps = workflow["step"]
     assert len(steps) == 2
-    implements = {}
-    for s in steps:
-        assert "HowToStep" in s.type
-        instrument = s["itemListElement"]
-        implements[instrument.id] = s
     for a in actions:
         if a is wf_action:
             continue
         instrument = a["instrument"]
         assert instrument in tools
-        step = implements[instrument.id]
+        step = instrument["exampleOfWork"]
         if step.id.endswith("rev"):
             objects = a["object"]
             results = a["result"]
