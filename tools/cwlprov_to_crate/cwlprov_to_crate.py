@@ -36,7 +36,10 @@ class Thing:
 
 
 class Agent(Thing):
-    pass
+
+    def __init__(self, id_, label=None):
+        super().__init__(id_, label=label)
+        self.responsible = None
 
 
 class SoftwareAgent(Agent):
@@ -44,6 +47,10 @@ class SoftwareAgent(Agent):
     def __init__(self, id_, label=None, image=None):
         super().__init__(id_, label=label)
         self.image = image
+        self.starter = None
+        self.ender = None
+        self.start_time = None
+        self.end_time = None
 
 
 class WorkflowEngine(SoftwareAgent):
@@ -158,11 +165,15 @@ class Provenance:
         self.agents = self.__read_agents()
         self.activities = self.__read_activities()
         self.entities = self.__read_entities()
+        self.items = {}
+        for d in self.agents, self.activities, self.entities:
+            self.items.update(d)
         self.__read_members()
         self.__read_specializations()
         self.__read_start_end()
         self.__read_params()
         self.__read_associations()
+        self.__read_delegations()
 
     @staticmethod
     def get_list(entry, key):
@@ -273,16 +284,21 @@ class Provenance:
                 specific.general_entity = general
 
     def __read_start_end(self):
+        # "prov:activity" and "prov:starter" point to both activities and agents
         for dummy, record in self.data["wasStartedBy"].items():
-            activity = self.activities.get(record.get("prov:activity"))
-            if activity:
-                activity.starter = self.agents.get(record.get("prov:starter"))
-                activity.start_time = record.get("prov:time")
+            started = self.items.get(record.get("prov:activity"))
+            if started:
+                starter = self.items.get(record.get("prov:starter"))
+                if starter:
+                    started.starter = starter
+                started.start_time = record.get("prov:time")
         for dummy, record in self.data["wasEndedBy"].items():
-            activity = self.activities.get(record.get("prov:activity"))
-            if activity:
-                activity.ender = self.agents.get(record.get("prov:ender"))
-                activity.end_time = record.get("prov:time")
+            ended = self.items.get(record.get("prov:activity"))
+            if ended:
+                ender = self.items.get(record.get("prov:ender"))
+                if ender:
+                    ended.ender = ender
+                ended.end_time = record.get("prov:time")
 
     def __read_params(self):
         # In the case of a single tool run, cwltool reports one WorkflowRun
@@ -335,6 +351,12 @@ class Provenance:
                 for sp in plan.subprocesses:
                     for step in is_plan_for[sp.id_]:
                         act.steps.append(step)
+
+    def __read_delegations(self):
+        for dummy, record in self.data.get("actedOnBehalfOf", {}).items():
+            delegate = self.agents.get(record.get("prov:delegate"))
+            if delegate:
+                delegate.responsible = self.agents.get(record.get("prov:responsible"))
 
 
 def get_workflow(wf_path):
