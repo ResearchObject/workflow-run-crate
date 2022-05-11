@@ -18,6 +18,7 @@ Generate a Workflow Run RO-Crate from a CWLProv RO.
 
 import argparse
 import json
+from itertools import chain
 from pathlib import Path
 
 from cwl_utils.parser import load_document_by_yaml
@@ -222,6 +223,8 @@ class Provenance:
     def __read_activities(self):
         activities = {}
         for id_, record in self.data["activity"].items():
+            if isinstance(record, list) and "prov:has_provenance" in chain(*record):
+                raise RuntimeError("subworkflows not supported yet")
             types = set(Provenance.get_types(record))
             if "wfprov:WorkflowRun" in types:
                 activities[id_] = WorkflowRun(id_, label=record.get("prov:label"))
