@@ -34,6 +34,9 @@ class Thing:
         self.id_ = id_
         self.label = label
 
+    def __repr__(self):
+        return f"{self.__class__.__name__}({self.id_!r})"
+
 
 class Agent(Thing):
 
@@ -68,7 +71,6 @@ class Activity(Thing):
 
     def __init__(self, id_, label=None):
         super().__init__(id_, label=label)
-        self.agent = None
         self.plan = None
         self.starter = None
         self.ender = None
@@ -146,12 +148,18 @@ class KeyEntityPair(Entity):
         self.key = key
         self.entity = entity
 
+    def __repr__(self):
+        return f"{self.__class__.__name__}({self.id_!r}, {self.key!r}, {self.entity!r})"
+
 
 class Dictionary(Collection):
 
     def __init__(self, id_, dict_members):
         super().__init__(id_)
         self.dict_members = dict_members
+
+    def __repr__(self):
+        return f"{self.__class__.__name__}({self.id_!r}, {self.dict_members!r})"
 
 
 class Provenance:
