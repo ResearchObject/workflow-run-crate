@@ -57,6 +57,9 @@ def test_main(data_dir, tmpdir):
     assert len(sel) == 1
     wf_action = sel[0]
     assert engine_action["result"] is wf_action
+    control_actions = engine_action["object"]
+    assert len(control_actions) == 2
+    assert all(_.type == "ControlAction" for _ in control_actions)
     wf_objects = wf_action["object"]
     wf_results = wf_action["result"]
     assert len(wf_objects) == 2
@@ -72,12 +75,16 @@ def test_main(data_dir, tmpdir):
     assert "File" in wf_output_file.type
     steps = workflow["step"]
     assert len(steps) == 2
+    assert all(_.type == "HowToStep" for _ in steps)
     for a in actions:
         if a is wf_action:
             continue
         instrument = a["instrument"]
         assert instrument in tools
         step = instrument["exampleOfWork"]
+        sel = [_ for _ in control_actions if _["instrument"] is step]
+        assert len(sel) == 1
+        assert sel[0]["object"] is a
         if step.id.endswith("rev"):
             objects = a["object"]
             results = a["result"]

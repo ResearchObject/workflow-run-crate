@@ -506,6 +506,13 @@ class ProvCrateBuilder:
                 "@type": "HowToStep"
             }))
             instrument["exampleOfWork"] = step
+            control_action = crate.add(ContextEntity(crate, properties={
+                "@type": "ControlAction",
+                "name": f"orchestrate {tool_name}",
+            }))
+            control_action["instrument"] = step
+            update_property(control_action, "object", action)
+            update_property(roc_engine_run, "object", control_action)
         action["instrument"] = instrument
         if parent_instrument:
             update_property(parent_instrument, "hasPart", instrument)
