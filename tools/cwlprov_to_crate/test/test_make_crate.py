@@ -46,12 +46,17 @@ def test_make_crate(data_dir, tmpdir):
     for entity in inputs + outputs:
         assert "FormalParameter" in entity.type
     assert workflow["programmingLanguage"].id == CWL_ID
+    sel = [_ for _ in crate.contextual_entities if "OrganizeAction" in _.type]
+    assert len(sel) == 1
+    engine_action = sel[0]
+    assert crate.root_dataset["mentions"] == [engine_action]
+    assert "SoftwareApplication" in engine_action["instrument"].type
     actions = [_ for _ in crate.contextual_entities if "CreateAction" in _.type]
     assert len(actions) == 3
     sel = [_ for _ in actions if _["instrument"] is workflow]
     assert len(sel) == 1
     wf_action = sel[0]
-    assert crate.root_dataset["mentions"] == [wf_action]
+    assert engine_action["result"] is wf_action
     wf_objects = wf_action["object"]
     wf_results = wf_action["result"]
     assert len(wf_objects) == 2
@@ -116,10 +121,14 @@ def test_no_input(data_dir, tmpdir):
     assert len(outputs) == 1
     out = outputs[0]
     assert "FormalParameter" in out.type
+    sel = [_ for _ in crate.contextual_entities if "OrganizeAction" in _.type]
+    assert len(sel) == 1
+    engine_action = sel[0]
+    assert crate.root_dataset["mentions"] == [engine_action]
     actions = [_ for _ in crate.contextual_entities if "CreateAction" in _.type]
     assert len(actions) == 1
     wf_action = actions[0]
-    assert crate.root_dataset["mentions"] == [wf_action]
+    assert engine_action["result"] is wf_action
     assert not wf_action.get("object")
     wf_results = wf_action["result"]
     assert len(wf_results) == 1
@@ -163,7 +172,6 @@ def test_param_types(data_dir, tmpdir):
     actions = [_ for _ in crate.contextual_entities if "CreateAction" in _.type]
     assert len(actions) == 1
     action = actions[0]
-    assert crate.root_dataset["mentions"] == [action]
     objects = action["object"]
     assert len(objects) == 11
     for obj in objects:

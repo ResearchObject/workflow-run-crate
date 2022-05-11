@@ -475,6 +475,7 @@ def add_params(crate, source, prov_params):
 
 def add_action(crate, source, activity, cwl_defs, parent_instrument=None):
     workflow = crate.mainEntity
+    roc_engine_run = crate.root_dataset["mentions"][0]
     action = crate.add(ContextEntity(crate, properties={
         "@type": "CreateAction",
         "name": activity.label,
@@ -483,6 +484,7 @@ def add_action(crate, source, activity, cwl_defs, parent_instrument=None):
     }))
     if isinstance(activity, WorkflowRun):
         instrument = workflow
+        roc_engine_run["result"] = action
     else:
         step_fragment = activity.plan.id_.strip().split(":", 1)[-1]
         step_id = f"{workflow.id}#{step_fragment}"
@@ -533,12 +535,25 @@ def make_crate(args):
     if args.license:
         crate.root_dataset["license"] = args.license
     prov = Provenance(args.root / "metadata" / "provenance" / "primary.cwlprov.json")
+    sel = [_ for _ in prov.agents.values() if type(_) == WorkflowEngine]
+    if len(sel) != 1:
+        raise ValueError(f"Unexpected number of workflow engines: {len(sel)}")
+    engine = sel[0]
+    roc_engine = crate.add(SoftwareApplication(crate, properties={
+        "name": engine.label or "workflow engine"
+    }))
+    roc_engine_run = crate.add(ContextEntity(crate, properties={
+        "@type": "OrganizeAction",
+        "name": f"Run of {roc_engine['name']}",
+        "startTime": engine.start_time,
+    }))
+    roc_engine_run["instrument"] = roc_engine
+    crate.root_dataset["mentions"] = [roc_engine_run]
     sel = [_ for _ in prov.activities.values() if type(_) == WorkflowRun]
     if len(sel) != 1:
         raise ValueError(f"Unexpected number of workflow runs: {len(sel)}")
     workflow_run = sel[0]
-    action = add_action(crate, args.root, workflow_run, cwl_defs)
-    crate.root_dataset["mentions"] = [action]
+    add_action(crate, args.root, workflow_run, cwl_defs)
     if args.output.suffix == ".zip":
         crate.write_zip(args.output)
     else:

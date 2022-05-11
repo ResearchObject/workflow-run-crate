@@ -4,7 +4,7 @@
         {
             "@id": "./",
             "@type": "Dataset",
-            "datePublished": "2022-05-10T12:53:12+00:00",
+            "datePublished": "2022-05-11T09:55:21+00:00",
             "hasPart": [
                 {
                     "@id": "packed.cwl"
@@ -24,7 +24,7 @@
             },
             "mentions": [
                 {
-                    "@id": "#9b2bf88a-52c3-488d-b5e4-2606f0ff79fe"
+                    "@id": "#af97796a-318a-4877-8d2e-5ff46001174b"
                 }
             ]
         },
@@ -99,7 +99,24 @@
             "version": "v1.0"
         },
         {
-            "@id": "#9b2bf88a-52c3-488d-b5e4-2606f0ff79fe",
+            "@id": "#fd589c37-2756-41c1-a19d-0ce549739aba",
+            "@type": "SoftwareApplication",
+            "name": "cwltool 1.0.20181012180214"
+        },
+        {
+            "@id": "#af97796a-318a-4877-8d2e-5ff46001174b",
+            "@type": "OrganizeAction",
+            "instrument": {
+                "@id": "#fd589c37-2756-41c1-a19d-0ce549739aba"
+            },
+            "name": "Run of cwltool 1.0.20181012180214",
+            "result": {
+                "@id": "#70d32604-b51b-4f8c-bf4d-882bf357bc96"
+            },
+            "startTime": "2018-10-25T15:46:35.210973"
+        },
+        {
+            "@id": "#70d32604-b51b-4f8c-bf4d-882bf357bc96",
             "@type": "CreateAction",
             "endTime": "2018-10-25T15:46:43.020168",
             "instrument": {
@@ -132,10 +149,10 @@
             "@type": "File",
             "exampleOfWork": [
                 {
-                    "@id": "#param-main/rev/input"
+                    "@id": "#param-main/input"
                 },
                 {
-                    "@id": "#param-main/input"
+                    "@id": "#param-main/rev/input"
                 }
             ]
         },
@@ -165,15 +182,15 @@
             "@type": "File",
             "exampleOfWork": [
                 {
-                    "@id": "#param-main/output"
+                    "@id": "#param-main/sorted/output"
                 },
                 {
-                    "@id": "#param-main/sorted/output"
+                    "@id": "#param-main/output"
                 }
             ]
         },
         {
-            "@id": "#c8bc7ed1-f8e2-400b-a252-100863b68f8c",
+            "@id": "#69136e1b-8d58-41e4-93c8-908836fefbf7",
             "@type": "CreateAction",
             "endTime": "2018-10-25T15:46:36.967359",
             "instrument": {
@@ -240,7 +257,7 @@
             ]
         },
         {
-            "@id": "#161e20e0-1d17-4de9-9acb-29b236e0de2c",
+            "@id": "#16e720d9-b9f6-4523-8d50-d35211ed97a9",
             "@type": "CreateAction",
             "endTime": "2018-10-25T15:46:38.069110",
             "instrument": {
