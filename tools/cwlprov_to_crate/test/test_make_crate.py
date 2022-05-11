@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from cwlprov_to_crate import make_crate
+from cwlprov_to_crate import main
 from rocrate.rocrate import ROCrate
 
 
@@ -23,13 +23,13 @@ class Args:
     pass
 
 
-def test_make_crate(data_dir, tmpdir):
+def test_main(data_dir, tmpdir):
     args = Args()
     args.root = data_dir / "revsort-run-1"
     args.output = tmpdir / "revsort-run-1-crate"
     args.license = "Apache-2.0"
     args.workflow_name = "RevSort"
-    make_crate(args)
+    main(args)
     crate = ROCrate(args.output)
     assert crate.root_dataset["license"] == "Apache-2.0"
     workflow = crate.mainEntity
@@ -110,7 +110,7 @@ def test_no_input(data_dir, tmpdir):
     args.output = tmpdir / "no-input-run-1-crate"
     args.license = "Apache-2.0"
     args.workflow_name = None
-    make_crate(args)
+    main(args)
     crate = ROCrate(args.output)
     # The "workflow" is actually a single tool; should we generate a Process
     # Run Crate instead in this case?
@@ -144,7 +144,7 @@ def test_param_types(data_dir, tmpdir):
     args.output = tmpdir / "type-zoo-run-1-crate"
     args.license = "Apache-2.0"
     args.workflow_name = None
-    make_crate(args)
+    main(args)
     crate = ROCrate(args.output)
     workflow = crate.mainEntity
     inputs = workflow["input"]

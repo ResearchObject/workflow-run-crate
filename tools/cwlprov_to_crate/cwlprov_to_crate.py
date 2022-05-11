@@ -433,131 +433,132 @@ def convert_value(prov_param):
         raise RuntimeError(f"No value to convert for {prov_param}")
 
 
-def add_params(crate, source, prov_params):
-    wf_params, action_params = [], []
-    for k, v in prov_params.items():
-        path = v.get_path()
-        if path:
-            # TODO: check if there's additional info, e.g. EDAM tags
-            add_type = "File"
-        else:
-            add_type, value = convert_value(v)
-        if not path and not value:
-            continue
-        k = k.split(":", 1)[-1]
-        wf_p = crate.add(ContextEntity(crate, f"#param-{k}", properties={
-            "@type": "FormalParameter",
-            "name": k,
-            "additionalType": add_type,
+class ProvCrateBuilder:
+
+    def __init__(self, root, workflow_name=None, license=None):
+        self.root = root
+        self.workflow_name = workflow_name
+        self.license = license
+        self.wf_path = self.root / "workflow" / WORKFLOW_BASENAME
+        self.cwl_defs = get_workflow(self.wf_path)
+        prov = Provenance(root / "metadata" / "provenance" / "primary.cwlprov.json")
+        sel = [_ for _ in prov.agents.values() if type(_) == WorkflowEngine]
+        if len(sel) != 1:
+            raise ValueError(f"Unexpected number of workflow engines: {len(sel)}")
+        self.engine = sel[0]
+        sel = [_ for _ in prov.activities.values() if type(_) == WorkflowRun]
+        if len(sel) != 1:
+            raise ValueError(f"Unexpected number of workflow runs: {len(sel)}")
+        self.workflow_run = sel[0]
+
+    def build(self):
+        crate = ROCrate(gen_preview=False)
+        crate.add_workflow(
+            self.wf_path, self.wf_path.name, main=True, lang="cwl",
+            lang_version=self.cwl_defs["main"].cwlVersion, gen_cwl=False,
+            properties={
+                "@type": ["File", "SoftwareSourceCode", "ComputationalWorkflow", "HowTo"],
+                # How to map to the original workflow file in "snapshot"?
+                "name": self.workflow_name or self.root.name
+            }
+        )
+        if self.license:
+            crate.root_dataset["license"] = self.license
+        roc_engine = crate.add(SoftwareApplication(crate, properties={
+            "name": self.engine.label or "workflow engine"
         }))
-        wf_params.append(wf_p)
-        if path:
-            action_p = crate.dereference(path.as_posix())
-            if not action_p:
-                action_p = crate.add_file(source / path, path)
+        roc_engine_run = crate.add(ContextEntity(crate, properties={
+            "@type": "OrganizeAction",
+            "name": f"Run of {roc_engine['name']}",
+            "startTime": self.engine.start_time,
+        }))
+        roc_engine_run["instrument"] = roc_engine
+        crate.root_dataset["mentions"] = [roc_engine_run]
+        self.add_action(crate, self.workflow_run)
+        return crate
+
+    def add_action(self, crate, activity, parent_instrument=None):
+        workflow = crate.mainEntity
+        roc_engine_run = crate.root_dataset["mentions"][0]
+        action = crate.add(ContextEntity(crate, properties={
+            "@type": "CreateAction",
+            "name": activity.label,
+            "startTime": activity.start_time,
+            "endTime": activity.end_time,
+        }))
+        if isinstance(activity, WorkflowRun):
+            instrument = workflow
+            roc_engine_run["result"] = action
         else:
-            # FIXME: assuming arrays and records don't have nested structured types
-            if add_type == "PropertyValue":
-                value = [crate.add(ContextEntity(crate, f"#pv-{k}/{nk}", properties={
-                    "@type": "PropertyValue",
-                    "name": f"{k}/{nk}",
-                    "value": nv[1],
-                })) for nk, nv in value.items()]
-            action_p = crate.add(ContextEntity(crate, f"#pv-{k}", properties={
-                "@type": "PropertyValue",
-                "name": k,
+            step_fragment = activity.plan.id_.strip().split(":", 1)[-1]
+            step_id = f"{workflow.id}#{step_fragment}"
+            parent_instrument_id = parent_instrument.id
+            if parent_instrument_id == workflow.id:
+                parent_instrument_id = "main"
+            cwl_wf = self.cwl_defs.get(parent_instrument_id)
+            if cwl_wf:
+                tool_map = {s.id.rsplit("#", 1)[-1]: s.run.rsplit("#", 1)[-1]
+                            for s in cwl_wf.steps}
+                tool_name = tool_map[step_fragment]
+                instrument_id = f"{workflow.id}#{tool_name}"
+                properties = {"name": tool_name}
+                cwl_tool = self.cwl_defs.get(tool_name)
+                if cwl_tool and cwl_tool.doc:
+                    properties["description"] = cwl_tool.doc
+            else:
+                instrument_id = properties = None
+            instrument = crate.add(SoftwareApplication(crate, instrument_id, properties=properties))
+            step = crate.add(ContextEntity(crate, step_id, properties={
+                "@type": "HowToStep"
             }))
-            action_p["value"] = value
-        update_property(action_p, "exampleOfWork", wf_p)
-        action_params.append(action_p)
-    return wf_params, action_params
+            instrument["exampleOfWork"] = step
+        action["instrument"] = instrument
+        if parent_instrument:
+            update_property(parent_instrument, "hasPart", instrument)
+            update_property(parent_instrument, "step", step)
+        instrument["input"], action["object"] = self.add_params(crate, activity.in_params)
+        instrument["output"], action["result"] = self.add_params(crate, activity.out_params)
+        for step in activity.steps:
+            self.add_action(crate, step, parent_instrument=instrument)
 
-
-def add_action(crate, source, activity, cwl_defs, parent_instrument=None):
-    workflow = crate.mainEntity
-    roc_engine_run = crate.root_dataset["mentions"][0]
-    action = crate.add(ContextEntity(crate, properties={
-        "@type": "CreateAction",
-        "name": activity.label,
-        "startTime": activity.start_time,
-        "endTime": activity.end_time,
-    }))
-    if isinstance(activity, WorkflowRun):
-        instrument = workflow
-        roc_engine_run["result"] = action
-    else:
-        step_fragment = activity.plan.id_.strip().split(":", 1)[-1]
-        step_id = f"{workflow.id}#{step_fragment}"
-        parent_instrument_id = parent_instrument.id
-        if parent_instrument_id == workflow.id:
-            parent_instrument_id = "main"
-        cwl_wf = cwl_defs.get(parent_instrument_id)
-        if cwl_wf:
-            tool_map = {s.id.rsplit("#", 1)[-1]: s.run.rsplit("#", 1)[-1]
-                        for s in cwl_wf.steps}
-            tool_name = tool_map[step_fragment]
-            instrument_id = f"{workflow.id}#{tool_name}"
-            properties = {"name": tool_name}
-            cwl_tool = cwl_defs.get(tool_name)
-            if cwl_tool and cwl_tool.doc:
-                properties["description"] = cwl_tool.doc
-        else:
-            instrument_id = properties = None
-        instrument = crate.add(SoftwareApplication(crate, instrument_id, properties=properties))
-        step = crate.add(ContextEntity(crate, step_id, properties={
-            "@type": "HowToStep"
-        }))
-        instrument["exampleOfWork"] = step
-    action["instrument"] = instrument
-    if parent_instrument:
-        update_property(parent_instrument, "hasPart", instrument)
-        update_property(parent_instrument, "step", step)
-    instrument["input"], action["object"] = add_params(crate, source, activity.in_params)
-    instrument["output"], action["result"] = add_params(crate, source, activity.out_params)
-    for step in activity.steps:
-        add_action(crate, source, step, cwl_defs, parent_instrument=instrument)
-    return action
-
-
-def make_crate(args):
-    crate = ROCrate(gen_preview=False)
-    wf_source = args.root / "workflow" / WORKFLOW_BASENAME
-    cwl_defs = get_workflow(wf_source)
-    properties = {
-        "@type": ["File", "SoftwareSourceCode", "ComputationalWorkflow", "HowTo"],
-        # How to map to the original workflow file in "snapshot"?
-        "name": args.workflow_name or args.root.name
-    }
-    crate.add_workflow(
-        wf_source, wf_source.name, main=True, lang="cwl", properties=properties,
-        lang_version=cwl_defs["main"].cwlVersion, gen_cwl=False
-    )
-    if args.license:
-        crate.root_dataset["license"] = args.license
-    prov = Provenance(args.root / "metadata" / "provenance" / "primary.cwlprov.json")
-    sel = [_ for _ in prov.agents.values() if type(_) == WorkflowEngine]
-    if len(sel) != 1:
-        raise ValueError(f"Unexpected number of workflow engines: {len(sel)}")
-    engine = sel[0]
-    roc_engine = crate.add(SoftwareApplication(crate, properties={
-        "name": engine.label or "workflow engine"
-    }))
-    roc_engine_run = crate.add(ContextEntity(crate, properties={
-        "@type": "OrganizeAction",
-        "name": f"Run of {roc_engine['name']}",
-        "startTime": engine.start_time,
-    }))
-    roc_engine_run["instrument"] = roc_engine
-    crate.root_dataset["mentions"] = [roc_engine_run]
-    sel = [_ for _ in prov.activities.values() if type(_) == WorkflowRun]
-    if len(sel) != 1:
-        raise ValueError(f"Unexpected number of workflow runs: {len(sel)}")
-    workflow_run = sel[0]
-    add_action(crate, args.root, workflow_run, cwl_defs)
-    if args.output.suffix == ".zip":
-        crate.write_zip(args.output)
-    else:
-        crate.write(args.output)
+    def add_params(self, crate, prov_params):
+        wf_params, action_params = [], []
+        for k, v in prov_params.items():
+            path = v.get_path()
+            if path:
+                # TODO: check if there's additional info, e.g. EDAM tags
+                add_type = "File"
+            else:
+                add_type, value = convert_value(v)
+            if not path and not value:
+                continue
+            k = k.split(":", 1)[-1]
+            wf_p = crate.add(ContextEntity(crate, f"#param-{k}", properties={
+                "@type": "FormalParameter",
+                "name": k,
+                "additionalType": add_type,
+            }))
+            wf_params.append(wf_p)
+            if path:
+                action_p = crate.dereference(path.as_posix())
+                if not action_p:
+                    action_p = crate.add_file(self.root / path, path)
+            else:
+                # FIXME: assuming arrays and records don't have nested structured types
+                if add_type == "PropertyValue":
+                    value = [crate.add(ContextEntity(crate, f"#pv-{k}/{nk}", properties={
+                        "@type": "PropertyValue",
+                        "name": f"{k}/{nk}",
+                        "value": nv[1],
+                    })) for nk, nv in value.items()]
+                action_p = crate.add(ContextEntity(crate, f"#pv-{k}", properties={
+                    "@type": "PropertyValue",
+                    "name": k,
+                }))
+                action_p["value"] = value
+            update_property(action_p, "exampleOfWork", wf_p)
+            action_params.append(action_p)
+        return wf_params, action_params
 
 
 def main(args):
@@ -566,7 +567,12 @@ def main(args):
         args.output = f"{args.root.name}.crate.zip"
     print(f"generating {args.output}")
     args.output = Path(args.output)
-    make_crate(args)
+    builder = ProvCrateBuilder(args.root, args.workflow_name, args.license)
+    crate = builder.build()
+    if args.output.suffix == ".zip":
+        crate.write_zip(args.output)
+    else:
+        crate.write(args.output)
 
 
 if __name__ == "__main__":
