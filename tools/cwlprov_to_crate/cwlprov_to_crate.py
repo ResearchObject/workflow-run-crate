@@ -391,12 +391,6 @@ def get_workflow(wf_path):
     return {_.id.rsplit("#", 1)[-1]: _ for _ in defs}
 
 
-def read_prov(root_dir):
-    prov_dir = root_dir / "metadata" / "provenance"
-    with open(prov_dir / "primary.cwlprov.json") as f:
-        return json.load(f)
-
-
 # add to ro-crate-py?
 def update_property(entity, name, item):
     """\
