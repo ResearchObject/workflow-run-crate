@@ -49,6 +49,7 @@ Post [here](https://github.com/ResearchObject/workflow-run-crate/issues/1) to jo
 - [Workflow Run RO-Crate for a ML prediction pipeline run](examples/draft/ml-predict-pipeline/) ([pipeline repo](https://github.com/crs4/deephealth-pipelines) -- part of the DeepHealth digital pathology platform)
 - [Machine learning pipeline example](examples/draft/ml-pipeline/) (conceptual draft from EOSC-Life WP6)
 - [Example of CreateAction and Docker Image](https://www.researchobject.org/2021-packaging-research-artefacts-with-ro-crate/ro-crate-preview.html#https%3A//github.com/stain/ro-crate-paper/actions/runs/1671704144) (tool invocation)
+- [Provenance Run Crate Example](examples/draft/revsort-run-1-crate/), converted from the [CWLProv example](https://github.com/common-workflow-language/cwlprov/tree/ce3f469745f4c8a2c029f872d522a4c57fba947b/examples/revsort-run-1)
 
 ## References
 

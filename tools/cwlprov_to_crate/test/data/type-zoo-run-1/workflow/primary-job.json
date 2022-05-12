@@ -1,0 +1,20 @@
+{
+    "in_array": [
+        "foo",
+        "bar"
+    ],
+    "in_any": "tar",
+    "in_str": "spam",
+    "in_bool": true,
+    "in_int": 42,
+    "in_long": 420,
+    "in_float": 3.14,
+    "in_double": 3.142,
+    "in_enum": "B",
+    "in_record": {
+        "in_record_A": "Tom",
+        "in_record_B": "Jerry",
+        "@id": "urn:uuid:e6a86b5c-fb61-47d7-ae3d-6272dd20957f"
+    },
+    "in_multi": 9.99
+}

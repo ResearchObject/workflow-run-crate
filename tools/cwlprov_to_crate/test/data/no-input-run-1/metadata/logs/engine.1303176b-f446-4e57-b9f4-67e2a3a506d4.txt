@@ -1,0 +1,7 @@
+[2022-04-22T08:51:14,568.953037Z] [cwltool] /home/simleo/git/workflow-run-crate/tools/cwlprov_to_crate/venv/bin/cwltool --provenance no_input_ro no_input.cwl
+[2022-04-22T08:51:14,570.539951Z] Resolved 'no_input.cwl' to 'file:///tmp/no_input.cwl'
+[2022-04-22T08:51:15,442.790508Z] [job no_input.cwl] /tmp/xvlxtt74$ echo \
+    -n \
+    '{"answer": 42}' > /tmp/xvlxtt74/cwl.output.json
+[2022-04-22T08:51:15,445.779800Z] [job no_input.cwl] completed success
+[2022-04-22T08:51:15,469.108820Z] Final process status is success

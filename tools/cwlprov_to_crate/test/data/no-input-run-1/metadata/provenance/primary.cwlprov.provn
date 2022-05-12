@@ -1,0 +1,27 @@
+document
+  prefix wfprov <http://purl.org/wf4ever/wfprov#>
+  prefix wfdesc <http://purl.org/wf4ever/wfdesc#>
+  prefix cwlprov <https://w3id.org/cwl/prov#>
+  prefix foaf <http://xmlns.com/foaf/0.1/>
+  prefix schema <http://schema.org/>
+  prefix orcid <https://orcid.org/>
+  prefix id <urn:uuid:>
+  prefix data <urn:hash::sha1:>
+  prefix sha256 <nih:sha-256;>
+  prefix researchobject <arcp://uuid,ff8308a9-2969-40aa-a5ea-677a825875f5/>
+  prefix metadata <arcp://uuid,ff8308a9-2969-40aa-a5ea-677a825875f5/metadata/>
+  prefix provenance <arcp://uuid,ff8308a9-2969-40aa-a5ea-677a825875f5/metadata/provenance/>
+  prefix wf <arcp://uuid,ff8308a9-2969-40aa-a5ea-677a825875f5/workflow/packed.cwl#>
+  prefix input <arcp://uuid,ff8308a9-2969-40aa-a5ea-677a825875f5/workflow/primary-job.json#>
+  
+  agent(id:76d93a53-de66-4cf8-af65-7c04d86438c5)
+  agent(id:1303176b-f446-4e57-b9f4-67e2a3a506d4, [prov:type='wfprov:WorkflowEngine', prov:type='prov:SoftwareAgent', prov:label="cwltool 3.1.20220224085855"])
+  wasStartedBy(id:1303176b-f446-4e57-b9f4-67e2a3a506d4, -, id:76d93a53-de66-4cf8-af65-7c04d86438c5, 2022-04-22T10:51:15.441515)
+  activity(id:ff8308a9-2969-40aa-a5ea-677a825875f5, 2022-04-22T10:51:15.441544, -, [prov:type='wfprov:WorkflowRun', prov:label="Run of workflow/packed.cwl#main"])
+  wasAssociatedWith(id:ff8308a9-2969-40aa-a5ea-677a825875f5, id:1303176b-f446-4e57-b9f4-67e2a3a506d4, wf:main)
+  wasStartedBy(id:ff8308a9-2969-40aa-a5ea-677a825875f5, -, id:1303176b-f446-4e57-b9f4-67e2a3a506d4, 2022-04-22T10:51:15.441604)
+  entity(wf:main, [prov:type='prov:Plan', prov:type='wfdesc:Process', prov:label="Prospective provenance"])
+  entity(id:33b2e84e-0029-411e-abb1-9fb3e896f1b5, [prov:value=42])
+  wasGeneratedBy(id:33b2e84e-0029-411e-abb1-9fb3e896f1b5, id:ff8308a9-2969-40aa-a5ea-677a825875f5, 2022-04-22T10:51:15.446530, [prov:role='wf:main/primary/answer'])
+  wasEndedBy(id:ff8308a9-2969-40aa-a5ea-677a825875f5, -, id:1303176b-f446-4e57-b9f4-67e2a3a506d4, 2022-04-22T10:51:15.446793)
+endDocument

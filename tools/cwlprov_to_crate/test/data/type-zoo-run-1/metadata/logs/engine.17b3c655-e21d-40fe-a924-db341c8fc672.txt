@@ -1,0 +1,28 @@
+[2022-04-22T10:27:12,379.270554Z] [cwltool] /home/simleo/git/workflow-run-crate/tools/cwlprov_to_crate/venv/bin/cwltool --provenance type-zoo-run-1 type_zoo.cwl type_zoo.yml
+[2022-04-22T10:27:12,380.851269Z] Resolved 'type_zoo.cwl' to 'file:///tmp/type_zoo.cwl'
+[2022-04-22T10:27:13,320.547581Z] [job type_zoo.cwl] /tmp/m8fqagoj$ echo \
+    --in-any \
+    tar \
+    --in-bool \
+    --in-double \
+    3.142 \
+    --in-enum \
+    B \
+    --in-float \
+    3.14 \
+    --in-int \
+    42 \
+    --in-long \
+    420 \
+    --in-multi \
+    9.99 \
+    --in-record-A \
+    Tom \
+    --in-record-B \
+    Jerry \
+    --in-str \
+    spam \
+    foo \
+    bar > /tmp/m8fqagoj/output.txt
+[2022-04-22T10:27:13,327.222347Z] [job type_zoo.cwl] completed success
+[2022-04-22T10:27:13,412.971973Z] Final process status is success
