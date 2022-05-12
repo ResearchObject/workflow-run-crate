@@ -67,7 +67,7 @@
                     "@id": "#param-main/reverse_sort"
                 }
             ],
-            "name": "revsort-run-1",
+            "name": "packed.cwl",
             "output": [
                 {
                     "@id": "#param-main/output"

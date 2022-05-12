@@ -458,8 +458,7 @@ class ProvCrateBuilder:
             lang_version=self.cwl_defs["main"].cwlVersion, gen_cwl=False,
             properties={
                 "@type": ["File", "SoftwareSourceCode", "ComputationalWorkflow", "HowTo"],
-                # How to map to the original workflow file in "snapshot"?
-                "name": self.workflow_name or self.root.name
+                "name": self.workflow_name or self.wf_path.name
             }
         )
         if self.license:
