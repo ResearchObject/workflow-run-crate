@@ -4,7 +4,7 @@
         {
             "@id": "./",
             "@type": "Dataset",
-            "datePublished": "2022-05-11T13:35:54+00:00",
+            "datePublished": "2022-05-12T10:52:34+00:00",
             "hasPart": [
                 {
                     "@id": "packed.cwl"
@@ -24,7 +24,7 @@
             },
             "mentions": [
                 {
-                    "@id": "#2136beb1-b592-4818-9e18-92ef423cf397"
+                    "@id": "#e4f9f0db-8df3-45f4-b0ce-5fd418ef5589"
                 }
             ]
         },
@@ -78,10 +78,10 @@
             },
             "step": [
                 {
-                    "@id": "packed.cwl#main/sorted"
+                    "@id": "packed.cwl#main/rev"
                 },
                 {
-                    "@id": "packed.cwl#main/rev"
+                    "@id": "packed.cwl#main/sorted"
                 }
             ]
         },
@@ -99,32 +99,40 @@
             "version": "v1.0"
         },
         {
-            "@id": "#c052660a-7aa5-4ab4-af61-ca6168fba174",
+            "@id": "#23f9f782-5e49-49a2-8df4-a4d4a31f6d97",
             "@type": "SoftwareApplication",
             "name": "cwltool 1.0.20181012180214"
         },
         {
-            "@id": "#2136beb1-b592-4818-9e18-92ef423cf397",
+            "@id": "#e4f9f0db-8df3-45f4-b0ce-5fd418ef5589",
             "@type": "OrganizeAction",
+            "agent": {
+                "@id": "https://orcid.org/0000-0001-9842-9718"
+            },
             "instrument": {
-                "@id": "#c052660a-7aa5-4ab4-af61-ca6168fba174"
+                "@id": "#23f9f782-5e49-49a2-8df4-a4d4a31f6d97"
             },
             "name": "Run of cwltool 1.0.20181012180214",
             "object": [
                 {
-                    "@id": "#5d3b1d20-06c8-4d44-a6e5-5e4f69a9c08e"
+                    "@id": "#4c18b886-ec91-41ed-aca2-75ac7bfd23ac"
                 },
                 {
-                    "@id": "#546d50a8-8033-4bad-a229-fc8f8d699d57"
+                    "@id": "#92289ce1-7de0-41f1-9235-d5a4938d0a51"
                 }
             ],
             "result": {
-                "@id": "#8d37e179-6f37-4a04-a518-d633a9db00a5"
+                "@id": "#a765852d-f3c6-44f5-ac4f-88590ff487b2"
             },
             "startTime": "2018-10-25T15:46:35.210973"
         },
         {
-            "@id": "#8d37e179-6f37-4a04-a518-d633a9db00a5",
+            "@id": "https://orcid.org/0000-0001-9842-9718",
+            "@type": "Person",
+            "name": "Stian Soiland-Reyes"
+        },
+        {
+            "@id": "#a765852d-f3c6-44f5-ac4f-88590ff487b2",
             "@type": "CreateAction",
             "endTime": "2018-10-25T15:46:43.020168",
             "instrument": {
@@ -157,10 +165,10 @@
             "@type": "File",
             "exampleOfWork": [
                 {
-                    "@id": "#param-main/rev/input"
+                    "@id": "#param-main/input"
                 },
                 {
-                    "@id": "#param-main/input"
+                    "@id": "#param-main/rev/input"
                 }
             ]
         },
@@ -190,15 +198,15 @@
             "@type": "File",
             "exampleOfWork": [
                 {
-                    "@id": "#param-main/output"
+                    "@id": "#param-main/sorted/output"
                 },
                 {
-                    "@id": "#param-main/sorted/output"
+                    "@id": "#param-main/output"
                 }
             ]
         },
         {
-            "@id": "#b43ef1b9-3d9b-41e4-a8ef-1f930b870236",
+            "@id": "#4f1fe688-5700-41d7-8979-26511a36f0c6",
             "@type": "CreateAction",
             "endTime": "2018-10-25T15:46:36.967359",
             "instrument": {
@@ -241,14 +249,14 @@
             "@type": "HowToStep"
         },
         {
-            "@id": "#5d3b1d20-06c8-4d44-a6e5-5e4f69a9c08e",
+            "@id": "#92289ce1-7de0-41f1-9235-d5a4938d0a51",
             "@type": "ControlAction",
             "instrument": {
                 "@id": "packed.cwl#main/rev"
             },
             "name": "orchestrate revtool.cwl",
             "object": {
-                "@id": "#b43ef1b9-3d9b-41e4-a8ef-1f930b870236"
+                "@id": "#4f1fe688-5700-41d7-8979-26511a36f0c6"
             }
         },
         {
@@ -276,7 +284,7 @@
             ]
         },
         {
-            "@id": "#fb7ab6da-40f0-4c47-bf91-821eff6f7729",
+            "@id": "#553d43c8-4171-4bb7-a6cc-edfa511d31b3",
             "@type": "CreateAction",
             "endTime": "2018-10-25T15:46:38.069110",
             "instrument": {
@@ -325,14 +333,14 @@
             "@type": "HowToStep"
         },
         {
-            "@id": "#546d50a8-8033-4bad-a229-fc8f8d699d57",
+            "@id": "#4c18b886-ec91-41ed-aca2-75ac7bfd23ac",
             "@type": "ControlAction",
             "instrument": {
                 "@id": "packed.cwl#main/sorted"
             },
             "name": "orchestrate sorttool.cwl",
             "object": {
-                "@id": "#fb7ab6da-40f0-4c47-bf91-821eff6f7729"
+                "@id": "#553d43c8-4171-4bb7-a6cc-edfa511d31b3"
             }
         },
         {

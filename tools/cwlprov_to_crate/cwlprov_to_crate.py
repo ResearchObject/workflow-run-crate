@@ -171,6 +171,7 @@ class Provenance:
         except AttributeError:
             with open(path_or_file) as f:
                 self.data = json.load(f)
+        self.prefixes = self.data["prefix"]
         self.agents = self.__read_agents()
         self.activities = self.__read_activities()
         self.entities = self.__read_entities()
@@ -444,6 +445,11 @@ class ProvCrateBuilder:
         if len(sel) != 1:
             raise ValueError(f"Unexpected number of workflow runs: {len(sel)}")
         self.workflow_run = sel[0]
+        self.agent = getattr(self.engine.starter, "responsible", None)
+        if isinstance(self.agent, Person):
+            self.agent.id_ = self.agent.id_.replace(
+                "orcid:", prov.prefixes.get("orcid", "https://orcid.org/")
+            )
 
     def build(self):
         crate = ROCrate(gen_preview=False)
@@ -467,6 +473,11 @@ class ProvCrateBuilder:
             "startTime": self.engine.start_time,
         }))
         roc_engine_run["instrument"] = roc_engine
+        if isinstance(self.agent, Person):
+            roc_engine_run["agent"] = crate.add(ContextEntity(crate, self.agent.id_, properties={
+                "@type": "Person",
+                "name": self.agent.name
+            }))
         crate.root_dataset["mentions"] = [roc_engine_run]
         self.add_action(crate, self.workflow_run)
         return crate
