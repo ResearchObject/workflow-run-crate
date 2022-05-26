@@ -385,8 +385,10 @@ def get_workflow(wf_path):
     graph = json_wf.get("$graph", [json_wf])
     # https://github.com/common-workflow-language/cwltool/pull/1506
     for n in graph:
-        n.pop("$namespaces", None)
-    defs = load_document_by_yaml(json_wf, str(wf_path))
+        ns = n.pop("$namespaces", {})
+        if ns:
+            json_wf.setdefault("$namespaces", {}).update(ns)
+    defs = load_document_by_yaml(json_wf, wf_path.absolute().as_uri())
     if not isinstance(defs, list):
         defs = [defs]
     return {_.id.rsplit("#", 1)[-1]: _ for _ in defs}
