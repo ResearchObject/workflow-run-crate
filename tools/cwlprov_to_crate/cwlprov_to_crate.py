@@ -29,6 +29,10 @@ from rocrate.model.softwareapplication import SoftwareApplication
 WORKFLOW_BASENAME = "packed.cwl"
 
 
+def get_fragment(uri):
+    return uri.rsplit("#", 1)[-1]
+
+
 class Thing:
 
     def __init__(self, id_, label=None):
@@ -391,7 +395,7 @@ def get_workflow(wf_path):
     defs = load_document_by_yaml(json_wf, wf_path.absolute().as_uri())
     if not isinstance(defs, list):
         defs = [defs]
-    return {_.id.rsplit("#", 1)[-1]: _ for _ in defs}
+    return {get_fragment(_.id): _ for _ in defs}
 
 
 # add to ro-crate-py?
@@ -498,8 +502,8 @@ class ProvCrateBuilder:
                 raise RuntimeError("sub-workflows not supported yet")
             instrument = workflow
             cwl_tool = self.cwl_defs.get(plan_tag)
-            cwl_inputs = {_.id.rsplit("#", 1)[-1]: _ for _ in cwl_tool.inputs}
-            cwl_outputs = {_.id.rsplit("#", 1)[-1]: _ for _ in cwl_tool.outputs}
+            cwl_inputs = {get_fragment(_.id): _ for _ in cwl_tool.inputs}
+            cwl_outputs = {get_fragment(_.id): _ for _ in cwl_tool.outputs}
             roc_engine_run["result"] = action
         else:
             step_id = f"{workflow.id}#{plan_tag}"
@@ -509,8 +513,7 @@ class ProvCrateBuilder:
             cwl_wf = self.cwl_defs.get(parent_instrument_id)
             if not cwl_wf:
                 raise RuntimeError(f"could not find workflow for step {plan_tag}")
-            tool_map = {s.id.rsplit("#", 1)[-1]: s.run.rsplit("#", 1)[-1]
-                        for s in cwl_wf.steps}
+            tool_map = {get_fragment(s.id): get_fragment(s.run) for s in cwl_wf.steps}
             tool_name = tool_map[plan_tag]
             instrument_id = f"{workflow.id}#{tool_name}"
             properties = {"name": tool_name}
@@ -529,8 +532,10 @@ class ProvCrateBuilder:
             control_action["instrument"] = step
             update_property(control_action, "object", action)
             update_property(roc_engine_run, "object", control_action)
-            cwl_inputs = {_.id.rsplit("#", 1)[-1].replace(tool_name, plan_tag): _ for _ in cwl_tool.inputs}
-            cwl_outputs = {_.id.rsplit("#", 1)[-1].replace(tool_name, plan_tag): _ for _ in cwl_tool.outputs}
+            cwl_inputs = {get_fragment(_.id).replace(tool_name, plan_tag): _
+                          for _ in cwl_tool.inputs}
+            cwl_outputs = {get_fragment(_.id).replace(tool_name, plan_tag): _
+                           for _ in cwl_tool.outputs}
         action["instrument"] = instrument
         if parent_instrument:
             update_property(parent_instrument, "hasPart", instrument)
