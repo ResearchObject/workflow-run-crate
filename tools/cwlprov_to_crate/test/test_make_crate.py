@@ -164,10 +164,8 @@ def test_param_types(data_dir, tmpdir):
     for entity in inputs + outputs:
         assert "FormalParameter" in entity.type
     input_map = {_.id.rsplit("/", 1)[-1]: _ for _ in inputs}
-    # For in_any and in_multi, the type is that of the actual value:
-    # the additional information is not reported by cwltool
     assert input_map["in_array"]["additionalType"] == "Text"
-    assert input_map["in_any"]["additionalType"] == "Text"
+    assert input_map["in_any"]["additionalType"] == "DataType"
     assert input_map["in_str"]["additionalType"] == "Text"
     assert input_map["in_bool"]["additionalType"] == "Boolean"
     assert input_map["in_int"]["additionalType"] == "Integer"
@@ -176,7 +174,7 @@ def test_param_types(data_dir, tmpdir):
     assert input_map["in_double"]["additionalType"] == "Float"
     assert input_map["in_enum"]["additionalType"] == "Text"
     assert input_map["in_record"]["additionalType"] == "PropertyValue"
-    assert input_map["in_multi"]["additionalType"] == "Float"
+    assert set(input_map["in_multi"]["additionalType"]) == {"Integer", "Float"}
     out = outputs[0]
     assert out["additionalType"] == "File"
     actions = [_ for _ in crate.contextual_entities if "CreateAction" in _.type]

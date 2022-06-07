@@ -28,6 +28,34 @@ from rocrate.model.softwareapplication import SoftwareApplication
 
 WORKFLOW_BASENAME = "packed.cwl"
 
+CWL_TYPE_MAP = {
+    "string": "Text",
+    "int": "Integer",
+    "long": "Integer",
+    "float": "Float",
+    "double": "Float",
+    "Any": "DataType",
+    "boolean": "Boolean",
+    "File": "File",
+    "Directory": "Dataset",
+    "null": None,
+}
+
+
+def convert_cwl_type(cwl_type):
+    if isinstance(cwl_type, list):
+        s = set(convert_cwl_type(_) for _ in cwl_type)
+        s.discard(None)  # set valueRequired to False?
+        return sorted(s)
+    if isinstance(cwl_type, str):
+        return CWL_TYPE_MAP[cwl_type]
+    if cwl_type.type == "enum":
+        return "Text"  # use actionOption to represent choices?
+    if cwl_type.type == "array":
+        return CWL_TYPE_MAP[cwl_type.items]
+    if cwl_type.type == "record":
+        return "PropertyValue"
+
 
 def get_fragment(uri):
     return uri.rsplit("#", 1)[-1]
@@ -560,12 +588,15 @@ class ProvCrateBuilder:
             if not path and not value:
                 continue
             k = k.split(":", 1)[-1]
+            cwl_p = cwl_params.get(k)
+            if cwl_p:
+                # overwrite since this has more info
+                add_type = convert_cwl_type(cwl_p.type)
             wf_p = crate.add(ContextEntity(crate, f"#param-{k}", properties={
                 "@type": "FormalParameter",
                 "name": k,
                 "additionalType": add_type,
             }))
-            cwl_p = cwl_params.get(k)
             if cwl_p and cwl_p.format:
                 wf_p["encodingFormat"] = cwl_p.format
             wf_params.append(wf_p)
