@@ -45,6 +45,9 @@ def test_main(data_dir, tmpdir):
     assert len(outputs) == 1
     for entity in inputs + outputs:
         assert "FormalParameter" in entity.type
+    sel = [_ for _ in inputs if _["additionalType"] == "File"]
+    assert len(sel) == 1
+    assert "encodingFormat" in sel[0]
     assert workflow["programmingLanguage"].id == CWL_ID
     sel = [_ for _ in crate.contextual_entities if "OrganizeAction" in _.type]
     assert len(sel) == 1

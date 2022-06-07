@@ -492,27 +492,31 @@ class ProvCrateBuilder:
             "startTime": activity.start_time,
             "endTime": activity.end_time,
         }))
+        plan_tag = activity.plan.id_.strip().split(":", 1)[-1]
         if isinstance(activity, WorkflowRun):
+            if plan_tag != "main":
+                raise RuntimeError("sub-workflows not supported yet")
             instrument = workflow
+            cwl_tool = self.cwl_defs.get(plan_tag)
+            cwl_inputs = {_.id.rsplit("#", 1)[-1]: _ for _ in cwl_tool.inputs}
+            cwl_outputs = {_.id.rsplit("#", 1)[-1]: _ for _ in cwl_tool.outputs}
             roc_engine_run["result"] = action
         else:
-            step_fragment = activity.plan.id_.strip().split(":", 1)[-1]
-            step_id = f"{workflow.id}#{step_fragment}"
+            step_id = f"{workflow.id}#{plan_tag}"
             parent_instrument_id = parent_instrument.id
             if parent_instrument_id == workflow.id:
                 parent_instrument_id = "main"
             cwl_wf = self.cwl_defs.get(parent_instrument_id)
-            if cwl_wf:
-                tool_map = {s.id.rsplit("#", 1)[-1]: s.run.rsplit("#", 1)[-1]
-                            for s in cwl_wf.steps}
-                tool_name = tool_map[step_fragment]
-                instrument_id = f"{workflow.id}#{tool_name}"
-                properties = {"name": tool_name}
-                cwl_tool = self.cwl_defs.get(tool_name)
-                if cwl_tool and cwl_tool.doc:
-                    properties["description"] = cwl_tool.doc
-            else:
-                instrument_id = properties = None
+            if not cwl_wf:
+                raise RuntimeError(f"could not find workflow for step {plan_tag}")
+            tool_map = {s.id.rsplit("#", 1)[-1]: s.run.rsplit("#", 1)[-1]
+                        for s in cwl_wf.steps}
+            tool_name = tool_map[plan_tag]
+            instrument_id = f"{workflow.id}#{tool_name}"
+            properties = {"name": tool_name}
+            cwl_tool = self.cwl_defs.get(tool_name)
+            if cwl_tool and cwl_tool.doc:
+                properties["description"] = cwl_tool.doc
             instrument = crate.add(SoftwareApplication(crate, instrument_id, properties=properties))
             step = crate.add(ContextEntity(crate, step_id, properties={
                 "@type": "HowToStep"
@@ -525,21 +529,26 @@ class ProvCrateBuilder:
             control_action["instrument"] = step
             update_property(control_action, "object", action)
             update_property(roc_engine_run, "object", control_action)
+            cwl_inputs = {_.id.rsplit("#", 1)[-1].replace(tool_name, plan_tag): _ for _ in cwl_tool.inputs}
+            cwl_outputs = {_.id.rsplit("#", 1)[-1].replace(tool_name, plan_tag): _ for _ in cwl_tool.outputs}
         action["instrument"] = instrument
         if parent_instrument:
             update_property(parent_instrument, "hasPart", instrument)
             update_property(parent_instrument, "step", step)
-        instrument["input"], action["object"] = self.add_params(crate, activity.in_params)
-        instrument["output"], action["result"] = self.add_params(crate, activity.out_params)
+        instrument["input"], action["object"] = self.add_params(
+            crate, activity.in_params, cwl_inputs
+        )
+        instrument["output"], action["result"] = self.add_params(
+            crate, activity.out_params, cwl_outputs
+        )
         for step in activity.steps:
             self.add_action(crate, step, parent_instrument=instrument)
 
-    def add_params(self, crate, prov_params):
+    def add_params(self, crate, prov_params, cwl_params):
         wf_params, action_params = [], []
         for k, v in prov_params.items():
             path = v.get_path()
             if path:
-                # TODO: check if there's additional info, e.g. EDAM tags
                 add_type = "File"
             else:
                 add_type, value = convert_value(v)
@@ -551,6 +560,9 @@ class ProvCrateBuilder:
                 "name": k,
                 "additionalType": add_type,
             }))
+            cwl_p = cwl_params.get(k)
+            if cwl_p and cwl_p.format:
+                wf_p["encodingFormat"] = cwl_p.format
             wf_params.append(wf_p)
             if path:
                 action_p = crate.dereference(path.as_posix())
