@@ -48,6 +48,10 @@ def test_main(data_dir, tmpdir):
     sel = [_ for _ in inputs if _["additionalType"] == "File"]
     assert len(sel) == 1
     assert "encodingFormat" in sel[0]
+    assert sel[0]["defaultValue"] == "file:///home/stain/src/cwltool/tests/wf/hello.txt"
+    sel = [_ for _ in inputs if _["additionalType"] == "Boolean"]
+    assert len(sel) == 1
+    assert sel[0]["defaultValue"] == "True"
     assert workflow["programmingLanguage"].id == CWL_ID
     sel = [_ for _ in crate.contextual_entities if "OrganizeAction" in _.type]
     assert len(sel) == 1
@@ -165,6 +169,7 @@ def test_param_types(data_dir, tmpdir):
         assert "FormalParameter" in entity.type
     input_map = {_.id.rsplit("/", 1)[-1]: _ for _ in inputs}
     assert input_map["in_array"]["additionalType"] == "Text"
+    assert input_map["in_array"]["multipleValues"] == "True"
     assert input_map["in_any"]["additionalType"] == "DataType"
     assert input_map["in_str"]["additionalType"] == "Text"
     assert input_map["in_bool"]["additionalType"] == "Boolean"
@@ -174,7 +179,10 @@ def test_param_types(data_dir, tmpdir):
     assert input_map["in_double"]["additionalType"] == "Float"
     assert input_map["in_enum"]["additionalType"] == "Text"
     assert input_map["in_record"]["additionalType"] == "PropertyValue"
+    assert input_map["in_record"]["multipleValues"] == "True"
     assert set(input_map["in_multi"]["additionalType"]) == {"Integer", "Float"}
+    assert input_map["in_multi"]["defaultValue"] == "9.99"
+    assert input_map["in_multi"]["valueRequired"] == "False"
     out = outputs[0]
     assert out["additionalType"] == "File"
     actions = [_ for _ in crate.contextual_entities if "CreateAction" in _.type]

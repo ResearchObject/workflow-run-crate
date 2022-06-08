@@ -45,7 +45,7 @@ CWL_TYPE_MAP = {
 def convert_cwl_type(cwl_type):
     if isinstance(cwl_type, list):
         s = set(convert_cwl_type(_) for _ in cwl_type)
-        s.discard(None)  # set valueRequired to False?
+        s.discard(None)
         return sorted(s)
     if isinstance(cwl_type, str):
         return CWL_TYPE_MAP[cwl_type]
@@ -585,8 +585,23 @@ class ProvCrateBuilder:
                 "name": k,
                 "additionalType": add_type,
             }))
-            if cwl_p and cwl_p.format:
-                wf_p["encodingFormat"] = cwl_p.format
+            if cwl_p:
+                if cwl_p.format:
+                    wf_p["encodingFormat"] = cwl_p.format
+                if isinstance(cwl_p.type, list) and "null" in cwl_p.type:
+                    wf_p["valueRequired"] = "False"
+                if hasattr(cwl_p, "default"):
+                    try:
+                        default_type = cwl_p.default["class"]
+                    except (TypeError, KeyError):
+                        if getattr(cwl_p.type, "type", None) not in ("array", "record") and cwl_p.default is not None:
+                            wf_p["defaultValue"] = str(cwl_p.default)
+                    else:
+                        if default_type in ("File", "Directory"):
+                            wf_p["defaultValue"] = cwl_p.default["location"]
+                    # TODO: support other cases
+                if getattr(cwl_p.type, "type", None) in ("array", "record"):
+                    wf_p["multipleValues"] = "True"
             wf_params.append(wf_p)
             if path:
                 action_p = crate.dereference(path.as_posix())
