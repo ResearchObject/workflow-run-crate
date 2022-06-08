@@ -426,18 +426,6 @@ def get_workflow(wf_path):
     return {get_fragment(_.id): _ for _ in defs}
 
 
-# add to ro-crate-py?
-def update_property(entity, name, item):
-    """\
-    Add ``item`` to the values of property ``name`` in ``entity``
-    """
-    value = entity.get(name, [])
-    if not isinstance(value, list):
-        value = [value]
-    value = list(set(value + [item]))
-    entity[name] = value[0] if len(value) == 1 else value
-
-
 # FIXME: this should probably build and add the appropriate ro-crate entity directly
 def convert_value(prov_param):
     type_ = "Text"
@@ -558,16 +546,16 @@ class ProvCrateBuilder:
                 "name": f"orchestrate {tool_name}",
             }))
             control_action["instrument"] = step
-            update_property(control_action, "object", action)
-            update_property(roc_engine_run, "object", control_action)
+            control_action.append_to("object", action, compact=True)
+            roc_engine_run.append_to("object", control_action, compact=True)
             cwl_inputs = {get_fragment(_.id).replace(tool_name, plan_tag): _
                           for _ in cwl_tool.inputs}
             cwl_outputs = {get_fragment(_.id).replace(tool_name, plan_tag): _
                            for _ in cwl_tool.outputs}
         action["instrument"] = instrument
         if parent_instrument:
-            update_property(parent_instrument, "hasPart", instrument)
-            update_property(parent_instrument, "step", step)
+            parent_instrument.append_to("hasPart", instrument)
+            parent_instrument.append_to("step", step)
         instrument["input"], action["object"] = self.add_params(
             crate, activity.in_params, cwl_inputs
         )
@@ -617,7 +605,7 @@ class ProvCrateBuilder:
                     "name": k,
                 }))
                 action_p["value"] = value
-            update_property(action_p, "exampleOfWork", wf_p)
+            action_p.append_to("exampleOfWork", wf_p, compact=True)
             action_params.append(action_p)
         return wf_params, action_params
 
