@@ -23,7 +23,7 @@ class Args:
     pass
 
 
-def test_main(data_dir, tmpdir):
+def test_revsort(data_dir, tmpdir):
     args = Args()
     args.root = data_dir / "revsort-run-1"
     args.output = tmpdir / "revsort-run-1-crate"
@@ -45,13 +45,13 @@ def test_main(data_dir, tmpdir):
     assert len(outputs) == 1
     for entity in inputs + outputs:
         assert "FormalParameter" in entity.type
-    sel = [_ for _ in inputs if _["additionalType"] == "File"]
-    assert len(sel) == 1
-    assert "encodingFormat" in sel[0]
-    assert sel[0]["defaultValue"] == "file:///home/stain/src/cwltool/tests/wf/hello.txt"
-    sel = [_ for _ in inputs if _["additionalType"] == "Boolean"]
-    assert len(sel) == 1
-    assert sel[0]["defaultValue"] == "True"
+    input_map = {_.id.rsplit("-", 1)[-1]: _ for _ in inputs}
+    assert input_map["main/input"]["additionalType"] == "File"
+    assert "encodingFormat" in input_map["main/input"]
+    assert input_map["main/input"]["defaultValue"] == "file:///home/stain/src/cwltool/tests/wf/hello.txt"
+    assert input_map["main/reverse_sort"]["additionalType"] == "Boolean"
+    assert input_map["main/reverse_sort"]["defaultValue"] == "True"
+    assert outputs[0]["additionalType"] == "File"
     assert workflow["programmingLanguage"].id == CWL_ID
     sel = [_ for _ in crate.contextual_entities if "OrganizeAction" in _.type]
     assert len(sel) == 1
