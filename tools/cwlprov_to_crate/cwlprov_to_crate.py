@@ -57,6 +57,31 @@ def convert_cwl_type(cwl_type):
         return "PropertyValue"
 
 
+def properties_from_cwl_param(cwl_p):
+    def is_structured(cwl_type):
+        return getattr(cwl_type, "type", None) in ("array", "record")
+    if not cwl_p:
+        return {}
+    properties = {"additionalType": convert_cwl_type(cwl_p.type)}
+    if cwl_p.format:
+        properties["encodingFormat"] = cwl_p.format
+    if isinstance(cwl_p.type, list) and "null" in cwl_p.type:
+        properties["valueRequired"] = "False"
+    if is_structured(cwl_p.type):
+        properties["multipleValues"] = "True"
+    if hasattr(cwl_p, "default"):
+        try:
+            default_type = cwl_p.default["class"]
+        except (TypeError, KeyError):
+            if not is_structured(cwl_p.type) and cwl_p.default is not None:
+                properties["defaultValue"] = str(cwl_p.default)
+        else:
+            if default_type in ("File", "Directory"):
+                properties["defaultValue"] = cwl_p.default["location"]
+        # TODO: support more cases
+    return properties
+
+
 def get_fragment(uri):
     return uri.rsplit("#", 1)[-1]
 
@@ -576,32 +601,15 @@ class ProvCrateBuilder:
             if not path and not value:
                 continue
             k = k.split(":", 1)[-1]
-            cwl_p = cwl_params.get(k)
-            if cwl_p:
-                # overwrite since this has more info
-                add_type = convert_cwl_type(cwl_p.type)
-            wf_p = crate.add(ContextEntity(crate, f"#param-{k}", properties={
+            properties = {
                 "@type": "FormalParameter",
                 "name": k,
                 "additionalType": add_type,
-            }))
-            if cwl_p:
-                if cwl_p.format:
-                    wf_p["encodingFormat"] = cwl_p.format
-                if isinstance(cwl_p.type, list) and "null" in cwl_p.type:
-                    wf_p["valueRequired"] = "False"
-                if hasattr(cwl_p, "default"):
-                    try:
-                        default_type = cwl_p.default["class"]
-                    except (TypeError, KeyError):
-                        if getattr(cwl_p.type, "type", None) not in ("array", "record") and cwl_p.default is not None:
-                            wf_p["defaultValue"] = str(cwl_p.default)
-                    else:
-                        if default_type in ("File", "Directory"):
-                            wf_p["defaultValue"] = cwl_p.default["location"]
-                    # TODO: support other cases
-                if getattr(cwl_p.type, "type", None) in ("array", "record"):
-                    wf_p["multipleValues"] = "True"
+            }
+            cwl_p = cwl_params.get(k)
+            # possible overwrite of additionalType (this one is more accurate)
+            properties.update(properties_from_cwl_param(cwl_p))
+            wf_p = crate.add(ContextEntity(crate, f"#param-{k}", properties=properties))
             wf_params.append(wf_p)
             if path:
                 action_p = crate.dereference(path.as_posix())
