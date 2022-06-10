@@ -116,6 +116,18 @@ def test_revsort(data_dir, tmpdir):
             assert sorted_output_file is wf_output_file
         else:
             assert False, f"unexpected step id for action {a.id}: {step.id}"
+    sorted_output = crate.get("#param-main/sorted/output")
+    main_output = crate.get("#param-main/output")
+    assert sorted_output["connectedTo"] is main_output
+    main_input = crate.get("#param-main/input")
+    rev_input = crate.get("#param-main/rev/input")
+    assert main_input["connectedTo"] is rev_input
+    rev_output = crate.get("#param-main/rev/output")
+    sorted_input = crate.get("#param-main/sorted/input")
+    assert rev_output["connectedTo"] is sorted_input
+    main_reverse_sort = crate.get("#param-main/reverse_sort")
+    sorted_reverse = crate.get("#param-main/sorted/reverse")
+    assert main_reverse_sort["connectedTo"] is sorted_reverse
 
 
 def test_no_input(data_dir, tmpdir):

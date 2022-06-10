@@ -483,6 +483,7 @@ class ProvCrateBuilder:
         self.license = license
         self.wf_path = self.root / "workflow" / WORKFLOW_BASENAME
         self.cwl_defs = get_workflow(self.wf_path)
+        self.param_map = {}
         prov = Provenance(root / "metadata" / "provenance" / "primary.cwlprov.json")
         sel = [_ for _ in prov.agents.values() if type(_) == WorkflowEngine]
         if len(sel) != 1:
@@ -526,6 +527,7 @@ class ProvCrateBuilder:
             }))
         crate.root_dataset["mentions"] = [roc_engine_run]
         self.add_action(crate, self.workflow_run)
+        self.add_param_connections()
         return crate
 
     def add_action(self, crate, activity, parent_instrument=None):
@@ -593,6 +595,7 @@ class ProvCrateBuilder:
     def add_params(self, crate, prov_params, cwl_params):
         wf_params, action_params = [], []
         for k, v in prov_params.items():
+            # Add FormalParameter to workflow / tool
             path = v.get_path()
             if path:
                 add_type = "File"
@@ -611,6 +614,8 @@ class ProvCrateBuilder:
             properties.update(properties_from_cwl_param(cwl_p))
             wf_p = crate.add(ContextEntity(crate, f"#param-{k}", properties=properties))
             wf_params.append(wf_p)
+            self.param_map[k] = wf_p
+            # Add File / PropertyValue to action
             if path:
                 action_p = crate.dereference(path.as_posix())
                 if not action_p:
@@ -631,6 +636,20 @@ class ProvCrateBuilder:
             action_p.append_to("exampleOfWork", wf_p, compact=True)
             action_params.append(action_p)
         return wf_params, action_params
+
+    def add_param_connections(self):
+        def connect(source, target):
+            source_p = self.param_map[source]
+            target_p = self.param_map[target]
+            source_p["connectedTo"] = target_p
+        for def_ in self.cwl_defs.values():
+            if not hasattr(def_, "steps"):
+                continue
+            for step in def_.steps:
+                for mapping in getattr(step, "in_", []):
+                    connect(get_fragment(mapping.source), get_fragment(mapping.id))
+            for out in getattr(def_, "outputs", []):
+                connect(get_fragment(out.outputSource), get_fragment(out.id))
 
 
 def main(args):
