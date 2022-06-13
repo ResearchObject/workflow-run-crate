@@ -4,7 +4,7 @@
         {
             "@id": "./",
             "@type": "Dataset",
-            "datePublished": "2022-04-27T07:46:54+00:00",
+            "datePublished": "2022-06-13T10:36:53+00:00",
             "hasPart": [
                 {
                     "@id": "packed.cwl"
@@ -13,13 +13,12 @@
                     "@id": "data/4b/4bd8e7e358488e833bf32cf5028695292cecb05b"
                 }
             ],
-            "license": "Apache-2.0",
             "mainEntity": {
                 "@id": "packed.cwl"
             },
             "mentions": [
                 {
-                    "@id": "#2d7e7fa2-5262-468d-beb8-fcaab72896db"
+                    "@id": "#bbd27b89-01dd-407a-bd4a-57fe17a1301b"
                 }
             ]
         },
@@ -43,7 +42,8 @@
             "@type": [
                 "File",
                 "SoftwareSourceCode",
-                "ComputationalWorkflow"
+                "ComputationalWorkflow",
+                "HowTo"
             ],
             "input": [
                 {
@@ -80,7 +80,7 @@
                     "@id": "#param-main/in_multi"
                 }
             ],
-            "name": "type-zoo-run-1",
+            "name": "packed.cwl",
             "output": [
                 {
                     "@id": "#param-main/cl_dump"
@@ -104,7 +104,24 @@
             "version": "v1.0"
         },
         {
-            "@id": "#2d7e7fa2-5262-468d-beb8-fcaab72896db",
+            "@id": "#9431495c-7bd1-4ca7-8e16-e685d7ef5312",
+            "@type": "SoftwareApplication",
+            "name": "cwltool 3.1.20220224085855"
+        },
+        {
+            "@id": "#bbd27b89-01dd-407a-bd4a-57fe17a1301b",
+            "@type": "OrganizeAction",
+            "instrument": {
+                "@id": "#9431495c-7bd1-4ca7-8e16-e685d7ef5312"
+            },
+            "name": "Run of cwltool 3.1.20220224085855",
+            "result": {
+                "@id": "#f0d8a98e-d40a-4136-aae1-973c66524ca7"
+            },
+            "startTime": "2022-04-22T12:27:13.313333"
+        },
+        {
+            "@id": "#f0d8a98e-d40a-4136-aae1-973c66524ca7",
             "@type": "CreateAction",
             "endTime": "2022-04-22T12:27:13.328912",
             "instrument": {
@@ -157,6 +174,7 @@
             "@id": "#param-main/in_array",
             "@type": "FormalParameter",
             "additionalType": "Text",
+            "multipleValues": "True",
             "name": "main/in_array"
         },
         {
@@ -174,7 +192,7 @@
         {
             "@id": "#param-main/in_any",
             "@type": "FormalParameter",
-            "additionalType": "Text",
+            "additionalType": "DataType",
             "name": "main/in_any"
         },
         {
@@ -295,6 +313,7 @@
             "@id": "#param-main/in_record",
             "@type": "FormalParameter",
             "additionalType": "PropertyValue",
+            "multipleValues": "True",
             "name": "main/in_record"
         },
         {
@@ -328,8 +347,13 @@
         {
             "@id": "#param-main/in_multi",
             "@type": "FormalParameter",
-            "additionalType": "Float",
-            "name": "main/in_multi"
+            "additionalType": [
+                "Float",
+                "Integer"
+            ],
+            "defaultValue": "9.99",
+            "name": "main/in_multi",
+            "valueRequired": "False"
         },
         {
             "@id": "#pv-main/in_multi",
