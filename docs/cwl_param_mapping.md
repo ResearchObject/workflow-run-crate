@@ -24,7 +24,7 @@ Map to [Text](http://schema.org/Text).
 
 ### array
 
-A property in RO-Crate can have a single value or multiple values, so the [additionalType](https://schema.org/additionalType) can simply be the mapping of the element's type (e.g., `string[]` to [Text](http://schema.org/Text)). To register the fact that the workflow allows multiple entries for that parameter, set [multipleValues](http://schema.org/multipleValues) to [True](http://schema.org/True):
+A property in RO-Crate can have a single value or multiple values, so the `additionalType` can simply be the mapping of the element's type (e.g., `string[]` to [Text](http://schema.org/Text)). To register the fact that the workflow allows multiple entries for that parameter, set [multipleValues](http://schema.org/multipleValues) to [True](http://schema.org/True):
 
 ```json
 {
@@ -109,6 +109,22 @@ Map to [Integer](http://schema.org/Integer).
 
 Map to [Float](http://schema.org/Float).
 
+```json
+{
+    "@id": "#param-main/in_float",
+    "@type": "FormalParameter",
+    "additionalType": "Float",
+    "name": "main/in_float"
+},
+{
+    "@id": "#pv-main/in_float",
+    "@type": "PropertyValue",
+    "exampleOfWork": {"@id": "#param-main/in_float"},
+    "name": "main/in_float",
+    "value": "3.14"
+}
+```
+
 ### multiple types
 
 Map to array of mappings of each type, e.g., `[int, float]` to `["Integer", "Float"]`. Note that the CWL type array may include `"null"`, indicating that the parameter is optional (and should have a default value): in this case, set [valueRequired](http://schema.org/valueRequired) to [False](http://schema.org/False):
@@ -146,9 +162,7 @@ Map to [Text](http://schema.org/Text). The set of predefined allowed values can 
 {
     "@id": "#pv-main/in_enum",
     "@type": "PropertyValue",
-    "exampleOfWork": {
-        "@id": "#param-main/in_enum"
-    },
+    "exampleOfWork": {"@id": "#param-main/in_enum"},
     "name": "main/in_enum",
     "value": "B"
 }
