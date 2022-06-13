@@ -79,6 +79,8 @@ def properties_from_cwl_param(cwl_p):
             if default_type in ("File", "Directory"):
                 properties["defaultValue"] = cwl_p.default["location"]
         # TODO: support more cases
+    if getattr(cwl_p.type, "type", None) == "enum":
+        properties["valuePattern"] = "|".join(_.rsplit("/", 1)[-1] for _ in cwl_p.type.symbols)
     return properties
 
 

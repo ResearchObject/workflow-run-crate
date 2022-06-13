@@ -190,6 +190,7 @@ def test_param_types(data_dir, tmpdir):
     assert input_map["in_float"]["additionalType"] == "Float"
     assert input_map["in_double"]["additionalType"] == "Float"
     assert input_map["in_enum"]["additionalType"] == "Text"
+    assert input_map["in_enum"]["valuePattern"] == "A|B"
     assert input_map["in_record"]["additionalType"] == "PropertyValue"
     assert input_map["in_record"]["multipleValues"] == "True"
     assert set(input_map["in_multi"]["additionalType"]) == {"Integer", "Float"}
