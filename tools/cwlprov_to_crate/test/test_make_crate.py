@@ -23,7 +23,7 @@ class Args:
     pass
 
 
-def test_main(data_dir, tmpdir):
+def test_revsort(data_dir, tmpdir):
     args = Args()
     args.root = data_dir / "revsort-run-1"
     args.output = tmpdir / "revsort-run-1-crate"
@@ -45,6 +45,13 @@ def test_main(data_dir, tmpdir):
     assert len(outputs) == 1
     for entity in inputs + outputs:
         assert "FormalParameter" in entity.type
+    input_map = {_.id.rsplit("-", 1)[-1]: _ for _ in inputs}
+    assert input_map["main/input"]["additionalType"] == "File"
+    assert "encodingFormat" in input_map["main/input"]
+    assert input_map["main/input"]["defaultValue"] == "file:///home/stain/src/cwltool/tests/wf/hello.txt"
+    assert input_map["main/reverse_sort"]["additionalType"] == "Boolean"
+    assert input_map["main/reverse_sort"]["defaultValue"] == "True"
+    assert outputs[0]["additionalType"] == "File"
     assert workflow["programmingLanguage"].id == CWL_ID
     sel = [_ for _ in crate.contextual_entities if "OrganizeAction" in _.type]
     assert len(sel) == 1
@@ -109,6 +116,18 @@ def test_main(data_dir, tmpdir):
             assert sorted_output_file is wf_output_file
         else:
             assert False, f"unexpected step id for action {a.id}: {step.id}"
+    sorted_output = crate.get("#param-main/sorted/output")
+    main_output = crate.get("#param-main/output")
+    assert sorted_output["connectedTo"] is main_output
+    main_input = crate.get("#param-main/input")
+    rev_input = crate.get("#param-main/rev/input")
+    assert main_input["connectedTo"] is rev_input
+    rev_output = crate.get("#param-main/rev/output")
+    sorted_input = crate.get("#param-main/sorted/input")
+    assert rev_output["connectedTo"] is sorted_input
+    main_reverse_sort = crate.get("#param-main/reverse_sort")
+    sorted_reverse = crate.get("#param-main/sorted/reverse")
+    assert main_reverse_sort["connectedTo"] is sorted_reverse
 
 
 def test_no_input(data_dir, tmpdir):
@@ -161,10 +180,9 @@ def test_param_types(data_dir, tmpdir):
     for entity in inputs + outputs:
         assert "FormalParameter" in entity.type
     input_map = {_.id.rsplit("/", 1)[-1]: _ for _ in inputs}
-    # For in_any and in_multi, the type is that of the actual value:
-    # the additional information is not reported by cwltool
     assert input_map["in_array"]["additionalType"] == "Text"
-    assert input_map["in_any"]["additionalType"] == "Text"
+    assert input_map["in_array"]["multipleValues"] == "True"
+    assert input_map["in_any"]["additionalType"] == "DataType"
     assert input_map["in_str"]["additionalType"] == "Text"
     assert input_map["in_bool"]["additionalType"] == "Boolean"
     assert input_map["in_int"]["additionalType"] == "Integer"
@@ -172,8 +190,12 @@ def test_param_types(data_dir, tmpdir):
     assert input_map["in_float"]["additionalType"] == "Float"
     assert input_map["in_double"]["additionalType"] == "Float"
     assert input_map["in_enum"]["additionalType"] == "Text"
+    assert input_map["in_enum"]["valuePattern"] == "A|B"
     assert input_map["in_record"]["additionalType"] == "PropertyValue"
-    assert input_map["in_multi"]["additionalType"] == "Float"
+    assert input_map["in_record"]["multipleValues"] == "True"
+    assert set(input_map["in_multi"]["additionalType"]) == {"Integer", "Float"}
+    assert input_map["in_multi"]["defaultValue"] == "9.99"
+    assert input_map["in_multi"]["valueRequired"] == "False"
     out = outputs[0]
     assert out["additionalType"] == "File"
     actions = [_ for _ in crate.contextual_entities if "CreateAction" in _.type]

@@ -4,7 +4,7 @@
         {
             "@id": "./",
             "@type": "Dataset",
-            "datePublished": "2022-05-12T10:52:34+00:00",
+            "datePublished": "2022-06-13T09:28:01+00:00",
             "hasPart": [
                 {
                     "@id": "packed.cwl"
@@ -24,7 +24,7 @@
             },
             "mentions": [
                 {
-                    "@id": "#e4f9f0db-8df3-45f4-b0ce-5fd418ef5589"
+                    "@id": "#bf333b27-d332-4a79-b66d-c4928d808157"
                 }
             ]
         },
@@ -53,10 +53,10 @@
             ],
             "hasPart": [
                 {
-                    "@id": "packed.cwl#sorttool.cwl"
+                    "@id": "packed.cwl#revtool.cwl"
                 },
                 {
-                    "@id": "packed.cwl#revtool.cwl"
+                    "@id": "packed.cwl#sorttool.cwl"
                 }
             ],
             "input": [
@@ -99,30 +99,30 @@
             "version": "v1.0"
         },
         {
-            "@id": "#23f9f782-5e49-49a2-8df4-a4d4a31f6d97",
+            "@id": "#28b208a9-bea2-46f4-afa0-693305474171",
             "@type": "SoftwareApplication",
             "name": "cwltool 1.0.20181012180214"
         },
         {
-            "@id": "#e4f9f0db-8df3-45f4-b0ce-5fd418ef5589",
+            "@id": "#bf333b27-d332-4a79-b66d-c4928d808157",
             "@type": "OrganizeAction",
             "agent": {
                 "@id": "https://orcid.org/0000-0001-9842-9718"
             },
             "instrument": {
-                "@id": "#23f9f782-5e49-49a2-8df4-a4d4a31f6d97"
+                "@id": "#28b208a9-bea2-46f4-afa0-693305474171"
             },
             "name": "Run of cwltool 1.0.20181012180214",
             "object": [
                 {
-                    "@id": "#4c18b886-ec91-41ed-aca2-75ac7bfd23ac"
+                    "@id": "#a89f6fef-94f9-41a2-896b-1b022a49c42a"
                 },
                 {
-                    "@id": "#92289ce1-7de0-41f1-9235-d5a4938d0a51"
+                    "@id": "#ecd23337-9e97-410f-8ed1-3c0304fb00f7"
                 }
             ],
             "result": {
-                "@id": "#a765852d-f3c6-44f5-ac4f-88590ff487b2"
+                "@id": "#1116f6d1-d336-43da-8ada-b03cc8d7a15b"
             },
             "startTime": "2018-10-25T15:46:35.210973"
         },
@@ -132,7 +132,7 @@
             "name": "Stian Soiland-Reyes"
         },
         {
-            "@id": "#a765852d-f3c6-44f5-ac4f-88590ff487b2",
+            "@id": "#1116f6d1-d336-43da-8ada-b03cc8d7a15b",
             "@type": "CreateAction",
             "endTime": "2018-10-25T15:46:43.020168",
             "instrument": {
@@ -158,6 +158,11 @@
             "@id": "#param-main/input",
             "@type": "FormalParameter",
             "additionalType": "File",
+            "connectedTo": {
+                "@id": "#param-main/rev/input"
+            },
+            "defaultValue": "file:///home/stain/src/cwltool/tests/wf/hello.txt",
+            "encodingFormat": "https://www.iana.org/assignments/media-types/text/plain",
             "name": "main/input"
         },
         {
@@ -176,6 +181,10 @@
             "@id": "#param-main/reverse_sort",
             "@type": "FormalParameter",
             "additionalType": "Boolean",
+            "connectedTo": {
+                "@id": "#param-main/sorted/reverse"
+            },
+            "defaultValue": "True",
             "name": "main/reverse_sort"
         },
         {
@@ -198,15 +207,15 @@
             "@type": "File",
             "exampleOfWork": [
                 {
-                    "@id": "#param-main/sorted/output"
+                    "@id": "#param-main/output"
                 },
                 {
-                    "@id": "#param-main/output"
+                    "@id": "#param-main/sorted/output"
                 }
             ]
         },
         {
-            "@id": "#4f1fe688-5700-41d7-8979-26511a36f0c6",
+            "@id": "#b701effa-61f3-4caf-b8b8-b120a45e5a29",
             "@type": "CreateAction",
             "endTime": "2018-10-25T15:46:36.967359",
             "instrument": {
@@ -249,14 +258,14 @@
             "@type": "HowToStep"
         },
         {
-            "@id": "#92289ce1-7de0-41f1-9235-d5a4938d0a51",
+            "@id": "#a89f6fef-94f9-41a2-896b-1b022a49c42a",
             "@type": "ControlAction",
             "instrument": {
                 "@id": "packed.cwl#main/rev"
             },
             "name": "orchestrate revtool.cwl",
             "object": {
-                "@id": "#4f1fe688-5700-41d7-8979-26511a36f0c6"
+                "@id": "#b701effa-61f3-4caf-b8b8-b120a45e5a29"
             }
         },
         {
@@ -269,6 +278,9 @@
             "@id": "#param-main/rev/output",
             "@type": "FormalParameter",
             "additionalType": "File",
+            "connectedTo": {
+                "@id": "#param-main/sorted/input"
+            },
             "name": "main/rev/output"
         },
         {
@@ -284,7 +296,7 @@
             ]
         },
         {
-            "@id": "#553d43c8-4171-4bb7-a6cc-edfa511d31b3",
+            "@id": "#7812b43b-cd55-47f7-9656-16b2b76b1c56",
             "@type": "CreateAction",
             "endTime": "2018-10-25T15:46:38.069110",
             "instrument": {
@@ -333,14 +345,14 @@
             "@type": "HowToStep"
         },
         {
-            "@id": "#4c18b886-ec91-41ed-aca2-75ac7bfd23ac",
+            "@id": "#ecd23337-9e97-410f-8ed1-3c0304fb00f7",
             "@type": "ControlAction",
             "instrument": {
                 "@id": "packed.cwl#main/sorted"
             },
             "name": "orchestrate sorttool.cwl",
             "object": {
-                "@id": "#553d43c8-4171-4bb7-a6cc-edfa511d31b3"
+                "@id": "#7812b43b-cd55-47f7-9656-16b2b76b1c56"
             }
         },
         {
@@ -368,6 +380,9 @@
             "@id": "#param-main/sorted/output",
             "@type": "FormalParameter",
             "additionalType": "File",
+            "connectedTo": {
+                "@id": "#param-main/output"
+            },
             "name": "main/sorted/output"
         }
     ]

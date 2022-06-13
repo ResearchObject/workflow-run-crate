@@ -28,6 +28,65 @@ from rocrate.model.softwareapplication import SoftwareApplication
 
 WORKFLOW_BASENAME = "packed.cwl"
 
+CWL_TYPE_MAP = {
+    "string": "Text",
+    "int": "Integer",
+    "long": "Integer",
+    "float": "Float",
+    "double": "Float",
+    "Any": "DataType",
+    "boolean": "Boolean",
+    "File": "File",
+    "Directory": "Dataset",
+    "null": None,
+}
+
+
+def convert_cwl_type(cwl_type):
+    if isinstance(cwl_type, list):
+        s = set(convert_cwl_type(_) for _ in cwl_type)
+        s.discard(None)
+        return sorted(s)
+    if isinstance(cwl_type, str):
+        return CWL_TYPE_MAP[cwl_type]
+    if cwl_type.type == "enum":
+        return "Text"  # use actionOption to represent choices?
+    if cwl_type.type == "array":
+        return CWL_TYPE_MAP[cwl_type.items]
+    if cwl_type.type == "record":
+        return "PropertyValue"
+
+
+def properties_from_cwl_param(cwl_p):
+    def is_structured(cwl_type):
+        return getattr(cwl_type, "type", None) in ("array", "record")
+    if not cwl_p:
+        return {}
+    properties = {"additionalType": convert_cwl_type(cwl_p.type)}
+    if cwl_p.format:
+        properties["encodingFormat"] = cwl_p.format
+    if isinstance(cwl_p.type, list) and "null" in cwl_p.type:
+        properties["valueRequired"] = "False"
+    if is_structured(cwl_p.type):
+        properties["multipleValues"] = "True"
+    if hasattr(cwl_p, "default"):
+        try:
+            default_type = cwl_p.default["class"]
+        except (TypeError, KeyError):
+            if not is_structured(cwl_p.type) and cwl_p.default is not None:
+                properties["defaultValue"] = str(cwl_p.default)
+        else:
+            if default_type in ("File", "Directory"):
+                properties["defaultValue"] = cwl_p.default["location"]
+        # TODO: support more cases
+    if getattr(cwl_p.type, "type", None) == "enum":
+        properties["valuePattern"] = "|".join(_.rsplit("/", 1)[-1] for _ in cwl_p.type.symbols)
+    return properties
+
+
+def get_fragment(uri):
+    return uri.rsplit("#", 1)[-1]
+
 
 class Thing:
 
@@ -385,23 +444,13 @@ def get_workflow(wf_path):
     graph = json_wf.get("$graph", [json_wf])
     # https://github.com/common-workflow-language/cwltool/pull/1506
     for n in graph:
-        n.pop("$namespaces", None)
-    defs = load_document_by_yaml(json_wf, str(wf_path))
+        ns = n.pop("$namespaces", {})
+        if ns:
+            json_wf.setdefault("$namespaces", {}).update(ns)
+    defs = load_document_by_yaml(json_wf, wf_path.absolute().as_uri())
     if not isinstance(defs, list):
         defs = [defs]
-    return {_.id.rsplit("#", 1)[-1]: _ for _ in defs}
-
-
-# add to ro-crate-py?
-def update_property(entity, name, item):
-    """\
-    Add ``item`` to the values of property ``name`` in ``entity``
-    """
-    value = entity.get(name, [])
-    if not isinstance(value, list):
-        value = [value]
-    value = list(set(value + [item]))
-    entity[name] = value[0] if len(value) == 1 else value
+    return {get_fragment(_.id): _ for _ in defs}
 
 
 # FIXME: this should probably build and add the appropriate ro-crate entity directly
@@ -436,6 +485,7 @@ class ProvCrateBuilder:
         self.license = license
         self.wf_path = self.root / "workflow" / WORKFLOW_BASENAME
         self.cwl_defs = get_workflow(self.wf_path)
+        self.param_map = {}
         prov = Provenance(root / "metadata" / "provenance" / "primary.cwlprov.json")
         sel = [_ for _ in prov.agents.values() if type(_) == WorkflowEngine]
         if len(sel) != 1:
@@ -479,6 +529,7 @@ class ProvCrateBuilder:
             }))
         crate.root_dataset["mentions"] = [roc_engine_run]
         self.add_action(crate, self.workflow_run)
+        self.add_param_connections()
         return crate
 
     def add_action(self, crate, activity, parent_instrument=None):
@@ -490,27 +541,30 @@ class ProvCrateBuilder:
             "startTime": activity.start_time,
             "endTime": activity.end_time,
         }))
+        plan_tag = activity.plan.id_.strip().split(":", 1)[-1]
         if isinstance(activity, WorkflowRun):
+            if plan_tag != "main":
+                raise RuntimeError("sub-workflows not supported yet")
             instrument = workflow
+            cwl_tool = self.cwl_defs.get(plan_tag)
+            cwl_inputs = {get_fragment(_.id): _ for _ in cwl_tool.inputs}
+            cwl_outputs = {get_fragment(_.id): _ for _ in cwl_tool.outputs}
             roc_engine_run["result"] = action
         else:
-            step_fragment = activity.plan.id_.strip().split(":", 1)[-1]
-            step_id = f"{workflow.id}#{step_fragment}"
+            step_id = f"{workflow.id}#{plan_tag}"
             parent_instrument_id = parent_instrument.id
             if parent_instrument_id == workflow.id:
                 parent_instrument_id = "main"
             cwl_wf = self.cwl_defs.get(parent_instrument_id)
-            if cwl_wf:
-                tool_map = {s.id.rsplit("#", 1)[-1]: s.run.rsplit("#", 1)[-1]
-                            for s in cwl_wf.steps}
-                tool_name = tool_map[step_fragment]
-                instrument_id = f"{workflow.id}#{tool_name}"
-                properties = {"name": tool_name}
-                cwl_tool = self.cwl_defs.get(tool_name)
-                if cwl_tool and cwl_tool.doc:
-                    properties["description"] = cwl_tool.doc
-            else:
-                instrument_id = properties = None
+            if not cwl_wf:
+                raise RuntimeError(f"could not find workflow for step {plan_tag}")
+            tool_map = {get_fragment(s.id): get_fragment(s.run) for s in cwl_wf.steps}
+            tool_name = tool_map[plan_tag]
+            instrument_id = f"{workflow.id}#{tool_name}"
+            properties = {"name": tool_name}
+            cwl_tool = self.cwl_defs.get(tool_name)
+            if cwl_tool and cwl_tool.doc:
+                properties["description"] = cwl_tool.doc
             instrument = crate.add(SoftwareApplication(crate, instrument_id, properties=properties))
             step = crate.add(ContextEntity(crate, step_id, properties={
                 "@type": "HowToStep"
@@ -521,35 +575,49 @@ class ProvCrateBuilder:
                 "name": f"orchestrate {tool_name}",
             }))
             control_action["instrument"] = step
-            update_property(control_action, "object", action)
-            update_property(roc_engine_run, "object", control_action)
+            control_action.append_to("object", action, compact=True)
+            roc_engine_run.append_to("object", control_action, compact=True)
+            cwl_inputs = {get_fragment(_.id).replace(tool_name, plan_tag): _
+                          for _ in cwl_tool.inputs}
+            cwl_outputs = {get_fragment(_.id).replace(tool_name, plan_tag): _
+                           for _ in cwl_tool.outputs}
         action["instrument"] = instrument
         if parent_instrument:
-            update_property(parent_instrument, "hasPart", instrument)
-            update_property(parent_instrument, "step", step)
-        instrument["input"], action["object"] = self.add_params(crate, activity.in_params)
-        instrument["output"], action["result"] = self.add_params(crate, activity.out_params)
+            parent_instrument.append_to("hasPart", instrument)
+            parent_instrument.append_to("step", step)
+        instrument["input"], action["object"] = self.add_params(
+            crate, activity.in_params, cwl_inputs
+        )
+        instrument["output"], action["result"] = self.add_params(
+            crate, activity.out_params, cwl_outputs
+        )
         for step in activity.steps:
             self.add_action(crate, step, parent_instrument=instrument)
 
-    def add_params(self, crate, prov_params):
+    def add_params(self, crate, prov_params, cwl_params):
         wf_params, action_params = [], []
         for k, v in prov_params.items():
+            # Add FormalParameter to workflow / tool
             path = v.get_path()
             if path:
-                # TODO: check if there's additional info, e.g. EDAM tags
                 add_type = "File"
             else:
                 add_type, value = convert_value(v)
             if not path and not value:
                 continue
             k = k.split(":", 1)[-1]
-            wf_p = crate.add(ContextEntity(crate, f"#param-{k}", properties={
+            properties = {
                 "@type": "FormalParameter",
                 "name": k,
                 "additionalType": add_type,
-            }))
+            }
+            cwl_p = cwl_params.get(k)
+            # possible overwrite of additionalType (this one is more accurate)
+            properties.update(properties_from_cwl_param(cwl_p))
+            wf_p = crate.add(ContextEntity(crate, f"#param-{k}", properties=properties))
             wf_params.append(wf_p)
+            self.param_map[k] = wf_p
+            # Add File / PropertyValue to action
             if path:
                 action_p = crate.dereference(path.as_posix())
                 if not action_p:
@@ -567,9 +635,23 @@ class ProvCrateBuilder:
                     "name": k,
                 }))
                 action_p["value"] = value
-            update_property(action_p, "exampleOfWork", wf_p)
+            action_p.append_to("exampleOfWork", wf_p, compact=True)
             action_params.append(action_p)
         return wf_params, action_params
+
+    def add_param_connections(self):
+        def connect(source, target):
+            source_p = self.param_map[source]
+            target_p = self.param_map[target]
+            source_p["connectedTo"] = target_p
+        for def_ in self.cwl_defs.values():
+            if not hasattr(def_, "steps"):
+                continue
+            for step in def_.steps:
+                for mapping in getattr(step, "in_", []):
+                    connect(get_fragment(mapping.source), get_fragment(mapping.id))
+            for out in getattr(def_, "outputs", []):
+                connect(get_fragment(out.outputSource), get_fragment(out.id))
 
 
 def main(args):
