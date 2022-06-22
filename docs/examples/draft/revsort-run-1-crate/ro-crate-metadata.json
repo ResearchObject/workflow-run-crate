@@ -4,7 +4,7 @@
         {
             "@id": "./",
             "@type": "Dataset",
-            "datePublished": "2022-06-13T09:28:01+00:00",
+            "datePublished": "2022-06-22T13:21:43+00:00",
             "hasPart": [
                 {
                     "@id": "packed.cwl"
@@ -24,7 +24,7 @@
             },
             "mentions": [
                 {
-                    "@id": "#bf333b27-d332-4a79-b66d-c4928d808157"
+                    "@id": "#56678fc8-0392-4fbe-b483-0d66348ee1ae"
                 }
             ]
         },
@@ -99,30 +99,30 @@
             "version": "v1.0"
         },
         {
-            "@id": "#28b208a9-bea2-46f4-afa0-693305474171",
+            "@id": "#52786e22-fcf3-4f43-81b2-8cdbb818fa66",
             "@type": "SoftwareApplication",
             "name": "cwltool 1.0.20181012180214"
         },
         {
-            "@id": "#bf333b27-d332-4a79-b66d-c4928d808157",
+            "@id": "#56678fc8-0392-4fbe-b483-0d66348ee1ae",
             "@type": "OrganizeAction",
             "agent": {
                 "@id": "https://orcid.org/0000-0001-9842-9718"
             },
             "instrument": {
-                "@id": "#28b208a9-bea2-46f4-afa0-693305474171"
+                "@id": "#52786e22-fcf3-4f43-81b2-8cdbb818fa66"
             },
             "name": "Run of cwltool 1.0.20181012180214",
             "object": [
                 {
-                    "@id": "#a89f6fef-94f9-41a2-896b-1b022a49c42a"
+                    "@id": "#25fd9673-49d0-48c9-b173-3221c102e9dd"
                 },
                 {
-                    "@id": "#ecd23337-9e97-410f-8ed1-3c0304fb00f7"
+                    "@id": "#3caee1fc-86ab-407b-8759-ea81a92bb22c"
                 }
             ],
             "result": {
-                "@id": "#1116f6d1-d336-43da-8ada-b03cc8d7a15b"
+                "@id": "#8738dc45-0eba-49ac-92d9-c29b95f99b18"
             },
             "startTime": "2018-10-25T15:46:35.210973"
         },
@@ -132,7 +132,7 @@
             "name": "Stian Soiland-Reyes"
         },
         {
-            "@id": "#1116f6d1-d336-43da-8ada-b03cc8d7a15b",
+            "@id": "#8738dc45-0eba-49ac-92d9-c29b95f99b18",
             "@type": "CreateAction",
             "endTime": "2018-10-25T15:46:43.020168",
             "instrument": {
@@ -215,7 +215,7 @@
             ]
         },
         {
-            "@id": "#b701effa-61f3-4caf-b8b8-b120a45e5a29",
+            "@id": "#b6886778-9e5c-4597-a11c-02075cba1c85",
             "@type": "CreateAction",
             "endTime": "2018-10-25T15:46:36.967359",
             "instrument": {
@@ -238,9 +238,6 @@
             "@id": "packed.cwl#revtool.cwl",
             "@type": "SoftwareApplication",
             "description": "Reverse each line using the `rev` command",
-            "exampleOfWork": {
-                "@id": "packed.cwl#main/rev"
-            },
             "input": [
                 {
                     "@id": "#param-main/rev/input"
@@ -255,17 +252,20 @@
         },
         {
             "@id": "packed.cwl#main/rev",
-            "@type": "HowToStep"
+            "@type": "HowToStep",
+            "workExample": {
+                "@id": "packed.cwl#revtool.cwl"
+            }
         },
         {
-            "@id": "#a89f6fef-94f9-41a2-896b-1b022a49c42a",
+            "@id": "#25fd9673-49d0-48c9-b173-3221c102e9dd",
             "@type": "ControlAction",
             "instrument": {
                 "@id": "packed.cwl#main/rev"
             },
             "name": "orchestrate revtool.cwl",
             "object": {
-                "@id": "#b701effa-61f3-4caf-b8b8-b120a45e5a29"
+                "@id": "#b6886778-9e5c-4597-a11c-02075cba1c85"
             }
         },
         {
@@ -296,7 +296,7 @@
             ]
         },
         {
-            "@id": "#7812b43b-cd55-47f7-9656-16b2b76b1c56",
+            "@id": "#d8bbcd9b-1ba2-4ebd-a187-83dd90b1a4d8",
             "@type": "CreateAction",
             "endTime": "2018-10-25T15:46:38.069110",
             "instrument": {
@@ -322,9 +322,6 @@
             "@id": "packed.cwl#sorttool.cwl",
             "@type": "SoftwareApplication",
             "description": "Sort lines using the `sort` command",
-            "exampleOfWork": {
-                "@id": "packed.cwl#main/sorted"
-            },
             "input": [
                 {
                     "@id": "#param-main/sorted/input"
@@ -342,17 +339,20 @@
         },
         {
             "@id": "packed.cwl#main/sorted",
-            "@type": "HowToStep"
+            "@type": "HowToStep",
+            "workExample": {
+                "@id": "packed.cwl#sorttool.cwl"
+            }
         },
         {
-            "@id": "#ecd23337-9e97-410f-8ed1-3c0304fb00f7",
+            "@id": "#3caee1fc-86ab-407b-8759-ea81a92bb22c",
             "@type": "ControlAction",
             "instrument": {
                 "@id": "packed.cwl#main/sorted"
             },
             "name": "orchestrate sorttool.cwl",
             "object": {
-                "@id": "#7812b43b-cd55-47f7-9656-16b2b76b1c56"
+                "@id": "#d8bbcd9b-1ba2-4ebd-a187-83dd90b1a4d8"
             }
         },
         {
