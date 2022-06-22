@@ -569,7 +569,7 @@ class ProvCrateBuilder:
             step = crate.add(ContextEntity(crate, step_id, properties={
                 "@type": "HowToStep"
             }))
-            instrument["exampleOfWork"] = step
+            step["workExample"] = instrument
             control_action = crate.add(ContextEntity(crate, properties={
                 "@type": "ControlAction",
                 "name": f"orchestrate {tool_name}",

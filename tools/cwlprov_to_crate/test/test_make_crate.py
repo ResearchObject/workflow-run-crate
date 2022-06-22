@@ -83,18 +83,15 @@ def test_revsort(data_dir, tmpdir):
     steps = workflow["step"]
     assert len(steps) == 2
     assert all(_.type == "HowToStep" for _ in steps)
-    for a in actions:
-        if a is wf_action:
-            continue
-        instrument = a["instrument"]
+    for control_a in control_actions:
+        step = control_a["instrument"]
+        create_a = control_a["object"]
+        instrument = create_a["instrument"]
+        assert instrument is step["workExample"]
         assert instrument in tools
-        step = instrument["exampleOfWork"]
-        sel = [_ for _ in control_actions if _["instrument"] is step]
-        assert len(sel) == 1
-        assert sel[0]["object"] is a
         if step.id.endswith("rev"):
-            objects = a["object"]
-            results = a["result"]
+            objects = create_a["object"]
+            results = create_a["result"]
             assert len(objects) == 1
             assert len(results) == 1
             rev_input_file = objects[0]
@@ -102,8 +99,8 @@ def test_revsort(data_dir, tmpdir):
             rev_output_file = results[0]
             assert "File" in rev_output_file.type
         elif step.id.endswith("sorted"):
-            objects = a["object"]
-            results = a["result"]
+            objects = create_a["object"]
+            results = create_a["result"]
             assert len(objects) == 2
             assert len(results) == 1
             for entity in objects:
@@ -115,7 +112,7 @@ def test_revsort(data_dir, tmpdir):
             sorted_output_file = results[0]
             assert sorted_output_file is wf_output_file
         else:
-            assert False, f"unexpected step id for action {a.id}: {step.id}"
+            assert False, f"unexpected step id: {step.id}"
     sorted_output = crate.get("#param-main/sorted/output")
     main_output = crate.get("#param-main/output")
     assert sorted_output["connectedTo"] is main_output
