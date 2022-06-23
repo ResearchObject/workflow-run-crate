@@ -98,6 +98,7 @@ def test_revsort(data_dir, tmpdir):
             assert rev_input_file is wf_input_file
             rev_output_file = results[0]
             assert "File" in rev_output_file.type
+            assert step["position"] == "0"
         elif step.id.endswith("sorted"):
             objects = create_a["object"]
             results = create_a["result"]
@@ -111,6 +112,7 @@ def test_revsort(data_dir, tmpdir):
                     assert entity is rev_output_file
             sorted_output_file = results[0]
             assert sorted_output_file is wf_output_file
+            assert step["position"] == "1"
         else:
             assert False, f"unexpected step id: {step.id}"
     sorted_output = crate.get("#param-main/sorted/output")
