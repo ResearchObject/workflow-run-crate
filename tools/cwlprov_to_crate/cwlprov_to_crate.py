@@ -21,6 +21,7 @@ import json
 from itertools import chain
 from pathlib import Path
 
+import networkx as nx
 from cwl_utils.parser import load_document_by_yaml
 from rocrate.rocrate import ROCrate
 from rocrate.model.contextentity import ContextEntity
@@ -86,6 +87,20 @@ def properties_from_cwl_param(cwl_p):
 
 def get_fragment(uri):
     return uri.rsplit("#", 1)[-1]
+
+
+def build_step_graph(cwl_wf):
+    out_map = {}
+    for s in cwl_wf.steps:
+        for o in s.out:
+            out_map[o] = s.id
+    graph = nx.DiGraph()
+    for s in cwl_wf.steps:
+        for i in s.in_:
+            source_id = out_map.get(i.source)
+            if source_id:
+                graph.add_edge(get_fragment(source_id), get_fragment(s.id))
+    return graph
 
 
 class Thing:
@@ -485,6 +500,7 @@ class ProvCrateBuilder:
         self.license = license
         self.wf_path = self.root / "workflow" / WORKFLOW_BASENAME
         self.cwl_defs = get_workflow(self.wf_path)
+        self.step_maps = self._get_step_maps(self.cwl_defs)
         self.param_map = {}
         prov = Provenance(root / "metadata" / "provenance" / "primary.cwlprov.json")
         sel = [_ for _ in prov.agents.values() if type(_) == WorkflowEngine]
@@ -500,6 +516,19 @@ class ProvCrateBuilder:
             self.agent.id_ = self.agent.id_.replace(
                 "orcid:", prov.prefixes.get("orcid", "https://orcid.org/")
             )
+
+    @staticmethod
+    def _get_step_maps(cwl_defs):
+        rval = {}
+        for k, v in cwl_defs.items():
+            if hasattr(v, "steps"):
+                graph = build_step_graph(v)
+                pos_map = {f: i for i, f in enumerate(nx.topological_sort(graph))}
+                rval[k] = {}
+                for s in v.steps:
+                    f = get_fragment(s.id)
+                    rval[k][f] = {"tool": get_fragment(s.run), "pos": pos_map[f]}
+        return rval
 
     def build(self):
         crate = ROCrate(gen_preview=False)
@@ -558,8 +587,8 @@ class ProvCrateBuilder:
             cwl_wf = self.cwl_defs.get(parent_instrument_id)
             if not cwl_wf:
                 raise RuntimeError(f"could not find workflow for step {plan_tag}")
-            tool_map = {get_fragment(s.id): get_fragment(s.run) for s in cwl_wf.steps}
-            tool_name = tool_map[plan_tag]
+            step_info = self.step_maps[parent_instrument_id][plan_tag]
+            tool_name = step_info["tool"]
             instrument_id = f"{workflow.id}#{tool_name}"
             properties = {"name": tool_name}
             cwl_tool = self.cwl_defs.get(tool_name)
@@ -567,7 +596,8 @@ class ProvCrateBuilder:
                 properties["description"] = cwl_tool.doc
             instrument = crate.add(SoftwareApplication(crate, instrument_id, properties=properties))
             step = crate.add(ContextEntity(crate, step_id, properties={
-                "@type": "HowToStep"
+                "@type": "HowToStep",
+                "position": str(step_info["pos"]),
             }))
             step["workExample"] = instrument
             control_action = crate.add(ContextEntity(crate, properties={
