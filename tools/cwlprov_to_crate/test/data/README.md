@@ -16,3 +16,5 @@ License: [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0)
 Packed (`cwltool --pack`) version of the [exome alignment workflow](https://github.com/inab/ipc_workflows/blob/fefede132f217184a25767fc4f42e2ae4606ff25/exome/alignment/workflow.cwl) from [inab/ipc_workflows@fefede1](https://github.com/inab/ipc_workflows/tree/fefede132f217184a25767fc4f42e2ae4606ff25), with step order altered to make it more distant from the topological order.
 
 License: [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0)
+
+WorkflowHub entry: https://workflowhub.eu/workflows/239
