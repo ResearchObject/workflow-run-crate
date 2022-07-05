@@ -17,6 +17,7 @@ Generate a Workflow Run RO-Crate from a CWLProv RO.
 """
 
 import argparse
+import hashlib
 import json
 from itertools import chain
 from pathlib import Path
@@ -237,6 +238,23 @@ class Dictionary(Collection):
         return f"{self.__class__.__name__}({self.id_!r}, {self.dict_members!r})"
 
 
+class Folder(Dictionary):
+
+    def __init__(self, id_, dict_members):
+        super().__init__(id_, dict_members)
+        self.__basename = None
+
+    @property
+    def basename(self):
+        if not self.__basename:
+            m = hashlib.sha1()
+            for pair in self.dict_members:
+                path = pair.entity.get_path()
+                m.update(path.name.encode())
+            self.__basename = m.hexdigest()
+        return self.__basename
+
+
 class Provenance:
 
     def __init__(self, path_or_file):
@@ -331,6 +349,9 @@ class Provenance:
                 key = record["prov:pairKey"][0]
                 entity = record["prov:pairEntity"][0]
                 entities[id_] = KeyEntityPair(id_, key, entity)
+            elif "ro:Folder" in types:
+                assert "prov:Dictionary" in types
+                entities[id_] = Folder(id_, record["prov:hadDictionaryMember"])
             elif "prov:Dictionary" in types:
                 entities[id_] = Dictionary(id_, record["prov:hadDictionaryMember"])
             elif "prov:Collection" in types:
@@ -628,13 +649,13 @@ class ProvCrateBuilder:
         wf_params, action_params = [], []
         for k, v in prov_params.items():
             # Add FormalParameter to workflow / tool
-            path = v.get_path()
-            if path:
+            value = None
+            if isinstance(v, File):
                 add_type = "File"
+            elif isinstance(v, Folder):
+                add_type = "Dataset"
             else:
                 add_type, value = convert_value(v)
-            if not path and not value:
-                continue
             k = k.split(":", 1)[-1]
             properties = {
                 "@type": "FormalParameter",
@@ -647,11 +668,23 @@ class ProvCrateBuilder:
             wf_p = crate.add(ContextEntity(crate, f"#param-{k}", properties=properties))
             wf_params.append(wf_p)
             self.param_map[k] = wf_p
-            # Add File / PropertyValue to action
-            if path:
-                action_p = crate.dereference(path.as_posix())
+            # Add File / Dataset / PropertyValue to action
+            if isinstance(v, File):
+                path = v.get_path()
+                action_p = crate.dereference(path.name)
                 if not action_p:
-                    action_p = crate.add_file(self.root / path, path)
+                    action_p = crate.add_file(self.root / path, path.name)
+            elif isinstance(v, Folder):
+                action_p = crate.dereference(v.basename)
+                if not action_p:
+                    action_p = crate.add_directory(v.basename)
+                    for pair in v.dict_members:
+                        path = pair.entity.get_path()
+                        dest = Path(v.basename) / path.name
+                        part = crate.dereference(dest.as_posix())
+                        if not part:
+                            part = crate.add_file(self.root / path, dest)
+                        action_p.append_to("hasPart", part)
             else:
                 # FIXME: assuming arrays and records don't have nested structured types
                 if add_type == "PropertyValue":

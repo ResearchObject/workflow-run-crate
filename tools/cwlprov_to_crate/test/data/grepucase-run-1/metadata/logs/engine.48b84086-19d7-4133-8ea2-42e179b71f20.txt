@@ -1,0 +1,27 @@
+[2022-07-04T14:30:42,359.185696Z] [cwltool] /home/simleo/git/workflow-run-crate/tools/cwlprov_to_crate/venv/bin/cwltool --provenance grepucase-run-1 grepucase.cwl grepucase-job.yml
+[2022-07-04T14:30:42,360.780716Z] Resolved 'grepucase.cwl' to 'file:///home/simleo/git/workflow-run-crate/tools/cwlprov_to_crate/test/data/grepucase/grepucase.cwl'
+[2022-07-04T14:30:44,664.827824Z] [provenance] Adding to RO file:///home/simleo/git/workflow-run-crate/tools/cwlprov_to_crate/test/data/grepucase/grepucase_in/bar
+[2022-07-04T14:30:44,665.434122Z] [provenance] Adding to RO file:///home/simleo/git/workflow-run-crate/tools/cwlprov_to_crate/test/data/grepucase/grepucase_in/foo
+[2022-07-04T14:30:44,679.759979Z] [workflow ] start
+[2022-07-04T14:30:44,680.054426Z] [workflow ] starting step grep
+[2022-07-04T14:30:44,680.232763Z] [step grep] start
+[2022-07-04T14:30:44,682.800055Z] [job grep] /tmp/pgy668jk$ bash \
+    -c \
+    'mkdir -p grep_out
+find /tmp/o2pwtlkr/stgfbb079aa-da80-4774-82b4-87993671d0b5/grepucase_in/ -type f | while read f; do
+  grep lazy ${f} > grep_out/`basename ${f}`.out
+done'
+[2022-07-04T14:30:44,702.451944Z] [job grep] completed success
+[2022-07-04T14:30:44,702.672720Z] [step grep] completed success
+[2022-07-04T14:30:44,703.036785Z] [workflow ] starting step ucase
+[2022-07-04T14:30:44,703.215361Z] [step ucase] start
+[2022-07-04T14:30:44,705.494642Z] [job ucase] /tmp/ukq8y8gl$ bash \
+    -c \
+    'mkdir -p ucase_out
+find /tmp/ctoertc9/stg0dc3bd6f-1751-4c96-91a7-dc3a9dea6535/grep_out/ -type f | while read f; do
+  awk '"'"'{print toupper($0)}'"'"' < ${f} > ucase_out/`basename ${f}`.out
+done'
+[2022-07-04T14:30:44,720.105886Z] [job ucase] completed success
+[2022-07-04T14:30:44,720.330238Z] [step ucase] completed success
+[2022-07-04T14:30:44,720.495701Z] [workflow ] completed success
+[2022-07-04T14:30:44,816.266298Z] Final process status is success

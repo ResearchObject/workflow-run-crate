@@ -4,19 +4,19 @@
         {
             "@id": "./",
             "@type": "Dataset",
-            "datePublished": "2022-06-22T13:21:43+00:00",
+            "datePublished": "2022-07-05T10:44:02+00:00",
             "hasPart": [
                 {
                     "@id": "packed.cwl"
                 },
                 {
-                    "@id": "data/32/327fc7aedf4f6b69a42a7c8b808dc5a7aff61376"
+                    "@id": "327fc7aedf4f6b69a42a7c8b808dc5a7aff61376"
                 },
                 {
-                    "@id": "data/b9/b9214658cc453331b62c2282b772a5c063dbd284"
+                    "@id": "b9214658cc453331b62c2282b772a5c063dbd284"
                 },
                 {
-                    "@id": "data/97/97fe1b50b4582cebc7d853796ebd62e3e163aa3f"
+                    "@id": "97fe1b50b4582cebc7d853796ebd62e3e163aa3f"
                 }
             ],
             "mainEntity": {
@@ -24,7 +24,7 @@
             },
             "mentions": [
                 {
-                    "@id": "#56678fc8-0392-4fbe-b483-0d66348ee1ae"
+                    "@id": "#64dfd03a-7600-41a0-84c3-1bc5c053fa13"
                 }
             ]
         },
@@ -99,30 +99,30 @@
             "version": "v1.0"
         },
         {
-            "@id": "#52786e22-fcf3-4f43-81b2-8cdbb818fa66",
+            "@id": "#0c85d8f4-fb30-4434-b4aa-ac339cb53576",
             "@type": "SoftwareApplication",
             "name": "cwltool 1.0.20181012180214"
         },
         {
-            "@id": "#56678fc8-0392-4fbe-b483-0d66348ee1ae",
+            "@id": "#64dfd03a-7600-41a0-84c3-1bc5c053fa13",
             "@type": "OrganizeAction",
             "agent": {
                 "@id": "https://orcid.org/0000-0001-9842-9718"
             },
             "instrument": {
-                "@id": "#52786e22-fcf3-4f43-81b2-8cdbb818fa66"
+                "@id": "#0c85d8f4-fb30-4434-b4aa-ac339cb53576"
             },
             "name": "Run of cwltool 1.0.20181012180214",
             "object": [
                 {
-                    "@id": "#25fd9673-49d0-48c9-b173-3221c102e9dd"
+                    "@id": "#1895f1f9-1452-4a42-bdcd-f4177cda400c"
                 },
                 {
-                    "@id": "#3caee1fc-86ab-407b-8759-ea81a92bb22c"
+                    "@id": "#3ea66f15-2d65-4a26-b4ca-85b37c7674ca"
                 }
             ],
             "result": {
-                "@id": "#8738dc45-0eba-49ac-92d9-c29b95f99b18"
+                "@id": "#159f2e15-01c4-471a-9fb5-169ba9b457a1"
             },
             "startTime": "2018-10-25T15:46:35.210973"
         },
@@ -132,7 +132,7 @@
             "name": "Stian Soiland-Reyes"
         },
         {
-            "@id": "#8738dc45-0eba-49ac-92d9-c29b95f99b18",
+            "@id": "#159f2e15-01c4-471a-9fb5-169ba9b457a1",
             "@type": "CreateAction",
             "endTime": "2018-10-25T15:46:43.020168",
             "instrument": {
@@ -141,7 +141,7 @@
             "name": "Run of workflow/packed.cwl#main",
             "object": [
                 {
-                    "@id": "data/32/327fc7aedf4f6b69a42a7c8b808dc5a7aff61376"
+                    "@id": "327fc7aedf4f6b69a42a7c8b808dc5a7aff61376"
                 },
                 {
                     "@id": "#pv-main/reverse_sort"
@@ -149,7 +149,7 @@
             ],
             "result": [
                 {
-                    "@id": "data/b9/b9214658cc453331b62c2282b772a5c063dbd284"
+                    "@id": "b9214658cc453331b62c2282b772a5c063dbd284"
                 }
             ],
             "startTime": "2018-10-25T15:46:35.211153"
@@ -166,7 +166,7 @@
             "name": "main/input"
         },
         {
-            "@id": "data/32/327fc7aedf4f6b69a42a7c8b808dc5a7aff61376",
+            "@id": "327fc7aedf4f6b69a42a7c8b808dc5a7aff61376",
             "@type": "File",
             "exampleOfWork": [
                 {
@@ -203,7 +203,7 @@
             "name": "main/output"
         },
         {
-            "@id": "data/b9/b9214658cc453331b62c2282b772a5c063dbd284",
+            "@id": "b9214658cc453331b62c2282b772a5c063dbd284",
             "@type": "File",
             "exampleOfWork": [
                 {
@@ -215,7 +215,7 @@
             ]
         },
         {
-            "@id": "#b6886778-9e5c-4597-a11c-02075cba1c85",
+            "@id": "#5a27e595-e7fc-4d34-827e-bb6033e12573",
             "@type": "CreateAction",
             "endTime": "2018-10-25T15:46:36.967359",
             "instrument": {
@@ -224,12 +224,12 @@
             "name": "Run of workflow/packed.cwl#main/rev",
             "object": [
                 {
-                    "@id": "data/32/327fc7aedf4f6b69a42a7c8b808dc5a7aff61376"
+                    "@id": "327fc7aedf4f6b69a42a7c8b808dc5a7aff61376"
                 }
             ],
             "result": [
                 {
-                    "@id": "data/97/97fe1b50b4582cebc7d853796ebd62e3e163aa3f"
+                    "@id": "97fe1b50b4582cebc7d853796ebd62e3e163aa3f"
                 }
             ],
             "startTime": "2018-10-25T15:46:35.314101"
@@ -253,19 +253,20 @@
         {
             "@id": "packed.cwl#main/rev",
             "@type": "HowToStep",
+            "position": "0",
             "workExample": {
                 "@id": "packed.cwl#revtool.cwl"
             }
         },
         {
-            "@id": "#25fd9673-49d0-48c9-b173-3221c102e9dd",
+            "@id": "#1895f1f9-1452-4a42-bdcd-f4177cda400c",
             "@type": "ControlAction",
             "instrument": {
                 "@id": "packed.cwl#main/rev"
             },
             "name": "orchestrate revtool.cwl",
             "object": {
-                "@id": "#b6886778-9e5c-4597-a11c-02075cba1c85"
+                "@id": "#5a27e595-e7fc-4d34-827e-bb6033e12573"
             }
         },
         {
@@ -284,7 +285,7 @@
             "name": "main/rev/output"
         },
         {
-            "@id": "data/97/97fe1b50b4582cebc7d853796ebd62e3e163aa3f",
+            "@id": "97fe1b50b4582cebc7d853796ebd62e3e163aa3f",
             "@type": "File",
             "exampleOfWork": [
                 {
@@ -296,7 +297,7 @@
             ]
         },
         {
-            "@id": "#d8bbcd9b-1ba2-4ebd-a187-83dd90b1a4d8",
+            "@id": "#4faa7e2e-e1e8-40c9-9927-bcaaa2b36292",
             "@type": "CreateAction",
             "endTime": "2018-10-25T15:46:38.069110",
             "instrument": {
@@ -305,7 +306,7 @@
             "name": "Run of workflow/packed.cwl#main/sorted",
             "object": [
                 {
-                    "@id": "data/97/97fe1b50b4582cebc7d853796ebd62e3e163aa3f"
+                    "@id": "97fe1b50b4582cebc7d853796ebd62e3e163aa3f"
                 },
                 {
                     "@id": "#pv-main/sorted/reverse"
@@ -313,7 +314,7 @@
             ],
             "result": [
                 {
-                    "@id": "data/b9/b9214658cc453331b62c2282b772a5c063dbd284"
+                    "@id": "b9214658cc453331b62c2282b772a5c063dbd284"
                 }
             ],
             "startTime": "2018-10-25T15:46:36.975235"
@@ -340,19 +341,20 @@
         {
             "@id": "packed.cwl#main/sorted",
             "@type": "HowToStep",
+            "position": "1",
             "workExample": {
                 "@id": "packed.cwl#sorttool.cwl"
             }
         },
         {
-            "@id": "#3caee1fc-86ab-407b-8759-ea81a92bb22c",
+            "@id": "#3ea66f15-2d65-4a26-b4ca-85b37c7674ca",
             "@type": "ControlAction",
             "instrument": {
                 "@id": "packed.cwl#main/sorted"
             },
             "name": "orchestrate sorttool.cwl",
             "object": {
-                "@id": "#d8bbcd9b-1ba2-4ebd-a187-83dd90b1a4d8"
+                "@id": "#4faa7e2e-e1e8-40c9-9927-bcaaa2b36292"
             }
         },
         {

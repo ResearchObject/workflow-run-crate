@@ -138,6 +138,7 @@ def test_revsort(data_dir, tmpdir):
             assert step["position"] == "1"
         else:
             assert False, f"unexpected step id: {step.id}"
+    # parameter connections
     sorted_output = crate.get("#param-main/sorted/output")
     main_output = crate.get("#param-main/output")
     assert sorted_output["connectedTo"] is main_output
@@ -150,6 +151,13 @@ def test_revsort(data_dir, tmpdir):
     main_reverse_sort = crate.get("#param-main/reverse_sort")
     sorted_reverse = crate.get("#param-main/sorted/reverse")
     assert main_reverse_sort["connectedTo"] is sorted_reverse
+    # file contents
+    in_text = (args.root / "data/32/327fc7aedf4f6b69a42a7c8b808dc5a7aff61376").read_text()
+    assert (args.output / wf_input_file.id).read_text() == in_text
+    rev_out_text = (args.root / "data/97/97fe1b50b4582cebc7d853796ebd62e3e163aa3f").read_text()
+    assert (args.output / rev_output_file.id).read_text() == rev_out_text
+    out_text = (args.root / "data/b9/b9214658cc453331b62c2282b772a5c063dbd284").read_text()
+    assert (args.output / wf_output_file.id).read_text() == out_text
 
 
 def test_no_input(data_dir, tmpdir):
@@ -248,3 +256,85 @@ def test_param_types(data_dir, tmpdir):
     assert len(results) == 1
     res = results[0]
     assert "File" in res.type
+
+
+def test_dir_io(data_dir, tmpdir):
+    args = Args()
+    args.root = data_dir / "grepucase-run-1"
+    args.output = tmpdir / "grepucase-run-1-crate"
+    args.license = "Apache-2.0"
+    args.workflow_name = None
+    main(args)
+    crate = ROCrate(args.output)
+    workflow = crate.mainEntity
+    assert workflow.id == "packed.cwl"
+    tools = workflow["hasPart"]
+    assert len(tools) == 2
+    inputs = workflow["input"]
+    outputs = workflow["output"]
+    assert len(inputs) == 2
+    assert len(outputs) == 1
+    input_map = {_.id.rsplit("-", 1)[-1]: _ for _ in inputs}
+    assert input_map["main/in_dir"]["additionalType"] == "Dataset"
+    assert input_map["main/pattern"]["additionalType"] == "Text"
+    assert outputs[0]["additionalType"] == "Dataset"
+    action_map = {_["instrument"].id: _ for _ in crate.contextual_entities
+                  if "CreateAction" in _.type}
+    assert len(action_map) == 3
+    wf_action = action_map["packed.cwl"]
+    assert wf_action["instrument"] is workflow
+    wf_objects = wf_action["object"]
+    wf_results = wf_action["result"]
+    assert len(wf_objects) == 2
+    assert len(wf_results) == 1
+    for entity in wf_objects:
+        if entity.id.endswith("pattern"):
+            assert "PropertyValue" in entity.type
+            assert entity["value"] == "lazy"
+        else:
+            assert "Dataset" in entity.type
+            wf_input_dir = entity
+    wf_output_dir = wf_results[0]
+    assert "Dataset" in wf_output_dir.type
+    greptool_action = action_map["packed.cwl#greptool.cwl"]
+    greptool_objects = greptool_action["object"]
+    greptool_results = greptool_action["result"]
+    assert len(greptool_objects) == 2
+    assert len(greptool_results) == 1
+    for entity in greptool_objects:
+        if entity.id.endswith("pattern"):
+            assert "PropertyValue" in entity.type
+            assert entity["value"] == "lazy"
+        else:
+            assert "Dataset" in entity.type
+            greptool_input_dir = entity
+    assert greptool_input_dir is wf_input_dir
+    greptool_output_dir = greptool_results[0]
+    assert "Dataset" in greptool_output_dir.type
+    ucasetool_action = action_map["packed.cwl#ucasetool.cwl"]
+    ucasetool_objects = ucasetool_action["object"]
+    ucasetool_results = ucasetool_action["result"]
+    assert len(ucasetool_objects) == 1
+    assert len(ucasetool_results) == 1
+    ucasetool_input_dir = ucasetool_objects[0]
+    assert ucasetool_input_dir is greptool_output_dir
+    ucasetool_output_dir = ucasetool_results[0]
+    assert "Dataset" in ucasetool_output_dir.type
+    # file contents
+    in_text = {
+        (args.root / "data/8d/8d84ef91f0aba379f5edc3836b4b5f6727920f22").read_text(),
+        (args.root / "data/d6/d60dd58346cf7e533252f35399cd510b1b1467f7").read_text(),
+    }
+    assert set((args.output / _.id).read_text() for _ in wf_input_dir["hasPart"]) == in_text
+    grep_out_text = {
+        (args.root / "data/85/8545949f96b96cb721485066bafad9b768bc4e52").read_text(),
+        (args.root / "data/5a/5aa9aa3b336778cf2a7db648fc530892c3b3dabb").read_text(),
+    }
+    assert set(
+        (args.output / _.id).read_text() for _ in greptool_output_dir["hasPart"]
+    ) == grep_out_text
+    out_text = {
+        (args.root / "data/3c/3ccdc7533084b641e6c941cc6dbb091d2e5f8a41").read_text(),
+        (args.root / "data/ec/ec0270052a78321508502ed915815c4daf75fe46").read_text(),
+    }
+    assert set((args.output / _.id).read_text() for _ in wf_output_dir["hasPart"]) == out_text
