@@ -94,13 +94,15 @@ def build_step_graph(cwl_wf):
     out_map = {}
     for s in cwl_wf.steps:
         for o in s.out:
-            out_map[o] = s.id
+            out_map[o] = get_fragment(s.id)
     graph = nx.DiGraph()
     for s in cwl_wf.steps:
+        fragment = get_fragment(s.id)
+        graph.add_node(fragment)
         for i in s.in_:
-            source_id = out_map.get(i.source)
-            if source_id:
-                graph.add_edge(get_fragment(source_id), get_fragment(s.id))
+            source_fragment = out_map.get(i.source)
+            if source_fragment:
+                graph.add_edge(source_fragment, fragment)
     return graph
 
 

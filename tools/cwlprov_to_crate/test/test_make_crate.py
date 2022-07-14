@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from cwlprov_to_crate import get_workflow, main, ProvCrateBuilder
+from cwlprov_to_crate import main
 from rocrate.rocrate import ROCrate
 
 
@@ -21,29 +21,6 @@ CWL_ID = "https://w3id.org/workflowhub/workflow-ro-crate#cwl"
 
 class Args:
     pass
-
-
-def test_get_step_maps(data_dir):
-    wf_path = data_dir / "exome-alignment-packed.cwl"
-    cwl_defs = get_workflow(wf_path)
-    step_maps = ProvCrateBuilder._get_step_maps(cwl_defs)
-    assert set(step_maps) == {"main"}
-    sm = step_maps["main"]
-    assert len(sm) == 8
-    assert sm["main/bwa_index"]["tool"] == "bwa-index.cwl"
-    assert sm["main/bwa_mem"]["tool"] == "bwa-mem.cwl"
-    assert sm["main/cutadapt"]["tool"] == "cutadapt.cwl"
-    assert sm["main/gunzip"]["tool"] == "gunzip.cwl"
-    assert sm["main/picard_dictionary"]["tool"] == "picard_dictionary.cwl"
-    assert sm["main/picard_markduplicates"]["tool"] == "picard_markduplicates.cwl"
-    assert sm["main/samtools_faidx"]["tool"] == "samtools_faidx.cwl"
-    assert sm["main/samtools_sort"]["tool"] == "samtools_sort.cwl"
-    assert sm["main/cutadapt"]["pos"] < sm["main/bwa_mem"]["pos"]
-    for n in "picard_dictionary", "bwa_index", "samtools_faidx":
-        assert sm["main/gunzip"]["pos"] < sm[f"main/{n}"]["pos"]
-    assert sm["main/bwa_index"]["pos"] < sm["main/bwa_mem"]["pos"]
-    assert sm["main/bwa_mem"]["pos"] < sm["main/samtools_sort"]["pos"]
-    assert sm["main/samtools_sort"]["pos"] < sm["main/picard_markduplicates"]["pos"]
 
 
 def test_revsort(data_dir, tmpdir):

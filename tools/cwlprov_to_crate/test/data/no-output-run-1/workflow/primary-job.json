@@ -1,0 +1,142 @@
+{
+    "sabdab_file": {
+        "class": "File",
+        "location": "../data/5e/5e026d2a039e60827d3834596a8c30256aa85e57",
+        "format": "https://www.iana.org/assignments/media-types/text/tab-separated-values",
+        "https://schema.org/additionalType": "http://schema.org/Dataset",
+        "https://schema.org/dateCreated": "2022-05-27",
+        "https://schema.org/includedInDataCatalog": {
+            "https://schema.org/identifier": "https://bio.tools/sabdab"
+        },
+        "https://schema.org/hasPart": [
+            {
+                "https://schema.org/name": "part1"
+            },
+            {
+                "https://schema.org/name": "part2"
+            }
+        ],
+        "size": 4598025,
+        "basename": "sabdab_summary_all_20220527.tsv",
+        "nameroot": "sabdab_summary_all_20220527",
+        "nameext": ".tsv",
+        "checksum": "sha1$5e026d2a039e60827d3834596a8c30256aa85e57"
+    },
+    "pdb_dir": {
+        "class": "Directory",
+        "https://schema.org/additionalType": "https://schema.org/Dataset",
+        "https://schema.org/dateCreated": "2022-06-22",
+        "https://schema.org/includedInDataCatalog": {
+            "https://schema.org/identifier": "https://bio.tools/pdb"
+        },
+        "https://schema.org/hasPart": [
+            {
+                "https://schema.org/identifier": "http://doi.org/10.2210/pdb1KIP/pdb",
+                "https://schema.org/version": 1.2,
+                "https://schema.org/encodingFormat": "http://edamontology.org/format_1477"
+            },
+            {
+                "https://schema.org/identifier": "http://doi.org/10.2210/pdb1AHW/pdb",
+                "https://schema.org/version": 1.2,
+                "https://schema.org/encodingFormat": "http://edamontology.org/format_1477"
+            }
+        ],
+        "basename": "pdb_directory"
+    },
+    "pdb_array": [
+        {
+            "class": "File",
+            "location": "../data/4b/4b22356928446475c8ae5869968c9777374a76e8",
+            "format": "http://edamontology.org/format_1477",
+            "https://schema.org/isPartOf": {
+                "https://schema.org/identifier": "https://bio.tools/pdb"
+            },
+            "https://schema.org/identifier": "http://doi.org/10.2210/pdb7MB7/pdb",
+            "https://schema.org/version": 1.0,
+            "https://schema.org/dateCreated": "2022-06-23",
+            "size": 508297,
+            "basename": "7mb7.cif",
+            "nameroot": "7mb7",
+            "nameext": ".cif",
+            "checksum": "sha1$4b22356928446475c8ae5869968c9777374a76e8"
+        },
+        {
+            "class": "File",
+            "location": "../data/4e/4ebd7d222d9b6095fa96ee395905ce7f6d415381",
+            "format": "http://edamontology.org/format_1477",
+            "https://schema.org/isPartOf": {
+                "https://schema.org/identifier": "https://bio.tools/pdb"
+            },
+            "https://schema.org/identifier": "http://doi.org/10.2210/pdb7ZXF/pdb",
+            "https://schema.org/version": 1.0,
+            "https://schema.org/dateCreated": "2022-06-23",
+            "size": 1984391,
+            "basename": "7zxf.cif",
+            "nameroot": "7zxf",
+            "nameext": ".cif",
+            "checksum": "sha1$4ebd7d222d9b6095fa96ee395905ce7f6d415381"
+        }
+    ],
+    "merged_dataset": {
+        "class": "File",
+        "location": "file:///Users/renskedewit/Documents/Bioinformatics_Systems_Biology/CWLproject/cwlprov-provenance/prov_data_annotations/example2/data/merged.csv",
+        "basename": "merged.csv",
+        "nameroot": "merged",
+        "nameext": ".csv"
+    },
+    "$namespaces": {
+        "s": "https://schema.org/",
+        "cwlprov": "https://w3id.org/cwl/prov#"
+    },
+    "$schemas": [
+        "https://schema.org/version/latest/schemaorg-current-https.rdf"
+    ],
+    "https://w3id.org/cwl/prov#prov": {
+        "pdb_search": {
+            "https://schema.org/additionalType": "https://schema.org/SearchAction",
+            "https://schema.org/query": "All structures",
+            "https://schema.org/object": {
+                "https://schema.org/identifier": "https://bio.tools/pdb"
+            },
+            "https://schema.org/date": "2022-05-27",
+            "https://schema.org/result": "pdb_download"
+        },
+        "pdb_filtering": {
+            "https://schema.org/additionalType": "https://schema.org/Action",
+            "https://schema.org/object": "pdb_download",
+            "https://schema.org/instrument": {
+                "https://schema.org/identifier": "https://bio.tools/pisces"
+            },
+            "https://schema.org/description": "Excluding sequences with more than 30% sequence similarity from the initially downloaded dataset",
+            "https://schema.org/result": "pdb_array"
+        },
+        "merge_action": {
+            "https://schema.org/additionalType": "https://schema.org/Action",
+            "https://schema.org/object": [
+                {
+                    "dataset1": {
+                        "https://schema.org/identifier": "https://doi.org/zenodo.234231"
+                    }
+                },
+                {
+                    "dataset2": {
+                        "https://schema.org/identifier": "https://doi.org/zenodo.343512"
+                    }
+                }
+            ],
+            "https://schema.org/result": "merged_dataset",
+            "https://schema.org/description": "Perform inner merge of 2 datasets such that resulting dataset only contains entries found in both datasets",
+            "https://schema.org/instrument": "pandas.DataFrame.join(dataset1, dataset2, how='inner')"
+        },
+        "sabdab_search": {
+            "https://schema.org/additionalType": "https://schema.org/SearchAction",
+            "https://schema.org/object": "https://bio.tools/sabdab",
+            "https://schema.org/query": "All structures",
+            "https://schema.org/result": "sabdab_raw"
+        },
+        "sabdab_processing": {
+            "https://schema.org/additionalType": "https://schema.org/Action",
+            "https://schema.org/description": "Processing of raw file downloaded from SabDab"
+        }
+    }
+}
