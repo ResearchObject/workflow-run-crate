@@ -424,7 +424,7 @@ class Provenance:
                 if single_tool and len(role.split("/")) > 2:
                     continue
                 activity.in_params[role] = entity
-        for dummy, record in self.data["wasGeneratedBy"].items():
+        for dummy, record in self.data.get("wasGeneratedBy", {}).items():
             activity = self.activities.get(record.get("prov:activity"))
             if not activity:
                 continue
