@@ -491,30 +491,6 @@ def get_workflow(wf_path):
     return {get_fragment(_.id): _ for _ in defs}
 
 
-# FIXME: this should probably build and add the appropriate ro-crate entity directly
-def convert_value(prov_param):
-    type_ = "Text"
-    if prov_param.value:
-        if isinstance(prov_param.value, bool):
-            type_ = "Boolean"
-        elif isinstance(prov_param.value, float):
-            type_ = "Float"
-        elif isinstance(prov_param.value, int):
-            type_ = "Integer"
-        # str(True) == "True" (same for False), so str() maps to Schema.org types
-        return type_, str(prov_param.value)
-    elif hasattr(prov_param, "dict_members"):
-        return "PropertyValue", dict(
-            (_.key, convert_value(_.entity)) for _ in prov_param.dict_members if _.key != "@id"
-        )
-    elif hasattr(prov_param, "members"):
-        types, values = zip(*[convert_value(_) for _ in prov_param.members])
-        assert len(set(types)) == 1
-        return types[0], list(values)
-    else:
-        raise RuntimeError(f"No value to convert for {prov_param}")
-
-
 class ProvCrateBuilder:
 
     def __init__(self, root, workflow_name=None, license=None):
@@ -651,13 +627,7 @@ class ProvCrateBuilder:
         wf_params, action_params = [], []
         for k, v in prov_params.items():
             # Add FormalParameter to workflow / tool
-            value = None
-            if isinstance(v, File):
-                add_type = "File"
-            elif isinstance(v, Folder):
-                add_type = "Dataset"
-            else:
-                add_type, value = convert_value(v)
+            add_type, value = self.convert_param(v, crate)
             k = k.split(":", 1)[-1]
             properties = {
                 "@type": "FormalParameter",
@@ -671,22 +641,8 @@ class ProvCrateBuilder:
             wf_params.append(wf_p)
             self.param_map[k] = wf_p
             # Add File / Dataset / PropertyValue to action
-            if isinstance(v, File):
-                path = v.get_path()
-                action_p = crate.dereference(path.name)
-                if not action_p:
-                    action_p = crate.add_file(self.root / path, path.name)
-            elif isinstance(v, Folder):
-                action_p = crate.dereference(v.basename)
-                if not action_p:
-                    action_p = crate.add_directory(v.basename)
-                    for pair in v.dict_members:
-                        path = pair.entity.get_path()
-                        dest = Path(v.basename) / path.name
-                        part = crate.dereference(dest.as_posix())
-                        if not part:
-                            part = crate.add_file(self.root / path, dest)
-                        action_p.append_to("hasPart", part)
+            if isinstance(v, (File, Folder)):
+                action_p = value
             else:
                 # FIXME: assuming arrays and records don't have nested structured types
                 if add_type == "PropertyValue":
@@ -703,6 +659,48 @@ class ProvCrateBuilder:
             action_p.append_to("exampleOfWork", wf_p, compact=True)
             action_params.append(action_p)
         return wf_params, action_params
+
+    def convert_param(self, prov_param, crate):
+        if isinstance(prov_param, File):
+            path = prov_param.get_path()
+            action_p = crate.dereference(path.name)
+            if not action_p:
+                action_p = crate.add_file(self.root / path, path.name)
+            return "File", action_p
+        if isinstance(prov_param, Folder):
+            action_p = crate.dereference(prov_param.basename)
+            if not action_p:
+                action_p = crate.add_directory(prov_param.basename)
+                for pair in prov_param.dict_members:
+                    path = pair.entity.get_path()
+                    dest = Path(prov_param.basename) / path.name
+                    part = crate.dereference(dest.as_posix())
+                    if not part:
+                        part = crate.add_file(self.root / path, dest)
+                    action_p.append_to("hasPart", part)
+            return "Dataset", action_p
+        type_ = "Text"
+        if prov_param.value:
+            if isinstance(prov_param.value, bool):
+                type_ = "Boolean"
+            elif isinstance(prov_param.value, float):
+                type_ = "Float"
+            elif isinstance(prov_param.value, int):
+                type_ = "Integer"
+            # str(True) == "True" (same for False), so str() maps to Schema.org types
+            return type_, str(prov_param.value)
+        elif hasattr(prov_param, "dict_members"):
+            return "PropertyValue", dict(
+                (_.key, self.convert_param(_.entity, crate))
+                for _ in prov_param.dict_members if _.key != "@id"
+            )
+        elif hasattr(prov_param, "members"):
+            types, values = zip(*[self.convert_param(_, crate)
+                                  for _ in prov_param.members])
+            assert len(set(types)) == 1
+            return types[0], list(values)
+        else:
+            raise RuntimeError(f"No value to convert for {prov_param}")
 
     def add_param_connections(self):
         def connect(source, target):

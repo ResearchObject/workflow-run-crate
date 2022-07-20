@@ -315,3 +315,75 @@ def test_dir_io(data_dir, tmpdir):
         (args.root / "data/ec/ec0270052a78321508502ed915815c4daf75fe46").read_text(),
     }
     assert set((args.output / _.id).read_text() for _ in wf_output_dir["hasPart"]) == out_text
+
+
+def test_no_output(data_dir, tmpdir):
+    args = Args()
+    args.root = data_dir / "no-output-run-1"
+    args.output = tmpdir / "no-output-run-1-crate"
+    args.license = "Apache-2.0"
+    args.workflow_name = None
+    main(args)
+    crate = ROCrate(args.output)
+    assert crate.root_dataset["license"] == "Apache-2.0"
+    workflow = crate.mainEntity
+    tools = workflow["hasPart"]
+    # assert len(tools) == 2
+    for entity in tools:
+        assert "SoftwareApplication" in entity.type
+    inputs = workflow["input"]
+    assert not workflow.get("output")
+    assert len(inputs) == 3
+    for entity in inputs:
+        assert "FormalParameter" in entity.type
+    input_map = {_.id.rsplit("-", 1)[-1]: _ for _ in inputs}
+    for n in "sabdab_file", "pdb_array":
+        assert input_map[f"main/{n}"]["additionalType"] == "File"
+    assert input_map["main/pdb_array"]["multipleValues"] == "True"
+    assert input_map["main/pdb_dir"]["additionalType"] == "Dataset"
+    sel = [_ for _ in crate.contextual_entities if "OrganizeAction" in _.type]
+    assert len(sel) == 1
+    engine_action = sel[0]
+    assert crate.root_dataset["mentions"] == [engine_action]
+    assert "SoftwareApplication" in engine_action["instrument"].type
+    actions = [_ for _ in crate.contextual_entities if "CreateAction" in _.type]
+    # assert len(actions) == 5
+    sel = [_ for _ in actions if _["instrument"] is workflow]
+    assert len(sel) == 1
+    wf_action = sel[0]
+    assert engine_action["result"] is wf_action
+    control_actions = engine_action["object"]
+    assert len(control_actions) == 3
+    assert all(_.type == "ControlAction" for _ in control_actions)
+    wf_objects = wf_action["object"]
+    assert not wf_action.get("result")
+    assert len(wf_objects) == 3
+    object_map = {_.id.rsplit("-", 1)[-1]: _ for _ in wf_objects}
+    assert "PropertyValue" in object_map["main/pdb_array"].type
+    assert object_map["main/pdb_array"]["exampleOfWork"] is input_map["main/pdb_array"]
+    array_files = object_map["main/pdb_array"]["value"]
+    assert len(array_files) == 2
+    for e in array_files:
+        assert "File" in e.type
+    in_file = object_map["5e026d2a039e60827d3834596a8c30256aa85e57"]
+    assert "File" in in_file.type
+    assert input_map["main/sabdab_file"] in in_file["exampleOfWork"]
+    # TODO: check input dir
+    steps = workflow["step"]
+    assert len(steps) == 3
+    assert all(_.type == "HowToStep" for _ in steps)
+    for control_a in control_actions:
+        step = control_a["instrument"]
+        create_a = control_a["object"]
+        instrument = create_a["instrument"]
+        assert instrument is step["workExample"]
+        assert instrument in tools
+        # TODO: check steps
+    # parameter connections TBD
+    # file contents
+    text_7mb7 = (args.root / "data/4b/4b22356928446475c8ae5869968c9777374a76e8").read_text()
+    text_7zxf = (args.root / "data/4e/4ebd7d222d9b6095fa96ee395905ce7f6d415381").read_text()
+    assert [(args.output / _.id).read_text() for _ in array_files] == [text_7mb7, text_7zxf]
+    text_sabdab = (args.root / "data/5e/5e026d2a039e60827d3834596a8c30256aa85e57").read_text()
+    assert (args.output / in_file.id).read_text() == text_sabdab
+    # TODO: input dir contents
