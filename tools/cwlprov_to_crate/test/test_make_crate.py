@@ -400,14 +400,14 @@ def test_no_output(data_dir, tmpdir):
             # TODO: handle the two executions (scatter)
             assert len(objects) == 1
     # parameter connections
-    # main_file = crate.get("#param-main/sabdab_file")
+    main_file = crate.get("#param-main/sabdab_file")
     main_dir = crate.get("#param-main/pdb_dir")
     main_array = crate.get("#param-main/pdb_array")
-    # date_file = crate.get("#param-main/date_step/file")
-    # echo_file = crate.get("#param-main/echo_step/input_file")
+    date_file = crate.get("#param-main/date_step/file")
+    echo_file = crate.get("#param-main/echo_step/input_file")
     echo_dir = crate.get("#param-main/echo_step/input_dir")
     date2_file = crate.get("#param-main/date2_step/file")
-    # assert set(main_file["connectedTo"]) == {date_file, echo_file}
+    assert set(main_file["connectedTo"]) == {date_file, echo_file}
     assert main_dir["connectedTo"] is echo_dir
     assert main_array["connectedTo"] is date2_file
     # file contents

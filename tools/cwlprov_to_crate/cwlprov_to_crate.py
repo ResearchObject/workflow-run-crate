@@ -706,7 +706,7 @@ class ProvCrateBuilder:
         def connect(source, target):
             source_p = self.param_map[source]
             target_p = self.param_map[target]
-            source_p["connectedTo"] = target_p
+            source_p.append_to("connectedTo", target_p, compact=True)
         for def_ in self.cwl_defs.values():
             if not hasattr(def_, "steps"):
                 continue
