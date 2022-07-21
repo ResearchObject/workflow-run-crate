@@ -326,7 +326,7 @@ def test_no_output(data_dir, tmpdir):
     assert crate.root_dataset["license"] == "Apache-2.0"
     workflow = crate.mainEntity
     tools = workflow["hasPart"]
-    # assert len(tools) == 2
+    assert len(tools) == 2
     for entity in tools:
         assert "SoftwareApplication" in entity.type
     inputs = workflow["input"]

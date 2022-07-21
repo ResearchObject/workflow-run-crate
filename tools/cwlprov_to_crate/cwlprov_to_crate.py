@@ -515,6 +515,9 @@ class ProvCrateBuilder:
             self.agent.id_ = self.agent.id_.replace(
                 "orcid:", prov.prefixes.get("orcid", "https://orcid.org/")
             )
+        # avoid duplicates - not handled by ro-crate-py, see
+        # https://github.com/ResearchObject/ro-crate-py/issues/132
+        self.instrument_ids = set()
 
     @staticmethod
     def _get_step_maps(cwl_defs):
@@ -612,7 +615,9 @@ class ProvCrateBuilder:
                            for _ in cwl_tool.outputs}
         action["instrument"] = instrument
         if parent_instrument:
-            parent_instrument.append_to("hasPart", instrument)
+            if instrument.id not in self.instrument_ids:
+                parent_instrument.append_to("hasPart", instrument)
+                self.instrument_ids.add(instrument.id)
             parent_instrument.append_to("step", step)
         instrument["input"], action["object"] = self.add_params(
             crate, activity.in_params, cwl_inputs
