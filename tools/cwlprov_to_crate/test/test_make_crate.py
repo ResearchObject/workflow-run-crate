@@ -89,9 +89,9 @@ def test_revsort(data_dir, tmpdir):
         instrument = create_a["instrument"]
         assert instrument is step["workExample"]
         assert instrument in tools
+        objects = create_a["object"]
+        results = create_a["result"]
         if step.id.endswith("rev"):
-            objects = create_a["object"]
-            results = create_a["result"]
             assert len(objects) == 1
             assert len(results) == 1
             rev_input_file = objects[0]
@@ -100,8 +100,6 @@ def test_revsort(data_dir, tmpdir):
             assert "File" in rev_output_file.type
             assert step["position"] == "0"
         elif step.id.endswith("sorted"):
-            objects = create_a["object"]
-            results = create_a["result"]
             assert len(objects) == 2
             assert len(results) == 1
             for entity in objects:
@@ -358,17 +356,23 @@ def test_no_output(data_dir, tmpdir):
     wf_objects = wf_action["object"]
     assert not wf_action.get("result")
     assert len(wf_objects) == 3
-    object_map = {_.id.rsplit("-", 1)[-1]: _ for _ in wf_objects}
-    assert "PropertyValue" in object_map["main/pdb_array"].type
-    assert object_map["main/pdb_array"]["exampleOfWork"] is input_map["main/pdb_array"]
-    array_files = object_map["main/pdb_array"]["value"]
+    wf_object_map = {_.id.rsplit("-", 1)[-1]: _ for _ in wf_objects}
+    in_array = wf_object_map["main/pdb_array"]
+    assert "PropertyValue" in in_array.type
+    assert in_array["exampleOfWork"] is input_map["main/pdb_array"]
+    array_files = in_array["value"]
     assert len(array_files) == 2
     for e in array_files:
         assert "File" in e.type
-    in_file = object_map["5e026d2a039e60827d3834596a8c30256aa85e57"]
+    in_file = wf_object_map["5e026d2a039e60827d3834596a8c30256aa85e57"]
     assert "File" in in_file.type
     assert input_map["main/sabdab_file"] in in_file["exampleOfWork"]
-    # TODO: check input dir
+    in_dir = [_ for _ in wf_objects if _ is not in_array and _ is not in_file][0]
+    assert "Dataset" in in_dir.type
+    assert input_map["main/pdb_dir"] in in_dir["exampleOfWork"]
+    dir_files = in_dir["hasPart"]
+    for e in dir_files:
+        assert "File" in e.type
     steps = workflow["step"]
     assert len(steps) == 3
     assert all(_.type == "HowToStep" for _ in steps)
@@ -378,12 +382,40 @@ def test_no_output(data_dir, tmpdir):
         instrument = create_a["instrument"]
         assert instrument is step["workExample"]
         assert instrument in tools
-        # TODO: check steps
-    # parameter connections TBD
+        objects = create_a["object"]
+        assert not create_a.get("result")
+        step_tag = step.id.rsplit("/", 1)[-1]
+        if step_tag == "date_step":
+            assert len(objects) == 1
+            date_in_file = objects[0]
+            assert date_in_file is in_file
+        elif step_tag == "echo_step":
+            assert len(objects) == 2
+            for obj in objects:
+                if "Dataset" in obj.type:
+                    assert obj is in_dir
+                else:
+                    assert obj is in_file
+        elif step_tag == "date2_step":
+            # TODO: handle the two executions (scatter)
+            assert len(objects) == 1
+    # parameter connections
+    # main_file = crate.get("#param-main/sabdab_file")
+    main_dir = crate.get("#param-main/pdb_dir")
+    main_array = crate.get("#param-main/pdb_array")
+    # date_file = crate.get("#param-main/date_step/file")
+    # echo_file = crate.get("#param-main/echo_step/input_file")
+    echo_dir = crate.get("#param-main/echo_step/input_dir")
+    date2_file = crate.get("#param-main/date2_step/file")
+    # assert set(main_file["connectedTo"]) == {date_file, echo_file}
+    assert main_dir["connectedTo"] is echo_dir
+    assert main_array["connectedTo"] is date2_file
     # file contents
     text_7mb7 = (args.root / "data/4b/4b22356928446475c8ae5869968c9777374a76e8").read_text()
     text_7zxf = (args.root / "data/4e/4ebd7d222d9b6095fa96ee395905ce7f6d415381").read_text()
     assert [(args.output / _.id).read_text() for _ in array_files] == [text_7mb7, text_7zxf]
     text_sabdab = (args.root / "data/5e/5e026d2a039e60827d3834596a8c30256aa85e57").read_text()
     assert (args.output / in_file.id).read_text() == text_sabdab
-    # TODO: input dir contents
+    text_1ahw = (args.root / "data/bc/bc2f32ad8584e85e6e3b184a6dc565bdd6571821").read_text()
+    text_1kip = (args.root / "data/da/da261f1082f318fbda173dc3228d7475433fd886").read_text()
+    assert [(args.output / _.id).read_text() for _ in dir_files] == [text_1ahw, text_1kip]
