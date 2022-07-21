@@ -345,7 +345,7 @@ def test_no_output(data_dir, tmpdir):
     assert crate.root_dataset["mentions"] == [engine_action]
     assert "SoftwareApplication" in engine_action["instrument"].type
     actions = [_ for _ in crate.contextual_entities if "CreateAction" in _.type]
-    # assert len(actions) == 5
+    assert len(actions) == 5
     sel = [_ for _ in actions if _["instrument"] is workflow]
     assert len(sel) == 1
     wf_action = sel[0]
@@ -378,27 +378,35 @@ def test_no_output(data_dir, tmpdir):
     assert all(_.type == "HowToStep" for _ in steps)
     for control_a in control_actions:
         step = control_a["instrument"]
-        create_a = control_a["object"]
-        instrument = create_a["instrument"]
-        assert instrument is step["workExample"]
-        assert instrument in tools
-        objects = create_a["object"]
-        assert not create_a.get("result")
         step_tag = step.id.rsplit("/", 1)[-1]
-        if step_tag == "date_step":
-            assert len(objects) == 1
-            date_in_file = objects[0]
-            assert date_in_file is in_file
-        elif step_tag == "echo_step":
-            assert len(objects) == 2
-            for obj in objects:
-                if "Dataset" in obj.type:
-                    assert obj is in_dir
-                else:
-                    assert obj is in_file
-        elif step_tag == "date2_step":
-            # TODO: handle the two executions (scatter)
-            assert len(objects) == 1
+        create_actions = control_a["object"]
+        if step_tag == "date2_step":
+            assert isinstance(create_actions, list)
+            assert len(create_actions) == 2
+        else:
+            create_actions = [create_actions]
+        for create_a in create_actions:
+            instrument = create_a["instrument"]
+            assert instrument is step["workExample"]
+            assert instrument in tools
+            objects = create_a["object"]
+            assert not create_a.get("result")
+            if step_tag == "date_step":
+                assert len(objects) == 1
+                date_in_file = objects[0]
+                assert date_in_file is in_file
+            elif step_tag == "echo_step":
+                assert len(objects) == 2
+                for obj in objects:
+                    if "Dataset" in obj.type:
+                        assert obj is in_dir
+                    else:
+                        assert obj is in_file
+            elif step_tag == "date2_step":
+                assert len(objects) == 1
+        if step_tag == "date2_step":
+            date2_in_files = [_["object"][0] for _ in create_actions]
+            assert set(date2_in_files) == set(array_files)
     # parameter connections
     main_file = crate.get("#param-main/sabdab_file")
     main_dir = crate.get("#param-main/pdb_dir")

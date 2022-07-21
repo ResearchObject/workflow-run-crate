@@ -19,6 +19,7 @@ Generate a Workflow Run RO-Crate from a CWLProv RO.
 import argparse
 import hashlib
 import json
+import re
 from itertools import chain
 from pathlib import Path
 
@@ -42,6 +43,8 @@ CWL_TYPE_MAP = {
     "Directory": "Dataset",
     "null": None,
 }
+
+SCATTER_JOB_PATTERN = re.compile(r"^(.+)_\d+$")
 
 
 def convert_cwl_type(cwl_type):
@@ -450,7 +453,10 @@ class Provenance:
             if not activity:
                 continue
             # TODO: agents; note that there can be many agents for an activity
-            plan = self.entities.get(record.get("prov:plan"))
+            plan_id = record.get("prov:plan")
+            plan = self.entities.get(plan_id)
+            if not plan:
+                plan = self.__get_plan_for_scatter_job(plan_id)
             if plan:
                 activity.plan = plan  # assuming one plan per activity
                 is_plan_for.setdefault(plan.id_, []).append(activity)
@@ -460,6 +466,14 @@ class Provenance:
                 for sp in plan.subprocesses:
                     for step in is_plan_for[sp.id_]:
                         act.steps.append(step)
+
+    def __get_plan_for_scatter_job(self, plan_id):
+        if not plan_id:
+            return None
+        m = SCATTER_JOB_PATTERN.match(plan_id)
+        if not m:
+            return None
+        return self.entities.get(m.groups()[0])
 
     def __read_delegations(self):
         for dummy, record in self.data.get("actedOnBehalfOf", {}).items():
@@ -518,6 +532,7 @@ class ProvCrateBuilder:
         # avoid duplicates - not handled by ro-crate-py, see
         # https://github.com/ResearchObject/ro-crate-py/issues/132
         self.instrument_ids = set()
+        self.control_actions = {}
 
     @staticmethod
     def _get_step_maps(cwl_defs):
@@ -597,18 +612,24 @@ class ProvCrateBuilder:
             if cwl_tool and cwl_tool.doc:
                 properties["description"] = cwl_tool.doc
             instrument = crate.add(SoftwareApplication(crate, instrument_id, properties=properties))
-            step = crate.add(ContextEntity(crate, step_id, properties={
-                "@type": "HowToStep",
-                "position": str(step_info["pos"]),
-            }))
-            step["workExample"] = instrument
-            control_action = crate.add(ContextEntity(crate, properties={
-                "@type": "ControlAction",
-                "name": f"orchestrate {tool_name}",
-            }))
-            control_action["instrument"] = step
+            step = crate.dereference(step_id)
+            if step:
+                control_action = self.control_actions[step_id]
+            else:
+                step = crate.add(ContextEntity(crate, step_id, properties={
+                    "@type": "HowToStep",
+                    "position": str(step_info["pos"]),
+                }))
+                step["workExample"] = instrument
+                control_action = crate.add(ContextEntity(crate, properties={
+                    "@type": "ControlAction",
+                    "name": f"orchestrate {tool_name}",
+                }))
+                control_action["instrument"] = step
+                roc_engine_run.append_to("object", control_action, compact=True)
+                parent_instrument.append_to("step", step)
+                self.control_actions[step_id] = control_action
             control_action.append_to("object", action, compact=True)
-            roc_engine_run.append_to("object", control_action, compact=True)
             cwl_inputs = {get_fragment(_.id).replace(tool_name, plan_tag): _
                           for _ in cwl_tool.inputs}
             cwl_outputs = {get_fragment(_.id).replace(tool_name, plan_tag): _
@@ -618,7 +639,6 @@ class ProvCrateBuilder:
             if instrument.id not in self.instrument_ids:
                 parent_instrument.append_to("hasPart", instrument)
                 self.instrument_ids.add(instrument.id)
-            parent_instrument.append_to("step", step)
         instrument["input"], action["object"] = self.add_params(
             crate, activity.in_params, cwl_inputs
         )
