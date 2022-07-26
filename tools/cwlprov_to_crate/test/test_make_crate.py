@@ -114,17 +114,17 @@ def test_revsort(data_dir, tmpdir):
         else:
             assert False, f"unexpected step id: {step.id}"
     # parameter connections
-    sorted_output = crate.get("#param-main/sorted/output")
+    sorted_output = crate.get("#param-sorttool.cwl/output")
     main_output = crate.get("#param-main/output")
     assert sorted_output["connectedTo"] is main_output
     main_input = crate.get("#param-main/input")
-    rev_input = crate.get("#param-main/rev/input")
+    rev_input = crate.get("#param-revtool.cwl/input")
     assert main_input["connectedTo"] is rev_input
-    rev_output = crate.get("#param-main/rev/output")
-    sorted_input = crate.get("#param-main/sorted/input")
+    rev_output = crate.get("#param-revtool.cwl/output")
+    sorted_input = crate.get("#param-sorttool.cwl/input")
     assert rev_output["connectedTo"] is sorted_input
     main_reverse_sort = crate.get("#param-main/reverse_sort")
-    sorted_reverse = crate.get("#param-main/sorted/reverse")
+    sorted_reverse = crate.get("#param-sorttool.cwl/reverse")
     assert main_reverse_sort["connectedTo"] is sorted_reverse
     # file contents
     in_text = (args.root / "data/32/327fc7aedf4f6b69a42a7c8b808dc5a7aff61376").read_text()
@@ -411,13 +411,12 @@ def test_no_output(data_dir, tmpdir):
     main_file = crate.get("#param-main/sabdab_file")
     main_dir = crate.get("#param-main/pdb_dir")
     main_array = crate.get("#param-main/pdb_array")
-    date_file = crate.get("#param-main/date_step/file")
-    echo_file = crate.get("#param-main/echo_step/input_file")
-    echo_dir = crate.get("#param-main/echo_step/input_dir")
-    date2_file = crate.get("#param-main/date2_step/file")
+    date_file = crate.get("#param-date.cwl/file")
+    echo_file = crate.get("#param-echo.cwl/input_file")
+    echo_dir = crate.get("#param-echo.cwl/input_dir")
     assert set(main_file["connectedTo"]) == {date_file, echo_file}
     assert main_dir["connectedTo"] is echo_dir
-    assert main_array["connectedTo"] is date2_file
+    assert main_array["connectedTo"] is date_file
     # file contents
     text_7mb7 = (args.root / "data/4b/4b22356928446475c8ae5869968c9777374a76e8").read_text()
     text_7zxf = (args.root / "data/4e/4ebd7d222d9b6095fa96ee395905ce7f6d415381").read_text()

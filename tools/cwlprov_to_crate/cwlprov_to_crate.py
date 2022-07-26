@@ -160,6 +160,7 @@ class Activity(Thing):
         self.in_params = {}
         self.out_params = {}
         self.steps = []
+        self.job_id = None
 
 
 class ProcessRun(Activity):
@@ -460,6 +461,7 @@ class Provenance:
             if plan:
                 activity.plan = plan  # assuming one plan per activity
                 is_plan_for.setdefault(plan.id_, []).append(activity)
+                activity.job_id = plan_id
         for plan_id, activities in is_plan_for.items():
             plan = self.entities.get(plan_id)
             for act in activities:
@@ -593,9 +595,15 @@ class ProvCrateBuilder:
                 raise RuntimeError("sub-workflows not supported yet")
             instrument = workflow
             cwl_tool = self.cwl_defs.get(plan_tag)
-            cwl_inputs = {get_fragment(_.id): _ for _ in cwl_tool.inputs}
-            cwl_outputs = {get_fragment(_.id): _ for _ in cwl_tool.outputs}
             roc_engine_run["result"] = action
+            prov_inputs = {
+                k.split(":", 1)[-1]: v
+                for k, v in activity.in_params.items()
+            }
+            prov_outputs = {
+                k.split(":", 1)[-1]: v
+                for k, v in activity.out_params.items()
+            }
         else:
             step_id = f"{workflow.id}#{plan_tag}"
             parent_instrument_id = parent_instrument.id
@@ -630,20 +638,27 @@ class ProvCrateBuilder:
                 parent_instrument.append_to("step", step)
                 self.control_actions[step_id] = control_action
             control_action.append_to("object", action, compact=True)
-            cwl_inputs = {get_fragment(_.id).replace(tool_name, plan_tag): _
-                          for _ in cwl_tool.inputs}
-            cwl_outputs = {get_fragment(_.id).replace(tool_name, plan_tag): _
-                           for _ in cwl_tool.outputs}
+            job_tag = activity.job_id.strip().split(":", 1)[-1]
+            prov_inputs = {
+                k.split(":", 1)[-1].replace(job_tag, tool_name): v
+                for k, v in activity.in_params.items()
+            }
+            prov_outputs = {
+                k.split(":", 1)[-1].replace(job_tag, tool_name): v
+                for k, v in activity.out_params.items()
+            }
+        cwl_inputs = {get_fragment(_.id): _ for _ in cwl_tool.inputs}
+        cwl_outputs = {get_fragment(_.id): _ for _ in cwl_tool.outputs}
         action["instrument"] = instrument
         if parent_instrument:
             if instrument.id not in self.instrument_ids:
                 parent_instrument.append_to("hasPart", instrument)
                 self.instrument_ids.add(instrument.id)
         instrument["input"], action["object"] = self.add_params(
-            crate, activity.in_params, cwl_inputs
+            crate, prov_inputs, cwl_inputs
         )
         instrument["output"], action["result"] = self.add_params(
-            crate, activity.out_params, cwl_outputs
+            crate, prov_outputs, cwl_outputs
         )
         for step in activity.steps:
             self.add_action(crate, step, parent_instrument=instrument)
@@ -653,7 +668,6 @@ class ProvCrateBuilder:
         for k, v in prov_params.items():
             # Add FormalParameter to workflow / tool
             add_type, value = self.convert_param(v, crate)
-            k = k.split(":", 1)[-1]
             properties = {
                 "@type": "FormalParameter",
                 "name": k,
@@ -732,14 +746,30 @@ class ProvCrateBuilder:
             source_p = self.param_map[source]
             target_p = self.param_map[target]
             source_p.append_to("connectedTo", target_p, compact=True)
-        for def_ in self.cwl_defs.values():
-            if not hasattr(def_, "steps"):
-                continue
+        for wf_name, sm in self.step_maps.items():
+            def_ = self.cwl_defs[wf_name]
+            out_map = {}
             for step in def_.steps:
+                step_name = get_fragment(step.id)
+                tool_name = sm[step_name]["tool"]
+                for o in step.out:
+                    o_name = get_fragment(o)
+                    out_map[o_name] = o_name.replace(step_name, tool_name)
+            for step in def_.steps:
+                step_name = get_fragment(step.id)
+                tool_name = sm[step_name]["tool"]
                 for mapping in getattr(step, "in_", []):
-                    connect(get_fragment(mapping.source), get_fragment(mapping.id))
+                    from_param = get_fragment(mapping.source)
+                    try:
+                        from_param = out_map[from_param]
+                    except KeyError:
+                        pass  # only needed if source is from another step
+                    to_param = get_fragment(mapping.id).replace(step_name, tool_name)
+                    connect(from_param, to_param)
             for out in getattr(def_, "outputs", []):
-                connect(get_fragment(out.outputSource), get_fragment(out.id))
+                from_param = out_map[get_fragment(out.outputSource)]
+                to_param = get_fragment(out.id)
+                connect(from_param, to_param)
 
 
 def main(args):
