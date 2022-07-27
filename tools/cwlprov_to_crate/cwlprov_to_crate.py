@@ -493,6 +493,7 @@ def get_workflow(wf_path):
     Does not use load_document_by_uri, so we can hack the json to work around
     issues.
     """
+    wf_path = Path(wf_path)
     with open(wf_path, "rt") as f:
         json_wf = json.load(f)
     graph = json_wf.get("$graph", [json_wf])
@@ -504,7 +505,13 @@ def get_workflow(wf_path):
     defs = load_document_by_yaml(json_wf, wf_path.absolute().as_uri())
     if not isinstance(defs, list):
         defs = [defs]
-    return {get_fragment(_.id): _ for _ in defs}
+    def_map = {}
+    for d in defs:
+        k = get_fragment(d.id)
+        if k == "main":
+            k = wf_path.name
+        def_map[k] = d
+    return def_map
 
 
 class ProvCrateBuilder:
@@ -553,7 +560,7 @@ class ProvCrateBuilder:
         crate = ROCrate(gen_preview=False)
         crate.add_workflow(
             self.wf_path, self.wf_path.name, main=True, lang="cwl",
-            lang_version=self.cwl_defs["main"].cwlVersion, gen_cwl=False,
+            lang_version=self.cwl_defs[self.wf_path.name].cwlVersion, gen_cwl=False,
             properties={
                 "@type": ["File", "SoftwareSourceCode", "ComputationalWorkflow", "HowTo"],
                 "name": self.workflow_name or self.wf_path.name
@@ -594,7 +601,7 @@ class ProvCrateBuilder:
             if plan_tag != "main":
                 raise RuntimeError("sub-workflows not supported yet")
             instrument = workflow
-            cwl_tool = self.cwl_defs.get(plan_tag)
+            cwl_tool = self.cwl_defs.get(workflow.id)
             roc_engine_run["result"] = action
             prov_inputs = {
                 k.split(":", 1)[-1]: v
@@ -605,14 +612,11 @@ class ProvCrateBuilder:
                 for k, v in activity.out_params.items()
             }
         else:
-            step_id = f"{workflow.id}#{plan_tag}"
-            parent_instrument_id = parent_instrument.id
-            if parent_instrument_id == workflow.id:
-                parent_instrument_id = "main"
-            cwl_wf = self.cwl_defs.get(parent_instrument_id)
+            step_id = f"{parent_instrument.id}#{plan_tag}"
+            cwl_wf = self.cwl_defs.get(parent_instrument.id)
             if not cwl_wf:
                 raise RuntimeError(f"could not find workflow for step {plan_tag}")
-            step_info = self.step_maps[parent_instrument_id][plan_tag]
+            step_info = self.step_maps[parent_instrument.id][plan_tag]
             tool_name = step_info["tool"]
             instrument_id = f"{workflow.id}#{tool_name}"
             properties = {"name": tool_name}

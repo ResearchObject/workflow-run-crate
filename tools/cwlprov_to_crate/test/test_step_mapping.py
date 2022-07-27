@@ -16,11 +16,12 @@ from cwlprov_to_crate import get_workflow, ProvCrateBuilder
 
 
 def test_step_maps(data_dir):
-    wf_path = data_dir / "exome-alignment-packed.cwl"
+    wf_basename = "exome-alignment-packed.cwl"
+    wf_path = data_dir / wf_basename
     cwl_defs = get_workflow(wf_path)
     step_maps = ProvCrateBuilder._get_step_maps(cwl_defs)
-    assert set(step_maps) == {"main"}
-    sm = step_maps["main"]
+    assert set(step_maps) == {wf_basename}
+    sm = step_maps[wf_basename]
     assert len(sm) == 8
     assert sm["main/bwa_index"]["tool"] == "bwa-index.cwl"
     assert sm["main/bwa_mem"]["tool"] == "bwa-mem.cwl"
@@ -42,8 +43,8 @@ def test_step_maps_disconnected(data_dir):
     wf_path = data_dir / "no-output-run-1/workflow/packed.cwl"
     cwl_defs = get_workflow(wf_path)
     step_maps = ProvCrateBuilder._get_step_maps(cwl_defs)
-    assert set(step_maps) == {"main"}
-    sm = step_maps["main"]
+    assert set(step_maps) == {"packed.cwl"}
+    sm = step_maps["packed.cwl"]
     assert set(sm) == {"main/date_step", "main/echo_step", "main/date2_step"}
     assert sm["main/date_step"]["tool"] == "date.cwl"
     assert sm["main/echo_step"]["tool"] == "echo.cwl"
