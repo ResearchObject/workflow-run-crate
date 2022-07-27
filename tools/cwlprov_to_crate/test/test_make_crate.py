@@ -383,6 +383,8 @@ def test_no_output(data_dir, tmpdir):
         if step_tag == "date2_step":
             assert isinstance(create_actions, list)
             assert len(create_actions) == 2
+            date2_in_files = [_["object"][0] for _ in create_actions]
+            assert set(date2_in_files) == set(array_files)
         else:
             create_actions = [create_actions]
         for create_a in create_actions:
@@ -404,9 +406,6 @@ def test_no_output(data_dir, tmpdir):
                         assert obj is in_file
             elif step_tag == "date2_step":
                 assert len(objects) == 1
-        if step_tag == "date2_step":
-            date2_in_files = [_["object"][0] for _ in create_actions]
-            assert set(date2_in_files) == set(array_files)
     # parameter connections
     main_file = crate.get("#param-main/sabdab_file")
     main_dir = crate.get("#param-main/pdb_dir")
