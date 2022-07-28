@@ -612,35 +612,9 @@ class ProvCrateBuilder:
                 for k, v in activity.out_params.items()
             }
         else:
-            step_id = f"{parent_instrument.id}#{plan_tag}"
-            cwl_wf = self.cwl_defs.get(parent_instrument.id)
-            if not cwl_wf:
-                raise RuntimeError(f"could not find workflow for step {plan_tag}")
-            step_info = self.step_maps[parent_instrument.id][plan_tag]
-            tool_name = step_info["tool"]
-            instrument_id = f"{workflow.id}#{tool_name}"
-            properties = {"name": tool_name}
+            control_action, instrument = self.add_step_and_tool(crate, plan_tag, parent_instrument)
+            tool_name = get_fragment(instrument.id)
             cwl_tool = self.cwl_defs.get(tool_name)
-            if cwl_tool and cwl_tool.doc:
-                properties["description"] = cwl_tool.doc
-            instrument = crate.add(SoftwareApplication(crate, instrument_id, properties=properties))
-            step = crate.dereference(step_id)
-            if step:
-                control_action = self.control_actions[step_id]
-            else:
-                step = crate.add(ContextEntity(crate, step_id, properties={
-                    "@type": "HowToStep",
-                    "position": str(step_info["pos"]),
-                }))
-                step["workExample"] = instrument
-                control_action = crate.add(ContextEntity(crate, properties={
-                    "@type": "ControlAction",
-                    "name": f"orchestrate {tool_name}",
-                }))
-                control_action["instrument"] = step
-                roc_engine_run.append_to("object", control_action, compact=True)
-                parent_instrument.append_to("step", step)
-                self.control_actions[step_id] = control_action
             control_action.append_to("object", action, compact=True)
             job_tag = activity.job_id.strip().split(":", 1)[-1]
             prov_inputs = {
@@ -666,6 +640,40 @@ class ProvCrateBuilder:
         )
         for step in activity.steps:
             self.add_action(crate, step, parent_instrument=instrument)
+
+    def add_step_and_tool(self, crate, plan_tag, parent_instrument):
+        workflow = crate.mainEntity
+        roc_engine_run = crate.root_dataset["mentions"][0]
+        step_id = f"{parent_instrument.id}#{plan_tag}"
+        cwl_wf = self.cwl_defs.get(parent_instrument.id)
+        if not cwl_wf:
+            raise RuntimeError(f"could not find workflow for step {plan_tag}")
+        step_info = self.step_maps[parent_instrument.id][plan_tag]
+        tool_name = step_info["tool"]
+        instrument_id = f"{workflow.id}#{tool_name}"
+        properties = {"name": tool_name}
+        cwl_tool = self.cwl_defs.get(tool_name)
+        if cwl_tool and cwl_tool.doc:
+            properties["description"] = cwl_tool.doc
+        instrument = crate.add(SoftwareApplication(crate, instrument_id, properties=properties))
+        step = crate.dereference(step_id)
+        if step:
+            control_action = self.control_actions[step_id]
+        else:
+            step = crate.add(ContextEntity(crate, step_id, properties={
+                "@type": "HowToStep",
+                "position": str(step_info["pos"]),
+            }))
+            step["workExample"] = instrument
+            control_action = crate.add(ContextEntity(crate, properties={
+                "@type": "ControlAction",
+                "name": f"orchestrate {tool_name}",
+            }))
+            control_action["instrument"] = step
+            roc_engine_run.append_to("object", control_action, compact=True)
+            parent_instrument.append_to("step", step)
+            self.control_actions[step_id] = control_action
+        return control_action, instrument
 
     def add_params(self, crate, prov_params, cwl_params):
         wf_params, action_params = [], []
