@@ -38,6 +38,7 @@ Post [here](https://github.com/ResearchObject/workflow-run-crate/issues/1) to jo
 - Sebastiaan Huber <https://orcid.org/0000-0001-5845-8880>
 - Kevin Jablonka <https://orcid.org/0000-0003-4894-4660>
 - Haris Zafeiropoulos <https://orcid.org/0000-0002-4405-6802>
+- Iacopo Colonnelli <https://orcid.org/0000-0001-9290-2017>
 - ... [you](https://github.com/ResearchObject/workflow-run-crate/issues/1)?
 
 
