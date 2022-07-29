@@ -65,9 +65,10 @@ def convert_cwl_type(cwl_type):
 def properties_from_cwl_param(cwl_p):
     def is_structured(cwl_type):
         return getattr(cwl_type, "type", None) in ("array", "record")
-    if not cwl_p:
-        return {}
-    properties = {"additionalType": convert_cwl_type(cwl_p.type)}
+    properties = {
+        "@type": "FormalParameter",
+        "additionalType": convert_cwl_type(cwl_p.type)
+    }
     if cwl_p.format:
         properties["encodingFormat"] = cwl_p.format
     if isinstance(cwl_p.type, list) and "null" in cwl_p.type:
@@ -323,7 +324,7 @@ class Provenance:
         activities = {}
         for id_, record in self.data["activity"].items():
             if isinstance(record, list) and "prov:has_provenance" in chain(*record):
-                raise RuntimeError("subworkflows not supported yet")
+                raise RuntimeError("sub-workflows not supported yet")
             types = set(Provenance.get_types(record))
             if "wfprov:WorkflowRun" in types:
                 activities[id_] = WorkflowRun(id_, label=record.get("prov:label"))
@@ -540,7 +541,6 @@ class ProvCrateBuilder:
             )
         # avoid duplicates - not handled by ro-crate-py, see
         # https://github.com/ResearchObject/ro-crate-py/issues/132
-        self.instrument_ids = set()
         self.control_actions = {}
 
     @staticmethod
@@ -576,7 +576,55 @@ class ProvCrateBuilder:
         )
         if self.license:
             crate.root_dataset["license"] = self.license
+        cwl_workflow = self.cwl_defs[workflow.id]
+        workflow["input"] = self.add_params(crate, cwl_workflow.inputs)
+        workflow["output"] = self.add_params(crate, cwl_workflow.outputs)
+        for s in getattr(cwl_workflow, "steps", []):
+            step_fragment = get_fragment(s.id)
+            step_id = f"{workflow.id}#{step_fragment}"
+            pos = self.step_maps[workflow.id][step_fragment]["pos"]
+            step = crate.add(ContextEntity(crate, step_id, properties={
+                "@type": "HowToStep",
+                "position": str(pos),
+            }))
+            tool = self.add_tool(crate, workflow, s.run)
+            step["workExample"] = tool
+            workflow.append_to("step", step)
         return workflow
+
+    def add_tool(self, crate, workflow, cwl_tool):
+        if isinstance(cwl_tool, str):
+            tool_fragment = get_fragment(cwl_tool)
+            cwl_tool = self.cwl_defs[tool_fragment]
+        else:
+            tool_fragment = get_fragment(cwl_tool.id)
+        tool_id = f"{workflow.id}#{tool_fragment}"
+        tool = crate.dereference(tool_id)
+        if tool:
+            return tool
+        if hasattr(cwl_tool, "steps"):
+            raise RuntimeError("subworkflows not supported yet")
+        if hasattr(cwl_tool, "expression"):
+            raise RuntimeError("ExpressionTool not supported yet")
+        properties = {"name": tool_fragment}
+        if cwl_tool.doc:
+            properties["description"] = cwl_tool.doc
+        tool = crate.add(SoftwareApplication(crate, tool_id, properties=properties))
+        tool["input"] = self.add_params(crate, cwl_tool.inputs)
+        tool["output"] = self.add_params(crate, cwl_tool.outputs)
+        workflow.append_to("hasPart", tool)
+        return tool
+
+    def add_params(self, crate, cwl_params):
+        params = []
+        for cwl_p in cwl_params:
+            p_fragment = get_fragment(cwl_p.id)
+            properties = properties_from_cwl_param(cwl_p)
+            properties["name"] = p_fragment
+            p = crate.add(ContextEntity(crate, f"#param-{p_fragment}", properties=properties))
+            params.append(p)
+            self.param_map[p_fragment] = p
+        return params
 
     def add_engine_run(self, crate):
         roc_engine = crate.add(SoftwareApplication(crate, properties={
@@ -609,7 +657,6 @@ class ProvCrateBuilder:
             if plan_tag != "main":
                 raise RuntimeError("sub-workflows not supported yet")
             instrument = workflow
-            cwl_tool = self.cwl_defs.get(workflow.id)
             roc_engine_run["result"] = action
             prov_inputs = {
                 k.split(":", 1)[-1]: v
@@ -620,9 +667,18 @@ class ProvCrateBuilder:
                 for k, v in activity.out_params.items()
             }
         else:
-            control_action, instrument = self.add_step_and_tool(crate, plan_tag, parent_instrument)
-            tool_name = get_fragment(instrument.id)
-            cwl_tool = self.cwl_defs.get(tool_name)
+            tool_name = self.step_maps[parent_instrument.id][plan_tag]["tool"]
+            instrument = crate.dereference(f"{workflow.id}#{tool_name}")
+            control_action = self.control_actions.get(plan_tag)
+            if not control_action:
+                control_action = crate.add(ContextEntity(crate, properties={
+                    "@type": "ControlAction",
+                    "name": f"orchestrate {tool_name}",
+                }))
+                step = crate.dereference(f"{workflow.id}#{plan_tag}")
+                control_action["instrument"] = step
+                roc_engine_run.append_to("object", control_action, compact=True)
+                self.control_actions[plan_tag] = control_action
             control_action.append_to("object", action, compact=True)
             job_tag = activity.job_id.strip().split(":", 1)[-1]
             prov_inputs = {
@@ -633,82 +689,27 @@ class ProvCrateBuilder:
                 k.split(":", 1)[-1].replace(job_tag, tool_name): v
                 for k, v in activity.out_params.items()
             }
-        cwl_inputs = {get_fragment(_.id): _ for _ in cwl_tool.inputs}
-        cwl_outputs = {get_fragment(_.id): _ for _ in cwl_tool.outputs}
         action["instrument"] = instrument
-        if parent_instrument:
-            if instrument.id not in self.instrument_ids:
-                parent_instrument.append_to("hasPart", instrument)
-                self.instrument_ids.add(instrument.id)
-        instrument["input"], action["object"] = self.add_params(
-            crate, prov_inputs, cwl_inputs
-        )
-        instrument["output"], action["result"] = self.add_params(
-            crate, prov_outputs, cwl_outputs
-        )
-        for step in activity.steps:
-            self.add_action(crate, step, parent_instrument=instrument)
+        action["object"] = self.add_action_params(crate, prov_inputs)
+        action["result"] = self.add_action_params(crate, prov_outputs)
+        for job in activity.steps:
+            self.add_action(crate, job, parent_instrument=instrument)
 
-    def add_step_and_tool(self, crate, plan_tag, parent_instrument):
-        workflow = crate.mainEntity
-        roc_engine_run = crate.root_dataset["mentions"][0]
-        step_id = f"{parent_instrument.id}#{plan_tag}"
-        cwl_wf = self.cwl_defs.get(parent_instrument.id)
-        if not cwl_wf:
-            raise RuntimeError(f"could not find workflow for step {plan_tag}")
-        step_info = self.step_maps[parent_instrument.id][plan_tag]
-        tool_name = step_info["tool"]
-        instrument_id = f"{workflow.id}#{tool_name}"
-        properties = {"name": tool_name}
-        cwl_tool = self.cwl_defs.get(tool_name)
-        if cwl_tool and cwl_tool.doc:
-            properties["description"] = cwl_tool.doc
-        instrument = crate.add(SoftwareApplication(crate, instrument_id, properties=properties))
-        step = crate.dereference(step_id)
-        if step:
-            control_action = self.control_actions[step_id]
-        else:
-            step = crate.add(ContextEntity(crate, step_id, properties={
-                "@type": "HowToStep",
-                "position": str(step_info["pos"]),
-            }))
-            step["workExample"] = instrument
-            control_action = crate.add(ContextEntity(crate, properties={
-                "@type": "ControlAction",
-                "name": f"orchestrate {tool_name}",
-            }))
-            control_action["instrument"] = step
-            roc_engine_run.append_to("object", control_action, compact=True)
-            parent_instrument.append_to("step", step)
-            self.control_actions[step_id] = control_action
-        return control_action, instrument
-
-    def add_params(self, crate, prov_params, cwl_params):
-        wf_params, action_params = [], []
+    def add_action_params(self, crate, prov_params):
+        action_params = []
         for k, v in prov_params.items():
-            # Add FormalParameter to workflow / tool
-            add_type, value = self.convert_param(v, crate)
-            properties = {
-                "@type": "FormalParameter",
-                "name": k,
-                "additionalType": add_type,
-            }
-            cwl_p = cwl_params.get(k)
-            # possible overwrite of additionalType (this one is more accurate)
-            properties.update(properties_from_cwl_param(cwl_p))
-            wf_p = crate.add(ContextEntity(crate, f"#param-{k}", properties=properties))
-            wf_params.append(wf_p)
+            value = self.convert_param(v, crate)
+            wf_p = crate.dereference(f"#param-{k}")
             self.param_map[k] = wf_p
-            # Add File / Dataset / PropertyValue to action
             if isinstance(v, (File, Folder)):
                 action_p = value
             else:
                 # FIXME: assuming arrays and records don't have nested structured types
-                if add_type == "PropertyValue":
+                if isinstance(value, dict):
                     value = [crate.add(ContextEntity(crate, f"#pv-{k}/{nk}", properties={
                         "@type": "PropertyValue",
                         "name": f"{k}/{nk}",
-                        "value": nv[1],
+                        "value": nv,
                     })) for nk, nv in value.items()]
                 action_p = crate.add(ContextEntity(crate, f"#pv-{k}", properties={
                     "@type": "PropertyValue",
@@ -717,7 +718,7 @@ class ProvCrateBuilder:
                 action_p["value"] = value
             action_p.append_to("exampleOfWork", wf_p, compact=True)
             action_params.append(action_p)
-        return wf_params, action_params
+        return action_params
 
     def convert_param(self, prov_param, crate):
         if isinstance(prov_param, File):
@@ -725,7 +726,7 @@ class ProvCrateBuilder:
             action_p = crate.dereference(path.name)
             if not action_p:
                 action_p = crate.add_file(self.root / path, path.name)
-            return "File", action_p
+            return action_p
         if isinstance(prov_param, Folder):
             action_p = crate.dereference(prov_param.basename)
             if not action_p:
@@ -737,29 +738,17 @@ class ProvCrateBuilder:
                     if not part:
                         part = crate.add_file(self.root / path, dest)
                     action_p.append_to("hasPart", part)
-            return "Dataset", action_p
-        type_ = "Text"
+            return action_p
         if prov_param.value:
-            if isinstance(prov_param.value, bool):
-                type_ = "Boolean"
-            elif isinstance(prov_param.value, float):
-                type_ = "Float"
-            elif isinstance(prov_param.value, int):
-                type_ = "Integer"
-            # str(True) == "True" (same for False), so str() maps to Schema.org types
-            return type_, str(prov_param.value)
-        elif hasattr(prov_param, "dict_members"):
-            return "PropertyValue", dict(
+            return str(prov_param.value)
+        if hasattr(prov_param, "dict_members"):
+            return dict(
                 (_.key, self.convert_param(_.entity, crate))
                 for _ in prov_param.dict_members if _.key != "@id"
             )
-        elif hasattr(prov_param, "members"):
-            types, values = zip(*[self.convert_param(_, crate)
-                                  for _ in prov_param.members])
-            assert len(set(types)) == 1
-            return types[0], list(values)
-        else:
-            raise RuntimeError(f"No value to convert for {prov_param}")
+        if hasattr(prov_param, "members"):
+            return [self.convert_param(_, crate) for _ in prov_param.members]
+        raise RuntimeError(f"No value to convert for {prov_param}")
 
     def add_param_connections(self):
         def connect(source, target):
