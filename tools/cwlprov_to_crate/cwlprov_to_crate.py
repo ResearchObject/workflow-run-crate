@@ -517,14 +517,14 @@ def get_workflow(wf_path):
 class ProvCrateBuilder:
 
     def __init__(self, root, workflow_name=None, license=None):
-        self.root = root
+        self.root = Path(root)
         self.workflow_name = workflow_name
         self.license = license
         self.wf_path = self.root / "workflow" / WORKFLOW_BASENAME
         self.cwl_defs = get_workflow(self.wf_path)
         self.step_maps = self._get_step_maps(self.cwl_defs)
         self.param_map = {}
-        prov = Provenance(root / "metadata" / "provenance" / "primary.cwlprov.json")
+        prov = Provenance(self.root / "metadata" / "provenance" / "primary.cwlprov.json")
         sel = [_ for _ in prov.agents.values() if type(_) == WorkflowEngine]
         if len(sel) != 1:
             raise ValueError(f"Unexpected number of workflow engines: {len(sel)}")
@@ -558,16 +558,27 @@ class ProvCrateBuilder:
 
     def build(self):
         crate = ROCrate(gen_preview=False)
-        crate.add_workflow(
+        self.add_workflow(crate)
+        self.add_engine_run(crate)
+        self.add_action(crate, self.workflow_run)
+        self.add_param_connections()
+        return crate
+
+    def add_workflow(self, crate):
+        lang_version = self.cwl_defs[WORKFLOW_BASENAME].cwlVersion
+        properties = {
+            "@type": ["File", "SoftwareSourceCode", "ComputationalWorkflow", "HowTo"],
+            "name": self.workflow_name or self.wf_path.name
+        }
+        workflow = crate.add_workflow(
             self.wf_path, self.wf_path.name, main=True, lang="cwl",
-            lang_version=self.cwl_defs[self.wf_path.name].cwlVersion, gen_cwl=False,
-            properties={
-                "@type": ["File", "SoftwareSourceCode", "ComputationalWorkflow", "HowTo"],
-                "name": self.workflow_name or self.wf_path.name
-            }
+            lang_version=lang_version, gen_cwl=False, properties=properties
         )
         if self.license:
             crate.root_dataset["license"] = self.license
+        return workflow
+
+    def add_engine_run(self, crate):
         roc_engine = crate.add(SoftwareApplication(crate, properties={
             "name": self.engine.label or "workflow engine"
         }))
@@ -583,9 +594,6 @@ class ProvCrateBuilder:
                 "name": self.agent.name
             }))
         crate.root_dataset["mentions"] = [roc_engine_run]
-        self.add_action(crate, self.workflow_run)
-        self.add_param_connections()
-        return crate
 
     def add_action(self, crate, activity, parent_instrument=None):
         workflow = crate.mainEntity
