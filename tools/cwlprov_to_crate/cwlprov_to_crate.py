@@ -94,6 +94,11 @@ def get_fragment(uri):
     return uri.rsplit("#", 1)[-1]
 
 
+def get_relative_uri(uri):
+    doc, fragment = uri.rsplit("#", 1)
+    return f"{doc.rsplit('/', 1)[-1]}#{fragment}"
+
+
 def build_step_graph(cwl_wf):
     out_map = {}
     for s in cwl_wf.steps:
@@ -618,12 +623,12 @@ class ProvCrateBuilder:
     def add_params(self, crate, cwl_params):
         params = []
         for cwl_p in cwl_params:
-            p_fragment = get_fragment(cwl_p.id)
+            p_id = get_relative_uri(cwl_p.id)
             properties = properties_from_cwl_param(cwl_p)
-            properties["name"] = p_fragment
-            p = crate.add(ContextEntity(crate, f"#param-{p_fragment}", properties=properties))
+            properties["name"] = get_fragment(p_id)
+            p = crate.add(ContextEntity(crate, p_id, properties=properties))
             params.append(p)
-            self.param_map[p_fragment] = p
+            self.param_map[p_id] = p
         return params
 
     def add_engine_run(self, crate):
@@ -699,8 +704,6 @@ class ProvCrateBuilder:
         action_params = []
         for k, v in prov_params.items():
             value = self.convert_param(v, crate)
-            wf_p = crate.dereference(f"#param-{k}")
-            self.param_map[k] = wf_p
             if isinstance(v, (File, Folder)):
                 action_p = value
             else:
@@ -716,6 +719,7 @@ class ProvCrateBuilder:
                     "name": k,
                 }))
                 action_p["value"] = value
+            wf_p = crate.dereference(f"{WORKFLOW_BASENAME}#{k}")
             action_p.append_to("exampleOfWork", wf_p, compact=True)
             action_params.append(action_p)
         return action_params
@@ -752,8 +756,8 @@ class ProvCrateBuilder:
 
     def add_param_connections(self):
         def connect(source, target):
-            source_p = self.param_map[source]
-            target_p = self.param_map[target]
+            source_p = self.param_map[f"{WORKFLOW_BASENAME}#{source}"]
+            target_p = self.param_map[f"{WORKFLOW_BASENAME}#{target}"]
             source_p.append_to("connectedTo", target_p, compact=True)
         for wf_name, sm in self.step_maps.items():
             def_ = self.cwl_defs[wf_name]

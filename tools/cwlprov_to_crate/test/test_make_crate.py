@@ -45,12 +45,12 @@ def test_revsort(data_dir, tmpdir):
     assert len(outputs) == 1
     for entity in inputs + outputs:
         assert "FormalParameter" in entity.type
-    input_map = {_.id.rsplit("-", 1)[-1]: _ for _ in inputs}
-    assert input_map["main/input"]["additionalType"] == "File"
-    assert "encodingFormat" in input_map["main/input"]
-    assert input_map["main/input"]["defaultValue"] == "file:///home/stain/src/cwltool/tests/wf/hello.txt"
-    assert input_map["main/reverse_sort"]["additionalType"] == "Boolean"
-    assert input_map["main/reverse_sort"]["defaultValue"] == "True"
+    input_map = {_.id.rsplit("/", 1)[-1]: _ for _ in inputs}
+    assert input_map["input"]["additionalType"] == "File"
+    assert "encodingFormat" in input_map["input"]
+    assert input_map["input"]["defaultValue"] == "file:///home/stain/src/cwltool/tests/wf/hello.txt"
+    assert input_map["reverse_sort"]["additionalType"] == "Boolean"
+    assert input_map["reverse_sort"]["defaultValue"] == "True"
     assert outputs[0]["additionalType"] == "File"
     assert workflow["programmingLanguage"].id == CWL_ID
     sel = [_ for _ in crate.contextual_entities if "OrganizeAction" in _.type]
@@ -114,17 +114,17 @@ def test_revsort(data_dir, tmpdir):
         else:
             assert False, f"unexpected step id: {step.id}"
     # parameter connections
-    sorted_output = crate.get("#param-sorttool.cwl/output")
-    main_output = crate.get("#param-main/output")
+    sorted_output = crate.get("packed.cwl#sorttool.cwl/output")
+    main_output = crate.get("packed.cwl#main/output")
     assert sorted_output["connectedTo"] is main_output
-    main_input = crate.get("#param-main/input")
-    rev_input = crate.get("#param-revtool.cwl/input")
+    main_input = crate.get("packed.cwl#main/input")
+    rev_input = crate.get("packed.cwl#revtool.cwl/input")
     assert main_input["connectedTo"] is rev_input
-    rev_output = crate.get("#param-revtool.cwl/output")
-    sorted_input = crate.get("#param-sorttool.cwl/input")
+    rev_output = crate.get("packed.cwl#revtool.cwl/output")
+    sorted_input = crate.get("packed.cwl#sorttool.cwl/input")
     assert rev_output["connectedTo"] is sorted_input
-    main_reverse_sort = crate.get("#param-main/reverse_sort")
-    sorted_reverse = crate.get("#param-sorttool.cwl/reverse")
+    main_reverse_sort = crate.get("packed.cwl#main/reverse_sort")
+    sorted_reverse = crate.get("packed.cwl#sorttool.cwl/reverse")
     assert main_reverse_sort["connectedTo"] is sorted_reverse
     # file contents
     in_text = (args.root / "data/32/327fc7aedf4f6b69a42a7c8b808dc5a7aff61376").read_text()
@@ -249,9 +249,9 @@ def test_dir_io(data_dir, tmpdir):
     outputs = workflow["output"]
     assert len(inputs) == 2
     assert len(outputs) == 1
-    input_map = {_.id.rsplit("-", 1)[-1]: _ for _ in inputs}
-    assert input_map["main/in_dir"]["additionalType"] == "Dataset"
-    assert input_map["main/pattern"]["additionalType"] == "Text"
+    input_map = {_.id.rsplit("/", 1)[-1]: _ for _ in inputs}
+    assert input_map["in_dir"]["additionalType"] == "Dataset"
+    assert input_map["pattern"]["additionalType"] == "Text"
     assert outputs[0]["additionalType"] == "Dataset"
     action_map = {_["instrument"].id: _ for _ in crate.contextual_entities
                   if "CreateAction" in _.type}
@@ -334,11 +334,11 @@ def test_no_output(data_dir, tmpdir):
     assert len(inputs) == 3
     for entity in inputs:
         assert "FormalParameter" in entity.type
-    input_map = {_.id.rsplit("-", 1)[-1]: _ for _ in inputs}
+    input_map = {_.id.rsplit("/", 1)[-1]: _ for _ in inputs}
     for n in "sabdab_file", "pdb_array":
-        assert input_map[f"main/{n}"]["additionalType"] == "File"
-    assert input_map["main/pdb_array"]["multipleValues"] == "True"
-    assert input_map["main/pdb_dir"]["additionalType"] == "Dataset"
+        assert input_map[f"{n}"]["additionalType"] == "File"
+    assert input_map["pdb_array"]["multipleValues"] == "True"
+    assert input_map["pdb_dir"]["additionalType"] == "Dataset"
     sel = [_ for _ in crate.contextual_entities if "OrganizeAction" in _.type]
     assert len(sel) == 1
     engine_action = sel[0]
@@ -359,17 +359,17 @@ def test_no_output(data_dir, tmpdir):
     wf_object_map = {_.id.rsplit("-", 1)[-1]: _ for _ in wf_objects}
     in_array = wf_object_map["main/pdb_array"]
     assert "PropertyValue" in in_array.type
-    assert in_array["exampleOfWork"] is input_map["main/pdb_array"]
+    assert in_array["exampleOfWork"] is input_map["pdb_array"]
     array_files = in_array["value"]
     assert len(array_files) == 2
     for e in array_files:
         assert "File" in e.type
     in_file = wf_object_map["5e026d2a039e60827d3834596a8c30256aa85e57"]
     assert "File" in in_file.type
-    assert input_map["main/sabdab_file"] in in_file["exampleOfWork"]
+    assert input_map["sabdab_file"] in in_file["exampleOfWork"]
     in_dir = [_ for _ in wf_objects if _ is not in_array and _ is not in_file][0]
     assert "Dataset" in in_dir.type
-    assert input_map["main/pdb_dir"] in in_dir["exampleOfWork"]
+    assert input_map["pdb_dir"] in in_dir["exampleOfWork"]
     dir_files = in_dir["hasPart"]
     for e in dir_files:
         assert "File" in e.type
@@ -407,12 +407,12 @@ def test_no_output(data_dir, tmpdir):
             elif step_tag == "date2_step":
                 assert len(objects) == 1
     # parameter connections
-    main_file = crate.get("#param-main/sabdab_file")
-    main_dir = crate.get("#param-main/pdb_dir")
-    main_array = crate.get("#param-main/pdb_array")
-    date_file = crate.get("#param-date.cwl/file")
-    echo_file = crate.get("#param-echo.cwl/input_file")
-    echo_dir = crate.get("#param-echo.cwl/input_dir")
+    main_file = crate.get("packed.cwl#main/sabdab_file")
+    main_dir = crate.get("packed.cwl#main/pdb_dir")
+    main_array = crate.get("packed.cwl#main/pdb_array")
+    date_file = crate.get("packed.cwl#date.cwl/file")
+    echo_file = crate.get("packed.cwl#echo.cwl/input_file")
+    echo_dir = crate.get("packed.cwl#echo.cwl/input_dir")
     assert set(main_file["connectedTo"]) == {date_file, echo_file}
     assert main_dir["connectedTo"] is echo_dir
     assert main_array["connectedTo"] is date_file
