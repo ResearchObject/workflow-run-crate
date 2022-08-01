@@ -530,20 +530,16 @@ class ProvCrateBuilder:
         self.cwl_defs = get_workflow(self.wf_path)
         self.step_maps = self._get_step_maps(self.cwl_defs)
         self.param_map = {}
-        prov = Provenance(self.root / "metadata" / "provenance" / "primary.cwlprov.json")
-        sel = [_ for _ in prov.agents.values() if type(_) == WorkflowEngine]
+        self.prov = Provenance(self.root / "metadata" / "provenance" / "primary.cwlprov.json")
+        sel = [_ for _ in self.prov.agents.values() if type(_) == WorkflowEngine]
         if len(sel) != 1:
             raise ValueError(f"Unexpected number of workflow engines: {len(sel)}")
         self.engine = sel[0]
-        sel = [_ for _ in prov.activities.values() if type(_) == WorkflowRun]
+        sel = [_ for _ in self.prov.activities.values() if type(_) == WorkflowRun]
         if len(sel) != 1:
             raise ValueError(f"Unexpected number of workflow runs: {len(sel)}")
         self.workflow_run = sel[0]
         self.agent = getattr(self.engine.starter, "responsible", None)
-        if isinstance(self.agent, Person):
-            self.agent.id_ = self.agent.id_.replace(
-                "orcid:", prov.prefixes.get("orcid", "https://orcid.org/")
-            )
         # avoid duplicates - not handled by ro-crate-py, see
         # https://github.com/ResearchObject/ro-crate-py/issues/132
         self.control_actions = {}
@@ -642,7 +638,17 @@ class ProvCrateBuilder:
         }))
         roc_engine_run["instrument"] = roc_engine
         if isinstance(self.agent, Person):
-            roc_engine_run["agent"] = crate.add(ContextEntity(crate, self.agent.id_, properties={
+            agent_id = None
+            try:
+                prefix, ref = self.agent.id_.split(":", 1)
+            except ValueError:
+                pass
+            else:
+                if prefix == "orcid":
+                    agent_id = self.prov.prefixes.get("orcid", "https://orcid.org/") + ref
+                elif prefix == "id":
+                    agent_id = "#" + ref
+            roc_engine_run["agent"] = crate.add(ContextEntity(crate, agent_id, properties={
                 "@type": "Person",
                 "name": self.agent.name
             }))
