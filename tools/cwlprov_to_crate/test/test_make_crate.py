@@ -425,3 +425,39 @@ def test_no_output(data_dir, tmpdir):
     text_1ahw = (args.root / "data/bc/bc2f32ad8584e85e6e3b184a6dc565bdd6571821").read_text()
     text_1kip = (args.root / "data/da/da261f1082f318fbda173dc3228d7475433fd886").read_text()
     assert [(args.output / _.id).read_text() for _ in dir_files] == [text_1ahw, text_1kip]
+
+
+def test_scatter_pvs(data_dir, tmpdir):
+    args = Args()
+    args.root = data_dir / "echo-scatter-run-1"
+    args.output = tmpdir / "echo-scatter-run-1-crate"
+    args.license = "Apache-2.0"
+    args.workflow_name = None
+    main(args)
+    crate = ROCrate(args.output)
+    workflow = crate.mainEntity
+    tools = workflow["hasPart"]
+    assert len(tools) == 1
+    wf_inputs = workflow["input"]
+    assert not workflow.get("output")
+    assert len(wf_inputs) == 1
+    wf_in = wf_inputs[0]
+    actions = [_ for _ in crate.contextual_entities if "CreateAction" in _.type]
+    assert len(actions) == 3
+    sel = [_ for _ in actions if _["instrument"] is workflow]
+    assert len(sel) == 1
+    wf_action = sel[0]
+    wf_objects = wf_action["object"]
+    assert len(wf_objects) == 1
+    wf_obj = wf_objects[0]
+    assert "PropertyValue" in wf_obj.type
+    assert wf_obj["exampleOfWork"] is wf_in
+    assert set(wf_obj["value"]) == {"foo", "bar"}
+    job_values = set()
+    for a in actions:
+        if a is wf_action:
+            continue
+        objects = a["object"]
+        assert len(objects) == 1
+        job_values.add(objects[0]["value"])
+    assert job_values == {"foo", "bar"}

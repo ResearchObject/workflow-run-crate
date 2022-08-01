@@ -663,14 +663,9 @@ class ProvCrateBuilder:
                 raise RuntimeError("sub-workflows not supported yet")
             instrument = workflow
             roc_engine_run["result"] = action
-            prov_inputs = {
-                k.split(":", 1)[-1]: v
-                for k, v in activity.in_params.items()
-            }
-            prov_outputs = {
-                k.split(":", 1)[-1]: v
-                for k, v in activity.out_params.items()
-            }
+
+            def to_wf_p(k):
+                return k
         else:
             tool_name = self.step_maps[parent_instrument.id][plan_tag]["tool"]
             instrument = crate.dereference(f"{workflow.id}#{tool_name}")
@@ -686,23 +681,22 @@ class ProvCrateBuilder:
                 self.control_actions[plan_tag] = control_action
             control_action.append_to("object", action, compact=True)
             job_tag = activity.job_id.strip().split(":", 1)[-1]
-            prov_inputs = {
-                k.split(":", 1)[-1].replace(job_tag, tool_name): v
-                for k, v in activity.in_params.items()
-            }
-            prov_outputs = {
-                k.split(":", 1)[-1].replace(job_tag, tool_name): v
-                for k, v in activity.out_params.items()
-            }
+
+            def to_wf_p(k):
+                return k.replace(job_tag, tool_name)
         action["instrument"] = instrument
-        action["object"] = self.add_action_params(crate, prov_inputs)
-        action["result"] = self.add_action_params(crate, prov_outputs)
+        action["object"] = self.add_action_params(crate, activity, to_wf_p, "in")
+        action["result"] = self.add_action_params(crate, activity, to_wf_p, "out")
         for job in activity.steps:
             self.add_action(crate, job, parent_instrument=instrument)
 
-    def add_action_params(self, crate, prov_params):
+    def add_action_params(self, crate, activity, to_wf_p, io="in"):
         action_params = []
+        prov_params = getattr(activity, f"{io}_params")
         for k, v in prov_params.items():
+            k = k.replace("wf:", "packed.cwl#")
+            wf_p = crate.dereference(to_wf_p(k))
+            k = get_fragment(k)
             value = self.convert_param(v, crate)
             if isinstance(v, (File, Folder)):
                 action_p = value
@@ -719,7 +713,6 @@ class ProvCrateBuilder:
                     "name": k,
                 }))
                 action_p["value"] = value
-            wf_p = crate.dereference(f"{WORKFLOW_BASENAME}#{k}")
             action_p.append_to("exampleOfWork", wf_p, compact=True)
             action_params.append(action_p)
         return action_params
