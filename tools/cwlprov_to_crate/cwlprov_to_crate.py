@@ -19,6 +19,7 @@ Generate a Workflow Run RO-Crate from a CWLProv RO.
 import argparse
 import hashlib
 import json
+import re
 from itertools import chain
 from pathlib import Path
 
@@ -43,6 +44,8 @@ CWL_TYPE_MAP = {
     "null": None,
 }
 
+SCATTER_JOB_PATTERN = re.compile(r"^(.+)_\d+$")
+
 
 def convert_cwl_type(cwl_type):
     if isinstance(cwl_type, list):
@@ -62,9 +65,10 @@ def convert_cwl_type(cwl_type):
 def properties_from_cwl_param(cwl_p):
     def is_structured(cwl_type):
         return getattr(cwl_type, "type", None) in ("array", "record")
-    if not cwl_p:
-        return {}
-    properties = {"additionalType": convert_cwl_type(cwl_p.type)}
+    properties = {
+        "@type": "FormalParameter",
+        "additionalType": convert_cwl_type(cwl_p.type)
+    }
     if cwl_p.format:
         properties["encodingFormat"] = cwl_p.format
     if isinstance(cwl_p.type, list) and "null" in cwl_p.type:
@@ -90,17 +94,24 @@ def get_fragment(uri):
     return uri.rsplit("#", 1)[-1]
 
 
+def get_relative_uri(uri):
+    doc, fragment = uri.rsplit("#", 1)
+    return f"{doc.rsplit('/', 1)[-1]}#{fragment}"
+
+
 def build_step_graph(cwl_wf):
     out_map = {}
     for s in cwl_wf.steps:
         for o in s.out:
-            out_map[o] = s.id
+            out_map[o] = get_fragment(s.id)
     graph = nx.DiGraph()
     for s in cwl_wf.steps:
+        fragment = get_fragment(s.id)
+        graph.add_node(fragment)
         for i in s.in_:
-            source_id = out_map.get(i.source)
-            if source_id:
-                graph.add_edge(get_fragment(source_id), get_fragment(s.id))
+            source_fragment = out_map.get(i.source)
+            if source_fragment:
+                graph.add_edge(source_fragment, fragment)
     return graph
 
 
@@ -155,6 +166,7 @@ class Activity(Thing):
         self.in_params = {}
         self.out_params = {}
         self.steps = []
+        self.job_id = None
 
 
 class ProcessRun(Activity):
@@ -317,7 +329,7 @@ class Provenance:
         activities = {}
         for id_, record in self.data["activity"].items():
             if isinstance(record, list) and "prov:has_provenance" in chain(*record):
-                raise RuntimeError("subworkflows not supported yet")
+                raise RuntimeError("sub-workflows not supported yet")
             types = set(Provenance.get_types(record))
             if "wfprov:WorkflowRun" in types:
                 activities[id_] = WorkflowRun(id_, label=record.get("prov:label"))
@@ -422,7 +434,7 @@ class Provenance:
                 if single_tool and len(role.split("/")) > 2:
                     continue
                 activity.in_params[role] = entity
-        for dummy, record in self.data["wasGeneratedBy"].items():
+        for dummy, record in self.data.get("wasGeneratedBy", {}).items():
             activity = self.activities.get(record.get("prov:activity"))
             if not activity:
                 continue
@@ -448,16 +460,28 @@ class Provenance:
             if not activity:
                 continue
             # TODO: agents; note that there can be many agents for an activity
-            plan = self.entities.get(record.get("prov:plan"))
+            plan_id = record.get("prov:plan")
+            plan = self.entities.get(plan_id)
+            if not plan:
+                plan = self.__get_plan_for_scatter_job(plan_id)
             if plan:
                 activity.plan = plan  # assuming one plan per activity
                 is_plan_for.setdefault(plan.id_, []).append(activity)
+                activity.job_id = plan_id
         for plan_id, activities in is_plan_for.items():
             plan = self.entities.get(plan_id)
             for act in activities:
                 for sp in plan.subprocesses:
                     for step in is_plan_for[sp.id_]:
                         act.steps.append(step)
+
+    def __get_plan_for_scatter_job(self, plan_id):
+        if not plan_id:
+            return None
+        m = SCATTER_JOB_PATTERN.match(plan_id)
+        if not m:
+            return None
+        return self.entities.get(m.groups()[0])
 
     def __read_delegations(self):
         for dummy, record in self.data.get("actedOnBehalfOf", {}).items():
@@ -475,6 +499,7 @@ def get_workflow(wf_path):
     Does not use load_document_by_uri, so we can hack the json to work around
     issues.
     """
+    wf_path = Path(wf_path)
     with open(wf_path, "rt") as f:
         json_wf = json.load(f)
     graph = json_wf.get("$graph", [json_wf])
@@ -486,57 +511,38 @@ def get_workflow(wf_path):
     defs = load_document_by_yaml(json_wf, wf_path.absolute().as_uri())
     if not isinstance(defs, list):
         defs = [defs]
-    return {get_fragment(_.id): _ for _ in defs}
-
-
-# FIXME: this should probably build and add the appropriate ro-crate entity directly
-def convert_value(prov_param):
-    type_ = "Text"
-    if prov_param.value:
-        if isinstance(prov_param.value, bool):
-            type_ = "Boolean"
-        elif isinstance(prov_param.value, float):
-            type_ = "Float"
-        elif isinstance(prov_param.value, int):
-            type_ = "Integer"
-        # str(True) == "True" (same for False), so str() maps to Schema.org types
-        return type_, str(prov_param.value)
-    elif hasattr(prov_param, "dict_members"):
-        return "PropertyValue", dict(
-            (_.key, convert_value(_.entity)) for _ in prov_param.dict_members if _.key != "@id"
-        )
-    elif hasattr(prov_param, "members"):
-        types, values = zip(*[convert_value(_) for _ in prov_param.members])
-        assert len(set(types)) == 1
-        return types[0], list(values)
-    else:
-        raise RuntimeError(f"No value to convert for {prov_param}")
+    def_map = {}
+    for d in defs:
+        k = get_fragment(d.id)
+        if k == "main":
+            k = wf_path.name
+        def_map[k] = d
+    return def_map
 
 
 class ProvCrateBuilder:
 
     def __init__(self, root, workflow_name=None, license=None):
-        self.root = root
+        self.root = Path(root)
         self.workflow_name = workflow_name
         self.license = license
         self.wf_path = self.root / "workflow" / WORKFLOW_BASENAME
         self.cwl_defs = get_workflow(self.wf_path)
         self.step_maps = self._get_step_maps(self.cwl_defs)
         self.param_map = {}
-        prov = Provenance(root / "metadata" / "provenance" / "primary.cwlprov.json")
-        sel = [_ for _ in prov.agents.values() if type(_) == WorkflowEngine]
+        self.prov = Provenance(self.root / "metadata" / "provenance" / "primary.cwlprov.json")
+        sel = [_ for _ in self.prov.agents.values() if type(_) == WorkflowEngine]
         if len(sel) != 1:
             raise ValueError(f"Unexpected number of workflow engines: {len(sel)}")
         self.engine = sel[0]
-        sel = [_ for _ in prov.activities.values() if type(_) == WorkflowRun]
+        sel = [_ for _ in self.prov.activities.values() if type(_) == WorkflowRun]
         if len(sel) != 1:
             raise ValueError(f"Unexpected number of workflow runs: {len(sel)}")
         self.workflow_run = sel[0]
         self.agent = getattr(self.engine.starter, "responsible", None)
-        if isinstance(self.agent, Person):
-            self.agent.id_ = self.agent.id_.replace(
-                "orcid:", prov.prefixes.get("orcid", "https://orcid.org/")
-            )
+        # avoid duplicates - not handled by ro-crate-py, see
+        # https://github.com/ResearchObject/ro-crate-py/issues/132
+        self.control_actions = {}
 
     @staticmethod
     def _get_step_maps(cwl_defs):
@@ -553,16 +559,75 @@ class ProvCrateBuilder:
 
     def build(self):
         crate = ROCrate(gen_preview=False)
-        crate.add_workflow(
+        self.add_workflow(crate)
+        self.add_engine_run(crate)
+        self.add_action(crate, self.workflow_run)
+        self.add_param_connections()
+        return crate
+
+    def add_workflow(self, crate):
+        lang_version = self.cwl_defs[WORKFLOW_BASENAME].cwlVersion
+        properties = {
+            "@type": ["File", "SoftwareSourceCode", "ComputationalWorkflow", "HowTo"],
+            "name": self.workflow_name or self.wf_path.name
+        }
+        workflow = crate.add_workflow(
             self.wf_path, self.wf_path.name, main=True, lang="cwl",
-            lang_version=self.cwl_defs["main"].cwlVersion, gen_cwl=False,
-            properties={
-                "@type": ["File", "SoftwareSourceCode", "ComputationalWorkflow", "HowTo"],
-                "name": self.workflow_name or self.wf_path.name
-            }
+            lang_version=lang_version, gen_cwl=False, properties=properties
         )
         if self.license:
             crate.root_dataset["license"] = self.license
+        cwl_workflow = self.cwl_defs[workflow.id]
+        workflow["input"] = self.add_params(crate, cwl_workflow.inputs)
+        workflow["output"] = self.add_params(crate, cwl_workflow.outputs)
+        for s in getattr(cwl_workflow, "steps", []):
+            step_fragment = get_fragment(s.id)
+            step_id = f"{workflow.id}#{step_fragment}"
+            pos = self.step_maps[workflow.id][step_fragment]["pos"]
+            step = crate.add(ContextEntity(crate, step_id, properties={
+                "@type": "HowToStep",
+                "position": str(pos),
+            }))
+            tool = self.add_tool(crate, workflow, s.run)
+            step["workExample"] = tool
+            workflow.append_to("step", step)
+        return workflow
+
+    def add_tool(self, crate, workflow, cwl_tool):
+        if isinstance(cwl_tool, str):
+            tool_fragment = get_fragment(cwl_tool)
+            cwl_tool = self.cwl_defs[tool_fragment]
+        else:
+            tool_fragment = get_fragment(cwl_tool.id)
+        tool_id = f"{workflow.id}#{tool_fragment}"
+        tool = crate.dereference(tool_id)
+        if tool:
+            return tool
+        if hasattr(cwl_tool, "steps"):
+            raise RuntimeError("subworkflows not supported yet")
+        if hasattr(cwl_tool, "expression"):
+            raise RuntimeError("ExpressionTool not supported yet")
+        properties = {"name": tool_fragment}
+        if cwl_tool.doc:
+            properties["description"] = cwl_tool.doc
+        tool = crate.add(SoftwareApplication(crate, tool_id, properties=properties))
+        tool["input"] = self.add_params(crate, cwl_tool.inputs)
+        tool["output"] = self.add_params(crate, cwl_tool.outputs)
+        workflow.append_to("hasPart", tool)
+        return tool
+
+    def add_params(self, crate, cwl_params):
+        params = []
+        for cwl_p in cwl_params:
+            p_id = get_relative_uri(cwl_p.id)
+            properties = properties_from_cwl_param(cwl_p)
+            properties["name"] = get_fragment(p_id)
+            p = crate.add(ContextEntity(crate, p_id, properties=properties))
+            params.append(p)
+            self.param_map[p_id] = p
+        return params
+
+    def add_engine_run(self, crate):
         roc_engine = crate.add(SoftwareApplication(crate, properties={
             "name": self.engine.label or "workflow engine"
         }))
@@ -573,14 +638,21 @@ class ProvCrateBuilder:
         }))
         roc_engine_run["instrument"] = roc_engine
         if isinstance(self.agent, Person):
-            roc_engine_run["agent"] = crate.add(ContextEntity(crate, self.agent.id_, properties={
+            agent_id = None
+            try:
+                prefix, ref = self.agent.id_.split(":", 1)
+            except ValueError:
+                pass
+            else:
+                if prefix == "orcid":
+                    agent_id = self.prov.prefixes.get("orcid", "https://orcid.org/") + ref
+                elif prefix == "id":
+                    agent_id = "#" + ref
+            roc_engine_run["agent"] = crate.add(ContextEntity(crate, agent_id, properties={
                 "@type": "Person",
                 "name": self.agent.name
             }))
         crate.root_dataset["mentions"] = [roc_engine_run]
-        self.add_action(crate, self.workflow_run)
-        self.add_param_connections()
-        return crate
 
     def add_action(self, crate, activity, parent_instrument=None):
         workflow = crate.mainEntity
@@ -596,102 +668,51 @@ class ProvCrateBuilder:
             if plan_tag != "main":
                 raise RuntimeError("sub-workflows not supported yet")
             instrument = workflow
-            cwl_tool = self.cwl_defs.get(plan_tag)
-            cwl_inputs = {get_fragment(_.id): _ for _ in cwl_tool.inputs}
-            cwl_outputs = {get_fragment(_.id): _ for _ in cwl_tool.outputs}
             roc_engine_run["result"] = action
-        else:
-            step_id = f"{workflow.id}#{plan_tag}"
-            parent_instrument_id = parent_instrument.id
-            if parent_instrument_id == workflow.id:
-                parent_instrument_id = "main"
-            cwl_wf = self.cwl_defs.get(parent_instrument_id)
-            if not cwl_wf:
-                raise RuntimeError(f"could not find workflow for step {plan_tag}")
-            step_info = self.step_maps[parent_instrument_id][plan_tag]
-            tool_name = step_info["tool"]
-            instrument_id = f"{workflow.id}#{tool_name}"
-            properties = {"name": tool_name}
-            cwl_tool = self.cwl_defs.get(tool_name)
-            if cwl_tool and cwl_tool.doc:
-                properties["description"] = cwl_tool.doc
-            instrument = crate.add(SoftwareApplication(crate, instrument_id, properties=properties))
-            step = crate.add(ContextEntity(crate, step_id, properties={
-                "@type": "HowToStep",
-                "position": str(step_info["pos"]),
-            }))
-            step["workExample"] = instrument
-            control_action = crate.add(ContextEntity(crate, properties={
-                "@type": "ControlAction",
-                "name": f"orchestrate {tool_name}",
-            }))
-            control_action["instrument"] = step
-            control_action.append_to("object", action, compact=True)
-            roc_engine_run.append_to("object", control_action, compact=True)
-            cwl_inputs = {get_fragment(_.id).replace(tool_name, plan_tag): _
-                          for _ in cwl_tool.inputs}
-            cwl_outputs = {get_fragment(_.id).replace(tool_name, plan_tag): _
-                           for _ in cwl_tool.outputs}
-        action["instrument"] = instrument
-        if parent_instrument:
-            parent_instrument.append_to("hasPart", instrument)
-            parent_instrument.append_to("step", step)
-        instrument["input"], action["object"] = self.add_params(
-            crate, activity.in_params, cwl_inputs
-        )
-        instrument["output"], action["result"] = self.add_params(
-            crate, activity.out_params, cwl_outputs
-        )
-        for step in activity.steps:
-            self.add_action(crate, step, parent_instrument=instrument)
 
-    def add_params(self, crate, prov_params, cwl_params):
-        wf_params, action_params = [], []
+            def to_wf_p(k):
+                return k
+        else:
+            tool_name = self.step_maps[parent_instrument.id][plan_tag]["tool"]
+            instrument = crate.dereference(f"{workflow.id}#{tool_name}")
+            control_action = self.control_actions.get(plan_tag)
+            if not control_action:
+                control_action = crate.add(ContextEntity(crate, properties={
+                    "@type": "ControlAction",
+                    "name": f"orchestrate {tool_name}",
+                }))
+                step = crate.dereference(f"{workflow.id}#{plan_tag}")
+                control_action["instrument"] = step
+                roc_engine_run.append_to("object", control_action, compact=True)
+                self.control_actions[plan_tag] = control_action
+            control_action.append_to("object", action, compact=True)
+            job_tag = activity.job_id.strip().split(":", 1)[-1]
+
+            def to_wf_p(k):
+                return k.replace(job_tag, tool_name)
+        action["instrument"] = instrument
+        action["object"] = self.add_action_params(crate, activity, to_wf_p, "in")
+        action["result"] = self.add_action_params(crate, activity, to_wf_p, "out")
+        for job in activity.steps:
+            self.add_action(crate, job, parent_instrument=instrument)
+
+    def add_action_params(self, crate, activity, to_wf_p, io="in"):
+        action_params = []
+        prov_params = getattr(activity, f"{io}_params")
         for k, v in prov_params.items():
-            # Add FormalParameter to workflow / tool
-            value = None
-            if isinstance(v, File):
-                add_type = "File"
-            elif isinstance(v, Folder):
-                add_type = "Dataset"
-            else:
-                add_type, value = convert_value(v)
-            k = k.split(":", 1)[-1]
-            properties = {
-                "@type": "FormalParameter",
-                "name": k,
-                "additionalType": add_type,
-            }
-            cwl_p = cwl_params.get(k)
-            # possible overwrite of additionalType (this one is more accurate)
-            properties.update(properties_from_cwl_param(cwl_p))
-            wf_p = crate.add(ContextEntity(crate, f"#param-{k}", properties=properties))
-            wf_params.append(wf_p)
-            self.param_map[k] = wf_p
-            # Add File / Dataset / PropertyValue to action
-            if isinstance(v, File):
-                path = v.get_path()
-                action_p = crate.dereference(path.name)
-                if not action_p:
-                    action_p = crate.add_file(self.root / path, path.name)
-            elif isinstance(v, Folder):
-                action_p = crate.dereference(v.basename)
-                if not action_p:
-                    action_p = crate.add_directory(v.basename)
-                    for pair in v.dict_members:
-                        path = pair.entity.get_path()
-                        dest = Path(v.basename) / path.name
-                        part = crate.dereference(dest.as_posix())
-                        if not part:
-                            part = crate.add_file(self.root / path, dest)
-                        action_p.append_to("hasPart", part)
+            k = k.replace("wf:", "packed.cwl#")
+            wf_p = crate.dereference(to_wf_p(k))
+            k = get_fragment(k)
+            value = self.convert_param(v, crate)
+            if isinstance(v, (File, Folder)):
+                action_p = value
             else:
                 # FIXME: assuming arrays and records don't have nested structured types
-                if add_type == "PropertyValue":
+                if isinstance(value, dict):
                     value = [crate.add(ContextEntity(crate, f"#pv-{k}/{nk}", properties={
                         "@type": "PropertyValue",
                         "name": f"{k}/{nk}",
-                        "value": nv[1],
+                        "value": nv,
                     })) for nk, nv in value.items()]
                 action_p = crate.add(ContextEntity(crate, f"#pv-{k}", properties={
                     "@type": "PropertyValue",
@@ -700,21 +721,67 @@ class ProvCrateBuilder:
                 action_p["value"] = value
             action_p.append_to("exampleOfWork", wf_p, compact=True)
             action_params.append(action_p)
-        return wf_params, action_params
+        return action_params
+
+    def convert_param(self, prov_param, crate):
+        if isinstance(prov_param, File):
+            path = prov_param.get_path()
+            action_p = crate.dereference(path.name)
+            if not action_p:
+                action_p = crate.add_file(self.root / path, path.name)
+            return action_p
+        if isinstance(prov_param, Folder):
+            action_p = crate.dereference(prov_param.basename)
+            if not action_p:
+                action_p = crate.add_directory(prov_param.basename)
+                for pair in prov_param.dict_members:
+                    path = pair.entity.get_path()
+                    dest = Path(prov_param.basename) / path.name
+                    part = crate.dereference(dest.as_posix())
+                    if not part:
+                        part = crate.add_file(self.root / path, dest)
+                    action_p.append_to("hasPart", part)
+            return action_p
+        if prov_param.value:
+            return str(prov_param.value)
+        if hasattr(prov_param, "dict_members"):
+            return dict(
+                (_.key, self.convert_param(_.entity, crate))
+                for _ in prov_param.dict_members if _.key != "@id"
+            )
+        if hasattr(prov_param, "members"):
+            return [self.convert_param(_, crate) for _ in prov_param.members]
+        raise RuntimeError(f"No value to convert for {prov_param}")
 
     def add_param_connections(self):
         def connect(source, target):
-            source_p = self.param_map[source]
-            target_p = self.param_map[target]
-            source_p["connectedTo"] = target_p
-        for def_ in self.cwl_defs.values():
-            if not hasattr(def_, "steps"):
-                continue
+            source_p = self.param_map[f"{WORKFLOW_BASENAME}#{source}"]
+            target_p = self.param_map[f"{WORKFLOW_BASENAME}#{target}"]
+            source_p.append_to("connectedTo", target_p, compact=True)
+        for wf_name, sm in self.step_maps.items():
+            def_ = self.cwl_defs[wf_name]
+            out_map = {}
             for step in def_.steps:
+                step_name = get_fragment(step.id)
+                tool_name = sm[step_name]["tool"]
+                for o in step.out:
+                    o_name = get_fragment(o)
+                    out_map[o_name] = o_name.replace(step_name, tool_name)
+            for step in def_.steps:
+                step_name = get_fragment(step.id)
+                tool_name = sm[step_name]["tool"]
                 for mapping in getattr(step, "in_", []):
-                    connect(get_fragment(mapping.source), get_fragment(mapping.id))
+                    from_param = get_fragment(mapping.source)
+                    try:
+                        from_param = out_map[from_param]
+                    except KeyError:
+                        pass  # only needed if source is from another step
+                    to_param = get_fragment(mapping.id).replace(step_name, tool_name)
+                    connect(from_param, to_param)
             for out in getattr(def_, "outputs", []):
-                connect(get_fragment(out.outputSource), get_fragment(out.id))
+                from_param = out_map[get_fragment(out.outputSource)]
+                to_param = get_fragment(out.id)
+                connect(from_param, to_param)
 
 
 def main(args):

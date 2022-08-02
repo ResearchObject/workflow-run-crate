@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from cwlprov_to_crate import get_workflow, main, ProvCrateBuilder
+from cwlprov_to_crate import main
 from rocrate.rocrate import ROCrate
 
 
@@ -21,29 +21,6 @@ CWL_ID = "https://w3id.org/workflowhub/workflow-ro-crate#cwl"
 
 class Args:
     pass
-
-
-def test_get_step_maps(data_dir):
-    wf_path = data_dir / "exome-alignment-packed.cwl"
-    cwl_defs = get_workflow(wf_path)
-    step_maps = ProvCrateBuilder._get_step_maps(cwl_defs)
-    assert set(step_maps) == {"main"}
-    sm = step_maps["main"]
-    assert len(sm) == 8
-    assert sm["main/bwa_index"]["tool"] == "bwa-index.cwl"
-    assert sm["main/bwa_mem"]["tool"] == "bwa-mem.cwl"
-    assert sm["main/cutadapt"]["tool"] == "cutadapt.cwl"
-    assert sm["main/gunzip"]["tool"] == "gunzip.cwl"
-    assert sm["main/picard_dictionary"]["tool"] == "picard_dictionary.cwl"
-    assert sm["main/picard_markduplicates"]["tool"] == "picard_markduplicates.cwl"
-    assert sm["main/samtools_faidx"]["tool"] == "samtools_faidx.cwl"
-    assert sm["main/samtools_sort"]["tool"] == "samtools_sort.cwl"
-    assert sm["main/cutadapt"]["pos"] < sm["main/bwa_mem"]["pos"]
-    for n in "picard_dictionary", "bwa_index", "samtools_faidx":
-        assert sm["main/gunzip"]["pos"] < sm[f"main/{n}"]["pos"]
-    assert sm["main/bwa_index"]["pos"] < sm["main/bwa_mem"]["pos"]
-    assert sm["main/bwa_mem"]["pos"] < sm["main/samtools_sort"]["pos"]
-    assert sm["main/samtools_sort"]["pos"] < sm["main/picard_markduplicates"]["pos"]
 
 
 def test_revsort(data_dir, tmpdir):
@@ -68,12 +45,12 @@ def test_revsort(data_dir, tmpdir):
     assert len(outputs) == 1
     for entity in inputs + outputs:
         assert "FormalParameter" in entity.type
-    input_map = {_.id.rsplit("-", 1)[-1]: _ for _ in inputs}
-    assert input_map["main/input"]["additionalType"] == "File"
-    assert "encodingFormat" in input_map["main/input"]
-    assert input_map["main/input"]["defaultValue"] == "file:///home/stain/src/cwltool/tests/wf/hello.txt"
-    assert input_map["main/reverse_sort"]["additionalType"] == "Boolean"
-    assert input_map["main/reverse_sort"]["defaultValue"] == "True"
+    input_map = {_.id.rsplit("/", 1)[-1]: _ for _ in inputs}
+    assert input_map["input"]["additionalType"] == "File"
+    assert "encodingFormat" in input_map["input"]
+    assert input_map["input"]["defaultValue"] == "file:///home/stain/src/cwltool/tests/wf/hello.txt"
+    assert input_map["reverse_sort"]["additionalType"] == "Boolean"
+    assert input_map["reverse_sort"]["defaultValue"] == "True"
     assert outputs[0]["additionalType"] == "File"
     assert workflow["programmingLanguage"].id == CWL_ID
     sel = [_ for _ in crate.contextual_entities if "OrganizeAction" in _.type]
@@ -112,9 +89,9 @@ def test_revsort(data_dir, tmpdir):
         instrument = create_a["instrument"]
         assert instrument is step["workExample"]
         assert instrument in tools
+        objects = create_a["object"]
+        results = create_a["result"]
         if step.id.endswith("rev"):
-            objects = create_a["object"]
-            results = create_a["result"]
             assert len(objects) == 1
             assert len(results) == 1
             rev_input_file = objects[0]
@@ -123,8 +100,6 @@ def test_revsort(data_dir, tmpdir):
             assert "File" in rev_output_file.type
             assert step["position"] == "0"
         elif step.id.endswith("sorted"):
-            objects = create_a["object"]
-            results = create_a["result"]
             assert len(objects) == 2
             assert len(results) == 1
             for entity in objects:
@@ -139,17 +114,17 @@ def test_revsort(data_dir, tmpdir):
         else:
             assert False, f"unexpected step id: {step.id}"
     # parameter connections
-    sorted_output = crate.get("#param-main/sorted/output")
-    main_output = crate.get("#param-main/output")
+    sorted_output = crate.get("packed.cwl#sorttool.cwl/output")
+    main_output = crate.get("packed.cwl#main/output")
     assert sorted_output["connectedTo"] is main_output
-    main_input = crate.get("#param-main/input")
-    rev_input = crate.get("#param-main/rev/input")
+    main_input = crate.get("packed.cwl#main/input")
+    rev_input = crate.get("packed.cwl#revtool.cwl/input")
     assert main_input["connectedTo"] is rev_input
-    rev_output = crate.get("#param-main/rev/output")
-    sorted_input = crate.get("#param-main/sorted/input")
+    rev_output = crate.get("packed.cwl#revtool.cwl/output")
+    sorted_input = crate.get("packed.cwl#sorttool.cwl/input")
     assert rev_output["connectedTo"] is sorted_input
-    main_reverse_sort = crate.get("#param-main/reverse_sort")
-    sorted_reverse = crate.get("#param-main/sorted/reverse")
+    main_reverse_sort = crate.get("packed.cwl#main/reverse_sort")
+    sorted_reverse = crate.get("packed.cwl#sorttool.cwl/reverse")
     assert main_reverse_sort["connectedTo"] is sorted_reverse
     # file contents
     in_text = (args.root / "data/32/327fc7aedf4f6b69a42a7c8b808dc5a7aff61376").read_text()
@@ -274,9 +249,9 @@ def test_dir_io(data_dir, tmpdir):
     outputs = workflow["output"]
     assert len(inputs) == 2
     assert len(outputs) == 1
-    input_map = {_.id.rsplit("-", 1)[-1]: _ for _ in inputs}
-    assert input_map["main/in_dir"]["additionalType"] == "Dataset"
-    assert input_map["main/pattern"]["additionalType"] == "Text"
+    input_map = {_.id.rsplit("/", 1)[-1]: _ for _ in inputs}
+    assert input_map["in_dir"]["additionalType"] == "Dataset"
+    assert input_map["pattern"]["additionalType"] == "Text"
     assert outputs[0]["additionalType"] == "Dataset"
     action_map = {_["instrument"].id: _ for _ in crate.contextual_entities
                   if "CreateAction" in _.type}
@@ -338,3 +313,151 @@ def test_dir_io(data_dir, tmpdir):
         (args.root / "data/ec/ec0270052a78321508502ed915815c4daf75fe46").read_text(),
     }
     assert set((args.output / _.id).read_text() for _ in wf_output_dir["hasPart"]) == out_text
+
+
+def test_no_output(data_dir, tmpdir):
+    args = Args()
+    args.root = data_dir / "no-output-run-1"
+    args.output = tmpdir / "no-output-run-1-crate"
+    args.license = "Apache-2.0"
+    args.workflow_name = None
+    main(args)
+    crate = ROCrate(args.output)
+    assert crate.root_dataset["license"] == "Apache-2.0"
+    workflow = crate.mainEntity
+    tools = workflow["hasPart"]
+    assert len(tools) == 2
+    for entity in tools:
+        assert "SoftwareApplication" in entity.type
+    inputs = workflow["input"]
+    assert not workflow.get("output")
+    assert len(inputs) == 3
+    for entity in inputs:
+        assert "FormalParameter" in entity.type
+    input_map = {_.id.rsplit("/", 1)[-1]: _ for _ in inputs}
+    for n in "sabdab_file", "pdb_array":
+        assert input_map[f"{n}"]["additionalType"] == "File"
+    assert input_map["pdb_array"]["multipleValues"] == "True"
+    assert input_map["pdb_dir"]["additionalType"] == "Dataset"
+    sel = [_ for _ in crate.contextual_entities if "OrganizeAction" in _.type]
+    assert len(sel) == 1
+    engine_action = sel[0]
+    assert crate.root_dataset["mentions"] == [engine_action]
+    assert "SoftwareApplication" in engine_action["instrument"].type
+    actions = [_ for _ in crate.contextual_entities if "CreateAction" in _.type]
+    assert len(actions) == 5
+    sel = [_ for _ in actions if _["instrument"] is workflow]
+    assert len(sel) == 1
+    wf_action = sel[0]
+    assert engine_action["result"] is wf_action
+    control_actions = engine_action["object"]
+    assert len(control_actions) == 3
+    assert all(_.type == "ControlAction" for _ in control_actions)
+    wf_objects = wf_action["object"]
+    assert not wf_action.get("result")
+    assert len(wf_objects) == 3
+    wf_object_map = {_.id.rsplit("-", 1)[-1]: _ for _ in wf_objects}
+    in_array = wf_object_map["main/pdb_array"]
+    assert "PropertyValue" in in_array.type
+    assert in_array["exampleOfWork"] is input_map["pdb_array"]
+    array_files = in_array["value"]
+    assert len(array_files) == 2
+    for e in array_files:
+        assert "File" in e.type
+    in_file = wf_object_map["5e026d2a039e60827d3834596a8c30256aa85e57"]
+    assert "File" in in_file.type
+    assert input_map["sabdab_file"] in in_file["exampleOfWork"]
+    in_dir = [_ for _ in wf_objects if _ is not in_array and _ is not in_file][0]
+    assert "Dataset" in in_dir.type
+    assert input_map["pdb_dir"] in in_dir["exampleOfWork"]
+    dir_files = in_dir["hasPart"]
+    for e in dir_files:
+        assert "File" in e.type
+    steps = workflow["step"]
+    assert len(steps) == 3
+    assert all(_.type == "HowToStep" for _ in steps)
+    for control_a in control_actions:
+        step = control_a["instrument"]
+        step_tag = step.id.rsplit("/", 1)[-1]
+        create_actions = control_a["object"]
+        if step_tag == "date2_step":
+            assert isinstance(create_actions, list)
+            assert len(create_actions) == 2
+            date2_in_files = [_["object"][0] for _ in create_actions]
+            assert set(date2_in_files) == set(array_files)
+        else:
+            create_actions = [create_actions]
+        for create_a in create_actions:
+            instrument = create_a["instrument"]
+            assert instrument is step["workExample"]
+            assert instrument in tools
+            objects = create_a["object"]
+            assert not create_a.get("result")
+            if step_tag == "date_step":
+                assert len(objects) == 1
+                date_in_file = objects[0]
+                assert date_in_file is in_file
+            elif step_tag == "echo_step":
+                assert len(objects) == 2
+                for obj in objects:
+                    if "Dataset" in obj.type:
+                        assert obj is in_dir
+                    else:
+                        assert obj is in_file
+            elif step_tag == "date2_step":
+                assert len(objects) == 1
+    # parameter connections
+    main_file = crate.get("packed.cwl#main/sabdab_file")
+    main_dir = crate.get("packed.cwl#main/pdb_dir")
+    main_array = crate.get("packed.cwl#main/pdb_array")
+    date_file = crate.get("packed.cwl#date.cwl/file")
+    echo_file = crate.get("packed.cwl#echo.cwl/input_file")
+    echo_dir = crate.get("packed.cwl#echo.cwl/input_dir")
+    assert set(main_file["connectedTo"]) == {date_file, echo_file}
+    assert main_dir["connectedTo"] is echo_dir
+    assert main_array["connectedTo"] is date_file
+    # file contents
+    text_7mb7 = (args.root / "data/4b/4b22356928446475c8ae5869968c9777374a76e8").read_text()
+    text_7zxf = (args.root / "data/4e/4ebd7d222d9b6095fa96ee395905ce7f6d415381").read_text()
+    assert [(args.output / _.id).read_text() for _ in array_files] == [text_7mb7, text_7zxf]
+    text_sabdab = (args.root / "data/5e/5e026d2a039e60827d3834596a8c30256aa85e57").read_text()
+    assert (args.output / in_file.id).read_text() == text_sabdab
+    text_1ahw = (args.root / "data/bc/bc2f32ad8584e85e6e3b184a6dc565bdd6571821").read_text()
+    text_1kip = (args.root / "data/da/da261f1082f318fbda173dc3228d7475433fd886").read_text()
+    assert [(args.output / _.id).read_text() for _ in dir_files] == [text_1ahw, text_1kip]
+
+
+def test_scatter_pvs(data_dir, tmpdir):
+    args = Args()
+    args.root = data_dir / "echo-scatter-run-1"
+    args.output = tmpdir / "echo-scatter-run-1-crate"
+    args.license = "Apache-2.0"
+    args.workflow_name = None
+    main(args)
+    crate = ROCrate(args.output)
+    workflow = crate.mainEntity
+    tools = workflow["hasPart"]
+    assert len(tools) == 1
+    wf_inputs = workflow["input"]
+    assert not workflow.get("output")
+    assert len(wf_inputs) == 1
+    wf_in = wf_inputs[0]
+    actions = [_ for _ in crate.contextual_entities if "CreateAction" in _.type]
+    assert len(actions) == 3
+    sel = [_ for _ in actions if _["instrument"] is workflow]
+    assert len(sel) == 1
+    wf_action = sel[0]
+    wf_objects = wf_action["object"]
+    assert len(wf_objects) == 1
+    wf_obj = wf_objects[0]
+    assert "PropertyValue" in wf_obj.type
+    assert wf_obj["exampleOfWork"] is wf_in
+    assert set(wf_obj["value"]) == {"foo", "bar"}
+    job_values = set()
+    for a in actions:
+        if a is wf_action:
+            continue
+        objects = a["object"]
+        assert len(objects) == 1
+        job_values.add(objects[0]["value"])
+    assert job_values == {"foo", "bar"}

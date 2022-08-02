@@ -4,7 +4,7 @@
         {
             "@id": "./",
             "@type": "Dataset",
-            "datePublished": "2022-07-05T10:44:02+00:00",
+            "datePublished": "2022-08-02T08:42:07+00:00",
             "hasPart": [
                 {
                     "@id": "packed.cwl"
@@ -24,7 +24,7 @@
             },
             "mentions": [
                 {
-                    "@id": "#64dfd03a-7600-41a0-84c3-1bc5c053fa13"
+                    "@id": "#45323ad2-ab56-4337-85b9-886d415abc95"
                 }
             ]
         },
@@ -61,16 +61,16 @@
             ],
             "input": [
                 {
-                    "@id": "#param-main/input"
+                    "@id": "packed.cwl#main/input"
                 },
                 {
-                    "@id": "#param-main/reverse_sort"
+                    "@id": "packed.cwl#main/reverse_sort"
                 }
             ],
             "name": "packed.cwl",
             "output": [
                 {
-                    "@id": "#param-main/output"
+                    "@id": "packed.cwl#main/output"
                 }
             ],
             "programmingLanguage": {
@@ -99,30 +99,144 @@
             "version": "v1.0"
         },
         {
-            "@id": "#0c85d8f4-fb30-4434-b4aa-ac339cb53576",
+            "@id": "packed.cwl#main/input",
+            "@type": "FormalParameter",
+            "additionalType": "File",
+            "connectedTo": {
+                "@id": "packed.cwl#revtool.cwl/input"
+            },
+            "defaultValue": "file:///home/stain/src/cwltool/tests/wf/hello.txt",
+            "encodingFormat": "https://www.iana.org/assignments/media-types/text/plain",
+            "name": "main/input"
+        },
+        {
+            "@id": "packed.cwl#main/reverse_sort",
+            "@type": "FormalParameter",
+            "additionalType": "Boolean",
+            "connectedTo": {
+                "@id": "packed.cwl#sorttool.cwl/reverse"
+            },
+            "defaultValue": "True",
+            "name": "main/reverse_sort"
+        },
+        {
+            "@id": "packed.cwl#main/output",
+            "@type": "FormalParameter",
+            "additionalType": "File",
+            "name": "main/output"
+        },
+        {
+            "@id": "packed.cwl#main/rev",
+            "@type": "HowToStep",
+            "position": "0",
+            "workExample": {
+                "@id": "packed.cwl#revtool.cwl"
+            }
+        },
+        {
+            "@id": "packed.cwl#revtool.cwl",
+            "@type": "SoftwareApplication",
+            "description": "Reverse each line using the `rev` command",
+            "input": [
+                {
+                    "@id": "packed.cwl#revtool.cwl/input"
+                }
+            ],
+            "name": "revtool.cwl",
+            "output": [
+                {
+                    "@id": "packed.cwl#revtool.cwl/output"
+                }
+            ]
+        },
+        {
+            "@id": "packed.cwl#revtool.cwl/input",
+            "@type": "FormalParameter",
+            "additionalType": "File",
+            "name": "revtool.cwl/input"
+        },
+        {
+            "@id": "packed.cwl#revtool.cwl/output",
+            "@type": "FormalParameter",
+            "additionalType": "File",
+            "connectedTo": {
+                "@id": "packed.cwl#sorttool.cwl/input"
+            },
+            "name": "revtool.cwl/output"
+        },
+        {
+            "@id": "packed.cwl#main/sorted",
+            "@type": "HowToStep",
+            "position": "1",
+            "workExample": {
+                "@id": "packed.cwl#sorttool.cwl"
+            }
+        },
+        {
+            "@id": "packed.cwl#sorttool.cwl",
+            "@type": "SoftwareApplication",
+            "description": "Sort lines using the `sort` command",
+            "input": [
+                {
+                    "@id": "packed.cwl#sorttool.cwl/reverse"
+                },
+                {
+                    "@id": "packed.cwl#sorttool.cwl/input"
+                }
+            ],
+            "name": "sorttool.cwl",
+            "output": [
+                {
+                    "@id": "packed.cwl#sorttool.cwl/output"
+                }
+            ]
+        },
+        {
+            "@id": "packed.cwl#sorttool.cwl/reverse",
+            "@type": "FormalParameter",
+            "additionalType": "Boolean",
+            "name": "sorttool.cwl/reverse"
+        },
+        {
+            "@id": "packed.cwl#sorttool.cwl/input",
+            "@type": "FormalParameter",
+            "additionalType": "File",
+            "name": "sorttool.cwl/input"
+        },
+        {
+            "@id": "packed.cwl#sorttool.cwl/output",
+            "@type": "FormalParameter",
+            "additionalType": "File",
+            "connectedTo": {
+                "@id": "packed.cwl#main/output"
+            },
+            "name": "sorttool.cwl/output"
+        },
+        {
+            "@id": "#80f45e85-7c24-492a-ba55-19ba6394dbee",
             "@type": "SoftwareApplication",
             "name": "cwltool 1.0.20181012180214"
         },
         {
-            "@id": "#64dfd03a-7600-41a0-84c3-1bc5c053fa13",
+            "@id": "#45323ad2-ab56-4337-85b9-886d415abc95",
             "@type": "OrganizeAction",
             "agent": {
                 "@id": "https://orcid.org/0000-0001-9842-9718"
             },
             "instrument": {
-                "@id": "#0c85d8f4-fb30-4434-b4aa-ac339cb53576"
+                "@id": "#80f45e85-7c24-492a-ba55-19ba6394dbee"
             },
             "name": "Run of cwltool 1.0.20181012180214",
             "object": [
                 {
-                    "@id": "#1895f1f9-1452-4a42-bdcd-f4177cda400c"
+                    "@id": "#ca859989-7afa-4a3b-b541-79aa8783162b"
                 },
                 {
-                    "@id": "#3ea66f15-2d65-4a26-b4ca-85b37c7674ca"
+                    "@id": "#b813b869-9527-4aa4-af75-bcf2a507daa5"
                 }
             ],
             "result": {
-                "@id": "#159f2e15-01c4-471a-9fb5-169ba9b457a1"
+                "@id": "#6e833285-3880-48f8-aab1-a8d8550b78c7"
             },
             "startTime": "2018-10-25T15:46:35.210973"
         },
@@ -132,7 +246,7 @@
             "name": "Stian Soiland-Reyes"
         },
         {
-            "@id": "#159f2e15-01c4-471a-9fb5-169ba9b457a1",
+            "@id": "#6e833285-3880-48f8-aab1-a8d8550b78c7",
             "@type": "CreateAction",
             "endTime": "2018-10-25T15:46:43.020168",
             "instrument": {
@@ -155,67 +269,40 @@
             "startTime": "2018-10-25T15:46:35.211153"
         },
         {
-            "@id": "#param-main/input",
-            "@type": "FormalParameter",
-            "additionalType": "File",
-            "connectedTo": {
-                "@id": "#param-main/rev/input"
-            },
-            "defaultValue": "file:///home/stain/src/cwltool/tests/wf/hello.txt",
-            "encodingFormat": "https://www.iana.org/assignments/media-types/text/plain",
-            "name": "main/input"
-        },
-        {
             "@id": "327fc7aedf4f6b69a42a7c8b808dc5a7aff61376",
             "@type": "File",
             "exampleOfWork": [
                 {
-                    "@id": "#param-main/input"
+                    "@id": "packed.cwl#main/input"
                 },
                 {
-                    "@id": "#param-main/rev/input"
+                    "@id": "packed.cwl#revtool.cwl/input"
                 }
             ]
-        },
-        {
-            "@id": "#param-main/reverse_sort",
-            "@type": "FormalParameter",
-            "additionalType": "Boolean",
-            "connectedTo": {
-                "@id": "#param-main/sorted/reverse"
-            },
-            "defaultValue": "True",
-            "name": "main/reverse_sort"
         },
         {
             "@id": "#pv-main/reverse_sort",
             "@type": "PropertyValue",
             "exampleOfWork": {
-                "@id": "#param-main/reverse_sort"
+                "@id": "packed.cwl#main/reverse_sort"
             },
             "name": "main/reverse_sort",
             "value": "True"
-        },
-        {
-            "@id": "#param-main/output",
-            "@type": "FormalParameter",
-            "additionalType": "File",
-            "name": "main/output"
         },
         {
             "@id": "b9214658cc453331b62c2282b772a5c063dbd284",
             "@type": "File",
             "exampleOfWork": [
                 {
-                    "@id": "#param-main/output"
+                    "@id": "packed.cwl#main/output"
                 },
                 {
-                    "@id": "#param-main/sorted/output"
+                    "@id": "packed.cwl#sorttool.cwl/output"
                 }
             ]
         },
         {
-            "@id": "#5a27e595-e7fc-4d34-827e-bb6033e12573",
+            "@id": "#7e6f4179-7231-47f9-97e9-5fd045f57d9c",
             "@type": "CreateAction",
             "endTime": "2018-10-25T15:46:36.967359",
             "instrument": {
@@ -235,69 +322,30 @@
             "startTime": "2018-10-25T15:46:35.314101"
         },
         {
-            "@id": "packed.cwl#revtool.cwl",
-            "@type": "SoftwareApplication",
-            "description": "Reverse each line using the `rev` command",
-            "input": [
-                {
-                    "@id": "#param-main/rev/input"
-                }
-            ],
-            "name": "revtool.cwl",
-            "output": [
-                {
-                    "@id": "#param-main/rev/output"
-                }
-            ]
-        },
-        {
-            "@id": "packed.cwl#main/rev",
-            "@type": "HowToStep",
-            "position": "0",
-            "workExample": {
-                "@id": "packed.cwl#revtool.cwl"
-            }
-        },
-        {
-            "@id": "#1895f1f9-1452-4a42-bdcd-f4177cda400c",
+            "@id": "#ca859989-7afa-4a3b-b541-79aa8783162b",
             "@type": "ControlAction",
             "instrument": {
                 "@id": "packed.cwl#main/rev"
             },
             "name": "orchestrate revtool.cwl",
             "object": {
-                "@id": "#5a27e595-e7fc-4d34-827e-bb6033e12573"
+                "@id": "#7e6f4179-7231-47f9-97e9-5fd045f57d9c"
             }
-        },
-        {
-            "@id": "#param-main/rev/input",
-            "@type": "FormalParameter",
-            "additionalType": "File",
-            "name": "main/rev/input"
-        },
-        {
-            "@id": "#param-main/rev/output",
-            "@type": "FormalParameter",
-            "additionalType": "File",
-            "connectedTo": {
-                "@id": "#param-main/sorted/input"
-            },
-            "name": "main/rev/output"
         },
         {
             "@id": "97fe1b50b4582cebc7d853796ebd62e3e163aa3f",
             "@type": "File",
             "exampleOfWork": [
                 {
-                    "@id": "#param-main/rev/output"
+                    "@id": "packed.cwl#revtool.cwl/output"
                 },
                 {
-                    "@id": "#param-main/sorted/input"
+                    "@id": "packed.cwl#sorttool.cwl/input"
                 }
             ]
         },
         {
-            "@id": "#4faa7e2e-e1e8-40c9-9927-bcaaa2b36292",
+            "@id": "#1a77a256-4114-472a-ab62-7c85fab6fb37",
             "@type": "CreateAction",
             "endTime": "2018-10-25T15:46:38.069110",
             "instrument": {
@@ -320,72 +368,24 @@
             "startTime": "2018-10-25T15:46:36.975235"
         },
         {
-            "@id": "packed.cwl#sorttool.cwl",
-            "@type": "SoftwareApplication",
-            "description": "Sort lines using the `sort` command",
-            "input": [
-                {
-                    "@id": "#param-main/sorted/input"
-                },
-                {
-                    "@id": "#param-main/sorted/reverse"
-                }
-            ],
-            "name": "sorttool.cwl",
-            "output": [
-                {
-                    "@id": "#param-main/sorted/output"
-                }
-            ]
-        },
-        {
-            "@id": "packed.cwl#main/sorted",
-            "@type": "HowToStep",
-            "position": "1",
-            "workExample": {
-                "@id": "packed.cwl#sorttool.cwl"
-            }
-        },
-        {
-            "@id": "#3ea66f15-2d65-4a26-b4ca-85b37c7674ca",
+            "@id": "#b813b869-9527-4aa4-af75-bcf2a507daa5",
             "@type": "ControlAction",
             "instrument": {
                 "@id": "packed.cwl#main/sorted"
             },
             "name": "orchestrate sorttool.cwl",
             "object": {
-                "@id": "#4faa7e2e-e1e8-40c9-9927-bcaaa2b36292"
+                "@id": "#1a77a256-4114-472a-ab62-7c85fab6fb37"
             }
-        },
-        {
-            "@id": "#param-main/sorted/input",
-            "@type": "FormalParameter",
-            "additionalType": "File",
-            "name": "main/sorted/input"
-        },
-        {
-            "@id": "#param-main/sorted/reverse",
-            "@type": "FormalParameter",
-            "additionalType": "Boolean",
-            "name": "main/sorted/reverse"
         },
         {
             "@id": "#pv-main/sorted/reverse",
             "@type": "PropertyValue",
             "exampleOfWork": {
-                "@id": "#param-main/sorted/reverse"
+                "@id": "packed.cwl#sorttool.cwl/reverse"
             },
             "name": "main/sorted/reverse",
             "value": "True"
-        },
-        {
-            "@id": "#param-main/sorted/output",
-            "@type": "FormalParameter",
-            "additionalType": "File",
-            "connectedTo": {
-                "@id": "#param-main/output"
-            },
-            "name": "main/sorted/output"
         }
     ]
 }

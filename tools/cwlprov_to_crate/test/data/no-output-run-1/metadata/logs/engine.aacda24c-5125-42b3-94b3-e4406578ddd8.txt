@@ -1,0 +1,35 @@
+[2022-07-05T08:38:00,698.972940Z] [cwltool] /usr/local/bin/cwltool --provenance ro_old --full-name Renske de Wit wf.cwl wf_job.yml
+[2022-07-05T08:38:00,725.029230Z] Resolved 'wf.cwl' to 'file:///Users/renskedewit/Documents/Bioinformatics_Systems_Biology/CWLproject/cwlprov-provenance/prov_data_annotations/example2/wf.cwl'
+[2022-07-05T08:38:17,767.145872Z] [provenance] Adding to RO file:///Users/renskedewit/Documents/Bioinformatics_Systems_Biology/CWLproject/cwlprov-provenance/prov_data_annotations/example2/data/sabdab_summary_all_20220527.tsv
+[2022-07-05T08:38:17,833.445787Z] [provenance] Adding to RO file:///Users/renskedewit/Documents/Bioinformatics_Systems_Biology/CWLproject/cwlprov-provenance/prov_data_annotations/example2/data/7mb7.cif
+[2022-07-05T08:38:17,856.237173Z] [provenance] Adding to RO file:///Users/renskedewit/Documents/Bioinformatics_Systems_Biology/CWLproject/cwlprov-provenance/prov_data_annotations/example2/data/7zxf.cif
+[2022-07-05T08:38:17,894.902945Z] [provenance] Adding to RO file:///Users/renskedewit/Documents/Bioinformatics_Systems_Biology/CWLproject/cwlprov-provenance/prov_data_annotations/example2/data/merged.csv
+[2022-07-05T08:38:18,30.441999Z] [workflow ] start
+[2022-07-05T08:38:18,34.264088Z] [workflow ] starting step echo_step
+[2022-07-05T08:38:18,34.680128Z] [step echo_step] start
+[2022-07-05T08:38:18,46.724081Z] [job echo_step] /private/tmp/docker_tmptjvfyqmf$ echo \
+    /private/tmp/docker_tmpwzvvy6r0/stge6ae2ab4-bcbe-411c-9291-b413293ff75f/sabdab_summary_all_20220527.tsv \
+    /private/tmp/docker_tmpwzvvy6r0/stgc90ecc7c-89ae-48c5-ac25-9abbe5a912cd/pdb_directory
+[2022-07-05T08:38:18,149.384975Z] [job echo_step] completed success
+[2022-07-05T08:38:18,150.069952Z] [step echo_step] completed success
+[2022-07-05T08:38:18,186.521053Z] [workflow ] starting step date2_step
+[2022-07-05T08:38:18,200.410843Z] [step date2_step] start
+[2022-07-05T08:38:18,225.509167Z] [job date2_step] /private/tmp/docker_tmpq2uzsq2_$ date \
+    -r \
+    /private/tmp/docker_tmpkpdaonjq/stg0fa74cff-320e-41a3-bb7c-55f95ffd554d/7mb7.cif
+[2022-07-05T08:38:18,284.395933Z] [job date2_step] completed success
+[2022-07-05T08:38:18,287.004948Z] [step date2_step] start
+[2022-07-05T08:38:18,301.270962Z] [job date2_step_2] /private/tmp/docker_tmp46xacgxo$ date \
+    -r \
+    /private/tmp/docker_tmpeyc6wnex/stgcf4c0b2c-84b3-49b6-9b38-3f4eb50e3f20/7zxf.cif
+[2022-07-05T08:38:18,332.118034Z] [job date2_step_2] completed success
+[2022-07-05T08:38:18,333.559990Z] [step date2_step] completed success
+[2022-07-05T08:38:18,337.206125Z] [workflow ] starting step date_step
+[2022-07-05T08:38:18,339.787006Z] [step date_step] start
+[2022-07-05T08:38:18,359.793901Z] [job date_step] /private/tmp/docker_tmpyuimf3r7$ date \
+    -r \
+    /private/tmp/docker_tmpk8f30p5c/stge41f1f76-c23a-4430-94db-62889ce9a1ae/sabdab_summary_all_20220527.tsv
+[2022-07-05T08:38:18,422.268867Z] [job date_step] completed success
+[2022-07-05T08:38:18,429.765940Z] [step date_step] completed success
+[2022-07-05T08:38:18,430.184841Z] [workflow ] completed success
+[2022-07-05T08:38:19,505.177021Z] Final process status is success

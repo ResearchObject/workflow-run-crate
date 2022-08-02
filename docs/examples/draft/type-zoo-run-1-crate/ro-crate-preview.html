@@ -11,13 +11,13 @@
     {
       "@id": "./",
       "@type": "Dataset",
-      "datePublished": "2022-06-13T14:24:11+00:00",
+      "datePublished": "2022-08-02T08:48:29+00:00",
       "hasPart": [
         {
           "@id": "packed.cwl"
         },
         {
-          "@id": "data/4b/4bd8e7e358488e833bf32cf5028695292cecb05b"
+          "@id": "4bd8e7e358488e833bf32cf5028695292cecb05b"
         }
       ],
       "mainEntity": {
@@ -25,7 +25,7 @@
       },
       "mentions": [
         {
-          "@id": "#c199d820-06f0-4d6b-8cd9-984ef7519bb4"
+          "@id": "#c3c168b8-9dce-49a8-9e2c-7917af363a12"
         }
       ],
       "@reverse": {
@@ -61,43 +61,43 @@
       ],
       "input": [
         {
-          "@id": "#param-main/in_array"
+          "@id": "packed.cwl#main/in_any"
         },
         {
-          "@id": "#param-main/in_any"
+          "@id": "packed.cwl#main/in_array"
         },
         {
-          "@id": "#param-main/in_str"
+          "@id": "packed.cwl#main/in_bool"
         },
         {
-          "@id": "#param-main/in_bool"
+          "@id": "packed.cwl#main/in_double"
         },
         {
-          "@id": "#param-main/in_int"
+          "@id": "packed.cwl#main/in_enum"
         },
         {
-          "@id": "#param-main/in_long"
+          "@id": "packed.cwl#main/in_float"
         },
         {
-          "@id": "#param-main/in_float"
+          "@id": "packed.cwl#main/in_int"
         },
         {
-          "@id": "#param-main/in_double"
+          "@id": "packed.cwl#main/in_long"
         },
         {
-          "@id": "#param-main/in_enum"
+          "@id": "packed.cwl#main/in_multi"
         },
         {
-          "@id": "#param-main/in_record"
+          "@id": "packed.cwl#main/in_record"
         },
         {
-          "@id": "#param-main/in_multi"
+          "@id": "packed.cwl#main/in_str"
         }
       ],
       "name": "packed.cwl",
       "output": [
         {
-          "@id": "#param-main/cl_dump"
+          "@id": "packed.cwl#main/cl_dump"
         }
       ],
       "programmingLanguage": {
@@ -116,7 +116,7 @@
         ],
         "instrument": [
           {
-            "@id": "#c124521f-6b59-4dab-8fa8-c61131023804"
+            "@id": "#fbbe6616-19b0-4ba8-a275-16b30506d324"
           }
         ]
       }
@@ -142,26 +142,250 @@
       }
     },
     {
-      "@id": "#4d7ac575-e5ce-4cd8-8f72-a141dca56c11",
-      "@type": "SoftwareApplication",
-      "name": "cwltool 3.1.20220224085855",
+      "@id": "packed.cwl#main/in_any",
+      "@type": "FormalParameter",
+      "additionalType": "DataType",
+      "name": "main/in_any",
       "@reverse": {
-        "instrument": [
+        "input": [
           {
-            "@id": "#c199d820-06f0-4d6b-8cd9-984ef7519bb4"
+            "@id": "packed.cwl"
+          }
+        ],
+        "exampleOfWork": [
+          {
+            "@id": "#pv-main/in_any"
           }
         ]
       }
     },
     {
-      "@id": "#c199d820-06f0-4d6b-8cd9-984ef7519bb4",
+      "@id": "packed.cwl#main/in_array",
+      "@type": "FormalParameter",
+      "additionalType": "Text",
+      "multipleValues": "True",
+      "name": "main/in_array",
+      "@reverse": {
+        "input": [
+          {
+            "@id": "packed.cwl"
+          }
+        ],
+        "exampleOfWork": [
+          {
+            "@id": "#pv-main/in_array"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "packed.cwl#main/in_bool",
+      "@type": "FormalParameter",
+      "additionalType": "Boolean",
+      "name": "main/in_bool",
+      "@reverse": {
+        "input": [
+          {
+            "@id": "packed.cwl"
+          }
+        ],
+        "exampleOfWork": [
+          {
+            "@id": "#pv-main/in_bool"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "packed.cwl#main/in_double",
+      "@type": "FormalParameter",
+      "additionalType": "Float",
+      "name": "main/in_double",
+      "@reverse": {
+        "input": [
+          {
+            "@id": "packed.cwl"
+          }
+        ],
+        "exampleOfWork": [
+          {
+            "@id": "#pv-main/in_double"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "packed.cwl#main/in_enum",
+      "@type": "FormalParameter",
+      "additionalType": "Text",
+      "name": "main/in_enum",
+      "valuePattern": "A|B",
+      "@reverse": {
+        "input": [
+          {
+            "@id": "packed.cwl"
+          }
+        ],
+        "exampleOfWork": [
+          {
+            "@id": "#pv-main/in_enum"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "packed.cwl#main/in_float",
+      "@type": "FormalParameter",
+      "additionalType": "Float",
+      "name": "main/in_float",
+      "@reverse": {
+        "input": [
+          {
+            "@id": "packed.cwl"
+          }
+        ],
+        "exampleOfWork": [
+          {
+            "@id": "#pv-main/in_float"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "packed.cwl#main/in_int",
+      "@type": "FormalParameter",
+      "additionalType": "Integer",
+      "name": "main/in_int",
+      "@reverse": {
+        "input": [
+          {
+            "@id": "packed.cwl"
+          }
+        ],
+        "exampleOfWork": [
+          {
+            "@id": "#pv-main/in_int"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "packed.cwl#main/in_long",
+      "@type": "FormalParameter",
+      "additionalType": "Integer",
+      "name": "main/in_long",
+      "@reverse": {
+        "input": [
+          {
+            "@id": "packed.cwl"
+          }
+        ],
+        "exampleOfWork": [
+          {
+            "@id": "#pv-main/in_long"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "packed.cwl#main/in_multi",
+      "@type": "FormalParameter",
+      "additionalType": [
+        "Float",
+        "Integer"
+      ],
+      "defaultValue": "9.99",
+      "name": "main/in_multi",
+      "valueRequired": "False",
+      "@reverse": {
+        "input": [
+          {
+            "@id": "packed.cwl"
+          }
+        ],
+        "exampleOfWork": [
+          {
+            "@id": "#pv-main/in_multi"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "packed.cwl#main/in_record",
+      "@type": "FormalParameter",
+      "additionalType": "PropertyValue",
+      "multipleValues": "True",
+      "name": "main/in_record",
+      "@reverse": {
+        "input": [
+          {
+            "@id": "packed.cwl"
+          }
+        ],
+        "exampleOfWork": [
+          {
+            "@id": "#pv-main/in_record"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "packed.cwl#main/in_str",
+      "@type": "FormalParameter",
+      "additionalType": "Text",
+      "name": "main/in_str",
+      "@reverse": {
+        "input": [
+          {
+            "@id": "packed.cwl"
+          }
+        ],
+        "exampleOfWork": [
+          {
+            "@id": "#pv-main/in_str"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "packed.cwl#main/cl_dump",
+      "@type": "FormalParameter",
+      "additionalType": "File",
+      "name": "main/cl_dump",
+      "@reverse": {
+        "output": [
+          {
+            "@id": "packed.cwl"
+          }
+        ],
+        "exampleOfWork": [
+          {
+            "@id": "4bd8e7e358488e833bf32cf5028695292cecb05b"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "#b8135eb6-71b1-4e13-9077-8febcfb5719d",
+      "@type": "SoftwareApplication",
+      "name": "cwltool 3.1.20220224085855",
+      "@reverse": {
+        "instrument": [
+          {
+            "@id": "#c3c168b8-9dce-49a8-9e2c-7917af363a12"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "#c3c168b8-9dce-49a8-9e2c-7917af363a12",
       "@type": "OrganizeAction",
       "instrument": {
-        "@id": "#4d7ac575-e5ce-4cd8-8f72-a141dca56c11"
+        "@id": "#b8135eb6-71b1-4e13-9077-8febcfb5719d"
       },
       "name": "Run of cwltool 3.1.20220224085855",
       "result": {
-        "@id": "#c124521f-6b59-4dab-8fa8-c61131023804"
+        "@id": "#fbbe6616-19b0-4ba8-a275-16b30506d324"
       },
       "startTime": "2022-04-22T12:27:13.313333",
       "@reverse": {
@@ -173,7 +397,7 @@
       }
     },
     {
-      "@id": "#c124521f-6b59-4dab-8fa8-c61131023804",
+      "@id": "#fbbe6616-19b0-4ba8-a275-16b30506d324",
       "@type": "CreateAction",
       "endTime": "2022-04-22T12:27:13.328912",
       "instrument": {
@@ -217,33 +441,14 @@
       ],
       "result": [
         {
-          "@id": "data/4b/4bd8e7e358488e833bf32cf5028695292cecb05b"
+          "@id": "4bd8e7e358488e833bf32cf5028695292cecb05b"
         }
       ],
       "startTime": "2022-04-22T12:27:13.313422",
       "@reverse": {
         "result": [
           {
-            "@id": "#c199d820-06f0-4d6b-8cd9-984ef7519bb4"
-          }
-        ]
-      }
-    },
-    {
-      "@id": "#param-main/in_array",
-      "@type": "FormalParameter",
-      "additionalType": "Text",
-      "multipleValues": "True",
-      "name": "main/in_array",
-      "@reverse": {
-        "input": [
-          {
-            "@id": "packed.cwl"
-          }
-        ],
-        "exampleOfWork": [
-          {
-            "@id": "#pv-main/in_array"
+            "@id": "#c3c168b8-9dce-49a8-9e2c-7917af363a12"
           }
         ]
       }
@@ -252,7 +457,7 @@
       "@id": "#pv-main/in_array",
       "@type": "PropertyValue",
       "exampleOfWork": {
-        "@id": "#param-main/in_array"
+        "@id": "packed.cwl#main/in_array"
       },
       "name": "main/in_array",
       "value": [
@@ -262,25 +467,7 @@
       "@reverse": {
         "object": [
           {
-            "@id": "#c124521f-6b59-4dab-8fa8-c61131023804"
-          }
-        ]
-      }
-    },
-    {
-      "@id": "#param-main/in_any",
-      "@type": "FormalParameter",
-      "additionalType": "DataType",
-      "name": "main/in_any",
-      "@reverse": {
-        "input": [
-          {
-            "@id": "packed.cwl"
-          }
-        ],
-        "exampleOfWork": [
-          {
-            "@id": "#pv-main/in_any"
+            "@id": "#fbbe6616-19b0-4ba8-a275-16b30506d324"
           }
         ]
       }
@@ -289,32 +476,14 @@
       "@id": "#pv-main/in_any",
       "@type": "PropertyValue",
       "exampleOfWork": {
-        "@id": "#param-main/in_any"
+        "@id": "packed.cwl#main/in_any"
       },
       "name": "main/in_any",
       "value": "tar",
       "@reverse": {
         "object": [
           {
-            "@id": "#c124521f-6b59-4dab-8fa8-c61131023804"
-          }
-        ]
-      }
-    },
-    {
-      "@id": "#param-main/in_str",
-      "@type": "FormalParameter",
-      "additionalType": "Text",
-      "name": "main/in_str",
-      "@reverse": {
-        "input": [
-          {
-            "@id": "packed.cwl"
-          }
-        ],
-        "exampleOfWork": [
-          {
-            "@id": "#pv-main/in_str"
+            "@id": "#fbbe6616-19b0-4ba8-a275-16b30506d324"
           }
         ]
       }
@@ -323,32 +492,14 @@
       "@id": "#pv-main/in_str",
       "@type": "PropertyValue",
       "exampleOfWork": {
-        "@id": "#param-main/in_str"
+        "@id": "packed.cwl#main/in_str"
       },
       "name": "main/in_str",
       "value": "spam",
       "@reverse": {
         "object": [
           {
-            "@id": "#c124521f-6b59-4dab-8fa8-c61131023804"
-          }
-        ]
-      }
-    },
-    {
-      "@id": "#param-main/in_bool",
-      "@type": "FormalParameter",
-      "additionalType": "Boolean",
-      "name": "main/in_bool",
-      "@reverse": {
-        "input": [
-          {
-            "@id": "packed.cwl"
-          }
-        ],
-        "exampleOfWork": [
-          {
-            "@id": "#pv-main/in_bool"
+            "@id": "#fbbe6616-19b0-4ba8-a275-16b30506d324"
           }
         ]
       }
@@ -357,32 +508,14 @@
       "@id": "#pv-main/in_bool",
       "@type": "PropertyValue",
       "exampleOfWork": {
-        "@id": "#param-main/in_bool"
+        "@id": "packed.cwl#main/in_bool"
       },
       "name": "main/in_bool",
       "value": "True",
       "@reverse": {
         "object": [
           {
-            "@id": "#c124521f-6b59-4dab-8fa8-c61131023804"
-          }
-        ]
-      }
-    },
-    {
-      "@id": "#param-main/in_int",
-      "@type": "FormalParameter",
-      "additionalType": "Integer",
-      "name": "main/in_int",
-      "@reverse": {
-        "input": [
-          {
-            "@id": "packed.cwl"
-          }
-        ],
-        "exampleOfWork": [
-          {
-            "@id": "#pv-main/in_int"
+            "@id": "#fbbe6616-19b0-4ba8-a275-16b30506d324"
           }
         ]
       }
@@ -391,32 +524,14 @@
       "@id": "#pv-main/in_int",
       "@type": "PropertyValue",
       "exampleOfWork": {
-        "@id": "#param-main/in_int"
+        "@id": "packed.cwl#main/in_int"
       },
       "name": "main/in_int",
       "value": "42",
       "@reverse": {
         "object": [
           {
-            "@id": "#c124521f-6b59-4dab-8fa8-c61131023804"
-          }
-        ]
-      }
-    },
-    {
-      "@id": "#param-main/in_long",
-      "@type": "FormalParameter",
-      "additionalType": "Integer",
-      "name": "main/in_long",
-      "@reverse": {
-        "input": [
-          {
-            "@id": "packed.cwl"
-          }
-        ],
-        "exampleOfWork": [
-          {
-            "@id": "#pv-main/in_long"
+            "@id": "#fbbe6616-19b0-4ba8-a275-16b30506d324"
           }
         ]
       }
@@ -425,32 +540,14 @@
       "@id": "#pv-main/in_long",
       "@type": "PropertyValue",
       "exampleOfWork": {
-        "@id": "#param-main/in_long"
+        "@id": "packed.cwl#main/in_long"
       },
       "name": "main/in_long",
       "value": "420",
       "@reverse": {
         "object": [
           {
-            "@id": "#c124521f-6b59-4dab-8fa8-c61131023804"
-          }
-        ]
-      }
-    },
-    {
-      "@id": "#param-main/in_float",
-      "@type": "FormalParameter",
-      "additionalType": "Float",
-      "name": "main/in_float",
-      "@reverse": {
-        "input": [
-          {
-            "@id": "packed.cwl"
-          }
-        ],
-        "exampleOfWork": [
-          {
-            "@id": "#pv-main/in_float"
+            "@id": "#fbbe6616-19b0-4ba8-a275-16b30506d324"
           }
         ]
       }
@@ -459,32 +556,14 @@
       "@id": "#pv-main/in_float",
       "@type": "PropertyValue",
       "exampleOfWork": {
-        "@id": "#param-main/in_float"
+        "@id": "packed.cwl#main/in_float"
       },
       "name": "main/in_float",
       "value": "3.14",
       "@reverse": {
         "object": [
           {
-            "@id": "#c124521f-6b59-4dab-8fa8-c61131023804"
-          }
-        ]
-      }
-    },
-    {
-      "@id": "#param-main/in_double",
-      "@type": "FormalParameter",
-      "additionalType": "Float",
-      "name": "main/in_double",
-      "@reverse": {
-        "input": [
-          {
-            "@id": "packed.cwl"
-          }
-        ],
-        "exampleOfWork": [
-          {
-            "@id": "#pv-main/in_double"
+            "@id": "#fbbe6616-19b0-4ba8-a275-16b30506d324"
           }
         ]
       }
@@ -493,33 +572,14 @@
       "@id": "#pv-main/in_double",
       "@type": "PropertyValue",
       "exampleOfWork": {
-        "@id": "#param-main/in_double"
+        "@id": "packed.cwl#main/in_double"
       },
       "name": "main/in_double",
       "value": "3.142",
       "@reverse": {
         "object": [
           {
-            "@id": "#c124521f-6b59-4dab-8fa8-c61131023804"
-          }
-        ]
-      }
-    },
-    {
-      "@id": "#param-main/in_enum",
-      "@type": "FormalParameter",
-      "additionalType": "Text",
-      "name": "main/in_enum",
-      "valuePattern": "A|B",
-      "@reverse": {
-        "input": [
-          {
-            "@id": "packed.cwl"
-          }
-        ],
-        "exampleOfWork": [
-          {
-            "@id": "#pv-main/in_enum"
+            "@id": "#fbbe6616-19b0-4ba8-a275-16b30506d324"
           }
         ]
       }
@@ -528,33 +588,14 @@
       "@id": "#pv-main/in_enum",
       "@type": "PropertyValue",
       "exampleOfWork": {
-        "@id": "#param-main/in_enum"
+        "@id": "packed.cwl#main/in_enum"
       },
       "name": "main/in_enum",
       "value": "B",
       "@reverse": {
         "object": [
           {
-            "@id": "#c124521f-6b59-4dab-8fa8-c61131023804"
-          }
-        ]
-      }
-    },
-    {
-      "@id": "#param-main/in_record",
-      "@type": "FormalParameter",
-      "additionalType": "PropertyValue",
-      "multipleValues": "True",
-      "name": "main/in_record",
-      "@reverse": {
-        "input": [
-          {
-            "@id": "packed.cwl"
-          }
-        ],
-        "exampleOfWork": [
-          {
-            "@id": "#pv-main/in_record"
+            "@id": "#fbbe6616-19b0-4ba8-a275-16b30506d324"
           }
         ]
       }
@@ -589,7 +630,7 @@
       "@id": "#pv-main/in_record",
       "@type": "PropertyValue",
       "exampleOfWork": {
-        "@id": "#param-main/in_record"
+        "@id": "packed.cwl#main/in_record"
       },
       "name": "main/in_record",
       "value": [
@@ -603,30 +644,7 @@
       "@reverse": {
         "object": [
           {
-            "@id": "#c124521f-6b59-4dab-8fa8-c61131023804"
-          }
-        ]
-      }
-    },
-    {
-      "@id": "#param-main/in_multi",
-      "@type": "FormalParameter",
-      "additionalType": [
-        "Float",
-        "Integer"
-      ],
-      "defaultValue": "9.99",
-      "name": "main/in_multi",
-      "valueRequired": "False",
-      "@reverse": {
-        "input": [
-          {
-            "@id": "packed.cwl"
-          }
-        ],
-        "exampleOfWork": [
-          {
-            "@id": "#pv-main/in_multi"
+            "@id": "#fbbe6616-19b0-4ba8-a275-16b30506d324"
           }
         ]
       }
@@ -635,41 +653,23 @@
       "@id": "#pv-main/in_multi",
       "@type": "PropertyValue",
       "exampleOfWork": {
-        "@id": "#param-main/in_multi"
+        "@id": "packed.cwl#main/in_multi"
       },
       "name": "main/in_multi",
       "value": "9.99",
       "@reverse": {
         "object": [
           {
-            "@id": "#c124521f-6b59-4dab-8fa8-c61131023804"
+            "@id": "#fbbe6616-19b0-4ba8-a275-16b30506d324"
           }
         ]
       }
     },
     {
-      "@id": "#param-main/cl_dump",
-      "@type": "FormalParameter",
-      "additionalType": "File",
-      "name": "main/cl_dump",
-      "@reverse": {
-        "output": [
-          {
-            "@id": "packed.cwl"
-          }
-        ],
-        "exampleOfWork": [
-          {
-            "@id": "data/4b/4bd8e7e358488e833bf32cf5028695292cecb05b"
-          }
-        ]
-      }
-    },
-    {
-      "@id": "data/4b/4bd8e7e358488e833bf32cf5028695292cecb05b",
+      "@id": "4bd8e7e358488e833bf32cf5028695292cecb05b",
       "@type": "File",
       "exampleOfWork": {
-        "@id": "#param-main/cl_dump"
+        "@id": "packed.cwl#main/cl_dump"
       },
       "@reverse": {
         "hasPart": [
@@ -679,7 +679,7 @@
         ],
         "result": [
           {
-            "@id": "#c124521f-6b59-4dab-8fa8-c61131023804"
+            "@id": "#fbbe6616-19b0-4ba8-a275-16b30506d324"
           }
         ]
       }
@@ -750,20 +750,20 @@ table.table {
             <td style='text-align:left'><span>Dataset</span></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">datePublished<span>&nbsp;</span><a href="http://schema.org/datePublished">[?]</a></th>
-            <td style='text-align:left'><span>2022-06-13T14:24:11+00:00</span></td>
+            <td style='text-align:left'><span>2022-08-02T08:48:29+00:00</span></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
             <td style='text-align:left'><ul>
                         <li><a href="#packed.cwl">packed.cwl</a></li>
                         
-                        <li><a href="#data/4b/4bd8e7e358488e833bf32cf5028695292cecb05b">data/4b/4bd8e7e358488e833bf32cf5028695292cecb05b</a></li>
+                        <li><a href="#4bd8e7e358488e833bf32cf5028695292cecb05b">4bd8e7e358488e833bf32cf5028695292cecb05b</a></li>
                         </ul></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">mainEntity<span>&nbsp;</span><a href="http://schema.org/mainEntity">[?]</a></th>
             <td style='text-align:left'><a href="#packed.cwl">packed.cwl</a></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
-            <td style='text-align:left'><a href="#%23c199d820-06f0-4d6b-8cd9-984ef7519bb4">Run of cwltool 3.1.20220224085855</a></td>
+            <td style='text-align:left'><a href="#%23c3c168b8-9dce-49a8-9e2c-7917af363a12">Run of cwltool 3.1.20220224085855</a></td>
             </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
             <th style="text-align:left;" class="prop">about<span>&nbsp;</span><a href="http://schema.org/about">[?]</a></th>
             <td style='text-align:left'><a href="#ro-crate-metadata.json">ro-crate-metadata.json</a></td>
@@ -802,31 +802,31 @@ table.table {
             </tr><tr>
             <th style="text-align:left;" class="prop">input<span>&nbsp;</span><a href="https://bioschemas.org/ComputationalWorkflow#input">[?]</a></th>
             <td style='text-align:left'><ul>
-                        <li><a href="#%23param-main/in_array">main/in_array</a></li>
+                        <li><a href="#packed.cwl%23main/in_any">main/in_any</a></li>
                         
-                        <li><a href="#%23param-main/in_any">main/in_any</a></li>
+                        <li><a href="#packed.cwl%23main/in_array">main/in_array</a></li>
                         
-                        <li><a href="#%23param-main/in_str">main/in_str</a></li>
+                        <li><a href="#packed.cwl%23main/in_bool">main/in_bool</a></li>
                         
-                        <li><a href="#%23param-main/in_bool">main/in_bool</a></li>
+                        <li><a href="#packed.cwl%23main/in_double">main/in_double</a></li>
                         
-                        <li><a href="#%23param-main/in_int">main/in_int</a></li>
+                        <li><a href="#packed.cwl%23main/in_enum">main/in_enum</a></li>
                         
-                        <li><a href="#%23param-main/in_long">main/in_long</a></li>
+                        <li><a href="#packed.cwl%23main/in_float">main/in_float</a></li>
                         
-                        <li><a href="#%23param-main/in_float">main/in_float</a></li>
+                        <li><a href="#packed.cwl%23main/in_int">main/in_int</a></li>
                         
-                        <li><a href="#%23param-main/in_double">main/in_double</a></li>
+                        <li><a href="#packed.cwl%23main/in_long">main/in_long</a></li>
                         
-                        <li><a href="#%23param-main/in_enum">main/in_enum</a></li>
+                        <li><a href="#packed.cwl%23main/in_multi">main/in_multi</a></li>
                         
-                        <li><a href="#%23param-main/in_record">main/in_record</a></li>
+                        <li><a href="#packed.cwl%23main/in_record">main/in_record</a></li>
                         
-                        <li><a href="#%23param-main/in_multi">main/in_multi</a></li>
+                        <li><a href="#packed.cwl%23main/in_str">main/in_str</a></li>
                         </ul></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">output<span>&nbsp;</span><a href="https://bioschemas.org/ComputationalWorkflow#output">[?]</a></th>
-            <td style='text-align:left'><a href="#%23param-main/cl_dump">main/cl_dump</a></td>
+            <td style='text-align:left'><a href="#packed.cwl%23main/cl_dump">main/cl_dump</a></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">programmingLanguage<span>&nbsp;</span><a href="http://schema.org/programmingLanguage">[?]</a></th>
             <td style='text-align:left'><a href="#https%3A//w3id.org/workflowhub/workflow-ro-crate%23cwl">Common Workflow Language</a></td>
@@ -838,7 +838,7 @@ table.table {
             <td style='text-align:left'><a href="#./">./</a></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">instrument<span>&nbsp;</span><a href="http://schema.org/instrument">[?]</a></th>
-            <td style='text-align:left'><a href="#%23c124521f-6b59-4dab-8fa8-c61131023804">Run of workflow/packed.cwl#main</a></td>
+            <td style='text-align:left'><a href="#%23fbbe6616-19b0-4ba8-a275-16b30506d324">Run of workflow/packed.cwl#main</a></td>
             </tr></tbody>
             </table>
         </div>
@@ -846,29 +846,29 @@ table.table {
         </div>
         <hr/><br/><br/>
            <div>
-            <h3><a href="data/4b/4bd8e7e358488e833bf32cf5028695292cecb05b">⬇️ Download: </a> data/4b/4bd8e7e358488e833bf32cf5028695292cecb05b</h3>
+            <h3><a href="4bd8e7e358488e833bf32cf5028695292cecb05b">⬇️ Download: </a> 4bd8e7e358488e833bf32cf5028695292cecb05b</h3>
             
             
             
             
-        <div id="data/4b/4bd8e7e358488e833bf32cf5028695292cecb05b">
+        <div id="4bd8e7e358488e833bf32cf5028695292cecb05b">
             
             <table class="table metadata table-striped" >
                 <tbody><tr>
             <th style="text-align:left;" class="prop">@id</th>
-            <td style='text-align:left'><span>data/4b/4bd8e7e358488e833bf32cf5028695292cecb05b</span></td>
+            <td style='text-align:left'><span>4bd8e7e358488e833bf32cf5028695292cecb05b</span></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">@type</th>
             <td style='text-align:left'><span>File</span></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">exampleOfWork<span>&nbsp;</span><a href="http://schema.org/exampleOfWork">[?]</a></th>
-            <td style='text-align:left'><a href="#%23param-main/cl_dump">main/cl_dump</a></td>
+            <td style='text-align:left'><a href="#packed.cwl%23main/cl_dump">main/cl_dump</a></td>
             </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
             <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
             <td style='text-align:left'><a href="#./">./</a></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">result<span>&nbsp;</span><a href="http://schema.org/result">[?]</a></th>
-            <td style='text-align:left'><a href="#%23c124521f-6b59-4dab-8fa8-c61131023804">Run of workflow/packed.cwl#main</a></td>
+            <td style='text-align:left'><a href="#%23fbbe6616-19b0-4ba8-a275-16b30506d324">Run of workflow/packed.cwl#main</a></td>
             </tr></tbody>
             </table>
         </div>
@@ -881,12 +881,12 @@ table.table {
             
             
             
-        <div id="#c199d820-06f0-4d6b-8cd9-984ef7519bb4">
+        <div id="#c3c168b8-9dce-49a8-9e2c-7917af363a12">
             
             <table class="table metadata table-striped" >
                 <tbody><tr>
             <th style="text-align:left;" class="prop">@id</th>
-            <td style='text-align:left'><span>#c199d820-06f0-4d6b-8cd9-984ef7519bb4</span></td>
+            <td style='text-align:left'><span>#c3c168b8-9dce-49a8-9e2c-7917af363a12</span></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
             <td style='text-align:left'><span>Run of cwltool 3.1.20220224085855</span></td>
@@ -895,10 +895,10 @@ table.table {
             <td style='text-align:left'><span>OrganizeAction</span></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">instrument<span>&nbsp;</span><a href="http://schema.org/instrument">[?]</a></th>
-            <td style='text-align:left'><a href="#%234d7ac575-e5ce-4cd8-8f72-a141dca56c11">cwltool 3.1.20220224085855</a></td>
+            <td style='text-align:left'><a href="#%23b8135eb6-71b1-4e13-9077-8febcfb5719d">cwltool 3.1.20220224085855</a></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">result<span>&nbsp;</span><a href="http://schema.org/result">[?]</a></th>
-            <td style='text-align:left'><a href="#%23c124521f-6b59-4dab-8fa8-c61131023804">Run of workflow/packed.cwl#main</a></td>
+            <td style='text-align:left'><a href="#%23fbbe6616-19b0-4ba8-a275-16b30506d324">Run of workflow/packed.cwl#main</a></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">startTime<span>&nbsp;</span><a href="http://schema.org/startTime">[?]</a></th>
             <td style='text-align:left'><span>2022-04-22T12:27:13.313333</span></td>

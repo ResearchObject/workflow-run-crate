@@ -18,3 +18,10 @@ Packed (`cwltool --pack`) version of the [exome alignment workflow](https://gith
 License: [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0)
 
 WorkflowHub entry: https://workflowhub.eu/workflows/239
+
+
+## no-output-run-1
+
+Copy of `prov_data_annotations/example2/ro_old` from [RenskeW/cwlprov-provenance](https://github.com/RenskeW/cwlprov-provenance/tree/f5dd87a950eeaf7f96bd39dc218164832ff3cbea/prov_data_annotations/example2/ro_old).
+
+License: [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0)
