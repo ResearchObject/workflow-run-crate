@@ -11,7 +11,7 @@
     {
       "@id": "./",
       "@type": "Dataset",
-      "datePublished": "2022-07-05T10:44:02+00:00",
+      "datePublished": "2022-08-02T08:42:07+00:00",
       "hasPart": [
         {
           "@id": "packed.cwl"
@@ -31,7 +31,7 @@
       },
       "mentions": [
         {
-          "@id": "#64dfd03a-7600-41a0-84c3-1bc5c053fa13"
+          "@id": "#45323ad2-ab56-4337-85b9-886d415abc95"
         }
       ],
       "@reverse": {
@@ -75,16 +75,16 @@
       ],
       "input": [
         {
-          "@id": "#param-main/input"
+          "@id": "packed.cwl#main/input"
         },
         {
-          "@id": "#param-main/reverse_sort"
+          "@id": "packed.cwl#main/reverse_sort"
         }
       ],
       "name": "packed.cwl",
       "output": [
         {
-          "@id": "#param-main/output"
+          "@id": "packed.cwl#main/output"
         }
       ],
       "programmingLanguage": {
@@ -111,7 +111,7 @@
         ],
         "instrument": [
           {
-            "@id": "#159f2e15-01c4-471a-9fb5-169ba9b457a1"
+            "@id": "#6e833285-3880-48f8-aab1-a8d8550b78c7"
           }
         ]
       }
@@ -137,37 +137,325 @@
       }
     },
     {
-      "@id": "#0c85d8f4-fb30-4434-b4aa-ac339cb53576",
-      "@type": "SoftwareApplication",
-      "name": "cwltool 1.0.20181012180214",
+      "@id": "packed.cwl#main/input",
+      "@type": "FormalParameter",
+      "additionalType": "File",
+      "connectedTo": {
+        "@id": "packed.cwl#revtool.cwl/input"
+      },
+      "defaultValue": "file:///home/stain/src/cwltool/tests/wf/hello.txt",
+      "encodingFormat": "https://www.iana.org/assignments/media-types/text/plain",
+      "name": "main/input",
       "@reverse": {
-        "instrument": [
+        "input": [
           {
-            "@id": "#64dfd03a-7600-41a0-84c3-1bc5c053fa13"
+            "@id": "packed.cwl"
+          }
+        ],
+        "exampleOfWork": [
+          {
+            "@id": "327fc7aedf4f6b69a42a7c8b808dc5a7aff61376"
           }
         ]
       }
     },
     {
-      "@id": "#64dfd03a-7600-41a0-84c3-1bc5c053fa13",
+      "@id": "packed.cwl#main/reverse_sort",
+      "@type": "FormalParameter",
+      "additionalType": "Boolean",
+      "connectedTo": {
+        "@id": "packed.cwl#sorttool.cwl/reverse"
+      },
+      "defaultValue": "True",
+      "name": "main/reverse_sort",
+      "@reverse": {
+        "input": [
+          {
+            "@id": "packed.cwl"
+          }
+        ],
+        "exampleOfWork": [
+          {
+            "@id": "#pv-main/reverse_sort"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "packed.cwl#main/output",
+      "@type": "FormalParameter",
+      "additionalType": "File",
+      "name": "main/output",
+      "@reverse": {
+        "output": [
+          {
+            "@id": "packed.cwl"
+          }
+        ],
+        "connectedTo": [
+          {
+            "@id": "packed.cwl#sorttool.cwl/output"
+          }
+        ],
+        "exampleOfWork": [
+          {
+            "@id": "b9214658cc453331b62c2282b772a5c063dbd284"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "packed.cwl#main/rev",
+      "@type": "HowToStep",
+      "position": "0",
+      "workExample": {
+        "@id": "packed.cwl#revtool.cwl"
+      },
+      "@reverse": {
+        "step": [
+          {
+            "@id": "packed.cwl"
+          }
+        ],
+        "instrument": [
+          {
+            "@id": "#ca859989-7afa-4a3b-b541-79aa8783162b"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "packed.cwl#revtool.cwl",
+      "@type": "SoftwareApplication",
+      "description": "Reverse each line using the `rev` command",
+      "input": [
+        {
+          "@id": "packed.cwl#revtool.cwl/input"
+        }
+      ],
+      "name": "revtool.cwl",
+      "output": [
+        {
+          "@id": "packed.cwl#revtool.cwl/output"
+        }
+      ],
+      "@reverse": {
+        "hasPart": [
+          {
+            "@id": "packed.cwl"
+          }
+        ],
+        "workExample": [
+          {
+            "@id": "packed.cwl#main/rev"
+          }
+        ],
+        "instrument": [
+          {
+            "@id": "#7e6f4179-7231-47f9-97e9-5fd045f57d9c"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "packed.cwl#revtool.cwl/input",
+      "@type": "FormalParameter",
+      "additionalType": "File",
+      "name": "revtool.cwl/input",
+      "@reverse": {
+        "connectedTo": [
+          {
+            "@id": "packed.cwl#main/input"
+          }
+        ],
+        "input": [
+          {
+            "@id": "packed.cwl#revtool.cwl"
+          }
+        ],
+        "exampleOfWork": [
+          {
+            "@id": "327fc7aedf4f6b69a42a7c8b808dc5a7aff61376"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "packed.cwl#revtool.cwl/output",
+      "@type": "FormalParameter",
+      "additionalType": "File",
+      "connectedTo": {
+        "@id": "packed.cwl#sorttool.cwl/input"
+      },
+      "name": "revtool.cwl/output",
+      "@reverse": {
+        "output": [
+          {
+            "@id": "packed.cwl#revtool.cwl"
+          }
+        ],
+        "exampleOfWork": [
+          {
+            "@id": "97fe1b50b4582cebc7d853796ebd62e3e163aa3f"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "packed.cwl#main/sorted",
+      "@type": "HowToStep",
+      "position": "1",
+      "workExample": {
+        "@id": "packed.cwl#sorttool.cwl"
+      },
+      "@reverse": {
+        "step": [
+          {
+            "@id": "packed.cwl"
+          }
+        ],
+        "instrument": [
+          {
+            "@id": "#b813b869-9527-4aa4-af75-bcf2a507daa5"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "packed.cwl#sorttool.cwl",
+      "@type": "SoftwareApplication",
+      "description": "Sort lines using the `sort` command",
+      "input": [
+        {
+          "@id": "packed.cwl#sorttool.cwl/reverse"
+        },
+        {
+          "@id": "packed.cwl#sorttool.cwl/input"
+        }
+      ],
+      "name": "sorttool.cwl",
+      "output": [
+        {
+          "@id": "packed.cwl#sorttool.cwl/output"
+        }
+      ],
+      "@reverse": {
+        "hasPart": [
+          {
+            "@id": "packed.cwl"
+          }
+        ],
+        "workExample": [
+          {
+            "@id": "packed.cwl#main/sorted"
+          }
+        ],
+        "instrument": [
+          {
+            "@id": "#1a77a256-4114-472a-ab62-7c85fab6fb37"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "packed.cwl#sorttool.cwl/reverse",
+      "@type": "FormalParameter",
+      "additionalType": "Boolean",
+      "name": "sorttool.cwl/reverse",
+      "@reverse": {
+        "connectedTo": [
+          {
+            "@id": "packed.cwl#main/reverse_sort"
+          }
+        ],
+        "input": [
+          {
+            "@id": "packed.cwl#sorttool.cwl"
+          }
+        ],
+        "exampleOfWork": [
+          {
+            "@id": "#pv-main/sorted/reverse"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "packed.cwl#sorttool.cwl/input",
+      "@type": "FormalParameter",
+      "additionalType": "File",
+      "name": "sorttool.cwl/input",
+      "@reverse": {
+        "connectedTo": [
+          {
+            "@id": "packed.cwl#revtool.cwl/output"
+          }
+        ],
+        "input": [
+          {
+            "@id": "packed.cwl#sorttool.cwl"
+          }
+        ],
+        "exampleOfWork": [
+          {
+            "@id": "97fe1b50b4582cebc7d853796ebd62e3e163aa3f"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "packed.cwl#sorttool.cwl/output",
+      "@type": "FormalParameter",
+      "additionalType": "File",
+      "connectedTo": {
+        "@id": "packed.cwl#main/output"
+      },
+      "name": "sorttool.cwl/output",
+      "@reverse": {
+        "output": [
+          {
+            "@id": "packed.cwl#sorttool.cwl"
+          }
+        ],
+        "exampleOfWork": [
+          {
+            "@id": "b9214658cc453331b62c2282b772a5c063dbd284"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "#80f45e85-7c24-492a-ba55-19ba6394dbee",
+      "@type": "SoftwareApplication",
+      "name": "cwltool 1.0.20181012180214",
+      "@reverse": {
+        "instrument": [
+          {
+            "@id": "#45323ad2-ab56-4337-85b9-886d415abc95"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "#45323ad2-ab56-4337-85b9-886d415abc95",
       "@type": "OrganizeAction",
       "agent": {
         "@id": "https://orcid.org/0000-0001-9842-9718"
       },
       "instrument": {
-        "@id": "#0c85d8f4-fb30-4434-b4aa-ac339cb53576"
+        "@id": "#80f45e85-7c24-492a-ba55-19ba6394dbee"
       },
       "name": "Run of cwltool 1.0.20181012180214",
       "object": [
         {
-          "@id": "#1895f1f9-1452-4a42-bdcd-f4177cda400c"
+          "@id": "#ca859989-7afa-4a3b-b541-79aa8783162b"
         },
         {
-          "@id": "#3ea66f15-2d65-4a26-b4ca-85b37c7674ca"
+          "@id": "#b813b869-9527-4aa4-af75-bcf2a507daa5"
         }
       ],
       "result": {
-        "@id": "#159f2e15-01c4-471a-9fb5-169ba9b457a1"
+        "@id": "#6e833285-3880-48f8-aab1-a8d8550b78c7"
       },
       "startTime": "2018-10-25T15:46:35.210973",
       "@reverse": {
@@ -185,13 +473,13 @@
       "@reverse": {
         "agent": [
           {
-            "@id": "#64dfd03a-7600-41a0-84c3-1bc5c053fa13"
+            "@id": "#45323ad2-ab56-4337-85b9-886d415abc95"
           }
         ]
       }
     },
     {
-      "@id": "#159f2e15-01c4-471a-9fb5-169ba9b457a1",
+      "@id": "#6e833285-3880-48f8-aab1-a8d8550b78c7",
       "@type": "CreateAction",
       "endTime": "2018-10-25T15:46:43.020168",
       "instrument": {
@@ -215,30 +503,7 @@
       "@reverse": {
         "result": [
           {
-            "@id": "#64dfd03a-7600-41a0-84c3-1bc5c053fa13"
-          }
-        ]
-      }
-    },
-    {
-      "@id": "#param-main/input",
-      "@type": "FormalParameter",
-      "additionalType": "File",
-      "connectedTo": {
-        "@id": "#param-main/rev/input"
-      },
-      "defaultValue": "file:///home/stain/src/cwltool/tests/wf/hello.txt",
-      "encodingFormat": "https://www.iana.org/assignments/media-types/text/plain",
-      "name": "main/input",
-      "@reverse": {
-        "input": [
-          {
-            "@id": "packed.cwl"
-          }
-        ],
-        "exampleOfWork": [
-          {
-            "@id": "327fc7aedf4f6b69a42a7c8b808dc5a7aff61376"
+            "@id": "#45323ad2-ab56-4337-85b9-886d415abc95"
           }
         ]
       }
@@ -248,10 +513,10 @@
       "@type": "File",
       "exampleOfWork": [
         {
-          "@id": "#param-main/input"
+          "@id": "packed.cwl#main/input"
         },
         {
-          "@id": "#param-main/rev/input"
+          "@id": "packed.cwl#revtool.cwl/input"
         }
       ],
       "@reverse": {
@@ -262,32 +527,10 @@
         ],
         "object": [
           {
-            "@id": "#159f2e15-01c4-471a-9fb5-169ba9b457a1"
+            "@id": "#6e833285-3880-48f8-aab1-a8d8550b78c7"
           },
           {
-            "@id": "#5a27e595-e7fc-4d34-827e-bb6033e12573"
-          }
-        ]
-      }
-    },
-    {
-      "@id": "#param-main/reverse_sort",
-      "@type": "FormalParameter",
-      "additionalType": "Boolean",
-      "connectedTo": {
-        "@id": "#param-main/sorted/reverse"
-      },
-      "defaultValue": "True",
-      "name": "main/reverse_sort",
-      "@reverse": {
-        "input": [
-          {
-            "@id": "packed.cwl"
-          }
-        ],
-        "exampleOfWork": [
-          {
-            "@id": "#pv-main/reverse_sort"
+            "@id": "#7e6f4179-7231-47f9-97e9-5fd045f57d9c"
           }
         ]
       }
@@ -296,37 +539,14 @@
       "@id": "#pv-main/reverse_sort",
       "@type": "PropertyValue",
       "exampleOfWork": {
-        "@id": "#param-main/reverse_sort"
+        "@id": "packed.cwl#main/reverse_sort"
       },
       "name": "main/reverse_sort",
       "value": "True",
       "@reverse": {
         "object": [
           {
-            "@id": "#159f2e15-01c4-471a-9fb5-169ba9b457a1"
-          }
-        ]
-      }
-    },
-    {
-      "@id": "#param-main/output",
-      "@type": "FormalParameter",
-      "additionalType": "File",
-      "name": "main/output",
-      "@reverse": {
-        "output": [
-          {
-            "@id": "packed.cwl"
-          }
-        ],
-        "exampleOfWork": [
-          {
-            "@id": "b9214658cc453331b62c2282b772a5c063dbd284"
-          }
-        ],
-        "connectedTo": [
-          {
-            "@id": "#param-main/sorted/output"
+            "@id": "#6e833285-3880-48f8-aab1-a8d8550b78c7"
           }
         ]
       }
@@ -336,10 +556,10 @@
       "@type": "File",
       "exampleOfWork": [
         {
-          "@id": "#param-main/output"
+          "@id": "packed.cwl#main/output"
         },
         {
-          "@id": "#param-main/sorted/output"
+          "@id": "packed.cwl#sorttool.cwl/output"
         }
       ],
       "@reverse": {
@@ -350,16 +570,16 @@
         ],
         "result": [
           {
-            "@id": "#159f2e15-01c4-471a-9fb5-169ba9b457a1"
+            "@id": "#6e833285-3880-48f8-aab1-a8d8550b78c7"
           },
           {
-            "@id": "#4faa7e2e-e1e8-40c9-9927-bcaaa2b36292"
+            "@id": "#1a77a256-4114-472a-ab62-7c85fab6fb37"
           }
         ]
       }
     },
     {
-      "@id": "#5a27e595-e7fc-4d34-827e-bb6033e12573",
+      "@id": "#7e6f4179-7231-47f9-97e9-5fd045f57d9c",
       "@type": "CreateAction",
       "endTime": "2018-10-25T15:46:36.967359",
       "instrument": {
@@ -380,122 +600,25 @@
       "@reverse": {
         "object": [
           {
-            "@id": "#1895f1f9-1452-4a42-bdcd-f4177cda400c"
+            "@id": "#ca859989-7afa-4a3b-b541-79aa8783162b"
           }
         ]
       }
     },
     {
-      "@id": "packed.cwl#revtool.cwl",
-      "@type": "SoftwareApplication",
-      "description": "Reverse each line using the `rev` command",
-      "input": [
-        {
-          "@id": "#param-main/rev/input"
-        }
-      ],
-      "name": "revtool.cwl",
-      "output": [
-        {
-          "@id": "#param-main/rev/output"
-        }
-      ],
-      "@reverse": {
-        "hasPart": [
-          {
-            "@id": "packed.cwl"
-          }
-        ],
-        "instrument": [
-          {
-            "@id": "#5a27e595-e7fc-4d34-827e-bb6033e12573"
-          }
-        ],
-        "workExample": [
-          {
-            "@id": "packed.cwl#main/rev"
-          }
-        ]
-      }
-    },
-    {
-      "@id": "packed.cwl#main/rev",
-      "@type": "HowToStep",
-      "position": "0",
-      "workExample": {
-        "@id": "packed.cwl#revtool.cwl"
-      },
-      "@reverse": {
-        "step": [
-          {
-            "@id": "packed.cwl"
-          }
-        ],
-        "instrument": [
-          {
-            "@id": "#1895f1f9-1452-4a42-bdcd-f4177cda400c"
-          }
-        ]
-      }
-    },
-    {
-      "@id": "#1895f1f9-1452-4a42-bdcd-f4177cda400c",
+      "@id": "#ca859989-7afa-4a3b-b541-79aa8783162b",
       "@type": "ControlAction",
       "instrument": {
         "@id": "packed.cwl#main/rev"
       },
       "name": "orchestrate revtool.cwl",
       "object": {
-        "@id": "#5a27e595-e7fc-4d34-827e-bb6033e12573"
+        "@id": "#7e6f4179-7231-47f9-97e9-5fd045f57d9c"
       },
       "@reverse": {
         "object": [
           {
-            "@id": "#64dfd03a-7600-41a0-84c3-1bc5c053fa13"
-          }
-        ]
-      }
-    },
-    {
-      "@id": "#param-main/rev/input",
-      "@type": "FormalParameter",
-      "additionalType": "File",
-      "name": "main/rev/input",
-      "@reverse": {
-        "connectedTo": [
-          {
-            "@id": "#param-main/input"
-          }
-        ],
-        "exampleOfWork": [
-          {
-            "@id": "327fc7aedf4f6b69a42a7c8b808dc5a7aff61376"
-          }
-        ],
-        "input": [
-          {
-            "@id": "packed.cwl#revtool.cwl"
-          }
-        ]
-      }
-    },
-    {
-      "@id": "#param-main/rev/output",
-      "@type": "FormalParameter",
-      "additionalType": "File",
-      "connectedTo": {
-        "@id": "#param-main/sorted/input"
-      },
-      "name": "main/rev/output",
-      "@reverse": {
-        "output": [
-          {
-            "@id": "packed.cwl#revtool.cwl"
-          }
-        ],
-        "exampleOfWork": [
-          {
-            "@id": "97fe1b50b4582cebc7d853796ebd62e3e163aa3f"
+            "@id": "#45323ad2-ab56-4337-85b9-886d415abc95"
           }
         ]
       }
@@ -505,10 +628,10 @@
       "@type": "File",
       "exampleOfWork": [
         {
-          "@id": "#param-main/rev/output"
+          "@id": "packed.cwl#revtool.cwl/output"
         },
         {
-          "@id": "#param-main/sorted/input"
+          "@id": "packed.cwl#sorttool.cwl/input"
         }
       ],
       "@reverse": {
@@ -519,18 +642,18 @@
         ],
         "result": [
           {
-            "@id": "#5a27e595-e7fc-4d34-827e-bb6033e12573"
+            "@id": "#7e6f4179-7231-47f9-97e9-5fd045f57d9c"
           }
         ],
         "object": [
           {
-            "@id": "#4faa7e2e-e1e8-40c9-9927-bcaaa2b36292"
+            "@id": "#1a77a256-4114-472a-ab62-7c85fab6fb37"
           }
         ]
       }
     },
     {
-      "@id": "#4faa7e2e-e1e8-40c9-9927-bcaaa2b36292",
+      "@id": "#1a77a256-4114-472a-ab62-7c85fab6fb37",
       "@type": "CreateAction",
       "endTime": "2018-10-25T15:46:38.069110",
       "instrument": {
@@ -554,127 +677,25 @@
       "@reverse": {
         "object": [
           {
-            "@id": "#3ea66f15-2d65-4a26-b4ca-85b37c7674ca"
+            "@id": "#b813b869-9527-4aa4-af75-bcf2a507daa5"
           }
         ]
       }
     },
     {
-      "@id": "packed.cwl#sorttool.cwl",
-      "@type": "SoftwareApplication",
-      "description": "Sort lines using the `sort` command",
-      "input": [
-        {
-          "@id": "#param-main/sorted/input"
-        },
-        {
-          "@id": "#param-main/sorted/reverse"
-        }
-      ],
-      "name": "sorttool.cwl",
-      "output": [
-        {
-          "@id": "#param-main/sorted/output"
-        }
-      ],
-      "@reverse": {
-        "hasPart": [
-          {
-            "@id": "packed.cwl"
-          }
-        ],
-        "instrument": [
-          {
-            "@id": "#4faa7e2e-e1e8-40c9-9927-bcaaa2b36292"
-          }
-        ],
-        "workExample": [
-          {
-            "@id": "packed.cwl#main/sorted"
-          }
-        ]
-      }
-    },
-    {
-      "@id": "packed.cwl#main/sorted",
-      "@type": "HowToStep",
-      "position": "1",
-      "workExample": {
-        "@id": "packed.cwl#sorttool.cwl"
-      },
-      "@reverse": {
-        "step": [
-          {
-            "@id": "packed.cwl"
-          }
-        ],
-        "instrument": [
-          {
-            "@id": "#3ea66f15-2d65-4a26-b4ca-85b37c7674ca"
-          }
-        ]
-      }
-    },
-    {
-      "@id": "#3ea66f15-2d65-4a26-b4ca-85b37c7674ca",
+      "@id": "#b813b869-9527-4aa4-af75-bcf2a507daa5",
       "@type": "ControlAction",
       "instrument": {
         "@id": "packed.cwl#main/sorted"
       },
       "name": "orchestrate sorttool.cwl",
       "object": {
-        "@id": "#4faa7e2e-e1e8-40c9-9927-bcaaa2b36292"
+        "@id": "#1a77a256-4114-472a-ab62-7c85fab6fb37"
       },
       "@reverse": {
         "object": [
           {
-            "@id": "#64dfd03a-7600-41a0-84c3-1bc5c053fa13"
-          }
-        ]
-      }
-    },
-    {
-      "@id": "#param-main/sorted/input",
-      "@type": "FormalParameter",
-      "additionalType": "File",
-      "name": "main/sorted/input",
-      "@reverse": {
-        "connectedTo": [
-          {
-            "@id": "#param-main/rev/output"
-          }
-        ],
-        "exampleOfWork": [
-          {
-            "@id": "97fe1b50b4582cebc7d853796ebd62e3e163aa3f"
-          }
-        ],
-        "input": [
-          {
-            "@id": "packed.cwl#sorttool.cwl"
-          }
-        ]
-      }
-    },
-    {
-      "@id": "#param-main/sorted/reverse",
-      "@type": "FormalParameter",
-      "additionalType": "Boolean",
-      "name": "main/sorted/reverse",
-      "@reverse": {
-        "connectedTo": [
-          {
-            "@id": "#param-main/reverse_sort"
-          }
-        ],
-        "input": [
-          {
-            "@id": "packed.cwl#sorttool.cwl"
-          }
-        ],
-        "exampleOfWork": [
-          {
-            "@id": "#pv-main/sorted/reverse"
+            "@id": "#45323ad2-ab56-4337-85b9-886d415abc95"
           }
         ]
       }
@@ -683,35 +704,14 @@
       "@id": "#pv-main/sorted/reverse",
       "@type": "PropertyValue",
       "exampleOfWork": {
-        "@id": "#param-main/sorted/reverse"
+        "@id": "packed.cwl#sorttool.cwl/reverse"
       },
       "name": "main/sorted/reverse",
       "value": "True",
       "@reverse": {
         "object": [
           {
-            "@id": "#4faa7e2e-e1e8-40c9-9927-bcaaa2b36292"
-          }
-        ]
-      }
-    },
-    {
-      "@id": "#param-main/sorted/output",
-      "@type": "FormalParameter",
-      "additionalType": "File",
-      "connectedTo": {
-        "@id": "#param-main/output"
-      },
-      "name": "main/sorted/output",
-      "@reverse": {
-        "exampleOfWork": [
-          {
-            "@id": "b9214658cc453331b62c2282b772a5c063dbd284"
-          }
-        ],
-        "output": [
-          {
-            "@id": "packed.cwl#sorttool.cwl"
+            "@id": "#1a77a256-4114-472a-ab62-7c85fab6fb37"
           }
         ]
       }
@@ -782,7 +782,7 @@ table.table {
             <td style='text-align:left'><span>Dataset</span></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">datePublished<span>&nbsp;</span><a href="http://schema.org/datePublished">[?]</a></th>
-            <td style='text-align:left'><span>2022-07-05T10:44:02+00:00</span></td>
+            <td style='text-align:left'><span>2022-08-02T08:42:07+00:00</span></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
             <td style='text-align:left'><ul>
@@ -799,7 +799,7 @@ table.table {
             <td style='text-align:left'><a href="#packed.cwl">packed.cwl</a></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
-            <td style='text-align:left'><a href="#%2364dfd03a-7600-41a0-84c3-1bc5c053fa13">Run of cwltool 1.0.20181012180214</a></td>
+            <td style='text-align:left'><a href="#%2345323ad2-ab56-4337-85b9-886d415abc95">Run of cwltool 1.0.20181012180214</a></td>
             </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
             <th style="text-align:left;" class="prop">about<span>&nbsp;</span><a href="http://schema.org/about">[?]</a></th>
             <td style='text-align:left'><a href="#ro-crate-metadata.json">ro-crate-metadata.json</a></td>
@@ -845,13 +845,13 @@ table.table {
             </tr><tr>
             <th style="text-align:left;" class="prop">input<span>&nbsp;</span><a href="https://bioschemas.org/ComputationalWorkflow#input">[?]</a></th>
             <td style='text-align:left'><ul>
-                        <li><a href="#%23param-main/input">main/input</a></li>
+                        <li><a href="#packed.cwl%23main/input">main/input</a></li>
                         
-                        <li><a href="#%23param-main/reverse_sort">main/reverse_sort</a></li>
+                        <li><a href="#packed.cwl%23main/reverse_sort">main/reverse_sort</a></li>
                         </ul></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">output<span>&nbsp;</span><a href="https://bioschemas.org/ComputationalWorkflow#output">[?]</a></th>
-            <td style='text-align:left'><a href="#%23param-main/output">main/output</a></td>
+            <td style='text-align:left'><a href="#packed.cwl%23main/output">main/output</a></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">programmingLanguage<span>&nbsp;</span><a href="http://schema.org/programmingLanguage">[?]</a></th>
             <td style='text-align:left'><a href="#https%3A//w3id.org/workflowhub/workflow-ro-crate%23cwl">Common Workflow Language</a></td>
@@ -870,7 +870,7 @@ table.table {
             <td style='text-align:left'><a href="#./">./</a></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">instrument<span>&nbsp;</span><a href="http://schema.org/instrument">[?]</a></th>
-            <td style='text-align:left'><a href="#%23159f2e15-01c4-471a-9fb5-169ba9b457a1">Run of workflow/packed.cwl#main</a></td>
+            <td style='text-align:left'><a href="#%236e833285-3880-48f8-aab1-a8d8550b78c7">Run of workflow/packed.cwl#main</a></td>
             </tr></tbody>
             </table>
         </div>
@@ -895,9 +895,9 @@ table.table {
             </tr><tr>
             <th style="text-align:left;" class="prop">exampleOfWork<span>&nbsp;</span><a href="http://schema.org/exampleOfWork">[?]</a></th>
             <td style='text-align:left'><ul>
-                        <li><a href="#%23param-main/input">main/input</a></li>
+                        <li><a href="#packed.cwl%23main/input">main/input</a></li>
                         
-                        <li><a href="#%23param-main/rev/input">main/rev/input</a></li>
+                        <li><a href="#packed.cwl%23revtool.cwl/input">revtool.cwl/input</a></li>
                         </ul></td>
             </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
             <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
@@ -905,9 +905,9 @@ table.table {
             </tr><tr>
             <th style="text-align:left;" class="prop">object<span>&nbsp;</span><a href="http://schema.org/object">[?]</a></th>
             <td style='text-align:left'><ul>
-                        <li><a href="#%23159f2e15-01c4-471a-9fb5-169ba9b457a1">Run of workflow/packed.cwl#main</a></li>
+                        <li><a href="#%236e833285-3880-48f8-aab1-a8d8550b78c7">Run of workflow/packed.cwl#main</a></li>
                         
-                        <li><a href="#%235a27e595-e7fc-4d34-827e-bb6033e12573">Run of workflow/packed.cwl#main/rev</a></li>
+                        <li><a href="#%237e6f4179-7231-47f9-97e9-5fd045f57d9c">Run of workflow/packed.cwl#main/rev</a></li>
                         </ul></td>
             </tr></tbody>
             </table>
@@ -933,9 +933,9 @@ table.table {
             </tr><tr>
             <th style="text-align:left;" class="prop">exampleOfWork<span>&nbsp;</span><a href="http://schema.org/exampleOfWork">[?]</a></th>
             <td style='text-align:left'><ul>
-                        <li><a href="#%23param-main/output">main/output</a></li>
+                        <li><a href="#packed.cwl%23main/output">main/output</a></li>
                         
-                        <li><a href="#%23param-main/sorted/output">main/sorted/output</a></li>
+                        <li><a href="#packed.cwl%23sorttool.cwl/output">sorttool.cwl/output</a></li>
                         </ul></td>
             </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
             <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
@@ -943,9 +943,9 @@ table.table {
             </tr><tr>
             <th style="text-align:left;" class="prop">result<span>&nbsp;</span><a href="http://schema.org/result">[?]</a></th>
             <td style='text-align:left'><ul>
-                        <li><a href="#%23159f2e15-01c4-471a-9fb5-169ba9b457a1">Run of workflow/packed.cwl#main</a></li>
+                        <li><a href="#%236e833285-3880-48f8-aab1-a8d8550b78c7">Run of workflow/packed.cwl#main</a></li>
                         
-                        <li><a href="#%234faa7e2e-e1e8-40c9-9927-bcaaa2b36292">Run of workflow/packed.cwl#main/sorted</a></li>
+                        <li><a href="#%231a77a256-4114-472a-ab62-7c85fab6fb37">Run of workflow/packed.cwl#main/sorted</a></li>
                         </ul></td>
             </tr></tbody>
             </table>
@@ -971,19 +971,19 @@ table.table {
             </tr><tr>
             <th style="text-align:left;" class="prop">exampleOfWork<span>&nbsp;</span><a href="http://schema.org/exampleOfWork">[?]</a></th>
             <td style='text-align:left'><ul>
-                        <li><a href="#%23param-main/rev/output">main/rev/output</a></li>
+                        <li><a href="#packed.cwl%23revtool.cwl/output">revtool.cwl/output</a></li>
                         
-                        <li><a href="#%23param-main/sorted/input">main/sorted/input</a></li>
+                        <li><a href="#packed.cwl%23sorttool.cwl/input">sorttool.cwl/input</a></li>
                         </ul></td>
             </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
             <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
             <td style='text-align:left'><a href="#./">./</a></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">result<span>&nbsp;</span><a href="http://schema.org/result">[?]</a></th>
-            <td style='text-align:left'><a href="#%235a27e595-e7fc-4d34-827e-bb6033e12573">Run of workflow/packed.cwl#main/rev</a></td>
+            <td style='text-align:left'><a href="#%237e6f4179-7231-47f9-97e9-5fd045f57d9c">Run of workflow/packed.cwl#main/rev</a></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">object<span>&nbsp;</span><a href="http://schema.org/object">[?]</a></th>
-            <td style='text-align:left'><a href="#%234faa7e2e-e1e8-40c9-9927-bcaaa2b36292">Run of workflow/packed.cwl#main/sorted</a></td>
+            <td style='text-align:left'><a href="#%231a77a256-4114-472a-ab62-7c85fab6fb37">Run of workflow/packed.cwl#main/sorted</a></td>
             </tr></tbody>
             </table>
         </div>
@@ -996,12 +996,12 @@ table.table {
             
             
             
-        <div id="#64dfd03a-7600-41a0-84c3-1bc5c053fa13">
+        <div id="#45323ad2-ab56-4337-85b9-886d415abc95">
             
             <table class="table metadata table-striped" >
                 <tbody><tr>
             <th style="text-align:left;" class="prop">@id</th>
-            <td style='text-align:left'><span>#64dfd03a-7600-41a0-84c3-1bc5c053fa13</span></td>
+            <td style='text-align:left'><span>#45323ad2-ab56-4337-85b9-886d415abc95</span></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
             <td style='text-align:left'><span>Run of cwltool 1.0.20181012180214</span></td>
@@ -1013,17 +1013,17 @@ table.table {
             <td style='text-align:left'><a href="#https%3A//orcid.org/0000-0001-9842-9718">Stian Soiland-Reyes</a></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">instrument<span>&nbsp;</span><a href="http://schema.org/instrument">[?]</a></th>
-            <td style='text-align:left'><a href="#%230c85d8f4-fb30-4434-b4aa-ac339cb53576">cwltool 1.0.20181012180214</a></td>
+            <td style='text-align:left'><a href="#%2380f45e85-7c24-492a-ba55-19ba6394dbee">cwltool 1.0.20181012180214</a></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">object<span>&nbsp;</span><a href="http://schema.org/object">[?]</a></th>
             <td style='text-align:left'><ul>
-                        <li><a href="#%231895f1f9-1452-4a42-bdcd-f4177cda400c">orchestrate revtool.cwl</a></li>
+                        <li><a href="#%23ca859989-7afa-4a3b-b541-79aa8783162b">orchestrate revtool.cwl</a></li>
                         
-                        <li><a href="#%233ea66f15-2d65-4a26-b4ca-85b37c7674ca">orchestrate sorttool.cwl</a></li>
+                        <li><a href="#%23b813b869-9527-4aa4-af75-bcf2a507daa5">orchestrate sorttool.cwl</a></li>
                         </ul></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">result<span>&nbsp;</span><a href="http://schema.org/result">[?]</a></th>
-            <td style='text-align:left'><a href="#%23159f2e15-01c4-471a-9fb5-169ba9b457a1">Run of workflow/packed.cwl#main</a></td>
+            <td style='text-align:left'><a href="#%236e833285-3880-48f8-aab1-a8d8550b78c7">Run of workflow/packed.cwl#main</a></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">startTime<span>&nbsp;</span><a href="http://schema.org/startTime">[?]</a></th>
             <td style='text-align:left'><span>2018-10-25T15:46:35.210973</span></td>
