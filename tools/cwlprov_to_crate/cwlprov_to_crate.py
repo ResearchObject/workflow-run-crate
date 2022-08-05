@@ -176,11 +176,19 @@ class ProvCrateBuilder:
                     rval[k][f] = {"tool": get_fragment(s.run), "pos": pos_map[f]}
         return rval
 
+    def _resolve_plan(self, job_qname):
+        plan = self.prov.entity(job_qname)
+        if not plan:
+            m = SCATTER_JOB_PATTERN.match(str(job_qname))
+            if m:
+                plan = self.prov.entity(m.groups()[0])
+        return plan
+
     def build(self):
         crate = ROCrate(gen_preview=False)
         self.add_workflow(crate)
         self.add_engine_run(crate)
-        # self.add_action(crate, self.workflow_run)
+        self.add_action(crate, self.workflow_run)
         self.add_param_connections()
         return crate
 
@@ -283,11 +291,13 @@ class ProvCrateBuilder:
         action = crate.add(ContextEntity(crate, properties={
             "@type": "CreateAction",
             "name": activity.label,
-            "startTime": activity.start_time,
-            "endTime": activity.end_time,
+            "startTime": activity.start().time.isoformat(),
+            "endTime": activity.end().time.isoformat(),
         }))
-        plan_tag = activity.plan.id_.strip().split(":", 1)[-1]
-        if isinstance(activity, WorkflowRun):
+        job_qname = activity.plan()
+        plan = self._resolve_plan(job_qname)
+        plan_tag = plan.id.localpart
+        if str(activity.type) == "wfprov:WorkflowRun":
             if plan_tag != "main":
                 raise RuntimeError("sub-workflows not supported yet")
             instrument = workflow
@@ -309,25 +319,33 @@ class ProvCrateBuilder:
                 roc_engine_run.append_to("object", control_action, compact=True)
                 self.control_actions[plan_tag] = control_action
             control_action.append_to("object", action, compact=True)
-            job_tag = activity.job_id.strip().split(":", 1)[-1]
 
             def to_wf_p(k):
-                return k.replace(job_tag, tool_name)
+                return k.replace(job_qname.localpart, tool_name)
         action["instrument"] = instrument
-        action["object"] = self.add_action_params(crate, activity, to_wf_p, "in")
-        action["result"] = self.add_action_params(crate, activity, to_wf_p, "out")
-        for job in activity.steps:
+        action["object"] = self.add_action_params(crate, activity, to_wf_p, "usage")
+        action["result"] = self.add_action_params(crate, activity, to_wf_p, "generation")
+        for job in activity.steps():
             self.add_action(crate, job, parent_instrument=instrument)
 
-    def add_action_params(self, crate, activity, to_wf_p, io="in"):
+    def add_action_params(self, crate, activity, to_wf_p, ptype="usage"):
         action_params = []
-        prov_params = getattr(activity, f"{io}_params")
-        for k, v in prov_params.items():
-            k = k.replace("wf:", "packed.cwl#")
+        for rel in getattr(activity, ptype)():
+            k = get_relative_uri(rel.role.uri)
+            # workflow output roles have a phantom "primary" step (cwltool bug?)
+            if ptype == "generation" and str(activity.type) == "wfprov:WorkflowRun":
+                parts = k.split("/")
+                try:
+                    second = parts.pop(1)
+                    if second == "primary":
+                        k = "/".join(parts)
+                except IndexError:
+                    pass
             wf_p = crate.dereference(to_wf_p(k))
             k = get_fragment(k)
+            v = rel.entity()
             value = self.convert_param(v, crate)
-            if isinstance(v, (File, Folder)):
+            if {"ro:Folder", "wf4ever:File"} & set(str(_) for _ in v.types()):
                 action_p = value
             else:
                 # FIXME: assuming arrays and records don't have nested structured types
@@ -347,33 +365,37 @@ class ProvCrateBuilder:
         return action_params
 
     def convert_param(self, prov_param, crate):
-        if isinstance(prov_param, File):
-            path = prov_param.get_path()
+        if "wf4ever:File" in set(str(_) for _ in prov_param.types()):
+            hash_ = next(prov_param.specializationOf()).id.localpart
+            path = self.root / Path("data") / hash_[:2] / hash_
             action_p = crate.dereference(path.name)
             if not action_p:
-                action_p = crate.add_file(self.root / path, path.name)
+                action_p = crate.add_file(path, path.name)
             return action_p
-        if isinstance(prov_param, Folder):
-            action_p = crate.dereference(prov_param.basename)
-            if not action_p:
-                action_p = crate.add_directory(prov_param.basename)
-                for pair in prov_param.dict_members:
-                    path = pair.entity.get_path()
-                    dest = Path(prov_param.basename) / path.name
-                    part = crate.dereference(dest.as_posix())
-                    if not part:
-                        part = crate.add_file(self.root / path, dest)
-                    action_p.append_to("hasPart", part)
-            return action_p
+        if "ro:Folder" in set(str(_) for _ in prov_param.types()):
+            raise RuntimeError("Folder support: TBD")
+            # action_p = crate.dereference(prov_param.basename)
+            # if not action_p:
+            #     action_p = crate.add_directory(prov_param.basename)
+            #     for pair in prov_param.dict_members:
+            #         path = pair.entity.get_path()
+            #         dest = Path(prov_param.basename) / path.name
+            #         part = crate.dereference(dest.as_posix())
+            #         if not part:
+            #             part = crate.add_file(self.root / path, dest)
+            #         action_p.append_to("hasPart", part)
+            # return action_p
         if prov_param.value:
             return str(prov_param.value)
-        if hasattr(prov_param, "dict_members"):
-            return dict(
-                (_.key, self.convert_param(_.entity, crate))
-                for _ in prov_param.dict_members if _.key != "@id"
-            )
-        if hasattr(prov_param, "members"):
-            return [self.convert_param(_, crate) for _ in prov_param.members]
+        if "prov:Dictionary" in set(str(_) for _ in prov_param.types()):
+            raise RuntimeError("Dictionary support: TBD")
+            # return dict(
+            #     (_.key, self.convert_param(_.entity, crate))
+            #     for _ in prov_param.dict_members if _.key != "@id"
+            # )
+        if "prov:Collection" in set(str(_) for _ in prov_param.types()):
+            raise RuntimeError("Collection support: TBD")
+            # return [self.convert_param(_, crate) for _ in prov_param.members]
         raise RuntimeError(f"No value to convert for {prov_param}")
 
     def add_param_connections(self):
