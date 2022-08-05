@@ -17,14 +17,16 @@ Generate a Workflow Run RO-Crate from a CWLProv RO.
 """
 
 import argparse
-import hashlib
 import json
 import re
-from itertools import chain
 from pathlib import Path
 
 import networkx as nx
+import prov.model
+from bdbag.bdbagit import BDBag
 from cwl_utils.parser import load_document_by_yaml
+from cwlprov.ro import ResearchObject
+from cwlprov.prov import Provenance
 from rocrate.rocrate import ROCrate
 from rocrate.model.contextentity import ContextEntity
 from rocrate.model.softwareapplication import SoftwareApplication
@@ -115,381 +117,6 @@ def build_step_graph(cwl_wf):
     return graph
 
 
-class Thing:
-
-    def __init__(self, id_, label=None):
-        self.id_ = id_
-        self.label = label
-
-    def __repr__(self):
-        return f"{self.__class__.__name__}({self.id_!r})"
-
-
-class Agent(Thing):
-
-    def __init__(self, id_, label=None):
-        super().__init__(id_, label=label)
-        self.responsible = None
-
-
-class SoftwareAgent(Agent):
-
-    def __init__(self, id_, label=None, image=None):
-        super().__init__(id_, label=label)
-        self.image = image
-        self.starter = None
-        self.ender = None
-        self.start_time = None
-        self.end_time = None
-
-
-class WorkflowEngine(SoftwareAgent):
-    pass
-
-
-class Person(Agent):
-
-    def __init__(self, id_, label=None, name=None):
-        super().__init__(id_, label=label)
-        self.name = name or label
-
-
-class Activity(Thing):
-
-    def __init__(self, id_, label=None):
-        super().__init__(id_, label=label)
-        self.plan = None
-        self.starter = None
-        self.ender = None
-        self.start_time = None
-        self.end_time = None
-        self.in_params = {}
-        self.out_params = {}
-        self.steps = []
-        self.job_id = None
-
-
-class ProcessRun(Activity):
-    pass
-
-
-class WorkflowRun(Activity):
-    pass
-
-
-class Entity(Thing):
-
-    def __init__(self, id_, label=None):
-        super().__init__(id_, label=label)
-        self.value = None
-        self.general_entity = None
-
-    def get_path(self):
-        if not (self.general_entity and getattr(self, "basename", None)):
-            return None
-        try:
-            prefix, hash_ = self.general_entity.id_.strip().split(":")
-        except ValueError:
-            return None
-        if prefix != "data":
-            return None
-        return Path("data") / hash_[:2] / hash_
-
-
-class Plan(Entity):
-
-    def __init__(self, id_, label=None):
-        super().__init__(id_, label=label)
-        self.subprocesses = []
-
-
-class Process(Plan):
-    pass
-
-
-class Workflow(Plan):
-    pass
-
-
-class Artifact(Entity):
-    pass
-
-
-class File(Artifact):
-
-    def __init__(self, id_, basename=None):
-        super().__init__(id_)
-        self.basename = basename
-
-
-class Collection(Artifact):
-
-    def __init__(self, id_):
-        super().__init__(id_)
-        self.members = []
-
-
-class KeyEntityPair(Entity):
-
-    def __init__(self, id_, key, entity):
-        super().__init__(id_)
-        self.key = key
-        self.entity = entity
-
-    def __repr__(self):
-        return f"{self.__class__.__name__}({self.id_!r}, {self.key!r}, {self.entity!r})"
-
-
-class Dictionary(Collection):
-
-    def __init__(self, id_, dict_members):
-        super().__init__(id_)
-        self.dict_members = dict_members
-
-    def __repr__(self):
-        return f"{self.__class__.__name__}({self.id_!r}, {self.dict_members!r})"
-
-
-class Folder(Dictionary):
-
-    def __init__(self, id_, dict_members):
-        super().__init__(id_, dict_members)
-        self.__basename = None
-
-    @property
-    def basename(self):
-        if not self.__basename:
-            m = hashlib.sha1()
-            for pair in self.dict_members:
-                path = pair.entity.get_path()
-                m.update(path.name.encode())
-            self.__basename = m.hexdigest()
-        return self.__basename
-
-
-class Provenance:
-
-    def __init__(self, path_or_file):
-        try:
-            self.data = json.load(path_or_file)
-        except AttributeError:
-            with open(path_or_file) as f:
-                self.data = json.load(f)
-        self.prefixes = self.data["prefix"]
-        self.agents = self.__read_agents()
-        self.activities = self.__read_activities()
-        self.entities = self.__read_entities()
-        self.items = {}
-        for d in self.agents, self.activities, self.entities:
-            self.items.update(d)
-        self.__read_members()
-        self.__read_specializations()
-        self.__read_start_end()
-        self.__read_params()
-        self.__read_associations()
-        self.__read_delegations()
-
-    @staticmethod
-    def get_list(entry, key):
-        value = entry.get(key, [])
-        if not isinstance(value, list):
-            value = [value]
-        try:
-            return [_["$"] if isinstance(_, dict) else _ for _ in value]
-        except (TypeError, KeyError):
-            raise ValueError(f"Malformed value for {key!r}: {entry.get(key)!r}")
-
-    @staticmethod
-    def get_types(record):
-        return Provenance.get_list(record, "prov:type")
-
-    def __read_agents(self):
-        agents = {}
-        for id_, record in self.data["agent"].items():
-            types = set(Provenance.get_types(record))
-            if "prov:Person" in types:
-                agents[id_] = Person(
-                    id_,
-                    label=record.get("prov:label"),
-                    name=record.get("prov:name"),
-                )
-            elif "wfprov:WorkflowEngine" in types:
-                agents[id_] = WorkflowEngine(id_, label=record.get("prov:label"))
-            elif "prov:SoftwareAgent" in types:
-                agents[id_] = SoftwareAgent(
-                    id_,
-                    label=record.get("prov:label"),
-                    image=record.get("cwlprov:image"),
-                )
-            else:
-                agents[id_] = Agent(id_, label=record.get("prov:label"))
-        return agents
-
-    def __read_activities(self):
-        activities = {}
-        for id_, record in self.data["activity"].items():
-            if isinstance(record, list) and "prov:has_provenance" in chain(*record):
-                raise RuntimeError("sub-workflows not supported yet")
-            types = set(Provenance.get_types(record))
-            if "wfprov:WorkflowRun" in types:
-                activities[id_] = WorkflowRun(id_, label=record.get("prov:label"))
-            elif "wfprov:ProcessRun" in types:
-                activities[id_] = ProcessRun(id_, label=record.get("prov:label"))
-            else:
-                activities[id_] = Activity(id_, label=record.get("prov:label"))
-        return activities
-
-    def __read_entities(self):
-        entities = {}
-        for id_, entry in self.data["entity"].items():
-            # FIXME: assumes "prov:value" values are scalar
-            if not isinstance(entry, list):
-                record = {k: Provenance.get_list(entry, k) for k in entry}
-            else:
-                record = {}
-                for d in entry:
-                    for k in d:
-                        record.setdefault(k, []).extend(Provenance.get_list(d, k))
-            types = set(record.get("prov:type", []))
-            if "wfdesc:Workflow" in types:
-                entities[id_] = Workflow(id_, label=record.get("prov:label", [None])[0])
-            elif "wfdesc:Process" in types:
-                entities[id_] = Process(id_, label=record.get("prov:label", [None])[0])
-            elif "wf4ever:File" in types:
-                entities[id_] = File(id_, basename=record.get("cwlprov:basename", [None])[0])
-            elif "prov:KeyEntityPair" in types:
-                key = record["prov:pairKey"][0]
-                entity = record["prov:pairEntity"][0]
-                entities[id_] = KeyEntityPair(id_, key, entity)
-            elif "ro:Folder" in types:
-                assert "prov:Dictionary" in types
-                entities[id_] = Folder(id_, record["prov:hadDictionaryMember"])
-            elif "prov:Dictionary" in types:
-                entities[id_] = Dictionary(id_, record["prov:hadDictionaryMember"])
-            elif "prov:Collection" in types:
-                entities[id_] = Collection(id_)
-            elif "wfprov:Artifact" in types:
-                entities[id_] = Artifact(id_, label=record.get("prov:label", [None])[0])
-            else:
-                entities[id_] = Entity(id_, label=record.get("prov:label", [None])[0])
-            entities[id_].value = record.get("prov:value", [None])[0]
-            try:
-                entities[id_].subprocesses = record["wfdesc:hasSubProcess"]
-            except KeyError:
-                pass
-        for id_, e in entities.items():
-            if hasattr(e, "subprocesses"):
-                e.subprocesses = [entities[_] for _ in e.subprocesses]
-            if hasattr(e, "entity"):
-                e.entity = entities[e.entity]
-            if hasattr(e, "dict_members"):
-                e.dict_members = [entities[_] for _ in e.dict_members]
-        return entities
-
-    def __read_members(self):
-        for dummy, record in self.data.get("hadMember", {}).items():
-            collection = self.entities.get(record.get("prov:collection"))
-            assert isinstance(collection, Collection)
-            member = self.entities.get(record.get("prov:entity"))
-            collection.members.append(member)
-
-    def __read_specializations(self):
-        for dummy, record in self.data.get("specializationOf", {}).items():
-            specific = self.entities.get(record.get("prov:specificEntity"))
-            if not specific:
-                continue
-            general = self.entities.get(record.get("prov:generalEntity"))
-            if general:
-                specific.general_entity = general
-
-    def __read_start_end(self):
-        # "prov:activity" and "prov:starter" point to both activities and agents
-        for dummy, record in self.data["wasStartedBy"].items():
-            started = self.items.get(record.get("prov:activity"))
-            if started:
-                starter = self.items.get(record.get("prov:starter"))
-                if starter:
-                    started.starter = starter
-                started.start_time = record.get("prov:time")
-        for dummy, record in self.data["wasEndedBy"].items():
-            ended = self.items.get(record.get("prov:activity"))
-            if ended:
-                ender = self.items.get(record.get("prov:ender"))
-                if ender:
-                    ended.ender = ender
-                ended.end_time = record.get("prov:time")
-
-    def __read_params(self):
-        # In the case of a single tool run, cwltool reports one WorkflowRun
-        # and no ProcessRun. In this case, some parameters are duplicated and
-        # the duplicate's role has the original workflow name as the step part
-        single_tool = not any(type(_) is ProcessRun for _ in self.activities.values())
-        for dummy, record in self.data.get("used", {}).items():
-            activity = self.activities.get(record.get("prov:activity"))
-            if not activity:
-                continue
-            entity = self.entities.get(record.get("prov:entity"))
-            if entity:
-                role = record["prov:role"]["$"]
-                if single_tool and len(role.split("/")) > 2:
-                    continue
-                activity.in_params[role] = entity
-        for dummy, record in self.data.get("wasGeneratedBy", {}).items():
-            activity = self.activities.get(record.get("prov:activity"))
-            if not activity:
-                continue
-            entity = self.entities.get(record.get("prov:entity"))
-            if entity:
-                role = record["prov:role"]["$"]
-                # workflow output roles have a phantom "primary" step (cwltool bug?)
-                parts = role.split("/")
-                try:
-                    p = parts.pop(1)
-                    if p == "primary":
-                        role = "/".join(parts)
-                except IndexError:
-                    pass
-                if single_tool and len(parts) > 2:
-                    continue
-                activity.out_params[role] = entity
-
-    def __read_associations(self):
-        is_plan_for = {}
-        for dummy, record in self.data["wasAssociatedWith"].items():
-            activity = self.activities.get(record.get("prov:activity"))
-            if not activity:
-                continue
-            # TODO: agents; note that there can be many agents for an activity
-            plan_id = record.get("prov:plan")
-            plan = self.entities.get(plan_id)
-            if not plan:
-                plan = self.__get_plan_for_scatter_job(plan_id)
-            if plan:
-                activity.plan = plan  # assuming one plan per activity
-                is_plan_for.setdefault(plan.id_, []).append(activity)
-                activity.job_id = plan_id
-        for plan_id, activities in is_plan_for.items():
-            plan = self.entities.get(plan_id)
-            for act in activities:
-                for sp in plan.subprocesses:
-                    for step in is_plan_for[sp.id_]:
-                        act.steps.append(step)
-
-    def __get_plan_for_scatter_job(self, plan_id):
-        if not plan_id:
-            return None
-        m = SCATTER_JOB_PATTERN.match(plan_id)
-        if not m:
-            return None
-        return self.entities.get(m.groups()[0])
-
-    def __read_delegations(self):
-        for dummy, record in self.data.get("actedOnBehalfOf", {}).items():
-            delegate = self.agents.get(record.get("prov:delegate"))
-            if delegate:
-                delegate.responsible = self.agents.get(record.get("prov:responsible"))
-
-
 def get_workflow(wf_path):
     """\
     Read the packed CWL workflow.
@@ -530,16 +157,8 @@ class ProvCrateBuilder:
         self.cwl_defs = get_workflow(self.wf_path)
         self.step_maps = self._get_step_maps(self.cwl_defs)
         self.param_map = {}
-        self.prov = Provenance(self.root / "metadata" / "provenance" / "primary.cwlprov.json")
-        sel = [_ for _ in self.prov.agents.values() if type(_) == WorkflowEngine]
-        if len(sel) != 1:
-            raise ValueError(f"Unexpected number of workflow engines: {len(sel)}")
-        self.engine = sel[0]
-        sel = [_ for _ in self.prov.activities.values() if type(_) == WorkflowRun]
-        if len(sel) != 1:
-            raise ValueError(f"Unexpected number of workflow runs: {len(sel)}")
-        self.workflow_run = sel[0]
-        self.agent = getattr(self.engine.starter, "responsible", None)
+        self.prov = Provenance(ResearchObject(BDBag(str(root))))
+        self.workflow_run = self.prov.activity()
         # avoid duplicates - not handled by ro-crate-py, see
         # https://github.com/ResearchObject/ro-crate-py/issues/132
         self.control_actions = {}
@@ -561,7 +180,7 @@ class ProvCrateBuilder:
         crate = ROCrate(gen_preview=False)
         self.add_workflow(crate)
         self.add_engine_run(crate)
-        self.add_action(crate, self.workflow_run)
+        # self.add_action(crate, self.workflow_run)
         self.add_param_connections()
         return crate
 
@@ -628,30 +247,34 @@ class ProvCrateBuilder:
         return params
 
     def add_engine_run(self, crate):
+        # engine should be an agent, not an activity
+        engine = self.workflow_run.start().starter_activity()
         roc_engine = crate.add(SoftwareApplication(crate, properties={
-            "name": self.engine.label or "workflow engine"
+            "name": engine.label or "workflow engine"
         }))
         roc_engine_run = crate.add(ContextEntity(crate, properties={
             "@type": "OrganizeAction",
             "name": f"Run of {roc_engine['name']}",
-            "startTime": self.engine.start_time,
+            "startTime": engine.start().time.isoformat(),
         }))
         roc_engine_run["instrument"] = roc_engine
-        if isinstance(self.agent, Person):
-            agent_id = None
-            try:
-                prefix, ref = self.agent.id_.split(":", 1)
-            except ValueError:
-                pass
-            else:
-                if prefix == "orcid":
-                    agent_id = self.prov.prefixes.get("orcid", "https://orcid.org/") + ref
-                elif prefix == "id":
-                    agent_id = "#" + ref
-            roc_engine_run["agent"] = crate.add(ContextEntity(crate, agent_id, properties={
+        delegate = engine.start().starter_activity()
+        delegation = next(self.prov.record_with_attr(
+            prov.model.ProvDelegation, delegate.id, prov.model.PROV_ATTR_DELEGATE
+        ))
+        responsible = delegation.get_attribute(prov.model.PROV_ATTR_RESPONSIBLE)
+        agent = sum((self.prov.prov_doc.get_record(_) for _ in responsible), [])
+        for a in agent:
+            if "prov:Person" not in set(str(_) for _ in a.get_asserted_types()):
+                continue
+            agent_id = a.identifier.uri
+            if not agent_id.startswith("http"):
+                agent_id = "#" + agent_id.rsplit(":", 1)[-1]
+            ro_a = crate.add(ContextEntity(crate, agent_id, properties={
                 "@type": "Person",
-                "name": self.agent.name
+                "name": a.label
             }))
+            roc_engine_run.append_to("agent", ro_a, compact=True)
         crate.root_dataset["mentions"] = [roc_engine_run]
 
     def add_action(self, crate, activity, parent_instrument=None):
