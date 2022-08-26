@@ -17,6 +17,7 @@ Generate a Workflow Run RO-Crate from a CWLProv RO.
 """
 
 import argparse
+import hashlib
 import json
 import re
 from pathlib import Path
@@ -27,6 +28,7 @@ from bdbag.bdbagit import BDBag
 from cwl_utils.parser import load_document_by_yaml
 from cwlprov.ro import ResearchObject
 from cwlprov.prov import Provenance
+from cwlprov.utils import first
 from rocrate.rocrate import ROCrate
 from rocrate.model.contextentity import ContextEntity
 from rocrate.model.softwareapplication import SoftwareApplication
@@ -184,6 +186,15 @@ class ProvCrateBuilder:
                 plan = self.prov.entity(m.groups()[0])
         return plan
 
+    def _folder_contents(self, entity):
+        rval = {}
+        for qname in entity.record.get_attribute("prov:hadDictionaryMember"):
+            kvp = self.prov.entity(qname)
+            file_basename = first(kvp.record.get_attribute("prov:pairKey"))
+            file_entity_id = first(kvp.record.get_attribute("prov:pairEntity"))
+            rval[file_basename] = self.prov.entity(file_entity_id)
+        return rval
+
     def build(self):
         crate = ROCrate(gen_preview=False)
         self.add_workflow(crate)
@@ -266,10 +277,17 @@ class ProvCrateBuilder:
             "startTime": engine.start().time.isoformat(),
         }))
         roc_engine_run["instrument"] = roc_engine
+        self.add_agent(crate, roc_engine_run, engine)
+        crate.root_dataset["mentions"] = [roc_engine_run]
+
+    def add_agent(self, crate, roc_engine_run, engine):
         delegate = engine.start().starter_activity()
-        delegation = next(self.prov.record_with_attr(
-            prov.model.ProvDelegation, delegate.id, prov.model.PROV_ATTR_DELEGATE
-        ))
+        try:
+            delegation = next(self.prov.record_with_attr(
+                prov.model.ProvDelegation, delegate.id, prov.model.PROV_ATTR_DELEGATE
+            ))
+        except StopIteration:
+            return
         responsible = delegation.get_attribute(prov.model.PROV_ATTR_RESPONSIBLE)
         agent = sum((self.prov.prov_doc.get_record(_) for _ in responsible), [])
         for a in agent:
@@ -283,7 +301,6 @@ class ProvCrateBuilder:
                 "name": a.label
             }))
             roc_engine_run.append_to("agent", ro_a, compact=True)
-        crate.root_dataset["mentions"] = [roc_engine_run]
 
     def add_action(self, crate, activity, parent_instrument=None):
         workflow = crate.mainEntity
@@ -373,18 +390,25 @@ class ProvCrateBuilder:
                 action_p = crate.add_file(path, path.name)
             return action_p
         if "ro:Folder" in set(str(_) for _ in prov_param.types()):
-            raise RuntimeError("Folder support: TBD")
-            # action_p = crate.dereference(prov_param.basename)
-            # if not action_p:
-            #     action_p = crate.add_directory(prov_param.basename)
-            #     for pair in prov_param.dict_members:
-            #         path = pair.entity.get_path()
-            #         dest = Path(prov_param.basename) / path.name
-            #         part = crate.dereference(dest.as_posix())
-            #         if not part:
-            #             part = crate.add_file(self.root / path, dest)
-            #         action_p.append_to("hasPart", part)
-            # return action_p
+            hashes = []
+            for prov_file in self._folder_contents(prov_param).values():
+                hash_ = next(prov_file.specializationOf()).id.localpart
+                hashes.append(hash_)
+            m = hashlib.sha1()
+            m.update("".join(sorted(hashes)).encode())
+            basename = m.hexdigest()
+            action_p = crate.dereference(basename)
+            if not action_p:
+                action_p = crate.add_directory(basename)
+                for hash_ in hashes:
+                    path = self.root / Path("data") / hash_[:2] / hash_
+                    dest = Path(basename) / path.name
+                    part = crate.dereference(dest.as_posix())
+                    if not part:
+                        part = crate.add_file(self.root / path, dest)
+                    action_p.append_to("hasPart", part)
+            return action_p
+
         if prov_param.value:
             return str(prov_param.value)
         if "prov:Dictionary" in set(str(_) for _ in prov_param.types()):
