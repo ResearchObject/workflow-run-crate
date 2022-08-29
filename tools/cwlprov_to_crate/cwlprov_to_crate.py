@@ -279,7 +279,6 @@ class ProvCrateBuilder:
         return params
 
     def add_engine_run(self, crate):
-        # engine should be an agent, not an activity
         engine = self.workflow_run.start().starter_activity()
         roc_engine = crate.add(SoftwareApplication(crate, properties={
             "name": engine.label or "workflow engine"
@@ -362,16 +361,15 @@ class ProvCrateBuilder:
         action_params = []
         for rel in getattr(activity, ptype)():
             k = get_relative_uri(rel.role.uri)
-            # workflow output roles have a phantom "primary" step (cwltool bug?)
-            if ptype == "generation" and str(activity.type) == "wfprov:WorkflowRun":
-                if get_step_part(k) == "primary":
+            if str(activity.type) == "wfprov:WorkflowRun":
+                # workflow output roles have a phantom "primary" step (cwltool bug?)
+                if ptype == "generation" and get_step_part(k) == "primary":
                     parts = k.split("/", 2)
                     k = parts[0] + "/" + parts[2]
-            # In the case of a single tool run, cwltool reports one WorkflowRun
-            # and no ProcessRun. In this case, some parameters are duplicated and
-            # the duplicate's role has the original workflow name as the step part
-            if not list(activity.steps()) and str(activity.type) == "wfprov:WorkflowRun":
-                if get_step_part(k):
+                # In the case of a single tool run, cwltool reports one WorkflowRun
+                # and no ProcessRun. In this case, some parameters are duplicated and
+                # the duplicate's role has the original workflow name as the step part
+                if not list(activity.steps()) and get_step_part(k):
                     continue
             wf_p = crate.dereference(to_wf_p(k))
             k = get_fragment(k)
@@ -397,14 +395,15 @@ class ProvCrateBuilder:
         return action_params
 
     def convert_param(self, prov_param, crate):
-        if "wf4ever:File" in set(str(_) for _ in prov_param.types()):
+        type_names = frozenset(str(_) for _ in prov_param.types())
+        if "wf4ever:File" in type_names:
             hash_ = next(prov_param.specializationOf()).id.localpart
             path = self.root / Path("data") / hash_[:2] / hash_
             action_p = crate.dereference(path.name)
             if not action_p:
                 action_p = crate.add_file(path, path.name)
             return action_p
-        if "ro:Folder" in set(str(_) for _ in prov_param.types()):
+        if "ro:Folder" in type_names:
             hashes = []
             for prov_file in self.get_dict(prov_param).values():
                 hash_ = next(prov_file.specializationOf()).id.localpart
@@ -425,13 +424,13 @@ class ProvCrateBuilder:
             return action_p
         if prov_param.value:
             return str(prov_param.value)
-        if "prov:Dictionary" in set(str(_) for _ in prov_param.types()):
+        if "prov:Dictionary" in type_names:
             return dict(
                 (k, self.convert_param(v, crate))
                 for k, v in self.get_dict(prov_param).items()
                 if k != "@id"
             )
-        if "prov:Collection" in set(str(_) for _ in prov_param.types()):
+        if "prov:Collection" in type_names:
             return [self.convert_param(_, crate) for _ in self.get_members(prov_param)]
         raise RuntimeError(f"No value to convert for {prov_param}")
 
