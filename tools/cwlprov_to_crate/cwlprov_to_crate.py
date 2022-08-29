@@ -103,6 +103,12 @@ def get_relative_uri(uri):
     return f"{doc.rsplit('/', 1)[-1]}#{fragment}"
 
 
+def get_step_part(relative_uri):
+    parts = relative_uri.split("/", 2)
+    if len(parts) > 2:
+        return parts[1]
+
+
 def build_step_graph(cwl_wf):
     out_map = {}
     for s in cwl_wf.steps:
@@ -186,7 +192,14 @@ class ProvCrateBuilder:
                 plan = self.prov.entity(m.groups()[0])
         return plan
 
-    def _folder_contents(self, entity):
+    def get_members(self, entity):
+        membership = self.prov.record_with_attr(
+            prov.model.ProvMembership, entity.id, prov.model.PROV_ATTR_COLLECTION
+        )
+        member_ids = (_.get_attribute(prov.model.PROV_ATTR_ENTITY) for _ in membership)
+        return (self.prov.entity(first(_)) for _ in member_ids)
+
+    def get_dict(self, entity):
         rval = {}
         for qname in entity.record.get_attribute("prov:hadDictionaryMember"):
             kvp = self.prov.entity(qname)
@@ -351,13 +364,15 @@ class ProvCrateBuilder:
             k = get_relative_uri(rel.role.uri)
             # workflow output roles have a phantom "primary" step (cwltool bug?)
             if ptype == "generation" and str(activity.type) == "wfprov:WorkflowRun":
-                parts = k.split("/")
-                try:
-                    second = parts.pop(1)
-                    if second == "primary":
-                        k = "/".join(parts)
-                except IndexError:
-                    pass
+                if get_step_part(k) == "primary":
+                    parts = k.split("/", 2)
+                    k = parts[0] + "/" + parts[2]
+            # In the case of a single tool run, cwltool reports one WorkflowRun
+            # and no ProcessRun. In this case, some parameters are duplicated and
+            # the duplicate's role has the original workflow name as the step part
+            if not list(activity.steps()) and str(activity.type) == "wfprov:WorkflowRun":
+                if get_step_part(k):
+                    continue
             wf_p = crate.dereference(to_wf_p(k))
             k = get_fragment(k)
             v = rel.entity()
@@ -391,7 +406,7 @@ class ProvCrateBuilder:
             return action_p
         if "ro:Folder" in set(str(_) for _ in prov_param.types()):
             hashes = []
-            for prov_file in self._folder_contents(prov_param).values():
+            for prov_file in self.get_dict(prov_param).values():
                 hash_ = next(prov_file.specializationOf()).id.localpart
                 hashes.append(hash_)
             m = hashlib.sha1()
@@ -408,18 +423,16 @@ class ProvCrateBuilder:
                         part = crate.add_file(self.root / path, dest)
                     action_p.append_to("hasPart", part)
             return action_p
-
         if prov_param.value:
             return str(prov_param.value)
         if "prov:Dictionary" in set(str(_) for _ in prov_param.types()):
-            raise RuntimeError("Dictionary support: TBD")
-            # return dict(
-            #     (_.key, self.convert_param(_.entity, crate))
-            #     for _ in prov_param.dict_members if _.key != "@id"
-            # )
+            return dict(
+                (k, self.convert_param(v, crate))
+                for k, v in self.get_dict(prov_param).items()
+                if k != "@id"
+            )
         if "prov:Collection" in set(str(_) for _ in prov_param.types()):
-            raise RuntimeError("Collection support: TBD")
-            # return [self.convert_param(_, crate) for _ in prov_param.members]
+            return [self.convert_param(_, crate) for _ in self.get_members(prov_param)]
         raise RuntimeError(f"No value to convert for {prov_param}")
 
     def add_param_connections(self):
@@ -457,7 +470,6 @@ def main(args):
     args.root = Path(args.root)
     if not args.output:
         args.output = f"{args.root.name}.crate.zip"
-    print(f"generating {args.output}")
     args.output = Path(args.output)
     builder = ProvCrateBuilder(args.root, args.workflow_name, args.license)
     crate = builder.build()
