@@ -419,12 +419,12 @@ def test_no_output(data_dir, tmpdir):
     # file contents
     text_7mb7 = (args.root / "data/4b/4b22356928446475c8ae5869968c9777374a76e8").read_text()
     text_7zxf = (args.root / "data/4e/4ebd7d222d9b6095fa96ee395905ce7f6d415381").read_text()
-    assert [(args.output / _.id).read_text() for _ in array_files] == [text_7mb7, text_7zxf]
+    assert set((args.output / _.id).read_text() for _ in array_files) == {text_7mb7, text_7zxf}
     text_sabdab = (args.root / "data/5e/5e026d2a039e60827d3834596a8c30256aa85e57").read_text()
     assert (args.output / in_file.id).read_text() == text_sabdab
     text_1ahw = (args.root / "data/bc/bc2f32ad8584e85e6e3b184a6dc565bdd6571821").read_text()
     text_1kip = (args.root / "data/da/da261f1082f318fbda173dc3228d7475433fd886").read_text()
-    assert [(args.output / _.id).read_text() for _ in dir_files] == [text_1ahw, text_1kip]
+    assert set((args.output / _.id).read_text() for _ in dir_files) == {text_1ahw, text_1kip}
 
 
 def test_scatter_pvs(data_dir, tmpdir):
