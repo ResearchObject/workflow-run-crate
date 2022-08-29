@@ -200,13 +200,13 @@ class ProvCrateBuilder:
         return (self.prov.entity(first(_)) for _ in member_ids)
 
     def get_dict(self, entity):
-        rval = {}
+        d = {}
         for qname in entity.record.get_attribute("prov:hadDictionaryMember"):
             kvp = self.prov.entity(qname)
-            file_basename = first(kvp.record.get_attribute("prov:pairKey"))
-            file_entity_id = first(kvp.record.get_attribute("prov:pairEntity"))
-            rval[file_basename] = self.prov.entity(file_entity_id)
-        return rval
+            key = first(kvp.record.get_attribute("prov:pairKey"))
+            entity_id = first(kvp.record.get_attribute("prov:pairEntity"))
+            d[key] = self.prov.entity(entity_id)
+        return d
 
     def build(self):
         crate = ROCrate(gen_preview=False)
