@@ -56,13 +56,13 @@ def test_revsort(data_dir, tmpdir):
     sel = [_ for _ in crate.contextual_entities if "OrganizeAction" in _.type]
     assert len(sel) == 1
     engine_action = sel[0]
-    assert crate.root_dataset["mentions"] == [engine_action]
     assert "SoftwareApplication" in engine_action["instrument"].type
     actions = [_ for _ in crate.contextual_entities if "CreateAction" in _.type]
     assert len(actions) == 3
     sel = [_ for _ in actions if _["instrument"] is workflow]
     assert len(sel) == 1
     wf_action = sel[0]
+    assert crate.root_dataset["mentions"] == [wf_action]
     assert engine_action["result"] is wf_action
     control_actions = engine_action["object"]
     assert len(control_actions) == 2
@@ -155,10 +155,10 @@ def test_no_input(data_dir, tmpdir):
     sel = [_ for _ in crate.contextual_entities if "OrganizeAction" in _.type]
     assert len(sel) == 1
     engine_action = sel[0]
-    assert crate.root_dataset["mentions"] == [engine_action]
     actions = [_ for _ in crate.contextual_entities if "CreateAction" in _.type]
     assert len(actions) == 1
     wf_action = actions[0]
+    assert crate.root_dataset["mentions"] == [wf_action]
     assert engine_action["result"] is wf_action
     assert not wf_action.get("object")
     wf_results = wf_action["result"]
@@ -342,13 +342,13 @@ def test_no_output(data_dir, tmpdir):
     sel = [_ for _ in crate.contextual_entities if "OrganizeAction" in _.type]
     assert len(sel) == 1
     engine_action = sel[0]
-    assert crate.root_dataset["mentions"] == [engine_action]
     assert "SoftwareApplication" in engine_action["instrument"].type
     actions = [_ for _ in crate.contextual_entities if "CreateAction" in _.type]
     assert len(actions) == 5
     sel = [_ for _ in actions if _["instrument"] is workflow]
     assert len(sel) == 1
     wf_action = sel[0]
+    assert crate.root_dataset["mentions"] == [wf_action]
     assert engine_action["result"] is wf_action
     control_actions = engine_action["object"]
     assert len(control_actions) == 3
