@@ -4,7 +4,7 @@
         {
             "@id": "./",
             "@type": "Dataset",
-            "datePublished": "2022-08-02T08:42:07+00:00",
+            "datePublished": "2022-08-31T14:28:24+00:00",
             "hasPart": [
                 {
                     "@id": "packed.cwl"
@@ -24,7 +24,7 @@
             },
             "mentions": [
                 {
-                    "@id": "#45323ad2-ab56-4337-85b9-886d415abc95"
+                    "@id": "#4154dad3-00cc-4e35-bb8f-a2de5cd7dc49"
                 }
             ]
         },
@@ -213,30 +213,30 @@
             "name": "sorttool.cwl/output"
         },
         {
-            "@id": "#80f45e85-7c24-492a-ba55-19ba6394dbee",
+            "@id": "#a73fd902-8d14-48c9-835b-a5ba2f9149fd",
             "@type": "SoftwareApplication",
             "name": "cwltool 1.0.20181012180214"
         },
         {
-            "@id": "#45323ad2-ab56-4337-85b9-886d415abc95",
+            "@id": "#d6ab3175-88f5-4b6a-b028-1b13e6d1a158",
             "@type": "OrganizeAction",
             "agent": {
                 "@id": "https://orcid.org/0000-0001-9842-9718"
             },
             "instrument": {
-                "@id": "#80f45e85-7c24-492a-ba55-19ba6394dbee"
+                "@id": "#a73fd902-8d14-48c9-835b-a5ba2f9149fd"
             },
             "name": "Run of cwltool 1.0.20181012180214",
             "object": [
                 {
-                    "@id": "#ca859989-7afa-4a3b-b541-79aa8783162b"
+                    "@id": "#4f7f887f-1b9b-4417-9beb-58618a125cc5"
                 },
                 {
-                    "@id": "#b813b869-9527-4aa4-af75-bcf2a507daa5"
+                    "@id": "#793b3df4-cbb7-4d17-94d4-0edb18566ed3"
                 }
             ],
             "result": {
-                "@id": "#6e833285-3880-48f8-aab1-a8d8550b78c7"
+                "@id": "#4154dad3-00cc-4e35-bb8f-a2de5cd7dc49"
             },
             "startTime": "2018-10-25T15:46:35.210973"
         },
@@ -246,7 +246,7 @@
             "name": "Stian Soiland-Reyes"
         },
         {
-            "@id": "#6e833285-3880-48f8-aab1-a8d8550b78c7",
+            "@id": "#4154dad3-00cc-4e35-bb8f-a2de5cd7dc49",
             "@type": "CreateAction",
             "endTime": "2018-10-25T15:46:43.020168",
             "instrument": {
@@ -302,7 +302,7 @@
             ]
         },
         {
-            "@id": "#7e6f4179-7231-47f9-97e9-5fd045f57d9c",
+            "@id": "#6933cce1-f8f0-4032-8848-e0fc9166e92f",
             "@type": "CreateAction",
             "endTime": "2018-10-25T15:46:36.967359",
             "instrument": {
@@ -322,14 +322,14 @@
             "startTime": "2018-10-25T15:46:35.314101"
         },
         {
-            "@id": "#ca859989-7afa-4a3b-b541-79aa8783162b",
+            "@id": "#4f7f887f-1b9b-4417-9beb-58618a125cc5",
             "@type": "ControlAction",
             "instrument": {
                 "@id": "packed.cwl#main/rev"
             },
             "name": "orchestrate revtool.cwl",
             "object": {
-                "@id": "#7e6f4179-7231-47f9-97e9-5fd045f57d9c"
+                "@id": "#6933cce1-f8f0-4032-8848-e0fc9166e92f"
             }
         },
         {
@@ -345,7 +345,7 @@
             ]
         },
         {
-            "@id": "#1a77a256-4114-472a-ab62-7c85fab6fb37",
+            "@id": "#9eac64b2-c2c8-401f-9af8-7cfb0e998107",
             "@type": "CreateAction",
             "endTime": "2018-10-25T15:46:38.069110",
             "instrument": {
@@ -368,14 +368,14 @@
             "startTime": "2018-10-25T15:46:36.975235"
         },
         {
-            "@id": "#b813b869-9527-4aa4-af75-bcf2a507daa5",
+            "@id": "#793b3df4-cbb7-4d17-94d4-0edb18566ed3",
             "@type": "ControlAction",
             "instrument": {
                 "@id": "packed.cwl#main/sorted"
             },
             "name": "orchestrate sorttool.cwl",
             "object": {
-                "@id": "#1a77a256-4114-472a-ab62-7c85fab6fb37"
+                "@id": "#9eac64b2-c2c8-401f-9af8-7cfb0e998107"
             }
         },
         {

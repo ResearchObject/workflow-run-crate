@@ -167,6 +167,7 @@ class ProvCrateBuilder:
         self.param_map = {}
         self.prov = Provenance(ResearchObject(BDBag(str(root))))
         self.workflow_run = self.prov.activity()
+        self.roc_engine_run = None
         # avoid duplicates - not handled by ro-crate-py, see
         # https://github.com/ResearchObject/ro-crate-py/issues/132
         self.control_actions = {}
@@ -290,7 +291,7 @@ class ProvCrateBuilder:
         }))
         roc_engine_run["instrument"] = roc_engine
         self.add_agent(crate, roc_engine_run, engine)
-        crate.root_dataset["mentions"] = [roc_engine_run]
+        self.roc_engine_run = roc_engine_run
 
     def add_agent(self, crate, roc_engine_run, engine):
         delegate = engine.start().starter_activity()
@@ -316,7 +317,6 @@ class ProvCrateBuilder:
 
     def add_action(self, crate, activity, parent_instrument=None):
         workflow = crate.mainEntity
-        roc_engine_run = crate.root_dataset["mentions"][0]
         action = crate.add(ContextEntity(crate, properties={
             "@type": "CreateAction",
             "name": activity.label,
@@ -330,7 +330,8 @@ class ProvCrateBuilder:
             if plan_tag != "main":
                 raise RuntimeError("sub-workflows not supported yet")
             instrument = workflow
-            roc_engine_run["result"] = action
+            self.roc_engine_run["result"] = action
+            crate.root_dataset["mentions"] = [action]
 
             def to_wf_p(k):
                 return k
@@ -345,7 +346,7 @@ class ProvCrateBuilder:
                 }))
                 step = crate.dereference(f"{workflow.id}#{plan_tag}")
                 control_action["instrument"] = step
-                roc_engine_run.append_to("object", control_action, compact=True)
+                self.roc_engine_run.append_to("object", control_action, compact=True)
                 self.control_actions[plan_tag] = control_action
             control_action.append_to("object", action, compact=True)
 
