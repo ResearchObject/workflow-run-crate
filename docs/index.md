@@ -39,6 +39,9 @@ Post [here](https://github.com/ResearchObject/workflow-run-crate/issues/1) to jo
 - Kevin Jablonka <https://orcid.org/0000-0003-4894-4660>
 - Haris Zafeiropoulos <https://orcid.org/0000-0002-4405-6802>
 - Iacopo Colonnelli <https://orcid.org/0000-0001-9290-2017>
+- Jake Emerson <https://orcid.org/0000-0003-0617-9219>
+- Abigail Miller <https://orcid.org/0000-0001-9228-2882>
+- Stelios Ninidakis <https://orcid.org/0000-0003-3898-9451>
 - ... [you](https://github.com/ResearchObject/workflow-run-crate/issues/1)?
 
 
