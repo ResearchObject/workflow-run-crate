@@ -157,15 +157,20 @@ def get_workflow(wf_path):
 
 class ProvCrateBuilder:
 
-    def __init__(self, root, workflow_name=None, license=None):
+    def __init__(self, root, workflow_name=None, license=None, prov=None):
         self.root = Path(root)
         self.workflow_name = workflow_name
         self.license = license
         self.wf_path = self.root / "workflow" / WORKFLOW_BASENAME
-        self.cwl_defs = get_workflow(self.wf_path)
-        self.step_maps = self._get_step_maps(self.cwl_defs)
+        # self.cwl_defs = get_workflow(self.wf_path)
+        # self.step_maps = self._get_step_maps(self.cwl_defs)
         self.param_map = {}
-        self.prov = Provenance(ResearchObject(BDBag(str(root))))
+        if not prov:
+            self.prov = Provenance(ResearchObject(BDBag(str(root))))
+        else:
+            self.prov = prov
+
+        print(type(self.prov))
         self.workflow_run = self.prov.activity()
         self.roc_engine_run = None
         # avoid duplicates - not handled by ro-crate-py, see
