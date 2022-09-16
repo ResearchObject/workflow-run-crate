@@ -42,6 +42,8 @@ Post [here](https://github.com/ResearchObject/workflow-run-crate/issues/1) to jo
 - Jake Emerson <https://orcid.org/0000-0003-0617-9219>
 - Abigail Miller <https://orcid.org/0000-0001-9228-2882>
 - Stelios Ninidakis <https://orcid.org/0000-0003-3898-9451>
+- Tazro Ohta <https://orcid.org/0000-0003-3777-5945>
+- Hirotaka Suetake <https://orcid.org/0000-0003-2765-0049>
 - ... [you](https://github.com/ResearchObject/workflow-run-crate/issues/1)?
 
 
