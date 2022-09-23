@@ -233,17 +233,20 @@ class ProvCrateBuilder:
         workflow["input"] = self.add_params(crate, cwl_workflow.inputs)
         workflow["output"] = self.add_params(crate, cwl_workflow.outputs)
         for s in getattr(cwl_workflow, "steps", []):
-            step_fragment = get_fragment(s.id)
-            step_id = f"{workflow.id}#{step_fragment}"
-            pos = self.step_maps[workflow.id][step_fragment]["pos"]
-            step = crate.add(ContextEntity(crate, step_id, properties={
-                "@type": "HowToStep",
-                "position": str(pos),
-            }))
-            tool = self.add_tool(crate, workflow, s.run)
-            step["workExample"] = tool
-            workflow.append_to("step", step)
+            self.add_step(crate, workflow, s)
         return workflow
+
+    def add_step(self, crate, workflow, cwl_step):
+        step_fragment = get_fragment(cwl_step.id)
+        step_id = f"{workflow.id}#{step_fragment}"
+        pos = self.step_maps[get_fragment(workflow.id)][step_fragment]["pos"]
+        step = crate.add(ContextEntity(crate, step_id, properties={
+            "@type": "HowToStep",
+            "position": str(pos),
+        }))
+        tool = self.add_tool(crate, workflow, cwl_step.run)
+        step["workExample"] = tool
+        workflow.append_to("step", step)
 
     def add_tool(self, crate, workflow, cwl_tool):
         if isinstance(cwl_tool, str):
@@ -251,21 +254,27 @@ class ProvCrateBuilder:
             cwl_tool = self.cwl_defs[tool_fragment]
         else:
             tool_fragment = get_fragment(cwl_tool.id)
+        if hasattr(cwl_tool, "expression"):
+            raise RuntimeError("ExpressionTool not supported yet")
         tool_id = f"{workflow.id}#{tool_fragment}"
         tool = crate.dereference(tool_id)
         if tool:
             return tool
-        if hasattr(cwl_tool, "steps"):
-            raise RuntimeError("subworkflows not supported yet")
-        if hasattr(cwl_tool, "expression"):
-            raise RuntimeError("ExpressionTool not supported yet")
         properties = {"name": tool_fragment}
         if cwl_tool.doc:
             properties["description"] = cwl_tool.doc
-        tool = crate.add(SoftwareApplication(crate, tool_id, properties=properties))
+        if hasattr(cwl_tool, "steps"):
+            properties["@type"] = ["SoftwareSourceCode", "ComputationalWorkflow", "HowTo"]
+        else:
+            properties["@type"] = "SoftwareApplication"
+        tool = crate.add(ContextEntity(crate, tool_id, properties=properties))
         tool["input"] = self.add_params(crate, cwl_tool.inputs)
         tool["output"] = self.add_params(crate, cwl_tool.outputs)
         workflow.append_to("hasPart", tool)
+        if hasattr(cwl_tool, "steps"):
+            tool["programmingLanguage"] = workflow["programmingLanguage"]
+            for s in getattr(cwl_tool, "steps", []):
+                self.add_step(crate, tool, s)
         return tool
 
     def add_params(self, crate, cwl_params):
