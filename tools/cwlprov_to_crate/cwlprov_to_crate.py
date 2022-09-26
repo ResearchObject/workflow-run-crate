@@ -165,7 +165,9 @@ class ProvCrateBuilder:
         self.cwl_defs = get_workflow(self.wf_path)
         self.step_maps = self._get_step_maps(self.cwl_defs)
         self.param_map = {}
-        self.prov = Provenance(ResearchObject(BDBag(str(root))))
+        self.ro = ResearchObject(BDBag(str(root)))
+        self.with_prov = set(str(_) for _ in self.ro.resources_with_provenance())
+        self.prov = Provenance(self.ro)
         self.workflow_run = self.prov.activity()
         self.roc_engine_run = None
         # avoid duplicates - not handled by ro-crate-py, see
@@ -185,12 +187,13 @@ class ProvCrateBuilder:
                     rval[k][f] = {"tool": get_fragment(s.run), "pos": pos_map[f]}
         return rval
 
-    def _resolve_plan(self, job_qname):
-        plan = self.prov.entity(job_qname)
+    def _resolve_plan(self, activity):
+        job_qname = activity.plan()
+        plan = activity.provenance.entity(job_qname)
         if not plan:
             m = SCATTER_JOB_PATTERN.match(str(job_qname))
             if m:
-                plan = self.prov.entity(m.groups()[0])
+                plan = activity.provenance.entity(m.groups()[0])
         return plan
 
     def get_members(self, entity):
@@ -214,7 +217,7 @@ class ProvCrateBuilder:
         self.add_workflow(crate)
         self.add_engine_run(crate)
         self.add_action(crate, self.workflow_run)
-        self.add_param_connections()
+        # self.add_param_connections()
         return crate
 
     def add_workflow(self, crate):
@@ -325,19 +328,21 @@ class ProvCrateBuilder:
             roc_engine_run.append_to("agent", ro_a, compact=True)
 
     def add_action(self, crate, activity, parent_instrument=None):
+        print("add_action for:", repr(activity.label))
         workflow = crate.mainEntity
         action = crate.add(ContextEntity(crate, properties={
             "@type": "CreateAction",
             "name": activity.label,
-            "startTime": activity.start().time.isoformat(),
-            "endTime": activity.end().time.isoformat(),
+            # "startTime": activity.start().time.isoformat(),
+            # "endTime": activity.end().time.isoformat(),
         }))
-        job_qname = activity.plan()
-        plan = self._resolve_plan(job_qname)
+        # job_qname = activity.plan()
+        # plan = self._resolve_plan(job_qname)
+        plan = self._resolve_plan(activity)
         plan_tag = plan.id.localpart
-        if str(activity.type) == "wfprov:WorkflowRun":
-            if plan_tag != "main":
-                raise RuntimeError("sub-workflows not supported yet")
+        print("plan_tag:", plan_tag)
+        if plan_tag == "main":
+            assert str(activity.type) == "wfprov:WorkflowRun"
             instrument = workflow
             self.roc_engine_run["result"] = action
             crate.root_dataset["mentions"] = [action]
@@ -347,6 +352,7 @@ class ProvCrateBuilder:
         else:
             tool_name = self.step_maps[parent_instrument.id][plan_tag]["tool"]
             instrument = crate.dereference(f"{workflow.id}#{tool_name}")
+            print(" ", tool_name, instrument)
             control_action = self.control_actions.get(plan_tag)
             if not control_action:
                 control_action = crate.add(ContextEntity(crate, properties={
@@ -358,9 +364,13 @@ class ProvCrateBuilder:
                 self.roc_engine_run.append_to("object", control_action, compact=True)
                 self.control_actions[plan_tag] = control_action
             control_action.append_to("object", action, compact=True)
+            if activity.uri in self.with_prov:
+                nested_prov = Provenance(self.ro, activity.uri)
+                activity = nested_prov.activity()
+                print("  run_id:", nested_prov.run_id)
 
             def to_wf_p(k):
-                return k.replace(job_qname.localpart, tool_name)
+                return k.replace(activity.plan().localpart, tool_name)
         action["instrument"] = instrument
         action["object"] = self.add_action_params(crate, activity, to_wf_p, "usage")
         action["result"] = self.add_action_params(crate, activity, to_wf_p, "generation")
@@ -369,11 +379,12 @@ class ProvCrateBuilder:
 
     def add_action_params(self, crate, activity, to_wf_p, ptype="usage"):
         action_params = []
+        print(activity.label)
         for rel in getattr(activity, ptype)():
             k = get_relative_uri(rel.role.uri)
             if str(activity.type) == "wfprov:WorkflowRun":
-                # workflow output roles have a phantom "primary" step (cwltool bug?)
-                if ptype == "generation" and get_step_part(k) == "primary":
+                # workflow output roles have a phantom step part
+                if ptype == "generation":
                     parts = k.split("/", 2)
                     k = parts[0] + "/" + parts[2]
                 # In the case of a single tool run, cwltool reports one WorkflowRun
@@ -382,8 +393,10 @@ class ProvCrateBuilder:
                 if not list(activity.steps()) and get_step_part(k):
                     continue
             wf_p = crate.dereference(to_wf_p(k))
+            print("  k =", k, "| wf_p =", wf_p)
             k = get_fragment(k)
             v = rel.entity()
+            print("  v =", v)
             value = self.convert_param(v, crate)
             if {"ro:Folder", "wf4ever:File"} & set(str(_) for _ in v.types()):
                 action_p = value
@@ -432,7 +445,7 @@ class ProvCrateBuilder:
                         part = crate.add_file(self.root / path, dest)
                     action_p.append_to("hasPart", part)
             return action_p
-        if prov_param.value:
+        if prov_param.value is not None:
             return str(prov_param.value)
         if "prov:Dictionary" in type_names:
             return dict(
