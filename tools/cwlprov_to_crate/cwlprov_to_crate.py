@@ -238,7 +238,7 @@ class ProvCrateBuilder:
 
     def add_step(self, crate, workflow, cwl_step):
         step_fragment = get_fragment(cwl_step.id)
-        step_id = f"{workflow.id}#{step_fragment}"
+        step_id = f"{self.wf_path.name}#{step_fragment}"
         pos = self.step_maps[get_fragment(workflow.id)][step_fragment]["pos"]
         step = crate.add(ContextEntity(crate, step_id, properties={
             "@type": "HowToStep",
@@ -256,7 +256,7 @@ class ProvCrateBuilder:
             tool_fragment = get_fragment(cwl_tool.id)
         if hasattr(cwl_tool, "expression"):
             raise RuntimeError("ExpressionTool not supported yet")
-        tool_id = f"{workflow.id}#{tool_fragment}"
+        tool_id = f"{self.wf_path.name}#{tool_fragment}"
         tool = crate.dereference(tool_id)
         if tool:
             return tool
