@@ -1,0 +1,260 @@
+{
+  "prefix": {
+    "wfprov": "http://purl.org/wf4ever/wfprov#",
+    "wfdesc": "http://purl.org/wf4ever/wfdesc#",
+    "cwlprov": "https://w3id.org/cwl/prov#",
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "schema": "http://schema.org/",
+    "orcid": "https://orcid.org/",
+    "id": "urn:uuid:",
+    "data": "urn:hash::sha1:",
+    "provenance": "arcp://uuid,bb496c98-0c72-419a-b957-cdbae2a976cf/metadata/provenance/",
+    "wf": "arcp://uuid,bb496c98-0c72-419a-b957-cdbae2a976cf/ga_export/",
+    "input": "arcp://uuid,bb496c98-0c72-419a-b957-cdbae2a976cf/ga_export/datasets#",
+    "wf4ever": "http://purl.org/wf4ever/wf4ever#"
+  },
+  "agent": {
+    "id:86ba4adb-2a7e-44f9-9213-7c608900761b": {},
+    "id:e97d7525-adad-486b-9012-b372ff83fb62": {
+      "prov:type": [
+        {
+          "$": "prov:SoftwareAgent",
+          "type": "prov:QUALIFIED_NAME"
+        },
+        {
+          "$": "wfprov:WorkflowEngine",
+          "type": "prov:QUALIFIED_NAME"
+        }
+      ],
+      "prov:label": "galaxy_version_placeholder"
+    }
+  },
+  "wasStartedBy": {
+    "_:id1": {
+      "prov:activity": "id:e97d7525-adad-486b-9012-b372ff83fb62",
+      "prov:starter": "id:86ba4adb-2a7e-44f9-9213-7c608900761b",
+      "prov:time": "2022-09-13T21:49:02.769067"
+    },
+    "_:id3": {
+      "prov:activity": "id:42f21c0a-d410-11eb-87de-fa163eba836f",
+      "prov:starter": "id:e97d7525-adad-486b-9012-b372ff83fb62",
+      "prov:time": "2022-09-13T21:49:02.769126"
+    },
+    "_:id5": {
+      "prov:activity": "id:6e4054f6-9670-468d-9dcc-08b2d879159c",
+      "prov:starter": "id:42f21c0a-d410-11eb-87de-fa163eba836f",
+      "prov:time": "2021-06-23T10:20:22.770291"
+    },
+    "_:id8": {
+      "prov:activity": "id:55bc7b4d-0137-4d47-8e5b-1d49d6f1fbc2",
+      "prov:starter": "id:42f21c0a-d410-11eb-87de-fa163eba836f",
+      "prov:time": "2021-06-23T10:20:00.981702"
+    },
+    "_:id11": {
+      "prov:activity": "id:d8aec41c-f112-4eb9-b231-c03e411b38de",
+      "prov:starter": "id:42f21c0a-d410-11eb-87de-fa163eba836f",
+      "prov:time": "2021-06-23T10:46:28.351123"
+    },
+    "_:id16": {
+      "prov:activity": "id:8ae68928-b7d5-435c-9fb5-847d59f41543",
+      "prov:starter": "id:42f21c0a-d410-11eb-87de-fa163eba836f",
+      "prov:time": "2021-06-23T10:46:28.526901"
+    }
+  },
+  "activity": {
+    "id:42f21c0a-d410-11eb-87de-fa163eba836f": {
+      "prov:startTime": "2022-09-13T21:49:02.769087",
+      "prov:type": {
+        "$": "wfprov:WorkflowRun",
+        "type": "prov:QUALIFIED_NAME"
+      },
+      "prov:label": "Run of galaxy workflow"
+    },
+    "id:6e4054f6-9670-468d-9dcc-08b2d879159c": {
+      "prov:startTime": "2021-06-23T10:20:22.770291",
+      "prov:endTime": "2021-06-23T10:20:42.041319",
+      "prov:type": {
+        "$": "wfprov:ProcessRun",
+        "type": "prov:QUALIFIED_NAME"
+      },
+      "prov:label": "Run of __DATA_FETCH__"
+    },
+    "id:55bc7b4d-0137-4d47-8e5b-1d49d6f1fbc2": {
+      "prov:startTime": "2021-06-23T10:20:00.981702",
+      "prov:endTime": "2021-06-23T10:20:22.202678",
+      "prov:type": {
+        "$": "wfprov:ProcessRun",
+        "type": "prov:QUALIFIED_NAME"
+      },
+      "prov:label": "Run of __DATA_FETCH__"
+    },
+    "id:d8aec41c-f112-4eb9-b231-c03e411b38de": {
+      "prov:startTime": "2021-06-23T10:46:28.351123",
+      "prov:endTime": "2021-06-23T10:46:44.738703",
+      "prov:type": {
+        "$": "wfprov:ProcessRun",
+        "type": "prov:QUALIFIED_NAME"
+      },
+      "prov:label": "Run of cat1"
+    },
+    "id:8ae68928-b7d5-435c-9fb5-847d59f41543": {
+      "prov:startTime": "2021-06-23T10:46:28.526901",
+      "prov:endTime": "2021-06-23T10:47:04.837750",
+      "prov:type": {
+        "$": "wfprov:ProcessRun",
+        "type": "prov:QUALIFIED_NAME"
+      },
+      "prov:label": "Run of random_lines1"
+    }
+  },
+  "wasAssociatedWith": {
+    "_:id2": {
+      "prov:activity": "id:42f21c0a-d410-11eb-87de-fa163eba836f",
+      "prov:agent": "id:e97d7525-adad-486b-9012-b372ff83fb62",
+      "prov:plan": "wf:main"
+    },
+    "_:id4": {
+      "prov:activity": "id:6e4054f6-9670-468d-9dcc-08b2d879159c",
+      "prov:agent": "id:e97d7525-adad-486b-9012-b372ff83fb62",
+      "prov:plan": "wf:main/__DATA_FETCH__"
+    },
+    "_:id7": {
+      "prov:activity": "id:55bc7b4d-0137-4d47-8e5b-1d49d6f1fbc2",
+      "prov:agent": "id:e97d7525-adad-486b-9012-b372ff83fb62",
+      "prov:plan": "wf:main/__DATA_FETCH__"
+    },
+    "_:id10": {
+      "prov:activity": "id:d8aec41c-f112-4eb9-b231-c03e411b38de",
+      "prov:agent": "id:e97d7525-adad-486b-9012-b372ff83fb62",
+      "prov:plan": "wf:main/cat1"
+    },
+    "_:id15": {
+      "prov:activity": "id:8ae68928-b7d5-435c-9fb5-847d59f41543",
+      "prov:agent": "id:e97d7525-adad-486b-9012-b372ff83fb62",
+      "prov:plan": "wf:main/random_lines1"
+    }
+  },
+  "entity": {
+    "id:18e78952-9447-4215-942c-542c35250d20": {
+      "prov:type": [
+        {
+          "$": "wfprov:Artifact",
+          "type": "prov:QUALIFIED_NAME"
+        },
+        {
+          "$": "wf4ever:File",
+          "type": "prov:QUALIFIED_NAME"
+        }
+      ],
+      "cwlprov:basename": "dataset2.txt",
+      "cwlprov:nameext": "txt"
+    },
+    "id:6b0af26e-574c-475a-bb6d-1b4df9f137d8": {
+      "prov:type": [
+        {
+          "$": "wfprov:Artifact",
+          "type": "prov:QUALIFIED_NAME"
+        },
+        {
+          "$": "wf4ever:File",
+          "type": "prov:QUALIFIED_NAME"
+        }
+      ],
+      "cwlprov:basename": "dataset1.txt",
+      "cwlprov:nameext": "txt"
+    },
+    "id:cf936245-b1d6-4840-b79d-2e20af74b921": {
+      "prov:type": [
+        {
+          "$": "wfprov:Artifact",
+          "type": "prov:QUALIFIED_NAME"
+        },
+        {
+          "$": "wf4ever:File",
+          "type": "prov:QUALIFIED_NAME"
+        }
+      ],
+      "cwlprov:basename": "Concatenate datasets on data 2 and data 1",
+      "cwlprov:nameext": "txt"
+    },
+    "id:d9b5abdc-2a54-4fb7-b3df-1f05e9f2399a": {
+      "prov:type": [
+        {
+          "$": "wfprov:Artifact",
+          "type": "prov:QUALIFIED_NAME"
+        },
+        {
+          "$": "wf4ever:File",
+          "type": "prov:QUALIFIED_NAME"
+        }
+      ],
+      "cwlprov:basename": "tutorial_output.txt",
+      "cwlprov:nameext": "txt"
+    }
+  },
+  "used": {
+    "_:id6": {
+      "prov:activity": "id:6e4054f6-9670-468d-9dcc-08b2d879159c",
+      "prov:entity": "id:18e78952-9447-4215-942c-542c35250d20",
+      "prov:time": "2022-09-13T21:49:02.769973",
+      "prov:role": {
+        "$": "wf:main/__DATA_FETCH__/output0",
+        "type": "prov:QUALIFIED_NAME"
+      }
+    },
+    "_:id9": {
+      "prov:activity": "id:55bc7b4d-0137-4d47-8e5b-1d49d6f1fbc2",
+      "prov:entity": "id:6b0af26e-574c-475a-bb6d-1b4df9f137d8",
+      "prov:time": "2022-09-13T21:49:02.770411",
+      "prov:role": {
+        "$": "wf:main/__DATA_FETCH__/output0",
+        "type": "prov:QUALIFIED_NAME"
+      }
+    },
+    "_:id12": {
+      "prov:activity": "id:d8aec41c-f112-4eb9-b231-c03e411b38de",
+      "prov:entity": "id:18e78952-9447-4215-942c-542c35250d20",
+      "prov:time": "2022-09-13T21:49:02.770797",
+      "prov:role": {
+        "$": "wf:main/cat1/input1",
+        "type": "prov:QUALIFIED_NAME"
+      }
+    },
+    "_:id13": {
+      "prov:activity": "id:d8aec41c-f112-4eb9-b231-c03e411b38de",
+      "prov:entity": "id:6b0af26e-574c-475a-bb6d-1b4df9f137d8",
+      "prov:time": "2022-09-13T21:49:02.770843",
+      "prov:role": {
+        "$": "wf:main/cat1/queries_0_input2",
+        "type": "prov:QUALIFIED_NAME"
+      }
+    },
+    "_:id14": {
+      "prov:activity": "id:d8aec41c-f112-4eb9-b231-c03e411b38de",
+      "prov:entity": "id:cf936245-b1d6-4840-b79d-2e20af74b921",
+      "prov:time": "2022-09-13T21:49:02.770930",
+      "prov:role": {
+        "$": "wf:main/cat1/out_file1",
+        "type": "prov:QUALIFIED_NAME"
+      }
+    },
+    "_:id17": {
+      "prov:activity": "id:8ae68928-b7d5-435c-9fb5-847d59f41543",
+      "prov:entity": "id:cf936245-b1d6-4840-b79d-2e20af74b921",
+      "prov:time": "2022-09-13T21:49:02.771339",
+      "prov:role": {
+        "$": "wf:main/random_lines1/input",
+        "type": "prov:QUALIFIED_NAME"
+      }
+    },
+    "_:id18": {
+      "prov:activity": "id:8ae68928-b7d5-435c-9fb5-847d59f41543",
+      "prov:entity": "id:d9b5abdc-2a54-4fb7-b3df-1f05e9f2399a",
+      "prov:time": "2022-09-13T21:49:02.771426",
+      "prov:role": {
+        "$": "wf:main/random_lines1/out_file1",
+        "type": "prov:QUALIFIED_NAME"
+      }
+    }
+  }
+}

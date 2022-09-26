@@ -1,0 +1,5 @@
+Bag-Software-Agent: BDBag version: 1.6.3 (Bagit version: 1.8.1) <https://github.com/fair-research/bdbag>
+BagIt-Profile-Identifier: https://raw.githubusercontent.com/fair-research/bdbag/master/profiles/bdbag-profile.json
+Bagging-Date: 2022-09-21
+Bagging-Time: 14:09:27 CEST
+Payload-Oxum: 102016.22

@@ -1,0 +1,391 @@
+digraph G {
+charset="utf-8";
+rankdir=BT;
+n1 [URL="urn:uuid:86ba4adb-2a7e-44f9-9213-7c608900761b", fillcolor="#FED37F", label="id:86ba4adb-2a7e-44f9-9213-7c608900761b", shape=house, style=filled];
+n2 [URL="urn:uuid:e97d7525-adad-486b-9012-b372ff83fb62", fillcolor="#FED37F", label="id:e97d7525-adad-486b-9012-b372ff83fb62", shape=house, style=filled];
+ann1 [color=gray, fontcolor=black, fontsize=10, label=<<TABLE cellpadding="0" border="0">
+    <TR>
+        <TD align="left" href="http://www.w3.org/ns/prov#label">prov:label</TD>
+        <TD align="left">galaxy_version_placeholder</TD>
+    </TR>
+    <TR>
+        <TD align="left" href="http://www.w3.org/ns/prov#type">prov:type</TD>
+        <TD align="left" href="http://www.w3.org/ns/prov#SoftwareAgent">prov:SoftwareAgent</TD>
+    </TR>
+    <TR>
+        <TD align="left" href="http://www.w3.org/ns/prov#type">prov:type</TD>
+        <TD align="left" href="http://purl.org/wf4ever/wfprov#WorkflowEngine">wfprov:WorkflowEngine</TD>
+    </TR>
+    </TABLE>>, shape=note];
+ann1 -> n2  [arrowhead=none, color=gray, style=dashed];
+n3 [URL="urn:uuid:42f21c0a-d410-11eb-87de-fa163eba836f", color="#0000FF", fillcolor="#9FB1FC", label="id:42f21c0a-d410-11eb-87de-fa163eba836f", shape=box, style=filled];
+ann2 [color=gray, fontcolor=black, fontsize=10, label=<<TABLE cellpadding="0" border="0">
+    <TR>
+        <TD align="left" href="http://www.w3.org/ns/prov#startTime">prov:startTime</TD>
+        <TD align="left">2022-09-13T21:49:02.769087</TD>
+    </TR>
+    <TR>
+        <TD align="left" href="http://www.w3.org/ns/prov#label">prov:label</TD>
+        <TD align="left">Run of galaxy workflow</TD>
+    </TR>
+    <TR>
+        <TD align="left" href="http://www.w3.org/ns/prov#type">prov:type</TD>
+        <TD align="left" href="http://purl.org/wf4ever/wfprov#WorkflowRun">wfprov:WorkflowRun</TD>
+    </TR>
+    </TABLE>>, shape=note];
+ann2 -> n3  [arrowhead=none, color=gray, style=dashed];
+n4 [URL="urn:uuid:6e4054f6-9670-468d-9dcc-08b2d879159c", color="#0000FF", fillcolor="#9FB1FC", label="id:6e4054f6-9670-468d-9dcc-08b2d879159c", shape=box, style=filled];
+ann3 [color=gray, fontcolor=black, fontsize=10, label=<<TABLE cellpadding="0" border="0">
+    <TR>
+        <TD align="left" href="http://www.w3.org/ns/prov#startTime">prov:startTime</TD>
+        <TD align="left">2021-06-23T10:20:22.770291</TD>
+    </TR>
+    <TR>
+        <TD align="left" href="http://www.w3.org/ns/prov#endTime">prov:endTime</TD>
+        <TD align="left">2021-06-23T10:20:42.041319</TD>
+    </TR>
+    <TR>
+        <TD align="left" href="http://www.w3.org/ns/prov#label">prov:label</TD>
+        <TD align="left">Run of __DATA_FETCH__</TD>
+    </TR>
+    <TR>
+        <TD align="left" href="http://www.w3.org/ns/prov#type">prov:type</TD>
+        <TD align="left" href="http://purl.org/wf4ever/wfprov#ProcessRun">wfprov:ProcessRun</TD>
+    </TR>
+    </TABLE>>, shape=note];
+ann3 -> n4  [arrowhead=none, color=gray, style=dashed];
+n5 [URL="urn:uuid:18e78952-9447-4215-942c-542c35250d20", color="#808080", fillcolor="#FFFC87", label="id:18e78952-9447-4215-942c-542c35250d20", shape=oval, style=filled];
+ann4 [color=gray, fontcolor=black, fontsize=10, label=<<TABLE cellpadding="0" border="0">
+    <TR>
+        <TD align="left" href="http://www.w3.org/ns/prov#type">prov:type</TD>
+        <TD align="left" href="http://purl.org/wf4ever/wf4ever#File">wf4ever:File</TD>
+    </TR>
+    <TR>
+        <TD align="left" href="http://www.w3.org/ns/prov#type">prov:type</TD>
+        <TD align="left" href="http://purl.org/wf4ever/wfprov#Artifact">wfprov:Artifact</TD>
+    </TR>
+    <TR>
+        <TD align="left" href="https://w3id.org/cwl/prov#basename">cwlprov:basename</TD>
+        <TD align="left">dataset2.txt</TD>
+    </TR>
+    <TR>
+        <TD align="left" href="https://w3id.org/cwl/prov#nameext">cwlprov:nameext</TD>
+        <TD align="left">txt</TD>
+    </TR>
+    </TABLE>>, shape=note];
+ann4 -> n5  [arrowhead=none, color=gray, style=dashed];
+n6 [URL="urn:uuid:55bc7b4d-0137-4d47-8e5b-1d49d6f1fbc2", color="#0000FF", fillcolor="#9FB1FC", label="id:55bc7b4d-0137-4d47-8e5b-1d49d6f1fbc2", shape=box, style=filled];
+ann5 [color=gray, fontcolor=black, fontsize=10, label=<<TABLE cellpadding="0" border="0">
+    <TR>
+        <TD align="left" href="http://www.w3.org/ns/prov#startTime">prov:startTime</TD>
+        <TD align="left">2021-06-23T10:20:00.981702</TD>
+    </TR>
+    <TR>
+        <TD align="left" href="http://www.w3.org/ns/prov#endTime">prov:endTime</TD>
+        <TD align="left">2021-06-23T10:20:22.202678</TD>
+    </TR>
+    <TR>
+        <TD align="left" href="http://www.w3.org/ns/prov#label">prov:label</TD>
+        <TD align="left">Run of __DATA_FETCH__</TD>
+    </TR>
+    <TR>
+        <TD align="left" href="http://www.w3.org/ns/prov#type">prov:type</TD>
+        <TD align="left" href="http://purl.org/wf4ever/wfprov#ProcessRun">wfprov:ProcessRun</TD>
+    </TR>
+    </TABLE>>, shape=note];
+ann5 -> n6  [arrowhead=none, color=gray, style=dashed];
+n7 [URL="urn:uuid:6b0af26e-574c-475a-bb6d-1b4df9f137d8", color="#808080", fillcolor="#FFFC87", label="id:6b0af26e-574c-475a-bb6d-1b4df9f137d8", shape=oval, style=filled];
+ann6 [color=gray, fontcolor=black, fontsize=10, label=<<TABLE cellpadding="0" border="0">
+    <TR>
+        <TD align="left" href="http://www.w3.org/ns/prov#type">prov:type</TD>
+        <TD align="left" href="http://purl.org/wf4ever/wf4ever#File">wf4ever:File</TD>
+    </TR>
+    <TR>
+        <TD align="left" href="http://www.w3.org/ns/prov#type">prov:type</TD>
+        <TD align="left" href="http://purl.org/wf4ever/wfprov#Artifact">wfprov:Artifact</TD>
+    </TR>
+    <TR>
+        <TD align="left" href="https://w3id.org/cwl/prov#basename">cwlprov:basename</TD>
+        <TD align="left">dataset1.txt</TD>
+    </TR>
+    <TR>
+        <TD align="left" href="https://w3id.org/cwl/prov#nameext">cwlprov:nameext</TD>
+        <TD align="left">txt</TD>
+    </TR>
+    </TABLE>>, shape=note];
+ann6 -> n7  [arrowhead=none, color=gray, style=dashed];
+n8 [URL="urn:uuid:d8aec41c-f112-4eb9-b231-c03e411b38de", color="#0000FF", fillcolor="#9FB1FC", label="id:d8aec41c-f112-4eb9-b231-c03e411b38de", shape=box, style=filled];
+ann7 [color=gray, fontcolor=black, fontsize=10, label=<<TABLE cellpadding="0" border="0">
+    <TR>
+        <TD align="left" href="http://www.w3.org/ns/prov#startTime">prov:startTime</TD>
+        <TD align="left">2021-06-23T10:46:28.351123</TD>
+    </TR>
+    <TR>
+        <TD align="left" href="http://www.w3.org/ns/prov#endTime">prov:endTime</TD>
+        <TD align="left">2021-06-23T10:46:44.738703</TD>
+    </TR>
+    <TR>
+        <TD align="left" href="http://www.w3.org/ns/prov#label">prov:label</TD>
+        <TD align="left">Run of cat1</TD>
+    </TR>
+    <TR>
+        <TD align="left" href="http://www.w3.org/ns/prov#type">prov:type</TD>
+        <TD align="left" href="http://purl.org/wf4ever/wfprov#ProcessRun">wfprov:ProcessRun</TD>
+    </TR>
+    </TABLE>>, shape=note];
+ann7 -> n8  [arrowhead=none, color=gray, style=dashed];
+n9 [URL="urn:uuid:cf936245-b1d6-4840-b79d-2e20af74b921", color="#808080", fillcolor="#FFFC87", label="id:cf936245-b1d6-4840-b79d-2e20af74b921", shape=oval, style=filled];
+ann8 [color=gray, fontcolor=black, fontsize=10, label=<<TABLE cellpadding="0" border="0">
+    <TR>
+        <TD align="left" href="http://www.w3.org/ns/prov#type">prov:type</TD>
+        <TD align="left" href="http://purl.org/wf4ever/wf4ever#File">wf4ever:File</TD>
+    </TR>
+    <TR>
+        <TD align="left" href="http://www.w3.org/ns/prov#type">prov:type</TD>
+        <TD align="left" href="http://purl.org/wf4ever/wfprov#Artifact">wfprov:Artifact</TD>
+    </TR>
+    <TR>
+        <TD align="left" href="https://w3id.org/cwl/prov#basename">cwlprov:basename</TD>
+        <TD align="left">Concatenate datasets on data 2 and data 1</TD>
+    </TR>
+    <TR>
+        <TD align="left" href="https://w3id.org/cwl/prov#nameext">cwlprov:nameext</TD>
+        <TD align="left">txt</TD>
+    </TR>
+    </TABLE>>, shape=note];
+ann8 -> n9  [arrowhead=none, color=gray, style=dashed];
+n10 [URL="urn:uuid:8ae68928-b7d5-435c-9fb5-847d59f41543", color="#0000FF", fillcolor="#9FB1FC", label="id:8ae68928-b7d5-435c-9fb5-847d59f41543", shape=box, style=filled];
+ann9 [color=gray, fontcolor=black, fontsize=10, label=<<TABLE cellpadding="0" border="0">
+    <TR>
+        <TD align="left" href="http://www.w3.org/ns/prov#startTime">prov:startTime</TD>
+        <TD align="left">2021-06-23T10:46:28.526901</TD>
+    </TR>
+    <TR>
+        <TD align="left" href="http://www.w3.org/ns/prov#endTime">prov:endTime</TD>
+        <TD align="left">2021-06-23T10:47:04.837750</TD>
+    </TR>
+    <TR>
+        <TD align="left" href="http://www.w3.org/ns/prov#label">prov:label</TD>
+        <TD align="left">Run of random_lines1</TD>
+    </TR>
+    <TR>
+        <TD align="left" href="http://www.w3.org/ns/prov#type">prov:type</TD>
+        <TD align="left" href="http://purl.org/wf4ever/wfprov#ProcessRun">wfprov:ProcessRun</TD>
+    </TR>
+    </TABLE>>, shape=note];
+ann9 -> n10  [arrowhead=none, color=gray, style=dashed];
+n11 [URL="urn:uuid:d9b5abdc-2a54-4fb7-b3df-1f05e9f2399a", color="#808080", fillcolor="#FFFC87", label="id:d9b5abdc-2a54-4fb7-b3df-1f05e9f2399a", shape=oval, style=filled];
+ann10 [color=gray, fontcolor=black, fontsize=10, label=<<TABLE cellpadding="0" border="0">
+    <TR>
+        <TD align="left" href="http://www.w3.org/ns/prov#type">prov:type</TD>
+        <TD align="left" href="http://purl.org/wf4ever/wf4ever#File">wf4ever:File</TD>
+    </TR>
+    <TR>
+        <TD align="left" href="http://www.w3.org/ns/prov#type">prov:type</TD>
+        <TD align="left" href="http://purl.org/wf4ever/wfprov#Artifact">wfprov:Artifact</TD>
+    </TR>
+    <TR>
+        <TD align="left" href="https://w3id.org/cwl/prov#basename">cwlprov:basename</TD>
+        <TD align="left">tutorial_output.txt</TD>
+    </TR>
+    <TR>
+        <TD align="left" href="https://w3id.org/cwl/prov#nameext">cwlprov:nameext</TD>
+        <TD align="left">txt</TD>
+    </TR>
+    </TABLE>>, shape=note];
+ann10 -> n11  [arrowhead=none, color=gray, style=dashed];
+b1 [color=gray, label="", shape=point];
+n2 -> b1  [arrowhead=none, fontsize="10.0", label=wasStartedBy];
+b2 [color=gray, label="", shape=point];
+b1 -> b2  [fontsize="10.0"];
+b1 -> n1  [color=gray, fontcolor=dimgray, fontsize="10.0", label=starter];
+ann11 [color=gray, fontcolor=black, fontsize=10, label=<<TABLE cellpadding="0" border="0">
+    <TR>
+        <TD align="left" href="http://www.w3.org/ns/prov#time">prov:time</TD>
+        <TD align="left">2022-09-13T21:49:02.769067</TD>
+    </TR>
+    </TABLE>>, shape=note];
+ann11 -> b1  [arrowhead=none, color=gray, style=dashed];
+b3 [color=gray, label="", shape=point];
+n3 -> b3  [arrowhead=none, color="#FED37F", fontsize="10.0", label=wasAssociatedWith];
+b3 -> n2  [color="#FED37F", fontsize="10.0"];
+n12 [URL="arcp://uuid,bb496c98-0c72-419a-b957-cdbae2a976cf/ga_export/main", color=dimgray, fillcolor=lightgray, label="wf:main", shape=oval, style=filled];
+b3 -> n12  [color=gray, fontcolor=dimgray, fontsize="10.0", label=plan];
+b4 [color=gray, label="", shape=point];
+n3 -> b4  [arrowhead=none, fontsize="10.0", label=wasStartedBy];
+b5 [color=gray, label="", shape=point];
+b4 -> b5  [fontsize="10.0"];
+b4 -> n2  [color=gray, fontcolor=dimgray, fontsize="10.0", label=starter];
+ann12 [color=gray, fontcolor=black, fontsize=10, label=<<TABLE cellpadding="0" border="0">
+    <TR>
+        <TD align="left" href="http://www.w3.org/ns/prov#time">prov:time</TD>
+        <TD align="left">2022-09-13T21:49:02.769126</TD>
+    </TR>
+    </TABLE>>, shape=note];
+ann12 -> b4  [arrowhead=none, color=gray, style=dashed];
+b6 [color=gray, label="", shape=point];
+n4 -> b6  [arrowhead=none, color="#FED37F", fontsize="10.0", label=wasAssociatedWith];
+b6 -> n2  [color="#FED37F", fontsize="10.0"];
+n13 [URL="arcp://uuid,bb496c98-0c72-419a-b957-cdbae2a976cf/ga_export/main/__DATA_FETCH__", color=dimgray, fillcolor=lightgray, label="wf:main/__DATA_FETCH__", shape=oval, style=filled];
+b6 -> n13  [color=gray, fontcolor=dimgray, fontsize="10.0", label=plan];
+b7 [color=gray, label="", shape=point];
+n4 -> b7  [arrowhead=none, fontsize="10.0", label=wasStartedBy];
+b8 [color=gray, label="", shape=point];
+b7 -> b8  [fontsize="10.0"];
+b7 -> n3  [color=gray, fontcolor=dimgray, fontsize="10.0", label=starter];
+ann13 [color=gray, fontcolor=black, fontsize=10, label=<<TABLE cellpadding="0" border="0">
+    <TR>
+        <TD align="left" href="http://www.w3.org/ns/prov#time">prov:time</TD>
+        <TD align="left">2021-06-23T10:20:22.770291</TD>
+    </TR>
+    </TABLE>>, shape=note];
+ann13 -> b7  [arrowhead=none, color=gray, style=dashed];
+b9 [color=gray, label="", shape=point];
+n4 -> b9  [arrowhead=none, color=red4, fontcolor=red, fontsize="10.0", label=used];
+b9 -> n5  [color=red4, fontcolor=red, fontsize="10.0"];
+ann14 [color=gray, fontcolor=black, fontsize=10, label=<<TABLE cellpadding="0" border="0">
+    <TR>
+        <TD align="left" href="http://www.w3.org/ns/prov#time">prov:time</TD>
+        <TD align="left">2022-09-13T21:49:02.769973</TD>
+    </TR>
+    <TR>
+        <TD align="left" href="http://www.w3.org/ns/prov#role">prov:role</TD>
+        <TD align="left" href="arcp://uuid,bb496c98-0c72-419a-b957-cdbae2a976cf/ga_export/main/__DATA_FETCH__/output0">wf:main/__DATA_FETCH__/output0</TD>
+    </TR>
+    </TABLE>>, shape=note];
+ann14 -> b9  [arrowhead=none, color=gray, style=dashed];
+b10 [color=gray, label="", shape=point];
+n6 -> b10  [arrowhead=none, color="#FED37F", fontsize="10.0", label=wasAssociatedWith];
+b10 -> n2  [color="#FED37F", fontsize="10.0"];
+b10 -> n13  [color=gray, fontcolor=dimgray, fontsize="10.0", label=plan];
+b11 [color=gray, label="", shape=point];
+n6 -> b11  [arrowhead=none, fontsize="10.0", label=wasStartedBy];
+b12 [color=gray, label="", shape=point];
+b11 -> b12  [fontsize="10.0"];
+b11 -> n3  [color=gray, fontcolor=dimgray, fontsize="10.0", label=starter];
+ann15 [color=gray, fontcolor=black, fontsize=10, label=<<TABLE cellpadding="0" border="0">
+    <TR>
+        <TD align="left" href="http://www.w3.org/ns/prov#time">prov:time</TD>
+        <TD align="left">2021-06-23T10:20:00.981702</TD>
+    </TR>
+    </TABLE>>, shape=note];
+ann15 -> b11  [arrowhead=none, color=gray, style=dashed];
+b13 [color=gray, label="", shape=point];
+n6 -> b13  [arrowhead=none, color=red4, fontcolor=red, fontsize="10.0", label=used];
+b13 -> n7  [color=red4, fontcolor=red, fontsize="10.0"];
+ann16 [color=gray, fontcolor=black, fontsize=10, label=<<TABLE cellpadding="0" border="0">
+    <TR>
+        <TD align="left" href="http://www.w3.org/ns/prov#time">prov:time</TD>
+        <TD align="left">2022-09-13T21:49:02.770411</TD>
+    </TR>
+    <TR>
+        <TD align="left" href="http://www.w3.org/ns/prov#role">prov:role</TD>
+        <TD align="left" href="arcp://uuid,bb496c98-0c72-419a-b957-cdbae2a976cf/ga_export/main/__DATA_FETCH__/output0">wf:main/__DATA_FETCH__/output0</TD>
+    </TR>
+    </TABLE>>, shape=note];
+ann16 -> b13  [arrowhead=none, color=gray, style=dashed];
+b14 [color=gray, label="", shape=point];
+n8 -> b14  [arrowhead=none, color="#FED37F", fontsize="10.0", label=wasAssociatedWith];
+b14 -> n2  [color="#FED37F", fontsize="10.0"];
+n14 [URL="arcp://uuid,bb496c98-0c72-419a-b957-cdbae2a976cf/ga_export/main/cat1", color=dimgray, fillcolor=lightgray, label="wf:main/cat1", shape=oval, style=filled];
+b14 -> n14  [color=gray, fontcolor=dimgray, fontsize="10.0", label=plan];
+b15 [color=gray, label="", shape=point];
+n8 -> b15  [arrowhead=none, fontsize="10.0", label=wasStartedBy];
+b16 [color=gray, label="", shape=point];
+b15 -> b16  [fontsize="10.0"];
+b15 -> n3  [color=gray, fontcolor=dimgray, fontsize="10.0", label=starter];
+ann17 [color=gray, fontcolor=black, fontsize=10, label=<<TABLE cellpadding="0" border="0">
+    <TR>
+        <TD align="left" href="http://www.w3.org/ns/prov#time">prov:time</TD>
+        <TD align="left">2021-06-23T10:46:28.351123</TD>
+    </TR>
+    </TABLE>>, shape=note];
+ann17 -> b15  [arrowhead=none, color=gray, style=dashed];
+b17 [color=gray, label="", shape=point];
+n8 -> b17  [arrowhead=none, color=red4, fontcolor=red, fontsize="10.0", label=used];
+b17 -> n5  [color=red4, fontcolor=red, fontsize="10.0"];
+ann18 [color=gray, fontcolor=black, fontsize=10, label=<<TABLE cellpadding="0" border="0">
+    <TR>
+        <TD align="left" href="http://www.w3.org/ns/prov#time">prov:time</TD>
+        <TD align="left">2022-09-13T21:49:02.770797</TD>
+    </TR>
+    <TR>
+        <TD align="left" href="http://www.w3.org/ns/prov#role">prov:role</TD>
+        <TD align="left" href="arcp://uuid,bb496c98-0c72-419a-b957-cdbae2a976cf/ga_export/main/cat1/input1">wf:main/cat1/input1</TD>
+    </TR>
+    </TABLE>>, shape=note];
+ann18 -> b17  [arrowhead=none, color=gray, style=dashed];
+b18 [color=gray, label="", shape=point];
+n8 -> b18  [arrowhead=none, color=red4, fontcolor=red, fontsize="10.0", label=used];
+b18 -> n7  [color=red4, fontcolor=red, fontsize="10.0"];
+ann19 [color=gray, fontcolor=black, fontsize=10, label=<<TABLE cellpadding="0" border="0">
+    <TR>
+        <TD align="left" href="http://www.w3.org/ns/prov#time">prov:time</TD>
+        <TD align="left">2022-09-13T21:49:02.770843</TD>
+    </TR>
+    <TR>
+        <TD align="left" href="http://www.w3.org/ns/prov#role">prov:role</TD>
+        <TD align="left" href="arcp://uuid,bb496c98-0c72-419a-b957-cdbae2a976cf/ga_export/main/cat1/queries_0_input2">wf:main/cat1/queries_0_input2</TD>
+    </TR>
+    </TABLE>>, shape=note];
+ann19 -> b18  [arrowhead=none, color=gray, style=dashed];
+b19 [color=gray, label="", shape=point];
+n8 -> b19  [arrowhead=none, color=red4, fontcolor=red, fontsize="10.0", label=used];
+b19 -> n9  [color=red4, fontcolor=red, fontsize="10.0"];
+ann20 [color=gray, fontcolor=black, fontsize=10, label=<<TABLE cellpadding="0" border="0">
+    <TR>
+        <TD align="left" href="http://www.w3.org/ns/prov#time">prov:time</TD>
+        <TD align="left">2022-09-13T21:49:02.770930</TD>
+    </TR>
+    <TR>
+        <TD align="left" href="http://www.w3.org/ns/prov#role">prov:role</TD>
+        <TD align="left" href="arcp://uuid,bb496c98-0c72-419a-b957-cdbae2a976cf/ga_export/main/cat1/out_file1">wf:main/cat1/out_file1</TD>
+    </TR>
+    </TABLE>>, shape=note];
+ann20 -> b19  [arrowhead=none, color=gray, style=dashed];
+b20 [color=gray, label="", shape=point];
+n10 -> b20  [arrowhead=none, color="#FED37F", fontsize="10.0", label=wasAssociatedWith];
+b20 -> n2  [color="#FED37F", fontsize="10.0"];
+n15 [URL="arcp://uuid,bb496c98-0c72-419a-b957-cdbae2a976cf/ga_export/main/random_lines1", color=dimgray, fillcolor=lightgray, label="wf:main/random_lines1", shape=oval, style=filled];
+b20 -> n15  [color=gray, fontcolor=dimgray, fontsize="10.0", label=plan];
+b21 [color=gray, label="", shape=point];
+n10 -> b21  [arrowhead=none, fontsize="10.0", label=wasStartedBy];
+b22 [color=gray, label="", shape=point];
+b21 -> b22  [fontsize="10.0"];
+b21 -> n3  [color=gray, fontcolor=dimgray, fontsize="10.0", label=starter];
+ann21 [color=gray, fontcolor=black, fontsize=10, label=<<TABLE cellpadding="0" border="0">
+    <TR>
+        <TD align="left" href="http://www.w3.org/ns/prov#time">prov:time</TD>
+        <TD align="left">2021-06-23T10:46:28.526901</TD>
+    </TR>
+    </TABLE>>, shape=note];
+ann21 -> b21  [arrowhead=none, color=gray, style=dashed];
+b23 [color=gray, label="", shape=point];
+n10 -> b23  [arrowhead=none, color=red4, fontcolor=red, fontsize="10.0", label=used];
+b23 -> n9  [color=red4, fontcolor=red, fontsize="10.0"];
+ann22 [color=gray, fontcolor=black, fontsize=10, label=<<TABLE cellpadding="0" border="0">
+    <TR>
+        <TD align="left" href="http://www.w3.org/ns/prov#time">prov:time</TD>
+        <TD align="left">2022-09-13T21:49:02.771339</TD>
+    </TR>
+    <TR>
+        <TD align="left" href="http://www.w3.org/ns/prov#role">prov:role</TD>
+        <TD align="left" href="arcp://uuid,bb496c98-0c72-419a-b957-cdbae2a976cf/ga_export/main/random_lines1/input">wf:main/random_lines1/input</TD>
+    </TR>
+    </TABLE>>, shape=note];
+ann22 -> b23  [arrowhead=none, color=gray, style=dashed];
+b24 [color=gray, label="", shape=point];
+n10 -> b24  [arrowhead=none, color=red4, fontcolor=red, fontsize="10.0", label=used];
+b24 -> n11  [color=red4, fontcolor=red, fontsize="10.0"];
+ann23 [color=gray, fontcolor=black, fontsize=10, label=<<TABLE cellpadding="0" border="0">
+    <TR>
+        <TD align="left" href="http://www.w3.org/ns/prov#time">prov:time</TD>
+        <TD align="left">2022-09-13T21:49:02.771426</TD>
+    </TR>
+    <TR>
+        <TD align="left" href="http://www.w3.org/ns/prov#role">prov:role</TD>
+        <TD align="left" href="arcp://uuid,bb496c98-0c72-419a-b957-cdbae2a976cf/ga_export/main/random_lines1/out_file1">wf:main/random_lines1/out_file1</TD>
+    </TR>
+    </TABLE>>, shape=note];
+ann23 -> b24  [arrowhead=none, color=gray, style=dashed];
+}

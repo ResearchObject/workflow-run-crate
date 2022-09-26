@@ -1,13 +1,15 @@
 import os
-from rocrate.rocrate import ROCrate, make_workflow_run_rocrate
-from rocrate.provenance_profile import ProvenanceProfile
+from rocrate.rocrate import ROCrate  # , make_workflow_run_rocrate
+import sys
+sys.path.insert(1, os.path.join(sys.path[0], '..'))
+from provenance_profile import ProvenanceProfile
 
-from tools.load_ga_export import load_ga_history_export, GalaxyJob
+from load_ga_export import load_ga_history_export, GalaxyJob
 
 
-def test_ga_history_loading(test_data_dir, tmpdir, helpers):
+def test_ga_history_loading(data_dir, tmpdir):
     export_dir = "test_ga_history_export"
-    export_path = test_data_dir / export_dir / "history_export"
+    export_path = data_dir / export_dir / "history_export"
 
     metadata_export = load_ga_history_export(export_path)
     jobs = []
@@ -21,26 +23,26 @@ def test_ga_history_loading(test_data_dir, tmpdir, helpers):
     assert len(jobs) == 4
 
 
-def test_ga_history_parsing(test_data_dir, tmpdir, helpers):
+def test_ga_history_parsing(data_dir, tmpdir):
     export_dir = "test_ga_history_export"
-    export_path = test_data_dir / export_dir / "history_export"
+    export_path = data_dir / export_dir / "history_export"
     prov_path = tmpdir / "provenance"
     prov = ProvenanceProfile(export_path, "PDG", "https://orcid.org/0000-0002-8940-4946")
 
     assert isinstance(prov, ProvenanceProfile)
 
-    prov.finalize_prov_profile(out_path=prov_path)
+    prov.finalize_prov_profile(out_path=prov_path, serialize=True)
 
 
-def test_create_wf_run_ro_crate(test_data_dir, tmpdir, helpers):
+def test_create_wf_run_ro_crate(data_dir, tmpdir):
 
     export_dir = "test_ga_history_export"
-    wfr_metadata_path = test_data_dir / export_dir / "history_export"
+    wfr_metadata_path = data_dir / export_dir / "history_export"
     dataset_path = wfr_metadata_path / "datasets"
     files_list = os.listdir(dataset_path)
     files_list = [dataset_path / f for f in files_list]
     wf_id = 'wf_definition.ga'
-    wf_path = test_data_dir / export_dir / wf_id
+    wf_path = data_dir / export_dir / wf_id
 
     wf_crate = make_workflow_run_rocrate(
         workflow_path=wf_path, wfr_metadata_path=wfr_metadata_path, author=None, orcid=None,
@@ -50,7 +52,7 @@ def test_create_wf_run_ro_crate(test_data_dir, tmpdir, helpers):
 
     # wf = wf_crate.dereference(wf_id)
 
-    out_path = test_data_dir / export_dir / "history_export_ro_crate"
+    out_path = data_dir / export_dir / "history_export_ro_crate"
     if not os.path.exists(out_path):
         out_path.mkdir()
     wf_crate.write(out_path)

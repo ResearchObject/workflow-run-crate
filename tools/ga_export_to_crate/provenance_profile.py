@@ -42,7 +42,7 @@ from provenance_constants import (
     # TEXT_PLAIN,
     RO,
     SCHEMA,
-    # SHA1,
+    SHA1,
     UUID,
     WF4EVER,
     WFDESC,
@@ -115,7 +115,7 @@ class ProvenanceProfile:
         # import galaxy history metadata
         metadata_export = load_ga_history_export(ga_export_dir)
 
-        print(metadata_export.keys())
+        # print(metadata_export.keys())
 
         self.declared_strings_s = {}
 
@@ -130,7 +130,7 @@ class ProvenanceProfile:
         for i, job in enumerate(metadata_export["jobs_attrs"]):
             job_attrs = GalaxyJob()
             job_attrs.parse_ga_jobs_attrs(job)
-            self.jobs[job_attrs.attributes["encoded_id"]] = job_attrs.attributes
+            self.jobs[job_attrs.attributes["encoded_id"]] = job_attrs
             try:
                 self.workflow_invocation_uuid.add(
                     job_attrs.attributes["parameters"]["__workflow_invocation_uuid__"]
@@ -149,7 +149,10 @@ class ProvenanceProfile:
 
         self.generate_prov_doc()
         for v in self.jobs.values():
-            self.declare_process(v)
+            print("ATTRIBUTES:")
+            print(v.attributes)
+            self.declare_process(v.attributes)
+            self.prospective_prov(v.attributes)
 
     def __str__(self) -> str:
         """Represent this Provenvance profile as a string."""
@@ -186,7 +189,7 @@ class ProvenanceProfile:
             "provenance", self.base_uri + posix_path(PROVENANCE) + "/"
         )
         # TODO: use appropriate refs for ga_export and related inputs
-        ro_identifier_workflow = self.base_uri + "ga_export" + "/"
+        ro_identifier_workflow = self.base_uri + "workflow/ga_export#"
         self.wf_ns = self.document.add_namespace("wf", ro_identifier_workflow)
         ro_identifier_input = self.base_uri + "ga_export/datasets#"
         self.document.add_namespace("input", ro_identifier_input)
@@ -230,6 +233,15 @@ class ProvenanceProfile:
         )
         # association between SoftwareAgent and WorkflowRun
         main_workflow = "wf:main"
+        "Prospective prov plan"
+        self.document.entity(
+            "wf:main",
+            {
+                PROV_TYPE: WFDESC["Workflow"],
+                "prov:type": PROV["Plan"],
+                "prov:label": "Prospective provenance",
+            },
+        )
         self.document.wasAssociatedWith(
             self.workflow_run_uri, self.engine_uuid, main_workflow
         )
@@ -406,9 +418,32 @@ class ProvenanceProfile:
                 coll.add_asserted_type(CWLPROV[value["class"]])
 
     def declare_file(self, value: Dict) -> Tuple[ProvEntity, ProvEntity, str]:
+        print("VALUE:", value)
+        # value["file_name"]
         if value["class"] != "File":
             raise ValueError("Must have class:File: %s" % value)
 
+        # Need to determine file location
+        entity = None  # type: Optional[ProvEntity]
+        checksum = None
+        if "checksum" in value:
+            csum = cast(str, value["checksum"])
+            (method, checksum) = csum.split("$", 1)
+            if method == SHA1:
+                entity = self.document.entity("data:" + checksum)
+
+        if not entity and "file_name" in value:
+            location = str(value["file_name"])
+            # If we made it here, we'll have to add it to the RO
+            # with self.fsaccess.open(location, "rb") as fhandle:
+            #     relative_path = self.research_object.add_data_file(fhandle)
+            # FIXME: This naively relies on add_data_file setting hash as filename
+            # checksum = PurePath(relative_path).name
+            entity = self.document.entity(
+                "data:" + location, {PROV_TYPE: WFPROV["Artifact"]}
+            )
+            # if "checksum" not in value:
+            #     value["checksum"] = f"{SHA1}${checksum}"
         # Track filename and extension, this is generally useful only for
         # secondaryFiles. Note that multiple uses of a file might thus record
         # different names for the same entity, so we'll
@@ -426,7 +461,7 @@ class ProvenanceProfile:
         #     file_entity.add_attributes({CWLPROV["nameroot"]: value["nameroot"]})
         if "extension" in value:
             file_entity.add_attributes({CWLPROV["nameext"]: value["extension"]})
-        # self.document.specializationOf(file_entity, entity)
+        self.document.specializationOf(file_entity, entity)
 
         return file_entity  # , entity, checksum
 
@@ -477,6 +512,24 @@ class ProvenanceProfile:
                 self.document.wasGeneratedBy(
                     entity, process_run_id, timestamp, None, {"prov:role": role}
                 )
+
+    def prospective_prov(self, job: GalaxyJob) -> None:
+        """Create prospective prov recording as wfdesc prov:Plan."""
+
+        stepnametemp = "wf:main/" + str(job['tool_id'])
+        stepname = urllib.parse.quote(stepnametemp, safe=":/,#")
+        provstep = self.document.entity(
+            stepname,
+            {PROV_TYPE: WFDESC["Process"], "prov:type": PROV["Plan"]},
+        )
+        self.document.entity(
+            "wf:main",
+            {
+                "wfdesc:hasSubProcess": provstep,
+                "prov:label": "Prospective provenance",
+            },
+        )
+        # TODO: Declare roles/parameters as well
 
     def finalize_prov_profile(
         self, out_path: Path = None, serialize: Boolean = False, name=None

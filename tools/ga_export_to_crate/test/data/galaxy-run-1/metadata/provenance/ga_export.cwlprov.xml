@@ -1,0 +1,158 @@
+<?xml version='1.0' encoding='ASCII'?>
+<prov:document xmlns:wfprov="http://purl.org/wf4ever/wfprov#" xmlns:wfdesc="http://purl.org/wf4ever/wfdesc#" xmlns:cwlprov="https://w3id.org/cwl/prov#" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:schema="http://schema.org/" xmlns:orcid="https://orcid.org/" xmlns:id="urn:uuid:" xmlns:data="urn:hash::sha1:" xmlns:provenance="arcp://uuid,bb496c98-0c72-419a-b957-cdbae2a976cf/metadata/provenance/" xmlns:wf="arcp://uuid,bb496c98-0c72-419a-b957-cdbae2a976cf/ga_export/" xmlns:input="arcp://uuid,bb496c98-0c72-419a-b957-cdbae2a976cf/ga_export/datasets#" xmlns:wf4ever="http://purl.org/wf4ever/wf4ever#" xmlns:prov="http://www.w3.org/ns/prov#" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <prov:agent prov:id="id:86ba4adb-2a7e-44f9-9213-7c608900761b"/>
+  <prov:softwareAgent prov:id="id:e97d7525-adad-486b-9012-b372ff83fb62">
+    <prov:label>galaxy_version_placeholder</prov:label>
+    <prov:type xsi:type="xsd:QName">wfprov:WorkflowEngine</prov:type>
+  </prov:softwareAgent>
+  <prov:wasStartedBy>
+    <prov:activity prov:ref="id:e97d7525-adad-486b-9012-b372ff83fb62"/>
+    <prov:starter prov:ref="id:86ba4adb-2a7e-44f9-9213-7c608900761b"/>
+    <prov:time>2022-09-13T21:49:02.769067</prov:time>
+  </prov:wasStartedBy>
+  <prov:activity prov:id="id:42f21c0a-d410-11eb-87de-fa163eba836f">
+    <prov:startTime>2022-09-13T21:49:02.769087</prov:startTime>
+    <prov:label>Run of galaxy workflow</prov:label>
+    <prov:type xsi:type="xsd:QName">wfprov:WorkflowRun</prov:type>
+  </prov:activity>
+  <prov:wasAssociatedWith>
+    <prov:activity prov:ref="id:42f21c0a-d410-11eb-87de-fa163eba836f"/>
+    <prov:agent prov:ref="id:e97d7525-adad-486b-9012-b372ff83fb62"/>
+    <prov:plan prov:ref="wf:main"/>
+  </prov:wasAssociatedWith>
+  <prov:wasStartedBy>
+    <prov:activity prov:ref="id:42f21c0a-d410-11eb-87de-fa163eba836f"/>
+    <prov:starter prov:ref="id:e97d7525-adad-486b-9012-b372ff83fb62"/>
+    <prov:time>2022-09-13T21:49:02.769126</prov:time>
+  </prov:wasStartedBy>
+  <prov:activity prov:id="id:6e4054f6-9670-468d-9dcc-08b2d879159c">
+    <prov:startTime>2021-06-23T10:20:22.770291</prov:startTime>
+    <prov:endTime>2021-06-23T10:20:42.041319</prov:endTime>
+    <prov:label>Run of __DATA_FETCH__</prov:label>
+    <prov:type xsi:type="xsd:QName">wfprov:ProcessRun</prov:type>
+  </prov:activity>
+  <prov:wasAssociatedWith>
+    <prov:activity prov:ref="id:6e4054f6-9670-468d-9dcc-08b2d879159c"/>
+    <prov:agent prov:ref="id:e97d7525-adad-486b-9012-b372ff83fb62"/>
+    <prov:plan prov:ref="wf:main/__DATA_FETCH__"/>
+  </prov:wasAssociatedWith>
+  <prov:wasStartedBy>
+    <prov:activity prov:ref="id:6e4054f6-9670-468d-9dcc-08b2d879159c"/>
+    <prov:starter prov:ref="id:42f21c0a-d410-11eb-87de-fa163eba836f"/>
+    <prov:time>2021-06-23T10:20:22.770291</prov:time>
+  </prov:wasStartedBy>
+  <prov:entity prov:id="id:18e78952-9447-4215-942c-542c35250d20">
+    <prov:type xsi:type="xsd:QName">wf4ever:File</prov:type>
+    <prov:type xsi:type="xsd:QName">wfprov:Artifact</prov:type>
+    <cwlprov:basename>dataset2.txt</cwlprov:basename>
+    <cwlprov:nameext>txt</cwlprov:nameext>
+  </prov:entity>
+  <prov:used>
+    <prov:activity prov:ref="id:6e4054f6-9670-468d-9dcc-08b2d879159c"/>
+    <prov:entity prov:ref="id:18e78952-9447-4215-942c-542c35250d20"/>
+    <prov:time>2022-09-13T21:49:02.769973</prov:time>
+    <prov:role xsi:type="xsd:QName">wf:main/__DATA_FETCH__/output0</prov:role>
+  </prov:used>
+  <prov:activity prov:id="id:55bc7b4d-0137-4d47-8e5b-1d49d6f1fbc2">
+    <prov:startTime>2021-06-23T10:20:00.981702</prov:startTime>
+    <prov:endTime>2021-06-23T10:20:22.202678</prov:endTime>
+    <prov:label>Run of __DATA_FETCH__</prov:label>
+    <prov:type xsi:type="xsd:QName">wfprov:ProcessRun</prov:type>
+  </prov:activity>
+  <prov:wasAssociatedWith>
+    <prov:activity prov:ref="id:55bc7b4d-0137-4d47-8e5b-1d49d6f1fbc2"/>
+    <prov:agent prov:ref="id:e97d7525-adad-486b-9012-b372ff83fb62"/>
+    <prov:plan prov:ref="wf:main/__DATA_FETCH__"/>
+  </prov:wasAssociatedWith>
+  <prov:wasStartedBy>
+    <prov:activity prov:ref="id:55bc7b4d-0137-4d47-8e5b-1d49d6f1fbc2"/>
+    <prov:starter prov:ref="id:42f21c0a-d410-11eb-87de-fa163eba836f"/>
+    <prov:time>2021-06-23T10:20:00.981702</prov:time>
+  </prov:wasStartedBy>
+  <prov:entity prov:id="id:6b0af26e-574c-475a-bb6d-1b4df9f137d8">
+    <prov:type xsi:type="xsd:QName">wf4ever:File</prov:type>
+    <prov:type xsi:type="xsd:QName">wfprov:Artifact</prov:type>
+    <cwlprov:basename>dataset1.txt</cwlprov:basename>
+    <cwlprov:nameext>txt</cwlprov:nameext>
+  </prov:entity>
+  <prov:used>
+    <prov:activity prov:ref="id:55bc7b4d-0137-4d47-8e5b-1d49d6f1fbc2"/>
+    <prov:entity prov:ref="id:6b0af26e-574c-475a-bb6d-1b4df9f137d8"/>
+    <prov:time>2022-09-13T21:49:02.770411</prov:time>
+    <prov:role xsi:type="xsd:QName">wf:main/__DATA_FETCH__/output0</prov:role>
+  </prov:used>
+  <prov:activity prov:id="id:d8aec41c-f112-4eb9-b231-c03e411b38de">
+    <prov:startTime>2021-06-23T10:46:28.351123</prov:startTime>
+    <prov:endTime>2021-06-23T10:46:44.738703</prov:endTime>
+    <prov:label>Run of cat1</prov:label>
+    <prov:type xsi:type="xsd:QName">wfprov:ProcessRun</prov:type>
+  </prov:activity>
+  <prov:wasAssociatedWith>
+    <prov:activity prov:ref="id:d8aec41c-f112-4eb9-b231-c03e411b38de"/>
+    <prov:agent prov:ref="id:e97d7525-adad-486b-9012-b372ff83fb62"/>
+    <prov:plan prov:ref="wf:main/cat1"/>
+  </prov:wasAssociatedWith>
+  <prov:wasStartedBy>
+    <prov:activity prov:ref="id:d8aec41c-f112-4eb9-b231-c03e411b38de"/>
+    <prov:starter prov:ref="id:42f21c0a-d410-11eb-87de-fa163eba836f"/>
+    <prov:time>2021-06-23T10:46:28.351123</prov:time>
+  </prov:wasStartedBy>
+  <prov:used>
+    <prov:activity prov:ref="id:d8aec41c-f112-4eb9-b231-c03e411b38de"/>
+    <prov:entity prov:ref="id:18e78952-9447-4215-942c-542c35250d20"/>
+    <prov:time>2022-09-13T21:49:02.770797</prov:time>
+    <prov:role xsi:type="xsd:QName">wf:main/cat1/input1</prov:role>
+  </prov:used>
+  <prov:used>
+    <prov:activity prov:ref="id:d8aec41c-f112-4eb9-b231-c03e411b38de"/>
+    <prov:entity prov:ref="id:6b0af26e-574c-475a-bb6d-1b4df9f137d8"/>
+    <prov:time>2022-09-13T21:49:02.770843</prov:time>
+    <prov:role xsi:type="xsd:QName">wf:main/cat1/queries_0_input2</prov:role>
+  </prov:used>
+  <prov:entity prov:id="id:cf936245-b1d6-4840-b79d-2e20af74b921">
+    <prov:type xsi:type="xsd:QName">wf4ever:File</prov:type>
+    <prov:type xsi:type="xsd:QName">wfprov:Artifact</prov:type>
+    <cwlprov:basename>Concatenate datasets on data 2 and data 1</cwlprov:basename>
+    <cwlprov:nameext>txt</cwlprov:nameext>
+  </prov:entity>
+  <prov:used>
+    <prov:activity prov:ref="id:d8aec41c-f112-4eb9-b231-c03e411b38de"/>
+    <prov:entity prov:ref="id:cf936245-b1d6-4840-b79d-2e20af74b921"/>
+    <prov:time>2022-09-13T21:49:02.770930</prov:time>
+    <prov:role xsi:type="xsd:QName">wf:main/cat1/out_file1</prov:role>
+  </prov:used>
+  <prov:activity prov:id="id:8ae68928-b7d5-435c-9fb5-847d59f41543">
+    <prov:startTime>2021-06-23T10:46:28.526901</prov:startTime>
+    <prov:endTime>2021-06-23T10:47:04.837750</prov:endTime>
+    <prov:label>Run of random_lines1</prov:label>
+    <prov:type xsi:type="xsd:QName">wfprov:ProcessRun</prov:type>
+  </prov:activity>
+  <prov:wasAssociatedWith>
+    <prov:activity prov:ref="id:8ae68928-b7d5-435c-9fb5-847d59f41543"/>
+    <prov:agent prov:ref="id:e97d7525-adad-486b-9012-b372ff83fb62"/>
+    <prov:plan prov:ref="wf:main/random_lines1"/>
+  </prov:wasAssociatedWith>
+  <prov:wasStartedBy>
+    <prov:activity prov:ref="id:8ae68928-b7d5-435c-9fb5-847d59f41543"/>
+    <prov:starter prov:ref="id:42f21c0a-d410-11eb-87de-fa163eba836f"/>
+    <prov:time>2021-06-23T10:46:28.526901</prov:time>
+  </prov:wasStartedBy>
+  <prov:used>
+    <prov:activity prov:ref="id:8ae68928-b7d5-435c-9fb5-847d59f41543"/>
+    <prov:entity prov:ref="id:cf936245-b1d6-4840-b79d-2e20af74b921"/>
+    <prov:time>2022-09-13T21:49:02.771339</prov:time>
+    <prov:role xsi:type="xsd:QName">wf:main/random_lines1/input</prov:role>
+  </prov:used>
+  <prov:entity prov:id="id:d9b5abdc-2a54-4fb7-b3df-1f05e9f2399a">
+    <prov:type xsi:type="xsd:QName">wf4ever:File</prov:type>
+    <prov:type xsi:type="xsd:QName">wfprov:Artifact</prov:type>
+    <cwlprov:basename>tutorial_output.txt</cwlprov:basename>
+    <cwlprov:nameext>txt</cwlprov:nameext>
+  </prov:entity>
+  <prov:used>
+    <prov:activity prov:ref="id:8ae68928-b7d5-435c-9fb5-847d59f41543"/>
+    <prov:entity prov:ref="id:d9b5abdc-2a54-4fb7-b3df-1f05e9f2399a"/>
+    <prov:time>2022-09-13T21:49:02.771426</prov:time>
+    <prov:role xsi:type="xsd:QName">wf:main/random_lines1/out_file1</prov:role>
+  </prov:used>
+</prov:document>

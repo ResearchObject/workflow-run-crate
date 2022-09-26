@@ -29,7 +29,7 @@ from provenance_profile import ProvenanceProfile
 
 import networkx as nx
 import prov.model
-# from cwl_utils.parser import load_document_by_yaml
+from cwl_utils.parser import load_document_by_yaml
 # from cwlprov.ro import ResearchObject
 # from cwlprov.prov import Provenance
 # from cwlprov.utils import first
@@ -54,21 +54,46 @@ CWL_TYPE_MAP = {
 
 SCATTER_JOB_PATTERN = re.compile(r"^(.+)_\d+$")
 
-# export_dir = "test_ga_history_export"
-# export_path = test_data_dir / export_dir / "history_export"
-# prov_path = tmpdir / "provenance"
-# prov = ProvenanceProfile(export_path, "PDG", "https://orcid.org/0000-0002-8940-4946")
+def get_fragment(uri):
+    return uri.rsplit("#", 1)[-1]
 
-# assert isinstance(prov, ProvenanceProfile)
+def get_workflow(wf_path):
+    """\
+    Read the Galaxy workflow definition.
 
-# prov.finalize_prov_profile(out_path=prov_path)
+    Returns a dictionary where tools / workflows are mapped by their ids.
+
+    Does not use load_document_by_uri, so we can hack the json to work around
+    issues.
+    """
+    wf_path = Path(wf_path)
+    with open(wf_path, "rt") as f:
+        json_wf = json.load(f)
+    graph = json_wf.get("$graph", [json_wf])
+    # https://github.com/common-workflow-language/cwltool/pull/1506
+    for n in graph:
+        ns = n.pop("$namespaces", {})
+        if ns:
+            json_wf.setdefault("$namespaces", {}).update(ns)
+    defs = load_document_by_yaml(json_wf, wf_path.absolute().as_uri())
+    if not isinstance(defs, list):
+        defs = [defs]
+    def_map = {}
+    for d in defs:
+        k = get_fragment(d.id)
+        if k == "main":
+            k = wf_path.name
+        def_map[k] = d
+    return def_map
+
+
 def main(args):
     args.root = Path(args.root)
     if not args.output:
         args.output = f"{args.root.name}.crate.zip"
     args.output = Path(args.output)
     ga_prov = ProvenanceProfile(args.root, "PDG", "https://orcid.org/0000-0002-8940-4946")
-    builder = ProvCrateBuilder(args.root, args.workflow_name, args.license, ga_prov)
+    builder = ProvCrateBuilder(args.root, args.workflow_name, args.license, prov=ga_prov.document, run=args.runid)
     crate = builder.build()
     if args.output.suffix == ".zip":
         crate.write_zip(args.output)
@@ -88,4 +113,6 @@ if __name__ == "__main__":
                         help="license URL (or WorkflowHub-accepted id)")
     parser.add_argument("-w", "--workflow-name", metavar="STRING",
                         help="original workflow name")
+    parser.add_argument("-r", "--runid", metavar="STRING",
+                        help="run id")
     main(parser.parse_args())

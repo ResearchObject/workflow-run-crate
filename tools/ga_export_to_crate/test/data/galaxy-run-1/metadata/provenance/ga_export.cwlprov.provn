@@ -1,0 +1,44 @@
+document
+  prefix wfprov <http://purl.org/wf4ever/wfprov#>
+  prefix wfdesc <http://purl.org/wf4ever/wfdesc#>
+  prefix cwlprov <https://w3id.org/cwl/prov#>
+  prefix foaf <http://xmlns.com/foaf/0.1/>
+  prefix schema <http://schema.org/>
+  prefix orcid <https://orcid.org/>
+  prefix id <urn:uuid:>
+  prefix data <urn:hash::sha1:>
+  prefix provenance <arcp://uuid,bb496c98-0c72-419a-b957-cdbae2a976cf/metadata/provenance/>
+  prefix wf <arcp://uuid,bb496c98-0c72-419a-b957-cdbae2a976cf/ga_export/>
+  prefix input <arcp://uuid,bb496c98-0c72-419a-b957-cdbae2a976cf/ga_export/datasets#>
+  prefix wf4ever <http://purl.org/wf4ever/wf4ever#>
+  
+  agent(id:86ba4adb-2a7e-44f9-9213-7c608900761b)
+  agent(id:e97d7525-adad-486b-9012-b372ff83fb62, [prov:type='prov:SoftwareAgent', prov:type='wfprov:WorkflowEngine', prov:label="galaxy_version_placeholder"])
+  wasStartedBy(id:e97d7525-adad-486b-9012-b372ff83fb62, -, id:86ba4adb-2a7e-44f9-9213-7c608900761b, 2022-09-13T21:49:02.769067)
+  activity(id:42f21c0a-d410-11eb-87de-fa163eba836f, 2022-09-13T21:49:02.769087, -, [prov:type='wfprov:WorkflowRun', prov:label="Run of galaxy workflow"])
+  wasAssociatedWith(id:42f21c0a-d410-11eb-87de-fa163eba836f, id:e97d7525-adad-486b-9012-b372ff83fb62, wf:main)
+  wasStartedBy(id:42f21c0a-d410-11eb-87de-fa163eba836f, -, id:e97d7525-adad-486b-9012-b372ff83fb62, 2022-09-13T21:49:02.769126)
+  activity(id:6e4054f6-9670-468d-9dcc-08b2d879159c, 2021-06-23T10:20:22.770291, 2021-06-23T10:20:42.041319, [prov:type='wfprov:ProcessRun', prov:label="Run of __DATA_FETCH__"])
+  wasAssociatedWith(id:6e4054f6-9670-468d-9dcc-08b2d879159c, id:e97d7525-adad-486b-9012-b372ff83fb62, wf:main/__DATA_FETCH__)
+  wasStartedBy(id:6e4054f6-9670-468d-9dcc-08b2d879159c, -, id:42f21c0a-d410-11eb-87de-fa163eba836f, 2021-06-23T10:20:22.770291)
+  entity(id:18e78952-9447-4215-942c-542c35250d20, [prov:type='wfprov:Artifact', prov:type='wf4ever:File', cwlprov:basename="dataset2.txt", cwlprov:nameext="txt"])
+  used(id:6e4054f6-9670-468d-9dcc-08b2d879159c, id:18e78952-9447-4215-942c-542c35250d20, 2022-09-13T21:49:02.769973, [prov:role='wf:main/__DATA_FETCH__/output0'])
+  activity(id:55bc7b4d-0137-4d47-8e5b-1d49d6f1fbc2, 2021-06-23T10:20:00.981702, 2021-06-23T10:20:22.202678, [prov:type='wfprov:ProcessRun', prov:label="Run of __DATA_FETCH__"])
+  wasAssociatedWith(id:55bc7b4d-0137-4d47-8e5b-1d49d6f1fbc2, id:e97d7525-adad-486b-9012-b372ff83fb62, wf:main/__DATA_FETCH__)
+  wasStartedBy(id:55bc7b4d-0137-4d47-8e5b-1d49d6f1fbc2, -, id:42f21c0a-d410-11eb-87de-fa163eba836f, 2021-06-23T10:20:00.981702)
+  entity(id:6b0af26e-574c-475a-bb6d-1b4df9f137d8, [prov:type='wfprov:Artifact', prov:type='wf4ever:File', cwlprov:basename="dataset1.txt", cwlprov:nameext="txt"])
+  used(id:55bc7b4d-0137-4d47-8e5b-1d49d6f1fbc2, id:6b0af26e-574c-475a-bb6d-1b4df9f137d8, 2022-09-13T21:49:02.770411, [prov:role='wf:main/__DATA_FETCH__/output0'])
+  activity(id:d8aec41c-f112-4eb9-b231-c03e411b38de, 2021-06-23T10:46:28.351123, 2021-06-23T10:46:44.738703, [prov:type='wfprov:ProcessRun', prov:label="Run of cat1"])
+  wasAssociatedWith(id:d8aec41c-f112-4eb9-b231-c03e411b38de, id:e97d7525-adad-486b-9012-b372ff83fb62, wf:main/cat1)
+  wasStartedBy(id:d8aec41c-f112-4eb9-b231-c03e411b38de, -, id:42f21c0a-d410-11eb-87de-fa163eba836f, 2021-06-23T10:46:28.351123)
+  used(id:d8aec41c-f112-4eb9-b231-c03e411b38de, id:18e78952-9447-4215-942c-542c35250d20, 2022-09-13T21:49:02.770797, [prov:role='wf:main/cat1/input1'])
+  used(id:d8aec41c-f112-4eb9-b231-c03e411b38de, id:6b0af26e-574c-475a-bb6d-1b4df9f137d8, 2022-09-13T21:49:02.770843, [prov:role='wf:main/cat1/queries_0_input2'])
+  entity(id:cf936245-b1d6-4840-b79d-2e20af74b921, [prov:type='wfprov:Artifact', prov:type='wf4ever:File', cwlprov:basename="Concatenate datasets on data 2 and data 1", cwlprov:nameext="txt"])
+  used(id:d8aec41c-f112-4eb9-b231-c03e411b38de, id:cf936245-b1d6-4840-b79d-2e20af74b921, 2022-09-13T21:49:02.770930, [prov:role='wf:main/cat1/out_file1'])
+  activity(id:8ae68928-b7d5-435c-9fb5-847d59f41543, 2021-06-23T10:46:28.526901, 2021-06-23T10:47:04.837750, [prov:type='wfprov:ProcessRun', prov:label="Run of random_lines1"])
+  wasAssociatedWith(id:8ae68928-b7d5-435c-9fb5-847d59f41543, id:e97d7525-adad-486b-9012-b372ff83fb62, wf:main/random_lines1)
+  wasStartedBy(id:8ae68928-b7d5-435c-9fb5-847d59f41543, -, id:42f21c0a-d410-11eb-87de-fa163eba836f, 2021-06-23T10:46:28.526901)
+  used(id:8ae68928-b7d5-435c-9fb5-847d59f41543, id:cf936245-b1d6-4840-b79d-2e20af74b921, 2022-09-13T21:49:02.771339, [prov:role='wf:main/random_lines1/input'])
+  entity(id:d9b5abdc-2a54-4fb7-b3df-1f05e9f2399a, [prov:type='wfprov:Artifact', prov:type='wf4ever:File', cwlprov:basename="tutorial_output.txt", cwlprov:nameext="txt"])
+  used(id:8ae68928-b7d5-435c-9fb5-847d59f41543, id:d9b5abdc-2a54-4fb7-b3df-1f05e9f2399a, 2022-09-13T21:49:02.771426, [prov:role='wf:main/random_lines1/out_file1'])
+endDocument
