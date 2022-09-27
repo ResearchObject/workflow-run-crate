@@ -167,8 +167,7 @@ class ProvCrateBuilder:
         self.param_map = {}
         self.ro = ResearchObject(BDBag(str(root)))
         self.with_prov = set(str(_) for _ in self.ro.resources_with_provenance())
-        self.prov = Provenance(self.ro)
-        self.workflow_run = self.prov.activity()
+        self.workflow_run = Provenance(self.ro).activity()
         self.roc_engine_run = None
         # avoid duplicates - not handled by ro-crate-py, see
         # https://github.com/ResearchObject/ro-crate-py/issues/132
@@ -197,19 +196,19 @@ class ProvCrateBuilder:
         return plan
 
     def get_members(self, entity):
-        membership = self.prov.record_with_attr(
+        membership = entity.provenance.record_with_attr(
             prov.model.ProvMembership, entity.id, prov.model.PROV_ATTR_COLLECTION
         )
         member_ids = (_.get_attribute(prov.model.PROV_ATTR_ENTITY) for _ in membership)
-        return (self.prov.entity(first(_)) for _ in member_ids)
+        return (entity.provenance.entity(first(_)) for _ in member_ids)
 
     def get_dict(self, entity):
         d = {}
         for qname in entity.record.get_attribute("prov:hadDictionaryMember"):
-            kvp = self.prov.entity(qname)
+            kvp = entity.provenance.entity(qname)
             key = first(kvp.record.get_attribute("prov:pairKey"))
             entity_id = first(kvp.record.get_attribute("prov:pairEntity"))
-            d[key] = self.prov.entity(entity_id)
+            d[key] = entity.provenance.entity(entity_id)
         return d
 
     def build(self):
@@ -308,13 +307,13 @@ class ProvCrateBuilder:
     def add_agent(self, crate, roc_engine_run, engine):
         delegate = engine.start().starter_activity()
         try:
-            delegation = next(self.prov.record_with_attr(
+            delegation = next(engine.provenance.record_with_attr(
                 prov.model.ProvDelegation, delegate.id, prov.model.PROV_ATTR_DELEGATE
             ))
         except StopIteration:
             return
         responsible = delegation.get_attribute(prov.model.PROV_ATTR_RESPONSIBLE)
-        agent = sum((self.prov.prov_doc.get_record(_) for _ in responsible), [])
+        agent = sum((engine.provenance.prov_doc.get_record(_) for _ in responsible), [])
         for a in agent:
             if "prov:Person" not in set(str(_) for _ in a.get_asserted_types()):
                 continue
