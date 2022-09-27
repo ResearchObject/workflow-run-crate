@@ -217,7 +217,7 @@ class ProvCrateBuilder:
         self.add_workflow(crate)
         self.add_engine_run(crate)
         self.add_action(crate, self.workflow_run)
-        # self.add_param_connections()
+        self.add_param_connections()
         return crate
 
     def add_workflow(self, crate):
@@ -328,19 +328,13 @@ class ProvCrateBuilder:
             roc_engine_run.append_to("agent", ro_a, compact=True)
 
     def add_action(self, crate, activity, parent_instrument=None):
-        print("add_action for:", repr(activity.label))
         workflow = crate.mainEntity
         action = crate.add(ContextEntity(crate, properties={
             "@type": "CreateAction",
             "name": activity.label,
-            # "startTime": activity.start().time.isoformat(),
-            # "endTime": activity.end().time.isoformat(),
         }))
-        # job_qname = activity.plan()
-        # plan = self._resolve_plan(job_qname)
         plan = self._resolve_plan(activity)
         plan_tag = plan.id.localpart
-        print("plan_tag:", plan_tag)
         if plan_tag == "main":
             assert str(activity.type) == "wfprov:WorkflowRun"
             instrument = workflow
@@ -350,9 +344,14 @@ class ProvCrateBuilder:
             def to_wf_p(k):
                 return k
         else:
-            tool_name = self.step_maps[parent_instrument.id][plan_tag]["tool"]
+            parent_instrument_fragment = get_fragment(parent_instrument.id)
+            if parent_instrument_fragment != WORKFLOW_BASENAME:
+                parts = plan_tag.split("/", 1)
+                if parts[0] == "main":
+                    parts[0] = parent_instrument_fragment
+                    plan_tag = "/".join(parts)
+            tool_name = self.step_maps[parent_instrument_fragment][plan_tag]["tool"]
             instrument = crate.dereference(f"{workflow.id}#{tool_name}")
-            print(" ", tool_name, instrument)
             control_action = self.control_actions.get(plan_tag)
             if not control_action:
                 control_action = crate.add(ContextEntity(crate, properties={
@@ -367,11 +366,12 @@ class ProvCrateBuilder:
             if activity.uri in self.with_prov:
                 nested_prov = Provenance(self.ro, activity.uri)
                 activity = nested_prov.activity()
-                print("  run_id:", nested_prov.run_id)
 
             def to_wf_p(k):
                 return k.replace(activity.plan().localpart, tool_name)
         action["instrument"] = instrument
+        action["startTime"] = activity.start().time.isoformat()
+        action["endTime"] = activity.end().time.isoformat()
         action["object"] = self.add_action_params(crate, activity, to_wf_p, "usage")
         action["result"] = self.add_action_params(crate, activity, to_wf_p, "generation")
         for job in activity.steps():
@@ -379,7 +379,6 @@ class ProvCrateBuilder:
 
     def add_action_params(self, crate, activity, to_wf_p, ptype="usage"):
         action_params = []
-        print(activity.label)
         for rel in getattr(activity, ptype)():
             k = get_relative_uri(rel.role.uri)
             if str(activity.type) == "wfprov:WorkflowRun":
@@ -393,10 +392,8 @@ class ProvCrateBuilder:
                 if not list(activity.steps()) and get_step_part(k):
                     continue
             wf_p = crate.dereference(to_wf_p(k))
-            print("  k =", k, "| wf_p =", wf_p)
             k = get_fragment(k)
             v = rel.entity()
-            print("  v =", v)
             value = self.convert_param(v, crate)
             if {"ro:Folder", "wf4ever:File"} & set(str(_) for _ in v.types()):
                 action_p = value
