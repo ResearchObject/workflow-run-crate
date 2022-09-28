@@ -461,3 +461,148 @@ def test_scatter_pvs(data_dir, tmpdir):
         assert len(objects) == 1
         job_values.add(objects[0]["value"])
     assert job_values == {"foo", "bar"}
+
+
+def test_subworkflows(data_dir, tmpdir):
+    args = Args()
+    args.root = data_dir / "revsortlcase-run-1"
+    args.output = tmpdir / "revsortlcase-run-1-crate"
+    args.license = "Apache-2.0"
+    args.workflow_name = None
+    main(args)
+    crate = ROCrate(args.output)
+    workflow = crate.mainEntity
+    wf_inputs = {_.id: _ for _ in workflow["input"]}
+    assert set(wf_inputs) == {
+        "packed.cwl#main/descending_sort",
+        "packed.cwl#main/revsortlcase_in"
+    }
+    wf_outputs = {_.id: _ for _ in workflow["output"]}
+    assert set(wf_outputs) == {
+        "packed.cwl#main/revsortlcase_out"
+    }
+    wf_tools = {_.id: _ for _ in workflow["hasPart"]}
+    assert set(wf_tools) == {
+        "packed.cwl#revsort.cwl",
+        "packed.cwl#lcasetool.cwl"
+    }
+    wf_steps = {_.id: _ for _ in workflow["step"]}
+    assert set(wf_steps) == {
+        "packed.cwl#main/revsort",
+        "packed.cwl#main/lcase"
+    }
+    revsort = wf_tools["packed.cwl#revsort.cwl"]
+    assert set(revsort.type) == {"SoftwareSourceCode", "ComputationalWorkflow", "HowTo"}
+    assert revsort["programmingLanguage"] is workflow["programmingLanguage"]
+    rs_inputs = {_.id: _ for _ in revsort["input"]}
+    assert set(rs_inputs) == {
+        "packed.cwl#revsort.cwl/reverse_sort",
+        "packed.cwl#revsort.cwl/revsort_in"
+    }
+    rs_outputs = {_.id: _ for _ in revsort["output"]}
+    assert set(rs_outputs) == {
+        "packed.cwl#revsort.cwl/revsort_out"
+    }
+    rs_tools = {_.id: _ for _ in revsort["hasPart"]}
+    assert set(rs_tools) == {
+        "packed.cwl#revtool.cwl",
+        "packed.cwl#sorttool.cwl"
+    }
+    rs_steps = {_.id: _ for _ in revsort["step"]}
+    assert set(rs_steps) == {
+        "packed.cwl#revsort.cwl/rev",
+        "packed.cwl#revsort.cwl/sorted"
+    }
+    rev = rs_tools["packed.cwl#revtool.cwl"]
+    rev_inputs = {_.id: _ for _ in rev["input"]}
+    assert set(rev_inputs) == {
+        "packed.cwl#revtool.cwl/rev_in"
+    }
+    rev_outputs = {_.id: _ for _ in rev["output"]}
+    assert set(rev_outputs) == {
+        "packed.cwl#revtool.cwl/rev_out"
+    }
+    sort = rs_tools["packed.cwl#sorttool.cwl"]
+    sort_inputs = {_.id: _ for _ in sort["input"]}
+    assert set(sort_inputs) == {
+        "packed.cwl#sorttool.cwl/sort_in",
+        "packed.cwl#sorttool.cwl/reverse"
+    }
+    sort_outputs = {_.id: _ for _ in sort["output"]}
+    assert set(sort_outputs) == {
+        "packed.cwl#sorttool.cwl/sort_out"
+    }
+    lcase = wf_tools["packed.cwl#lcasetool.cwl"]
+    lcase_inputs = {_.id: _ for _ in lcase["input"]}
+    assert set(lcase_inputs) == {
+        "packed.cwl#lcasetool.cwl/lcase_in",
+    }
+    lcase_outputs = {_.id: _ for _ in lcase["output"]}
+    assert set(lcase_outputs) == {
+        "packed.cwl#lcasetool.cwl/lcase_out"
+    }
+    actions = {_["instrument"].id: _ for _ in crate.contextual_entities
+               if "CreateAction" in _.type}
+    assert set(actions) == {
+        "packed.cwl",
+        "packed.cwl#revsort.cwl",
+        "packed.cwl#revtool.cwl",
+        "packed.cwl#sorttool.cwl",
+        "packed.cwl#lcasetool.cwl",
+    }
+    wf_action = actions["packed.cwl"]
+    wf_objects = {_.type: _ for _ in wf_action["object"]}
+    assert set(wf_objects) == {"File", "PropertyValue"}
+    assert wf_objects["PropertyValue"]["value"] == "True"
+    wf_results = {_.type: _ for _ in wf_action["result"]}
+    assert set(wf_results) == {"File"}
+    # revsort_in missing from retrospective provenance (cwltool bug?)
+    # also, the value for reverse_sort is False
+    rs_action = actions["packed.cwl#revsort.cwl"]
+    # rs_objects = {_.type: _ for _ in rs_action["object"]}
+    # assert set(rs_objects) == {"File", "PropertyValue"}
+    # assert rs_objects["PropertyValue"]["value"] == "True"
+    rs_results = {_.type: _ for _ in rs_action["result"]}
+    assert set(rs_results) == {"File"}
+    rev_action = actions["packed.cwl#revtool.cwl"]
+    rev_objects = {_.type: _ for _ in rev_action["object"]}
+    assert set(rev_objects) == {"File"}
+    rev_results = {_.type: _ for _ in rev_action["result"]}
+    assert set(rev_results) == {"File"}
+    sort_action = actions["packed.cwl#sorttool.cwl"]
+    sort_objects = {_.type: _ for _ in sort_action["object"]}
+    assert set(sort_objects) == {"File", "PropertyValue"}
+    assert sort_objects["PropertyValue"]["value"] == "True"
+    sort_results = {_.type: _ for _ in sort_action["result"]}
+    assert set(sort_results) == {"File"}
+    lcase_action = actions["packed.cwl#lcasetool.cwl"]
+    lcase_objects = {_.type: _ for _ in lcase_action["object"]}
+    assert set(lcase_objects) == {"File"}
+    lcase_results = {_.type: _ for _ in lcase_action["result"]}
+    assert set(lcase_results) == {"File"}
+    # parameter connections
+    assert wf_inputs["packed.cwl#main/revsortlcase_in"]["connectedTo"] == \
+        rs_inputs["packed.cwl#revsort.cwl/revsort_in"]
+    assert wf_inputs["packed.cwl#main/descending_sort"]["connectedTo"] == \
+        rs_inputs["packed.cwl#revsort.cwl/reverse_sort"]
+    assert lcase_outputs["packed.cwl#lcasetool.cwl/lcase_out"]["connectedTo"] == \
+        wf_outputs["packed.cwl#main/revsortlcase_out"]
+    assert rs_inputs["packed.cwl#revsort.cwl/revsort_in"]["connectedTo"] == \
+        rev_inputs["packed.cwl#revtool.cwl/rev_in"]
+    assert rs_inputs["packed.cwl#revsort.cwl/reverse_sort"]["connectedTo"] == \
+        sort_inputs["packed.cwl#sorttool.cwl/reverse"]
+    assert sort_outputs["packed.cwl#sorttool.cwl/sort_out"]["connectedTo"] == \
+        rs_outputs["packed.cwl#revsort.cwl/revsort_out"]
+    assert rev_outputs["packed.cwl#revtool.cwl/rev_out"]["connectedTo"] == \
+        sort_inputs["packed.cwl#sorttool.cwl/sort_in"]
+    assert rs_outputs["packed.cwl#revsort.cwl/revsort_out"]["connectedTo"] == \
+        lcase_inputs["packed.cwl#lcasetool.cwl/lcase_in"]
+    # file contents
+    in_text = (args.root / "data/7c/7cb1a4da14ba3e91b983b30e7689e3902bcd2034").read_text()
+    assert (args.output / wf_objects["File"].id).read_text() == in_text
+    rev_out_text = (args.root / "data/54/542758e6e55bb880c05e2de68a3897bfab37c990").read_text()
+    assert (args.output / rev_results["File"].id).read_text() == rev_out_text
+    sorted_text = (args.root / "data/13/134bede4fd3827851f861713ed34168b6efb2806").read_text()
+    assert (args.output / sort_results["File"].id).read_text() == sorted_text
+    out_text = (args.root / "data/aa/aaf167286572f8b5d5c592b94aff678d0997947f").read_text()
+    assert (args.output / wf_results["File"].id).read_text() == out_text
