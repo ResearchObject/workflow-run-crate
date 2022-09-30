@@ -164,7 +164,6 @@ class ProvCrateBuilder:
         self.wf_path = self.root / "workflow" / WORKFLOW_BASENAME
         self.cwl_defs = get_workflow(self.wf_path)
         self.step_maps = self._get_step_maps(self.cwl_defs)
-        self.param_map = {}
         self.ro = ResearchObject(BDBag(str(root)))
         self.with_prov = set(str(_) for _ in self.ro.resources_with_provenance())
         self.workflow_run = Provenance(self.ro).activity()
@@ -289,7 +288,6 @@ class ProvCrateBuilder:
             properties["name"] = get_fragment(p_id)
             p = crate.add(ContextEntity(crate, p_id, properties=properties))
             params.append(p)
-            self.param_map[p_id] = p
         return params
 
     def add_engine_run(self, crate):
@@ -457,13 +455,11 @@ class ProvCrateBuilder:
 
     def add_param_connections(self, crate, workflow):
         def connect(source, target):
-            source_p = self.param_map[f"{WORKFLOW_BASENAME}#{source}"]
-            target_p = self.param_map[f"{WORKFLOW_BASENAME}#{target}"]
             connection = crate.add(ContextEntity(crate, properties={
                 "@type": "ParameterConnection"
             }))
-            connection["source"] = source_p
-            connection["target"] = target_p
+            connection["source"] = crate.get(f"{WORKFLOW_BASENAME}#{source}")
+            connection["target"] = crate.get(f"{WORKFLOW_BASENAME}#{target}")
             workflow.append_to("connection", connection)
         wf_name = get_fragment(workflow.id)
         wf_def = self.cwl_defs[wf_name]
