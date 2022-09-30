@@ -1,0 +1,5 @@
+revsortlcase_in:
+  class: File
+  location: revsortlcase_in.txt
+descending_sort:
+  true
