@@ -458,8 +458,8 @@ class ProvCrateBuilder:
             connection = crate.add(ContextEntity(crate, properties={
                 "@type": "ParameterConnection"
             }))
-            connection["source"] = crate.get(f"{WORKFLOW_BASENAME}#{source}")
-            connection["target"] = crate.get(f"{WORKFLOW_BASENAME}#{target}")
+            connection["sourceParameter"] = crate.get(f"{WORKFLOW_BASENAME}#{source}")
+            connection["targetParameter"] = crate.get(f"{WORKFLOW_BASENAME}#{target}")
             workflow.append_to("connection", connection)
         wf_name = get_fragment(workflow.id)
         wf_def = self.cwl_defs[wf_name]

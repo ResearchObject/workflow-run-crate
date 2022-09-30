@@ -23,6 +23,11 @@ class Args:
     pass
 
 
+def _connected(workflow):
+    for c in workflow["connection"]:
+        yield (c["sourceParameter"].id, c["targetParameter"].id)
+
+
 def test_revsort(data_dir, tmpdir):
     args = Args()
     args.root = data_dir / "revsort-run-1"
@@ -114,7 +119,7 @@ def test_revsort(data_dir, tmpdir):
         else:
             assert False, f"unexpected step id: {step.id}"
     # parameter connections
-    assert set((c["source"].id, c["target"].id) for c in workflow["connection"]) == set([
+    assert set(_connected(workflow)) == set([
         ("packed.cwl#main/input", "packed.cwl#revtool.cwl/input"),
         ("packed.cwl#main/reverse_sort", "packed.cwl#sorttool.cwl/reverse"),
         ("packed.cwl#revtool.cwl/output", "packed.cwl#sorttool.cwl/input"),
@@ -401,7 +406,7 @@ def test_no_output(data_dir, tmpdir):
             elif step_tag == "date2_step":
                 assert len(objects) == 1
     # parameter connections
-    assert set((c["source"].id, c["target"].id) for c in workflow["connection"]) == set([
+    assert set(_connected(workflow)) == set([
         ("packed.cwl#main/sabdab_file", "packed.cwl#date.cwl/file"),
         ("packed.cwl#main/sabdab_file", "packed.cwl#echo.cwl/input_file"),
         ("packed.cwl#main/pdb_dir", "packed.cwl#echo.cwl/input_dir"),
@@ -572,13 +577,13 @@ def test_subworkflows(data_dir, tmpdir):
     lcase_results = {_.type: _ for _ in lcase_action["result"]}
     assert set(lcase_results) == {"File"}
     # parameter connections
-    assert set((c["source"].id, c["target"].id) for c in workflow["connection"]) == set([
+    assert set(_connected(workflow)) == set([
         ("packed.cwl#main/revsortlcase_in", "packed.cwl#revsort.cwl/revsort_in"),
         ("packed.cwl#main/descending_sort", "packed.cwl#revsort.cwl/reverse_sort"),
         ("packed.cwl#lcasetool.cwl/lcase_out", "packed.cwl#main/revsortlcase_out"),
         ("packed.cwl#revsort.cwl/revsort_out", "packed.cwl#lcasetool.cwl/lcase_in"),
     ])
-    assert set((c["source"].id, c["target"].id) for c in revsort["connection"]) == set([
+    assert set(_connected(revsort)) == set([
         ("packed.cwl#revsort.cwl/revsort_in", "packed.cwl#revtool.cwl/rev_in"),
         ("packed.cwl#revsort.cwl/reverse_sort", "packed.cwl#sorttool.cwl/reverse"),
         ("packed.cwl#revtool.cwl/rev_out", "packed.cwl#sorttool.cwl/sort_in"),
