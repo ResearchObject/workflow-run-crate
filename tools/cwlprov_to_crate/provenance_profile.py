@@ -222,15 +222,18 @@ class ProvenanceProfile:
         )
         self.document.wasStartedBy(wfengine, None, account, datetime.datetime.now())
         # define workflow run level activity
-        print(self.workflow_run_uri)
+        # print(self.workflow_run_uri)
         self.document.activity(
             self.workflow_run_uri,
             datetime.datetime.now(),
             None,
             {
                 PROV_TYPE: WFPROV["WorkflowRun"],
-                "prov:label": "Run of galaxy workflow",
+                "prov:label": "Run of ga_export.ga#main",
             },
+        )
+        self.document.wasEndedBy(
+            self.workflow_run_uri, None, self.workflow_run_uri, datetime.datetime.now()
         )
         # association between SoftwareAgent and WorkflowRun
         main_workflow = "wf:main"
@@ -243,6 +246,7 @@ class ProvenanceProfile:
                 "prov:label": "Prospective provenance",
             },
         )
+        
         self.document.wasAssociatedWith(
             self.workflow_run_uri, self.engine_uuid, main_workflow
         )
@@ -265,7 +269,7 @@ class ProvenanceProfile:
         process_name = ga_export_jobs_attrs["tool_id"]
         # tool_version = ga_export_jobs_attrs["tool_version"]
         # TODO: insert workflow id
-        prov_label = "Run of " + process_name
+        prov_label = "Run of ga_export.ga#main/" + process_name
         start_time = ga_export_jobs_attrs["create_time"]
         end_time = ga_export_jobs_attrs["update_time"]
 
@@ -291,6 +295,9 @@ class ProvenanceProfile:
         )
         self.document.wasStartedBy(
             process_run_id, None, self.workflow_run_uri, start_time, None, None
+        )
+        self.document.wasEndedBy(
+            process_run_id, None, self.workflow_run_uri, end_time
         )
         self.used_artefacts(process_run_id, ga_export_jobs_attrs)
         return process_run_id
@@ -325,14 +332,14 @@ class ProvenanceProfile:
 
                 # if not value or len(value) == 0:
                 if item in ("inputs", "outputs"):
-                    print("ITEM")
-                    print(item)
+                    # print("ITEM")
+                    # print(item)
                     for v in value:
-                        print("VALUE")
-                        print(v)
+                        # print("VALUE")
+                        # print(v)
                         for d in self.datasets:
-                            print("DATASET")
-                            print(d)
+                            # print("DATASET")
+                            # print(d)
                             if v in (
                                 [d["encoded_id"]]
                                 + d["copied_from_history_dataset_association_id_chain"]
@@ -497,9 +504,7 @@ class ProvenanceProfile:
         name: Optional[str],
     ) -> None:
         """Call wasGeneratedBy() for each output,copy the files into the RO."""
-        print("OOPS")
         if isinstance(final_output, Dict):
-            print("HELLLOOOO")
             # Timestamp should be created at the earliest
             # timestamp = datetime.datetime.now()
 
@@ -518,7 +523,8 @@ class ProvenanceProfile:
                 process_run_id = self.workflow_run_uri
 
             self.document.wasGeneratedBy(
-                entity, process_run_id, None, None, {"prov:role": role}
+                #timestamp
+                entity, process_run_id, final_output['update_time'], None, {"prov:role": role}
             )
 
     def prospective_prov(self, job: GalaxyJob) -> None:
