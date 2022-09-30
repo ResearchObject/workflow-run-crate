@@ -50,6 +50,13 @@ CWL_TYPE_MAP = {
 
 SCATTER_JOB_PATTERN = re.compile(r"^(.+)_\d+$")
 
+EXTRA_TERMS = {
+    "ParameterConnection": "https://w3id.org/ro/terms/workflow-run#ParameterConnection",
+    "connection": "https://w3id.org/ro/terms/workflow-run#connection",
+    "sourceParameter": "https://w3id.org/ro/terms/workflow-run#sourceParameter",
+    "targetParameter": "https://w3id.org/ro/terms/workflow-run#targetParameter"
+}
+
 
 def convert_cwl_type(cwl_type):
     if isinstance(cwl_type, list):
@@ -212,6 +219,7 @@ class ProvCrateBuilder:
 
     def build(self):
         crate = ROCrate(gen_preview=False)
+        crate.metadata.extra_terms.update(EXTRA_TERMS)
         self.add_workflow(crate)
         self.add_engine_run(crate)
         self.add_action(crate, self.workflow_run)
