@@ -114,18 +114,12 @@ def test_revsort(data_dir, tmpdir):
         else:
             assert False, f"unexpected step id: {step.id}"
     # parameter connections
-    sorted_output = crate.get("packed.cwl#sorttool.cwl/output")
-    main_output = crate.get("packed.cwl#main/output")
-    assert sorted_output["connectedTo"] is main_output
-    main_input = crate.get("packed.cwl#main/input")
-    rev_input = crate.get("packed.cwl#revtool.cwl/input")
-    assert main_input["connectedTo"] is rev_input
-    rev_output = crate.get("packed.cwl#revtool.cwl/output")
-    sorted_input = crate.get("packed.cwl#sorttool.cwl/input")
-    assert rev_output["connectedTo"] is sorted_input
-    main_reverse_sort = crate.get("packed.cwl#main/reverse_sort")
-    sorted_reverse = crate.get("packed.cwl#sorttool.cwl/reverse")
-    assert main_reverse_sort["connectedTo"] is sorted_reverse
+    assert set((c["source"].id, c["target"].id) for c in workflow["connection"]) == set([
+        ("packed.cwl#main/input", "packed.cwl#revtool.cwl/input"),
+        ("packed.cwl#main/reverse_sort", "packed.cwl#sorttool.cwl/reverse"),
+        ("packed.cwl#revtool.cwl/output", "packed.cwl#sorttool.cwl/input"),
+        ("packed.cwl#sorttool.cwl/output", "packed.cwl#main/output"),
+    ])
     # file contents
     in_text = (args.root / "data/32/327fc7aedf4f6b69a42a7c8b808dc5a7aff61376").read_text()
     assert (args.output / wf_input_file.id).read_text() == in_text
@@ -407,15 +401,12 @@ def test_no_output(data_dir, tmpdir):
             elif step_tag == "date2_step":
                 assert len(objects) == 1
     # parameter connections
-    main_file = crate.get("packed.cwl#main/sabdab_file")
-    main_dir = crate.get("packed.cwl#main/pdb_dir")
-    main_array = crate.get("packed.cwl#main/pdb_array")
-    date_file = crate.get("packed.cwl#date.cwl/file")
-    echo_file = crate.get("packed.cwl#echo.cwl/input_file")
-    echo_dir = crate.get("packed.cwl#echo.cwl/input_dir")
-    assert set(main_file["connectedTo"]) == {date_file, echo_file}
-    assert main_dir["connectedTo"] is echo_dir
-    assert main_array["connectedTo"] is date_file
+    assert set((c["source"].id, c["target"].id) for c in workflow["connection"]) == set([
+        ("packed.cwl#main/sabdab_file", "packed.cwl#date.cwl/file"),
+        ("packed.cwl#main/sabdab_file", "packed.cwl#echo.cwl/input_file"),
+        ("packed.cwl#main/pdb_dir", "packed.cwl#echo.cwl/input_dir"),
+        ("packed.cwl#main/pdb_array", "packed.cwl#date.cwl/file"),
+    ])
     # file contents
     text_7mb7 = (args.root / "data/4b/4b22356928446475c8ae5869968c9777374a76e8").read_text()
     text_7zxf = (args.root / "data/4e/4ebd7d222d9b6095fa96ee395905ce7f6d415381").read_text()
@@ -581,22 +572,18 @@ def test_subworkflows(data_dir, tmpdir):
     lcase_results = {_.type: _ for _ in lcase_action["result"]}
     assert set(lcase_results) == {"File"}
     # parameter connections
-    assert wf_inputs["packed.cwl#main/revsortlcase_in"]["connectedTo"] == \
-        rs_inputs["packed.cwl#revsort.cwl/revsort_in"]
-    assert wf_inputs["packed.cwl#main/descending_sort"]["connectedTo"] == \
-        rs_inputs["packed.cwl#revsort.cwl/reverse_sort"]
-    assert lcase_outputs["packed.cwl#lcasetool.cwl/lcase_out"]["connectedTo"] == \
-        wf_outputs["packed.cwl#main/revsortlcase_out"]
-    assert rs_inputs["packed.cwl#revsort.cwl/revsort_in"]["connectedTo"] == \
-        rev_inputs["packed.cwl#revtool.cwl/rev_in"]
-    assert rs_inputs["packed.cwl#revsort.cwl/reverse_sort"]["connectedTo"] == \
-        sort_inputs["packed.cwl#sorttool.cwl/reverse"]
-    assert sort_outputs["packed.cwl#sorttool.cwl/sort_out"]["connectedTo"] == \
-        rs_outputs["packed.cwl#revsort.cwl/revsort_out"]
-    assert rev_outputs["packed.cwl#revtool.cwl/rev_out"]["connectedTo"] == \
-        sort_inputs["packed.cwl#sorttool.cwl/sort_in"]
-    assert rs_outputs["packed.cwl#revsort.cwl/revsort_out"]["connectedTo"] == \
-        lcase_inputs["packed.cwl#lcasetool.cwl/lcase_in"]
+    assert set((c["source"].id, c["target"].id) for c in workflow["connection"]) == set([
+        ("packed.cwl#main/revsortlcase_in", "packed.cwl#revsort.cwl/revsort_in"),
+        ("packed.cwl#main/descending_sort", "packed.cwl#revsort.cwl/reverse_sort"),
+        ("packed.cwl#lcasetool.cwl/lcase_out", "packed.cwl#main/revsortlcase_out"),
+        ("packed.cwl#revsort.cwl/revsort_out", "packed.cwl#lcasetool.cwl/lcase_in"),
+    ])
+    assert set((c["source"].id, c["target"].id) for c in revsort["connection"]) == set([
+        ("packed.cwl#revsort.cwl/revsort_in", "packed.cwl#revtool.cwl/rev_in"),
+        ("packed.cwl#revsort.cwl/reverse_sort", "packed.cwl#sorttool.cwl/reverse"),
+        ("packed.cwl#revtool.cwl/rev_out", "packed.cwl#sorttool.cwl/sort_in"),
+        ("packed.cwl#sorttool.cwl/sort_out", "packed.cwl#revsort.cwl/revsort_out"),
+    ])
     # file contents
     in_text = (args.root / "data/7c/7cb1a4da14ba3e91b983b30e7689e3902bcd2034").read_text()
     assert (args.output / wf_objects["File"].id).read_text() == in_text

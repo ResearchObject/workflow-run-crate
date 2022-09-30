@@ -216,7 +216,6 @@ class ProvCrateBuilder:
         self.add_workflow(crate)
         self.add_engine_run(crate)
         self.add_action(crate, self.workflow_run)
-        self.add_param_connections()
         return crate
 
     def add_workflow(self, crate):
@@ -234,8 +233,10 @@ class ProvCrateBuilder:
         cwl_workflow = self.cwl_defs[workflow.id]
         workflow["input"] = self.add_params(crate, cwl_workflow.inputs)
         workflow["output"] = self.add_params(crate, cwl_workflow.outputs)
-        for s in getattr(cwl_workflow, "steps", []):
-            self.add_step(crate, workflow, s)
+        if hasattr(cwl_workflow, "steps"):
+            for s in cwl_workflow.steps:
+                self.add_step(crate, workflow, s)
+            self.add_param_connections(crate, workflow)
         return workflow
 
     def add_step(self, crate, workflow, cwl_step):
@@ -275,8 +276,9 @@ class ProvCrateBuilder:
         workflow.append_to("hasPart", tool)
         if hasattr(cwl_tool, "steps"):
             tool["programmingLanguage"] = workflow["programmingLanguage"]
-            for s in getattr(cwl_tool, "steps", []):
+            for s in cwl_tool.steps:
                 self.add_step(crate, tool, s)
+            self.add_param_connections(crate, tool)
         return tool
 
     def add_params(self, crate, cwl_params):
@@ -453,35 +455,41 @@ class ProvCrateBuilder:
             return [self.convert_param(_, crate) for _ in self.get_members(prov_param)]
         raise RuntimeError(f"No value to convert for {prov_param}")
 
-    def add_param_connections(self):
+    def add_param_connections(self, crate, workflow):
         def connect(source, target):
             source_p = self.param_map[f"{WORKFLOW_BASENAME}#{source}"]
             target_p = self.param_map[f"{WORKFLOW_BASENAME}#{target}"]
-            source_p.append_to("connectedTo", target_p, compact=True)
-        for wf_name, sm in self.step_maps.items():
-            def_ = self.cwl_defs[wf_name]
-            out_map = {}
-            for step in def_.steps:
-                step_name = get_fragment(step.id)
-                tool_name = sm[step_name]["tool"]
-                for o in step.out:
-                    o_name = get_fragment(o)
-                    out_map[o_name] = o_name.replace(step_name, tool_name)
-            for step in def_.steps:
-                step_name = get_fragment(step.id)
-                tool_name = sm[step_name]["tool"]
-                for mapping in getattr(step, "in_", []):
-                    from_param = get_fragment(mapping.source)
-                    try:
-                        from_param = out_map[from_param]
-                    except KeyError:
-                        pass  # only needed if source is from another step
-                    to_param = get_fragment(mapping.id).replace(step_name, tool_name)
-                    connect(from_param, to_param)
-            for out in getattr(def_, "outputs", []):
-                from_param = out_map[get_fragment(out.outputSource)]
-                to_param = get_fragment(out.id)
+            connection = crate.add(ContextEntity(crate, properties={
+                "@type": "ParameterConnection"
+            }))
+            connection["source"] = source_p
+            connection["target"] = target_p
+            workflow.append_to("connection", connection)
+        wf_name = get_fragment(workflow.id)
+        wf_def = self.cwl_defs[wf_name]
+        step_map = self.step_maps[wf_name]
+        out_map = {}
+        for step in wf_def.steps:
+            step_name = get_fragment(step.id)
+            tool_name = step_map[step_name]["tool"]
+            for o in step.out:
+                o_name = get_fragment(o)
+                out_map[o_name] = o_name.replace(step_name, tool_name)
+        for step in wf_def.steps:
+            step_name = get_fragment(step.id)
+            tool_name = step_map[step_name]["tool"]
+            for mapping in getattr(step, "in_", []):
+                from_param = get_fragment(mapping.source)
+                try:
+                    from_param = out_map[from_param]
+                except KeyError:
+                    pass  # only needed if source is from another step
+                to_param = get_fragment(mapping.id).replace(step_name, tool_name)
                 connect(from_param, to_param)
+        for out in getattr(wf_def, "outputs", []):
+            from_param = out_map[get_fragment(out.outputSource)]
+            to_param = get_fragment(out.id)
+            connect(from_param, to_param)
 
 
 def main(args):
