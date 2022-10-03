@@ -22,21 +22,35 @@ import json
 import re
 from pathlib import Path
 
+import cwlprov.prov
 import networkx as nx
 import prov.model
 from bdbag.bdbagit import BDBag
 from cwl_utils.parser import load_document_by_yaml
 from cwlprov.ro import ResearchObject
-from cwlprov.prov import Provenance
 from cwlprov.utils import first
+from prov.identifier import Identifier
 from rocrate.rocrate import ROCrate
 from rocrate.model.contextentity import ContextEntity
 from rocrate.model.softwareapplication import SoftwareApplication
 
 from provenance_profile import ProvenanceProfile
-from ga_prov import Provenance as GalaxyProvenance
 
 # WORKFLOW_BASENAME = "packed.cwl"
+
+
+class Provenance(cwlprov.prov.Provenance):
+
+    def __init__(self, source, run=None):
+        if isinstance(source, ResearchObject):
+            super().__init__(source, run=run)
+        elif isinstance(source, prov.model.ProvDocument):
+            self.run_id = Identifier(run)
+            self._path = None
+            self.prov_doc = source
+        else:
+            raise TypeError("source must be a ResearchObject or ProvDocument")
+
 
 CWL_TYPE_MAP = {
     "string": "Text",
@@ -184,7 +198,7 @@ class ProvCrateBuilder:
             self.step_maps = None
             self.with_prov = set()
             galaxy_prov = ProvenanceProfile(root)
-            self.prov = GalaxyProvenance(galaxy_prov.document, galaxy_prov.workflow_run_uri)
+            self.prov = Provenance(galaxy_prov.document, galaxy_prov.workflow_run_uri)
             self.workflow_run = self.prov.activity()
             self.roc_engine_run = None
 
