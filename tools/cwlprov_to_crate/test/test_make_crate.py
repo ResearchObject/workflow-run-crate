@@ -17,6 +17,7 @@ from rocrate.rocrate import ROCrate
 
 
 CWL_ID = "https://w3id.org/workflowhub/workflow-ro-crate#cwl"
+GALAXY_ID = "https://w3id.org/workflowhub/workflow-ro-crate#galaxy"
 
 
 class Args:
@@ -29,6 +30,7 @@ def test_revsort(data_dir, tmpdir):
     args.output = tmpdir / "revsort-run-1-crate"
     args.license = "Apache-2.0"
     args.workflow_name = "RevSort"
+    args.workflow_type = None
     main(args)
     crate = ROCrate(args.output)
     assert crate.root_dataset["license"] == "Apache-2.0"
@@ -141,6 +143,7 @@ def test_no_input(data_dir, tmpdir):
     args.output = tmpdir / "no-input-run-1-crate"
     args.license = "Apache-2.0"
     args.workflow_name = None
+    args.workflow_type = None
     main(args)
     crate = ROCrate(args.output)
     # The "workflow" is actually a single tool; should we generate a Process
@@ -175,6 +178,7 @@ def test_param_types(data_dir, tmpdir):
     args.output = tmpdir / "type-zoo-run-1-crate"
     args.license = "Apache-2.0"
     args.workflow_name = None
+    args.workflow_type = None
     main(args)
     crate = ROCrate(args.output)
     workflow = crate.mainEntity
@@ -239,6 +243,7 @@ def test_dir_io(data_dir, tmpdir):
     args.output = tmpdir / "grepucase-run-1-crate"
     args.license = "Apache-2.0"
     args.workflow_name = None
+    args.workflow_type = None
     main(args)
     crate = ROCrate(args.output)
     workflow = crate.mainEntity
@@ -321,6 +326,7 @@ def test_no_output(data_dir, tmpdir):
     args.output = tmpdir / "no-output-run-1-crate"
     args.license = "Apache-2.0"
     args.workflow_name = None
+    args.workflow_type = None
     main(args)
     crate = ROCrate(args.output)
     assert crate.root_dataset["license"] == "Apache-2.0"
@@ -433,6 +439,7 @@ def test_scatter_pvs(data_dir, tmpdir):
     args.output = tmpdir / "echo-scatter-run-1-crate"
     args.license = "Apache-2.0"
     args.workflow_name = None
+    args.workflow_type = None
     main(args)
     crate = ROCrate(args.output)
     workflow = crate.mainEntity
@@ -469,6 +476,7 @@ def test_subworkflows(data_dir, tmpdir):
     args.output = tmpdir / "revsortlcase-run-1-crate"
     args.license = "Apache-2.0"
     args.workflow_name = None
+    args.workflow_type = None
     main(args)
     crate = ROCrate(args.output)
     workflow = crate.mainEntity
@@ -606,3 +614,29 @@ def test_subworkflows(data_dir, tmpdir):
     assert (args.output / sort_results["File"].id).read_text() == sorted_text
     out_text = (args.root / "data/aa/aaf167286572f8b5d5c592b94aff678d0997947f").read_text()
     assert (args.output / wf_results["File"].id).read_text() == out_text
+
+
+def test_ga_export(data_dir, tmpdir):
+    args = Args()
+    args.root = data_dir / "test_ga_history_export" / "history_export"
+    args.output = tmpdir / "ga-export-crate"
+    args.license = None
+    args.workflow_name = None
+    args.workflow_type = "galaxy"
+    main(args)
+    crate = ROCrate(args.output)
+    workflow = crate.mainEntity
+    assert workflow.id == "ga_export.ga"
+    assert workflow["programmingLanguage"].id == GALAXY_ID
+    sel = [_ for _ in crate.contextual_entities if "OrganizeAction" in _.type]
+    assert len(sel) == 1
+    engine_action = sel[0]
+    assert "SoftwareApplication" in engine_action["instrument"].type
+    actions = [_ for _ in crate.contextual_entities if "CreateAction" in _.type]
+    sel = [_ for _ in actions if _["instrument"] is workflow]
+    assert len(sel) == 1
+    wf_action = sel[0]
+    assert crate.root_dataset["mentions"] == [wf_action]
+    assert engine_action["result"] is wf_action
+    control_actions = engine_action["object"]
+    assert all(_.type == "ControlAction" for _ in control_actions)
