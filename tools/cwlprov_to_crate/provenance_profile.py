@@ -11,7 +11,6 @@ from typing import (
     Any,
     Dict,
     List,
-    MutableSequence,
     Optional,
     Tuple,
     Union,
@@ -35,12 +34,9 @@ import os
 from provenance_constants import (
     ACCOUNT_UUID,
     CWLPROV,
-    METADATA,
-    ORE,
     PROVENANCE,
     ENCODING,
     # TEXT_PLAIN,
-    RO,
     SCHEMA,
     SHA1,
     UUID,
@@ -246,7 +242,7 @@ class ProvenanceProfile:
                 "prov:label": "Prospective provenance",
             },
         )
-        
+
         self.document.wasAssociatedWith(
             self.workflow_run_uri, self.engine_uuid, main_workflow
         )
@@ -341,8 +337,7 @@ class ProvenanceProfile:
                             # print("DATASET")
                             # print(d)
                             if v in (
-                                [d["encoded_id"]]
-                                + d["copied_from_history_dataset_association_id_chain"]
+                                [d["encoded_id"]] + d["copied_from_history_dataset_association_id_chain"]
                             ):
                                 if item == "inputs":
                                     self.declare_entity(process_run_id, d, prov_role)
@@ -523,7 +518,7 @@ class ProvenanceProfile:
                 process_run_id = self.workflow_run_uri
 
             self.document.wasGeneratedBy(
-                #timestamp
+                # timestamp
                 entity, process_run_id, final_output['update_time'], None, {"prov:role": role}
             )
 
