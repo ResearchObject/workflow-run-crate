@@ -1,6 +1,7 @@
 bdbag>=1.4.1
 cwl-utils==0.13
 cwlprov==0.1.1
+cwltool>=3.1.20220628170238
 networkx==2.8
 prov>=1.5.1
 rocrate==0.7.0

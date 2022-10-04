@@ -31,7 +31,7 @@ import os
 # from .job import CommandLineJob, JobBase
 # from .loghandler import #_logger
 # from .process import Process, shortname
-from provenance_constants import (
+from cwltool.provenance_constants import (
     ACCOUNT_UUID,
     CWLPROV,
     PROVENANCE,
