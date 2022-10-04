@@ -36,8 +36,6 @@ from rocrate.model.softwareapplication import SoftwareApplication
 
 from provenance_profile import ProvenanceProfile
 
-# WORKFLOW_BASENAME = "packed.cwl"
-
 
 class Provenance(cwlprov.prov.Provenance):
 
@@ -175,33 +173,30 @@ def get_workflow(wf_path):
 class ProvCrateBuilder:
 
     def __init__(self, root, workflow_name=None, license=None, lang="cwl"):
-        global WORKFLOW_BASENAME
         self.root = Path(root)
         self.lang = lang
         self.workflow_name = workflow_name
         self.license = license
         self.param_map = {}
-
         if self.lang == "cwl":
-            WORKFLOW_BASENAME = "packed.cwl"
-            self.wf_path = self.root / "workflow" / WORKFLOW_BASENAME
+            self.wf_basename = "packed.cwl"
+            self.wf_path = self.root / "workflow" / self.wf_basename
             self.cwl_defs = get_workflow(self.wf_path)
             self.step_maps = self._get_step_maps(self.cwl_defs)
             self.ro = ResearchObject(BDBag(str(root)))
             self.with_prov = set(str(_) for _ in self.ro.resources_with_provenance())
             self.workflow_run = Provenance(self.ro).activity()
-
-        if self.lang == "galaxy":
-            WORKFLOW_BASENAME = "ga_export.ga"
-            self.wf_path = self.root / "ga_export.ga"
+        elif self.lang == "galaxy":
+            self.wf_basename = "ga_export.ga"
+            self.wf_path = self.root / self.wf_basename
             # self.cwl_defs = get_workflow(self.wf_path)
-            self.step_maps = None
+            self.step_maps = {}
             self.with_prov = set()
             galaxy_prov = ProvenanceProfile(root)
             self.prov = Provenance(galaxy_prov.document, galaxy_prov.workflow_run_uri)
             self.workflow_run = self.prov.activity()
-            self.roc_engine_run = None
-
+        else:
+            raise ValueError(f"Unsupported workflow language: {self.lang}")
         self.roc_engine_run = None
         # avoid duplicates - not handled by ro-crate-py, see
         # https://github.com/ResearchObject/ro-crate-py/issues/132
@@ -246,57 +241,34 @@ class ProvCrateBuilder:
         return d
 
     def build(self):
-        if self.lang == "cwl":
-            crate = ROCrate(gen_preview=False)
-            self.add_workflow(crate)
-            self.add_engine_run(crate)
-            self.add_action(crate, self.workflow_run)
-            self.add_param_connections()
-            return crate
-        if self.lang == "galaxy":
-            crate = ROCrate(gen_preview=False)
-            self.add_ga_workflow(crate)
-            self.add_engine_run(crate)
-            self.add_action(crate, self.workflow_run)
-            # self.add_param_connections()
-            return crate
+        crate = ROCrate(gen_preview=False)
+        self.add_workflow(crate)
+        self.add_engine_run(crate)
+        self.add_action(crate, self.workflow_run)
+        self.add_param_connections()
+        return crate
 
     def add_workflow(self, crate):
-        lang_version = self.cwl_defs[WORKFLOW_BASENAME].cwlVersion
+        if self.lang == "cwl":
+            lang_version = self.cwl_defs[self.wf_basename].cwlVersion
+        elif self.lang == "galaxy":
+            lang_version = "galaxy_version_placeholder"
         properties = {
             "@type": ["File", "SoftwareSourceCode", "ComputationalWorkflow", "HowTo"],
             "name": self.workflow_name or self.wf_path.name
         }
         workflow = crate.add_workflow(
-            self.wf_path, self.wf_path.name, main=True, lang="cwl",
+            self.wf_path, self.wf_path.name, main=True, lang=self.lang,
             lang_version=lang_version, gen_cwl=False, properties=properties
         )
         if self.license:
             crate.root_dataset["license"] = self.license
-        cwl_workflow = self.cwl_defs[workflow.id]
-        workflow["input"] = self.add_params(crate, cwl_workflow.inputs)
-        workflow["output"] = self.add_params(crate, cwl_workflow.outputs)
-        for s in getattr(cwl_workflow, "steps", []):
-            self.add_step(crate, workflow, s)
-        return workflow
-
-    def add_ga_workflow(self, crate):
-        lang_version = "galaxy_version_placeholder"
-        properties = {
-            "@type": ["File", "SoftwareSourceCode", "ComputationalWorkflow", "HowTo"],
-            "name": "galaxy_wf_placeholder"
-        }
-        workflow = crate.add_workflow(
-            self.wf_path, self.wf_path.name, main=True, lang="galaxy",
-            lang_version=lang_version, gen_cwl=False, properties=properties
-        )
-        if self.license:
-            crate.root_dataset["license"] = self.license
-        # cwl_workflow = self.cwl_defs[workflow.id]
-        # workflow["input"] = self.add_params(crate, cwl_workflow.inputs)
-        # workflow["output"] = self.add_params(crate, cwl_workflow.outputs)
-        # for s in getattr(cwl_workflow, "steps", []):
-        #     self.add_step(crate, workflow, s)
+        if self.lang == "cwl":
+            cwl_workflow = self.cwl_defs[workflow.id]
+            workflow["input"] = self.add_params(crate, cwl_workflow.inputs)
+            workflow["output"] = self.add_params(crate, cwl_workflow.outputs)
+            for s in getattr(cwl_workflow, "steps", []):
+                self.add_step(crate, workflow, s)
         return workflow
 
     def add_step(self, crate, workflow, cwl_step):
@@ -405,14 +377,14 @@ class ProvCrateBuilder:
                 return k
         else:
             parent_instrument_fragment = get_fragment(parent_instrument.id)
-            if parent_instrument_fragment != WORKFLOW_BASENAME:
+            if parent_instrument_fragment != self.wf_basename:
                 parts = plan_tag.split("/", 1)
                 if parts[0] == "main":
                     parts[0] = parent_instrument_fragment
                     plan_tag = "/".join(parts)
             if self.lang == "cwl":
                 tool_name = self.step_maps[parent_instrument_fragment][plan_tag]["tool"]
-            if self.lang == "galaxy":
+            elif self.lang == "galaxy":
                 tool_name = plan_tag.split("/", 1)[-1]
             instrument = crate.dereference(f"{workflow.id}#{tool_name}")
             control_action = self.control_actions.get(plan_tag)
@@ -483,7 +455,7 @@ class ProvCrateBuilder:
             hash_ = next(prov_param.specializationOf()).id.localpart
             if self.lang == "cwl":
                 path = self.root / Path("data") / hash_[:2] / hash_
-            if self.lang == "galaxy":
+            elif self.lang == "galaxy":
                 path = self.root / hash_
             action_p = crate.dereference(path.name)
             if not action_p:
@@ -522,8 +494,8 @@ class ProvCrateBuilder:
 
     def add_param_connections(self):
         def connect(source, target):
-            source_p = self.param_map[f"{WORKFLOW_BASENAME}#{source}"]
-            target_p = self.param_map[f"{WORKFLOW_BASENAME}#{target}"]
+            source_p = self.param_map[f"{self.wf_basename}#{source}"]
+            target_p = self.param_map[f"{self.wf_basename}#{target}"]
             source_p.append_to("connectedTo", target_p, compact=True)
         for wf_name, sm in self.step_maps.items():
             def_ = self.cwl_defs[wf_name]
