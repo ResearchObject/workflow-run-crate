@@ -3,8 +3,7 @@ from load_ga_export import load_ga_history_export, GalaxyJob
 
 
 def test_ga_history_loading(data_dir, tmpdir):
-    export_dir = "test_ga_history_export"
-    export_path = data_dir / export_dir / "history_export"
+    export_path = data_dir / "test_ga_history_export"
 
     metadata_export = load_ga_history_export(export_path)
     jobs = []
@@ -19,8 +18,7 @@ def test_ga_history_loading(data_dir, tmpdir):
 
 
 def test_ga_history_parsing(data_dir, tmpdir):
-    export_dir = "test_ga_history_export"
-    export_path = data_dir / export_dir / "history_export"
+    export_path = data_dir / "test_ga_history_export"
     prov_path = tmpdir / "provenance"
     prov = ProvenanceProfile(export_path, "PDG", "https://orcid.org/0000-0002-8940-4946")
 

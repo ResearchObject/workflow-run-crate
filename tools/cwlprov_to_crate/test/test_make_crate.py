@@ -618,7 +618,7 @@ def test_subworkflows(data_dir, tmpdir):
 
 def test_ga_export(data_dir, tmpdir):
     args = Args()
-    args.root = data_dir / "test_ga_history_export" / "history_export"
+    args.root = data_dir / "test_ga_history_export"
     args.output = tmpdir / "ga-export-crate"
     args.license = None
     args.workflow_name = None
