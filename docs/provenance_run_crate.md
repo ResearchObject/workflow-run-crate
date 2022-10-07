@@ -13,9 +13,9 @@ This profile extends [Workflow Run Crate](workflow_run_crate) with specification
 
 A Provenance Run Crate MUST record the details of *tool* executions corresponding to each workflow *step* through additional [CreateAction](http://schema.org/CreateAction) entities, each of which MUST refer to the entity representing the tool via [instrument](http://schema.org/instrument). The workflow MUST refer to the orchestrated tools via [hasPart](http://schema.org/hasPart), as specified by the Bioschemas [ComputationalWorkflow profile](http://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE).
 
-The crate SHOULD also record *step* executions via [ControlAction](http://schema.org/ControlAction) instances, each of which MUST reference: a [HowToStep](http://schema.org/HowToStep) instance representing the step via `instrument`; the `CreateAction` representing the corresponding tool run via `object`. The workflow MUST reference its steps via [step](http://schema.org/step). Each `HowToStep` instance MUST reference the entity that represents its corresponding tool via [workExample](http://schema.org/workExample), and MAY indicate its position in the execution order via [position](http://schema.org/position). In addition to `File`, `SoftwareSourceCode` and `ComputationalWorkflow`, a workflow that points to step metadata via `step` MUST have a type of [HowTo](http://schema.org/HowTo).
+The crate SHOULD also record *step* executions via [ControlAction](http://schema.org/ControlAction) instances, each of which MUST reference: a [HowToStep](http://schema.org/HowToStep) instance representing the step via `instrument`; the `CreateAction` representing the corresponding tool run via `object`. The workflow MUST reference any `HowToStep` instances that represent its steps via [step](http://schema.org/step). Each `HowToStep` instance MUST reference the entity that represents its corresponding tool via [workExample](http://schema.org/workExample), and MAY indicate its position in the execution order via [position](http://schema.org/position). In addition to `File`, `SoftwareSourceCode` and `ComputationalWorkflow`, a workflow that points to step metadata via `step` MUST have a type of [HowTo](http://schema.org/HowTo).
 
-The crate MAY also include an [OrganizeAction](http://schema.org/OrganizeAction) representing the execution of the workflow *engine* (e.g. cwltool), which MUST point to: an entity representing the workflow engine (e.g. a [SoftwareApplication](http://schema.org/SoftwareApplication)) via `instrument`; the `CreateAction` that represents the workflow run via `result`; the `ControlAction` instances corresponding to the step executions via `object`.
+The crate MAY also include an [OrganizeAction](http://schema.org/OrganizeAction) representing the execution of the workflow *engine* (e.g. cwltool), which MUST point to: an entity representing the workflow engine (e.g. a [SoftwareApplication](http://schema.org/SoftwareApplication)) via `instrument`; the `CreateAction` that represents the workflow run via `result`; the `ControlAction` instances representing the step executions via `object`.
 
 The tool that implements a step can in turn be a workflow (*nested workflow* or *subworkflow*): in this case, it MUST be represented as a `ComputationalWorkflow`, and all of the above directions apply to it recursively. If the subworkflow is described in a section of the main workflow (e.g. as in [packed CWL workflows](https://www.commonwl.org/v1.2/CommandLineTool.html#Packed_documents)), rather than in a file of its own, it SHOULD be added to the crate as a [contextual entity](https://www.researchobject.org/ro-crate/1.1/contextual-entities.html): in this case, its type list MUST NOT include `File`.
 
@@ -290,3 +290,95 @@ The following diagram shows the relationships between all provenance-related ent
     }
 ]
 ```
+
+
+## Requirements
+
+The requirements of this profile are those of [Workflow Run Crate](workflow_run_crate) plus the ones listed below.
+
+<table>
+
+  <tr>
+   <td><strong>Property</strong></td>
+   <td><strong>Required?</strong></td>
+   <td><strong>Description</strong>
+   </td>
+  </tr>
+
+  <tr>
+   <td colspan="3"><strong>ComputationalWorkflow</strong> </td>
+  </tr>
+
+  <tr>
+   <td>@type</td>
+   <td>MUST</td>
+   <td>MUST include <code>File</code>, <code>SoftwareSourceCode</code> and <code>ComputationalWorkflow</code>. If the <code>step</code> property is used, MUST also include <code>HowTo</code>. In the case of a subworkflow added to the crate as a contextual entity, MUST NOT include <code>File</code>.</td>
+  </tr>
+
+  <tr>
+   <td>hasPart</td>
+   <td>MUST</td>
+   <td>Identifiers of the <em>tools</em> (or subworkflows) orchestrated by this workflow.</td>
+  </tr>
+
+  <tr>
+   <td>step</td>
+   <td>SHOULD</td>
+   <td>Identifier of the <code>HowToStep</code> instances representing this workflow's steps. If this property is used, the workflow MUST include <code>HowTo</code> among its types.</td>
+  </tr>
+
+  <tr>
+   <td colspan="3"><strong>HowToStep</strong> </td>
+  </tr>
+
+  <tr>
+   <td>workExample</td>
+   <td>MUST</td>
+   <td>Identifier of the tool (or subworkflow) that implements this step.</td>
+  </tr>
+
+  <tr>
+   <td>position</td>
+   <td>MAY</td>
+   <td>An integer indicating the step's position in the execution order. In general, there may be more than one valid execution order for a workflow. For instance, if step C needs outputs from steps A and B, but A and B don't need each other's output, both A-B-C and B-A-C are valid execution orders (A and B might even be executed in parallel). For this reason, the only requirement is that for each step pair (S1, S2), if S2 needs outputs from S1, S2's <code>position</code> MUST be greater than S1's.</td>
+  </tr>
+
+  <tr>
+   <td colspan="3"><strong>ControlAction</strong> </td>
+  </tr>
+
+  <tr>
+   <td>instrument</td>
+   <td>MUST</td>
+   <td>Identifier of the <code>HowToStep</code> whose execution is represented by this action.</td>
+  </tr>
+
+  <tr>
+   <td>object</td>
+   <td>MUST</td>
+   <td>Identifier of the <code>CreateAction</code> describing the <em>tool</em> execution corresponding to this <em>step</em> execution.</td>
+  </tr>
+
+  <tr>
+   <td colspan="3"><strong>OrganizeAction</strong> </td>
+  </tr>
+
+  <tr>
+   <td>instrument</td>
+   <td>MUST</td>
+   <td>Identifier of the entity (e.g. a <code>SoftwareApplication</code>) that represents the <em>workflow engine</em> (e.g. cwltool).</td>
+  </tr>
+
+  <tr>
+   <td>object</td>
+   <td>MUST</td>
+   <td>Identifiers of the <code>ControlAction</code> instances representing the step executions.</td>
+  </tr>
+
+  <tr>
+   <td>result</td>
+   <td>MUST</td>
+   <td>Identifier of the <code>CreateAction</code> representing the workflow execution.</td>
+  </tr>
+
+</table>

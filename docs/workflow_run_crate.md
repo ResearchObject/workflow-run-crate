@@ -167,3 +167,8 @@ Some workflows have multiple inputs/outputs that, in conformance with the [Biosc
     }
 ]
 ```
+
+
+## Requirements
+
+The requirements of this profile are those of [Process Run Crate](process_run_crate) plus those of [Workflow RO-Crate](https://w3id.org/workflowhub/workflow-ro-crate/). In particular, the entity acting as the `instrument` of the `CreateAction` MUST be the `mainEntity` of the crate, whose types include `File`, `SoftwareSourceCode` and `ComputationalWorkflow`.
