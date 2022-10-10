@@ -80,12 +80,11 @@ Note that the command line shown in the action's `description` is not directly r
   <tr>
    <td><strong>Property</strong></td>
    <td><strong>Required?</strong></td>
-   <td><strong>Description</strong>
-   </td>
+   <td><strong>Description</strong></td>
   </tr>
 
   <tr>
-   <td colspan="3"><strong>SoftwareApplication</strong> </td>
+   <th colspan="3"><strong>SoftwareApplication</strong></th>
   </tr>
 
   <tr>
@@ -119,7 +118,7 @@ Note that the command line shown in the action's `description` is not directly r
   </tr>
 
   <tr>
-   <td colspan="3"><strong>CreateAction</strong></td>
+   <th colspan="3"><strong>CreateAction</strong></th>
   </tr>
 
   <tr>

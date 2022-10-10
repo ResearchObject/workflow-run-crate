@@ -301,12 +301,11 @@ The requirements of this profile are those of [Workflow Run Crate](workflow_run_
   <tr>
    <td><strong>Property</strong></td>
    <td><strong>Required?</strong></td>
-   <td><strong>Description</strong>
-   </td>
+   <td><strong>Description</strong></td>
   </tr>
 
   <tr>
-   <td colspan="3"><strong>ComputationalWorkflow</strong> </td>
+   <th colspan="3"><strong>ComputationalWorkflow</strong></th>
   </tr>
 
   <tr>
@@ -328,7 +327,7 @@ The requirements of this profile are those of [Workflow Run Crate](workflow_run_
   </tr>
 
   <tr>
-   <td colspan="3"><strong>HowToStep</strong> </td>
+   <th colspan="3"><strong>HowToStep</strong></th>
   </tr>
 
   <tr>
@@ -344,7 +343,7 @@ The requirements of this profile are those of [Workflow Run Crate](workflow_run_
   </tr>
 
   <tr>
-   <td colspan="3"><strong>ControlAction</strong> </td>
+   <th colspan="3"><strong>ControlAction</strong></th>
   </tr>
 
   <tr>
@@ -360,7 +359,7 @@ The requirements of this profile are those of [Workflow Run Crate](workflow_run_
   </tr>
 
   <tr>
-   <td colspan="3"><strong>OrganizeAction</strong> </td>
+   <th colspan="3"><strong>OrganizeAction</strong></th>
   </tr>
 
   <tr>
