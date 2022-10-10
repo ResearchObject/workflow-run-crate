@@ -14,9 +14,9 @@ title: Workflow Run Crate
 
 This profile is used to describe the execution of a computational tool that has orchestrated the execution of other tools. Such a tool is represented as a [workflow](https://www.researchobject.org/ro-crate/1.1/workflows.html) that can be executed using a *workflow engine* (e.g. [cwltool](https://github.com/common-workflow-language/cwltool)).
 
-This profile is a combination of [Process Run Crate](process_run_crate) and [Workflow RO-Crate](https://w3id.org/workflowhub/workflow-ro-crate/). The entity referenced by the action's `instrument` SHOULD be a `ComputationalWorkflow` that is further described according to the Workflow RO-Crate requirements. The `mainEntity` of the RO-Crate MUST be the workflow that has been executed. The crate SHOULD have only one `CreateAction` corresponding to the workflow's execution. Details regarding the execution of individual workflow steps can be described with the [Provenance Run Crate](provenance_run_crate) profile.
+This profile is a combination of [Process Run Crate](process_run_crate) and [Workflow RO-Crate](https://w3id.org/workflowhub/workflow-ro-crate/). The entity referenced by the action's `instrument` (which represents the software application that's been run) MUST be a `ComputationalWorkflow` that is further described according to the Workflow RO-Crate requirements. In particular, it MUST be the [mainEntity](http://schema.org/mainEntity) of the RO-Crate. The crate SHOULD have only one `CreateAction` corresponding to the workflow's execution. Details regarding the execution of individual workflow steps can be described with the [Provenance Run Crate](provenance_run_crate) profile.
 
-Some workflows have multiple inputs/outputs that, in conformance with the [Bioschemas ComputationalWorkflow profile](https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE) are defined as [FormalParameter](https://bioschemas.org/types/FormalParameter/1.0-RELEASE) entities. It is OPTIONAL to include these definitions on a `ComputationalWorkflow`. A data entity or `PropertyValue` that realizes a `FormalParameter` definition SHOULD refer to it via [exampleOfWork](https://schema.org/exampleOfWork); additionally, if the data entity or `PropertyValue` is an illustrative example of the parameter, the latter MAY refer back to the former using the reverse property [workExample](https://schema.org/workExample). This links the `input` of a `ComputationalWorkflow` to the `object` of a `CreateAction`, and the `output` of a `ComputationalWorkflow` to the `result` of a `CreateAction`. A `FormalParameter` that maps to a `PropertyValue` SHOULD have a subclass of [DataType](https://schema.org/DataType) (e.g., [Integer](https://schema.org/Integer)) &ndash; or [PropertyValue](https://schema.org/PropertyValue), in the case of dictionary-like structured types &ndash; as its `additionalType`.
+Some workflows have multiple inputs/outputs that, in conformance with the [Bioschemas ComputationalWorkflow profile](https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE) are defined as [FormalParameter](https://bioschemas.org/types/FormalParameter/1.0-RELEASE) entities. It is OPTIONAL to include these definitions on a `ComputationalWorkflow`. A data entity or `PropertyValue` that realizes a `FormalParameter` definition SHOULD refer to it via [exampleOfWork](https://schema.org/exampleOfWork); additionally, if the data entity or `PropertyValue` is an illustrative example of the parameter, the latter MAY refer back to the former using the reverse property [workExample](https://schema.org/workExample). This links the `input` of a `ComputationalWorkflow` to the `object` of a `CreateAction`, and the `output` of a `ComputationalWorkflow` to the `result` of a `CreateAction`. A `FormalParameter` that maps to a `PropertyValue` SHOULD have a subclass of [DataType](https://schema.org/DataType) (e.g., [Integer](https://schema.org/Integer)) &mdash; or [PropertyValue](https://schema.org/PropertyValue), in the case of dictionary-like structured types &mdash; as its `additionalType`. See [CWL parameter mapping](cwl_param_mapping) for an example.
 
 
 ## Example
@@ -174,4 +174,40 @@ Some workflows have multiple inputs/outputs that, in conformance with the [Biosc
 
 ## Requirements
 
-The requirements of this profile are those of [Process Run Crate](process_run_crate) plus those of [Workflow RO-Crate](https://w3id.org/workflowhub/workflow-ro-crate/). In particular, the entity acting as the `instrument` of the `CreateAction` MUST be the `mainEntity` of the crate, whose types include `File`, `SoftwareSourceCode` and `ComputationalWorkflow`.
+This profile inherits the requirements of [Process Run Crate](process_run_crate) and [Workflow RO-Crate](https://w3id.org/workflowhub/workflow-ro-crate/). In particular, the entity acting as the `instrument` of the `CreateAction` MUST be the *main workflow*. This and other additional specifications are listed below.
+
+<table>
+
+  <tr>
+   <td><strong>Property</strong></td>
+   <td><strong>Required?</strong></td>
+   <td><strong>Description</strong></td>
+  </tr>
+
+  <tr>
+   <th colspan="3"><strong>CreateAction</strong></th>
+  </tr>
+
+  <tr>
+   <td>instrument</td>
+   <td>MUST</td>
+   <td>Identifier of the <em>main workflow</em>, as specified in <a href="https://w3id.org/workflowhub/workflow-ro-crate/">Workflow RO-Crate</a>.</td>
+  </tr>
+
+  <tr>
+   <th colspan="3"><strong>FormalParameter</strong></th>
+  </tr>
+
+  <tr>
+   <td>workExample</td>
+   <td>MAY</td>
+   <td>Identifier of the data entity or <code>PropertyValue</code> instance that realizes this parameter. The data entity or <code>PropertyValue</code> instance SHOULD refer to this parameter via <a href="http://schema.org/exampleOfWork">exampleOfWork</a>.</td>
+  </tr>
+
+  <tr>
+   <td>additionalType</td>
+   <td>MUST</td>
+   <td>SHOULD be: <code>File</code> or <code>Dataset</code> if it maps to a file or directory, respectively; <code>PropertyValue</code> if it maps to a dictionary-like structured value (e.g. a CWL <em>record</em>); <a href="http://schema.org/DataType">DataType</a> or one of its subclasses (e.g. <a href="http://schema.org/Integer">Integer</a>) if it maps to a non-structured value.</td>
+  </tr>
+
+</table>
