@@ -49,8 +49,8 @@ Post [here](https://github.com/ResearchObject/workflow-run-crate/issues/1) to jo
 
 ## Content
 
-- [Workflow Run Crate profile](profile)
-- [Requirements for Workflow Run Crate](requirements)
+- [Workflow Run RO-Crate profile](profile)
+- [Requirements for Workflow Run RO-Crate](requirements)
 - [Profile for recording workflow runs](https://www.researchobject.org/2021-packaging-research-artefacts-with-ro-crate/manuscript.html#profile-for-recording-workflow-runs) (conceptual ideas from RO-Crate paper)
 - [Workflow Run RO-Crate for a ML prediction pipeline run](examples/draft/ml-predict-pipeline/) ([pipeline repo](https://github.com/crs4/deephealth-pipelines) -- part of the DeepHealth digital pathology platform)
 - [Machine learning pipeline example](examples/draft/ml-pipeline/) (conceptual draft from EOSC-Life WP6)
