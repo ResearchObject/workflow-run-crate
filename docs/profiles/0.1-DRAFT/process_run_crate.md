@@ -5,15 +5,16 @@ title: Process Run Crate
 
 # Process Run Crate
 
-* Part of: [Workflow Run RO-Crate](profile)
 * Version: 0.1-DRAFT
 * Permalink: <https://w3id.org/ro/wfrun/process/0.1-DRAFT> `TODO: update`
 * Authors: [Workflow Run RO-Crate members](/workflow-run-crate/#community)
 
+This profile uses terminology from the [RO-Crate 1.1 specification](https://w3id.org/ro/crate/1.1).
+
 
 ## Overview
 
-Process Run Crate is the most coarse-grained level of the [Workflow Run RO-Crate profile](profile#profiles). It is used to describe the execution of an _implicit_ workflow, indicating that one or more computational tools have been executed, typically generating some result files that are represented as [data entities](https://www.researchobject.org/ro-crate/1.1/data-entities.html) in the RO-Crate.
+This profile is used to describe the execution of an _implicit_ workflow, indicating that one or more computational tools have been executed, typically generating some result files that are represented as [data entities](https://www.researchobject.org/ro-crate/1.1/data-entities.html) in the RO-Crate.
 
 By "implicit workflow" we mean that the composition of these tools may have been done by hand (a user executes one tool following another) or by some script that has not yet been included as part of the crate (for instance because it is an embedded part of a larger application).
 
