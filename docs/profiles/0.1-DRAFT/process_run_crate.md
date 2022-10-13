@@ -7,7 +7,8 @@ title: Process Run Crate
 
 * Part of: [Workflow Run RO-Crate](profile)
 * Version: 0.1-DRAFT
-* Authors: [Workflow Run RO-Crate members](index#community)
+* Permalink: <https://w3id.org/ro/wfrun/process/0.1-DRAFT> `TODO: update`
+* Authors: [Workflow Run RO-Crate members](/workflow-run-crate/#community)
 
 
 ## Overview

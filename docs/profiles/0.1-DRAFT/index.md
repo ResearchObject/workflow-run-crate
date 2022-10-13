@@ -6,7 +6,8 @@ title: Workflow Run RO-Crate Profile
 # Workflow Run RO-Crate
 
 * Version: 0.1-DRAFT
-* Authors: [Workflow Run RO-Crate members](index#community)
+* Permalink: <https://w3id.org/ro/wfrun/0.1-DRAFT> `TODO: update`
+* Authors: [Workflow Run RO-Crate members](/workflow-run-crate/#community)
 
 
 ## Overview
@@ -26,3 +27,4 @@ The Workflow Run RO-Crate profile is defined in three levels of increasing granu
 * [Process Run Crate](process_run_crate) can be used to describe the execution of one or more tools that contribute to the same computation;
 * [Workflow Run Crate](workflow_run_crate) is similar to Process Run Crate, but assumes that the coordinated execution of the tools is driven by a [computational workflow](https://bioschemas.org/types/ComputationalWorkflow/1.0-RELEASE)
 * [Provenance Run Crate](provenance_run_crate) extends Workflow Run Crate with guidelines for describing the internal details of each step of the workflow.
+
