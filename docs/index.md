@@ -1,15 +1,13 @@
 ---
-title: workflow-run-crate
+title: Workflow Run RO-Crate
 ---
 
-**Work in progress**
-
-These are the working group pages for defining **Workflow Run Crate** -- a profile of [RO-Crate](https://w3id.org/ro/crate) for capturing the provenance of an execution of a computational workflow.
+Workflow Run RO-Crate is a working group for defining [RO-Crate](https://w3id.org/ro/crate) profiles for capturing the provenance of an execution of a computational workflow.
 
 
 ## Community
 
-This profile is managed by a working group of the [RO-Crate community](https://www.researchobject.org/ro-crate/community.html)
+The Workflow Run RO-Crate working group is part of the [RO-Crate community](https://www.researchobject.org/ro-crate/community.html).
 
 We coordinate using the channel [#ro-crate on seek4science.slack.com](https://seek4science.slack.com/archives/C01LQQAAAS1) ([join](https://join.slack.com/t/seek4science/shared_invite/zt-csqh94qb-kf~kFbZxuHl1Hpxhbc8avw)) and the [RO-Crate mailing list](https://lists.elixir-europe.org/mailman/listinfo/ro-crate_elixir-europe.org). Material from or related to the group's activity is available from the [GitHub repository](https://github.com/ResearchObject/workflow-run-crate).
 
@@ -49,8 +47,8 @@ Post [here](https://github.com/ResearchObject/workflow-run-crate/issues/1) to jo
 
 ## Content
 
-- [WORKING DRAFT of Workflow Run Crate profile](https://docs.google.com/document/d/14IaXEMdi0Ue8zRSZcPP1_H6seusefavYdettgX2X1YY/edit)
-- [Requirements for Workflow Run Crate](requirements)
+- [The Workflow Run RO-Crate profile collection](profiles)
+- [Requirements for the Workflow Run RO-Crate profiles](requirements)
 - [Profile for recording workflow runs](https://www.researchobject.org/2021-packaging-research-artefacts-with-ro-crate/manuscript.html#profile-for-recording-workflow-runs) (conceptual ideas from RO-Crate paper)
 - [Workflow Run RO-Crate for a ML prediction pipeline run](examples/draft/ml-predict-pipeline/) ([pipeline repo](https://github.com/crs4/deephealth-pipelines) -- part of the DeepHealth digital pathology platform)
 - [Machine learning pipeline example](examples/draft/ml-pipeline/) (conceptual draft from EOSC-Life WP6)
