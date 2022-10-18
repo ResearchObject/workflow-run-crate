@@ -1,10 +1,18 @@
 {
-    "@context": "https://w3id.org/ro/crate/1.1/context",
+    "@context": [
+        "https://w3id.org/ro/crate/1.1/context",
+        {
+            "ParameterConnection": "https://w3id.org/ro/terms/workflow-run#ParameterConnection",
+            "connection": "https://w3id.org/ro/terms/workflow-run#connection",
+            "sourceParameter": "https://w3id.org/ro/terms/workflow-run#sourceParameter",
+            "targetParameter": "https://w3id.org/ro/terms/workflow-run#targetParameter"
+        }
+    ],
     "@graph": [
         {
             "@id": "./",
             "@type": "Dataset",
-            "datePublished": "2022-08-31T14:28:26+00:00",
+            "datePublished": "2022-09-30T13:26:32+00:00",
             "hasPart": [
                 {
                     "@id": "packed.cwl"
@@ -18,7 +26,7 @@
             },
             "mentions": [
                 {
-                    "@id": "#e5856dab-62a4-405a-927c-85b8aa0807c6"
+                    "@id": "#5ac8cc2e-d6a0-4cab-9e1e-cd9e25a5b394"
                 }
             ]
         },
@@ -184,24 +192,24 @@
             "name": "main/cl_dump"
         },
         {
-            "@id": "#3c4cc883-9c5a-44cc-ae28-2812728c2d39",
+            "@id": "#f9cee66e-1ed9-4466-baaf-5edca43eebbd",
             "@type": "SoftwareApplication",
             "name": "cwltool 3.1.20220224085855"
         },
         {
-            "@id": "#ac468d2e-320c-4553-8527-7cb4af1043cc",
+            "@id": "#9ce0b1c7-065c-423a-bfb5-c6d8ef154f5f",
             "@type": "OrganizeAction",
             "instrument": {
-                "@id": "#3c4cc883-9c5a-44cc-ae28-2812728c2d39"
+                "@id": "#f9cee66e-1ed9-4466-baaf-5edca43eebbd"
             },
             "name": "Run of cwltool 3.1.20220224085855",
             "result": {
-                "@id": "#e5856dab-62a4-405a-927c-85b8aa0807c6"
+                "@id": "#5ac8cc2e-d6a0-4cab-9e1e-cd9e25a5b394"
             },
             "startTime": "2022-04-22T12:27:13.313333"
         },
         {
-            "@id": "#e5856dab-62a4-405a-927c-85b8aa0807c6",
+            "@id": "#5ac8cc2e-d6a0-4cab-9e1e-cd9e25a5b394",
             "@type": "CreateAction",
             "endTime": "2022-04-22T12:27:13.328912",
             "instrument": {
@@ -335,16 +343,16 @@
             "value": "B"
         },
         {
-            "@id": "#pv-main/in_record/in_record_A",
-            "@type": "PropertyValue",
-            "name": "main/in_record/in_record_A",
-            "value": "Tom"
-        },
-        {
             "@id": "#pv-main/in_record/in_record_B",
             "@type": "PropertyValue",
             "name": "main/in_record/in_record_B",
             "value": "Jerry"
+        },
+        {
+            "@id": "#pv-main/in_record/in_record_A",
+            "@type": "PropertyValue",
+            "name": "main/in_record/in_record_A",
+            "value": "Tom"
         },
         {
             "@id": "#pv-main/in_record",
@@ -355,10 +363,10 @@
             "name": "main/in_record",
             "value": [
                 {
-                    "@id": "#pv-main/in_record/in_record_A"
+                    "@id": "#pv-main/in_record/in_record_B"
                 },
                 {
-                    "@id": "#pv-main/in_record/in_record_B"
+                    "@id": "#pv-main/in_record/in_record_A"
                 }
             ]
         },

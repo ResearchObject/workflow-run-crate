@@ -6,12 +6,20 @@
 
 <script type="application/ld+json"> 
   {
-  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@context": [
+    "https://w3id.org/ro/crate/1.1/context",
+    {
+      "ParameterConnection": "https://w3id.org/ro/terms/workflow-run#ParameterConnection",
+      "connection": "https://w3id.org/ro/terms/workflow-run#connection",
+      "sourceParameter": "https://w3id.org/ro/terms/workflow-run#sourceParameter",
+      "targetParameter": "https://w3id.org/ro/terms/workflow-run#targetParameter"
+    }
+  ],
   "@graph": [
     {
       "@id": "./",
       "@type": "Dataset",
-      "datePublished": "2022-08-31T14:28:26+00:00",
+      "datePublished": "2022-09-30T13:26:32+00:00",
       "hasPart": [
         {
           "@id": "packed.cwl"
@@ -25,7 +33,7 @@
       },
       "mentions": [
         {
-          "@id": "#e5856dab-62a4-405a-927c-85b8aa0807c6"
+          "@id": "#5ac8cc2e-d6a0-4cab-9e1e-cd9e25a5b394"
         }
       ],
       "@reverse": {
@@ -116,7 +124,7 @@
         ],
         "instrument": [
           {
-            "@id": "#e5856dab-62a4-405a-927c-85b8aa0807c6"
+            "@id": "#5ac8cc2e-d6a0-4cab-9e1e-cd9e25a5b394"
           }
         ]
       }
@@ -366,31 +374,31 @@
       }
     },
     {
-      "@id": "#3c4cc883-9c5a-44cc-ae28-2812728c2d39",
+      "@id": "#f9cee66e-1ed9-4466-baaf-5edca43eebbd",
       "@type": "SoftwareApplication",
       "name": "cwltool 3.1.20220224085855",
       "@reverse": {
         "instrument": [
           {
-            "@id": "#ac468d2e-320c-4553-8527-7cb4af1043cc"
+            "@id": "#9ce0b1c7-065c-423a-bfb5-c6d8ef154f5f"
           }
         ]
       }
     },
     {
-      "@id": "#ac468d2e-320c-4553-8527-7cb4af1043cc",
+      "@id": "#9ce0b1c7-065c-423a-bfb5-c6d8ef154f5f",
       "@type": "OrganizeAction",
       "instrument": {
-        "@id": "#3c4cc883-9c5a-44cc-ae28-2812728c2d39"
+        "@id": "#f9cee66e-1ed9-4466-baaf-5edca43eebbd"
       },
       "name": "Run of cwltool 3.1.20220224085855",
       "result": {
-        "@id": "#e5856dab-62a4-405a-927c-85b8aa0807c6"
+        "@id": "#5ac8cc2e-d6a0-4cab-9e1e-cd9e25a5b394"
       },
       "startTime": "2022-04-22T12:27:13.313333"
     },
     {
-      "@id": "#e5856dab-62a4-405a-927c-85b8aa0807c6",
+      "@id": "#5ac8cc2e-d6a0-4cab-9e1e-cd9e25a5b394",
       "@type": "CreateAction",
       "endTime": "2022-04-22T12:27:13.328912",
       "instrument": {
@@ -446,7 +454,7 @@
         ],
         "result": [
           {
-            "@id": "#ac468d2e-320c-4553-8527-7cb4af1043cc"
+            "@id": "#9ce0b1c7-065c-423a-bfb5-c6d8ef154f5f"
           }
         ]
       }
@@ -465,7 +473,7 @@
       "@reverse": {
         "object": [
           {
-            "@id": "#e5856dab-62a4-405a-927c-85b8aa0807c6"
+            "@id": "#5ac8cc2e-d6a0-4cab-9e1e-cd9e25a5b394"
           }
         ]
       }
@@ -481,7 +489,7 @@
       "@reverse": {
         "object": [
           {
-            "@id": "#e5856dab-62a4-405a-927c-85b8aa0807c6"
+            "@id": "#5ac8cc2e-d6a0-4cab-9e1e-cd9e25a5b394"
           }
         ]
       }
@@ -497,7 +505,7 @@
       "@reverse": {
         "object": [
           {
-            "@id": "#e5856dab-62a4-405a-927c-85b8aa0807c6"
+            "@id": "#5ac8cc2e-d6a0-4cab-9e1e-cd9e25a5b394"
           }
         ]
       }
@@ -513,7 +521,7 @@
       "@reverse": {
         "object": [
           {
-            "@id": "#e5856dab-62a4-405a-927c-85b8aa0807c6"
+            "@id": "#5ac8cc2e-d6a0-4cab-9e1e-cd9e25a5b394"
           }
         ]
       }
@@ -529,7 +537,7 @@
       "@reverse": {
         "object": [
           {
-            "@id": "#e5856dab-62a4-405a-927c-85b8aa0807c6"
+            "@id": "#5ac8cc2e-d6a0-4cab-9e1e-cd9e25a5b394"
           }
         ]
       }
@@ -545,7 +553,7 @@
       "@reverse": {
         "object": [
           {
-            "@id": "#e5856dab-62a4-405a-927c-85b8aa0807c6"
+            "@id": "#5ac8cc2e-d6a0-4cab-9e1e-cd9e25a5b394"
           }
         ]
       }
@@ -561,7 +569,7 @@
       "@reverse": {
         "object": [
           {
-            "@id": "#e5856dab-62a4-405a-927c-85b8aa0807c6"
+            "@id": "#5ac8cc2e-d6a0-4cab-9e1e-cd9e25a5b394"
           }
         ]
       }
@@ -577,7 +585,7 @@
       "@reverse": {
         "object": [
           {
-            "@id": "#e5856dab-62a4-405a-927c-85b8aa0807c6"
+            "@id": "#5ac8cc2e-d6a0-4cab-9e1e-cd9e25a5b394"
           }
         ]
       }
@@ -593,20 +601,7 @@
       "@reverse": {
         "object": [
           {
-            "@id": "#e5856dab-62a4-405a-927c-85b8aa0807c6"
-          }
-        ]
-      }
-    },
-    {
-      "@id": "#pv-main/in_record/in_record_A",
-      "@type": "PropertyValue",
-      "name": "main/in_record/in_record_A",
-      "value": "Tom",
-      "@reverse": {
-        "value": [
-          {
-            "@id": "#pv-main/in_record"
+            "@id": "#5ac8cc2e-d6a0-4cab-9e1e-cd9e25a5b394"
           }
         ]
       }
@@ -625,6 +620,19 @@
       }
     },
     {
+      "@id": "#pv-main/in_record/in_record_A",
+      "@type": "PropertyValue",
+      "name": "main/in_record/in_record_A",
+      "value": "Tom",
+      "@reverse": {
+        "value": [
+          {
+            "@id": "#pv-main/in_record"
+          }
+        ]
+      }
+    },
+    {
       "@id": "#pv-main/in_record",
       "@type": "PropertyValue",
       "exampleOfWork": {
@@ -633,16 +641,16 @@
       "name": "main/in_record",
       "value": [
         {
-          "@id": "#pv-main/in_record/in_record_A"
+          "@id": "#pv-main/in_record/in_record_B"
         },
         {
-          "@id": "#pv-main/in_record/in_record_B"
+          "@id": "#pv-main/in_record/in_record_A"
         }
       ],
       "@reverse": {
         "object": [
           {
-            "@id": "#e5856dab-62a4-405a-927c-85b8aa0807c6"
+            "@id": "#5ac8cc2e-d6a0-4cab-9e1e-cd9e25a5b394"
           }
         ]
       }
@@ -658,7 +666,7 @@
       "@reverse": {
         "object": [
           {
-            "@id": "#e5856dab-62a4-405a-927c-85b8aa0807c6"
+            "@id": "#5ac8cc2e-d6a0-4cab-9e1e-cd9e25a5b394"
           }
         ]
       }
@@ -677,7 +685,7 @@
         ],
         "result": [
           {
-            "@id": "#e5856dab-62a4-405a-927c-85b8aa0807c6"
+            "@id": "#5ac8cc2e-d6a0-4cab-9e1e-cd9e25a5b394"
           }
         ]
       }
@@ -748,7 +756,7 @@ table.table {
             <td style='text-align:left'><span>Dataset</span></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">datePublished<span>&nbsp;</span><a href="http://schema.org/datePublished">[?]</a></th>
-            <td style='text-align:left'><span>2022-08-31T14:28:26+00:00</span></td>
+            <td style='text-align:left'><span>2022-09-30T13:26:32+00:00</span></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
             <td style='text-align:left'><ul>
@@ -761,7 +769,7 @@ table.table {
             <td style='text-align:left'><a href="#packed.cwl">packed.cwl</a></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
-            <td style='text-align:left'><a href="#%23e5856dab-62a4-405a-927c-85b8aa0807c6">Run of workflow/packed.cwl#main</a></td>
+            <td style='text-align:left'><a href="#%235ac8cc2e-d6a0-4cab-9e1e-cd9e25a5b394">Run of workflow/packed.cwl#main</a></td>
             </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
             <th style="text-align:left;" class="prop">about<span>&nbsp;</span><a href="http://schema.org/about">[?]</a></th>
             <td style='text-align:left'><a href="#ro-crate-metadata.json">ro-crate-metadata.json</a></td>
@@ -836,7 +844,7 @@ table.table {
             <td style='text-align:left'><a href="#./">./</a></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">instrument<span>&nbsp;</span><a href="http://schema.org/instrument">[?]</a></th>
-            <td style='text-align:left'><a href="#%23e5856dab-62a4-405a-927c-85b8aa0807c6">Run of workflow/packed.cwl#main</a></td>
+            <td style='text-align:left'><a href="#%235ac8cc2e-d6a0-4cab-9e1e-cd9e25a5b394">Run of workflow/packed.cwl#main</a></td>
             </tr></tbody>
             </table>
         </div>
@@ -866,7 +874,7 @@ table.table {
             <td style='text-align:left'><a href="#./">./</a></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">result<span>&nbsp;</span><a href="http://schema.org/result">[?]</a></th>
-            <td style='text-align:left'><a href="#%23e5856dab-62a4-405a-927c-85b8aa0807c6">Run of workflow/packed.cwl#main</a></td>
+            <td style='text-align:left'><a href="#%235ac8cc2e-d6a0-4cab-9e1e-cd9e25a5b394">Run of workflow/packed.cwl#main</a></td>
             </tr></tbody>
             </table>
         </div>
@@ -879,12 +887,12 @@ table.table {
             
             
             
-        <div id="#e5856dab-62a4-405a-927c-85b8aa0807c6">
+        <div id="#5ac8cc2e-d6a0-4cab-9e1e-cd9e25a5b394">
             
             <table class="table metadata table-striped" >
                 <tbody><tr>
             <th style="text-align:left;" class="prop">@id</th>
-            <td style='text-align:left'><span>#e5856dab-62a4-405a-927c-85b8aa0807c6</span></td>
+            <td style='text-align:left'><span>#5ac8cc2e-d6a0-4cab-9e1e-cd9e25a5b394</span></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
             <td style='text-align:left'><span>Run of workflow/packed.cwl#main</span></td>
@@ -933,7 +941,7 @@ table.table {
             <td style='text-align:left'><a href="#./">./</a></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">result<span>&nbsp;</span><a href="http://schema.org/result">[?]</a></th>
-            <td style='text-align:left'><a href="#%23ac468d2e-320c-4553-8527-7cb4af1043cc">Run of cwltool 3.1.20220224085855</a></td>
+            <td style='text-align:left'><a href="#%239ce0b1c7-065c-423a-bfb5-c6d8ef154f5f">Run of cwltool 3.1.20220224085855</a></td>
             </tr></tbody>
             </table>
         </div>
