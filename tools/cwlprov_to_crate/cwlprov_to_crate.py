@@ -462,13 +462,13 @@ class ProvCrateBuilder:
         raise RuntimeError(f"No value to convert for {prov_param}")
 
     def add_param_connections(self, crate, workflow):
-        def connect(source, target):
+        def connect(source, target, entity):
             connection = crate.add(ContextEntity(crate, properties={
                 "@type": "ParameterConnection"
             }))
             connection["sourceParameter"] = crate.get(f"{WORKFLOW_BASENAME}#{source}")
             connection["targetParameter"] = crate.get(f"{WORKFLOW_BASENAME}#{target}")
-            workflow.append_to("connection", connection)
+            entity.append_to("connection", connection)
         wf_name = get_fragment(workflow.id)
         wf_def = self.cwl_defs[wf_name]
         step_map = self.step_maps[wf_name]
@@ -481,6 +481,7 @@ class ProvCrateBuilder:
                 out_map[o_name] = o_name.replace(step_name, tool_name)
         for step in wf_def.steps:
             step_name = get_fragment(step.id)
+            ro_step = crate.get(f"{self.wf_path.name}#{step_name}")
             tool_name = step_map[step_name]["tool"]
             for mapping in getattr(step, "in_", []):
                 from_param = get_fragment(mapping.source)
@@ -489,11 +490,11 @@ class ProvCrateBuilder:
                 except KeyError:
                     pass  # only needed if source is from another step
                 to_param = get_fragment(mapping.id).replace(step_name, tool_name)
-                connect(from_param, to_param)
+                connect(from_param, to_param, ro_step)
         for out in getattr(wf_def, "outputs", []):
             from_param = out_map[get_fragment(out.outputSource)]
             to_param = get_fragment(out.id)
-            connect(from_param, to_param)
+            connect(from_param, to_param, workflow)
 
 
 def main(args):

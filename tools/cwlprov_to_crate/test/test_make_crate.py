@@ -23,8 +23,8 @@ class Args:
     pass
 
 
-def _connected(workflow):
-    for c in workflow["connection"]:
+def _connected(entity):
+    for c in entity.get("connection", []):
         yield (c["sourceParameter"].id, c["targetParameter"].id)
 
 
@@ -104,6 +104,9 @@ def test_revsort(data_dir, tmpdir):
             rev_output_file = results[0]
             assert "File" in rev_output_file.type
             assert step["position"] == "0"
+            assert set(_connected(step)) == set([
+                ("packed.cwl#main/input", "packed.cwl#revtool.cwl/input"),
+            ])
         elif step.id.endswith("sorted"):
             assert len(objects) == 2
             assert len(results) == 1
@@ -116,13 +119,13 @@ def test_revsort(data_dir, tmpdir):
             sorted_output_file = results[0]
             assert sorted_output_file is wf_output_file
             assert step["position"] == "1"
+            assert set(_connected(step)) == set([
+                ("packed.cwl#revtool.cwl/output", "packed.cwl#sorttool.cwl/input"),
+                ("packed.cwl#main/reverse_sort", "packed.cwl#sorttool.cwl/reverse"),
+            ])
         else:
             assert False, f"unexpected step id: {step.id}"
-    # parameter connections
     assert set(_connected(workflow)) == set([
-        ("packed.cwl#main/input", "packed.cwl#revtool.cwl/input"),
-        ("packed.cwl#main/reverse_sort", "packed.cwl#sorttool.cwl/reverse"),
-        ("packed.cwl#revtool.cwl/output", "packed.cwl#sorttool.cwl/input"),
         ("packed.cwl#sorttool.cwl/output", "packed.cwl#main/output"),
     ])
     # file contents
@@ -396,6 +399,9 @@ def test_no_output(data_dir, tmpdir):
                 assert len(objects) == 1
                 date_in_file = objects[0]
                 assert date_in_file is in_file
+                assert set(_connected(step)) == set([
+                    ("packed.cwl#main/sabdab_file", "packed.cwl#date.cwl/file"),
+                ])
             elif step_tag == "echo_step":
                 assert len(objects) == 2
                 for obj in objects:
@@ -403,15 +409,16 @@ def test_no_output(data_dir, tmpdir):
                         assert obj is in_dir
                     else:
                         assert obj is in_file
+                assert set(_connected(step)) == set([
+                    ("packed.cwl#main/sabdab_file", "packed.cwl#echo.cwl/input_file"),
+                    ("packed.cwl#main/pdb_dir", "packed.cwl#echo.cwl/input_dir"),
+                ])
             elif step_tag == "date2_step":
                 assert len(objects) == 1
-    # parameter connections
-    assert set(_connected(workflow)) == set([
-        ("packed.cwl#main/sabdab_file", "packed.cwl#date.cwl/file"),
-        ("packed.cwl#main/sabdab_file", "packed.cwl#echo.cwl/input_file"),
-        ("packed.cwl#main/pdb_dir", "packed.cwl#echo.cwl/input_dir"),
-        ("packed.cwl#main/pdb_array", "packed.cwl#date.cwl/file"),
-    ])
+                assert set(_connected(step)) == set([
+                    ("packed.cwl#main/pdb_array", "packed.cwl#date.cwl/file"),
+                ])
+    assert not set(_connected(workflow))
     # file contents
     text_7mb7 = (args.root / "data/4b/4b22356928446475c8ae5869968c9777374a76e8").read_text()
     text_7zxf = (args.root / "data/4e/4ebd7d222d9b6095fa96ee395905ce7f6d415381").read_text()
@@ -577,16 +584,24 @@ def test_subworkflows(data_dir, tmpdir):
     lcase_results = {_.type: _ for _ in lcase_action["result"]}
     assert set(lcase_results) == {"File"}
     # parameter connections
-    assert set(_connected(workflow)) == set([
+    assert set(_connected(wf_steps["packed.cwl#main/revsort"])) == set([
         ("packed.cwl#main/revsortlcase_in", "packed.cwl#revsort.cwl/revsort_in"),
         ("packed.cwl#main/descending_sort", "packed.cwl#revsort.cwl/reverse_sort"),
-        ("packed.cwl#lcasetool.cwl/lcase_out", "packed.cwl#main/revsortlcase_out"),
+    ])
+    assert set(_connected(wf_steps["packed.cwl#main/lcase"])) == set([
         ("packed.cwl#revsort.cwl/revsort_out", "packed.cwl#lcasetool.cwl/lcase_in"),
     ])
-    assert set(_connected(revsort)) == set([
+    assert set(_connected(workflow)) == set([
+        ("packed.cwl#lcasetool.cwl/lcase_out", "packed.cwl#main/revsortlcase_out"),
+    ])
+    assert set(_connected(rs_steps["packed.cwl#revsort.cwl/rev"])) == set([
         ("packed.cwl#revsort.cwl/revsort_in", "packed.cwl#revtool.cwl/rev_in"),
+    ])
+    assert set(_connected(rs_steps["packed.cwl#revsort.cwl/sorted"])) == set([
         ("packed.cwl#revsort.cwl/reverse_sort", "packed.cwl#sorttool.cwl/reverse"),
         ("packed.cwl#revtool.cwl/rev_out", "packed.cwl#sorttool.cwl/sort_in"),
+    ])
+    assert set(_connected(revsort)) == set([
         ("packed.cwl#sorttool.cwl/sort_out", "packed.cwl#revsort.cwl/revsort_out"),
     ])
     # file contents
