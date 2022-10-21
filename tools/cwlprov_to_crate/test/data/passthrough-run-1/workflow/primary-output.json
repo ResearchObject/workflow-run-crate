@@ -1,0 +1,23 @@
+{
+    "dummy_out": {
+        "class": "File",
+        "location": "../data/0c/0c8b9d6f753e8d8ec9276bfe98e993a133847642",
+        "size": 6,
+        "basename": "dummy.txt",
+        "nameroot": "dummy",
+        "nameext": ".txt",
+        "checksum": "sha1$0c8b9d6f753e8d8ec9276bfe98e993a133847642",
+        "@id": "urn:uuid:f877e5d6-30e9-41b7-9244-78907f34aba9"
+    },
+    "revsort_out": {
+        "location": "../data/0c/0c6f756ab3effbf33709e6ddb6a1ff7fe7601860",
+        "basename": "sort_out.txt",
+        "nameroot": "sort_out",
+        "nameext": ".txt",
+        "class": "File",
+        "checksum": "sha1$0c6f756ab3effbf33709e6ddb6a1ff7fe7601860",
+        "size": 22,
+        "http://commonwl.org/cwltool#generation": 0,
+        "@id": "urn:uuid:32e63691-d487-4cc8-acee-4ed8618ceffe"
+    }
+}

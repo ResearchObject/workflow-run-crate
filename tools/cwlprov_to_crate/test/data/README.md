@@ -50,3 +50,8 @@ Output a predefined integer. Used to test support for tools / workflows that tak
 ## type-zoo-run-1
 
 Build a fake command line and write it to the output file (all parameter settings are passed to the echo tool). Used to test support for various parameter types.
+
+
+## passthrough-run-1
+
+Similar to [revsort](#revsort-run-1), but adds an input file that's linked directly to an output file, to test that this is supported.

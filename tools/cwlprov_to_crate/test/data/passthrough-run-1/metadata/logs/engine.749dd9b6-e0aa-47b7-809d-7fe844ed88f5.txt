@@ -1,0 +1,19 @@
+[2022-10-21T07:42:45,984.973669Z] [cwltool] /tmp/venv/bin/cwltool --provenance ro revsort.cwl job.yml
+[2022-10-21T07:42:45,986.585140Z] Resolved 'revsort.cwl' to 'file:///home/simleo/sandbox/try_cwl/pass_through/revsort.cwl'
+[2022-10-21T07:42:46,585.776806Z] [provenance] Adding to RO file:///home/simleo/sandbox/try_cwl/pass_through/data/input.txt
+[2022-10-21T07:42:46,586.379051Z] [provenance] Adding to RO file:///home/simleo/sandbox/try_cwl/pass_through/data/dummy.txt
+[2022-10-21T07:42:46,588.385582Z] [workflow ] start
+[2022-10-21T07:42:46,588.629246Z] [workflow ] starting step rev
+[2022-10-21T07:42:46,588.769197Z] [step rev] start
+[2022-10-21T07:42:46,591.101408Z] [job rev] /tmp/ys0di9ie$ rev \
+    /tmp/2q0umkdr/stgd6b37dfd-3907-4bfe-8121-46f6d497f1b8/input.txt > /tmp/ys0di9ie/rev_out.txt
+[2022-10-21T07:42:46,596.304655Z] [job rev] completed success
+[2022-10-21T07:42:46,596.510887Z] [step rev] completed success
+[2022-10-21T07:42:46,596.865892Z] [workflow ] starting step sorted
+[2022-10-21T07:42:46,597.052097Z] [step sorted] start
+[2022-10-21T07:42:46,599.020720Z] [job sorted] /tmp/leqb3j3l$ sort \
+    /tmp/se2incb3/stg3e232a49-6657-4d39-b6dc-7161f5350f95/rev_out.txt > /tmp/leqb3j3l/sort_out.txt
+[2022-10-21T07:42:46,604.696751Z] [job sorted] completed success
+[2022-10-21T07:42:46,604.923964Z] [step sorted] completed success
+[2022-10-21T07:42:46,605.218410Z] [workflow ] completed success
+[2022-10-21T07:42:46,659.959555Z] Final process status is success
