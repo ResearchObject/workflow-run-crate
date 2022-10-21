@@ -613,3 +613,26 @@ def test_subworkflows(data_dir, tmpdir):
     assert (args.output / sort_results["File"].id).read_text() == sorted_text
     out_text = (args.root / "data/aa/aaf167286572f8b5d5c592b94aff678d0997947f").read_text()
     assert (args.output / wf_results["File"].id).read_text() == out_text
+
+
+def test_passthrough(data_dir, tmpdir):
+    args = Args()
+    args.root = data_dir / "passthrough-run-1"
+    args.output = tmpdir / "passthrough-run-1-crate"
+    args.license = "Apache-2.0"
+    args.workflow_name = None
+    main(args)
+    crate = ROCrate(args.output)
+    workflow = crate.mainEntity
+    steps = {_.id: _ for _ in workflow["step"]}
+    assert set(_connected(steps["packed.cwl#main/rev"])) == set([
+        ("packed.cwl#main/revsort_in", "packed.cwl#revtool.cwl/rev_in"),
+    ])
+    assert set(_connected(steps["packed.cwl#main/sorted"])) == set([
+        ("packed.cwl#main/reverse_sort", "packed.cwl#sorttool.cwl/reverse"),
+        ("packed.cwl#revtool.cwl/rev_out", "packed.cwl#sorttool.cwl/sort_in"),
+    ])
+    assert set(_connected(workflow)) == set([
+        ("packed.cwl#sorttool.cwl/sort_out", "packed.cwl#main/revsort_out"),
+        ("packed.cwl#main/dummy_in", "packed.cwl#main/dummy_out"),
+    ])

@@ -492,7 +492,12 @@ class ProvCrateBuilder:
                 to_param = get_fragment(mapping.id).replace(step_name, tool_name)
                 connect(from_param, to_param, ro_step)
         for out in getattr(wf_def, "outputs", []):
-            from_param = out_map[get_fragment(out.outputSource)]
+            from_param = get_fragment(out.outputSource)
+            try:
+                from_param = out_map[from_param]
+            except KeyError:
+                # assuming this is a passthrough for a workflow input parameter
+                pass
             to_param = get_fragment(out.id)
             connect(from_param, to_param, workflow)
 

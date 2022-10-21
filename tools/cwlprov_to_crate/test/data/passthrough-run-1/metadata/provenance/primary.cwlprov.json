@@ -1,0 +1,421 @@
+{
+  "prefix": {
+    "wfprov": "http://purl.org/wf4ever/wfprov#",
+    "wfdesc": "http://purl.org/wf4ever/wfdesc#",
+    "cwlprov": "https://w3id.org/cwl/prov#",
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "schema": "http://schema.org/",
+    "orcid": "https://orcid.org/",
+    "id": "urn:uuid:",
+    "data": "urn:hash::sha1:",
+    "sha256": "nih:sha-256;",
+    "researchobject": "arcp://uuid,874ed04c-cb65-49a4-b984-faf59ee01783/",
+    "metadata": "arcp://uuid,874ed04c-cb65-49a4-b984-faf59ee01783/metadata/",
+    "provenance": "arcp://uuid,874ed04c-cb65-49a4-b984-faf59ee01783/metadata/provenance/",
+    "wf": "arcp://uuid,874ed04c-cb65-49a4-b984-faf59ee01783/workflow/packed.cwl#",
+    "input": "arcp://uuid,874ed04c-cb65-49a4-b984-faf59ee01783/workflow/primary-job.json#",
+    "wf4ever": "http://purl.org/wf4ever/wf4ever#"
+  },
+  "agent": {
+    "id:2c7c58bc-765f-4b8f-9bab-4a6d860668a4": {},
+    "id:749dd9b6-e0aa-47b7-809d-7fe844ed88f5": {
+      "prov:type": [
+        {
+          "$": "wfprov:WorkflowEngine",
+          "type": "prov:QUALIFIED_NAME"
+        },
+        {
+          "$": "prov:SoftwareAgent",
+          "type": "prov:QUALIFIED_NAME"
+        }
+      ],
+      "prov:label": "cwltool 3.1.20221018083734"
+    }
+  },
+  "wasStartedBy": {
+    "_:id1": {
+      "prov:activity": "id:749dd9b6-e0aa-47b7-809d-7fe844ed88f5",
+      "prov:starter": "id:2c7c58bc-765f-4b8f-9bab-4a6d860668a4",
+      "prov:time": "2022-10-21T09:42:46.560580"
+    },
+    "_:id3": {
+      "prov:activity": "id:874ed04c-cb65-49a4-b984-faf59ee01783",
+      "prov:starter": "id:749dd9b6-e0aa-47b7-809d-7fe844ed88f5",
+      "prov:time": "2022-10-21T09:42:46.560672"
+    },
+    "_:id10": {
+      "prov:activity": "id:a28ce36f-1948-47c5-833c-5138d8d44204",
+      "prov:starter": "id:874ed04c-cb65-49a4-b984-faf59ee01783",
+      "prov:time": "2022-10-21T09:42:46.590778"
+    },
+    "_:id17": {
+      "prov:activity": "id:0bb2f65c-5ba4-49c9-800a-09a62f0ae3d1",
+      "prov:starter": "id:874ed04c-cb65-49a4-b984-faf59ee01783",
+      "prov:time": "2022-10-21T09:42:46.598624"
+    }
+  },
+  "activity": {
+    "id:874ed04c-cb65-49a4-b984-faf59ee01783": {
+      "prov:startTime": "2022-10-21T09:42:46.560609",
+      "prov:type": {
+        "$": "wfprov:WorkflowRun",
+        "type": "prov:QUALIFIED_NAME"
+      },
+      "prov:label": "Run of workflow/packed.cwl#main"
+    },
+    "id:a28ce36f-1948-47c5-833c-5138d8d44204": {
+      "prov:type": {
+        "$": "wfprov:ProcessRun",
+        "type": "prov:QUALIFIED_NAME"
+      },
+      "prov:label": "Run of workflow/packed.cwl#main/rev"
+    },
+    "id:0bb2f65c-5ba4-49c9-800a-09a62f0ae3d1": {
+      "prov:type": {
+        "$": "wfprov:ProcessRun",
+        "type": "prov:QUALIFIED_NAME"
+      },
+      "prov:label": "Run of workflow/packed.cwl#main/sorted"
+    }
+  },
+  "wasAssociatedWith": {
+    "_:id2": {
+      "prov:activity": "id:874ed04c-cb65-49a4-b984-faf59ee01783",
+      "prov:agent": "id:749dd9b6-e0aa-47b7-809d-7fe844ed88f5",
+      "prov:plan": "wf:main"
+    },
+    "_:id9": {
+      "prov:activity": "id:a28ce36f-1948-47c5-833c-5138d8d44204",
+      "prov:agent": "id:749dd9b6-e0aa-47b7-809d-7fe844ed88f5",
+      "prov:plan": "wf:main/rev"
+    },
+    "_:id16": {
+      "prov:activity": "id:0bb2f65c-5ba4-49c9-800a-09a62f0ae3d1",
+      "prov:agent": "id:749dd9b6-e0aa-47b7-809d-7fe844ed88f5",
+      "prov:plan": "wf:main/sorted"
+    }
+  },
+  "entity": {
+    "wf:main": [
+      {
+        "prov:type": [
+          {
+            "$": "wfdesc:Workflow",
+            "type": "prov:QUALIFIED_NAME"
+          },
+          {
+            "$": "prov:Plan",
+            "type": "prov:QUALIFIED_NAME"
+          }
+        ],
+        "prov:label": "Prospective provenance"
+      },
+      {
+        "wfdesc:hasSubProcess": {
+          "$": "wf:main/sorted",
+          "type": "prov:QUALIFIED_NAME"
+        },
+        "prov:label": "Prospective provenance"
+      },
+      {
+        "wfdesc:hasSubProcess": {
+          "$": "wf:main/rev",
+          "type": "prov:QUALIFIED_NAME"
+        },
+        "prov:label": "Prospective provenance"
+      }
+    ],
+    "wf:main/sorted": {
+      "prov:type": [
+        {
+          "$": "wfdesc:Process",
+          "type": "prov:QUALIFIED_NAME"
+        },
+        {
+          "$": "prov:Plan",
+          "type": "prov:QUALIFIED_NAME"
+        }
+      ]
+    },
+    "wf:main/rev": {
+      "prov:type": [
+        {
+          "$": "wfdesc:Process",
+          "type": "prov:QUALIFIED_NAME"
+        },
+        {
+          "$": "prov:Plan",
+          "type": "prov:QUALIFIED_NAME"
+        }
+      ]
+    },
+    "data:0c8b9d6f753e8d8ec9276bfe98e993a133847642": [
+      {
+        "prov:type": {
+          "$": "wfprov:Artifact",
+          "type": "prov:QUALIFIED_NAME"
+        }
+      },
+      {}
+    ],
+    "id:9d4a18e6-392f-4da6-8763-322ac079f82d": {
+      "prov:type": [
+        {
+          "$": "wfprov:Artifact",
+          "type": "prov:QUALIFIED_NAME"
+        },
+        {
+          "$": "wf4ever:File",
+          "type": "prov:QUALIFIED_NAME"
+        }
+      ],
+      "cwlprov:basename": "dummy.txt",
+      "cwlprov:nameroot": "dummy",
+      "cwlprov:nameext": ".txt"
+    },
+    "id:3f42fe16-534a-45a3-b0e1-8eaaa5f27ed2": {
+      "prov:value": false
+    },
+    "data:7cb1a4da14ba3e91b983b30e7689e3902bcd2034": [
+      {
+        "prov:type": {
+          "$": "wfprov:Artifact",
+          "type": "prov:QUALIFIED_NAME"
+        }
+      },
+      {
+        "prov:type": {
+          "$": "wfprov:Artifact",
+          "type": "prov:QUALIFIED_NAME"
+        }
+      }
+    ],
+    "id:bc8eff8b-53c2-4369-bd7c-5f52c481c08f": {
+      "prov:type": [
+        {
+          "$": "wfprov:Artifact",
+          "type": "prov:QUALIFIED_NAME"
+        },
+        {
+          "$": "wf4ever:File",
+          "type": "prov:QUALIFIED_NAME"
+        }
+      ],
+      "cwlprov:basename": "input.txt",
+      "cwlprov:nameroot": "input",
+      "cwlprov:nameext": ".txt"
+    },
+    "id:f45fa2c0-1729-41cd-bd0d-a171ff570ec4": {
+      "prov:type": [
+        {
+          "$": "wfprov:Artifact",
+          "type": "prov:QUALIFIED_NAME"
+        },
+        {
+          "$": "wf4ever:File",
+          "type": "prov:QUALIFIED_NAME"
+        }
+      ],
+      "cwlprov:basename": "input.txt",
+      "cwlprov:nameroot": "input",
+      "cwlprov:nameext": ".txt"
+    },
+    "data:542758e6e55bb880c05e2de68a3897bfab37c990": {
+      "prov:type": {
+        "$": "wfprov:Artifact",
+        "type": "prov:QUALIFIED_NAME"
+      }
+    },
+    "id:4a47d7ec-248f-43c8-8283-61bc110aff7f": {
+      "prov:type": [
+        {
+          "$": "wfprov:Artifact",
+          "type": "prov:QUALIFIED_NAME"
+        },
+        {
+          "$": "wf4ever:File",
+          "type": "prov:QUALIFIED_NAME"
+        }
+      ],
+      "cwlprov:basename": "rev_out.txt",
+      "cwlprov:nameroot": "rev_out",
+      "cwlprov:nameext": ".txt"
+    },
+    "id:12106f28-1421-4eb7-943a-da6c834ce68e": {
+      "prov:value": false
+    },
+    "data:0c6f756ab3effbf33709e6ddb6a1ff7fe7601860": {
+      "prov:type": {
+        "$": "wfprov:Artifact",
+        "type": "prov:QUALIFIED_NAME"
+      }
+    },
+    "id:32e63691-d487-4cc8-acee-4ed8618ceffe": {
+      "prov:type": [
+        {
+          "$": "wfprov:Artifact",
+          "type": "prov:QUALIFIED_NAME"
+        },
+        {
+          "$": "wf4ever:File",
+          "type": "prov:QUALIFIED_NAME"
+        }
+      ],
+      "cwlprov:basename": "sort_out.txt",
+      "cwlprov:nameroot": "sort_out",
+      "cwlprov:nameext": ".txt"
+    },
+    "id:f877e5d6-30e9-41b7-9244-78907f34aba9": {
+      "prov:type": [
+        {
+          "$": "wfprov:Artifact",
+          "type": "prov:QUALIFIED_NAME"
+        },
+        {
+          "$": "wf4ever:File",
+          "type": "prov:QUALIFIED_NAME"
+        }
+      ],
+      "cwlprov:basename": "dummy.txt",
+      "cwlprov:nameroot": "dummy",
+      "cwlprov:nameext": ".txt"
+    }
+  },
+  "specializationOf": {
+    "_:id4": {
+      "prov:specificEntity": "id:9d4a18e6-392f-4da6-8763-322ac079f82d",
+      "prov:generalEntity": "data:0c8b9d6f753e8d8ec9276bfe98e993a133847642"
+    },
+    "_:id7": {
+      "prov:specificEntity": "id:bc8eff8b-53c2-4369-bd7c-5f52c481c08f",
+      "prov:generalEntity": "data:7cb1a4da14ba3e91b983b30e7689e3902bcd2034"
+    },
+    "_:id11": {
+      "prov:specificEntity": "id:f45fa2c0-1729-41cd-bd0d-a171ff570ec4",
+      "prov:generalEntity": "data:7cb1a4da14ba3e91b983b30e7689e3902bcd2034"
+    },
+    "_:id13": {
+      "prov:specificEntity": "id:4a47d7ec-248f-43c8-8283-61bc110aff7f",
+      "prov:generalEntity": "data:542758e6e55bb880c05e2de68a3897bfab37c990"
+    },
+    "_:id20": {
+      "prov:specificEntity": "id:32e63691-d487-4cc8-acee-4ed8618ceffe",
+      "prov:generalEntity": "data:0c6f756ab3effbf33709e6ddb6a1ff7fe7601860"
+    },
+    "_:id23": {
+      "prov:specificEntity": "id:f877e5d6-30e9-41b7-9244-78907f34aba9",
+      "prov:generalEntity": "data:0c8b9d6f753e8d8ec9276bfe98e993a133847642"
+    }
+  },
+  "used": {
+    "_:id5": {
+      "prov:activity": "id:874ed04c-cb65-49a4-b984-faf59ee01783",
+      "prov:entity": "id:9d4a18e6-392f-4da6-8763-322ac079f82d",
+      "prov:time": "2022-10-21T09:42:46.587874",
+      "prov:role": {
+        "$": "wf:main/dummy_in",
+        "type": "prov:QUALIFIED_NAME"
+      }
+    },
+    "_:id6": {
+      "prov:activity": "id:874ed04c-cb65-49a4-b984-faf59ee01783",
+      "prov:entity": "id:3f42fe16-534a-45a3-b0e1-8eaaa5f27ed2",
+      "prov:time": "2022-10-21T09:42:46.587957",
+      "prov:role": {
+        "$": "wf:main/reverse_sort",
+        "type": "prov:QUALIFIED_NAME"
+      }
+    },
+    "_:id8": {
+      "prov:activity": "id:874ed04c-cb65-49a4-b984-faf59ee01783",
+      "prov:entity": "id:bc8eff8b-53c2-4369-bd7c-5f52c481c08f",
+      "prov:time": "2022-10-21T09:42:46.588328",
+      "prov:role": {
+        "$": "wf:main/revsort_in",
+        "type": "prov:QUALIFIED_NAME"
+      }
+    },
+    "_:id12": {
+      "prov:activity": "id:a28ce36f-1948-47c5-833c-5138d8d44204",
+      "prov:entity": "id:f45fa2c0-1729-41cd-bd0d-a171ff570ec4",
+      "prov:time": "2022-10-21T09:42:46.591584",
+      "prov:role": {
+        "$": "wf:main/rev/rev_in",
+        "type": "prov:QUALIFIED_NAME"
+      }
+    },
+    "_:id18": {
+      "prov:activity": "id:0bb2f65c-5ba4-49c9-800a-09a62f0ae3d1",
+      "prov:entity": "id:12106f28-1421-4eb7-943a-da6c834ce68e",
+      "prov:time": "2022-10-21T09:42:46.599222",
+      "prov:role": {
+        "$": "wf:main/sorted/reverse",
+        "type": "prov:QUALIFIED_NAME"
+      }
+    },
+    "_:id19": {
+      "prov:activity": "id:0bb2f65c-5ba4-49c9-800a-09a62f0ae3d1",
+      "prov:entity": "id:4a47d7ec-248f-43c8-8283-61bc110aff7f",
+      "prov:time": "2022-10-21T09:42:46.599315",
+      "prov:role": {
+        "$": "wf:main/sorted/sort_in",
+        "type": "prov:QUALIFIED_NAME"
+      }
+    }
+  },
+  "wasGeneratedBy": {
+    "_:id14": {
+      "prov:entity": "id:4a47d7ec-248f-43c8-8283-61bc110aff7f",
+      "prov:activity": "id:a28ce36f-1948-47c5-833c-5138d8d44204",
+      "prov:time": "2022-10-21T09:42:46.595451",
+      "prov:role": {
+        "$": "wf:main/rev/rev_out",
+        "type": "prov:QUALIFIED_NAME"
+      }
+    },
+    "_:id21": {
+      "prov:entity": "id:32e63691-d487-4cc8-acee-4ed8618ceffe",
+      "prov:activity": "id:0bb2f65c-5ba4-49c9-800a-09a62f0ae3d1",
+      "prov:time": "2022-10-21T09:42:46.603613",
+      "prov:role": {
+        "$": "wf:main/sorted/sort_out",
+        "type": "prov:QUALIFIED_NAME"
+      }
+    },
+    "_:id24": {
+      "prov:entity": "id:f877e5d6-30e9-41b7-9244-78907f34aba9",
+      "prov:activity": "id:874ed04c-cb65-49a4-b984-faf59ee01783",
+      "prov:time": "2022-10-21T09:42:46.606584",
+      "prov:role": {
+        "$": "wf:main/primary/dummy_out",
+        "type": "prov:QUALIFIED_NAME"
+      }
+    },
+    "_:id25": {
+      "prov:entity": "id:32e63691-d487-4cc8-acee-4ed8618ceffe",
+      "prov:activity": "id:874ed04c-cb65-49a4-b984-faf59ee01783",
+      "prov:time": "2022-10-21T09:42:46.606584",
+      "prov:role": {
+        "$": "wf:main/primary/revsort_out",
+        "type": "prov:QUALIFIED_NAME"
+      }
+    }
+  },
+  "wasEndedBy": {
+    "_:id15": {
+      "prov:activity": "id:a28ce36f-1948-47c5-833c-5138d8d44204",
+      "prov:ender": "id:874ed04c-cb65-49a4-b984-faf59ee01783",
+      "prov:time": "2022-10-21T09:42:46.595439"
+    },
+    "_:id22": {
+      "prov:activity": "id:0bb2f65c-5ba4-49c9-800a-09a62f0ae3d1",
+      "prov:ender": "id:874ed04c-cb65-49a4-b984-faf59ee01783",
+      "prov:time": "2022-10-21T09:42:46.603601"
+    },
+    "_:id26": {
+      "prov:activity": "id:874ed04c-cb65-49a4-b984-faf59ee01783",
+      "prov:ender": "id:749dd9b6-e0aa-47b7-809d-7fe844ed88f5",
+      "prov:time": "2022-10-21T09:42:46.606831"
+    }
+  }
+}
