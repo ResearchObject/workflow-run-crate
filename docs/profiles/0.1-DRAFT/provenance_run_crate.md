@@ -9,7 +9,7 @@ title: Provenance Run Crate
 * Permalink: <https://w3id.org/ro/wfrun/provenance/0.1-DRAFT> `TODO: update`
 * Authors: [Workflow Run RO-Crate members](/workflow-run-crate/#community)
 
-This profile uses terminology from the [RO-Crate 1.1 specification](https://w3id.org/ro/crate/1.1).
+This profile uses terminology from the [RO-Crate 1.1 specification](https://w3id.org/ro/crate/1.1), and [extends it](https://www.researchobject.org/ro-crate/1.1/appendix/jsonld.html#extending-ro-crate) with additional terms from the [workflow-run](https://github.com/ResearchObject/ro-terms/tree/master/workflow-run) ro-terms namespace.
 
 
 ## Overview
@@ -294,6 +294,72 @@ The following diagram shows the relationships between all provenance-related ent
         "value": "True"
     }
 ]
+```
+
+
+## Representing parameter connections
+
+In most workflows, the outputs of one or more steps are needed as input for subsequent steps: this creates a *connection* between the corresponding parameters of the tools that implement those steps. For instance, consider the "revsort" workflow represented in the above example:
+
+<p align="center"><img alt="revsort workflow diagram" src="img/revsort.svg" width="207" /></p>
+
+In this workflow, the output of the `rev` step is used as input by the `sorted` step, creating a connection between the `output` parameter of `revtool.cwl` and the `input` parameter of `sorttool.cwl`. A connection can also occur between tool parameters and workflow parameters: looking again at the above example, the `reverse_sort` workflow parameter is connected to the `reverse` parameter of `sorttool.cwl`.
+
+A provenance run crate MAY describe parameter connections using the `ParameterConnection` type from the [workflow-run](https://github.com/ResearchObject/ro-terms/tree/master/workflow-run) ro-terms namespace. References to the `ParameterConnection` instances SHOULD follow the CWL convention, where connections to workflow output parameters are referenced by the workflow while other connections are referenced by the receiving step:
+
+```json
+{
+    "@id": "packed.cwl",
+    "@type": ["File", "SoftwareSourceCode", "ComputationalWorkflow", "HowTo"],
+    "connection": [
+        {"@id": "#150ffba3-9dc2-4b14-8a6b-3f826f70e41b"}
+    ],
+    ...
+},
+{
+    "@id": "#150ffba3-9dc2-4b14-8a6b-3f826f70e41b",
+    "@type": "ParameterConnection",
+    "sourceParameter": {"@id": "packed.cwl#sorttool.cwl/output"},
+    "targetParameter": {"@id": "packed.cwl#main/output"}
+},
+{
+    "@id": "packed.cwl#main/sorted",
+    "@type": "HowToStep",
+    "connection": [
+        {"@id": "#548ab27a-3abf-4035-b3dd-f2989762d5c0"},
+        {"@id": "#ed883346-fb32-43dd-b965-18aa5cac9350"}
+    ],
+    "workExample": {"@id": "packed.cwl#sorttool.cwl"}
+},
+{
+    "@id": "#548ab27a-3abf-4035-b3dd-f2989762d5c0",
+    "@type": "ParameterConnection",
+    "sourceParameter": {"@id": "packed.cwl#revtool.cwl/output"},
+    "targetParameter": {"@id": "packed.cwl#sorttool.cwl/input"}
+},
+{
+    "@id": "#ed883346-fb32-43dd-b965-18aa5cac9350",
+    "@type": "ParameterConnection",
+    "sourceParameter": {"@id": "packed.cwl#main/reverse_sort"},
+    "targetParameter": {"@id": "packed.cwl#sorttool.cwl/reverse"}
+}
+```
+
+Note that the `workflow-run` terms are not part of the standard RO-Crate context, so they have to be added to the crate's `@context` to be used:
+
+```json
+{
+    "@context": [
+        "https://w3id.org/ro/crate/1.1/context",
+        {
+            "ParameterConnection": "https://w3id.org/ro/terms/workflow-run#ParameterConnection",
+            "connection": "https://w3id.org/ro/terms/workflow-run#connection",
+            "sourceParameter": "https://w3id.org/ro/terms/workflow-run#sourceParameter",
+            "targetParameter": "https://w3id.org/ro/terms/workflow-run#targetParameter"
+        }
+    ],
+    "@graph": [...]
+}
 ```
 
 
