@@ -5,6 +5,11 @@ title: Workflow Run RO-Crate
 Workflow Run RO-Crate is a working group for defining [RO-Crate](https://w3id.org/ro/crate) profiles for capturing the provenance of an execution of a computational workflow.
 
 
+## Profiles
+
+The [Workflow Run RO-Crate profile collection](profiles) is the main outcome of the group's activities.
+
+
 ## Community
 
 The Workflow Run RO-Crate working group is part of the [RO-Crate community](https://www.researchobject.org/ro-crate/community.html).
@@ -45,9 +50,8 @@ Post [here](https://github.com/ResearchObject/workflow-run-crate/issues/1) to jo
 - ... [you](https://github.com/ResearchObject/workflow-run-crate/issues/1)?
 
 
-## Content
+## Resources
 
-- [The Workflow Run RO-Crate profile collection](profiles)
 - [Requirements for the Workflow Run RO-Crate profiles](requirements)
 - [Profile for recording workflow runs](https://www.researchobject.org/2021-packaging-research-artefacts-with-ro-crate/manuscript.html#profile-for-recording-workflow-runs) (conceptual ideas from RO-Crate paper)
 - [Workflow Run RO-Crate for a ML prediction pipeline run](examples/draft/ml-predict-pipeline/) ([pipeline repo](https://github.com/crs4/deephealth-pipelines) -- part of the DeepHealth digital pathology platform)
