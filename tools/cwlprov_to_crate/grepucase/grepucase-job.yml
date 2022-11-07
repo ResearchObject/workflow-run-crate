@@ -1,4 +1,0 @@
-in_dir:
-  class: Directory
-  location: grepucase_in
-pattern: lazy
