@@ -111,8 +111,6 @@ class ProvenanceProfile:
         # import galaxy history metadata
         metadata_export = load_ga_history_export(ga_export_dir)
 
-        # print(metadata_export.keys())
-
         self.declared_strings_s = {}
 
         self.datasets = []
@@ -218,7 +216,6 @@ class ProvenanceProfile:
         )
         self.document.wasStartedBy(wfengine, None, account, datetime.datetime.now())
         # define workflow run level activity
-        # print(self.workflow_run_uri)
         self.document.activity(
             self.workflow_run_uri,
             datetime.datetime.now(),
@@ -253,9 +250,7 @@ class ProvenanceProfile:
 
     def declare_process(
         self,
-        # process_name: str,
         ga_export_jobs_attrs: dict,
-        # when: datetime.datetime,
         process_run_id: Optional[str] = None,
     ) -> str:
         """Record the start of each Process."""
@@ -270,11 +265,6 @@ class ProvenanceProfile:
         end_time = ga_export_jobs_attrs["update_time"]
 
         # TODO: Find out how to include commandline as a string
-        # cmd = ga_export_jobs_attrs["command_line"]
-        # cmd = self.document.entity(
-        #     uuid.uuid4().urn,
-        #     {PROV_TYPE: WFPROV["Artifact"], PROV_LABEL: ga_export_jobs_attrs["command_line"]}
-        #     )
 
         self.document.activity(
             process_run_id,
@@ -328,14 +318,9 @@ class ProvenanceProfile:
 
                 # if not value or len(value) == 0:
                 if item in ("inputs", "outputs"):
-                    # print("ITEM")
-                    # print(item)
                     for v in value:
-                        # print("VALUE")
-                        # print(v)
                         for d in self.datasets:
-                            # print("DATASET")
-                            # print(d)
+
                             if v in (
                                 [d["encoded_id"]] + d["copied_from_history_dataset_association_id_chain"]
                             ):
@@ -378,14 +363,11 @@ class ProvenanceProfile:
 
         if isinstance(value, str):
             # clean up unwanted characters
-            # value = value.replace("|", "_")
             (entity, _) = self.declare_string(value)
             return entity
 
         if isinstance(value, bytes):
             # If we got here then we must be in Python 3
-            # byte_s = BytesIO(value)
-            # data_file = self.research_object.add_data_file(byte_s)
             # FIXME: Don't naively assume add_data_file uses hash in filename!
             data_id = "data:%s" % str(value)  # PurePosixPath(data_file).stem
             return self.document.entity(
@@ -430,8 +412,6 @@ class ProvenanceProfile:
                 coll.add_asserted_type(CWLPROV[value["class"]])
 
     def declare_file(self, value: Dict) -> Tuple[ProvEntity, ProvEntity, str]:
-        # print("VALUE:", value)
-        # value["file_name"]
         if value["class"] != "File":
             raise ValueError("Must have class:File: %s" % value)
 
@@ -446,11 +426,7 @@ class ProvenanceProfile:
 
         if not entity and "file_name" in value:
             location = str(value["file_name"])
-            # If we made it here, we'll have to add it to the RO
-            # with self.fsaccess.open(location, "rb") as fhandle:
-            #     relative_path = self.research_object.add_data_file(fhandle)
             # FIXME: This naively relies on add_data_file setting hash as filename
-            # checksum = PurePath(relative_path).name
             entity = self.document.entity(
                 "data:" + location, {PROV_TYPE: WFPROV["Artifact"]}
             )
@@ -500,9 +476,6 @@ class ProvenanceProfile:
     ) -> None:
         """Call wasGeneratedBy() for each output,copy the files into the RO."""
         if isinstance(final_output, Dict):
-            # Timestamp should be created at the earliest
-            # timestamp = datetime.datetime.now()
-
             # For each output, find/register the corresponding
             # entity (UUID) and document it as generated in
             # a role corresponding to the output
@@ -602,8 +575,6 @@ class ProvenanceProfile:
         prov_ids.append(self.provenance_ns[filename + ".jsonld"])
 
         graph = prov_to_dot(self.document).to_string()
-        # graph_s = graph_dot
-        # print(type(graph))
         graph_s = StringIO()
         graph_s.write(graph)
         # dot.write_png(basename + '.png')
