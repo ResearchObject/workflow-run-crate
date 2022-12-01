@@ -1,0 +1,496 @@
+{
+    "@context": "https://w3id.org/ro/crate/1.1/context",
+    "@graph": [
+        {
+            "@id": "./",
+            "@type": "Dataset",
+            "hasPart": [
+                {
+                    "@id": "test.nf"
+                },
+                {
+                    "@id": "out/r1.foo.1.txt"
+                },
+                {
+                    "@id": "out/r1.foo.2.txt"
+                },
+                {
+                    "@id": "out/r2.foo.1.txt"
+                },
+                {
+                    "@id": "out/r2.foo.2.txt"
+                },
+                {
+                    "@id": "out/r3.foo.1.txt"
+                },
+                {
+                    "@id": "out/r3.foo.2.txt"
+                }
+            ],
+            "license": "Apache-2.0",
+            "mainEntity": {
+                "@id": "test.nf"
+            },
+            "mentions": [
+                {
+                    "@id": "#c459569b-9565-49b1-8ed9-3689cccc9d67"
+                }
+            ]
+        },
+        {
+            "@id": "ro-crate-metadata.json",
+            "@type": "CreativeWork",
+            "about": {
+                "@id": "./"
+            },
+            "conformsTo": [
+                {
+                    "@id": "https://w3id.org/ro/crate/1.1"
+                },
+                {
+                    "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+                }
+            ]
+        },
+        {
+            "@id": "test.nf",
+            "@type": [
+                "File",
+                "SoftwareSourceCode",
+                "ComputationalWorkflow",
+                "HowTo"
+            ],
+            "version": "0.2.0",
+            "creator": {
+                "@id": "#bruno-grande"
+            },
+            "description": "Nextflow plugin for tracking provenance",
+            "isBasedOn": "https://github.com/sage-bionetworks-workflows/nf-prov",
+            "hasPart": [
+                {
+                    "@id": "test.nf#RNG"
+                }
+            ],
+            "input": [
+                {
+                    "@id": "test.nf#main/constant"
+                }
+            ],
+            "name": "nf-prov-test",
+            "output": [
+                {
+                    "@id": "test.nf#main/emit_1"
+                },
+                {
+                    "@id": "test.nf#main/emit_2"
+                },
+                {
+                    "@id": "test.nf#main/emit_3"
+                },
+                {
+                    "@id": "test.nf#main/emit_4"
+                },
+                {
+                    "@id": "test.nf#main/emit_5"
+                },
+                {
+                    "@id": "test.nf#main/emit_6"
+                }
+            ],
+            "programmingLanguage": {
+                "@id": "https://w3id.org/workflowhub/workflow-ro-crate#nextflow"
+            },
+            "step": [
+                {
+                    "@id": "test.nf#main/rng"
+                }
+            ]
+        },
+        {
+            "@id": "#bruno-grande",
+            "@type": "Person",
+            "name": "Bruno Grande"
+        },
+        {
+            "@id": "https://w3id.org/workflowhub/workflow-ro-crate#nextflow",
+            "@type": "ComputerLanguage",
+            "name": "Nextflow",
+            "identifier": {
+                "@id": "https://www.nextflow.io/"
+            },
+            "url": {
+                "@id": "https://www.nextflow.io/"
+            },
+            "version": "!>=21.10.3"
+        },
+        {
+            "@id": "test.nf#main/constant",
+            "@type": "FormalParameter",
+            "additionalType": "Text"
+        },
+        {
+            "@id": "test.nf#main/emit_1",
+            "@type": "FormalParameter",
+            "additionalType": "File"
+        },
+        {
+            "@id": "test.nf#main/emit_2",
+            "@type": "FormalParameter",
+            "additionalType": "File"
+        },
+        {
+            "@id": "test.nf#main/emit_3",
+            "@type": "FormalParameter",
+            "additionalType": "File"
+        },
+        {
+            "@id": "test.nf#main/emit_4",
+            "@type": "FormalParameter",
+            "additionalType": "File"
+        },
+        {
+            "@id": "test.nf#main/emit_5",
+            "@type": "FormalParameter",
+            "additionalType": "File"
+        },
+        {
+            "@id": "test.nf#main/emit_6",
+            "@type": "FormalParameter",
+            "additionalType": "File"
+        },
+        {
+            "@id": "test.nf#main/rng",
+            "@type": "HowToStep",
+            "workExample": {
+                "@id": "test.nf#RNG"
+            }
+        },
+        {
+            "@id": "test.nf#RNG",
+            "@type": "SoftwareApplication",
+            "input": [
+                {
+                    "@id": "test.nf#RNG/prefix"
+                },
+                {
+                    "@id": "test.nf#RNG/constant"
+                }
+            ],
+            "output": [
+                {
+                    "@id": "test.nf#RNG/emit_1"
+                },
+                {
+                    "@id": "test.nf#RNG/emit_2"
+                }
+            ]
+        },
+        {
+            "@id": "test.nf#RNG/prefix",
+            "@type": "FormalParameter",
+            "additionalType": "Text"
+        },
+        {
+            "@id": "test.nf#RNG/constant",
+            "@type": "FormalParameter",
+            "additionalType": "Text"
+        },
+        {
+            "@id": "test.nf#RNG/emit_1",
+            "@type": "FormalParameter",
+            "additionalType": "File"
+        },
+        {
+            "@id": "test.nf#RNG/emit_2",
+            "@type": "FormalParameter",
+            "additionalType": "File"
+        },
+        {
+            "@id": "#d55bc8c8-a719-43ab-accf-74dc70931e9f",
+            "@type": "SoftwareApplication",
+            "name": "Nextflow 22.11.0-edge"
+        },
+        {
+            "@id": "#fa4abce9-27e2-4a9b-80b9-712ddf763002",
+            "@type": "OrganizeAction",
+            "agent": {
+                "@id": "#dbed0fc4-9b95-4498-8d8a-a3a12d257608"
+            },
+            "instrument": {
+                "@id": "#d55bc8c8-a719-43ab-accf-74dc70931e9f"
+            },
+            "name": "Run of Nextflow 22.11.0-edge",
+            "object": [
+                {
+                    "@id": "#897c2eba-40d9-431c-a981-d15afc19045d"
+                }
+            ],
+            "result": {
+                "@id": "#c459569b-9565-49b1-8ed9-3689cccc9d67"
+            }
+        },
+        {
+            "@id": "#dbed0fc4-9b95-4498-8d8a-a3a12d257608",
+            "@type": "Person",
+            "name": "Simone Leo"
+        },
+        {
+            "@id": "#c459569b-9565-49b1-8ed9-3689cccc9d67",
+            "@type": "CreateAction",
+            "instrument": {
+                "@id": "test.nf"
+            },
+            "name": "Run of workflow/test.nf#main",
+            "object": [
+                {
+                    "@id": "#pv-main/constant"
+                }
+            ],
+            "result": [
+                {
+                    "@id": "out/r1.foo.1.txt"
+                },
+                {
+                    "@id": "out/r1.foo.2.txt"
+                },
+                {
+                    "@id": "out/r2.foo.1.txt"
+                },
+                {
+                    "@id": "out/r2.foo.2.txt"
+                },
+                {
+                    "@id": "out/r3.foo.1.txt"
+                },
+                {
+                    "@id": "out/r3.foo.2.txt"
+                }
+            ]
+        },
+        {
+            "@id": "#pv-main/constant",
+            "@type": "PropertyValue",
+            "exampleOfWork": {
+                "@id": "test.nf#main/constant"
+            },
+            "name": "main/constant",
+            "value": "foo"
+        },
+        {
+            "@id": "out/r1.foo.1.txt",
+            "@type": "File",
+            "exampleOfWork": [
+                {
+                    "@id": "test.nf#main/emit_1"
+                },
+                {
+                    "@id": "test.nf#RNG/emit_1"
+                }
+            ]
+        },
+        {
+            "@id": "out/r1.foo.2.txt",
+            "@type": "File",
+            "exampleOfWork": [
+                {
+                    "@id": "test.nf#main/emit_2"
+                },
+                {
+                    "@id": "test.nf#RNG/emit_2"
+                }
+            ]
+        },
+        {
+            "@id": "out/r2.foo.1.txt",
+            "@type": "File",
+            "exampleOfWork": [
+                {
+                    "@id": "test.nf#main/emit_3"
+                },
+                {
+                    "@id": "test.nf#RNG/emit_1"
+                }
+            ]
+        },
+        {
+            "@id": "out/r2.foo.2.txt",
+            "@type": "File",
+            "exampleOfWork": [
+                {
+                    "@id": "test.nf#main/emit_4"
+                },
+                {
+                    "@id": "test.nf#RNG/emit_2"
+                }
+            ]
+        },
+        {
+            "@id": "out/r3.foo.1.txt",
+            "@type": "File",
+            "exampleOfWork": [
+                {
+                    "@id": "test.nf#main/emit_5"
+                },
+                {
+                    "@id": "test.nf#RNG/emit_1"
+                }
+            ]
+        },
+        {
+            "@id": "out/r3.foo.2.txt",
+            "@type": "File",
+            "exampleOfWork": [
+                {
+                    "@id": "test.nf#main/emit_6"
+                },
+                {
+                    "@id": "test.nf#RNG/emit_2"
+                }
+            ]
+        },
+        {
+            "@id": "#897c2eba-40d9-431c-a981-d15afc19045d",
+            "@type": "ControlAction",
+            "instrument": {
+                "@id": "test.nf#main/rng"
+            },
+            "object": [
+                {
+                    "@id": "#6fb886c1-5e9c-4575-ae30-39be9c80686f"
+                },
+                {
+                    "@id": "#f77bf6af-b288-4b10-852f-82a60a24613c"
+                },
+                {
+                    "@id": "#9b5bc105-b02a-4029-8450-076105e351f2"
+                }
+            ]
+        },
+        {
+            "@id": "#6fb886c1-5e9c-4575-ae30-39be9c80686f",
+            "@type": "CreateAction",
+            "instrument": {
+                "@id": "test.nf#RNG"
+            },
+            "name": "Run of test.nf#main/rng_1",
+            "object": [
+                {
+                    "@id": "#pv-RNG/prefix_1"
+                },
+                {
+                    "@id": "#pv-RNG/constant_1"
+                }
+            ],
+            "result": [
+                {
+                    "@id": "out/r1.foo.1.txt"
+                },
+                {
+                    "@id": "out/r1.foo.2.txt"
+                }
+            ]
+        },
+        {
+            "@id": "#pv-RNG/prefix_1",
+            "@type": "PropertyValue",
+            "exampleOfWork": {
+                "@id": "test.nf#RNG/prefix"
+            },
+            "name": "RNG/prefix_1",
+            "value": "r1"
+        },
+        {
+            "@id": "#pv-RNG/constant_1",
+            "@type": "PropertyValue",
+            "exampleOfWork": {
+                "@id": "test.nf#RNG/constant"
+            },
+            "name": "RNG/constant_1",
+            "value": "foo"
+        },
+        {
+            "@id": "#f77bf6af-b288-4b10-852f-82a60a24613c",
+            "@type": "CreateAction",
+            "instrument": {
+                "@id": "test.nf#RNG"
+            },
+            "name": "Run of test.nf#main/rng_2",
+            "object": [
+                {
+                    "@id": "#pv-RNG/prefix_2"
+                },
+                {
+                    "@id": "#pv-RNG/constant_2"
+                }
+            ],
+            "result": [
+                {
+                    "@id": "out/r2.foo.1.txt"
+                },
+                {
+                    "@id": "out/r2.foo.2.txt"
+                }
+            ]
+        },
+        {
+            "@id": "#pv-RNG/prefix_2",
+            "@type": "PropertyValue",
+            "exampleOfWork": {
+                "@id": "test.nf#RNG/prefix"
+            },
+            "name": "RNG/prefix_2",
+            "value": "r2"
+        },
+        {
+            "@id": "#pv-RNG/constant_2",
+            "@type": "PropertyValue",
+            "exampleOfWork": {
+                "@id": "test.nf#RNG/constant"
+            },
+            "name": "RNG/constant_2",
+            "value": "foo"
+        },
+        {
+            "@id": "#9b5bc105-b02a-4029-8450-076105e351f2",
+            "@type": "CreateAction",
+            "instrument": {
+                "@id": "test.nf#RNG"
+            },
+            "name": "Run of test.nf#main/rng_3",
+            "object": [
+                {
+                    "@id": "#pv-RNG/prefix_3"
+                },
+                {
+                    "@id": "#pv-RNG/constant_3"
+                }
+            ],
+            "result": [
+                {
+                    "@id": "out/r3.foo.1.txt"
+                },
+                {
+                    "@id": "out/r3.foo.2.txt"
+                }
+            ]
+        },
+        {
+            "@id": "#pv-RNG/prefix_3",
+            "@type": "PropertyValue",
+            "exampleOfWork": {
+                "@id": "test.nf#RNG/prefix"
+            },
+            "name": "RNG/prefix_3",
+            "value": "r3"
+        },
+        {
+            "@id": "#pv-RNG/constant_3",
+            "@type": "PropertyValue",
+            "exampleOfWork": {
+                "@id": "test.nf#RNG/constant"
+            },
+            "name": "RNG/constant_3",
+            "value": "foo"
+        }
+    ]
+}
