@@ -25,6 +25,9 @@
                 },
                 {
                     "@id": "out/r3.foo.2.txt"
+                },
+                {
+                    "@id": "manifest.json"
                 }
             ],
             "license": "Apache-2.0",
@@ -491,6 +494,11 @@
             },
             "name": "RNG/constant_3",
             "value": "foo"
+        },
+        {
+            "@id": "manifest.json",
+            "@type": "File",
+            "description": "original nf-prov provenance file"
         }
     ]
 }

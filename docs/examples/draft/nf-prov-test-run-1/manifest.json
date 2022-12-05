@@ -1,0 +1,149 @@
+{
+    "pipeline": {
+        "name": "nf-prov-test",
+        "author": "Bruno Grande",
+        "homePage": "https://github.com/sage-bionetworks-workflows/nf-prov",
+        "description": "Nextflow plugin for tracking provenance",
+        "mainScript": "main.nf",
+        "nextflowVersion": "!>=21.10.3",
+        "version": "0.2.0",
+        "doi": ""
+    },
+    "published": [
+        {
+            "source": "/home/simleo/repos/nf-prov/work/8a/c83b73a08ffa6849f7de4a1181ad35/r1.foo.1.txt",
+            "target": "/home/simleo/repos/nf-prov/out/r1.foo.1.txt",
+            "publishingTaskId": "1"
+        },
+        {
+            "source": "/home/simleo/repos/nf-prov/work/5d/dbd3c3f0ef6ba3b166c279929817bf/r2.foo.1.txt",
+            "target": "/home/simleo/repos/nf-prov/out/r2.foo.1.txt",
+            "publishingTaskId": "2"
+        },
+        {
+            "source": "/home/simleo/repos/nf-prov/work/5d/dbd3c3f0ef6ba3b166c279929817bf/r2.foo.2.txt",
+            "target": "/home/simleo/repos/nf-prov/out/r2.foo.2.txt",
+            "publishingTaskId": "2"
+        },
+        {
+            "source": "/home/simleo/repos/nf-prov/work/a9/cc1b5e048008c691505fc8efb29ccc/r3.foo.1.txt",
+            "target": "/home/simleo/repos/nf-prov/out/r3.foo.1.txt",
+            "publishingTaskId": "3"
+        },
+        {
+            "source": "/home/simleo/repos/nf-prov/work/a9/cc1b5e048008c691505fc8efb29ccc/r3.foo.2.txt",
+            "target": "/home/simleo/repos/nf-prov/out/r3.foo.2.txt",
+            "publishingTaskId": "3"
+        }
+    ],
+    "tasks": {
+        "1": {
+            "id": "1",
+            "name": "RNG (1)",
+            "cached": false,
+            "process": "RNG",
+            "inputs": [
+                {
+                    "name": "prefix",
+                    "value": "r1"
+                },
+                {
+                    "name": "constant",
+                    "value": "foo"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "prefix",
+                    "emit": null,
+                    "value": "r1"
+                },
+                {
+                    "name": "constant",
+                    "emit": null,
+                    "value": "foo"
+                },
+                {
+                    "name": null,
+                    "emit": "file",
+                    "value": [
+                        "/home/simleo/repos/nf-prov/work/8a/c83b73a08ffa6849f7de4a1181ad35/r1.foo.1.txt",
+                        "/home/simleo/repos/nf-prov/work/8a/c83b73a08ffa6849f7de4a1181ad35/r1.foo.2.txt"
+                    ]
+                }
+            ]
+        },
+        "2": {
+            "id": "2",
+            "name": "RNG (2)",
+            "cached": false,
+            "process": "RNG",
+            "inputs": [
+                {
+                    "name": "prefix",
+                    "value": "r2"
+                },
+                {
+                    "name": "constant",
+                    "value": "foo"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "prefix",
+                    "emit": null,
+                    "value": "r2"
+                },
+                {
+                    "name": "constant",
+                    "emit": null,
+                    "value": "foo"
+                },
+                {
+                    "name": null,
+                    "emit": "file",
+                    "value": [
+                        "/home/simleo/repos/nf-prov/work/5d/dbd3c3f0ef6ba3b166c279929817bf/r2.foo.1.txt",
+                        "/home/simleo/repos/nf-prov/work/5d/dbd3c3f0ef6ba3b166c279929817bf/r2.foo.2.txt"
+                    ]
+                }
+            ]
+        },
+        "3": {
+            "id": "3",
+            "name": "RNG (3)",
+            "cached": false,
+            "process": "RNG",
+            "inputs": [
+                {
+                    "name": "prefix",
+                    "value": "r3"
+                },
+                {
+                    "name": "constant",
+                    "value": "foo"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "prefix",
+                    "emit": null,
+                    "value": "r3"
+                },
+                {
+                    "name": "constant",
+                    "emit": null,
+                    "value": "foo"
+                },
+                {
+                    "name": null,
+                    "emit": "file",
+                    "value": [
+                        "/home/simleo/repos/nf-prov/work/a9/cc1b5e048008c691505fc8efb29ccc/r3.foo.1.txt",
+                        "/home/simleo/repos/nf-prov/work/a9/cc1b5e048008c691505fc8efb29ccc/r3.foo.2.txt"
+                    ]
+                }
+            ]
+        }
+    }
+}
