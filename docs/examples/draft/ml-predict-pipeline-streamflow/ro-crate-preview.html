@@ -1,0 +1,1623 @@
+<html><head><script type="application/ld+json">{
+  "@context": [
+    "https://w3id.org/ro/crate/1.1/context",
+    {
+      "ParameterConnection": "https://w3id.org/ro/terms/workflow-run#ParameterConnection",
+      "connection": "https://w3id.org/ro/terms/workflow-run#connection",
+      "sourceParameter": "https://w3id.org/ro/terms/workflow-run#sourceParameter",
+      "targetParameter": "https://w3id.org/ro/terms/workflow-run#targetParameter"
+    }
+  ],
+  "@graph": [
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "datePublished": "2022-11-26T22:44:29+00:00",
+      "hasPart": [
+        {
+          "@id": "extract_tissue.cwl"
+        },
+        {
+          "@id": "classify_tumor.cwl"
+        },
+        {
+          "@id": "predictions.cwl"
+        },
+        {
+          "@id": "f62aa607a75508ac5fc6a22e9c0e39ef58a2c852"
+        },
+        {
+          "@id": "f331ecff28e8c7df695c98dbc22760d8d658a1b0"
+        },
+        {
+          "@id": "a9805401269ade2a88b56d0e9a0b389041bebdff"
+        },
+        {
+          "@id": "741c6947917667777aafae95c3252d2a20bd88f5"
+        },
+        {
+          "@id": "e75ee6d0751bb2dbc7a894af0fe307e4fe020a99"
+        }
+      ],
+      "mainEntity": {
+        "@id": "predictions.cwl"
+      },
+      "mentions": [
+        {
+          "@id": "#2ac884e6-3763-4893-956e-53446acb22d9"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "https://w3id.org/workflowhub/workflow-ro-crate#cwl",
+      "@type": "ComputerLanguage",
+      "alternateName": "CWL",
+      "identifier": {
+        "@id": "https://w3id.org/cwl/v1.1/"
+      },
+      "name": "Common Workflow Language",
+      "url": {
+        "@id": "https://www.commonwl.org/"
+      },
+      "version": "v1.1"
+    },
+    {
+      "@id": "predictions.cwl#gpu",
+      "@type": "FormalParameter",
+      "additionalType": "Integer",
+      "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+      "name": "gpu",
+      "valueRequired": "False"
+    },
+    {
+      "@id": "predictions.cwl#slide",
+      "@type": "FormalParameter",
+      "additionalType": "Collection",
+      "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+      "name": "slide"
+    },
+    {
+      "@id": "predictions.cwl#tissue-high-batch-size",
+      "@type": "FormalParameter",
+      "additionalType": "Integer",
+      "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+      "name": "tissue-high-batch-size",
+      "valueRequired": "False"
+    },
+    {
+      "@id": "predictions.cwl#tissue-high-chunk-size",
+      "@type": "FormalParameter",
+      "additionalType": "Integer",
+      "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+      "name": "tissue-high-chunk-size",
+      "valueRequired": "False"
+    },
+    {
+      "@id": "predictions.cwl#tissue-high-filter",
+      "@type": "FormalParameter",
+      "additionalType": "Text",
+      "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+      "name": "tissue-high-filter"
+    },
+    {
+      "@id": "predictions.cwl#tissue-high-label",
+      "@type": "FormalParameter",
+      "additionalType": "Text",
+      "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+      "name": "tissue-high-label"
+    },
+    {
+      "@id": "predictions.cwl#tissue-high-level",
+      "@type": "FormalParameter",
+      "additionalType": "Integer",
+      "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+      "name": "tissue-high-level"
+    },
+    {
+      "@id": "predictions.cwl#tissue-low-batch-size",
+      "@type": "FormalParameter",
+      "additionalType": "Integer",
+      "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+      "name": "tissue-low-batch-size",
+      "valueRequired": "False"
+    },
+    {
+      "@id": "predictions.cwl#tissue-low-chunk-size",
+      "@type": "FormalParameter",
+      "additionalType": "Integer",
+      "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+      "name": "tissue-low-chunk-size",
+      "valueRequired": "False"
+    },
+    {
+      "@id": "predictions.cwl#tissue-low-label",
+      "@type": "FormalParameter",
+      "additionalType": "Text",
+      "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+      "name": "tissue-low-label"
+    },
+    {
+      "@id": "predictions.cwl#tissue-low-level",
+      "@type": "FormalParameter",
+      "additionalType": "Integer",
+      "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+      "name": "tissue-low-level"
+    },
+    {
+      "@id": "predictions.cwl#tumor-batch-size",
+      "@type": "FormalParameter",
+      "additionalType": "Integer",
+      "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+      "name": "tumor-batch-size",
+      "valueRequired": "False"
+    },
+    {
+      "@id": "predictions.cwl#tumor-chunk-size",
+      "@type": "FormalParameter",
+      "additionalType": "Integer",
+      "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+      "name": "tumor-chunk-size",
+      "valueRequired": "False"
+    },
+    {
+      "@id": "predictions.cwl#tumor-filter",
+      "@type": "FormalParameter",
+      "additionalType": "Text",
+      "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+      "name": "tumor-filter"
+    },
+    {
+      "@id": "predictions.cwl#tumor-label",
+      "@type": "FormalParameter",
+      "additionalType": "Text",
+      "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+      "name": "tumor-label"
+    },
+    {
+      "@id": "predictions.cwl#tumor-level",
+      "@type": "FormalParameter",
+      "additionalType": "Integer",
+      "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+      "name": "tumor-level"
+    },
+    {
+      "@id": "predictions.cwl#tissue",
+      "@type": "FormalParameter",
+      "additionalType": "File",
+      "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+      "name": "tissue"
+    },
+    {
+      "@id": "predictions.cwl#tumor",
+      "@type": "FormalParameter",
+      "additionalType": "File",
+      "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+      "name": "tumor"
+    },
+    {
+      "@id": "extract_tissue.cwl#batch-size",
+      "@type": "FormalParameter",
+      "additionalType": "Integer",
+      "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+      "name": "batch-size",
+      "valueRequired": "False"
+    },
+    {
+      "@id": "extract_tissue.cwl#chunk-size",
+      "@type": "FormalParameter",
+      "additionalType": "Integer",
+      "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+      "name": "chunk-size",
+      "valueRequired": "False"
+    },
+    {
+      "@id": "extract_tissue.cwl#filter",
+      "@type": "FormalParameter",
+      "additionalType": "Text",
+      "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+      "name": "filter",
+      "valueRequired": "False"
+    },
+    {
+      "@id": "extract_tissue.cwl#filter_slide",
+      "@type": "FormalParameter",
+      "additionalType": "File",
+      "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+      "name": "filter_slide",
+      "valueRequired": "False"
+    },
+    {
+      "@id": "extract_tissue.cwl#gpu",
+      "@type": "FormalParameter",
+      "additionalType": "Integer",
+      "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+      "name": "gpu",
+      "valueRequired": "False"
+    },
+    {
+      "@id": "extract_tissue.cwl#label",
+      "@type": "FormalParameter",
+      "additionalType": "Text",
+      "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+      "name": "label"
+    },
+    {
+      "@id": "extract_tissue.cwl#level",
+      "@type": "FormalParameter",
+      "additionalType": "Integer",
+      "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+      "name": "level"
+    },
+    {
+      "@id": "extract_tissue.cwl#src",
+      "@type": "FormalParameter",
+      "additionalType": "Collection",
+      "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+      "name": "src"
+    },
+    {
+      "@id": "extract_tissue.cwl#tissue",
+      "@type": "FormalParameter",
+      "additionalType": "File",
+      "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+      "name": "tissue"
+    },
+    {
+      "@id": "extract_tissue.cwl",
+      "@type": "SoftwareApplication",
+      "input": [
+        {
+          "@id": "extract_tissue.cwl#batch-size"
+        },
+        {
+          "@id": "extract_tissue.cwl#chunk-size"
+        },
+        {
+          "@id": "extract_tissue.cwl#filter"
+        },
+        {
+          "@id": "extract_tissue.cwl#filter_slide"
+        },
+        {
+          "@id": "extract_tissue.cwl#gpu"
+        },
+        {
+          "@id": "extract_tissue.cwl#label"
+        },
+        {
+          "@id": "extract_tissue.cwl#level"
+        },
+        {
+          "@id": "extract_tissue.cwl#src"
+        }
+      ],
+      "name": "extract_tissue.cwl",
+      "output": [
+        {
+          "@id": "extract_tissue.cwl#tissue"
+        }
+      ]
+    },
+    {
+      "@id": "classify_tumor.cwl#batch-size",
+      "@type": "FormalParameter",
+      "additionalType": "Integer",
+      "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+      "name": "batch-size",
+      "valueRequired": "False"
+    },
+    {
+      "@id": "classify_tumor.cwl#chunk-size",
+      "@type": "FormalParameter",
+      "additionalType": "Integer",
+      "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+      "name": "chunk-size",
+      "valueRequired": "False"
+    },
+    {
+      "@id": "classify_tumor.cwl#filter",
+      "@type": "FormalParameter",
+      "additionalType": "Text",
+      "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+      "name": "filter",
+      "valueRequired": "False"
+    },
+    {
+      "@id": "classify_tumor.cwl#filter_slide",
+      "@type": "FormalParameter",
+      "additionalType": "File",
+      "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+      "name": "filter_slide",
+      "valueRequired": "False"
+    },
+    {
+      "@id": "classify_tumor.cwl#gpu",
+      "@type": "FormalParameter",
+      "additionalType": "Integer",
+      "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+      "name": "gpu",
+      "valueRequired": "False"
+    },
+    {
+      "@id": "classify_tumor.cwl#label",
+      "@type": "FormalParameter",
+      "additionalType": "Text",
+      "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+      "name": "label"
+    },
+    {
+      "@id": "classify_tumor.cwl#level",
+      "@type": "FormalParameter",
+      "additionalType": "Integer",
+      "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+      "name": "level"
+    },
+    {
+      "@id": "classify_tumor.cwl#src",
+      "@type": "FormalParameter",
+      "additionalType": "Collection",
+      "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+      "name": "src"
+    },
+    {
+      "@id": "classify_tumor.cwl#tumor",
+      "@type": "FormalParameter",
+      "additionalType": "File",
+      "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+      "name": "tumor"
+    },
+    {
+      "@id": "classify_tumor.cwl",
+      "@type": [
+        "SoftwareApplication",
+        "File"
+      ],
+      "input": [
+        {
+          "@id": "classify_tumor.cwl#batch-size"
+        },
+        {
+          "@id": "classify_tumor.cwl#chunk-size"
+        },
+        {
+          "@id": "classify_tumor.cwl#filter"
+        },
+        {
+          "@id": "classify_tumor.cwl#filter_slide"
+        },
+        {
+          "@id": "classify_tumor.cwl#gpu"
+        },
+        {
+          "@id": "classify_tumor.cwl#label"
+        },
+        {
+          "@id": "classify_tumor.cwl#level"
+        },
+        {
+          "@id": "classify_tumor.cwl#src"
+        }
+      ],
+      "name": "classify_tumor.cwl",
+      "output": [
+        {
+          "@id": "classify_tumor.cwl#tumor"
+        }
+      ]
+    },
+    {
+      "@id": "predictions.cwl#extract-tissue-low",
+      "@type": "HowToStep",
+      "connection": [
+        {
+          "@id": "#c7f16216-eacb-4bf1-988e-8f6fac71f443"
+        },
+        {
+          "@id": "#9bbdf532-f3fa-43fc-bed9-390053f0c2d1"
+        },
+        {
+          "@id": "#12a0cc58-abf7-4e66-bdd4-589144869572"
+        },
+        {
+          "@id": "#7cbbf84a-3035-4745-8b3e-d140f938793d"
+        },
+        {
+          "@id": "#4d447a3a-60a6-4b84-aa1c-af5017b75889"
+        },
+        {
+          "@id": "#52bce53b-8b67-429c-b030-fc3f51d007ab"
+        }
+      ],
+      "workExample": {
+        "@id": "extract_tissue.cwl"
+      }
+    },
+    {
+      "@id": "#c7f16216-eacb-4bf1-988e-8f6fac71f443",
+      "@type": "ParameterConnection",
+      "sourceParameter": {
+        "@id": "predictions.cwl#tissue-low-batch-size"
+      },
+      "targetParameter": {
+        "@id": "extract_tissue.cwl#batch-size"
+      }
+    },
+    {
+      "@id": "#9bbdf532-f3fa-43fc-bed9-390053f0c2d1",
+      "@type": "ParameterConnection",
+      "sourceParameter": {
+        "@id": "predictions.cwl#tissue-low-chunk-size"
+      },
+      "targetParameter": {
+        "@id": "extract_tissue.cwl#chunk-size"
+      }
+    },
+    {
+      "@id": "#12a0cc58-abf7-4e66-bdd4-589144869572",
+      "@type": "ParameterConnection",
+      "sourceParameter": {
+        "@id": "predictions.cwl#gpu"
+      },
+      "targetParameter": {
+        "@id": "extract_tissue.cwl#gpu"
+      }
+    },
+    {
+      "@id": "#7cbbf84a-3035-4745-8b3e-d140f938793d",
+      "@type": "ParameterConnection",
+      "sourceParameter": {
+        "@id": "predictions.cwl#tissue-low-label"
+      },
+      "targetParameter": {
+        "@id": "extract_tissue.cwl#label"
+      }
+    },
+    {
+      "@id": "#4d447a3a-60a6-4b84-aa1c-af5017b75889",
+      "@type": "ParameterConnection",
+      "sourceParameter": {
+        "@id": "predictions.cwl#tissue-low-level"
+      },
+      "targetParameter": {
+        "@id": "extract_tissue.cwl#level"
+      }
+    },
+    {
+      "@id": "#52bce53b-8b67-429c-b030-fc3f51d007ab",
+      "@type": "ParameterConnection",
+      "sourceParameter": {
+        "@id": "predictions.cwl#slide"
+      },
+      "targetParameter": {
+        "@id": "extract_tissue.cwl#src"
+      }
+    },
+    {
+      "@id": "predictions.cwl#extract-tissue-high",
+      "@type": "HowToStep",
+      "connection": [
+        {
+          "@id": "#09f89d33-3750-4bad-9ae5-f6e75dcb2b84"
+        },
+        {
+          "@id": "#00fa2e9f-bb25-47cc-a95a-f874c71672fa"
+        },
+        {
+          "@id": "#1db6a245-e80e-4d53-a484-9cbc5f9715ff"
+        },
+        {
+          "@id": "#a2458c0b-6bd6-4f65-99d6-4c5b81ad1ce1"
+        },
+        {
+          "@id": "#71cd02b6-f249-4bc4-a80d-61d6882c5e30"
+        },
+        {
+          "@id": "#a7465350-2012-4710-8b47-a3460c76a296"
+        },
+        {
+          "@id": "#cd364786-f01d-4041-8190-fa2a9b6d1349"
+        },
+        {
+          "@id": "#ee77f8c3-0da8-45f9-875c-2d2cd8c1034b"
+        }
+      ],
+      "workExample": {
+        "@id": "extract_tissue.cwl"
+      }
+    },
+    {
+      "@id": "#09f89d33-3750-4bad-9ae5-f6e75dcb2b84",
+      "@type": "ParameterConnection",
+      "sourceParameter": {
+        "@id": "predictions.cwl#tissue-high-batch-size"
+      },
+      "targetParameter": {
+        "@id": "extract_tissue.cwl#batch-size"
+      }
+    },
+    {
+      "@id": "#00fa2e9f-bb25-47cc-a95a-f874c71672fa",
+      "@type": "ParameterConnection",
+      "sourceParameter": {
+        "@id": "predictions.cwl#tissue-high-chunk-size"
+      },
+      "targetParameter": {
+        "@id": "extract_tissue.cwl#chunk-size"
+      }
+    },
+    {
+      "@id": "#1db6a245-e80e-4d53-a484-9cbc5f9715ff",
+      "@type": "ParameterConnection",
+      "sourceParameter": {
+        "@id": "predictions.cwl#tissue-high-filter"
+      },
+      "targetParameter": {
+        "@id": "extract_tissue.cwl#filter"
+      }
+    },
+    {
+      "@id": "#a2458c0b-6bd6-4f65-99d6-4c5b81ad1ce1",
+      "@type": "ParameterConnection",
+      "sourceParameter": {
+        "@id": "extract_tissue.cwl#tissue"
+      },
+      "targetParameter": {
+        "@id": "extract_tissue.cwl#filter_slide"
+      }
+    },
+    {
+      "@id": "#71cd02b6-f249-4bc4-a80d-61d6882c5e30",
+      "@type": "ParameterConnection",
+      "sourceParameter": {
+        "@id": "predictions.cwl#gpu"
+      },
+      "targetParameter": {
+        "@id": "extract_tissue.cwl#gpu"
+      }
+    },
+    {
+      "@id": "#a7465350-2012-4710-8b47-a3460c76a296",
+      "@type": "ParameterConnection",
+      "sourceParameter": {
+        "@id": "predictions.cwl#tissue-high-label"
+      },
+      "targetParameter": {
+        "@id": "extract_tissue.cwl#label"
+      }
+    },
+    {
+      "@id": "#cd364786-f01d-4041-8190-fa2a9b6d1349",
+      "@type": "ParameterConnection",
+      "sourceParameter": {
+        "@id": "predictions.cwl#tissue-high-level"
+      },
+      "targetParameter": {
+        "@id": "extract_tissue.cwl#level"
+      }
+    },
+    {
+      "@id": "#ee77f8c3-0da8-45f9-875c-2d2cd8c1034b",
+      "@type": "ParameterConnection",
+      "sourceParameter": {
+        "@id": "predictions.cwl#slide"
+      },
+      "targetParameter": {
+        "@id": "extract_tissue.cwl#src"
+      }
+    },
+    {
+      "@id": "predictions.cwl#classify-tumor",
+      "@type": "HowToStep",
+      "connection": [
+        {
+          "@id": "#ae5abc97-7755-4806-af76-bfd12edbc52f"
+        },
+        {
+          "@id": "#21bf0856-eb32-45f0-8aae-ecb5cf172ae9"
+        },
+        {
+          "@id": "#a301c5ff-e558-49b7-8499-82335b72876f"
+        },
+        {
+          "@id": "#199c559b-b1de-45de-b5d2-d18e36c02985"
+        },
+        {
+          "@id": "#ee706186-fe3f-443e-9cca-d0cdb09a5ab0"
+        },
+        {
+          "@id": "#4e8428d4-66c8-4f74-aa31-2af4b6d40e50"
+        },
+        {
+          "@id": "#c94dfb67-c121-4c5d-8ca4-bb959f642046"
+        },
+        {
+          "@id": "#2b01c9ef-dc58-450f-8aad-318116cb1e1f"
+        }
+      ],
+      "workExample": {
+        "@id": "classify_tumor.cwl"
+      }
+    },
+    {
+      "@id": "#ae5abc97-7755-4806-af76-bfd12edbc52f",
+      "@type": "ParameterConnection",
+      "sourceParameter": {
+        "@id": "predictions.cwl#tumor-batch-size"
+      },
+      "targetParameter": {
+        "@id": "classify_tumor.cwl#batch-size"
+      }
+    },
+    {
+      "@id": "#21bf0856-eb32-45f0-8aae-ecb5cf172ae9",
+      "@type": "ParameterConnection",
+      "sourceParameter": {
+        "@id": "predictions.cwl#tumor-chunk-size"
+      },
+      "targetParameter": {
+        "@id": "classify_tumor.cwl#chunk-size"
+      }
+    },
+    {
+      "@id": "#a301c5ff-e558-49b7-8499-82335b72876f",
+      "@type": "ParameterConnection",
+      "sourceParameter": {
+        "@id": "predictions.cwl#tumor-filter"
+      },
+      "targetParameter": {
+        "@id": "classify_tumor.cwl#filter"
+      }
+    },
+    {
+      "@id": "#199c559b-b1de-45de-b5d2-d18e36c02985",
+      "@type": "ParameterConnection",
+      "sourceParameter": {
+        "@id": "extract_tissue.cwl#tissue"
+      },
+      "targetParameter": {
+        "@id": "classify_tumor.cwl#filter_slide"
+      }
+    },
+    {
+      "@id": "#ee706186-fe3f-443e-9cca-d0cdb09a5ab0",
+      "@type": "ParameterConnection",
+      "sourceParameter": {
+        "@id": "predictions.cwl#gpu"
+      },
+      "targetParameter": {
+        "@id": "classify_tumor.cwl#gpu"
+      }
+    },
+    {
+      "@id": "#4e8428d4-66c8-4f74-aa31-2af4b6d40e50",
+      "@type": "ParameterConnection",
+      "sourceParameter": {
+        "@id": "predictions.cwl#tumor-label"
+      },
+      "targetParameter": {
+        "@id": "classify_tumor.cwl#label"
+      }
+    },
+    {
+      "@id": "#c94dfb67-c121-4c5d-8ca4-bb959f642046",
+      "@type": "ParameterConnection",
+      "sourceParameter": {
+        "@id": "predictions.cwl#tumor-level"
+      },
+      "targetParameter": {
+        "@id": "classify_tumor.cwl#level"
+      }
+    },
+    {
+      "@id": "#2b01c9ef-dc58-450f-8aad-318116cb1e1f",
+      "@type": "ParameterConnection",
+      "sourceParameter": {
+        "@id": "predictions.cwl#slide"
+      },
+      "targetParameter": {
+        "@id": "classify_tumor.cwl#src"
+      }
+    },
+    {
+      "@id": "#0aaeeca3-802a-45ce-b527-e4f746c08cea",
+      "@type": "ParameterConnection",
+      "sourceParameter": {
+        "@id": "extract_tissue.cwl#tissue"
+      },
+      "targetParameter": {
+        "@id": "predictions.cwl#tissue"
+      }
+    },
+    {
+      "@id": "#7d6b1068-b8c6-47df-902f-85383115865d",
+      "@type": "ParameterConnection",
+      "sourceParameter": {
+        "@id": "classify_tumor.cwl#tumor"
+      },
+      "targetParameter": {
+        "@id": "predictions.cwl#tumor"
+      }
+    },
+    {
+      "@id": "predictions.cwl",
+      "@type": [
+        "SoftwareSourceCode",
+        "ComputationalWorkflow",
+        "HowTo",
+        "File"
+      ],
+      "conformsTo": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/",
+      "connection": [
+        {
+          "@id": "#0aaeeca3-802a-45ce-b527-e4f746c08cea"
+        },
+        {
+          "@id": "#7d6b1068-b8c6-47df-902f-85383115865d"
+        }
+      ],
+      "hasPart": [
+        {
+          "@id": "extract_tissue.cwl"
+        },
+        {
+          "@id": "classify_tumor.cwl"
+        }
+      ],
+      "input": [
+        {
+          "@id": "predictions.cwl#gpu"
+        },
+        {
+          "@id": "predictions.cwl#slide"
+        },
+        {
+          "@id": "predictions.cwl#tissue-high-batch-size"
+        },
+        {
+          "@id": "predictions.cwl#tissue-high-chunk-size"
+        },
+        {
+          "@id": "predictions.cwl#tissue-high-filter"
+        },
+        {
+          "@id": "predictions.cwl#tissue-high-label"
+        },
+        {
+          "@id": "predictions.cwl#tissue-high-level"
+        },
+        {
+          "@id": "predictions.cwl#tissue-low-batch-size"
+        },
+        {
+          "@id": "predictions.cwl#tissue-low-chunk-size"
+        },
+        {
+          "@id": "predictions.cwl#tissue-low-label"
+        },
+        {
+          "@id": "predictions.cwl#tissue-low-level"
+        },
+        {
+          "@id": "predictions.cwl#tumor-batch-size"
+        },
+        {
+          "@id": "predictions.cwl#tumor-chunk-size"
+        },
+        {
+          "@id": "predictions.cwl#tumor-filter"
+        },
+        {
+          "@id": "predictions.cwl#tumor-label"
+        },
+        {
+          "@id": "predictions.cwl#tumor-level"
+        }
+      ],
+      "name": "predictions.cwl",
+      "output": [
+        {
+          "@id": "predictions.cwl#tissue"
+        },
+        {
+          "@id": "predictions.cwl#tumor"
+        }
+      ],
+      "programmingLanguage": {
+        "@id": "https://w3id.org/workflowhub/workflow-ro-crate#cwl"
+      },
+      "step": [
+        {
+          "@id": "predictions.cwl#extract-tissue-low"
+        },
+        {
+          "@id": "predictions.cwl#extract-tissue-high"
+        },
+        {
+          "@id": "predictions.cwl#classify-tumor"
+        }
+      ]
+    },
+    {
+      "@id": "#c0080ce4-e220-44bf-92b3-c59e6d590059",
+      "@type": "SoftwareApplication",
+      "name": "StreamFlow 0.2.0.dev2"
+    },
+    {
+      "@id": "#2ac884e6-3763-4893-956e-53446acb22d9",
+      "@type": "CreateAction",
+      "actionStatus": "CompletedActionStatus",
+      "endTime": "2022-11-26T22:37:08.757424+00:00",
+      "instrument": {
+        "@id": "predictions.cwl"
+      },
+      "name": "Run of workflow/predictions.cwl",
+      "object": [
+        {
+          "@id": "f62aa607a75508ac5fc6a22e9c0e39ef58a2c852"
+        },
+        {
+          "@id": "#8f2e6a1b-8c8d-4336-aa36-e9f2923f1774"
+        },
+        {
+          "@id": "#c91eaf1b-d3c7-4f9b-ae89-833b4caf2b2b"
+        },
+        {
+          "@id": "#685140a6-89d6-4510-b092-e155293b7e7e"
+        },
+        {
+          "@id": "#b55aa9f1-ece0-4793-afd7-803e1b9b7521"
+        },
+        {
+          "@id": "#d78e1b38-2959-433c-9844-65cdba9b3eb7"
+        },
+        {
+          "@id": "#9d030e68-6929-4dcc-9083-327eb5982f6a"
+        },
+        {
+          "@id": "#6740b006-b642-4da0-8c47-4556cd074d0a"
+        },
+        {
+          "@id": "#2cc92add-eb95-43be-9c90-0ab74b13fd11"
+        },
+        {
+          "@id": "#4fd18852-abbd-4b2f-b1f9-3d38a0217fed"
+        },
+        {
+          "@id": "#628ceb4f-3817-4dce-bc4f-a8037a74ad31"
+        },
+        {
+          "@id": "#182359db-a5f7-4ff2-a53e-10c8fd89b800"
+        },
+        {
+          "@id": "#3028074e-4c3d-4df0-887f-7b0a13026313"
+        },
+        {
+          "@id": "#1092fed3-0033-4ab8-8681-a78e4312ac4f"
+        },
+        {
+          "@id": "#18d7d0da-651a-43d9-a7ed-81d33a639438"
+        },
+        {
+          "@id": "#1c5046dc-ce75-4e06-9153-a72147d5ef1f"
+        },
+        {
+          "@id": "#69a44e09-5003-443f-9095-1ad18b5b8ebd"
+        },
+        {
+          "@id": "#1ceecb41-1f9a-46ad-ab65-c223975302fb"
+        },
+        {
+          "@id": "#d508c8af-fda6-4561-95c4-f3a4f76ae786"
+        },
+        {
+          "@id": "#19168124-bb17-4926-be46-2b53ee4f28ec"
+        }
+      ],
+      "startTime": "2022-11-26T22:37:00.579914+00:00"
+    },
+    {
+      "@id": "#9f40bee2-0ea5-49f8-b291-dd626ba2f8cb",
+      "@type": "OrganizeAction",
+      "instrument": {
+        "@id": "#c0080ce4-e220-44bf-92b3-c59e6d590059"
+      },
+      "name": "Run of StreamFlow 0.2.0.dev2",
+      "object": [
+        {
+          "@id": "#8e41b9b0-b44d-44ed-b451-829ac31a5281"
+        },
+        {
+          "@id": "#3c34f0f5-2cab-4dba-a216-8af7b9591bac"
+        },
+        {
+          "@id": "#85c95278-9ef2-45ca-814e-f33f0c13a8b5"
+        }
+      ],
+      "result": {
+        "@id": "#2ac884e6-3763-4893-956e-53446acb22d9"
+      }
+    },
+    {
+      "@id": "#99b9f647-d1eb-4ef1-b6b5-6d9ee1f585dc",
+      "@type": "CreateAction",
+      "actionStatus": "CompletedActionStatus",
+      "endTime": "2022-11-26T22:37:03.413674+00:00",
+      "instrument": {
+        "@id": "extract_tissue.cwl"
+      },
+      "name": "Run of workflow/predictions.cwl#extract-tissue-low",
+      "object": [
+        {
+          "@id": "#4fd18852-abbd-4b2f-b1f9-3d38a0217fed"
+        },
+        {
+          "@id": "#628ceb4f-3817-4dce-bc4f-a8037a74ad31"
+        },
+        {
+          "@id": "#182359db-a5f7-4ff2-a53e-10c8fd89b800"
+        },
+        {
+          "@id": "#3028074e-4c3d-4df0-887f-7b0a13026313"
+        },
+        {
+          "@id": "a9805401269ade2a88b56d0e9a0b389041bebdff"
+        },
+        {
+          "@id": "#1092fed3-0033-4ab8-8681-a78e4312ac4f"
+        },
+        {
+          "@id": "#18d7d0da-651a-43d9-a7ed-81d33a639438"
+        },
+        {
+          "@id": "#1c5046dc-ce75-4e06-9153-a72147d5ef1f"
+        }
+      ],
+      "result": [
+        {
+          "@id": "a9805401269ade2a88b56d0e9a0b389041bebdff"
+        },
+        {
+          "@id": "741c6947917667777aafae95c3252d2a20bd88f5"
+        }
+      ],
+      "startTime": "2022-11-26T22:37:02.353244+00:00"
+    },
+    {
+      "@id": "#8e41b9b0-b44d-44ed-b451-829ac31a5281",
+      "@type": "ControlAction",
+      "instrument": {
+        "@id": "predictions.cwl#extract-tissue-low"
+      },
+      "name": "orchestrate extract_tissue.cwl",
+      "object": [
+        {
+          "@id": "#99b9f647-d1eb-4ef1-b6b5-6d9ee1f585dc"
+        }
+      ]
+    },
+    {
+      "@id": "#3e9e1d9e-fba5-4ebe-970c-2cc140b41afe",
+      "@type": "CreateAction",
+      "actionStatus": "CompletedActionStatus",
+      "endTime": "2022-11-26T22:37:06.353684+00:00",
+      "instrument": {
+        "@id": "extract_tissue.cwl"
+      },
+      "name": "Run of workflow/predictions.cwl#extract-tissue-high",
+      "object": [
+        {
+          "@id": "#4fd18852-abbd-4b2f-b1f9-3d38a0217fed"
+        },
+        {
+          "@id": "#628ceb4f-3817-4dce-bc4f-a8037a74ad31"
+        },
+        {
+          "@id": "#182359db-a5f7-4ff2-a53e-10c8fd89b800"
+        },
+        {
+          "@id": "#3028074e-4c3d-4df0-887f-7b0a13026313"
+        },
+        {
+          "@id": "a9805401269ade2a88b56d0e9a0b389041bebdff"
+        },
+        {
+          "@id": "#1092fed3-0033-4ab8-8681-a78e4312ac4f"
+        },
+        {
+          "@id": "#18d7d0da-651a-43d9-a7ed-81d33a639438"
+        },
+        {
+          "@id": "#1c5046dc-ce75-4e06-9153-a72147d5ef1f"
+        }
+      ],
+      "result": [
+        {
+          "@id": "a9805401269ade2a88b56d0e9a0b389041bebdff"
+        },
+        {
+          "@id": "741c6947917667777aafae95c3252d2a20bd88f5"
+        }
+      ],
+      "startTime": "2022-11-26T22:37:04.834306+00:00"
+    },
+    {
+      "@id": "#3c34f0f5-2cab-4dba-a216-8af7b9591bac",
+      "@type": "ControlAction",
+      "instrument": {
+        "@id": "predictions.cwl#extract-tissue-high"
+      },
+      "name": "orchestrate extract_tissue.cwl",
+      "object": [
+        {
+          "@id": "#3e9e1d9e-fba5-4ebe-970c-2cc140b41afe"
+        }
+      ]
+    },
+    {
+      "@id": "#5b00fedf-f183-44f4-9355-70a7c1df8e96",
+      "@type": "CreateAction",
+      "actionStatus": "CompletedActionStatus",
+      "endTime": "2022-11-26T22:37:07.925294+00:00",
+      "instrument": {
+        "@id": "classify_tumor.cwl"
+      },
+      "name": "Run of workflow/predictions.cwl#classify-tumor",
+      "object": [
+        {
+          "@id": "#69a44e09-5003-443f-9095-1ad18b5b8ebd"
+        },
+        {
+          "@id": "a9805401269ade2a88b56d0e9a0b389041bebdff"
+        },
+        {
+          "@id": "#1ceecb41-1f9a-46ad-ab65-c223975302fb"
+        },
+        {
+          "@id": "#d508c8af-fda6-4561-95c4-f3a4f76ae786"
+        },
+        {
+          "@id": "#19168124-bb17-4926-be46-2b53ee4f28ec"
+        }
+      ],
+      "result": [
+        {
+          "@id": "e75ee6d0751bb2dbc7a894af0fe307e4fe020a99"
+        }
+      ],
+      "startTime": "2022-11-26T22:37:07.333229+00:00"
+    },
+    {
+      "@id": "#85c95278-9ef2-45ca-814e-f33f0c13a8b5",
+      "@type": "ControlAction",
+      "instrument": {
+        "@id": "predictions.cwl#classify-tumor"
+      },
+      "name": "orchestrate classify_tumor.cwl",
+      "object": [
+        {
+          "@id": "#5b00fedf-f183-44f4-9355-70a7c1df8e96"
+        }
+      ]
+    },
+    {
+      "@id": "f62aa607a75508ac5fc6a22e9c0e39ef58a2c852",
+      "@type": "File",
+      "alternateName": "Mirax2-Fluorescence-2.mrxs"
+    },
+    {
+      "@id": "#8f2e6a1b-8c8d-4336-aa36-e9f2923f1774",
+      "@type": "PropertyValue",
+      "exampleOfWork": {
+        "@id": "predictions.cwl#tissue-high-filter"
+      },
+      "name": "tissue-high-filter",
+      "value": "tissue_low&gt;0.9"
+    },
+    {
+      "@id": "#c91eaf1b-d3c7-4f9b-ae89-833b4caf2b2b",
+      "@type": "PropertyValue",
+      "exampleOfWork": {
+        "@id": "predictions.cwl#tissue-high-label"
+      },
+      "name": "tissue-high-label",
+      "value": "tissue_high"
+    },
+    {
+      "@id": "#685140a6-89d6-4510-b092-e155293b7e7e",
+      "@type": "PropertyValue",
+      "exampleOfWork": {
+        "@id": "predictions.cwl#tissue-high-level"
+      },
+      "name": "tissue-high-level",
+      "value": "4"
+    },
+    {
+      "@id": "#b55aa9f1-ece0-4793-afd7-803e1b9b7521",
+      "@type": "PropertyValue",
+      "exampleOfWork": {
+        "@id": "predictions.cwl#tissue-low-label"
+      },
+      "name": "tissue-low-label",
+      "value": "tissue_low"
+    },
+    {
+      "@id": "#d78e1b38-2959-433c-9844-65cdba9b3eb7",
+      "@type": "PropertyValue",
+      "exampleOfWork": {
+        "@id": "predictions.cwl#tissue-low-level"
+      },
+      "name": "tissue-low-level",
+      "value": "9"
+    },
+    {
+      "@id": "#9d030e68-6929-4dcc-9083-327eb5982f6a",
+      "@type": "PropertyValue",
+      "exampleOfWork": {
+        "@id": "predictions.cwl#tumor-filter"
+      },
+      "name": "tumor-filter",
+      "value": "tissue_low&gt;0.99"
+    },
+    {
+      "@id": "#6740b006-b642-4da0-8c47-4556cd074d0a",
+      "@type": "PropertyValue",
+      "exampleOfWork": {
+        "@id": "predictions.cwl#tumor-label"
+      },
+      "name": "tumor-label",
+      "value": "tumor"
+    },
+    {
+      "@id": "#2cc92add-eb95-43be-9c90-0ab74b13fd11",
+      "@type": "PropertyValue",
+      "exampleOfWork": {
+        "@id": "predictions.cwl#tumor-level"
+      },
+      "name": "tumor-level",
+      "value": "1"
+    },
+    {
+      "@id": "#4fd18852-abbd-4b2f-b1f9-3d38a0217fed",
+      "@type": "PropertyValue",
+      "exampleOfWork": [
+        {
+          "@id": "extract_tissue.cwl#label"
+        },
+        {
+          "@id": "predictions.cwl#tissue-low-label"
+        }
+      ],
+      "name": "label",
+      "value": "tissue_low"
+    },
+    {
+      "@id": "#628ceb4f-3817-4dce-bc4f-a8037a74ad31",
+      "@type": "PropertyValue",
+      "exampleOfWork": [
+        {
+          "@id": "extract_tissue.cwl#level"
+        },
+        {
+          "@id": "predictions.cwl#tissue-low-level"
+        }
+      ],
+      "name": "level",
+      "value": "9"
+    },
+    {
+      "@id": "f331ecff28e8c7df695c98dbc22760d8d658a1b0",
+      "@type": "Dataset",
+      "alternateName": "Mirax2-Fluorescence-2",
+      "hasPart": [
+        {
+          "@id": "f331ecff28e8c7df695c98dbc22760d8d658a1b0/862eeec8b906cff93bcd1c5ab5e5ec8fc93a2ef1"
+        },
+        {
+          "@id": "f331ecff28e8c7df695c98dbc22760d8d658a1b0/9e748097f79d8317b30fcc11833553434e19b02c"
+        },
+        {
+          "@id": "f331ecff28e8c7df695c98dbc22760d8d658a1b0/b43c1cd0875d23bd20dc794fa20255cf272108ec"
+        },
+        {
+          "@id": "f331ecff28e8c7df695c98dbc22760d8d658a1b0/ae7c542bebbacf8d167fae831b69480e19e9c3b0"
+        },
+        {
+          "@id": "f331ecff28e8c7df695c98dbc22760d8d658a1b0/d55cbe9ea0ac43eaa69bb8c21eac07539249734f"
+        },
+        {
+          "@id": "f331ecff28e8c7df695c98dbc22760d8d658a1b0/8e9d580e86f48791871b086f3c27269a03f57897"
+        },
+        {
+          "@id": "f331ecff28e8c7df695c98dbc22760d8d658a1b0/cf03a8a5713c038c566734cf11f81cc03a41efa6"
+        },
+        {
+          "@id": "f331ecff28e8c7df695c98dbc22760d8d658a1b0/a1ad0dfd5f6e24aa90bdf9da0a688e6a0c268905"
+        },
+        {
+          "@id": "f331ecff28e8c7df695c98dbc22760d8d658a1b0/46c443af080a36000c9298b49b675eb240eeb41c"
+        },
+        {
+          "@id": "f331ecff28e8c7df695c98dbc22760d8d658a1b0/ce3d0d6addaced3e58578e42c341f44737b5aa84"
+        },
+        {
+          "@id": "f331ecff28e8c7df695c98dbc22760d8d658a1b0/52e0419ea116b78bc330d36f93bc2b4ec2bf8210"
+        },
+        {
+          "@id": "f331ecff28e8c7df695c98dbc22760d8d658a1b0/bc709e1a4da6e506f81150ee39907d0224e066fb"
+        },
+        {
+          "@id": "f331ecff28e8c7df695c98dbc22760d8d658a1b0/a16fec38b4b7adf7dc1f8e9e58f6956a249a0a08"
+        },
+        {
+          "@id": "f331ecff28e8c7df695c98dbc22760d8d658a1b0/590783315f628a3acd02b9341572138b3a3224db"
+        },
+        {
+          "@id": "f331ecff28e8c7df695c98dbc22760d8d658a1b0/6c1bc911505dc65551c4f0576e1c684723e57897"
+        },
+        {
+          "@id": "f331ecff28e8c7df695c98dbc22760d8d658a1b0/d4061bed85711676d337bd8835e32413957485e3"
+        },
+        {
+          "@id": "f331ecff28e8c7df695c98dbc22760d8d658a1b0/7f0a219f3c842e0c3eaae848caea165940b1ec48"
+        },
+        {
+          "@id": "f331ecff28e8c7df695c98dbc22760d8d658a1b0/3099f7344d2004c58bfb3282dae47a0d204e12da"
+        },
+        {
+          "@id": "f331ecff28e8c7df695c98dbc22760d8d658a1b0/e238dcdb6aa71dac71335591439442c7cfef60e6"
+        },
+        {
+          "@id": "f331ecff28e8c7df695c98dbc22760d8d658a1b0/06d5def8140f8e14b729a584f78289bc25e7f5ec"
+        },
+        {
+          "@id": "f331ecff28e8c7df695c98dbc22760d8d658a1b0/acc92df58c498b2567f6975c3e128aebc0c524c5"
+        },
+        {
+          "@id": "f331ecff28e8c7df695c98dbc22760d8d658a1b0/854db6bca6b11fb9f6198dce67b3dcbb371f7ebb"
+        },
+        {
+          "@id": "f331ecff28e8c7df695c98dbc22760d8d658a1b0/9575fdaa42c448ea550d982cf8e27d0b46320874"
+        },
+        {
+          "@id": "f331ecff28e8c7df695c98dbc22760d8d658a1b0/f642fc608c0edc49db59dfc1d38be7abeda0263a"
+        },
+        {
+          "@id": "f331ecff28e8c7df695c98dbc22760d8d658a1b0/1d3d88c43eb7f44a667170a0e6cb8cd950a4ea16"
+        },
+        {
+          "@id": "f331ecff28e8c7df695c98dbc22760d8d658a1b0/4a1a998cf56818c183b02f93011a6c1c9ec47468"
+        }
+      ]
+    },
+    {
+      "@id": "f331ecff28e8c7df695c98dbc22760d8d658a1b0/862eeec8b906cff93bcd1c5ab5e5ec8fc93a2ef1",
+      "@type": "File",
+      "alternateName": "Mirax2-Fluorescence-2/Data0008.dat"
+    },
+    {
+      "@id": "f331ecff28e8c7df695c98dbc22760d8d658a1b0/9e748097f79d8317b30fcc11833553434e19b02c",
+      "@type": "File",
+      "alternateName": "Mirax2-Fluorescence-2/Data0018.dat"
+    },
+    {
+      "@id": "f331ecff28e8c7df695c98dbc22760d8d658a1b0/b43c1cd0875d23bd20dc794fa20255cf272108ec",
+      "@type": "File",
+      "alternateName": "Mirax2-Fluorescence-2/Data0010.dat"
+    },
+    {
+      "@id": "f331ecff28e8c7df695c98dbc22760d8d658a1b0/ae7c542bebbacf8d167fae831b69480e19e9c3b0",
+      "@type": "File",
+      "alternateName": "Mirax2-Fluorescence-2/Data0014.dat"
+    },
+    {
+      "@id": "f331ecff28e8c7df695c98dbc22760d8d658a1b0/d55cbe9ea0ac43eaa69bb8c21eac07539249734f",
+      "@type": "File",
+      "alternateName": "Mirax2-Fluorescence-2/Data0007.dat"
+    },
+    {
+      "@id": "f331ecff28e8c7df695c98dbc22760d8d658a1b0/8e9d580e86f48791871b086f3c27269a03f57897",
+      "@type": "File",
+      "alternateName": "Mirax2-Fluorescence-2/Data0015.dat"
+    },
+    {
+      "@id": "f331ecff28e8c7df695c98dbc22760d8d658a1b0/cf03a8a5713c038c566734cf11f81cc03a41efa6",
+      "@type": "File",
+      "alternateName": "Mirax2-Fluorescence-2/Data0006.dat"
+    },
+    {
+      "@id": "f331ecff28e8c7df695c98dbc22760d8d658a1b0/a1ad0dfd5f6e24aa90bdf9da0a688e6a0c268905",
+      "@type": "File",
+      "alternateName": "Mirax2-Fluorescence-2/Data0005.dat"
+    },
+    {
+      "@id": "f331ecff28e8c7df695c98dbc22760d8d658a1b0/46c443af080a36000c9298b49b675eb240eeb41c",
+      "@type": "File",
+      "alternateName": "Mirax2-Fluorescence-2/Index.dat"
+    },
+    {
+      "@id": "f331ecff28e8c7df695c98dbc22760d8d658a1b0/ce3d0d6addaced3e58578e42c341f44737b5aa84",
+      "@type": "File",
+      "alternateName": "Mirax2-Fluorescence-2/Data0011.dat"
+    },
+    {
+      "@id": "f331ecff28e8c7df695c98dbc22760d8d658a1b0/52e0419ea116b78bc330d36f93bc2b4ec2bf8210",
+      "@type": "File",
+      "alternateName": "Mirax2-Fluorescence-2/Data0001.dat"
+    },
+    {
+      "@id": "f331ecff28e8c7df695c98dbc22760d8d658a1b0/bc709e1a4da6e506f81150ee39907d0224e066fb",
+      "@type": "File",
+      "alternateName": "Mirax2-Fluorescence-2/Data0003.dat"
+    },
+    {
+      "@id": "f331ecff28e8c7df695c98dbc22760d8d658a1b0/a16fec38b4b7adf7dc1f8e9e58f6956a249a0a08",
+      "@type": "File",
+      "alternateName": "Mirax2-Fluorescence-2/Data0000.dat"
+    },
+    {
+      "@id": "f331ecff28e8c7df695c98dbc22760d8d658a1b0/590783315f628a3acd02b9341572138b3a3224db",
+      "@type": "File",
+      "alternateName": "Mirax2-Fluorescence-2/Data0021.dat"
+    },
+    {
+      "@id": "f331ecff28e8c7df695c98dbc22760d8d658a1b0/6c1bc911505dc65551c4f0576e1c684723e57897",
+      "@type": "File",
+      "alternateName": "Mirax2-Fluorescence-2/Data0019.dat"
+    },
+    {
+      "@id": "f331ecff28e8c7df695c98dbc22760d8d658a1b0/d4061bed85711676d337bd8835e32413957485e3",
+      "@type": "File",
+      "alternateName": "Mirax2-Fluorescence-2/Data0017.dat"
+    },
+    {
+      "@id": "f331ecff28e8c7df695c98dbc22760d8d658a1b0/7f0a219f3c842e0c3eaae848caea165940b1ec48",
+      "@type": "File",
+      "alternateName": "Mirax2-Fluorescence-2/Data0022.dat"
+    },
+    {
+      "@id": "f331ecff28e8c7df695c98dbc22760d8d658a1b0/3099f7344d2004c58bfb3282dae47a0d204e12da",
+      "@type": "File",
+      "alternateName": "Mirax2-Fluorescence-2/Data0004.dat"
+    },
+    {
+      "@id": "f331ecff28e8c7df695c98dbc22760d8d658a1b0/e238dcdb6aa71dac71335591439442c7cfef60e6",
+      "@type": "File",
+      "alternateName": "Mirax2-Fluorescence-2/Data0002.dat"
+    },
+    {
+      "@id": "f331ecff28e8c7df695c98dbc22760d8d658a1b0/06d5def8140f8e14b729a584f78289bc25e7f5ec",
+      "@type": "File",
+      "alternateName": "Mirax2-Fluorescence-2/Data0012.dat"
+    },
+    {
+      "@id": "f331ecff28e8c7df695c98dbc22760d8d658a1b0/acc92df58c498b2567f6975c3e128aebc0c524c5",
+      "@type": "File",
+      "alternateName": "Mirax2-Fluorescence-2/Slidedat.ini"
+    },
+    {
+      "@id": "f331ecff28e8c7df695c98dbc22760d8d658a1b0/854db6bca6b11fb9f6198dce67b3dcbb371f7ebb",
+      "@type": "File",
+      "alternateName": "Mirax2-Fluorescence-2/Data0020.dat"
+    },
+    {
+      "@id": "f331ecff28e8c7df695c98dbc22760d8d658a1b0/9575fdaa42c448ea550d982cf8e27d0b46320874",
+      "@type": "File",
+      "alternateName": "Mirax2-Fluorescence-2/Data0009.dat"
+    },
+    {
+      "@id": "f331ecff28e8c7df695c98dbc22760d8d658a1b0/f642fc608c0edc49db59dfc1d38be7abeda0263a",
+      "@type": "File",
+      "alternateName": "Mirax2-Fluorescence-2/Data0023.dat"
+    },
+    {
+      "@id": "f331ecff28e8c7df695c98dbc22760d8d658a1b0/1d3d88c43eb7f44a667170a0e6cb8cd950a4ea16",
+      "@type": "File",
+      "alternateName": "Mirax2-Fluorescence-2/Data0013.dat"
+    },
+    {
+      "@id": "f331ecff28e8c7df695c98dbc22760d8d658a1b0/4a1a998cf56818c183b02f93011a6c1c9ec47468",
+      "@type": "File",
+      "alternateName": "Mirax2-Fluorescence-2/Data0016.dat"
+    },
+    {
+      "@id": "#182359db-a5f7-4ff2-a53e-10c8fd89b800",
+      "@type": "Collection",
+      "exampleOfWork": [
+        {
+          "@id": "predictions.cwl#slide"
+        },
+        {
+          "@id": "extract_tissue.cwl#src"
+        }
+      ],
+      "hasPart": [
+        {
+          "@id": "f62aa607a75508ac5fc6a22e9c0e39ef58a2c852"
+        },
+        {
+          "@id": "f331ecff28e8c7df695c98dbc22760d8d658a1b0"
+        }
+      ],
+      "mainEntity": {
+        "@id": "f62aa607a75508ac5fc6a22e9c0e39ef58a2c852"
+      }
+    },
+    {
+      "@id": "a9805401269ade2a88b56d0e9a0b389041bebdff",
+      "@type": "File",
+      "alternateName": "tissue_low.zip",
+      "exampleOfWork": [
+        {
+          "@id": "extract_tissue.cwl#tissue"
+        },
+        {
+          "@id": "extract_tissue.cwl#filter_slide"
+        },
+        {
+          "@id": "classify_tumor.cwl#filter_slide"
+        }
+      ]
+    },
+    {
+      "@id": "#3028074e-4c3d-4df0-887f-7b0a13026313",
+      "@type": "PropertyValue",
+      "exampleOfWork": [
+        {
+          "@id": "extract_tissue.cwl#filter"
+        },
+        {
+          "@id": "predictions.cwl#tissue-high-filter"
+        }
+      ],
+      "name": "filter",
+      "value": "tissue_low&gt;0.9"
+    },
+    {
+      "@id": "#1092fed3-0033-4ab8-8681-a78e4312ac4f",
+      "@type": "PropertyValue",
+      "exampleOfWork": [
+        {
+          "@id": "predictions.cwl#tissue-high-label"
+        },
+        {
+          "@id": "extract_tissue.cwl#label"
+        }
+      ],
+      "name": "label",
+      "value": "tissue_high"
+    },
+    {
+      "@id": "#18d7d0da-651a-43d9-a7ed-81d33a639438",
+      "@type": "PropertyValue",
+      "exampleOfWork": [
+        {
+          "@id": "predictions.cwl#tissue-high-level"
+        },
+        {
+          "@id": "extract_tissue.cwl#level"
+        }
+      ],
+      "name": "level",
+      "value": "4"
+    },
+    {
+      "@id": "#1c5046dc-ce75-4e06-9153-a72147d5ef1f",
+      "@type": "Collection",
+      "exampleOfWork": [
+        {
+          "@id": "predictions.cwl#slide"
+        },
+        {
+          "@id": "extract_tissue.cwl#src"
+        }
+      ],
+      "hasPart": [
+        {
+          "@id": "f62aa607a75508ac5fc6a22e9c0e39ef58a2c852"
+        },
+        {
+          "@id": "f331ecff28e8c7df695c98dbc22760d8d658a1b0"
+        }
+      ],
+      "mainEntity": {
+        "@id": "f62aa607a75508ac5fc6a22e9c0e39ef58a2c852"
+      }
+    },
+    {
+      "@id": "741c6947917667777aafae95c3252d2a20bd88f5",
+      "@type": "File",
+      "alternateName": "tissue_high.zip",
+      "exampleOfWork": {
+        "@id": "extract_tissue.cwl#tissue"
+      }
+    },
+    {
+      "@id": "#69a44e09-5003-443f-9095-1ad18b5b8ebd",
+      "@type": "PropertyValue",
+      "exampleOfWork": [
+        {
+          "@id": "predictions.cwl#tumor-filter"
+        },
+        {
+          "@id": "classify_tumor.cwl#filter"
+        }
+      ],
+      "name": "filter",
+      "value": "tissue_low&gt;0.99"
+    },
+    {
+      "@id": "#1ceecb41-1f9a-46ad-ab65-c223975302fb",
+      "@type": "PropertyValue",
+      "exampleOfWork": [
+        {
+          "@id": "predictions.cwl#tumor-label"
+        },
+        {
+          "@id": "classify_tumor.cwl#label"
+        }
+      ],
+      "name": "label",
+      "value": "tumor"
+    },
+    {
+      "@id": "#d508c8af-fda6-4561-95c4-f3a4f76ae786",
+      "@type": "PropertyValue",
+      "exampleOfWork": [
+        {
+          "@id": "predictions.cwl#tumor-level"
+        },
+        {
+          "@id": "classify_tumor.cwl#level"
+        }
+      ],
+      "name": "level",
+      "value": "1"
+    },
+    {
+      "@id": "#19168124-bb17-4926-be46-2b53ee4f28ec",
+      "@type": "Collection",
+      "exampleOfWork": [
+        {
+          "@id": "predictions.cwl#slide"
+        },
+        {
+          "@id": "classify_tumor.cwl#src"
+        }
+      ],
+      "hasPart": [
+        {
+          "@id": "f62aa607a75508ac5fc6a22e9c0e39ef58a2c852"
+        },
+        {
+          "@id": "f331ecff28e8c7df695c98dbc22760d8d658a1b0"
+        }
+      ],
+      "mainEntity": {
+        "@id": "f62aa607a75508ac5fc6a22e9c0e39ef58a2c852"
+      }
+    },
+    {
+      "@id": "e75ee6d0751bb2dbc7a894af0fe307e4fe020a99",
+      "@type": "File",
+      "alternateName": "tumor.zip",
+      "exampleOfWork": {
+        "@id": "classify_tumor.cwl#tumor"
+      }
+    }
+  ]
+}</script><script src="https://unpkg.com/ro-crate-html-js/dist/ro-crate-dynamic.js"></script><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" /><meta charset="utf-8" /><style>table.table { padding-bottom: 300px; }</style></head><body><nav class="navbar"><ul class="nav navbar-nav"><li><a href="#"><span class="glyphicon glyphicon-home dataset_name" /></a></li></ul></nav><div class="container"><div class="jumbotron"><h4 class="citation" /><h3 class="item_name" /><a href="./ro-crate-metadata.json">Download all the metadata for <span class="name"></span> in JSON-LD format</a><div id="check" /></div><div id="summary"><div class="all-meta"><div id="./"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>./</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>Dataset</span></td></tr><tr><th class="prop" style="text-align: left;">datePublished<span>&nbsp;</span><a href="https://schema.org/datePublished">[?]</a></th><td style="text-align: left;"><span>2022-11-26T22:44:29+00:00</span></td></tr><tr><th class="prop" style="text-align: left;">hasPart<span>&nbsp;</span><a href="https://schema.org/hasPart">[?]</a></th><td style="text-align: left;"><ul><li><a href="#extract_tissue.cwl">extract_tissue.cwl</a></li><li><a href="#classify_tumor.cwl">classify_tumor.cwl</a></li><li><a href="#predictions.cwl">predictions.cwl</a></li><li><a href="#f62aa607a75508ac5fc6a22e9c0e39ef58a2c852">f62aa607a75508ac5fc6a22e9c0e39ef58a2c852</a></li><li><a href="#f331ecff28e8c7df695c98dbc22760d8d658a1b0">f331ecff28e8c7df695c98dbc22760d8d658a1b0</a></li><li><a href="#a9805401269ade2a88b56d0e9a0b389041bebdff">a9805401269ade2a88b56d0e9a0b389041bebdff</a></li><li><a href="#741c6947917667777aafae95c3252d2a20bd88f5">741c6947917667777aafae95c3252d2a20bd88f5</a></li><li><a href="#e75ee6d0751bb2dbc7a894af0fe307e4fe020a99">e75ee6d0751bb2dbc7a894af0fe307e4fe020a99</a></li></ul></td></tr><tr><th class="prop" style="text-align: left;">mainEntity<span>&nbsp;</span><a href="https://schema.org/mainEntity">[?]</a></th><td style="text-align: left;"><a href="#predictions.cwl">predictions.cwl</a></td></tr><tr><th class="prop" style="text-align: left;">mentions<span>&nbsp;</span><a href="https://schema.org/mentions">[?]</a></th><td style="text-align: left;"><a href="#%232ac884e6-3763-4893-956e-53446acb22d9">#2ac884e6-3763-4893-956e-53446acb22d9</a></td></tr></tbody></table></div><hr /><br /><br /><div><h3><a href="./">Download: </a>./</h3></div><div id="https%3A//w3id.org/workflowhub/workflow-ro-crate%23cwl"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>https://w3id.org/workflowhub/workflow-ro-crate#cwl</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>ComputerLanguage</span></td></tr><tr><th class="prop" style="text-align: left;">alternateName<span>&nbsp;</span><a href="https://schema.org/alternateName">[?]</a></th><td style="text-align: left;"><span>CWL</span></td></tr><tr><th class="prop" style="text-align: left;">identifier<span>&nbsp;</span><a href="https://schema.org/identifier">[?]</a></th><td style="text-align: left;"><a href="#https%3A//w3id.org/cwl/v1.1/">https://w3id.org/cwl/v1.1/</a></td></tr><tr><th class="prop" style="text-align: left;">name<span>&nbsp;</span><a href="https://schema.org/name">[?]</a></th><td style="text-align: left;"><span>Common Workflow Language</span></td></tr><tr><th class="prop" style="text-align: left;">url<span>&nbsp;</span><a href="https://schema.org/url">[?]</a></th><td style="text-align: left;"><a href="#https%3A//www.commonwl.org/">https://www.commonwl.org/</a></td></tr><tr><th class="prop" style="text-align: left;">version<span>&nbsp;</span><a href="https://schema.org/version">[?]</a></th><td style="text-align: left;"><span>v1.1</span></td></tr></tbody></table></div><hr /><br /><br /><div id="predictions.cwl%23gpu"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>predictions.cwl#gpu</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>FormalParameter</span></td></tr><tr><th class="prop" style="text-align: left;">additionalType<span>&nbsp;</span><a href="https://schema.org/additionalType">[?]</a></th><td style="text-align: left;"><span>Integer</span></td></tr><tr><th class="prop" style="text-align: left;">name<span>&nbsp;</span><a href="https://schema.org/name">[?]</a></th><td style="text-align: left;"><span>gpu</span></td></tr><tr><th class="prop" style="text-align: left;">conformsTo<span>&nbsp;</span><a href="https://schema.org/conformsTo">[?]</a></th><td style="text-align: left;"><span>https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/</span></td></tr><tr><th class="prop" style="text-align: left;">valueRequired<span>&nbsp;</span><a href="https://schema.org/valueRequired">[?]</a></th><td style="text-align: left;"><span>False</span></td></tr></tbody></table></div><hr /><br /><br /><div id="predictions.cwl%23slide"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>predictions.cwl#slide</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>FormalParameter</span></td></tr><tr><th class="prop" style="text-align: left;">additionalType<span>&nbsp;</span><a href="https://schema.org/additionalType">[?]</a></th><td style="text-align: left;"><span>Collection</span></td></tr><tr><th class="prop" style="text-align: left;">name<span>&nbsp;</span><a href="https://schema.org/name">[?]</a></th><td style="text-align: left;"><span>slide</span></td></tr><tr><th class="prop" style="text-align: left;">conformsTo<span>&nbsp;</span><a href="https://schema.org/conformsTo">[?]</a></th><td style="text-align: left;"><span>https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/</span></td></tr></tbody></table></div><hr /><br /><br /><div id="predictions.cwl%23tissue-high-batch-size"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>predictions.cwl#tissue-high-batch-size</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>FormalParameter</span></td></tr><tr><th class="prop" style="text-align: left;">additionalType<span>&nbsp;</span><a href="https://schema.org/additionalType">[?]</a></th><td style="text-align: left;"><span>Integer</span></td></tr><tr><th class="prop" style="text-align: left;">name<span>&nbsp;</span><a href="https://schema.org/name">[?]</a></th><td style="text-align: left;"><span>tissue-high-batch-size</span></td></tr><tr><th class="prop" style="text-align: left;">conformsTo<span>&nbsp;</span><a href="https://schema.org/conformsTo">[?]</a></th><td style="text-align: left;"><span>https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/</span></td></tr><tr><th class="prop" style="text-align: left;">valueRequired<span>&nbsp;</span><a href="https://schema.org/valueRequired">[?]</a></th><td style="text-align: left;"><span>False</span></td></tr></tbody></table></div><hr /><br /><br /><div id="predictions.cwl%23tissue-high-chunk-size"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>predictions.cwl#tissue-high-chunk-size</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>FormalParameter</span></td></tr><tr><th class="prop" style="text-align: left;">additionalType<span>&nbsp;</span><a href="https://schema.org/additionalType">[?]</a></th><td style="text-align: left;"><span>Integer</span></td></tr><tr><th class="prop" style="text-align: left;">name<span>&nbsp;</span><a href="https://schema.org/name">[?]</a></th><td style="text-align: left;"><span>tissue-high-chunk-size</span></td></tr><tr><th class="prop" style="text-align: left;">conformsTo<span>&nbsp;</span><a href="https://schema.org/conformsTo">[?]</a></th><td style="text-align: left;"><span>https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/</span></td></tr><tr><th class="prop" style="text-align: left;">valueRequired<span>&nbsp;</span><a href="https://schema.org/valueRequired">[?]</a></th><td style="text-align: left;"><span>False</span></td></tr></tbody></table></div><hr /><br /><br /><div id="predictions.cwl%23tissue-high-filter"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>predictions.cwl#tissue-high-filter</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>FormalParameter</span></td></tr><tr><th class="prop" style="text-align: left;">additionalType<span>&nbsp;</span><a href="https://schema.org/additionalType">[?]</a></th><td style="text-align: left;"><span>Text</span></td></tr><tr><th class="prop" style="text-align: left;">name<span>&nbsp;</span><a href="https://schema.org/name">[?]</a></th><td style="text-align: left;"><span>tissue-high-filter</span></td></tr><tr><th class="prop" style="text-align: left;">conformsTo<span>&nbsp;</span><a href="https://schema.org/conformsTo">[?]</a></th><td style="text-align: left;"><span>https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/</span></td></tr></tbody></table></div><hr /><br /><br /><div id="predictions.cwl%23tissue-high-label"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>predictions.cwl#tissue-high-label</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>FormalParameter</span></td></tr><tr><th class="prop" style="text-align: left;">additionalType<span>&nbsp;</span><a href="https://schema.org/additionalType">[?]</a></th><td style="text-align: left;"><span>Text</span></td></tr><tr><th class="prop" style="text-align: left;">name<span>&nbsp;</span><a href="https://schema.org/name">[?]</a></th><td style="text-align: left;"><span>tissue-high-label</span></td></tr><tr><th class="prop" style="text-align: left;">conformsTo<span>&nbsp;</span><a href="https://schema.org/conformsTo">[?]</a></th><td style="text-align: left;"><span>https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/</span></td></tr></tbody></table></div><hr /><br /><br /><div id="predictions.cwl%23tissue-high-level"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>predictions.cwl#tissue-high-level</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>FormalParameter</span></td></tr><tr><th class="prop" style="text-align: left;">additionalType<span>&nbsp;</span><a href="https://schema.org/additionalType">[?]</a></th><td style="text-align: left;"><span>Integer</span></td></tr><tr><th class="prop" style="text-align: left;">name<span>&nbsp;</span><a href="https://schema.org/name">[?]</a></th><td style="text-align: left;"><span>tissue-high-level</span></td></tr><tr><th class="prop" style="text-align: left;">conformsTo<span>&nbsp;</span><a href="https://schema.org/conformsTo">[?]</a></th><td style="text-align: left;"><span>https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/</span></td></tr></tbody></table></div><hr /><br /><br /><div id="predictions.cwl%23tissue-low-batch-size"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>predictions.cwl#tissue-low-batch-size</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>FormalParameter</span></td></tr><tr><th class="prop" style="text-align: left;">additionalType<span>&nbsp;</span><a href="https://schema.org/additionalType">[?]</a></th><td style="text-align: left;"><span>Integer</span></td></tr><tr><th class="prop" style="text-align: left;">name<span>&nbsp;</span><a href="https://schema.org/name">[?]</a></th><td style="text-align: left;"><span>tissue-low-batch-size</span></td></tr><tr><th class="prop" style="text-align: left;">conformsTo<span>&nbsp;</span><a href="https://schema.org/conformsTo">[?]</a></th><td style="text-align: left;"><span>https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/</span></td></tr><tr><th class="prop" style="text-align: left;">valueRequired<span>&nbsp;</span><a href="https://schema.org/valueRequired">[?]</a></th><td style="text-align: left;"><span>False</span></td></tr></tbody></table></div><hr /><br /><br /><div id="predictions.cwl%23tissue-low-chunk-size"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>predictions.cwl#tissue-low-chunk-size</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>FormalParameter</span></td></tr><tr><th class="prop" style="text-align: left;">additionalType<span>&nbsp;</span><a href="https://schema.org/additionalType">[?]</a></th><td style="text-align: left;"><span>Integer</span></td></tr><tr><th class="prop" style="text-align: left;">name<span>&nbsp;</span><a href="https://schema.org/name">[?]</a></th><td style="text-align: left;"><span>tissue-low-chunk-size</span></td></tr><tr><th class="prop" style="text-align: left;">conformsTo<span>&nbsp;</span><a href="https://schema.org/conformsTo">[?]</a></th><td style="text-align: left;"><span>https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/</span></td></tr><tr><th class="prop" style="text-align: left;">valueRequired<span>&nbsp;</span><a href="https://schema.org/valueRequired">[?]</a></th><td style="text-align: left;"><span>False</span></td></tr></tbody></table></div><hr /><br /><br /><div id="predictions.cwl%23tissue-low-label"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>predictions.cwl#tissue-low-label</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>FormalParameter</span></td></tr><tr><th class="prop" style="text-align: left;">additionalType<span>&nbsp;</span><a href="https://schema.org/additionalType">[?]</a></th><td style="text-align: left;"><span>Text</span></td></tr><tr><th class="prop" style="text-align: left;">name<span>&nbsp;</span><a href="https://schema.org/name">[?]</a></th><td style="text-align: left;"><span>tissue-low-label</span></td></tr><tr><th class="prop" style="text-align: left;">conformsTo<span>&nbsp;</span><a href="https://schema.org/conformsTo">[?]</a></th><td style="text-align: left;"><span>https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/</span></td></tr></tbody></table></div><hr /><br /><br /><div id="predictions.cwl%23tissue-low-level"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>predictions.cwl#tissue-low-level</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>FormalParameter</span></td></tr><tr><th class="prop" style="text-align: left;">additionalType<span>&nbsp;</span><a href="https://schema.org/additionalType">[?]</a></th><td style="text-align: left;"><span>Integer</span></td></tr><tr><th class="prop" style="text-align: left;">name<span>&nbsp;</span><a href="https://schema.org/name">[?]</a></th><td style="text-align: left;"><span>tissue-low-level</span></td></tr><tr><th class="prop" style="text-align: left;">conformsTo<span>&nbsp;</span><a href="https://schema.org/conformsTo">[?]</a></th><td style="text-align: left;"><span>https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/</span></td></tr></tbody></table></div><hr /><br /><br /><div id="predictions.cwl%23tumor-batch-size"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>predictions.cwl#tumor-batch-size</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>FormalParameter</span></td></tr><tr><th class="prop" style="text-align: left;">additionalType<span>&nbsp;</span><a href="https://schema.org/additionalType">[?]</a></th><td style="text-align: left;"><span>Integer</span></td></tr><tr><th class="prop" style="text-align: left;">name<span>&nbsp;</span><a href="https://schema.org/name">[?]</a></th><td style="text-align: left;"><span>tumor-batch-size</span></td></tr><tr><th class="prop" style="text-align: left;">conformsTo<span>&nbsp;</span><a href="https://schema.org/conformsTo">[?]</a></th><td style="text-align: left;"><span>https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/</span></td></tr><tr><th class="prop" style="text-align: left;">valueRequired<span>&nbsp;</span><a href="https://schema.org/valueRequired">[?]</a></th><td style="text-align: left;"><span>False</span></td></tr></tbody></table></div><hr /><br /><br /><div id="predictions.cwl%23tumor-chunk-size"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>predictions.cwl#tumor-chunk-size</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>FormalParameter</span></td></tr><tr><th class="prop" style="text-align: left;">additionalType<span>&nbsp;</span><a href="https://schema.org/additionalType">[?]</a></th><td style="text-align: left;"><span>Integer</span></td></tr><tr><th class="prop" style="text-align: left;">name<span>&nbsp;</span><a href="https://schema.org/name">[?]</a></th><td style="text-align: left;"><span>tumor-chunk-size</span></td></tr><tr><th class="prop" style="text-align: left;">conformsTo<span>&nbsp;</span><a href="https://schema.org/conformsTo">[?]</a></th><td style="text-align: left;"><span>https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/</span></td></tr><tr><th class="prop" style="text-align: left;">valueRequired<span>&nbsp;</span><a href="https://schema.org/valueRequired">[?]</a></th><td style="text-align: left;"><span>False</span></td></tr></tbody></table></div><hr /><br /><br /><div id="predictions.cwl%23tumor-filter"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>predictions.cwl#tumor-filter</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>FormalParameter</span></td></tr><tr><th class="prop" style="text-align: left;">additionalType<span>&nbsp;</span><a href="https://schema.org/additionalType">[?]</a></th><td style="text-align: left;"><span>Text</span></td></tr><tr><th class="prop" style="text-align: left;">name<span>&nbsp;</span><a href="https://schema.org/name">[?]</a></th><td style="text-align: left;"><span>tumor-filter</span></td></tr><tr><th class="prop" style="text-align: left;">conformsTo<span>&nbsp;</span><a href="https://schema.org/conformsTo">[?]</a></th><td style="text-align: left;"><span>https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/</span></td></tr></tbody></table></div><hr /><br /><br /><div id="predictions.cwl%23tumor-label"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>predictions.cwl#tumor-label</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>FormalParameter</span></td></tr><tr><th class="prop" style="text-align: left;">additionalType<span>&nbsp;</span><a href="https://schema.org/additionalType">[?]</a></th><td style="text-align: left;"><span>Text</span></td></tr><tr><th class="prop" style="text-align: left;">name<span>&nbsp;</span><a href="https://schema.org/name">[?]</a></th><td style="text-align: left;"><span>tumor-label</span></td></tr><tr><th class="prop" style="text-align: left;">conformsTo<span>&nbsp;</span><a href="https://schema.org/conformsTo">[?]</a></th><td style="text-align: left;"><span>https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/</span></td></tr></tbody></table></div><hr /><br /><br /><div id="predictions.cwl%23tumor-level"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>predictions.cwl#tumor-level</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>FormalParameter</span></td></tr><tr><th class="prop" style="text-align: left;">additionalType<span>&nbsp;</span><a href="https://schema.org/additionalType">[?]</a></th><td style="text-align: left;"><span>Integer</span></td></tr><tr><th class="prop" style="text-align: left;">name<span>&nbsp;</span><a href="https://schema.org/name">[?]</a></th><td style="text-align: left;"><span>tumor-level</span></td></tr><tr><th class="prop" style="text-align: left;">conformsTo<span>&nbsp;</span><a href="https://schema.org/conformsTo">[?]</a></th><td style="text-align: left;"><span>https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/</span></td></tr></tbody></table></div><hr /><br /><br /><div id="predictions.cwl%23tissue"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>predictions.cwl#tissue</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>FormalParameter</span></td></tr><tr><th class="prop" style="text-align: left;">additionalType<span>&nbsp;</span><a href="https://schema.org/additionalType">[?]</a></th><td style="text-align: left;"><span>File</span></td></tr><tr><th class="prop" style="text-align: left;">name<span>&nbsp;</span><a href="https://schema.org/name">[?]</a></th><td style="text-align: left;"><span>tissue</span></td></tr><tr><th class="prop" style="text-align: left;">conformsTo<span>&nbsp;</span><a href="https://schema.org/conformsTo">[?]</a></th><td style="text-align: left;"><span>https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/</span></td></tr></tbody></table></div><hr /><br /><br /><div id="predictions.cwl%23tumor"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>predictions.cwl#tumor</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>FormalParameter</span></td></tr><tr><th class="prop" style="text-align: left;">additionalType<span>&nbsp;</span><a href="https://schema.org/additionalType">[?]</a></th><td style="text-align: left;"><span>File</span></td></tr><tr><th class="prop" style="text-align: left;">name<span>&nbsp;</span><a href="https://schema.org/name">[?]</a></th><td style="text-align: left;"><span>tumor</span></td></tr><tr><th class="prop" style="text-align: left;">conformsTo<span>&nbsp;</span><a href="https://schema.org/conformsTo">[?]</a></th><td style="text-align: left;"><span>https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/</span></td></tr></tbody></table></div><hr /><br /><br /><div id="extract_tissue.cwl%23batch-size"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>extract_tissue.cwl#batch-size</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>FormalParameter</span></td></tr><tr><th class="prop" style="text-align: left;">additionalType<span>&nbsp;</span><a href="https://schema.org/additionalType">[?]</a></th><td style="text-align: left;"><span>Integer</span></td></tr><tr><th class="prop" style="text-align: left;">name<span>&nbsp;</span><a href="https://schema.org/name">[?]</a></th><td style="text-align: left;"><span>batch-size</span></td></tr><tr><th class="prop" style="text-align: left;">conformsTo<span>&nbsp;</span><a href="https://schema.org/conformsTo">[?]</a></th><td style="text-align: left;"><span>https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/</span></td></tr><tr><th class="prop" style="text-align: left;">valueRequired<span>&nbsp;</span><a href="https://schema.org/valueRequired">[?]</a></th><td style="text-align: left;"><span>False</span></td></tr></tbody></table></div><hr /><br /><br /><div id="extract_tissue.cwl%23chunk-size"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>extract_tissue.cwl#chunk-size</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>FormalParameter</span></td></tr><tr><th class="prop" style="text-align: left;">additionalType<span>&nbsp;</span><a href="https://schema.org/additionalType">[?]</a></th><td style="text-align: left;"><span>Integer</span></td></tr><tr><th class="prop" style="text-align: left;">name<span>&nbsp;</span><a href="https://schema.org/name">[?]</a></th><td style="text-align: left;"><span>chunk-size</span></td></tr><tr><th class="prop" style="text-align: left;">conformsTo<span>&nbsp;</span><a href="https://schema.org/conformsTo">[?]</a></th><td style="text-align: left;"><span>https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/</span></td></tr><tr><th class="prop" style="text-align: left;">valueRequired<span>&nbsp;</span><a href="https://schema.org/valueRequired">[?]</a></th><td style="text-align: left;"><span>False</span></td></tr></tbody></table></div><hr /><br /><br /><div id="extract_tissue.cwl%23filter"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>extract_tissue.cwl#filter</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>FormalParameter</span></td></tr><tr><th class="prop" style="text-align: left;">additionalType<span>&nbsp;</span><a href="https://schema.org/additionalType">[?]</a></th><td style="text-align: left;"><span>Text</span></td></tr><tr><th class="prop" style="text-align: left;">name<span>&nbsp;</span><a href="https://schema.org/name">[?]</a></th><td style="text-align: left;"><span>filter</span></td></tr><tr><th class="prop" style="text-align: left;">conformsTo<span>&nbsp;</span><a href="https://schema.org/conformsTo">[?]</a></th><td style="text-align: left;"><span>https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/</span></td></tr><tr><th class="prop" style="text-align: left;">valueRequired<span>&nbsp;</span><a href="https://schema.org/valueRequired">[?]</a></th><td style="text-align: left;"><span>False</span></td></tr></tbody></table></div><hr /><br /><br /><div id="extract_tissue.cwl%23filter_slide"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>extract_tissue.cwl#filter_slide</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>FormalParameter</span></td></tr><tr><th class="prop" style="text-align: left;">additionalType<span>&nbsp;</span><a href="https://schema.org/additionalType">[?]</a></th><td style="text-align: left;"><span>File</span></td></tr><tr><th class="prop" style="text-align: left;">name<span>&nbsp;</span><a href="https://schema.org/name">[?]</a></th><td style="text-align: left;"><span>filter_slide</span></td></tr><tr><th class="prop" style="text-align: left;">conformsTo<span>&nbsp;</span><a href="https://schema.org/conformsTo">[?]</a></th><td style="text-align: left;"><span>https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/</span></td></tr><tr><th class="prop" style="text-align: left;">valueRequired<span>&nbsp;</span><a href="https://schema.org/valueRequired">[?]</a></th><td style="text-align: left;"><span>False</span></td></tr></tbody></table></div><hr /><br /><br /><div id="extract_tissue.cwl%23gpu"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>extract_tissue.cwl#gpu</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>FormalParameter</span></td></tr><tr><th class="prop" style="text-align: left;">additionalType<span>&nbsp;</span><a href="https://schema.org/additionalType">[?]</a></th><td style="text-align: left;"><span>Integer</span></td></tr><tr><th class="prop" style="text-align: left;">name<span>&nbsp;</span><a href="https://schema.org/name">[?]</a></th><td style="text-align: left;"><span>gpu</span></td></tr><tr><th class="prop" style="text-align: left;">conformsTo<span>&nbsp;</span><a href="https://schema.org/conformsTo">[?]</a></th><td style="text-align: left;"><span>https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/</span></td></tr><tr><th class="prop" style="text-align: left;">valueRequired<span>&nbsp;</span><a href="https://schema.org/valueRequired">[?]</a></th><td style="text-align: left;"><span>False</span></td></tr></tbody></table></div><hr /><br /><br /><div id="extract_tissue.cwl%23label"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>extract_tissue.cwl#label</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>FormalParameter</span></td></tr><tr><th class="prop" style="text-align: left;">additionalType<span>&nbsp;</span><a href="https://schema.org/additionalType">[?]</a></th><td style="text-align: left;"><span>Text</span></td></tr><tr><th class="prop" style="text-align: left;">name<span>&nbsp;</span><a href="https://schema.org/name">[?]</a></th><td style="text-align: left;"><span>label</span></td></tr><tr><th class="prop" style="text-align: left;">conformsTo<span>&nbsp;</span><a href="https://schema.org/conformsTo">[?]</a></th><td style="text-align: left;"><span>https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/</span></td></tr></tbody></table></div><hr /><br /><br /><div id="extract_tissue.cwl%23level"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>extract_tissue.cwl#level</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>FormalParameter</span></td></tr><tr><th class="prop" style="text-align: left;">additionalType<span>&nbsp;</span><a href="https://schema.org/additionalType">[?]</a></th><td style="text-align: left;"><span>Integer</span></td></tr><tr><th class="prop" style="text-align: left;">name<span>&nbsp;</span><a href="https://schema.org/name">[?]</a></th><td style="text-align: left;"><span>level</span></td></tr><tr><th class="prop" style="text-align: left;">conformsTo<span>&nbsp;</span><a href="https://schema.org/conformsTo">[?]</a></th><td style="text-align: left;"><span>https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/</span></td></tr></tbody></table></div><hr /><br /><br /><div id="extract_tissue.cwl%23src"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>extract_tissue.cwl#src</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>FormalParameter</span></td></tr><tr><th class="prop" style="text-align: left;">additionalType<span>&nbsp;</span><a href="https://schema.org/additionalType">[?]</a></th><td style="text-align: left;"><span>Collection</span></td></tr><tr><th class="prop" style="text-align: left;">name<span>&nbsp;</span><a href="https://schema.org/name">[?]</a></th><td style="text-align: left;"><span>src</span></td></tr><tr><th class="prop" style="text-align: left;">conformsTo<span>&nbsp;</span><a href="https://schema.org/conformsTo">[?]</a></th><td style="text-align: left;"><span>https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/</span></td></tr></tbody></table></div><hr /><br /><br /><div id="extract_tissue.cwl%23tissue"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>extract_tissue.cwl#tissue</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>FormalParameter</span></td></tr><tr><th class="prop" style="text-align: left;">additionalType<span>&nbsp;</span><a href="https://schema.org/additionalType">[?]</a></th><td style="text-align: left;"><span>File</span></td></tr><tr><th class="prop" style="text-align: left;">name<span>&nbsp;</span><a href="https://schema.org/name">[?]</a></th><td style="text-align: left;"><span>tissue</span></td></tr><tr><th class="prop" style="text-align: left;">conformsTo<span>&nbsp;</span><a href="https://schema.org/conformsTo">[?]</a></th><td style="text-align: left;"><span>https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/</span></td></tr></tbody></table></div><hr /><br /><br /><div id="extract_tissue.cwl"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>extract_tissue.cwl</span></td></tr><tr><th class="prop" style="text-align: left;">name<span>&nbsp;</span><a href="https://schema.org/name">[?]</a></th><td style="text-align: left;"><span>extract_tissue.cwl</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>SoftwareApplication</span></td></tr><tr><th class="prop" style="text-align: left;">input<span>&nbsp;</span><a href="https://bioschemas.org/ComputationalWorkflow#input">[?]</a></th><td style="text-align: left;"><ul><li><a href="#extract_tissue.cwl%23batch-size">extract_tissue.cwl#batch-size</a></li><li><a href="#extract_tissue.cwl%23chunk-size">extract_tissue.cwl#chunk-size</a></li><li><a href="#extract_tissue.cwl%23filter">extract_tissue.cwl#filter</a></li><li><a href="#extract_tissue.cwl%23filter_slide">extract_tissue.cwl#filter_slide</a></li><li><a href="#extract_tissue.cwl%23gpu">extract_tissue.cwl#gpu</a></li><li><a href="#extract_tissue.cwl%23label">extract_tissue.cwl#label</a></li><li><a href="#extract_tissue.cwl%23level">extract_tissue.cwl#level</a></li><li><a href="#extract_tissue.cwl%23src">extract_tissue.cwl#src</a></li></ul></td></tr><tr><th class="prop" style="text-align: left;">output<span>&nbsp;</span><a href="https://bioschemas.org/ComputationalWorkflow#output">[?]</a></th><td style="text-align: left;"><a href="#extract_tissue.cwl%23tissue">extract_tissue.cwl#tissue</a></td></tr></tbody></table></div><hr /><br /><br /><div id="classify_tumor.cwl%23batch-size"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>classify_tumor.cwl#batch-size</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>FormalParameter</span></td></tr><tr><th class="prop" style="text-align: left;">additionalType<span>&nbsp;</span><a href="https://schema.org/additionalType">[?]</a></th><td style="text-align: left;"><span>Integer</span></td></tr><tr><th class="prop" style="text-align: left;">name<span>&nbsp;</span><a href="https://schema.org/name">[?]</a></th><td style="text-align: left;"><span>batch-size</span></td></tr><tr><th class="prop" style="text-align: left;">conformsTo<span>&nbsp;</span><a href="https://schema.org/conformsTo">[?]</a></th><td style="text-align: left;"><span>https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/</span></td></tr><tr><th class="prop" style="text-align: left;">valueRequired<span>&nbsp;</span><a href="https://schema.org/valueRequired">[?]</a></th><td style="text-align: left;"><span>False</span></td></tr></tbody></table></div><hr /><br /><br /><div id="classify_tumor.cwl%23chunk-size"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>classify_tumor.cwl#chunk-size</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>FormalParameter</span></td></tr><tr><th class="prop" style="text-align: left;">additionalType<span>&nbsp;</span><a href="https://schema.org/additionalType">[?]</a></th><td style="text-align: left;"><span>Integer</span></td></tr><tr><th class="prop" style="text-align: left;">name<span>&nbsp;</span><a href="https://schema.org/name">[?]</a></th><td style="text-align: left;"><span>chunk-size</span></td></tr><tr><th class="prop" style="text-align: left;">conformsTo<span>&nbsp;</span><a href="https://schema.org/conformsTo">[?]</a></th><td style="text-align: left;"><span>https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/</span></td></tr><tr><th class="prop" style="text-align: left;">valueRequired<span>&nbsp;</span><a href="https://schema.org/valueRequired">[?]</a></th><td style="text-align: left;"><span>False</span></td></tr></tbody></table></div><hr /><br /><br /><div id="classify_tumor.cwl%23filter"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>classify_tumor.cwl#filter</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>FormalParameter</span></td></tr><tr><th class="prop" style="text-align: left;">additionalType<span>&nbsp;</span><a href="https://schema.org/additionalType">[?]</a></th><td style="text-align: left;"><span>Text</span></td></tr><tr><th class="prop" style="text-align: left;">name<span>&nbsp;</span><a href="https://schema.org/name">[?]</a></th><td style="text-align: left;"><span>filter</span></td></tr><tr><th class="prop" style="text-align: left;">conformsTo<span>&nbsp;</span><a href="https://schema.org/conformsTo">[?]</a></th><td style="text-align: left;"><span>https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/</span></td></tr><tr><th class="prop" style="text-align: left;">valueRequired<span>&nbsp;</span><a href="https://schema.org/valueRequired">[?]</a></th><td style="text-align: left;"><span>False</span></td></tr></tbody></table></div><hr /><br /><br /><div id="classify_tumor.cwl%23filter_slide"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>classify_tumor.cwl#filter_slide</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>FormalParameter</span></td></tr><tr><th class="prop" style="text-align: left;">additionalType<span>&nbsp;</span><a href="https://schema.org/additionalType">[?]</a></th><td style="text-align: left;"><span>File</span></td></tr><tr><th class="prop" style="text-align: left;">name<span>&nbsp;</span><a href="https://schema.org/name">[?]</a></th><td style="text-align: left;"><span>filter_slide</span></td></tr><tr><th class="prop" style="text-align: left;">conformsTo<span>&nbsp;</span><a href="https://schema.org/conformsTo">[?]</a></th><td style="text-align: left;"><span>https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/</span></td></tr><tr><th class="prop" style="text-align: left;">valueRequired<span>&nbsp;</span><a href="https://schema.org/valueRequired">[?]</a></th><td style="text-align: left;"><span>False</span></td></tr></tbody></table></div><hr /><br /><br /><div id="classify_tumor.cwl%23gpu"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>classify_tumor.cwl#gpu</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>FormalParameter</span></td></tr><tr><th class="prop" style="text-align: left;">additionalType<span>&nbsp;</span><a href="https://schema.org/additionalType">[?]</a></th><td style="text-align: left;"><span>Integer</span></td></tr><tr><th class="prop" style="text-align: left;">name<span>&nbsp;</span><a href="https://schema.org/name">[?]</a></th><td style="text-align: left;"><span>gpu</span></td></tr><tr><th class="prop" style="text-align: left;">conformsTo<span>&nbsp;</span><a href="https://schema.org/conformsTo">[?]</a></th><td style="text-align: left;"><span>https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/</span></td></tr><tr><th class="prop" style="text-align: left;">valueRequired<span>&nbsp;</span><a href="https://schema.org/valueRequired">[?]</a></th><td style="text-align: left;"><span>False</span></td></tr></tbody></table></div><hr /><br /><br /><div id="classify_tumor.cwl%23label"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>classify_tumor.cwl#label</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>FormalParameter</span></td></tr><tr><th class="prop" style="text-align: left;">additionalType<span>&nbsp;</span><a href="https://schema.org/additionalType">[?]</a></th><td style="text-align: left;"><span>Text</span></td></tr><tr><th class="prop" style="text-align: left;">name<span>&nbsp;</span><a href="https://schema.org/name">[?]</a></th><td style="text-align: left;"><span>label</span></td></tr><tr><th class="prop" style="text-align: left;">conformsTo<span>&nbsp;</span><a href="https://schema.org/conformsTo">[?]</a></th><td style="text-align: left;"><span>https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/</span></td></tr></tbody></table></div><hr /><br /><br /><div id="classify_tumor.cwl%23level"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>classify_tumor.cwl#level</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>FormalParameter</span></td></tr><tr><th class="prop" style="text-align: left;">additionalType<span>&nbsp;</span><a href="https://schema.org/additionalType">[?]</a></th><td style="text-align: left;"><span>Integer</span></td></tr><tr><th class="prop" style="text-align: left;">name<span>&nbsp;</span><a href="https://schema.org/name">[?]</a></th><td style="text-align: left;"><span>level</span></td></tr><tr><th class="prop" style="text-align: left;">conformsTo<span>&nbsp;</span><a href="https://schema.org/conformsTo">[?]</a></th><td style="text-align: left;"><span>https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/</span></td></tr></tbody></table></div><hr /><br /><br /><div id="classify_tumor.cwl%23src"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>classify_tumor.cwl#src</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>FormalParameter</span></td></tr><tr><th class="prop" style="text-align: left;">additionalType<span>&nbsp;</span><a href="https://schema.org/additionalType">[?]</a></th><td style="text-align: left;"><span>Collection</span></td></tr><tr><th class="prop" style="text-align: left;">name<span>&nbsp;</span><a href="https://schema.org/name">[?]</a></th><td style="text-align: left;"><span>src</span></td></tr><tr><th class="prop" style="text-align: left;">conformsTo<span>&nbsp;</span><a href="https://schema.org/conformsTo">[?]</a></th><td style="text-align: left;"><span>https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/</span></td></tr></tbody></table></div><hr /><br /><br /><div id="classify_tumor.cwl%23tumor"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>classify_tumor.cwl#tumor</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>FormalParameter</span></td></tr><tr><th class="prop" style="text-align: left;">additionalType<span>&nbsp;</span><a href="https://schema.org/additionalType">[?]</a></th><td style="text-align: left;"><span>File</span></td></tr><tr><th class="prop" style="text-align: left;">name<span>&nbsp;</span><a href="https://schema.org/name">[?]</a></th><td style="text-align: left;"><span>tumor</span></td></tr><tr><th class="prop" style="text-align: left;">conformsTo<span>&nbsp;</span><a href="https://schema.org/conformsTo">[?]</a></th><td style="text-align: left;"><span>https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/</span></td></tr></tbody></table></div><hr /><br /><br /><div id="classify_tumor.cwl"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>classify_tumor.cwl</span></td></tr><tr><th class="prop" style="text-align: left;">name<span>&nbsp;</span><a href="https://schema.org/name">[?]</a></th><td style="text-align: left;"><span>classify_tumor.cwl</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><ul><li><span>SoftwareApplication</span></li><li><span>File</span></li></ul></td></tr><tr><th class="prop" style="text-align: left;">input<span>&nbsp;</span><a href="https://bioschemas.org/ComputationalWorkflow#input">[?]</a></th><td style="text-align: left;"><ul><li><a href="#classify_tumor.cwl%23batch-size">classify_tumor.cwl#batch-size</a></li><li><a href="#classify_tumor.cwl%23chunk-size">classify_tumor.cwl#chunk-size</a></li><li><a href="#classify_tumor.cwl%23filter">classify_tumor.cwl#filter</a></li><li><a href="#classify_tumor.cwl%23filter_slide">classify_tumor.cwl#filter_slide</a></li><li><a href="#classify_tumor.cwl%23gpu">classify_tumor.cwl#gpu</a></li><li><a href="#classify_tumor.cwl%23label">classify_tumor.cwl#label</a></li><li><a href="#classify_tumor.cwl%23level">classify_tumor.cwl#level</a></li><li><a href="#classify_tumor.cwl%23src">classify_tumor.cwl#src</a></li></ul></td></tr><tr><th class="prop" style="text-align: left;">output<span>&nbsp;</span><a href="https://bioschemas.org/ComputationalWorkflow#output">[?]</a></th><td style="text-align: left;"><a href="#classify_tumor.cwl%23tumor">classify_tumor.cwl#tumor</a></td></tr></tbody></table></div><hr /><br /><br /><div><h3><a href="classify_tumor.cwl">Download: </a>classify_tumor.cwl</h3></div><div id="predictions.cwl%23extract-tissue-low"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>predictions.cwl#extract-tissue-low</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>HowToStep</span></td></tr><tr><th class="prop" style="text-align: left;">workExample<span>&nbsp;</span><a href="https://schema.org/workExample">[?]</a></th><td style="text-align: left;"><a href="#extract_tissue.cwl">extract_tissue.cwl</a></td></tr><tr><th class="prop" style="text-align: left;">connection<span>&nbsp;</span><a href="https://w3id.org/ro/terms/workflow-run#connection">[?]</a></th><td style="text-align: left;"><ul><li><a href="#%23c7f16216-eacb-4bf1-988e-8f6fac71f443">#c7f16216-eacb-4bf1-988e-8f6fac71f443</a></li><li><a href="#%239bbdf532-f3fa-43fc-bed9-390053f0c2d1">#9bbdf532-f3fa-43fc-bed9-390053f0c2d1</a></li><li><a href="#%2312a0cc58-abf7-4e66-bdd4-589144869572">#12a0cc58-abf7-4e66-bdd4-589144869572</a></li><li><a href="#%237cbbf84a-3035-4745-8b3e-d140f938793d">#7cbbf84a-3035-4745-8b3e-d140f938793d</a></li><li><a href="#%234d447a3a-60a6-4b84-aa1c-af5017b75889">#4d447a3a-60a6-4b84-aa1c-af5017b75889</a></li><li><a href="#%2352bce53b-8b67-429c-b030-fc3f51d007ab">#52bce53b-8b67-429c-b030-fc3f51d007ab</a></li></ul></td></tr></tbody></table></div><hr /><br /><br /><div id="%23c7f16216-eacb-4bf1-988e-8f6fac71f443"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>#c7f16216-eacb-4bf1-988e-8f6fac71f443</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>ParameterConnection</span></td></tr><tr><th class="prop" style="text-align: left;">sourceParameter<span>&nbsp;</span><a href="https://w3id.org/ro/terms/workflow-run#sourceParameter">[?]</a></th><td style="text-align: left;"><a href="#predictions.cwl%23tissue-low-batch-size">predictions.cwl#tissue-low-batch-size</a></td></tr><tr><th class="prop" style="text-align: left;">targetParameter<span>&nbsp;</span><a href="https://w3id.org/ro/terms/workflow-run#targetParameter">[?]</a></th><td style="text-align: left;"><a href="#extract_tissue.cwl%23batch-size">extract_tissue.cwl#batch-size</a></td></tr></tbody></table></div><hr /><br /><br /><div id="%239bbdf532-f3fa-43fc-bed9-390053f0c2d1"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>#9bbdf532-f3fa-43fc-bed9-390053f0c2d1</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>ParameterConnection</span></td></tr><tr><th class="prop" style="text-align: left;">sourceParameter<span>&nbsp;</span><a href="https://w3id.org/ro/terms/workflow-run#sourceParameter">[?]</a></th><td style="text-align: left;"><a href="#predictions.cwl%23tissue-low-chunk-size">predictions.cwl#tissue-low-chunk-size</a></td></tr><tr><th class="prop" style="text-align: left;">targetParameter<span>&nbsp;</span><a href="https://w3id.org/ro/terms/workflow-run#targetParameter">[?]</a></th><td style="text-align: left;"><a href="#extract_tissue.cwl%23chunk-size">extract_tissue.cwl#chunk-size</a></td></tr></tbody></table></div><hr /><br /><br /><div id="%2312a0cc58-abf7-4e66-bdd4-589144869572"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>#12a0cc58-abf7-4e66-bdd4-589144869572</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>ParameterConnection</span></td></tr><tr><th class="prop" style="text-align: left;">sourceParameter<span>&nbsp;</span><a href="https://w3id.org/ro/terms/workflow-run#sourceParameter">[?]</a></th><td style="text-align: left;"><a href="#predictions.cwl%23gpu">predictions.cwl#gpu</a></td></tr><tr><th class="prop" style="text-align: left;">targetParameter<span>&nbsp;</span><a href="https://w3id.org/ro/terms/workflow-run#targetParameter">[?]</a></th><td style="text-align: left;"><a href="#extract_tissue.cwl%23gpu">extract_tissue.cwl#gpu</a></td></tr></tbody></table></div><hr /><br /><br /><div id="%237cbbf84a-3035-4745-8b3e-d140f938793d"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>#7cbbf84a-3035-4745-8b3e-d140f938793d</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>ParameterConnection</span></td></tr><tr><th class="prop" style="text-align: left;">sourceParameter<span>&nbsp;</span><a href="https://w3id.org/ro/terms/workflow-run#sourceParameter">[?]</a></th><td style="text-align: left;"><a href="#predictions.cwl%23tissue-low-label">predictions.cwl#tissue-low-label</a></td></tr><tr><th class="prop" style="text-align: left;">targetParameter<span>&nbsp;</span><a href="https://w3id.org/ro/terms/workflow-run#targetParameter">[?]</a></th><td style="text-align: left;"><a href="#extract_tissue.cwl%23label">extract_tissue.cwl#label</a></td></tr></tbody></table></div><hr /><br /><br /><div id="%234d447a3a-60a6-4b84-aa1c-af5017b75889"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>#4d447a3a-60a6-4b84-aa1c-af5017b75889</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>ParameterConnection</span></td></tr><tr><th class="prop" style="text-align: left;">sourceParameter<span>&nbsp;</span><a href="https://w3id.org/ro/terms/workflow-run#sourceParameter">[?]</a></th><td style="text-align: left;"><a href="#predictions.cwl%23tissue-low-level">predictions.cwl#tissue-low-level</a></td></tr><tr><th class="prop" style="text-align: left;">targetParameter<span>&nbsp;</span><a href="https://w3id.org/ro/terms/workflow-run#targetParameter">[?]</a></th><td style="text-align: left;"><a href="#extract_tissue.cwl%23level">extract_tissue.cwl#level</a></td></tr></tbody></table></div><hr /><br /><br /><div id="%2352bce53b-8b67-429c-b030-fc3f51d007ab"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>#52bce53b-8b67-429c-b030-fc3f51d007ab</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>ParameterConnection</span></td></tr><tr><th class="prop" style="text-align: left;">sourceParameter<span>&nbsp;</span><a href="https://w3id.org/ro/terms/workflow-run#sourceParameter">[?]</a></th><td style="text-align: left;"><a href="#predictions.cwl%23slide">predictions.cwl#slide</a></td></tr><tr><th class="prop" style="text-align: left;">targetParameter<span>&nbsp;</span><a href="https://w3id.org/ro/terms/workflow-run#targetParameter">[?]</a></th><td style="text-align: left;"><a href="#extract_tissue.cwl%23src">extract_tissue.cwl#src</a></td></tr></tbody></table></div><hr /><br /><br /><div id="predictions.cwl%23extract-tissue-high"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>predictions.cwl#extract-tissue-high</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>HowToStep</span></td></tr><tr><th class="prop" style="text-align: left;">workExample<span>&nbsp;</span><a href="https://schema.org/workExample">[?]</a></th><td style="text-align: left;"><a href="#extract_tissue.cwl">extract_tissue.cwl</a></td></tr><tr><th class="prop" style="text-align: left;">connection<span>&nbsp;</span><a href="https://w3id.org/ro/terms/workflow-run#connection">[?]</a></th><td style="text-align: left;"><ul><li><a href="#%2309f89d33-3750-4bad-9ae5-f6e75dcb2b84">#09f89d33-3750-4bad-9ae5-f6e75dcb2b84</a></li><li><a href="#%2300fa2e9f-bb25-47cc-a95a-f874c71672fa">#00fa2e9f-bb25-47cc-a95a-f874c71672fa</a></li><li><a href="#%231db6a245-e80e-4d53-a484-9cbc5f9715ff">#1db6a245-e80e-4d53-a484-9cbc5f9715ff</a></li><li><a href="#%23a2458c0b-6bd6-4f65-99d6-4c5b81ad1ce1">#a2458c0b-6bd6-4f65-99d6-4c5b81ad1ce1</a></li><li><a href="#%2371cd02b6-f249-4bc4-a80d-61d6882c5e30">#71cd02b6-f249-4bc4-a80d-61d6882c5e30</a></li><li><a href="#%23a7465350-2012-4710-8b47-a3460c76a296">#a7465350-2012-4710-8b47-a3460c76a296</a></li><li><a href="#%23cd364786-f01d-4041-8190-fa2a9b6d1349">#cd364786-f01d-4041-8190-fa2a9b6d1349</a></li><li><a href="#%23ee77f8c3-0da8-45f9-875c-2d2cd8c1034b">#ee77f8c3-0da8-45f9-875c-2d2cd8c1034b</a></li></ul></td></tr></tbody></table></div><hr /><br /><br /><div id="%2309f89d33-3750-4bad-9ae5-f6e75dcb2b84"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>#09f89d33-3750-4bad-9ae5-f6e75dcb2b84</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>ParameterConnection</span></td></tr><tr><th class="prop" style="text-align: left;">sourceParameter<span>&nbsp;</span><a href="https://w3id.org/ro/terms/workflow-run#sourceParameter">[?]</a></th><td style="text-align: left;"><a href="#predictions.cwl%23tissue-high-batch-size">predictions.cwl#tissue-high-batch-size</a></td></tr><tr><th class="prop" style="text-align: left;">targetParameter<span>&nbsp;</span><a href="https://w3id.org/ro/terms/workflow-run#targetParameter">[?]</a></th><td style="text-align: left;"><a href="#extract_tissue.cwl%23batch-size">extract_tissue.cwl#batch-size</a></td></tr></tbody></table></div><hr /><br /><br /><div id="%2300fa2e9f-bb25-47cc-a95a-f874c71672fa"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>#00fa2e9f-bb25-47cc-a95a-f874c71672fa</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>ParameterConnection</span></td></tr><tr><th class="prop" style="text-align: left;">sourceParameter<span>&nbsp;</span><a href="https://w3id.org/ro/terms/workflow-run#sourceParameter">[?]</a></th><td style="text-align: left;"><a href="#predictions.cwl%23tissue-high-chunk-size">predictions.cwl#tissue-high-chunk-size</a></td></tr><tr><th class="prop" style="text-align: left;">targetParameter<span>&nbsp;</span><a href="https://w3id.org/ro/terms/workflow-run#targetParameter">[?]</a></th><td style="text-align: left;"><a href="#extract_tissue.cwl%23chunk-size">extract_tissue.cwl#chunk-size</a></td></tr></tbody></table></div><hr /><br /><br /><div id="%231db6a245-e80e-4d53-a484-9cbc5f9715ff"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>#1db6a245-e80e-4d53-a484-9cbc5f9715ff</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>ParameterConnection</span></td></tr><tr><th class="prop" style="text-align: left;">sourceParameter<span>&nbsp;</span><a href="https://w3id.org/ro/terms/workflow-run#sourceParameter">[?]</a></th><td style="text-align: left;"><a href="#predictions.cwl%23tissue-high-filter">predictions.cwl#tissue-high-filter</a></td></tr><tr><th class="prop" style="text-align: left;">targetParameter<span>&nbsp;</span><a href="https://w3id.org/ro/terms/workflow-run#targetParameter">[?]</a></th><td style="text-align: left;"><a href="#extract_tissue.cwl%23filter">extract_tissue.cwl#filter</a></td></tr></tbody></table></div><hr /><br /><br /><div id="%23a2458c0b-6bd6-4f65-99d6-4c5b81ad1ce1"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>#a2458c0b-6bd6-4f65-99d6-4c5b81ad1ce1</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>ParameterConnection</span></td></tr><tr><th class="prop" style="text-align: left;">sourceParameter<span>&nbsp;</span><a href="https://w3id.org/ro/terms/workflow-run#sourceParameter">[?]</a></th><td style="text-align: left;"><a href="#extract_tissue.cwl%23tissue">extract_tissue.cwl#tissue</a></td></tr><tr><th class="prop" style="text-align: left;">targetParameter<span>&nbsp;</span><a href="https://w3id.org/ro/terms/workflow-run#targetParameter">[?]</a></th><td style="text-align: left;"><a href="#extract_tissue.cwl%23filter_slide">extract_tissue.cwl#filter_slide</a></td></tr></tbody></table></div><hr /><br /><br /><div id="%2371cd02b6-f249-4bc4-a80d-61d6882c5e30"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>#71cd02b6-f249-4bc4-a80d-61d6882c5e30</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>ParameterConnection</span></td></tr><tr><th class="prop" style="text-align: left;">sourceParameter<span>&nbsp;</span><a href="https://w3id.org/ro/terms/workflow-run#sourceParameter">[?]</a></th><td style="text-align: left;"><a href="#predictions.cwl%23gpu">predictions.cwl#gpu</a></td></tr><tr><th class="prop" style="text-align: left;">targetParameter<span>&nbsp;</span><a href="https://w3id.org/ro/terms/workflow-run#targetParameter">[?]</a></th><td style="text-align: left;"><a href="#extract_tissue.cwl%23gpu">extract_tissue.cwl#gpu</a></td></tr></tbody></table></div><hr /><br /><br /><div id="%23a7465350-2012-4710-8b47-a3460c76a296"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>#a7465350-2012-4710-8b47-a3460c76a296</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>ParameterConnection</span></td></tr><tr><th class="prop" style="text-align: left;">sourceParameter<span>&nbsp;</span><a href="https://w3id.org/ro/terms/workflow-run#sourceParameter">[?]</a></th><td style="text-align: left;"><a href="#predictions.cwl%23tissue-high-label">predictions.cwl#tissue-high-label</a></td></tr><tr><th class="prop" style="text-align: left;">targetParameter<span>&nbsp;</span><a href="https://w3id.org/ro/terms/workflow-run#targetParameter">[?]</a></th><td style="text-align: left;"><a href="#extract_tissue.cwl%23label">extract_tissue.cwl#label</a></td></tr></tbody></table></div><hr /><br /><br /><div id="%23cd364786-f01d-4041-8190-fa2a9b6d1349"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>#cd364786-f01d-4041-8190-fa2a9b6d1349</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>ParameterConnection</span></td></tr><tr><th class="prop" style="text-align: left;">sourceParameter<span>&nbsp;</span><a href="https://w3id.org/ro/terms/workflow-run#sourceParameter">[?]</a></th><td style="text-align: left;"><a href="#predictions.cwl%23tissue-high-level">predictions.cwl#tissue-high-level</a></td></tr><tr><th class="prop" style="text-align: left;">targetParameter<span>&nbsp;</span><a href="https://w3id.org/ro/terms/workflow-run#targetParameter">[?]</a></th><td style="text-align: left;"><a href="#extract_tissue.cwl%23level">extract_tissue.cwl#level</a></td></tr></tbody></table></div><hr /><br /><br /><div id="%23ee77f8c3-0da8-45f9-875c-2d2cd8c1034b"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>#ee77f8c3-0da8-45f9-875c-2d2cd8c1034b</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>ParameterConnection</span></td></tr><tr><th class="prop" style="text-align: left;">sourceParameter<span>&nbsp;</span><a href="https://w3id.org/ro/terms/workflow-run#sourceParameter">[?]</a></th><td style="text-align: left;"><a href="#predictions.cwl%23slide">predictions.cwl#slide</a></td></tr><tr><th class="prop" style="text-align: left;">targetParameter<span>&nbsp;</span><a href="https://w3id.org/ro/terms/workflow-run#targetParameter">[?]</a></th><td style="text-align: left;"><a href="#extract_tissue.cwl%23src">extract_tissue.cwl#src</a></td></tr></tbody></table></div><hr /><br /><br /><div id="predictions.cwl%23classify-tumor"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>predictions.cwl#classify-tumor</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>HowToStep</span></td></tr><tr><th class="prop" style="text-align: left;">workExample<span>&nbsp;</span><a href="https://schema.org/workExample">[?]</a></th><td style="text-align: left;"><a href="#classify_tumor.cwl">classify_tumor.cwl</a></td></tr><tr><th class="prop" style="text-align: left;">connection<span>&nbsp;</span><a href="https://w3id.org/ro/terms/workflow-run#connection">[?]</a></th><td style="text-align: left;"><ul><li><a href="#%23ae5abc97-7755-4806-af76-bfd12edbc52f">#ae5abc97-7755-4806-af76-bfd12edbc52f</a></li><li><a href="#%2321bf0856-eb32-45f0-8aae-ecb5cf172ae9">#21bf0856-eb32-45f0-8aae-ecb5cf172ae9</a></li><li><a href="#%23a301c5ff-e558-49b7-8499-82335b72876f">#a301c5ff-e558-49b7-8499-82335b72876f</a></li><li><a href="#%23199c559b-b1de-45de-b5d2-d18e36c02985">#199c559b-b1de-45de-b5d2-d18e36c02985</a></li><li><a href="#%23ee706186-fe3f-443e-9cca-d0cdb09a5ab0">#ee706186-fe3f-443e-9cca-d0cdb09a5ab0</a></li><li><a href="#%234e8428d4-66c8-4f74-aa31-2af4b6d40e50">#4e8428d4-66c8-4f74-aa31-2af4b6d40e50</a></li><li><a href="#%23c94dfb67-c121-4c5d-8ca4-bb959f642046">#c94dfb67-c121-4c5d-8ca4-bb959f642046</a></li><li><a href="#%232b01c9ef-dc58-450f-8aad-318116cb1e1f">#2b01c9ef-dc58-450f-8aad-318116cb1e1f</a></li></ul></td></tr></tbody></table></div><hr /><br /><br /><div id="%23ae5abc97-7755-4806-af76-bfd12edbc52f"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>#ae5abc97-7755-4806-af76-bfd12edbc52f</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>ParameterConnection</span></td></tr><tr><th class="prop" style="text-align: left;">sourceParameter<span>&nbsp;</span><a href="https://w3id.org/ro/terms/workflow-run#sourceParameter">[?]</a></th><td style="text-align: left;"><a href="#predictions.cwl%23tumor-batch-size">predictions.cwl#tumor-batch-size</a></td></tr><tr><th class="prop" style="text-align: left;">targetParameter<span>&nbsp;</span><a href="https://w3id.org/ro/terms/workflow-run#targetParameter">[?]</a></th><td style="text-align: left;"><a href="#classify_tumor.cwl%23batch-size">classify_tumor.cwl#batch-size</a></td></tr></tbody></table></div><hr /><br /><br /><div id="%2321bf0856-eb32-45f0-8aae-ecb5cf172ae9"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>#21bf0856-eb32-45f0-8aae-ecb5cf172ae9</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>ParameterConnection</span></td></tr><tr><th class="prop" style="text-align: left;">sourceParameter<span>&nbsp;</span><a href="https://w3id.org/ro/terms/workflow-run#sourceParameter">[?]</a></th><td style="text-align: left;"><a href="#predictions.cwl%23tumor-chunk-size">predictions.cwl#tumor-chunk-size</a></td></tr><tr><th class="prop" style="text-align: left;">targetParameter<span>&nbsp;</span><a href="https://w3id.org/ro/terms/workflow-run#targetParameter">[?]</a></th><td style="text-align: left;"><a href="#classify_tumor.cwl%23chunk-size">classify_tumor.cwl#chunk-size</a></td></tr></tbody></table></div><hr /><br /><br /><div id="%23a301c5ff-e558-49b7-8499-82335b72876f"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>#a301c5ff-e558-49b7-8499-82335b72876f</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>ParameterConnection</span></td></tr><tr><th class="prop" style="text-align: left;">sourceParameter<span>&nbsp;</span><a href="https://w3id.org/ro/terms/workflow-run#sourceParameter">[?]</a></th><td style="text-align: left;"><a href="#predictions.cwl%23tumor-filter">predictions.cwl#tumor-filter</a></td></tr><tr><th class="prop" style="text-align: left;">targetParameter<span>&nbsp;</span><a href="https://w3id.org/ro/terms/workflow-run#targetParameter">[?]</a></th><td style="text-align: left;"><a href="#classify_tumor.cwl%23filter">classify_tumor.cwl#filter</a></td></tr></tbody></table></div><hr /><br /><br /><div id="%23199c559b-b1de-45de-b5d2-d18e36c02985"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>#199c559b-b1de-45de-b5d2-d18e36c02985</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>ParameterConnection</span></td></tr><tr><th class="prop" style="text-align: left;">sourceParameter<span>&nbsp;</span><a href="https://w3id.org/ro/terms/workflow-run#sourceParameter">[?]</a></th><td style="text-align: left;"><a href="#extract_tissue.cwl%23tissue">extract_tissue.cwl#tissue</a></td></tr><tr><th class="prop" style="text-align: left;">targetParameter<span>&nbsp;</span><a href="https://w3id.org/ro/terms/workflow-run#targetParameter">[?]</a></th><td style="text-align: left;"><a href="#classify_tumor.cwl%23filter_slide">classify_tumor.cwl#filter_slide</a></td></tr></tbody></table></div><hr /><br /><br /><div id="%23ee706186-fe3f-443e-9cca-d0cdb09a5ab0"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>#ee706186-fe3f-443e-9cca-d0cdb09a5ab0</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>ParameterConnection</span></td></tr><tr><th class="prop" style="text-align: left;">sourceParameter<span>&nbsp;</span><a href="https://w3id.org/ro/terms/workflow-run#sourceParameter">[?]</a></th><td style="text-align: left;"><a href="#predictions.cwl%23gpu">predictions.cwl#gpu</a></td></tr><tr><th class="prop" style="text-align: left;">targetParameter<span>&nbsp;</span><a href="https://w3id.org/ro/terms/workflow-run#targetParameter">[?]</a></th><td style="text-align: left;"><a href="#classify_tumor.cwl%23gpu">classify_tumor.cwl#gpu</a></td></tr></tbody></table></div><hr /><br /><br /><div id="%234e8428d4-66c8-4f74-aa31-2af4b6d40e50"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>#4e8428d4-66c8-4f74-aa31-2af4b6d40e50</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>ParameterConnection</span></td></tr><tr><th class="prop" style="text-align: left;">sourceParameter<span>&nbsp;</span><a href="https://w3id.org/ro/terms/workflow-run#sourceParameter">[?]</a></th><td style="text-align: left;"><a href="#predictions.cwl%23tumor-label">predictions.cwl#tumor-label</a></td></tr><tr><th class="prop" style="text-align: left;">targetParameter<span>&nbsp;</span><a href="https://w3id.org/ro/terms/workflow-run#targetParameter">[?]</a></th><td style="text-align: left;"><a href="#classify_tumor.cwl%23label">classify_tumor.cwl#label</a></td></tr></tbody></table></div><hr /><br /><br /><div id="%23c94dfb67-c121-4c5d-8ca4-bb959f642046"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>#c94dfb67-c121-4c5d-8ca4-bb959f642046</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>ParameterConnection</span></td></tr><tr><th class="prop" style="text-align: left;">sourceParameter<span>&nbsp;</span><a href="https://w3id.org/ro/terms/workflow-run#sourceParameter">[?]</a></th><td style="text-align: left;"><a href="#predictions.cwl%23tumor-level">predictions.cwl#tumor-level</a></td></tr><tr><th class="prop" style="text-align: left;">targetParameter<span>&nbsp;</span><a href="https://w3id.org/ro/terms/workflow-run#targetParameter">[?]</a></th><td style="text-align: left;"><a href="#classify_tumor.cwl%23level">classify_tumor.cwl#level</a></td></tr></tbody></table></div><hr /><br /><br /><div id="%232b01c9ef-dc58-450f-8aad-318116cb1e1f"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>#2b01c9ef-dc58-450f-8aad-318116cb1e1f</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>ParameterConnection</span></td></tr><tr><th class="prop" style="text-align: left;">sourceParameter<span>&nbsp;</span><a href="https://w3id.org/ro/terms/workflow-run#sourceParameter">[?]</a></th><td style="text-align: left;"><a href="#predictions.cwl%23slide">predictions.cwl#slide</a></td></tr><tr><th class="prop" style="text-align: left;">targetParameter<span>&nbsp;</span><a href="https://w3id.org/ro/terms/workflow-run#targetParameter">[?]</a></th><td style="text-align: left;"><a href="#classify_tumor.cwl%23src">classify_tumor.cwl#src</a></td></tr></tbody></table></div><hr /><br /><br /><div id="%230aaeeca3-802a-45ce-b527-e4f746c08cea"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>#0aaeeca3-802a-45ce-b527-e4f746c08cea</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>ParameterConnection</span></td></tr><tr><th class="prop" style="text-align: left;">sourceParameter<span>&nbsp;</span><a href="https://w3id.org/ro/terms/workflow-run#sourceParameter">[?]</a></th><td style="text-align: left;"><a href="#extract_tissue.cwl%23tissue">extract_tissue.cwl#tissue</a></td></tr><tr><th class="prop" style="text-align: left;">targetParameter<span>&nbsp;</span><a href="https://w3id.org/ro/terms/workflow-run#targetParameter">[?]</a></th><td style="text-align: left;"><a href="#predictions.cwl%23tissue">predictions.cwl#tissue</a></td></tr></tbody></table></div><hr /><br /><br /><div id="%237d6b1068-b8c6-47df-902f-85383115865d"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>#7d6b1068-b8c6-47df-902f-85383115865d</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>ParameterConnection</span></td></tr><tr><th class="prop" style="text-align: left;">sourceParameter<span>&nbsp;</span><a href="https://w3id.org/ro/terms/workflow-run#sourceParameter">[?]</a></th><td style="text-align: left;"><a href="#classify_tumor.cwl%23tumor">classify_tumor.cwl#tumor</a></td></tr><tr><th class="prop" style="text-align: left;">targetParameter<span>&nbsp;</span><a href="https://w3id.org/ro/terms/workflow-run#targetParameter">[?]</a></th><td style="text-align: left;"><a href="#predictions.cwl%23tumor">predictions.cwl#tumor</a></td></tr></tbody></table></div><hr /><br /><br /><div id="predictions.cwl"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>predictions.cwl</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><ul><li><span>SoftwareSourceCode</span></li><li><span>ComputationalWorkflow</span></li><li><span>HowTo</span></li><li><span>File</span></li></ul></td></tr><tr><th class="prop" style="text-align: left;">name<span>&nbsp;</span><a href="https://schema.org/name">[?]</a></th><td style="text-align: left;"><span>predictions.cwl</span></td></tr><tr><th class="prop" style="text-align: left;">conformsTo<span>&nbsp;</span><a href="https://schema.org/conformsTo">[?]</a></th><td style="text-align: left;"><span>https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/</span></td></tr><tr><th class="prop" style="text-align: left;">programmingLanguage<span>&nbsp;</span><a href="https://schema.org/programmingLanguage">[?]</a></th><td style="text-align: left;"><a href="#https%3A//w3id.org/workflowhub/workflow-ro-crate%23cwl">https://w3id.org/workflowhub/workflow-ro-crate#cwl</a></td></tr><tr><th class="prop" style="text-align: left;">input<span>&nbsp;</span><a href="https://bioschemas.org/ComputationalWorkflow#input">[?]</a></th><td style="text-align: left;"><ul><li><a href="#predictions.cwl%23gpu">predictions.cwl#gpu</a></li><li><a href="#predictions.cwl%23slide">predictions.cwl#slide</a></li><li><a href="#predictions.cwl%23tissue-high-batch-size">predictions.cwl#tissue-high-batch-size</a></li><li><a href="#predictions.cwl%23tissue-high-chunk-size">predictions.cwl#tissue-high-chunk-size</a></li><li><a href="#predictions.cwl%23tissue-high-filter">predictions.cwl#tissue-high-filter</a></li><li><a href="#predictions.cwl%23tissue-high-label">predictions.cwl#tissue-high-label</a></li><li><a href="#predictions.cwl%23tissue-high-level">predictions.cwl#tissue-high-level</a></li><li><a href="#predictions.cwl%23tissue-low-batch-size">predictions.cwl#tissue-low-batch-size</a></li><li><a href="#predictions.cwl%23tissue-low-chunk-size">predictions.cwl#tissue-low-chunk-size</a></li><li><a href="#predictions.cwl%23tissue-low-label">predictions.cwl#tissue-low-label</a></li><li><a href="#predictions.cwl%23tissue-low-level">predictions.cwl#tissue-low-level</a></li><li><a href="#predictions.cwl%23tumor-batch-size">predictions.cwl#tumor-batch-size</a></li><li><a href="#predictions.cwl%23tumor-chunk-size">predictions.cwl#tumor-chunk-size</a></li><li><a href="#predictions.cwl%23tumor-filter">predictions.cwl#tumor-filter</a></li><li><a href="#predictions.cwl%23tumor-label">predictions.cwl#tumor-label</a></li><li><a href="#predictions.cwl%23tumor-level">predictions.cwl#tumor-level</a></li></ul></td></tr><tr><th class="prop" style="text-align: left;">output<span>&nbsp;</span><a href="https://bioschemas.org/ComputationalWorkflow#output">[?]</a></th><td style="text-align: left;"><ul><li><a href="#predictions.cwl%23tissue">predictions.cwl#tissue</a></li><li><a href="#predictions.cwl%23tumor">predictions.cwl#tumor</a></li></ul></td></tr><tr><th class="prop" style="text-align: left;">step<span>&nbsp;</span><a href="https://schema.org/step">[?]</a></th><td style="text-align: left;"><ul><li><a href="#predictions.cwl%23extract-tissue-low">predictions.cwl#extract-tissue-low</a></li><li><a href="#predictions.cwl%23extract-tissue-high">predictions.cwl#extract-tissue-high</a></li><li><a href="#predictions.cwl%23classify-tumor">predictions.cwl#classify-tumor</a></li></ul></td></tr><tr><th class="prop" style="text-align: left;">hasPart<span>&nbsp;</span><a href="https://schema.org/hasPart">[?]</a></th><td style="text-align: left;"><ul><li><a href="#extract_tissue.cwl">extract_tissue.cwl</a></li><li><a href="#classify_tumor.cwl">classify_tumor.cwl</a></li></ul></td></tr><tr><th class="prop" style="text-align: left;">connection<span>&nbsp;</span><a href="https://w3id.org/ro/terms/workflow-run#connection">[?]</a></th><td style="text-align: left;"><ul><li><a href="#%230aaeeca3-802a-45ce-b527-e4f746c08cea">#0aaeeca3-802a-45ce-b527-e4f746c08cea</a></li><li><a href="#%237d6b1068-b8c6-47df-902f-85383115865d">#7d6b1068-b8c6-47df-902f-85383115865d</a></li></ul></td></tr></tbody></table></div><hr /><br /><br /><div><h3><a href="predictions.cwl">Download: </a>predictions.cwl</h3></div><div id="%23c0080ce4-e220-44bf-92b3-c59e6d590059"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>#c0080ce4-e220-44bf-92b3-c59e6d590059</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>SoftwareApplication</span></td></tr><tr><th class="prop" style="text-align: left;">name<span>&nbsp;</span><a href="https://schema.org/name">[?]</a></th><td style="text-align: left;"><span>StreamFlow 0.2.0.dev2</span></td></tr></tbody></table></div><hr /><br /><br /><div id="%232ac884e6-3763-4893-956e-53446acb22d9"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>#2ac884e6-3763-4893-956e-53446acb22d9</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>CreateAction</span></td></tr><tr><th class="prop" style="text-align: left;">actionStatus<span>&nbsp;</span><a href="https://schema.org/actionStatus">[?]</a></th><td style="text-align: left;"><span>CompletedActionStatus</span></td></tr><tr><th class="prop" style="text-align: left;">endTime<span>&nbsp;</span><a href="https://schema.org/endTime">[?]</a></th><td style="text-align: left;"><span>2022-11-26T22:37:08.757424+00:00</span></td></tr><tr><th class="prop" style="text-align: left;">instrument<span>&nbsp;</span><a href="https://schema.org/instrument">[?]</a></th><td style="text-align: left;"><a href="#predictions.cwl">predictions.cwl</a></td></tr><tr><th class="prop" style="text-align: left;">name<span>&nbsp;</span><a href="https://schema.org/name">[?]</a></th><td style="text-align: left;"><span>Run of workflow/predictions.cwl</span></td></tr><tr><th class="prop" style="text-align: left;">startTime<span>&nbsp;</span><a href="https://schema.org/startTime">[?]</a></th><td style="text-align: left;"><span>2022-11-26T22:37:00.579914+00:00</span></td></tr><tr><th class="prop" style="text-align: left;">object<span>&nbsp;</span><a href="https://schema.org/object">[?]</a></th><td style="text-align: left;"><ul><li><a href="#f62aa607a75508ac5fc6a22e9c0e39ef58a2c852">f62aa607a75508ac5fc6a22e9c0e39ef58a2c852</a></li><li><a href="#%238f2e6a1b-8c8d-4336-aa36-e9f2923f1774">#8f2e6a1b-8c8d-4336-aa36-e9f2923f1774</a></li><li><a href="#%23c91eaf1b-d3c7-4f9b-ae89-833b4caf2b2b">#c91eaf1b-d3c7-4f9b-ae89-833b4caf2b2b</a></li><li><a href="#%23685140a6-89d6-4510-b092-e155293b7e7e">#685140a6-89d6-4510-b092-e155293b7e7e</a></li><li><a href="#%23b55aa9f1-ece0-4793-afd7-803e1b9b7521">#b55aa9f1-ece0-4793-afd7-803e1b9b7521</a></li><li><a href="#%23d78e1b38-2959-433c-9844-65cdba9b3eb7">#d78e1b38-2959-433c-9844-65cdba9b3eb7</a></li><li><a href="#%239d030e68-6929-4dcc-9083-327eb5982f6a">#9d030e68-6929-4dcc-9083-327eb5982f6a</a></li><li><a href="#%236740b006-b642-4da0-8c47-4556cd074d0a">#6740b006-b642-4da0-8c47-4556cd074d0a</a></li><li><a href="#%232cc92add-eb95-43be-9c90-0ab74b13fd11">#2cc92add-eb95-43be-9c90-0ab74b13fd11</a></li><li><a href="#%234fd18852-abbd-4b2f-b1f9-3d38a0217fed">#4fd18852-abbd-4b2f-b1f9-3d38a0217fed</a></li><li><a href="#%23628ceb4f-3817-4dce-bc4f-a8037a74ad31">#628ceb4f-3817-4dce-bc4f-a8037a74ad31</a></li><li><a href="#%23182359db-a5f7-4ff2-a53e-10c8fd89b800">#182359db-a5f7-4ff2-a53e-10c8fd89b800</a></li><li><a href="#%233028074e-4c3d-4df0-887f-7b0a13026313">#3028074e-4c3d-4df0-887f-7b0a13026313</a></li><li><a href="#%231092fed3-0033-4ab8-8681-a78e4312ac4f">#1092fed3-0033-4ab8-8681-a78e4312ac4f</a></li><li><a href="#%2318d7d0da-651a-43d9-a7ed-81d33a639438">#18d7d0da-651a-43d9-a7ed-81d33a639438</a></li><li><a href="#%231c5046dc-ce75-4e06-9153-a72147d5ef1f">#1c5046dc-ce75-4e06-9153-a72147d5ef1f</a></li><li><a href="#%2369a44e09-5003-443f-9095-1ad18b5b8ebd">#69a44e09-5003-443f-9095-1ad18b5b8ebd</a></li><li><a href="#%231ceecb41-1f9a-46ad-ab65-c223975302fb">#1ceecb41-1f9a-46ad-ab65-c223975302fb</a></li><li><a href="#%23d508c8af-fda6-4561-95c4-f3a4f76ae786">#d508c8af-fda6-4561-95c4-f3a4f76ae786</a></li><li><a href="#%2319168124-bb17-4926-be46-2b53ee4f28ec">#19168124-bb17-4926-be46-2b53ee4f28ec</a></li></ul></td></tr></tbody></table></div><hr /><br /><br /><div id="%239f40bee2-0ea5-49f8-b291-dd626ba2f8cb"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>#9f40bee2-0ea5-49f8-b291-dd626ba2f8cb</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>OrganizeAction</span></td></tr><tr><th class="prop" style="text-align: left;">instrument<span>&nbsp;</span><a href="https://schema.org/instrument">[?]</a></th><td style="text-align: left;"><a href="#%23c0080ce4-e220-44bf-92b3-c59e6d590059">#c0080ce4-e220-44bf-92b3-c59e6d590059</a></td></tr><tr><th class="prop" style="text-align: left;">name<span>&nbsp;</span><a href="https://schema.org/name">[?]</a></th><td style="text-align: left;"><span>Run of StreamFlow 0.2.0.dev2</span></td></tr><tr><th class="prop" style="text-align: left;">result<span>&nbsp;</span><a href="https://schema.org/result">[?]</a></th><td style="text-align: left;"><a href="#%232ac884e6-3763-4893-956e-53446acb22d9">#2ac884e6-3763-4893-956e-53446acb22d9</a></td></tr><tr><th class="prop" style="text-align: left;">object<span>&nbsp;</span><a href="https://schema.org/object">[?]</a></th><td style="text-align: left;"><ul><li><a href="#%238e41b9b0-b44d-44ed-b451-829ac31a5281">#8e41b9b0-b44d-44ed-b451-829ac31a5281</a></li><li><a href="#%233c34f0f5-2cab-4dba-a216-8af7b9591bac">#3c34f0f5-2cab-4dba-a216-8af7b9591bac</a></li><li><a href="#%2385c95278-9ef2-45ca-814e-f33f0c13a8b5">#85c95278-9ef2-45ca-814e-f33f0c13a8b5</a></li></ul></td></tr></tbody></table></div><hr /><br /><br /><div id="%2399b9f647-d1eb-4ef1-b6b5-6d9ee1f585dc"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>#99b9f647-d1eb-4ef1-b6b5-6d9ee1f585dc</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>CreateAction</span></td></tr><tr><th class="prop" style="text-align: left;">actionStatus<span>&nbsp;</span><a href="https://schema.org/actionStatus">[?]</a></th><td style="text-align: left;"><span>CompletedActionStatus</span></td></tr><tr><th class="prop" style="text-align: left;">endTime<span>&nbsp;</span><a href="https://schema.org/endTime">[?]</a></th><td style="text-align: left;"><span>2022-11-26T22:37:03.413674+00:00</span></td></tr><tr><th class="prop" style="text-align: left;">instrument<span>&nbsp;</span><a href="https://schema.org/instrument">[?]</a></th><td style="text-align: left;"><a href="#extract_tissue.cwl">extract_tissue.cwl</a></td></tr><tr><th class="prop" style="text-align: left;">name<span>&nbsp;</span><a href="https://schema.org/name">[?]</a></th><td style="text-align: left;"><span>Run of workflow/predictions.cwl#extract-tissue-low</span></td></tr><tr><th class="prop" style="text-align: left;">startTime<span>&nbsp;</span><a href="https://schema.org/startTime">[?]</a></th><td style="text-align: left;"><span>2022-11-26T22:37:02.353244+00:00</span></td></tr><tr><th class="prop" style="text-align: left;">object<span>&nbsp;</span><a href="https://schema.org/object">[?]</a></th><td style="text-align: left;"><ul><li><a href="#%234fd18852-abbd-4b2f-b1f9-3d38a0217fed">#4fd18852-abbd-4b2f-b1f9-3d38a0217fed</a></li><li><a href="#%23628ceb4f-3817-4dce-bc4f-a8037a74ad31">#628ceb4f-3817-4dce-bc4f-a8037a74ad31</a></li><li><a href="#%23182359db-a5f7-4ff2-a53e-10c8fd89b800">#182359db-a5f7-4ff2-a53e-10c8fd89b800</a></li><li><a href="#%233028074e-4c3d-4df0-887f-7b0a13026313">#3028074e-4c3d-4df0-887f-7b0a13026313</a></li><li><a href="#a9805401269ade2a88b56d0e9a0b389041bebdff">a9805401269ade2a88b56d0e9a0b389041bebdff</a></li><li><a href="#%231092fed3-0033-4ab8-8681-a78e4312ac4f">#1092fed3-0033-4ab8-8681-a78e4312ac4f</a></li><li><a href="#%2318d7d0da-651a-43d9-a7ed-81d33a639438">#18d7d0da-651a-43d9-a7ed-81d33a639438</a></li><li><a href="#%231c5046dc-ce75-4e06-9153-a72147d5ef1f">#1c5046dc-ce75-4e06-9153-a72147d5ef1f</a></li></ul></td></tr><tr><th class="prop" style="text-align: left;">result<span>&nbsp;</span><a href="https://schema.org/result">[?]</a></th><td style="text-align: left;"><ul><li><a href="#a9805401269ade2a88b56d0e9a0b389041bebdff">a9805401269ade2a88b56d0e9a0b389041bebdff</a></li><li><a href="#741c6947917667777aafae95c3252d2a20bd88f5">741c6947917667777aafae95c3252d2a20bd88f5</a></li></ul></td></tr></tbody></table></div><hr /><br /><br /><div id="%238e41b9b0-b44d-44ed-b451-829ac31a5281"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>#8e41b9b0-b44d-44ed-b451-829ac31a5281</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>ControlAction</span></td></tr><tr><th class="prop" style="text-align: left;">instrument<span>&nbsp;</span><a href="https://schema.org/instrument">[?]</a></th><td style="text-align: left;"><a href="#predictions.cwl%23extract-tissue-low">predictions.cwl#extract-tissue-low</a></td></tr><tr><th class="prop" style="text-align: left;">name<span>&nbsp;</span><a href="https://schema.org/name">[?]</a></th><td style="text-align: left;"><span>orchestrate extract_tissue.cwl</span></td></tr><tr><th class="prop" style="text-align: left;">object<span>&nbsp;</span><a href="https://schema.org/object">[?]</a></th><td style="text-align: left;"><a href="#%2399b9f647-d1eb-4ef1-b6b5-6d9ee1f585dc">#99b9f647-d1eb-4ef1-b6b5-6d9ee1f585dc</a></td></tr></tbody></table></div><hr /><br /><br /><div id="%233e9e1d9e-fba5-4ebe-970c-2cc140b41afe"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>#3e9e1d9e-fba5-4ebe-970c-2cc140b41afe</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>CreateAction</span></td></tr><tr><th class="prop" style="text-align: left;">actionStatus<span>&nbsp;</span><a href="https://schema.org/actionStatus">[?]</a></th><td style="text-align: left;"><span>CompletedActionStatus</span></td></tr><tr><th class="prop" style="text-align: left;">endTime<span>&nbsp;</span><a href="https://schema.org/endTime">[?]</a></th><td style="text-align: left;"><span>2022-11-26T22:37:06.353684+00:00</span></td></tr><tr><th class="prop" style="text-align: left;">instrument<span>&nbsp;</span><a href="https://schema.org/instrument">[?]</a></th><td style="text-align: left;"><a href="#extract_tissue.cwl">extract_tissue.cwl</a></td></tr><tr><th class="prop" style="text-align: left;">name<span>&nbsp;</span><a href="https://schema.org/name">[?]</a></th><td style="text-align: left;"><span>Run of workflow/predictions.cwl#extract-tissue-high</span></td></tr><tr><th class="prop" style="text-align: left;">startTime<span>&nbsp;</span><a href="https://schema.org/startTime">[?]</a></th><td style="text-align: left;"><span>2022-11-26T22:37:04.834306+00:00</span></td></tr><tr><th class="prop" style="text-align: left;">object<span>&nbsp;</span><a href="https://schema.org/object">[?]</a></th><td style="text-align: left;"><ul><li><a href="#%234fd18852-abbd-4b2f-b1f9-3d38a0217fed">#4fd18852-abbd-4b2f-b1f9-3d38a0217fed</a></li><li><a href="#%23628ceb4f-3817-4dce-bc4f-a8037a74ad31">#628ceb4f-3817-4dce-bc4f-a8037a74ad31</a></li><li><a href="#%23182359db-a5f7-4ff2-a53e-10c8fd89b800">#182359db-a5f7-4ff2-a53e-10c8fd89b800</a></li><li><a href="#%233028074e-4c3d-4df0-887f-7b0a13026313">#3028074e-4c3d-4df0-887f-7b0a13026313</a></li><li><a href="#a9805401269ade2a88b56d0e9a0b389041bebdff">a9805401269ade2a88b56d0e9a0b389041bebdff</a></li><li><a href="#%231092fed3-0033-4ab8-8681-a78e4312ac4f">#1092fed3-0033-4ab8-8681-a78e4312ac4f</a></li><li><a href="#%2318d7d0da-651a-43d9-a7ed-81d33a639438">#18d7d0da-651a-43d9-a7ed-81d33a639438</a></li><li><a href="#%231c5046dc-ce75-4e06-9153-a72147d5ef1f">#1c5046dc-ce75-4e06-9153-a72147d5ef1f</a></li></ul></td></tr><tr><th class="prop" style="text-align: left;">result<span>&nbsp;</span><a href="https://schema.org/result">[?]</a></th><td style="text-align: left;"><ul><li><a href="#a9805401269ade2a88b56d0e9a0b389041bebdff">a9805401269ade2a88b56d0e9a0b389041bebdff</a></li><li><a href="#741c6947917667777aafae95c3252d2a20bd88f5">741c6947917667777aafae95c3252d2a20bd88f5</a></li></ul></td></tr></tbody></table></div><hr /><br /><br /><div id="%233c34f0f5-2cab-4dba-a216-8af7b9591bac"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>#3c34f0f5-2cab-4dba-a216-8af7b9591bac</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>ControlAction</span></td></tr><tr><th class="prop" style="text-align: left;">instrument<span>&nbsp;</span><a href="https://schema.org/instrument">[?]</a></th><td style="text-align: left;"><a href="#predictions.cwl%23extract-tissue-high">predictions.cwl#extract-tissue-high</a></td></tr><tr><th class="prop" style="text-align: left;">name<span>&nbsp;</span><a href="https://schema.org/name">[?]</a></th><td style="text-align: left;"><span>orchestrate extract_tissue.cwl</span></td></tr><tr><th class="prop" style="text-align: left;">object<span>&nbsp;</span><a href="https://schema.org/object">[?]</a></th><td style="text-align: left;"><a href="#%233e9e1d9e-fba5-4ebe-970c-2cc140b41afe">#3e9e1d9e-fba5-4ebe-970c-2cc140b41afe</a></td></tr></tbody></table></div><hr /><br /><br /><div id="%235b00fedf-f183-44f4-9355-70a7c1df8e96"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>#5b00fedf-f183-44f4-9355-70a7c1df8e96</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>CreateAction</span></td></tr><tr><th class="prop" style="text-align: left;">actionStatus<span>&nbsp;</span><a href="https://schema.org/actionStatus">[?]</a></th><td style="text-align: left;"><span>CompletedActionStatus</span></td></tr><tr><th class="prop" style="text-align: left;">endTime<span>&nbsp;</span><a href="https://schema.org/endTime">[?]</a></th><td style="text-align: left;"><span>2022-11-26T22:37:07.925294+00:00</span></td></tr><tr><th class="prop" style="text-align: left;">instrument<span>&nbsp;</span><a href="https://schema.org/instrument">[?]</a></th><td style="text-align: left;"><a href="#classify_tumor.cwl">classify_tumor.cwl</a></td></tr><tr><th class="prop" style="text-align: left;">name<span>&nbsp;</span><a href="https://schema.org/name">[?]</a></th><td style="text-align: left;"><span>Run of workflow/predictions.cwl#classify-tumor</span></td></tr><tr><th class="prop" style="text-align: left;">startTime<span>&nbsp;</span><a href="https://schema.org/startTime">[?]</a></th><td style="text-align: left;"><span>2022-11-26T22:37:07.333229+00:00</span></td></tr><tr><th class="prop" style="text-align: left;">object<span>&nbsp;</span><a href="https://schema.org/object">[?]</a></th><td style="text-align: left;"><ul><li><a href="#%2369a44e09-5003-443f-9095-1ad18b5b8ebd">#69a44e09-5003-443f-9095-1ad18b5b8ebd</a></li><li><a href="#a9805401269ade2a88b56d0e9a0b389041bebdff">a9805401269ade2a88b56d0e9a0b389041bebdff</a></li><li><a href="#%231ceecb41-1f9a-46ad-ab65-c223975302fb">#1ceecb41-1f9a-46ad-ab65-c223975302fb</a></li><li><a href="#%23d508c8af-fda6-4561-95c4-f3a4f76ae786">#d508c8af-fda6-4561-95c4-f3a4f76ae786</a></li><li><a href="#%2319168124-bb17-4926-be46-2b53ee4f28ec">#19168124-bb17-4926-be46-2b53ee4f28ec</a></li></ul></td></tr><tr><th class="prop" style="text-align: left;">result<span>&nbsp;</span><a href="https://schema.org/result">[?]</a></th><td style="text-align: left;"><a href="#e75ee6d0751bb2dbc7a894af0fe307e4fe020a99">e75ee6d0751bb2dbc7a894af0fe307e4fe020a99</a></td></tr></tbody></table></div><hr /><br /><br /><div id="%2385c95278-9ef2-45ca-814e-f33f0c13a8b5"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>#85c95278-9ef2-45ca-814e-f33f0c13a8b5</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>ControlAction</span></td></tr><tr><th class="prop" style="text-align: left;">instrument<span>&nbsp;</span><a href="https://schema.org/instrument">[?]</a></th><td style="text-align: left;"><a href="#predictions.cwl%23classify-tumor">predictions.cwl#classify-tumor</a></td></tr><tr><th class="prop" style="text-align: left;">name<span>&nbsp;</span><a href="https://schema.org/name">[?]</a></th><td style="text-align: left;"><span>orchestrate classify_tumor.cwl</span></td></tr><tr><th class="prop" style="text-align: left;">object<span>&nbsp;</span><a href="https://schema.org/object">[?]</a></th><td style="text-align: left;"><a href="#%235b00fedf-f183-44f4-9355-70a7c1df8e96">#5b00fedf-f183-44f4-9355-70a7c1df8e96</a></td></tr></tbody></table></div><hr /><br /><br /><div id="f62aa607a75508ac5fc6a22e9c0e39ef58a2c852"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>f62aa607a75508ac5fc6a22e9c0e39ef58a2c852</span></td></tr><tr><th class="prop" style="text-align: left;">alternateName<span>&nbsp;</span><a href="https://schema.org/alternateName">[?]</a></th><td style="text-align: left;"><span>Mirax2-Fluorescence-2.mrxs</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>File</span></td></tr></tbody></table></div><hr /><br /><br /><div><h3><a href="f62aa607a75508ac5fc6a22e9c0e39ef58a2c852">Download: </a>f62aa607a75508ac5fc6a22e9c0e39ef58a2c852</h3></div><div id="%238f2e6a1b-8c8d-4336-aa36-e9f2923f1774"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>#8f2e6a1b-8c8d-4336-aa36-e9f2923f1774</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>PropertyValue</span></td></tr><tr><th class="prop" style="text-align: left;">name<span>&nbsp;</span><a href="https://schema.org/name">[?]</a></th><td style="text-align: left;"><span>tissue-high-filter</span></td></tr><tr><th class="prop" style="text-align: left;">value<span>&nbsp;</span><a href="https://schema.org/value">[?]</a></th><td style="text-align: left;"><span>tissue_low&gt;0.9</span></td></tr><tr><th class="prop" style="text-align: left;">exampleOfWork<span>&nbsp;</span><a href="https://schema.org/exampleOfWork">[?]</a></th><td style="text-align: left;"><a href="#predictions.cwl%23tissue-high-filter">predictions.cwl#tissue-high-filter</a></td></tr></tbody></table></div><hr /><br /><br /><div id="%23c91eaf1b-d3c7-4f9b-ae89-833b4caf2b2b"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>#c91eaf1b-d3c7-4f9b-ae89-833b4caf2b2b</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>PropertyValue</span></td></tr><tr><th class="prop" style="text-align: left;">name<span>&nbsp;</span><a href="https://schema.org/name">[?]</a></th><td style="text-align: left;"><span>tissue-high-label</span></td></tr><tr><th class="prop" style="text-align: left;">value<span>&nbsp;</span><a href="https://schema.org/value">[?]</a></th><td style="text-align: left;"><span>tissue_high</span></td></tr><tr><th class="prop" style="text-align: left;">exampleOfWork<span>&nbsp;</span><a href="https://schema.org/exampleOfWork">[?]</a></th><td style="text-align: left;"><a href="#predictions.cwl%23tissue-high-label">predictions.cwl#tissue-high-label</a></td></tr></tbody></table></div><hr /><br /><br /><div id="%23685140a6-89d6-4510-b092-e155293b7e7e"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>#685140a6-89d6-4510-b092-e155293b7e7e</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>PropertyValue</span></td></tr><tr><th class="prop" style="text-align: left;">name<span>&nbsp;</span><a href="https://schema.org/name">[?]</a></th><td style="text-align: left;"><span>tissue-high-level</span></td></tr><tr><th class="prop" style="text-align: left;">value<span>&nbsp;</span><a href="https://schema.org/value">[?]</a></th><td style="text-align: left;"><span>4</span></td></tr><tr><th class="prop" style="text-align: left;">exampleOfWork<span>&nbsp;</span><a href="https://schema.org/exampleOfWork">[?]</a></th><td style="text-align: left;"><a href="#predictions.cwl%23tissue-high-level">predictions.cwl#tissue-high-level</a></td></tr></tbody></table></div><hr /><br /><br /><div id="%23b55aa9f1-ece0-4793-afd7-803e1b9b7521"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>#b55aa9f1-ece0-4793-afd7-803e1b9b7521</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>PropertyValue</span></td></tr><tr><th class="prop" style="text-align: left;">name<span>&nbsp;</span><a href="https://schema.org/name">[?]</a></th><td style="text-align: left;"><span>tissue-low-label</span></td></tr><tr><th class="prop" style="text-align: left;">value<span>&nbsp;</span><a href="https://schema.org/value">[?]</a></th><td style="text-align: left;"><span>tissue_low</span></td></tr><tr><th class="prop" style="text-align: left;">exampleOfWork<span>&nbsp;</span><a href="https://schema.org/exampleOfWork">[?]</a></th><td style="text-align: left;"><a href="#predictions.cwl%23tissue-low-label">predictions.cwl#tissue-low-label</a></td></tr></tbody></table></div><hr /><br /><br /><div id="%23d78e1b38-2959-433c-9844-65cdba9b3eb7"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>#d78e1b38-2959-433c-9844-65cdba9b3eb7</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>PropertyValue</span></td></tr><tr><th class="prop" style="text-align: left;">name<span>&nbsp;</span><a href="https://schema.org/name">[?]</a></th><td style="text-align: left;"><span>tissue-low-level</span></td></tr><tr><th class="prop" style="text-align: left;">value<span>&nbsp;</span><a href="https://schema.org/value">[?]</a></th><td style="text-align: left;"><span>9</span></td></tr><tr><th class="prop" style="text-align: left;">exampleOfWork<span>&nbsp;</span><a href="https://schema.org/exampleOfWork">[?]</a></th><td style="text-align: left;"><a href="#predictions.cwl%23tissue-low-level">predictions.cwl#tissue-low-level</a></td></tr></tbody></table></div><hr /><br /><br /><div id="%239d030e68-6929-4dcc-9083-327eb5982f6a"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>#9d030e68-6929-4dcc-9083-327eb5982f6a</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>PropertyValue</span></td></tr><tr><th class="prop" style="text-align: left;">name<span>&nbsp;</span><a href="https://schema.org/name">[?]</a></th><td style="text-align: left;"><span>tumor-filter</span></td></tr><tr><th class="prop" style="text-align: left;">value<span>&nbsp;</span><a href="https://schema.org/value">[?]</a></th><td style="text-align: left;"><span>tissue_low&gt;0.99</span></td></tr><tr><th class="prop" style="text-align: left;">exampleOfWork<span>&nbsp;</span><a href="https://schema.org/exampleOfWork">[?]</a></th><td style="text-align: left;"><a href="#predictions.cwl%23tumor-filter">predictions.cwl#tumor-filter</a></td></tr></tbody></table></div><hr /><br /><br /><div id="%236740b006-b642-4da0-8c47-4556cd074d0a"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>#6740b006-b642-4da0-8c47-4556cd074d0a</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>PropertyValue</span></td></tr><tr><th class="prop" style="text-align: left;">name<span>&nbsp;</span><a href="https://schema.org/name">[?]</a></th><td style="text-align: left;"><span>tumor-label</span></td></tr><tr><th class="prop" style="text-align: left;">value<span>&nbsp;</span><a href="https://schema.org/value">[?]</a></th><td style="text-align: left;"><span>tumor</span></td></tr><tr><th class="prop" style="text-align: left;">exampleOfWork<span>&nbsp;</span><a href="https://schema.org/exampleOfWork">[?]</a></th><td style="text-align: left;"><a href="#predictions.cwl%23tumor-label">predictions.cwl#tumor-label</a></td></tr></tbody></table></div><hr /><br /><br /><div id="%232cc92add-eb95-43be-9c90-0ab74b13fd11"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>#2cc92add-eb95-43be-9c90-0ab74b13fd11</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>PropertyValue</span></td></tr><tr><th class="prop" style="text-align: left;">name<span>&nbsp;</span><a href="https://schema.org/name">[?]</a></th><td style="text-align: left;"><span>tumor-level</span></td></tr><tr><th class="prop" style="text-align: left;">value<span>&nbsp;</span><a href="https://schema.org/value">[?]</a></th><td style="text-align: left;"><span>1</span></td></tr><tr><th class="prop" style="text-align: left;">exampleOfWork<span>&nbsp;</span><a href="https://schema.org/exampleOfWork">[?]</a></th><td style="text-align: left;"><a href="#predictions.cwl%23tumor-level">predictions.cwl#tumor-level</a></td></tr></tbody></table></div><hr /><br /><br /><div id="%234fd18852-abbd-4b2f-b1f9-3d38a0217fed"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>#4fd18852-abbd-4b2f-b1f9-3d38a0217fed</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>PropertyValue</span></td></tr><tr><th class="prop" style="text-align: left;">name<span>&nbsp;</span><a href="https://schema.org/name">[?]</a></th><td style="text-align: left;"><span>label</span></td></tr><tr><th class="prop" style="text-align: left;">value<span>&nbsp;</span><a href="https://schema.org/value">[?]</a></th><td style="text-align: left;"><span>tissue_low</span></td></tr><tr><th class="prop" style="text-align: left;">exampleOfWork<span>&nbsp;</span><a href="https://schema.org/exampleOfWork">[?]</a></th><td style="text-align: left;"><ul><li><a href="#extract_tissue.cwl%23label">extract_tissue.cwl#label</a></li><li><a href="#predictions.cwl%23tissue-low-label">predictions.cwl#tissue-low-label</a></li></ul></td></tr></tbody></table></div><hr /><br /><br /><div id="%23628ceb4f-3817-4dce-bc4f-a8037a74ad31"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>#628ceb4f-3817-4dce-bc4f-a8037a74ad31</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>PropertyValue</span></td></tr><tr><th class="prop" style="text-align: left;">name<span>&nbsp;</span><a href="https://schema.org/name">[?]</a></th><td style="text-align: left;"><span>level</span></td></tr><tr><th class="prop" style="text-align: left;">value<span>&nbsp;</span><a href="https://schema.org/value">[?]</a></th><td style="text-align: left;"><span>9</span></td></tr><tr><th class="prop" style="text-align: left;">exampleOfWork<span>&nbsp;</span><a href="https://schema.org/exampleOfWork">[?]</a></th><td style="text-align: left;"><ul><li><a href="#extract_tissue.cwl%23level">extract_tissue.cwl#level</a></li><li><a href="#predictions.cwl%23tissue-low-level">predictions.cwl#tissue-low-level</a></li></ul></td></tr></tbody></table></div><hr /><br /><br /><div id="f331ecff28e8c7df695c98dbc22760d8d658a1b0"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>Dataset</span></td></tr><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>f331ecff28e8c7df695c98dbc22760d8d658a1b0</span></td></tr><tr><th class="prop" style="text-align: left;">alternateName<span>&nbsp;</span><a href="https://schema.org/alternateName">[?]</a></th><td style="text-align: left;"><span>Mirax2-Fluorescence-2</span></td></tr><tr><th class="prop" style="text-align: left;">hasPart<span>&nbsp;</span><a href="https://schema.org/hasPart">[?]</a></th><td style="text-align: left;"><ul><li><a href="#f331ecff28e8c7df695c98dbc22760d8d658a1b0/862eeec8b906cff93bcd1c5ab5e5ec8fc93a2ef1">f331ecff28e8c7df695c98dbc22760d8d658a1b0/862eeec8b906cff93bcd1c5ab5e5ec8fc93a2ef1</a></li><li><a href="#f331ecff28e8c7df695c98dbc22760d8d658a1b0/9e748097f79d8317b30fcc11833553434e19b02c">f331ecff28e8c7df695c98dbc22760d8d658a1b0/9e748097f79d8317b30fcc11833553434e19b02c</a></li><li><a href="#f331ecff28e8c7df695c98dbc22760d8d658a1b0/b43c1cd0875d23bd20dc794fa20255cf272108ec">f331ecff28e8c7df695c98dbc22760d8d658a1b0/b43c1cd0875d23bd20dc794fa20255cf272108ec</a></li><li><a href="#f331ecff28e8c7df695c98dbc22760d8d658a1b0/ae7c542bebbacf8d167fae831b69480e19e9c3b0">f331ecff28e8c7df695c98dbc22760d8d658a1b0/ae7c542bebbacf8d167fae831b69480e19e9c3b0</a></li><li><a href="#f331ecff28e8c7df695c98dbc22760d8d658a1b0/d55cbe9ea0ac43eaa69bb8c21eac07539249734f">f331ecff28e8c7df695c98dbc22760d8d658a1b0/d55cbe9ea0ac43eaa69bb8c21eac07539249734f</a></li><li><a href="#f331ecff28e8c7df695c98dbc22760d8d658a1b0/8e9d580e86f48791871b086f3c27269a03f57897">f331ecff28e8c7df695c98dbc22760d8d658a1b0/8e9d580e86f48791871b086f3c27269a03f57897</a></li><li><a href="#f331ecff28e8c7df695c98dbc22760d8d658a1b0/cf03a8a5713c038c566734cf11f81cc03a41efa6">f331ecff28e8c7df695c98dbc22760d8d658a1b0/cf03a8a5713c038c566734cf11f81cc03a41efa6</a></li><li><a href="#f331ecff28e8c7df695c98dbc22760d8d658a1b0/a1ad0dfd5f6e24aa90bdf9da0a688e6a0c268905">f331ecff28e8c7df695c98dbc22760d8d658a1b0/a1ad0dfd5f6e24aa90bdf9da0a688e6a0c268905</a></li><li><a href="#f331ecff28e8c7df695c98dbc22760d8d658a1b0/46c443af080a36000c9298b49b675eb240eeb41c">f331ecff28e8c7df695c98dbc22760d8d658a1b0/46c443af080a36000c9298b49b675eb240eeb41c</a></li><li><a href="#f331ecff28e8c7df695c98dbc22760d8d658a1b0/ce3d0d6addaced3e58578e42c341f44737b5aa84">f331ecff28e8c7df695c98dbc22760d8d658a1b0/ce3d0d6addaced3e58578e42c341f44737b5aa84</a></li><li><a href="#f331ecff28e8c7df695c98dbc22760d8d658a1b0/52e0419ea116b78bc330d36f93bc2b4ec2bf8210">f331ecff28e8c7df695c98dbc22760d8d658a1b0/52e0419ea116b78bc330d36f93bc2b4ec2bf8210</a></li><li><a href="#f331ecff28e8c7df695c98dbc22760d8d658a1b0/bc709e1a4da6e506f81150ee39907d0224e066fb">f331ecff28e8c7df695c98dbc22760d8d658a1b0/bc709e1a4da6e506f81150ee39907d0224e066fb</a></li><li><a href="#f331ecff28e8c7df695c98dbc22760d8d658a1b0/a16fec38b4b7adf7dc1f8e9e58f6956a249a0a08">f331ecff28e8c7df695c98dbc22760d8d658a1b0/a16fec38b4b7adf7dc1f8e9e58f6956a249a0a08</a></li><li><a href="#f331ecff28e8c7df695c98dbc22760d8d658a1b0/590783315f628a3acd02b9341572138b3a3224db">f331ecff28e8c7df695c98dbc22760d8d658a1b0/590783315f628a3acd02b9341572138b3a3224db</a></li><li><a href="#f331ecff28e8c7df695c98dbc22760d8d658a1b0/6c1bc911505dc65551c4f0576e1c684723e57897">f331ecff28e8c7df695c98dbc22760d8d658a1b0/6c1bc911505dc65551c4f0576e1c684723e57897</a></li><li><a href="#f331ecff28e8c7df695c98dbc22760d8d658a1b0/d4061bed85711676d337bd8835e32413957485e3">f331ecff28e8c7df695c98dbc22760d8d658a1b0/d4061bed85711676d337bd8835e32413957485e3</a></li><li><a href="#f331ecff28e8c7df695c98dbc22760d8d658a1b0/7f0a219f3c842e0c3eaae848caea165940b1ec48">f331ecff28e8c7df695c98dbc22760d8d658a1b0/7f0a219f3c842e0c3eaae848caea165940b1ec48</a></li><li><a href="#f331ecff28e8c7df695c98dbc22760d8d658a1b0/3099f7344d2004c58bfb3282dae47a0d204e12da">f331ecff28e8c7df695c98dbc22760d8d658a1b0/3099f7344d2004c58bfb3282dae47a0d204e12da</a></li><li><a href="#f331ecff28e8c7df695c98dbc22760d8d658a1b0/e238dcdb6aa71dac71335591439442c7cfef60e6">f331ecff28e8c7df695c98dbc22760d8d658a1b0/e238dcdb6aa71dac71335591439442c7cfef60e6</a></li><li><a href="#f331ecff28e8c7df695c98dbc22760d8d658a1b0/06d5def8140f8e14b729a584f78289bc25e7f5ec">f331ecff28e8c7df695c98dbc22760d8d658a1b0/06d5def8140f8e14b729a584f78289bc25e7f5ec</a></li><li><a href="#f331ecff28e8c7df695c98dbc22760d8d658a1b0/acc92df58c498b2567f6975c3e128aebc0c524c5">f331ecff28e8c7df695c98dbc22760d8d658a1b0/acc92df58c498b2567f6975c3e128aebc0c524c5</a></li><li><a href="#f331ecff28e8c7df695c98dbc22760d8d658a1b0/854db6bca6b11fb9f6198dce67b3dcbb371f7ebb">f331ecff28e8c7df695c98dbc22760d8d658a1b0/854db6bca6b11fb9f6198dce67b3dcbb371f7ebb</a></li><li><a href="#f331ecff28e8c7df695c98dbc22760d8d658a1b0/9575fdaa42c448ea550d982cf8e27d0b46320874">f331ecff28e8c7df695c98dbc22760d8d658a1b0/9575fdaa42c448ea550d982cf8e27d0b46320874</a></li><li><a href="#f331ecff28e8c7df695c98dbc22760d8d658a1b0/f642fc608c0edc49db59dfc1d38be7abeda0263a">f331ecff28e8c7df695c98dbc22760d8d658a1b0/f642fc608c0edc49db59dfc1d38be7abeda0263a</a></li><li><a href="#f331ecff28e8c7df695c98dbc22760d8d658a1b0/1d3d88c43eb7f44a667170a0e6cb8cd950a4ea16">f331ecff28e8c7df695c98dbc22760d8d658a1b0/1d3d88c43eb7f44a667170a0e6cb8cd950a4ea16</a></li><li><a href="#f331ecff28e8c7df695c98dbc22760d8d658a1b0/4a1a998cf56818c183b02f93011a6c1c9ec47468">f331ecff28e8c7df695c98dbc22760d8d658a1b0/4a1a998cf56818c183b02f93011a6c1c9ec47468</a></li></ul></td></tr></tbody></table></div><hr /><br /><br /><div><h3><a href="f331ecff28e8c7df695c98dbc22760d8d658a1b0">Download: </a>f331ecff28e8c7df695c98dbc22760d8d658a1b0</h3></div><div id="f331ecff28e8c7df695c98dbc22760d8d658a1b0/862eeec8b906cff93bcd1c5ab5e5ec8fc93a2ef1"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>f331ecff28e8c7df695c98dbc22760d8d658a1b0/862eeec8b906cff93bcd1c5ab5e5ec8fc93a2ef1</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>File</span></td></tr><tr><th class="prop" style="text-align: left;">alternateName<span>&nbsp;</span><a href="https://schema.org/alternateName">[?]</a></th><td style="text-align: left;"><span>Mirax2-Fluorescence-2/Data0008.dat</span></td></tr></tbody></table></div><hr /><br /><br /><div><h3><a href="f331ecff28e8c7df695c98dbc22760d8d658a1b0/862eeec8b906cff93bcd1c5ab5e5ec8fc93a2ef1">Download: </a>f331ecff28e8c7df695c98dbc22760d8d658a1b0/862eeec8b906cff93bcd1c5ab5e5ec8fc93a2ef1</h3></div><div id="f331ecff28e8c7df695c98dbc22760d8d658a1b0/9e748097f79d8317b30fcc11833553434e19b02c"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>f331ecff28e8c7df695c98dbc22760d8d658a1b0/9e748097f79d8317b30fcc11833553434e19b02c</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>File</span></td></tr><tr><th class="prop" style="text-align: left;">alternateName<span>&nbsp;</span><a href="https://schema.org/alternateName">[?]</a></th><td style="text-align: left;"><span>Mirax2-Fluorescence-2/Data0018.dat</span></td></tr></tbody></table></div><hr /><br /><br /><div><h3><a href="f331ecff28e8c7df695c98dbc22760d8d658a1b0/9e748097f79d8317b30fcc11833553434e19b02c">Download: </a>f331ecff28e8c7df695c98dbc22760d8d658a1b0/9e748097f79d8317b30fcc11833553434e19b02c</h3></div><div id="f331ecff28e8c7df695c98dbc22760d8d658a1b0/b43c1cd0875d23bd20dc794fa20255cf272108ec"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>f331ecff28e8c7df695c98dbc22760d8d658a1b0/b43c1cd0875d23bd20dc794fa20255cf272108ec</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>File</span></td></tr><tr><th class="prop" style="text-align: left;">alternateName<span>&nbsp;</span><a href="https://schema.org/alternateName">[?]</a></th><td style="text-align: left;"><span>Mirax2-Fluorescence-2/Data0010.dat</span></td></tr></tbody></table></div><hr /><br /><br /><div><h3><a href="f331ecff28e8c7df695c98dbc22760d8d658a1b0/b43c1cd0875d23bd20dc794fa20255cf272108ec">Download: </a>f331ecff28e8c7df695c98dbc22760d8d658a1b0/b43c1cd0875d23bd20dc794fa20255cf272108ec</h3></div><div id="f331ecff28e8c7df695c98dbc22760d8d658a1b0/ae7c542bebbacf8d167fae831b69480e19e9c3b0"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>f331ecff28e8c7df695c98dbc22760d8d658a1b0/ae7c542bebbacf8d167fae831b69480e19e9c3b0</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>File</span></td></tr><tr><th class="prop" style="text-align: left;">alternateName<span>&nbsp;</span><a href="https://schema.org/alternateName">[?]</a></th><td style="text-align: left;"><span>Mirax2-Fluorescence-2/Data0014.dat</span></td></tr></tbody></table></div><hr /><br /><br /><div><h3><a href="f331ecff28e8c7df695c98dbc22760d8d658a1b0/ae7c542bebbacf8d167fae831b69480e19e9c3b0">Download: </a>f331ecff28e8c7df695c98dbc22760d8d658a1b0/ae7c542bebbacf8d167fae831b69480e19e9c3b0</h3></div><div id="f331ecff28e8c7df695c98dbc22760d8d658a1b0/d55cbe9ea0ac43eaa69bb8c21eac07539249734f"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>f331ecff28e8c7df695c98dbc22760d8d658a1b0/d55cbe9ea0ac43eaa69bb8c21eac07539249734f</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>File</span></td></tr><tr><th class="prop" style="text-align: left;">alternateName<span>&nbsp;</span><a href="https://schema.org/alternateName">[?]</a></th><td style="text-align: left;"><span>Mirax2-Fluorescence-2/Data0007.dat</span></td></tr></tbody></table></div><hr /><br /><br /><div><h3><a href="f331ecff28e8c7df695c98dbc22760d8d658a1b0/d55cbe9ea0ac43eaa69bb8c21eac07539249734f">Download: </a>f331ecff28e8c7df695c98dbc22760d8d658a1b0/d55cbe9ea0ac43eaa69bb8c21eac07539249734f</h3></div><div id="f331ecff28e8c7df695c98dbc22760d8d658a1b0/8e9d580e86f48791871b086f3c27269a03f57897"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>f331ecff28e8c7df695c98dbc22760d8d658a1b0/8e9d580e86f48791871b086f3c27269a03f57897</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>File</span></td></tr><tr><th class="prop" style="text-align: left;">alternateName<span>&nbsp;</span><a href="https://schema.org/alternateName">[?]</a></th><td style="text-align: left;"><span>Mirax2-Fluorescence-2/Data0015.dat</span></td></tr></tbody></table></div><hr /><br /><br /><div><h3><a href="f331ecff28e8c7df695c98dbc22760d8d658a1b0/8e9d580e86f48791871b086f3c27269a03f57897">Download: </a>f331ecff28e8c7df695c98dbc22760d8d658a1b0/8e9d580e86f48791871b086f3c27269a03f57897</h3></div><div id="f331ecff28e8c7df695c98dbc22760d8d658a1b0/cf03a8a5713c038c566734cf11f81cc03a41efa6"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>f331ecff28e8c7df695c98dbc22760d8d658a1b0/cf03a8a5713c038c566734cf11f81cc03a41efa6</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>File</span></td></tr><tr><th class="prop" style="text-align: left;">alternateName<span>&nbsp;</span><a href="https://schema.org/alternateName">[?]</a></th><td style="text-align: left;"><span>Mirax2-Fluorescence-2/Data0006.dat</span></td></tr></tbody></table></div><hr /><br /><br /><div><h3><a href="f331ecff28e8c7df695c98dbc22760d8d658a1b0/cf03a8a5713c038c566734cf11f81cc03a41efa6">Download: </a>f331ecff28e8c7df695c98dbc22760d8d658a1b0/cf03a8a5713c038c566734cf11f81cc03a41efa6</h3></div><div id="f331ecff28e8c7df695c98dbc22760d8d658a1b0/a1ad0dfd5f6e24aa90bdf9da0a688e6a0c268905"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>f331ecff28e8c7df695c98dbc22760d8d658a1b0/a1ad0dfd5f6e24aa90bdf9da0a688e6a0c268905</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>File</span></td></tr><tr><th class="prop" style="text-align: left;">alternateName<span>&nbsp;</span><a href="https://schema.org/alternateName">[?]</a></th><td style="text-align: left;"><span>Mirax2-Fluorescence-2/Data0005.dat</span></td></tr></tbody></table></div><hr /><br /><br /><div><h3><a href="f331ecff28e8c7df695c98dbc22760d8d658a1b0/a1ad0dfd5f6e24aa90bdf9da0a688e6a0c268905">Download: </a>f331ecff28e8c7df695c98dbc22760d8d658a1b0/a1ad0dfd5f6e24aa90bdf9da0a688e6a0c268905</h3></div><div id="f331ecff28e8c7df695c98dbc22760d8d658a1b0/46c443af080a36000c9298b49b675eb240eeb41c"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>f331ecff28e8c7df695c98dbc22760d8d658a1b0/46c443af080a36000c9298b49b675eb240eeb41c</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>File</span></td></tr><tr><th class="prop" style="text-align: left;">alternateName<span>&nbsp;</span><a href="https://schema.org/alternateName">[?]</a></th><td style="text-align: left;"><span>Mirax2-Fluorescence-2/Index.dat</span></td></tr></tbody></table></div><hr /><br /><br /><div><h3><a href="f331ecff28e8c7df695c98dbc22760d8d658a1b0/46c443af080a36000c9298b49b675eb240eeb41c">Download: </a>f331ecff28e8c7df695c98dbc22760d8d658a1b0/46c443af080a36000c9298b49b675eb240eeb41c</h3></div><div id="f331ecff28e8c7df695c98dbc22760d8d658a1b0/ce3d0d6addaced3e58578e42c341f44737b5aa84"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>f331ecff28e8c7df695c98dbc22760d8d658a1b0/ce3d0d6addaced3e58578e42c341f44737b5aa84</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>File</span></td></tr><tr><th class="prop" style="text-align: left;">alternateName<span>&nbsp;</span><a href="https://schema.org/alternateName">[?]</a></th><td style="text-align: left;"><span>Mirax2-Fluorescence-2/Data0011.dat</span></td></tr></tbody></table></div><hr /><br /><br /><div><h3><a href="f331ecff28e8c7df695c98dbc22760d8d658a1b0/ce3d0d6addaced3e58578e42c341f44737b5aa84">Download: </a>f331ecff28e8c7df695c98dbc22760d8d658a1b0/ce3d0d6addaced3e58578e42c341f44737b5aa84</h3></div><div id="f331ecff28e8c7df695c98dbc22760d8d658a1b0/52e0419ea116b78bc330d36f93bc2b4ec2bf8210"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>f331ecff28e8c7df695c98dbc22760d8d658a1b0/52e0419ea116b78bc330d36f93bc2b4ec2bf8210</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>File</span></td></tr><tr><th class="prop" style="text-align: left;">alternateName<span>&nbsp;</span><a href="https://schema.org/alternateName">[?]</a></th><td style="text-align: left;"><span>Mirax2-Fluorescence-2/Data0001.dat</span></td></tr></tbody></table></div><hr /><br /><br /><div><h3><a href="f331ecff28e8c7df695c98dbc22760d8d658a1b0/52e0419ea116b78bc330d36f93bc2b4ec2bf8210">Download: </a>f331ecff28e8c7df695c98dbc22760d8d658a1b0/52e0419ea116b78bc330d36f93bc2b4ec2bf8210</h3></div><div id="f331ecff28e8c7df695c98dbc22760d8d658a1b0/bc709e1a4da6e506f81150ee39907d0224e066fb"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>f331ecff28e8c7df695c98dbc22760d8d658a1b0/bc709e1a4da6e506f81150ee39907d0224e066fb</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>File</span></td></tr><tr><th class="prop" style="text-align: left;">alternateName<span>&nbsp;</span><a href="https://schema.org/alternateName">[?]</a></th><td style="text-align: left;"><span>Mirax2-Fluorescence-2/Data0003.dat</span></td></tr></tbody></table></div><hr /><br /><br /><div><h3><a href="f331ecff28e8c7df695c98dbc22760d8d658a1b0/bc709e1a4da6e506f81150ee39907d0224e066fb">Download: </a>f331ecff28e8c7df695c98dbc22760d8d658a1b0/bc709e1a4da6e506f81150ee39907d0224e066fb</h3></div><div id="f331ecff28e8c7df695c98dbc22760d8d658a1b0/a16fec38b4b7adf7dc1f8e9e58f6956a249a0a08"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>f331ecff28e8c7df695c98dbc22760d8d658a1b0/a16fec38b4b7adf7dc1f8e9e58f6956a249a0a08</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>File</span></td></tr><tr><th class="prop" style="text-align: left;">alternateName<span>&nbsp;</span><a href="https://schema.org/alternateName">[?]</a></th><td style="text-align: left;"><span>Mirax2-Fluorescence-2/Data0000.dat</span></td></tr></tbody></table></div><hr /><br /><br /><div><h3><a href="f331ecff28e8c7df695c98dbc22760d8d658a1b0/a16fec38b4b7adf7dc1f8e9e58f6956a249a0a08">Download: </a>f331ecff28e8c7df695c98dbc22760d8d658a1b0/a16fec38b4b7adf7dc1f8e9e58f6956a249a0a08</h3></div><div id="f331ecff28e8c7df695c98dbc22760d8d658a1b0/590783315f628a3acd02b9341572138b3a3224db"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>f331ecff28e8c7df695c98dbc22760d8d658a1b0/590783315f628a3acd02b9341572138b3a3224db</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>File</span></td></tr><tr><th class="prop" style="text-align: left;">alternateName<span>&nbsp;</span><a href="https://schema.org/alternateName">[?]</a></th><td style="text-align: left;"><span>Mirax2-Fluorescence-2/Data0021.dat</span></td></tr></tbody></table></div><hr /><br /><br /><div><h3><a href="f331ecff28e8c7df695c98dbc22760d8d658a1b0/590783315f628a3acd02b9341572138b3a3224db">Download: </a>f331ecff28e8c7df695c98dbc22760d8d658a1b0/590783315f628a3acd02b9341572138b3a3224db</h3></div><div id="f331ecff28e8c7df695c98dbc22760d8d658a1b0/6c1bc911505dc65551c4f0576e1c684723e57897"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>f331ecff28e8c7df695c98dbc22760d8d658a1b0/6c1bc911505dc65551c4f0576e1c684723e57897</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>File</span></td></tr><tr><th class="prop" style="text-align: left;">alternateName<span>&nbsp;</span><a href="https://schema.org/alternateName">[?]</a></th><td style="text-align: left;"><span>Mirax2-Fluorescence-2/Data0019.dat</span></td></tr></tbody></table></div><hr /><br /><br /><div><h3><a href="f331ecff28e8c7df695c98dbc22760d8d658a1b0/6c1bc911505dc65551c4f0576e1c684723e57897">Download: </a>f331ecff28e8c7df695c98dbc22760d8d658a1b0/6c1bc911505dc65551c4f0576e1c684723e57897</h3></div><div id="f331ecff28e8c7df695c98dbc22760d8d658a1b0/d4061bed85711676d337bd8835e32413957485e3"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>f331ecff28e8c7df695c98dbc22760d8d658a1b0/d4061bed85711676d337bd8835e32413957485e3</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>File</span></td></tr><tr><th class="prop" style="text-align: left;">alternateName<span>&nbsp;</span><a href="https://schema.org/alternateName">[?]</a></th><td style="text-align: left;"><span>Mirax2-Fluorescence-2/Data0017.dat</span></td></tr></tbody></table></div><hr /><br /><br /><div><h3><a href="f331ecff28e8c7df695c98dbc22760d8d658a1b0/d4061bed85711676d337bd8835e32413957485e3">Download: </a>f331ecff28e8c7df695c98dbc22760d8d658a1b0/d4061bed85711676d337bd8835e32413957485e3</h3></div><div id="f331ecff28e8c7df695c98dbc22760d8d658a1b0/7f0a219f3c842e0c3eaae848caea165940b1ec48"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>f331ecff28e8c7df695c98dbc22760d8d658a1b0/7f0a219f3c842e0c3eaae848caea165940b1ec48</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>File</span></td></tr><tr><th class="prop" style="text-align: left;">alternateName<span>&nbsp;</span><a href="https://schema.org/alternateName">[?]</a></th><td style="text-align: left;"><span>Mirax2-Fluorescence-2/Data0022.dat</span></td></tr></tbody></table></div><hr /><br /><br /><div><h3><a href="f331ecff28e8c7df695c98dbc22760d8d658a1b0/7f0a219f3c842e0c3eaae848caea165940b1ec48">Download: </a>f331ecff28e8c7df695c98dbc22760d8d658a1b0/7f0a219f3c842e0c3eaae848caea165940b1ec48</h3></div><div id="f331ecff28e8c7df695c98dbc22760d8d658a1b0/3099f7344d2004c58bfb3282dae47a0d204e12da"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>f331ecff28e8c7df695c98dbc22760d8d658a1b0/3099f7344d2004c58bfb3282dae47a0d204e12da</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>File</span></td></tr><tr><th class="prop" style="text-align: left;">alternateName<span>&nbsp;</span><a href="https://schema.org/alternateName">[?]</a></th><td style="text-align: left;"><span>Mirax2-Fluorescence-2/Data0004.dat</span></td></tr></tbody></table></div><hr /><br /><br /><div><h3><a href="f331ecff28e8c7df695c98dbc22760d8d658a1b0/3099f7344d2004c58bfb3282dae47a0d204e12da">Download: </a>f331ecff28e8c7df695c98dbc22760d8d658a1b0/3099f7344d2004c58bfb3282dae47a0d204e12da</h3></div><div id="f331ecff28e8c7df695c98dbc22760d8d658a1b0/e238dcdb6aa71dac71335591439442c7cfef60e6"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>f331ecff28e8c7df695c98dbc22760d8d658a1b0/e238dcdb6aa71dac71335591439442c7cfef60e6</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>File</span></td></tr><tr><th class="prop" style="text-align: left;">alternateName<span>&nbsp;</span><a href="https://schema.org/alternateName">[?]</a></th><td style="text-align: left;"><span>Mirax2-Fluorescence-2/Data0002.dat</span></td></tr></tbody></table></div><hr /><br /><br /><div><h3><a href="f331ecff28e8c7df695c98dbc22760d8d658a1b0/e238dcdb6aa71dac71335591439442c7cfef60e6">Download: </a>f331ecff28e8c7df695c98dbc22760d8d658a1b0/e238dcdb6aa71dac71335591439442c7cfef60e6</h3></div><div id="f331ecff28e8c7df695c98dbc22760d8d658a1b0/06d5def8140f8e14b729a584f78289bc25e7f5ec"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>f331ecff28e8c7df695c98dbc22760d8d658a1b0/06d5def8140f8e14b729a584f78289bc25e7f5ec</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>File</span></td></tr><tr><th class="prop" style="text-align: left;">alternateName<span>&nbsp;</span><a href="https://schema.org/alternateName">[?]</a></th><td style="text-align: left;"><span>Mirax2-Fluorescence-2/Data0012.dat</span></td></tr></tbody></table></div><hr /><br /><br /><div><h3><a href="f331ecff28e8c7df695c98dbc22760d8d658a1b0/06d5def8140f8e14b729a584f78289bc25e7f5ec">Download: </a>f331ecff28e8c7df695c98dbc22760d8d658a1b0/06d5def8140f8e14b729a584f78289bc25e7f5ec</h3></div><div id="f331ecff28e8c7df695c98dbc22760d8d658a1b0/acc92df58c498b2567f6975c3e128aebc0c524c5"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>f331ecff28e8c7df695c98dbc22760d8d658a1b0/acc92df58c498b2567f6975c3e128aebc0c524c5</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>File</span></td></tr><tr><th class="prop" style="text-align: left;">alternateName<span>&nbsp;</span><a href="https://schema.org/alternateName">[?]</a></th><td style="text-align: left;"><span>Mirax2-Fluorescence-2/Slidedat.ini</span></td></tr></tbody></table></div><hr /><br /><br /><div><h3><a href="f331ecff28e8c7df695c98dbc22760d8d658a1b0/acc92df58c498b2567f6975c3e128aebc0c524c5">Download: </a>f331ecff28e8c7df695c98dbc22760d8d658a1b0/acc92df58c498b2567f6975c3e128aebc0c524c5</h3></div><div id="f331ecff28e8c7df695c98dbc22760d8d658a1b0/854db6bca6b11fb9f6198dce67b3dcbb371f7ebb"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>f331ecff28e8c7df695c98dbc22760d8d658a1b0/854db6bca6b11fb9f6198dce67b3dcbb371f7ebb</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>File</span></td></tr><tr><th class="prop" style="text-align: left;">alternateName<span>&nbsp;</span><a href="https://schema.org/alternateName">[?]</a></th><td style="text-align: left;"><span>Mirax2-Fluorescence-2/Data0020.dat</span></td></tr></tbody></table></div><hr /><br /><br /><div><h3><a href="f331ecff28e8c7df695c98dbc22760d8d658a1b0/854db6bca6b11fb9f6198dce67b3dcbb371f7ebb">Download: </a>f331ecff28e8c7df695c98dbc22760d8d658a1b0/854db6bca6b11fb9f6198dce67b3dcbb371f7ebb</h3></div><div id="f331ecff28e8c7df695c98dbc22760d8d658a1b0/9575fdaa42c448ea550d982cf8e27d0b46320874"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>f331ecff28e8c7df695c98dbc22760d8d658a1b0/9575fdaa42c448ea550d982cf8e27d0b46320874</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>File</span></td></tr><tr><th class="prop" style="text-align: left;">alternateName<span>&nbsp;</span><a href="https://schema.org/alternateName">[?]</a></th><td style="text-align: left;"><span>Mirax2-Fluorescence-2/Data0009.dat</span></td></tr></tbody></table></div><hr /><br /><br /><div><h3><a href="f331ecff28e8c7df695c98dbc22760d8d658a1b0/9575fdaa42c448ea550d982cf8e27d0b46320874">Download: </a>f331ecff28e8c7df695c98dbc22760d8d658a1b0/9575fdaa42c448ea550d982cf8e27d0b46320874</h3></div><div id="f331ecff28e8c7df695c98dbc22760d8d658a1b0/f642fc608c0edc49db59dfc1d38be7abeda0263a"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>f331ecff28e8c7df695c98dbc22760d8d658a1b0/f642fc608c0edc49db59dfc1d38be7abeda0263a</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>File</span></td></tr><tr><th class="prop" style="text-align: left;">alternateName<span>&nbsp;</span><a href="https://schema.org/alternateName">[?]</a></th><td style="text-align: left;"><span>Mirax2-Fluorescence-2/Data0023.dat</span></td></tr></tbody></table></div><hr /><br /><br /><div><h3><a href="f331ecff28e8c7df695c98dbc22760d8d658a1b0/f642fc608c0edc49db59dfc1d38be7abeda0263a">Download: </a>f331ecff28e8c7df695c98dbc22760d8d658a1b0/f642fc608c0edc49db59dfc1d38be7abeda0263a</h3></div><div id="f331ecff28e8c7df695c98dbc22760d8d658a1b0/1d3d88c43eb7f44a667170a0e6cb8cd950a4ea16"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>f331ecff28e8c7df695c98dbc22760d8d658a1b0/1d3d88c43eb7f44a667170a0e6cb8cd950a4ea16</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>File</span></td></tr><tr><th class="prop" style="text-align: left;">alternateName<span>&nbsp;</span><a href="https://schema.org/alternateName">[?]</a></th><td style="text-align: left;"><span>Mirax2-Fluorescence-2/Data0013.dat</span></td></tr></tbody></table></div><hr /><br /><br /><div><h3><a href="f331ecff28e8c7df695c98dbc22760d8d658a1b0/1d3d88c43eb7f44a667170a0e6cb8cd950a4ea16">Download: </a>f331ecff28e8c7df695c98dbc22760d8d658a1b0/1d3d88c43eb7f44a667170a0e6cb8cd950a4ea16</h3></div><div id="f331ecff28e8c7df695c98dbc22760d8d658a1b0/4a1a998cf56818c183b02f93011a6c1c9ec47468"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>f331ecff28e8c7df695c98dbc22760d8d658a1b0/4a1a998cf56818c183b02f93011a6c1c9ec47468</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>File</span></td></tr><tr><th class="prop" style="text-align: left;">alternateName<span>&nbsp;</span><a href="https://schema.org/alternateName">[?]</a></th><td style="text-align: left;"><span>Mirax2-Fluorescence-2/Data0016.dat</span></td></tr></tbody></table></div><hr /><br /><br /><div><h3><a href="f331ecff28e8c7df695c98dbc22760d8d658a1b0/4a1a998cf56818c183b02f93011a6c1c9ec47468">Download: </a>f331ecff28e8c7df695c98dbc22760d8d658a1b0/4a1a998cf56818c183b02f93011a6c1c9ec47468</h3></div><div id="%23182359db-a5f7-4ff2-a53e-10c8fd89b800"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>#182359db-a5f7-4ff2-a53e-10c8fd89b800</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>Collection</span></td></tr><tr><th class="prop" style="text-align: left;">mainEntity<span>&nbsp;</span><a href="https://schema.org/mainEntity">[?]</a></th><td style="text-align: left;"><a href="#f62aa607a75508ac5fc6a22e9c0e39ef58a2c852">f62aa607a75508ac5fc6a22e9c0e39ef58a2c852</a></td></tr><tr><th class="prop" style="text-align: left;">hasPart<span>&nbsp;</span><a href="https://schema.org/hasPart">[?]</a></th><td style="text-align: left;"><ul><li><a href="#f62aa607a75508ac5fc6a22e9c0e39ef58a2c852">f62aa607a75508ac5fc6a22e9c0e39ef58a2c852</a></li><li><a href="#f331ecff28e8c7df695c98dbc22760d8d658a1b0">f331ecff28e8c7df695c98dbc22760d8d658a1b0</a></li></ul></td></tr><tr><th class="prop" style="text-align: left;">exampleOfWork<span>&nbsp;</span><a href="https://schema.org/exampleOfWork">[?]</a></th><td style="text-align: left;"><ul><li><a href="#predictions.cwl%23slide">predictions.cwl#slide</a></li><li><a href="#extract_tissue.cwl%23src">extract_tissue.cwl#src</a></li></ul></td></tr></tbody></table></div><hr /><br /><br /><div id="a9805401269ade2a88b56d0e9a0b389041bebdff"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>a9805401269ade2a88b56d0e9a0b389041bebdff</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>File</span></td></tr><tr><th class="prop" style="text-align: left;">alternateName<span>&nbsp;</span><a href="https://schema.org/alternateName">[?]</a></th><td style="text-align: left;"><span>tissue_low.zip</span></td></tr><tr><th class="prop" style="text-align: left;">exampleOfWork<span>&nbsp;</span><a href="https://schema.org/exampleOfWork">[?]</a></th><td style="text-align: left;"><ul><li><a href="#extract_tissue.cwl%23tissue">extract_tissue.cwl#tissue</a></li><li><a href="#extract_tissue.cwl%23filter_slide">extract_tissue.cwl#filter_slide</a></li><li><a href="#classify_tumor.cwl%23filter_slide">classify_tumor.cwl#filter_slide</a></li></ul></td></tr></tbody></table></div><hr /><br /><br /><div><h3><a href="a9805401269ade2a88b56d0e9a0b389041bebdff">Download: </a>a9805401269ade2a88b56d0e9a0b389041bebdff</h3></div><div id="%233028074e-4c3d-4df0-887f-7b0a13026313"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>#3028074e-4c3d-4df0-887f-7b0a13026313</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>PropertyValue</span></td></tr><tr><th class="prop" style="text-align: left;">name<span>&nbsp;</span><a href="https://schema.org/name">[?]</a></th><td style="text-align: left;"><span>filter</span></td></tr><tr><th class="prop" style="text-align: left;">value<span>&nbsp;</span><a href="https://schema.org/value">[?]</a></th><td style="text-align: left;"><span>tissue_low&gt;0.9</span></td></tr><tr><th class="prop" style="text-align: left;">exampleOfWork<span>&nbsp;</span><a href="https://schema.org/exampleOfWork">[?]</a></th><td style="text-align: left;"><ul><li><a href="#extract_tissue.cwl%23filter">extract_tissue.cwl#filter</a></li><li><a href="#predictions.cwl%23tissue-high-filter">predictions.cwl#tissue-high-filter</a></li></ul></td></tr></tbody></table></div><hr /><br /><br /><div id="%231092fed3-0033-4ab8-8681-a78e4312ac4f"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>#1092fed3-0033-4ab8-8681-a78e4312ac4f</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>PropertyValue</span></td></tr><tr><th class="prop" style="text-align: left;">name<span>&nbsp;</span><a href="https://schema.org/name">[?]</a></th><td style="text-align: left;"><span>label</span></td></tr><tr><th class="prop" style="text-align: left;">value<span>&nbsp;</span><a href="https://schema.org/value">[?]</a></th><td style="text-align: left;"><span>tissue_high</span></td></tr><tr><th class="prop" style="text-align: left;">exampleOfWork<span>&nbsp;</span><a href="https://schema.org/exampleOfWork">[?]</a></th><td style="text-align: left;"><ul><li><a href="#predictions.cwl%23tissue-high-label">predictions.cwl#tissue-high-label</a></li><li><a href="#extract_tissue.cwl%23label">extract_tissue.cwl#label</a></li></ul></td></tr></tbody></table></div><hr /><br /><br /><div id="%2318d7d0da-651a-43d9-a7ed-81d33a639438"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>#18d7d0da-651a-43d9-a7ed-81d33a639438</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>PropertyValue</span></td></tr><tr><th class="prop" style="text-align: left;">name<span>&nbsp;</span><a href="https://schema.org/name">[?]</a></th><td style="text-align: left;"><span>level</span></td></tr><tr><th class="prop" style="text-align: left;">value<span>&nbsp;</span><a href="https://schema.org/value">[?]</a></th><td style="text-align: left;"><span>4</span></td></tr><tr><th class="prop" style="text-align: left;">exampleOfWork<span>&nbsp;</span><a href="https://schema.org/exampleOfWork">[?]</a></th><td style="text-align: left;"><ul><li><a href="#predictions.cwl%23tissue-high-level">predictions.cwl#tissue-high-level</a></li><li><a href="#extract_tissue.cwl%23level">extract_tissue.cwl#level</a></li></ul></td></tr></tbody></table></div><hr /><br /><br /><div id="%231c5046dc-ce75-4e06-9153-a72147d5ef1f"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>#1c5046dc-ce75-4e06-9153-a72147d5ef1f</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>Collection</span></td></tr><tr><th class="prop" style="text-align: left;">mainEntity<span>&nbsp;</span><a href="https://schema.org/mainEntity">[?]</a></th><td style="text-align: left;"><a href="#f62aa607a75508ac5fc6a22e9c0e39ef58a2c852">f62aa607a75508ac5fc6a22e9c0e39ef58a2c852</a></td></tr><tr><th class="prop" style="text-align: left;">hasPart<span>&nbsp;</span><a href="https://schema.org/hasPart">[?]</a></th><td style="text-align: left;"><ul><li><a href="#f62aa607a75508ac5fc6a22e9c0e39ef58a2c852">f62aa607a75508ac5fc6a22e9c0e39ef58a2c852</a></li><li><a href="#f331ecff28e8c7df695c98dbc22760d8d658a1b0">f331ecff28e8c7df695c98dbc22760d8d658a1b0</a></li></ul></td></tr><tr><th class="prop" style="text-align: left;">exampleOfWork<span>&nbsp;</span><a href="https://schema.org/exampleOfWork">[?]</a></th><td style="text-align: left;"><ul><li><a href="#predictions.cwl%23slide">predictions.cwl#slide</a></li><li><a href="#extract_tissue.cwl%23src">extract_tissue.cwl#src</a></li></ul></td></tr></tbody></table></div><hr /><br /><br /><div id="741c6947917667777aafae95c3252d2a20bd88f5"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>741c6947917667777aafae95c3252d2a20bd88f5</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>File</span></td></tr><tr><th class="prop" style="text-align: left;">alternateName<span>&nbsp;</span><a href="https://schema.org/alternateName">[?]</a></th><td style="text-align: left;"><span>tissue_high.zip</span></td></tr><tr><th class="prop" style="text-align: left;">exampleOfWork<span>&nbsp;</span><a href="https://schema.org/exampleOfWork">[?]</a></th><td style="text-align: left;"><a href="#extract_tissue.cwl%23tissue">extract_tissue.cwl#tissue</a></td></tr></tbody></table></div><hr /><br /><br /><div><h3><a href="741c6947917667777aafae95c3252d2a20bd88f5">Download: </a>741c6947917667777aafae95c3252d2a20bd88f5</h3></div><div id="%2369a44e09-5003-443f-9095-1ad18b5b8ebd"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>#69a44e09-5003-443f-9095-1ad18b5b8ebd</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>PropertyValue</span></td></tr><tr><th class="prop" style="text-align: left;">name<span>&nbsp;</span><a href="https://schema.org/name">[?]</a></th><td style="text-align: left;"><span>filter</span></td></tr><tr><th class="prop" style="text-align: left;">value<span>&nbsp;</span><a href="https://schema.org/value">[?]</a></th><td style="text-align: left;"><span>tissue_low&gt;0.99</span></td></tr><tr><th class="prop" style="text-align: left;">exampleOfWork<span>&nbsp;</span><a href="https://schema.org/exampleOfWork">[?]</a></th><td style="text-align: left;"><ul><li><a href="#predictions.cwl%23tumor-filter">predictions.cwl#tumor-filter</a></li><li><a href="#classify_tumor.cwl%23filter">classify_tumor.cwl#filter</a></li></ul></td></tr></tbody></table></div><hr /><br /><br /><div id="%231ceecb41-1f9a-46ad-ab65-c223975302fb"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>#1ceecb41-1f9a-46ad-ab65-c223975302fb</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>PropertyValue</span></td></tr><tr><th class="prop" style="text-align: left;">name<span>&nbsp;</span><a href="https://schema.org/name">[?]</a></th><td style="text-align: left;"><span>label</span></td></tr><tr><th class="prop" style="text-align: left;">value<span>&nbsp;</span><a href="https://schema.org/value">[?]</a></th><td style="text-align: left;"><span>tumor</span></td></tr><tr><th class="prop" style="text-align: left;">exampleOfWork<span>&nbsp;</span><a href="https://schema.org/exampleOfWork">[?]</a></th><td style="text-align: left;"><ul><li><a href="#predictions.cwl%23tumor-label">predictions.cwl#tumor-label</a></li><li><a href="#classify_tumor.cwl%23label">classify_tumor.cwl#label</a></li></ul></td></tr></tbody></table></div><hr /><br /><br /><div id="%23d508c8af-fda6-4561-95c4-f3a4f76ae786"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>#d508c8af-fda6-4561-95c4-f3a4f76ae786</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>PropertyValue</span></td></tr><tr><th class="prop" style="text-align: left;">name<span>&nbsp;</span><a href="https://schema.org/name">[?]</a></th><td style="text-align: left;"><span>level</span></td></tr><tr><th class="prop" style="text-align: left;">value<span>&nbsp;</span><a href="https://schema.org/value">[?]</a></th><td style="text-align: left;"><span>1</span></td></tr><tr><th class="prop" style="text-align: left;">exampleOfWork<span>&nbsp;</span><a href="https://schema.org/exampleOfWork">[?]</a></th><td style="text-align: left;"><ul><li><a href="#predictions.cwl%23tumor-level">predictions.cwl#tumor-level</a></li><li><a href="#classify_tumor.cwl%23level">classify_tumor.cwl#level</a></li></ul></td></tr></tbody></table></div><hr /><br /><br /><div id="%2319168124-bb17-4926-be46-2b53ee4f28ec"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>#19168124-bb17-4926-be46-2b53ee4f28ec</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>Collection</span></td></tr><tr><th class="prop" style="text-align: left;">mainEntity<span>&nbsp;</span><a href="https://schema.org/mainEntity">[?]</a></th><td style="text-align: left;"><a href="#f62aa607a75508ac5fc6a22e9c0e39ef58a2c852">f62aa607a75508ac5fc6a22e9c0e39ef58a2c852</a></td></tr><tr><th class="prop" style="text-align: left;">hasPart<span>&nbsp;</span><a href="https://schema.org/hasPart">[?]</a></th><td style="text-align: left;"><ul><li><a href="#f62aa607a75508ac5fc6a22e9c0e39ef58a2c852">f62aa607a75508ac5fc6a22e9c0e39ef58a2c852</a></li><li><a href="#f331ecff28e8c7df695c98dbc22760d8d658a1b0">f331ecff28e8c7df695c98dbc22760d8d658a1b0</a></li></ul></td></tr><tr><th class="prop" style="text-align: left;">exampleOfWork<span>&nbsp;</span><a href="https://schema.org/exampleOfWork">[?]</a></th><td style="text-align: left;"><ul><li><a href="#predictions.cwl%23slide">predictions.cwl#slide</a></li><li><a href="#classify_tumor.cwl%23src">classify_tumor.cwl#src</a></li></ul></td></tr></tbody></table></div><hr /><br /><br /><div id="e75ee6d0751bb2dbc7a894af0fe307e4fe020a99"><table class="table metadata table-striped"><tbody><tr><th class="prop" style="text-align: left;">@id</th><td style="text-align: left;"><span>e75ee6d0751bb2dbc7a894af0fe307e4fe020a99</span></td></tr><tr><th class="prop" style="text-align: left;">@type</th><td style="text-align: left;"><span>File</span></td></tr><tr><th class="prop" style="text-align: left;">alternateName<span>&nbsp;</span><a href="https://schema.org/alternateName">[?]</a></th><td style="text-align: left;"><span>tumor.zip</span></td></tr><tr><th class="prop" style="text-align: left;">exampleOfWork<span>&nbsp;</span><a href="https://schema.org/exampleOfWork">[?]</a></th><td style="text-align: left;"><a href="#classify_tumor.cwl%23tumor">classify_tumor.cwl#tumor</a></td></tr></tbody></table></div><hr /><br /><br /><div><h3><a href="e75ee6d0751bb2dbc7a894af0fe307e4fe020a99">Download: </a>e75ee6d0751bb2dbc7a894af0fe307e4fe020a99</h3></div></div></div></div></body></html>

@@ -1,0 +1,38 @@
+01.0130754928D9DA42A5AB7674B579A7A3E90200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000<profileInfo>
+  <header>
+    <general>
+      <field name="ProfileType"   type="text" comm="Brightfield or Fluorescence profile" />
+      <field name="ProfileName"   type="text" comm="Name of the prifile" />
+    </general>
+    <specific>
+      <field name="CompressionMode"                    type="text" comm="Compression mode of pictures"             />
+      <field name="JPGQuality"                         type="num"  comm="Quality of JPG pictures"                  />
+      <field name="CreateHierarchicalSlidePath"        type="bool" comm="Slide path is hierarchical"               />
+      <field name="PreviewType"                        type="text" comm="Preview type"                             />
+      <field name="UseCoverslipCut"                    type="bool" comm="Use coverslip cut"                        />
+      <field name="CoverslipLeft"                      type="num"  comm="Coverslip left"                           />
+      <field name="CoverslipTop"                       type="num"  comm="Coverslip top"                            />
+      <field name="CoverslipRight"                     type="num"  comm="Coverslip right"                          />
+      <field name="CoverslipBottom"                    type="num"  comm="Coverslip bottom"                         />
+      <field name="LimitingTheRange"                   type="bool" comm="Limiting the range"                       />
+      <field name="LowerLimit"                         type="num"  comm="Lower limit"                              />
+      <field name="UpperLimit"                         type="num"  comm="Upper limit"                              />
+      <field name="FocusMapCreatingStep"               type="num"  comm="Focus map creating step"                  />
+      <field name="MaximumExposureTime"                type="num"  comm="Maximum exposure time"                    />
+      <field name="IndividualExpTimeForSpots"          type="num"  comm="Individual exp time for spots"            />
+      <field name="FilterChangeOnFOV"                  type="bool" comm="Filter change on FOV"                     />
+      <field name="ScanningModeAuto"                   type="bool" comm="Scanning mode auto"                       />
+      <field name="PreviewThresholdFluor"              type="bool" comm="Preview threshold value fluor"            />
+      <field name="FocusingType"                       type="num"  comm="Focusing Type"                            />
+      <field name="IsDatabaseSelected"                 type="bool" comm="Is database selected"                     />
+      <field name="SaveReducedImageSize"               type="bool" comm="Save reduced image size"                  />
+      <field name="Stitching"                          type="bool" comm="Stitching"                                />
+      <field name="UseManualFocus"                     type="bool" comm="Use manual focus"                         />
+      <field name="UseManualExposureTime"              type="bool" comm="Use manual exposure time"                 />
+      <field name="ManualFocusType"                    type="text" comm="Manual focus type"                        />
+      <field name="CoarseFocusValue"                   type="long" comm="Coarse focus value"                       />
+      <field name="OptimizedSlideVisualization"        type="bool" comm="Optimized slide visualization"            />
+      <field name="StoredPreviewPath"                  type="text" comm="Stored preview path"                      />
+    </specific>
+  </header>
+</profileInfo>

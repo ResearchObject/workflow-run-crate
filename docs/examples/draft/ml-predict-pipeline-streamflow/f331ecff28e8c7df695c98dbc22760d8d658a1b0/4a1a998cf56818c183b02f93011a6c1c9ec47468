@@ -1,0 +1,23 @@
+01.0130754928D9DA42A5AB7674B579A7A3E90160000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000<scaninfo>
+  <header>
+    <general>
+      <field name="XImagePos"   type="num" comm="Image position on X axis" />
+      <field name="YImagePos"   type="num" comm="Image position on Y axis" />
+    </general>
+    <specific>
+      <field name="XMotorPos" type="num" unit="microstep" comm="Microscope X motor position" />
+      <field name="YMotorPos" type="num" unit="microstep" comm="Microscope Y motor position" />
+      <field name="ZMotorPos" type="num" unit="microstep" comm="Microscope Z motor position" />
+      <field name="XMotorError" type="num" unit="microstep" comm="Microscope X motor error" />
+      <field name="YMotorError" type="num" unit="microstep" comm="Microscope Y motor error" />
+      <field name="ZMotorError" type="num" unit="microstep" comm="Microscope Z motor error" />
+      <field name="ObjectLevel" type="float" unit="" comm="Foreground / background pixel ration on image" />
+      <field name="OpticalFocusLevel" type="num" unit="" comm="Optical focus value on image" />
+      <field name="LaserFocusLevel" type="float" unit="" comm="Laser focus value on image" />
+      <field name="FocusingType" type="text" unit="" comm="Focusing mode on image" />
+      <field name="Neighbours" type="text" unit="" comm="Used neighbours" />
+      <field name="FocalPlane" type="text" unit="" comm="Focal plane point" />
+      <field name="ImageAcquisitionTime" type="text" unit="" comm="Image acquisition time" />
+    </specific>
+  </header>
+</scaninfo>
