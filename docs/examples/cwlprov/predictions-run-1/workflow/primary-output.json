@@ -1,0 +1,24 @@
+{
+    "tissue": {
+        "location": "../data/30/303fde451481d0f69e65c9ddca50e950a40f9e30",
+        "basename": "tissue_high.zip",
+        "nameroot": "tissue_high",
+        "nameext": ".zip",
+        "class": "File",
+        "checksum": "sha1$303fde451481d0f69e65c9ddca50e950a40f9e30",
+        "size": 5668506,
+        "http://commonwl.org/cwltool#generation": 0,
+        "@id": "urn:uuid:74a46951-3897-463f-88da-4581fdf988e7"
+    },
+    "tumor": {
+        "location": "../data/f8/f867a592e3b07d4c08b846de6444b8904974a485",
+        "basename": "tumor.zip",
+        "nameroot": "tumor",
+        "nameext": ".zip",
+        "class": "File",
+        "checksum": "sha1$f867a592e3b07d4c08b846de6444b8904974a485",
+        "size": 4143,
+        "http://commonwl.org/cwltool#generation": 0,
+        "@id": "urn:uuid:11a312a7-fe00-4dd9-9e7d-22481042f1ab"
+    }
+}
