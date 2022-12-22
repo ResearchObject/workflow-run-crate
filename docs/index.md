@@ -49,6 +49,8 @@ Post [here](https://github.com/ResearchObject/workflow-run-crate/issues/1) to jo
 - Hirotaka Suetake <https://orcid.org/0000-0003-2765-0049>
 - Johannes Köster <https://orcid.org/0000-0001-9818-9320>
 - Luiz Gadelha <https://orcid.org/0000-0002-8122-9522>
+- Mahnoor Zulfiqar <https://orcid.org/0000-0002-8330-4071>
+- Romain David <https://orcid.org/0000-0003-4073-7456>
 - ... [you](https://github.com/ResearchObject/workflow-run-crate/issues/1)?
 
 
