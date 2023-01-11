@@ -388,7 +388,7 @@ A workflow engine may support configuration through a configuration file. In thi
 {
     "@id": "7ff2f0b6-0294-4da5-9ecc-5846b8aa4e66/streamflow.yml",
     "@type": "File",
-	"name": "StreamFlow configuration file",
+    "name": "StreamFlow configuration file",
     "encodingFormat": "application/yaml"
 },
 {
@@ -400,7 +400,7 @@ A workflow engine may support configuration through a configuration file. In thi
 ...
 ```
 
-See also the [section on referencing configuration files of executed tools](process_run_crate#referencing_configuration_files).
+See also the [section on referencing configuration files of executed tools](process_run_crate#referencing-configuration-files).
 
 
 ## Requirements

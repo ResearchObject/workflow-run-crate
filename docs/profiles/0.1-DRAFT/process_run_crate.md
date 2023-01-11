@@ -200,7 +200,7 @@ A process crate can be used to indicate one single execution as a single `Create
 
 ## Referencing configuration files
 
-Some applications support the modification of their behavior via configuration files. Typically, these are not explicitly part of the input interface, but are searched for by the application among a set of possible predefined file system paths. In the case of applications that support a configuration file, the specific configuration file used during a run SHOULD be added to the `object` attribute of the corresponding `CreateAction`, especially if its settings are different from the default ones.
+Some applications support the modification of their behavior via configuration files. Typically, these are not part of the input interface, but are searched for by the application among a set of possible predefined file system paths. In the case of applications that support a configuration file, the specific configuration file used during a run SHOULD be added to the `object` attribute of the corresponding `CreateAction`, especially if its settings are different from the default ones.
 
 ```json
     {
@@ -211,9 +211,9 @@ Some applications support the modification of their behavior via configuration f
         "endTime": "2018-09-19T17:01:07+10:00",
         "instrument": {"@id": "https://www.imagemagick.org/"},
         "object": [
-		    {"@id": "pics/2017-06-11%2012.56.14.jpg"},
-			{"@id": "colors.xml"}
-		]
+            {"@id": "pics/2017-06-11%2012.56.14.jpg"},
+            {"@id": "SepiaConversion_1/colors.xml"}
+        ]
         "result": {"@id": "pics/sepia_fence.jpg"},
         "agent": {"@id": "https://orcid.org/0000-0001-9842-9718"}
     },
