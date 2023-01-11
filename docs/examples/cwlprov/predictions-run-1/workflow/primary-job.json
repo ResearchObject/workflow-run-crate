@@ -1,0 +1,32 @@
+{
+    "slide": {
+        "class": "File",
+        "location": "../data/f6/f62aa607a75508ac5fc6a22e9c0e39ef58a2c852",
+        "size": 15868,
+        "basename": "Mirax2-Fluorescence-2.mrxs",
+        "nameroot": "Mirax2-Fluorescence-2",
+        "nameext": ".mrxs",
+        "secondaryFiles": [
+            {
+                "class": "Directory",
+                "basename": "Mirax2-Fluorescence-2"
+            }
+        ],
+        "checksum": "sha1$f62aa607a75508ac5fc6a22e9c0e39ef58a2c852"
+    },
+    "tissue-low-level": 9,
+    "tissue-low-label": "tissue_low",
+    "tissue-high-level": 4,
+    "tissue-high-label": "tissue_high",
+    "tissue-high-filter": "tissue_low>0.9",
+    "gpu": null,
+    "tumor-level": 1,
+    "tumor-label": "tumor",
+    "tumor-filter": "tissue_low>0.99",
+    "tissue-high-batch-size": null,
+    "tissue-high-chunk-size": null,
+    "tissue-low-batch-size": null,
+    "tissue-low-chunk-size": null,
+    "tumor-batch-size": null,
+    "tumor-chunk-size": null
+}

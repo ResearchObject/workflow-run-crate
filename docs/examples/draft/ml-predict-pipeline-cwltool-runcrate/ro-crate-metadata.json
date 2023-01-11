@@ -1,0 +1,1497 @@
+{
+    "@context": [
+        "https://w3id.org/ro/crate/1.1/context",
+        {
+            "ParameterConnection": "https://w3id.org/ro/terms/workflow-run#ParameterConnection",
+            "connection": "https://w3id.org/ro/terms/workflow-run#connection",
+            "sourceParameter": "https://w3id.org/ro/terms/workflow-run#sourceParameter",
+            "targetParameter": "https://w3id.org/ro/terms/workflow-run#targetParameter"
+        }
+    ],
+    "@graph": [
+        {
+            "@id": "./",
+            "@type": "Dataset",
+            "datePublished": "2022-12-13T15:05:10+00:00",
+            "hasPart": [
+                {
+                    "@id": "packed.cwl"
+                },
+                {
+                    "@id": "f62aa607a75508ac5fc6a22e9c0e39ef58a2c852"
+                },
+                {
+                    "@id": "303fde451481d0f69e65c9ddca50e950a40f9e30"
+                },
+                {
+                    "@id": "f867a592e3b07d4c08b846de6444b8904974a485"
+                },
+                {
+                    "@id": "c7398fbf741b851e80ae731d60cbee9258ff81f3/"
+                },
+                {
+                    "@id": "c7398fbf741b851e80ae731d60cbee9258ff81f3/3099f7344d2004c58bfb3282dae47a0d204e12da"
+                },
+                {
+                    "@id": "c7398fbf741b851e80ae731d60cbee9258ff81f3/9575fdaa42c448ea550d982cf8e27d0b46320874"
+                },
+                {
+                    "@id": "c7398fbf741b851e80ae731d60cbee9258ff81f3/b43c1cd0875d23bd20dc794fa20255cf272108ec"
+                },
+                {
+                    "@id": "c7398fbf741b851e80ae731d60cbee9258ff81f3/1d3d88c43eb7f44a667170a0e6cb8cd950a4ea16"
+                },
+                {
+                    "@id": "c7398fbf741b851e80ae731d60cbee9258ff81f3/7f0a219f3c842e0c3eaae848caea165940b1ec48"
+                },
+                {
+                    "@id": "c7398fbf741b851e80ae731d60cbee9258ff81f3/d55cbe9ea0ac43eaa69bb8c21eac07539249734f"
+                },
+                {
+                    "@id": "c7398fbf741b851e80ae731d60cbee9258ff81f3/ce3d0d6addaced3e58578e42c341f44737b5aa84"
+                },
+                {
+                    "@id": "c7398fbf741b851e80ae731d60cbee9258ff81f3/e238dcdb6aa71dac71335591439442c7cfef60e6"
+                },
+                {
+                    "@id": "c7398fbf741b851e80ae731d60cbee9258ff81f3/854db6bca6b11fb9f6198dce67b3dcbb371f7ebb"
+                },
+                {
+                    "@id": "c7398fbf741b851e80ae731d60cbee9258ff81f3/9e748097f79d8317b30fcc11833553434e19b02c"
+                },
+                {
+                    "@id": "c7398fbf741b851e80ae731d60cbee9258ff81f3/f642fc608c0edc49db59dfc1d38be7abeda0263a"
+                },
+                {
+                    "@id": "c7398fbf741b851e80ae731d60cbee9258ff81f3/6c1bc911505dc65551c4f0576e1c684723e57897"
+                },
+                {
+                    "@id": "c7398fbf741b851e80ae731d60cbee9258ff81f3/52e0419ea116b78bc330d36f93bc2b4ec2bf8210"
+                },
+                {
+                    "@id": "c7398fbf741b851e80ae731d60cbee9258ff81f3/862eeec8b906cff93bcd1c5ab5e5ec8fc93a2ef1"
+                },
+                {
+                    "@id": "c7398fbf741b851e80ae731d60cbee9258ff81f3/590783315f628a3acd02b9341572138b3a3224db"
+                },
+                {
+                    "@id": "c7398fbf741b851e80ae731d60cbee9258ff81f3/a16fec38b4b7adf7dc1f8e9e58f6956a249a0a08"
+                },
+                {
+                    "@id": "c7398fbf741b851e80ae731d60cbee9258ff81f3/4a1a998cf56818c183b02f93011a6c1c9ec47468"
+                },
+                {
+                    "@id": "c7398fbf741b851e80ae731d60cbee9258ff81f3/06d5def8140f8e14b729a584f78289bc25e7f5ec"
+                },
+                {
+                    "@id": "c7398fbf741b851e80ae731d60cbee9258ff81f3/8e9d580e86f48791871b086f3c27269a03f57897"
+                },
+                {
+                    "@id": "c7398fbf741b851e80ae731d60cbee9258ff81f3/ae7c542bebbacf8d167fae831b69480e19e9c3b0"
+                },
+                {
+                    "@id": "c7398fbf741b851e80ae731d60cbee9258ff81f3/46c443af080a36000c9298b49b675eb240eeb41c"
+                },
+                {
+                    "@id": "c7398fbf741b851e80ae731d60cbee9258ff81f3/bc709e1a4da6e506f81150ee39907d0224e066fb"
+                },
+                {
+                    "@id": "c7398fbf741b851e80ae731d60cbee9258ff81f3/cf03a8a5713c038c566734cf11f81cc03a41efa6"
+                },
+                {
+                    "@id": "c7398fbf741b851e80ae731d60cbee9258ff81f3/a1ad0dfd5f6e24aa90bdf9da0a688e6a0c268905"
+                },
+                {
+                    "@id": "c7398fbf741b851e80ae731d60cbee9258ff81f3/d4061bed85711676d337bd8835e32413957485e3"
+                },
+                {
+                    "@id": "c7398fbf741b851e80ae731d60cbee9258ff81f3/acc92df58c498b2567f6975c3e128aebc0c524c5"
+                },
+                {
+                    "@id": "24cebd1a6599c0e21ea98c28aabafe4ef5b2f345"
+                }
+            ],
+            "license": "MIT",
+            "mainEntity": {
+                "@id": "packed.cwl"
+            },
+            "mentions": [
+                {
+                    "@id": "#e8a7d915-6450-458d-aef6-a15ff3b9e5bf"
+                },
+                {
+                    "@id": "#a53d39e7-cbb3-49c3-8e0b-453154815aae"
+                }
+            ]
+        },
+        {
+            "@id": "ro-crate-metadata.json",
+            "@type": "CreativeWork",
+            "about": {
+                "@id": "./"
+            },
+            "conformsTo": [
+                {
+                    "@id": "https://w3id.org/ro/crate/1.1"
+                },
+                {
+                    "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+                }
+            ]
+        },
+        {
+            "@id": "packed.cwl",
+            "@type": [
+                "File",
+                "SoftwareSourceCode",
+                "ComputationalWorkflow",
+                "HowTo"
+            ],
+            "connection": [
+                {
+                    "@id": "#db17b977-c917-4177-8e56-9eebacbd96a4"
+                },
+                {
+                    "@id": "#e322c4ae-da13-4888-b5fb-d155db2a8d9f"
+                }
+            ],
+            "hasPart": [
+                {
+                    "@id": "packed.cwl#classify_tumor.cwl"
+                },
+                {
+                    "@id": "packed.cwl#extract_tissue.cwl"
+                }
+            ],
+            "input": [
+                {
+                    "@id": "packed.cwl#main/gpu"
+                },
+                {
+                    "@id": "packed.cwl#main/slide"
+                },
+                {
+                    "@id": "packed.cwl#main/tissue-high-batch-size"
+                },
+                {
+                    "@id": "packed.cwl#main/tissue-high-chunk-size"
+                },
+                {
+                    "@id": "packed.cwl#main/tissue-high-filter"
+                },
+                {
+                    "@id": "packed.cwl#main/tissue-high-label"
+                },
+                {
+                    "@id": "packed.cwl#main/tissue-high-level"
+                },
+                {
+                    "@id": "packed.cwl#main/tissue-low-batch-size"
+                },
+                {
+                    "@id": "packed.cwl#main/tissue-low-chunk-size"
+                },
+                {
+                    "@id": "packed.cwl#main/tissue-low-label"
+                },
+                {
+                    "@id": "packed.cwl#main/tissue-low-level"
+                },
+                {
+                    "@id": "packed.cwl#main/tumor-batch-size"
+                },
+                {
+                    "@id": "packed.cwl#main/tumor-chunk-size"
+                },
+                {
+                    "@id": "packed.cwl#main/tumor-filter"
+                },
+                {
+                    "@id": "packed.cwl#main/tumor-label"
+                },
+                {
+                    "@id": "packed.cwl#main/tumor-level"
+                }
+            ],
+            "name": "predictions",
+            "output": [
+                {
+                    "@id": "packed.cwl#main/tissue"
+                },
+                {
+                    "@id": "packed.cwl#main/tumor"
+                }
+            ],
+            "programmingLanguage": {
+                "@id": "https://w3id.org/workflowhub/workflow-ro-crate#cwl"
+            },
+            "step": [
+                {
+                    "@id": "packed.cwl#main/classify-tumor"
+                },
+                {
+                    "@id": "packed.cwl#main/extract-tissue-high"
+                },
+                {
+                    "@id": "packed.cwl#main/extract-tissue-low"
+                }
+            ]
+        },
+        {
+            "@id": "https://w3id.org/workflowhub/workflow-ro-crate#cwl",
+            "@type": "ComputerLanguage",
+            "alternateName": "CWL",
+            "identifier": {
+                "@id": "https://w3id.org/cwl/v1.1/"
+            },
+            "name": "Common Workflow Language",
+            "url": {
+                "@id": "https://www.commonwl.org/"
+            },
+            "version": "v1.1"
+        },
+        {
+            "@id": "packed.cwl#main/gpu",
+            "@type": "FormalParameter",
+            "additionalType": "Integer",
+            "name": "main/gpu",
+            "valueRequired": "False"
+        },
+        {
+            "@id": "packed.cwl#main/slide",
+            "@type": "FormalParameter",
+            "additionalType": "Collection",
+            "name": "main/slide"
+        },
+        {
+            "@id": "packed.cwl#main/tissue-high-batch-size",
+            "@type": "FormalParameter",
+            "additionalType": "Integer",
+            "name": "main/tissue-high-batch-size",
+            "valueRequired": "False"
+        },
+        {
+            "@id": "packed.cwl#main/tissue-high-chunk-size",
+            "@type": "FormalParameter",
+            "additionalType": "Integer",
+            "name": "main/tissue-high-chunk-size",
+            "valueRequired": "False"
+        },
+        {
+            "@id": "packed.cwl#main/tissue-high-filter",
+            "@type": "FormalParameter",
+            "additionalType": "Text",
+            "name": "main/tissue-high-filter"
+        },
+        {
+            "@id": "packed.cwl#main/tissue-high-label",
+            "@type": "FormalParameter",
+            "additionalType": "Text",
+            "name": "main/tissue-high-label"
+        },
+        {
+            "@id": "packed.cwl#main/tissue-high-level",
+            "@type": "FormalParameter",
+            "additionalType": "Integer",
+            "name": "main/tissue-high-level"
+        },
+        {
+            "@id": "packed.cwl#main/tissue-low-batch-size",
+            "@type": "FormalParameter",
+            "additionalType": "Integer",
+            "name": "main/tissue-low-batch-size",
+            "valueRequired": "False"
+        },
+        {
+            "@id": "packed.cwl#main/tissue-low-chunk-size",
+            "@type": "FormalParameter",
+            "additionalType": "Integer",
+            "name": "main/tissue-low-chunk-size",
+            "valueRequired": "False"
+        },
+        {
+            "@id": "packed.cwl#main/tissue-low-label",
+            "@type": "FormalParameter",
+            "additionalType": "Text",
+            "name": "main/tissue-low-label"
+        },
+        {
+            "@id": "packed.cwl#main/tissue-low-level",
+            "@type": "FormalParameter",
+            "additionalType": "Integer",
+            "name": "main/tissue-low-level"
+        },
+        {
+            "@id": "packed.cwl#main/tumor-batch-size",
+            "@type": "FormalParameter",
+            "additionalType": "Integer",
+            "name": "main/tumor-batch-size",
+            "valueRequired": "False"
+        },
+        {
+            "@id": "packed.cwl#main/tumor-chunk-size",
+            "@type": "FormalParameter",
+            "additionalType": "Integer",
+            "name": "main/tumor-chunk-size",
+            "valueRequired": "False"
+        },
+        {
+            "@id": "packed.cwl#main/tumor-filter",
+            "@type": "FormalParameter",
+            "additionalType": "Text",
+            "name": "main/tumor-filter"
+        },
+        {
+            "@id": "packed.cwl#main/tumor-label",
+            "@type": "FormalParameter",
+            "additionalType": "Text",
+            "name": "main/tumor-label"
+        },
+        {
+            "@id": "packed.cwl#main/tumor-level",
+            "@type": "FormalParameter",
+            "additionalType": "Integer",
+            "name": "main/tumor-level"
+        },
+        {
+            "@id": "packed.cwl#main/tissue",
+            "@type": "FormalParameter",
+            "additionalType": "File",
+            "name": "main/tissue"
+        },
+        {
+            "@id": "packed.cwl#main/tumor",
+            "@type": "FormalParameter",
+            "additionalType": "File",
+            "name": "main/tumor"
+        },
+        {
+            "@id": "packed.cwl#main/classify-tumor",
+            "@type": "HowToStep",
+            "connection": [
+                {
+                    "@id": "#4d7c7b5a-fac4-4bf1-b113-148c1f4b1fe7"
+                },
+                {
+                    "@id": "#b09e542b-c82a-4669-b1ee-f232bed67d31"
+                },
+                {
+                    "@id": "#42cb70cf-99d8-459b-9742-89431c0c7d38"
+                },
+                {
+                    "@id": "#56187455-30cf-4f30-9674-9179e1d61578"
+                },
+                {
+                    "@id": "#82bb8856-79f1-4821-b8ec-7cac7139b85c"
+                },
+                {
+                    "@id": "#3a2f18c4-d1cd-44bd-8ee1-39e31f7864db"
+                },
+                {
+                    "@id": "#d18c018a-48fa-410d-ad75-e8f67171c2ae"
+                },
+                {
+                    "@id": "#85a68df7-d682-41d2-aafd-8fd018d048f5"
+                }
+            ],
+            "position": "1",
+            "workExample": {
+                "@id": "packed.cwl#classify_tumor.cwl"
+            }
+        },
+        {
+            "@id": "packed.cwl#classify_tumor.cwl",
+            "@type": "SoftwareApplication",
+            "input": [
+                {
+                    "@id": "packed.cwl#classify_tumor.cwl/batch-size"
+                },
+                {
+                    "@id": "packed.cwl#classify_tumor.cwl/chunk-size"
+                },
+                {
+                    "@id": "packed.cwl#classify_tumor.cwl/filter"
+                },
+                {
+                    "@id": "packed.cwl#classify_tumor.cwl/filter_slide"
+                },
+                {
+                    "@id": "packed.cwl#classify_tumor.cwl/gpu"
+                },
+                {
+                    "@id": "packed.cwl#classify_tumor.cwl/label"
+                },
+                {
+                    "@id": "packed.cwl#classify_tumor.cwl/level"
+                },
+                {
+                    "@id": "packed.cwl#classify_tumor.cwl/src"
+                }
+            ],
+            "name": "classify_tumor.cwl",
+            "output": [
+                {
+                    "@id": "packed.cwl#classify_tumor.cwl/tumor"
+                }
+            ]
+        },
+        {
+            "@id": "packed.cwl#classify_tumor.cwl/batch-size",
+            "@type": "FormalParameter",
+            "additionalType": "Integer",
+            "name": "classify_tumor.cwl/batch-size",
+            "valueRequired": "False"
+        },
+        {
+            "@id": "packed.cwl#classify_tumor.cwl/chunk-size",
+            "@type": "FormalParameter",
+            "additionalType": "Integer",
+            "name": "classify_tumor.cwl/chunk-size",
+            "valueRequired": "False"
+        },
+        {
+            "@id": "packed.cwl#classify_tumor.cwl/filter",
+            "@type": "FormalParameter",
+            "additionalType": "Text",
+            "name": "classify_tumor.cwl/filter",
+            "valueRequired": "False"
+        },
+        {
+            "@id": "packed.cwl#classify_tumor.cwl/filter_slide",
+            "@type": "FormalParameter",
+            "additionalType": "File",
+            "name": "classify_tumor.cwl/filter_slide",
+            "valueRequired": "False"
+        },
+        {
+            "@id": "packed.cwl#classify_tumor.cwl/gpu",
+            "@type": "FormalParameter",
+            "additionalType": "Integer",
+            "name": "classify_tumor.cwl/gpu",
+            "valueRequired": "False"
+        },
+        {
+            "@id": "packed.cwl#classify_tumor.cwl/label",
+            "@type": "FormalParameter",
+            "additionalType": "Text",
+            "name": "classify_tumor.cwl/label"
+        },
+        {
+            "@id": "packed.cwl#classify_tumor.cwl/level",
+            "@type": "FormalParameter",
+            "additionalType": "Integer",
+            "name": "classify_tumor.cwl/level"
+        },
+        {
+            "@id": "packed.cwl#classify_tumor.cwl/src",
+            "@type": "FormalParameter",
+            "additionalType": "Collection",
+            "name": "classify_tumor.cwl/src"
+        },
+        {
+            "@id": "packed.cwl#classify_tumor.cwl/tumor",
+            "@type": "FormalParameter",
+            "additionalType": "File",
+            "name": "classify_tumor.cwl/tumor"
+        },
+        {
+            "@id": "packed.cwl#main/extract-tissue-high",
+            "@type": "HowToStep",
+            "connection": [
+                {
+                    "@id": "#899b3911-52e1-4083-92db-9586324aa6cb"
+                },
+                {
+                    "@id": "#a8d63cba-6681-418d-a6ba-98307ae1cbeb"
+                },
+                {
+                    "@id": "#33cede63-7e97-4d9a-8e07-99692809dca4"
+                },
+                {
+                    "@id": "#ba7d68a7-29a0-40e0-ace2-21bd214c948b"
+                },
+                {
+                    "@id": "#ca53a37b-516e-4741-9ff0-491d93bd7dd6"
+                },
+                {
+                    "@id": "#14f6f55d-a9a5-4c54-b238-5e8bb9f75d4a"
+                },
+                {
+                    "@id": "#d7ae802c-d829-4fd9-aa3a-6f75a1ff75d5"
+                },
+                {
+                    "@id": "#6d06a798-60b6-48ac-8d04-cd2737e04eff"
+                }
+            ],
+            "position": "2",
+            "workExample": {
+                "@id": "packed.cwl#extract_tissue.cwl"
+            }
+        },
+        {
+            "@id": "packed.cwl#extract_tissue.cwl",
+            "@type": "SoftwareApplication",
+            "input": [
+                {
+                    "@id": "packed.cwl#extract_tissue.cwl/batch-size"
+                },
+                {
+                    "@id": "packed.cwl#extract_tissue.cwl/chunk-size"
+                },
+                {
+                    "@id": "packed.cwl#extract_tissue.cwl/filter"
+                },
+                {
+                    "@id": "packed.cwl#extract_tissue.cwl/filter_slide"
+                },
+                {
+                    "@id": "packed.cwl#extract_tissue.cwl/gpu"
+                },
+                {
+                    "@id": "packed.cwl#extract_tissue.cwl/label"
+                },
+                {
+                    "@id": "packed.cwl#extract_tissue.cwl/level"
+                },
+                {
+                    "@id": "packed.cwl#extract_tissue.cwl/src"
+                }
+            ],
+            "name": "extract_tissue.cwl",
+            "output": [
+                {
+                    "@id": "packed.cwl#extract_tissue.cwl/tissue"
+                }
+            ]
+        },
+        {
+            "@id": "packed.cwl#extract_tissue.cwl/batch-size",
+            "@type": "FormalParameter",
+            "additionalType": "Integer",
+            "name": "extract_tissue.cwl/batch-size",
+            "valueRequired": "False"
+        },
+        {
+            "@id": "packed.cwl#extract_tissue.cwl/chunk-size",
+            "@type": "FormalParameter",
+            "additionalType": "Integer",
+            "name": "extract_tissue.cwl/chunk-size",
+            "valueRequired": "False"
+        },
+        {
+            "@id": "packed.cwl#extract_tissue.cwl/filter",
+            "@type": "FormalParameter",
+            "additionalType": "Text",
+            "name": "extract_tissue.cwl/filter",
+            "valueRequired": "False"
+        },
+        {
+            "@id": "packed.cwl#extract_tissue.cwl/filter_slide",
+            "@type": "FormalParameter",
+            "additionalType": "File",
+            "name": "extract_tissue.cwl/filter_slide",
+            "valueRequired": "False"
+        },
+        {
+            "@id": "packed.cwl#extract_tissue.cwl/gpu",
+            "@type": "FormalParameter",
+            "additionalType": "Integer",
+            "name": "extract_tissue.cwl/gpu",
+            "valueRequired": "False"
+        },
+        {
+            "@id": "packed.cwl#extract_tissue.cwl/label",
+            "@type": "FormalParameter",
+            "additionalType": "Text",
+            "name": "extract_tissue.cwl/label"
+        },
+        {
+            "@id": "packed.cwl#extract_tissue.cwl/level",
+            "@type": "FormalParameter",
+            "additionalType": "Integer",
+            "name": "extract_tissue.cwl/level"
+        },
+        {
+            "@id": "packed.cwl#extract_tissue.cwl/src",
+            "@type": "FormalParameter",
+            "additionalType": "Collection",
+            "name": "extract_tissue.cwl/src"
+        },
+        {
+            "@id": "packed.cwl#extract_tissue.cwl/tissue",
+            "@type": "FormalParameter",
+            "additionalType": "File",
+            "name": "extract_tissue.cwl/tissue"
+        },
+        {
+            "@id": "packed.cwl#main/extract-tissue-low",
+            "@type": "HowToStep",
+            "connection": [
+                {
+                    "@id": "#7b5afa07-628c-4605-9ba2-2c10485e34f3"
+                },
+                {
+                    "@id": "#2c285078-f867-4535-8a87-915d893a2f4a"
+                },
+                {
+                    "@id": "#9233738e-be63-4a79-892f-c673be0a84a4"
+                },
+                {
+                    "@id": "#11da0f81-3462-458b-8752-d66a5f808954"
+                },
+                {
+                    "@id": "#91419ec0-99bd-45a7-ab57-0ace67edbc95"
+                },
+                {
+                    "@id": "#56685093-2799-41ba-b4a6-2e0bdb7167a7"
+                }
+            ],
+            "position": "0",
+            "workExample": {
+                "@id": "packed.cwl#extract_tissue.cwl"
+            }
+        },
+        {
+            "@id": "#4d7c7b5a-fac4-4bf1-b113-148c1f4b1fe7",
+            "@type": "ParameterConnection",
+            "sourceParameter": {
+                "@id": "packed.cwl#main/tumor-batch-size"
+            },
+            "targetParameter": {
+                "@id": "packed.cwl#classify_tumor.cwl/batch-size"
+            }
+        },
+        {
+            "@id": "#b09e542b-c82a-4669-b1ee-f232bed67d31",
+            "@type": "ParameterConnection",
+            "sourceParameter": {
+                "@id": "packed.cwl#main/tumor-chunk-size"
+            },
+            "targetParameter": {
+                "@id": "packed.cwl#classify_tumor.cwl/chunk-size"
+            }
+        },
+        {
+            "@id": "#42cb70cf-99d8-459b-9742-89431c0c7d38",
+            "@type": "ParameterConnection",
+            "sourceParameter": {
+                "@id": "packed.cwl#main/tumor-filter"
+            },
+            "targetParameter": {
+                "@id": "packed.cwl#classify_tumor.cwl/filter"
+            }
+        },
+        {
+            "@id": "#56187455-30cf-4f30-9674-9179e1d61578",
+            "@type": "ParameterConnection",
+            "sourceParameter": {
+                "@id": "packed.cwl#extract_tissue.cwl/tissue"
+            },
+            "targetParameter": {
+                "@id": "packed.cwl#classify_tumor.cwl/filter_slide"
+            }
+        },
+        {
+            "@id": "#82bb8856-79f1-4821-b8ec-7cac7139b85c",
+            "@type": "ParameterConnection",
+            "sourceParameter": {
+                "@id": "packed.cwl#main/gpu"
+            },
+            "targetParameter": {
+                "@id": "packed.cwl#classify_tumor.cwl/gpu"
+            }
+        },
+        {
+            "@id": "#3a2f18c4-d1cd-44bd-8ee1-39e31f7864db",
+            "@type": "ParameterConnection",
+            "sourceParameter": {
+                "@id": "packed.cwl#main/tumor-label"
+            },
+            "targetParameter": {
+                "@id": "packed.cwl#classify_tumor.cwl/label"
+            }
+        },
+        {
+            "@id": "#d18c018a-48fa-410d-ad75-e8f67171c2ae",
+            "@type": "ParameterConnection",
+            "sourceParameter": {
+                "@id": "packed.cwl#main/tumor-level"
+            },
+            "targetParameter": {
+                "@id": "packed.cwl#classify_tumor.cwl/level"
+            }
+        },
+        {
+            "@id": "#85a68df7-d682-41d2-aafd-8fd018d048f5",
+            "@type": "ParameterConnection",
+            "sourceParameter": {
+                "@id": "packed.cwl#main/slide"
+            },
+            "targetParameter": {
+                "@id": "packed.cwl#classify_tumor.cwl/src"
+            }
+        },
+        {
+            "@id": "#899b3911-52e1-4083-92db-9586324aa6cb",
+            "@type": "ParameterConnection",
+            "sourceParameter": {
+                "@id": "packed.cwl#main/tissue-high-batch-size"
+            },
+            "targetParameter": {
+                "@id": "packed.cwl#extract_tissue.cwl/batch-size"
+            }
+        },
+        {
+            "@id": "#a8d63cba-6681-418d-a6ba-98307ae1cbeb",
+            "@type": "ParameterConnection",
+            "sourceParameter": {
+                "@id": "packed.cwl#main/tissue-high-chunk-size"
+            },
+            "targetParameter": {
+                "@id": "packed.cwl#extract_tissue.cwl/chunk-size"
+            }
+        },
+        {
+            "@id": "#33cede63-7e97-4d9a-8e07-99692809dca4",
+            "@type": "ParameterConnection",
+            "sourceParameter": {
+                "@id": "packed.cwl#main/tissue-high-filter"
+            },
+            "targetParameter": {
+                "@id": "packed.cwl#extract_tissue.cwl/filter"
+            }
+        },
+        {
+            "@id": "#ba7d68a7-29a0-40e0-ace2-21bd214c948b",
+            "@type": "ParameterConnection",
+            "sourceParameter": {
+                "@id": "packed.cwl#extract_tissue.cwl/tissue"
+            },
+            "targetParameter": {
+                "@id": "packed.cwl#extract_tissue.cwl/filter_slide"
+            }
+        },
+        {
+            "@id": "#ca53a37b-516e-4741-9ff0-491d93bd7dd6",
+            "@type": "ParameterConnection",
+            "sourceParameter": {
+                "@id": "packed.cwl#main/gpu"
+            },
+            "targetParameter": {
+                "@id": "packed.cwl#extract_tissue.cwl/gpu"
+            }
+        },
+        {
+            "@id": "#14f6f55d-a9a5-4c54-b238-5e8bb9f75d4a",
+            "@type": "ParameterConnection",
+            "sourceParameter": {
+                "@id": "packed.cwl#main/tissue-high-label"
+            },
+            "targetParameter": {
+                "@id": "packed.cwl#extract_tissue.cwl/label"
+            }
+        },
+        {
+            "@id": "#d7ae802c-d829-4fd9-aa3a-6f75a1ff75d5",
+            "@type": "ParameterConnection",
+            "sourceParameter": {
+                "@id": "packed.cwl#main/tissue-high-level"
+            },
+            "targetParameter": {
+                "@id": "packed.cwl#extract_tissue.cwl/level"
+            }
+        },
+        {
+            "@id": "#6d06a798-60b6-48ac-8d04-cd2737e04eff",
+            "@type": "ParameterConnection",
+            "sourceParameter": {
+                "@id": "packed.cwl#main/slide"
+            },
+            "targetParameter": {
+                "@id": "packed.cwl#extract_tissue.cwl/src"
+            }
+        },
+        {
+            "@id": "#7b5afa07-628c-4605-9ba2-2c10485e34f3",
+            "@type": "ParameterConnection",
+            "sourceParameter": {
+                "@id": "packed.cwl#main/tissue-low-batch-size"
+            },
+            "targetParameter": {
+                "@id": "packed.cwl#extract_tissue.cwl/batch-size"
+            }
+        },
+        {
+            "@id": "#2c285078-f867-4535-8a87-915d893a2f4a",
+            "@type": "ParameterConnection",
+            "sourceParameter": {
+                "@id": "packed.cwl#main/tissue-low-chunk-size"
+            },
+            "targetParameter": {
+                "@id": "packed.cwl#extract_tissue.cwl/chunk-size"
+            }
+        },
+        {
+            "@id": "#9233738e-be63-4a79-892f-c673be0a84a4",
+            "@type": "ParameterConnection",
+            "sourceParameter": {
+                "@id": "packed.cwl#main/gpu"
+            },
+            "targetParameter": {
+                "@id": "packed.cwl#extract_tissue.cwl/gpu"
+            }
+        },
+        {
+            "@id": "#11da0f81-3462-458b-8752-d66a5f808954",
+            "@type": "ParameterConnection",
+            "sourceParameter": {
+                "@id": "packed.cwl#main/tissue-low-label"
+            },
+            "targetParameter": {
+                "@id": "packed.cwl#extract_tissue.cwl/label"
+            }
+        },
+        {
+            "@id": "#91419ec0-99bd-45a7-ab57-0ace67edbc95",
+            "@type": "ParameterConnection",
+            "sourceParameter": {
+                "@id": "packed.cwl#main/tissue-low-level"
+            },
+            "targetParameter": {
+                "@id": "packed.cwl#extract_tissue.cwl/level"
+            }
+        },
+        {
+            "@id": "#56685093-2799-41ba-b4a6-2e0bdb7167a7",
+            "@type": "ParameterConnection",
+            "sourceParameter": {
+                "@id": "packed.cwl#main/slide"
+            },
+            "targetParameter": {
+                "@id": "packed.cwl#extract_tissue.cwl/src"
+            }
+        },
+        {
+            "@id": "#db17b977-c917-4177-8e56-9eebacbd96a4",
+            "@type": "ParameterConnection",
+            "sourceParameter": {
+                "@id": "packed.cwl#extract_tissue.cwl/tissue"
+            },
+            "targetParameter": {
+                "@id": "packed.cwl#main/tissue"
+            }
+        },
+        {
+            "@id": "#e322c4ae-da13-4888-b5fb-d155db2a8d9f",
+            "@type": "ParameterConnection",
+            "sourceParameter": {
+                "@id": "packed.cwl#classify_tumor.cwl/tumor"
+            },
+            "targetParameter": {
+                "@id": "packed.cwl#main/tumor"
+            }
+        },
+        {
+            "@id": "#5b82a1b3-da84-41dc-aab4-3be9a94c31f9",
+            "@type": "SoftwareApplication",
+            "name": "cwltool 3.1.20220802125926"
+        },
+        {
+            "@id": "#47460c40-b262-4d6e-9dd8-4d2a75f5cc40",
+            "@type": "OrganizeAction",
+            "instrument": {
+                "@id": "#5b82a1b3-da84-41dc-aab4-3be9a94c31f9"
+            },
+            "name": "Run of cwltool 3.1.20220802125926",
+            "object": [
+                {
+                    "@id": "#246367e3-fcd7-40f1-8d65-d11e4819f83b"
+                },
+                {
+                    "@id": "#e3e7ce29-153e-499e-8314-192a0c963ce6"
+                },
+                {
+                    "@id": "#ee349bb2-77a2-4836-9759-50ff304e6e8b"
+                }
+            ],
+            "result": {
+                "@id": "#e8a7d915-6450-458d-aef6-a15ff3b9e5bf"
+            },
+            "startTime": "2022-12-07T14:56:06.279215"
+        },
+        {
+            "@id": "#e8a7d915-6450-458d-aef6-a15ff3b9e5bf",
+            "@type": "CreateAction",
+            "endTime": "2022-12-07T14:56:22.019166",
+            "instrument": {
+                "@id": "packed.cwl"
+            },
+            "name": "Run of workflow/packed.cwl#main",
+            "object": [
+                {
+                    "@id": "f62aa607a75508ac5fc6a22e9c0e39ef58a2c852"
+                },
+                {
+                    "@id": "#pv-main/tissue-high-filter"
+                },
+                {
+                    "@id": "#pv-main/tissue-high-label"
+                },
+                {
+                    "@id": "#pv-main/tissue-high-level"
+                },
+                {
+                    "@id": "#pv-main/tissue-low-label"
+                },
+                {
+                    "@id": "#pv-main/tissue-low-level"
+                },
+                {
+                    "@id": "#pv-main/tumor-filter"
+                },
+                {
+                    "@id": "#pv-main/tumor-label"
+                },
+                {
+                    "@id": "#pv-main/tumor-level"
+                }
+            ],
+            "result": [
+                {
+                    "@id": "303fde451481d0f69e65c9ddca50e950a40f9e30"
+                },
+                {
+                    "@id": "f867a592e3b07d4c08b846de6444b8904974a485"
+                }
+            ],
+            "startTime": "2022-12-07T14:56:06.279392"
+        },
+        {
+            "@id": "f62aa607a75508ac5fc6a22e9c0e39ef58a2c852",
+            "@type": "File",
+            "exampleOfWork": {
+                "@id": "packed.cwl#main/slide"
+            }
+        },
+        {
+            "@id": "#pv-main/tissue-high-filter",
+            "@type": "PropertyValue",
+            "exampleOfWork": {
+                "@id": "packed.cwl#main/tissue-high-filter"
+            },
+            "name": "main/tissue-high-filter",
+            "value": "tissue_low>0.9"
+        },
+        {
+            "@id": "#pv-main/tissue-high-label",
+            "@type": "PropertyValue",
+            "exampleOfWork": {
+                "@id": "packed.cwl#main/tissue-high-label"
+            },
+            "name": "main/tissue-high-label",
+            "value": "tissue_high"
+        },
+        {
+            "@id": "#pv-main/tissue-high-level",
+            "@type": "PropertyValue",
+            "exampleOfWork": {
+                "@id": "packed.cwl#main/tissue-high-level"
+            },
+            "name": "main/tissue-high-level",
+            "value": "4"
+        },
+        {
+            "@id": "#pv-main/tissue-low-label",
+            "@type": "PropertyValue",
+            "exampleOfWork": {
+                "@id": "packed.cwl#main/tissue-low-label"
+            },
+            "name": "main/tissue-low-label",
+            "value": "tissue_low"
+        },
+        {
+            "@id": "#pv-main/tissue-low-level",
+            "@type": "PropertyValue",
+            "exampleOfWork": {
+                "@id": "packed.cwl#main/tissue-low-level"
+            },
+            "name": "main/tissue-low-level",
+            "value": "9"
+        },
+        {
+            "@id": "#pv-main/tumor-filter",
+            "@type": "PropertyValue",
+            "exampleOfWork": {
+                "@id": "packed.cwl#main/tumor-filter"
+            },
+            "name": "main/tumor-filter",
+            "value": "tissue_low>0.99"
+        },
+        {
+            "@id": "#pv-main/tumor-label",
+            "@type": "PropertyValue",
+            "exampleOfWork": {
+                "@id": "packed.cwl#main/tumor-label"
+            },
+            "name": "main/tumor-label",
+            "value": "tumor"
+        },
+        {
+            "@id": "#pv-main/tumor-level",
+            "@type": "PropertyValue",
+            "exampleOfWork": {
+                "@id": "packed.cwl#main/tumor-level"
+            },
+            "name": "main/tumor-level",
+            "value": "1"
+        },
+        {
+            "@id": "303fde451481d0f69e65c9ddca50e950a40f9e30",
+            "@type": "File",
+            "exampleOfWork": [
+                {
+                    "@id": "packed.cwl#main/tissue"
+                },
+                {
+                    "@id": "packed.cwl#extract_tissue.cwl/tissue"
+                }
+            ]
+        },
+        {
+            "@id": "f867a592e3b07d4c08b846de6444b8904974a485",
+            "@type": "File",
+            "exampleOfWork": [
+                {
+                    "@id": "packed.cwl#main/tumor"
+                },
+                {
+                    "@id": "packed.cwl#classify_tumor.cwl/tumor"
+                }
+            ]
+        },
+        {
+            "@id": "#53911704-594f-4978-b9b6-018d40408843",
+            "@type": "CreateAction",
+            "endTime": "2022-12-07T14:56:09.333476",
+            "instrument": {
+                "@id": "packed.cwl#extract_tissue.cwl"
+            },
+            "name": "Run of workflow/packed.cwl#main/extract-tissue-low",
+            "object": [
+                {
+                    "@id": "#pv-main/extract-tissue-low/label"
+                },
+                {
+                    "@id": "#pv-main/extract-tissue-low/level"
+                },
+                {
+                    "@id": "#a53d39e7-cbb3-49c3-8e0b-453154815aae"
+                }
+            ],
+            "result": [
+                {
+                    "@id": "24cebd1a6599c0e21ea98c28aabafe4ef5b2f345"
+                }
+            ],
+            "startTime": "2022-12-07T14:56:07.415465"
+        },
+        {
+            "@id": "#246367e3-fcd7-40f1-8d65-d11e4819f83b",
+            "@type": "ControlAction",
+            "instrument": {
+                "@id": "packed.cwl#main/extract-tissue-low"
+            },
+            "name": "orchestrate extract_tissue.cwl",
+            "object": {
+                "@id": "#53911704-594f-4978-b9b6-018d40408843"
+            }
+        },
+        {
+            "@id": "#pv-main/extract-tissue-low/label",
+            "@type": "PropertyValue",
+            "exampleOfWork": {
+                "@id": "packed.cwl#extract_tissue.cwl/label"
+            },
+            "name": "main/extract-tissue-low/label",
+            "value": "tissue_low"
+        },
+        {
+            "@id": "#pv-main/extract-tissue-low/level",
+            "@type": "PropertyValue",
+            "exampleOfWork": {
+                "@id": "packed.cwl#extract_tissue.cwl/level"
+            },
+            "name": "main/extract-tissue-low/level",
+            "value": "9"
+        },
+        {
+            "@id": "#a53d39e7-cbb3-49c3-8e0b-453154815aae",
+            "@type": "Collection",
+            "exampleOfWork": [
+                {
+                    "@id": "packed.cwl#extract_tissue.cwl/src"
+                },
+                {
+                    "@id": "packed.cwl#extract_tissue.cwl/src"
+                },
+                {
+                    "@id": "packed.cwl#classify_tumor.cwl/src"
+                }
+            ],
+            "hasPart": [
+                {
+                    "@id": "f62aa607a75508ac5fc6a22e9c0e39ef58a2c852"
+                },
+                {
+                    "@id": "c7398fbf741b851e80ae731d60cbee9258ff81f3/"
+                }
+            ],
+            "mainEntity": {
+                "@id": "f62aa607a75508ac5fc6a22e9c0e39ef58a2c852"
+            }
+        },
+        {
+            "@id": "c7398fbf741b851e80ae731d60cbee9258ff81f3/",
+            "@type": "Dataset",
+            "hasPart": [
+                {
+                    "@id": "c7398fbf741b851e80ae731d60cbee9258ff81f3/3099f7344d2004c58bfb3282dae47a0d204e12da"
+                },
+                {
+                    "@id": "c7398fbf741b851e80ae731d60cbee9258ff81f3/9575fdaa42c448ea550d982cf8e27d0b46320874"
+                },
+                {
+                    "@id": "c7398fbf741b851e80ae731d60cbee9258ff81f3/b43c1cd0875d23bd20dc794fa20255cf272108ec"
+                },
+                {
+                    "@id": "c7398fbf741b851e80ae731d60cbee9258ff81f3/1d3d88c43eb7f44a667170a0e6cb8cd950a4ea16"
+                },
+                {
+                    "@id": "c7398fbf741b851e80ae731d60cbee9258ff81f3/7f0a219f3c842e0c3eaae848caea165940b1ec48"
+                },
+                {
+                    "@id": "c7398fbf741b851e80ae731d60cbee9258ff81f3/d55cbe9ea0ac43eaa69bb8c21eac07539249734f"
+                },
+                {
+                    "@id": "c7398fbf741b851e80ae731d60cbee9258ff81f3/ce3d0d6addaced3e58578e42c341f44737b5aa84"
+                },
+                {
+                    "@id": "c7398fbf741b851e80ae731d60cbee9258ff81f3/e238dcdb6aa71dac71335591439442c7cfef60e6"
+                },
+                {
+                    "@id": "c7398fbf741b851e80ae731d60cbee9258ff81f3/854db6bca6b11fb9f6198dce67b3dcbb371f7ebb"
+                },
+                {
+                    "@id": "c7398fbf741b851e80ae731d60cbee9258ff81f3/9e748097f79d8317b30fcc11833553434e19b02c"
+                },
+                {
+                    "@id": "c7398fbf741b851e80ae731d60cbee9258ff81f3/f642fc608c0edc49db59dfc1d38be7abeda0263a"
+                },
+                {
+                    "@id": "c7398fbf741b851e80ae731d60cbee9258ff81f3/6c1bc911505dc65551c4f0576e1c684723e57897"
+                },
+                {
+                    "@id": "c7398fbf741b851e80ae731d60cbee9258ff81f3/52e0419ea116b78bc330d36f93bc2b4ec2bf8210"
+                },
+                {
+                    "@id": "c7398fbf741b851e80ae731d60cbee9258ff81f3/862eeec8b906cff93bcd1c5ab5e5ec8fc93a2ef1"
+                },
+                {
+                    "@id": "c7398fbf741b851e80ae731d60cbee9258ff81f3/590783315f628a3acd02b9341572138b3a3224db"
+                },
+                {
+                    "@id": "c7398fbf741b851e80ae731d60cbee9258ff81f3/a16fec38b4b7adf7dc1f8e9e58f6956a249a0a08"
+                },
+                {
+                    "@id": "c7398fbf741b851e80ae731d60cbee9258ff81f3/4a1a998cf56818c183b02f93011a6c1c9ec47468"
+                },
+                {
+                    "@id": "c7398fbf741b851e80ae731d60cbee9258ff81f3/06d5def8140f8e14b729a584f78289bc25e7f5ec"
+                },
+                {
+                    "@id": "c7398fbf741b851e80ae731d60cbee9258ff81f3/8e9d580e86f48791871b086f3c27269a03f57897"
+                },
+                {
+                    "@id": "c7398fbf741b851e80ae731d60cbee9258ff81f3/ae7c542bebbacf8d167fae831b69480e19e9c3b0"
+                },
+                {
+                    "@id": "c7398fbf741b851e80ae731d60cbee9258ff81f3/46c443af080a36000c9298b49b675eb240eeb41c"
+                },
+                {
+                    "@id": "c7398fbf741b851e80ae731d60cbee9258ff81f3/bc709e1a4da6e506f81150ee39907d0224e066fb"
+                },
+                {
+                    "@id": "c7398fbf741b851e80ae731d60cbee9258ff81f3/cf03a8a5713c038c566734cf11f81cc03a41efa6"
+                },
+                {
+                    "@id": "c7398fbf741b851e80ae731d60cbee9258ff81f3/a1ad0dfd5f6e24aa90bdf9da0a688e6a0c268905"
+                },
+                {
+                    "@id": "c7398fbf741b851e80ae731d60cbee9258ff81f3/d4061bed85711676d337bd8835e32413957485e3"
+                },
+                {
+                    "@id": "c7398fbf741b851e80ae731d60cbee9258ff81f3/acc92df58c498b2567f6975c3e128aebc0c524c5"
+                }
+            ]
+        },
+        {
+            "@id": "c7398fbf741b851e80ae731d60cbee9258ff81f3/3099f7344d2004c58bfb3282dae47a0d204e12da",
+            "@type": "File"
+        },
+        {
+            "@id": "c7398fbf741b851e80ae731d60cbee9258ff81f3/9575fdaa42c448ea550d982cf8e27d0b46320874",
+            "@type": "File"
+        },
+        {
+            "@id": "c7398fbf741b851e80ae731d60cbee9258ff81f3/b43c1cd0875d23bd20dc794fa20255cf272108ec",
+            "@type": "File"
+        },
+        {
+            "@id": "c7398fbf741b851e80ae731d60cbee9258ff81f3/1d3d88c43eb7f44a667170a0e6cb8cd950a4ea16",
+            "@type": "File"
+        },
+        {
+            "@id": "c7398fbf741b851e80ae731d60cbee9258ff81f3/7f0a219f3c842e0c3eaae848caea165940b1ec48",
+            "@type": "File"
+        },
+        {
+            "@id": "c7398fbf741b851e80ae731d60cbee9258ff81f3/d55cbe9ea0ac43eaa69bb8c21eac07539249734f",
+            "@type": "File"
+        },
+        {
+            "@id": "c7398fbf741b851e80ae731d60cbee9258ff81f3/ce3d0d6addaced3e58578e42c341f44737b5aa84",
+            "@type": "File"
+        },
+        {
+            "@id": "c7398fbf741b851e80ae731d60cbee9258ff81f3/e238dcdb6aa71dac71335591439442c7cfef60e6",
+            "@type": "File"
+        },
+        {
+            "@id": "c7398fbf741b851e80ae731d60cbee9258ff81f3/854db6bca6b11fb9f6198dce67b3dcbb371f7ebb",
+            "@type": "File"
+        },
+        {
+            "@id": "c7398fbf741b851e80ae731d60cbee9258ff81f3/9e748097f79d8317b30fcc11833553434e19b02c",
+            "@type": "File"
+        },
+        {
+            "@id": "c7398fbf741b851e80ae731d60cbee9258ff81f3/f642fc608c0edc49db59dfc1d38be7abeda0263a",
+            "@type": "File"
+        },
+        {
+            "@id": "c7398fbf741b851e80ae731d60cbee9258ff81f3/6c1bc911505dc65551c4f0576e1c684723e57897",
+            "@type": "File"
+        },
+        {
+            "@id": "c7398fbf741b851e80ae731d60cbee9258ff81f3/52e0419ea116b78bc330d36f93bc2b4ec2bf8210",
+            "@type": "File"
+        },
+        {
+            "@id": "c7398fbf741b851e80ae731d60cbee9258ff81f3/862eeec8b906cff93bcd1c5ab5e5ec8fc93a2ef1",
+            "@type": "File"
+        },
+        {
+            "@id": "c7398fbf741b851e80ae731d60cbee9258ff81f3/590783315f628a3acd02b9341572138b3a3224db",
+            "@type": "File"
+        },
+        {
+            "@id": "c7398fbf741b851e80ae731d60cbee9258ff81f3/a16fec38b4b7adf7dc1f8e9e58f6956a249a0a08",
+            "@type": "File"
+        },
+        {
+            "@id": "c7398fbf741b851e80ae731d60cbee9258ff81f3/4a1a998cf56818c183b02f93011a6c1c9ec47468",
+            "@type": "File"
+        },
+        {
+            "@id": "c7398fbf741b851e80ae731d60cbee9258ff81f3/06d5def8140f8e14b729a584f78289bc25e7f5ec",
+            "@type": "File"
+        },
+        {
+            "@id": "c7398fbf741b851e80ae731d60cbee9258ff81f3/8e9d580e86f48791871b086f3c27269a03f57897",
+            "@type": "File"
+        },
+        {
+            "@id": "c7398fbf741b851e80ae731d60cbee9258ff81f3/ae7c542bebbacf8d167fae831b69480e19e9c3b0",
+            "@type": "File"
+        },
+        {
+            "@id": "c7398fbf741b851e80ae731d60cbee9258ff81f3/46c443af080a36000c9298b49b675eb240eeb41c",
+            "@type": "File"
+        },
+        {
+            "@id": "c7398fbf741b851e80ae731d60cbee9258ff81f3/bc709e1a4da6e506f81150ee39907d0224e066fb",
+            "@type": "File"
+        },
+        {
+            "@id": "c7398fbf741b851e80ae731d60cbee9258ff81f3/cf03a8a5713c038c566734cf11f81cc03a41efa6",
+            "@type": "File"
+        },
+        {
+            "@id": "c7398fbf741b851e80ae731d60cbee9258ff81f3/a1ad0dfd5f6e24aa90bdf9da0a688e6a0c268905",
+            "@type": "File"
+        },
+        {
+            "@id": "c7398fbf741b851e80ae731d60cbee9258ff81f3/d4061bed85711676d337bd8835e32413957485e3",
+            "@type": "File"
+        },
+        {
+            "@id": "c7398fbf741b851e80ae731d60cbee9258ff81f3/acc92df58c498b2567f6975c3e128aebc0c524c5",
+            "@type": "File"
+        },
+        {
+            "@id": "24cebd1a6599c0e21ea98c28aabafe4ef5b2f345",
+            "@type": "File",
+            "exampleOfWork": [
+                {
+                    "@id": "packed.cwl#extract_tissue.cwl/tissue"
+                },
+                {
+                    "@id": "packed.cwl#extract_tissue.cwl/filter_slide"
+                },
+                {
+                    "@id": "packed.cwl#classify_tumor.cwl/filter_slide"
+                }
+            ]
+        },
+        {
+            "@id": "#dda41bd9-9d18-457a-b301-369430fec72f",
+            "@type": "CreateAction",
+            "endTime": "2022-12-07T14:56:10.908178",
+            "instrument": {
+                "@id": "packed.cwl#extract_tissue.cwl"
+            },
+            "name": "Run of workflow/packed.cwl#main/extract-tissue-high",
+            "object": [
+                {
+                    "@id": "#pv-main/extract-tissue-high/filter"
+                },
+                {
+                    "@id": "24cebd1a6599c0e21ea98c28aabafe4ef5b2f345"
+                },
+                {
+                    "@id": "#pv-main/extract-tissue-high/label"
+                },
+                {
+                    "@id": "#pv-main/extract-tissue-high/level"
+                },
+                {
+                    "@id": "#a53d39e7-cbb3-49c3-8e0b-453154815aae"
+                }
+            ],
+            "result": [
+                {
+                    "@id": "303fde451481d0f69e65c9ddca50e950a40f9e30"
+                }
+            ],
+            "startTime": "2022-12-07T14:56:09.340412"
+        },
+        {
+            "@id": "#e3e7ce29-153e-499e-8314-192a0c963ce6",
+            "@type": "ControlAction",
+            "instrument": {
+                "@id": "packed.cwl#main/extract-tissue-high"
+            },
+            "name": "orchestrate extract_tissue.cwl",
+            "object": {
+                "@id": "#dda41bd9-9d18-457a-b301-369430fec72f"
+            }
+        },
+        {
+            "@id": "#pv-main/extract-tissue-high/filter",
+            "@type": "PropertyValue",
+            "exampleOfWork": {
+                "@id": "packed.cwl#extract_tissue.cwl/filter"
+            },
+            "name": "main/extract-tissue-high/filter",
+            "value": "tissue_low>0.9"
+        },
+        {
+            "@id": "#pv-main/extract-tissue-high/label",
+            "@type": "PropertyValue",
+            "exampleOfWork": {
+                "@id": "packed.cwl#extract_tissue.cwl/label"
+            },
+            "name": "main/extract-tissue-high/label",
+            "value": "tissue_high"
+        },
+        {
+            "@id": "#pv-main/extract-tissue-high/level",
+            "@type": "PropertyValue",
+            "exampleOfWork": {
+                "@id": "packed.cwl#extract_tissue.cwl/level"
+            },
+            "name": "main/extract-tissue-high/level",
+            "value": "4"
+        },
+        {
+            "@id": "#aa2aaacf-f2a1-4276-b506-7581bbd311c9",
+            "@type": "CreateAction",
+            "endTime": "2022-12-07T14:56:22.009273",
+            "instrument": {
+                "@id": "packed.cwl#classify_tumor.cwl"
+            },
+            "name": "Run of workflow/packed.cwl#main/classify-tumor",
+            "object": [
+                {
+                    "@id": "#pv-main/classify-tumor/filter"
+                },
+                {
+                    "@id": "24cebd1a6599c0e21ea98c28aabafe4ef5b2f345"
+                },
+                {
+                    "@id": "#pv-main/classify-tumor/label"
+                },
+                {
+                    "@id": "#pv-main/classify-tumor/level"
+                },
+                {
+                    "@id": "#a53d39e7-cbb3-49c3-8e0b-453154815aae"
+                }
+            ],
+            "result": [
+                {
+                    "@id": "f867a592e3b07d4c08b846de6444b8904974a485"
+                }
+            ],
+            "startTime": "2022-12-07T14:56:10.923463"
+        },
+        {
+            "@id": "#ee349bb2-77a2-4836-9759-50ff304e6e8b",
+            "@type": "ControlAction",
+            "instrument": {
+                "@id": "packed.cwl#main/classify-tumor"
+            },
+            "name": "orchestrate classify_tumor.cwl",
+            "object": {
+                "@id": "#aa2aaacf-f2a1-4276-b506-7581bbd311c9"
+            }
+        },
+        {
+            "@id": "#pv-main/classify-tumor/filter",
+            "@type": "PropertyValue",
+            "exampleOfWork": {
+                "@id": "packed.cwl#classify_tumor.cwl/filter"
+            },
+            "name": "main/classify-tumor/filter",
+            "value": "tissue_low>0.99"
+        },
+        {
+            "@id": "#pv-main/classify-tumor/label",
+            "@type": "PropertyValue",
+            "exampleOfWork": {
+                "@id": "packed.cwl#classify_tumor.cwl/label"
+            },
+            "name": "main/classify-tumor/label",
+            "value": "tumor"
+        },
+        {
+            "@id": "#pv-main/classify-tumor/level",
+            "@type": "PropertyValue",
+            "exampleOfWork": {
+                "@id": "packed.cwl#classify_tumor.cwl/level"
+            },
+            "name": "main/classify-tumor/level",
+            "value": "1"
+        }
+    ]
+}
