@@ -196,3 +196,32 @@ Entities referenced by an action's [object](http://schema.org/object) or [result
 A process crate can be used to indicate one single execution as a single `CreateAction`, or a series of processes that generate different data entities. These actions MAY form an *implicit workflow* by following the links between entities that appear as `result` in an action and as `object` in the following one, but a process crate is not required to ensure such consistency (e.g. there may be an intermediate action that has not been recorded).
 
 <img alt="Multiple processes diagram" src="img/multiple_processes.svg" width="800" />
+
+
+## Referencing configuration files
+
+Some applications support the modification of their behavior via configuration files. Typically, these are not explicitly part of the input interface, but are searched for by the application among a set of possible predefined file system paths. In the case of applications that support a configuration file, the specific configuration file used during a run SHOULD be added to the `object` attribute of the corresponding `CreateAction`, especially if its settings are different from the default ones.
+
+```json
+    {
+        "@id": "#SepiaConversion_1",
+        "@type": "CreateAction",
+        "name": "Convert dog image to sepia",
+        "description": "convert -sepia-tone 80% test_data/sample/pics/2017-06-11\\ 12.56.14.jpg test_data/sample/pics/sepia_fence.jpg",
+        "endTime": "2018-09-19T17:01:07+10:00",
+        "instrument": {"@id": "https://www.imagemagick.org/"},
+        "object": [
+		    {"@id": "pics/2017-06-11%2012.56.14.jpg"},
+			{"@id": "colors.xml"}
+		]
+        "result": {"@id": "pics/sepia_fence.jpg"},
+        "agent": {"@id": "https://orcid.org/0000-0001-9842-9718"}
+    },
+    {
+        "@id": "SepiaConversion_1/colors.xml",
+        "@type": "File",
+        "description": "Imagemagick color names configuration",
+        "encodingFormat": "text/xml",
+        "name": "colors"
+    }
+```
