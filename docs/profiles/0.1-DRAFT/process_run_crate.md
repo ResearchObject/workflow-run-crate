@@ -21,19 +21,32 @@ By "implicit workflow" we mean that the composition of these tools may have been
 This profile requires the indication of [Software used to create files](https://www.researchobject.org/ro-crate/1.1/provenance.html#software-used-to-create-files), namely a [SoftwareApplication](http://schema.org/SoftwareApplication) (the tool) and a [CreateAction](http://schema.org/CreateAction) (the execution of said tool).
 
 
-## Example
+## Example Metadata File (`ro-crate-metadata.json`)
 
 ```json
-[
+{ "@context": "https://w3id.org/ro/crate/1.1/context", 
+  "@graph": [
+    {
+        "@id": "ro-crate-metadata.json",
+        "@type": "CreativeWork",
+        "conformsTo": {"@id": "https://w3id.org/ro/crate/1.1"},
+        "about": {"@id": "./"}
+    },
     {
         "@id": "./",
         "@type": "Dataset",
+        "conformsTo": { "@id": "https://w3id.org/ro/wfrun/process/0.1" },
         "hasPart": [
             {"@id": "pics/2017-06-11%2012.56.14.jpg"},
             {"@id": "pics/sepia_fence.jpg"}
         ],
         "mentions": {"@id": "#SepiaConversion_1"},
         "name": "My Pictures"
+    },
+    {   "@id": "https://w3id.org/ro/wfrun/process/0.1",
+        "@type": "CreativeWork",
+        "name": "Process Run Crate",
+        "version": "0.1"
     },
     {
         "@id": "https://www.imagemagick.org/",
@@ -73,9 +86,12 @@ This profile requires the indication of [Software used to create files](https://
         "name": "Stian Soiland-Reyes"
     }
 ]
+}
 ```
 
 Note that the command line shown in the action's `description` is not directly re-executable, as file paths are not required to match the RO-Crate locations. For a more structural and reproducible description of tool executions, see [Workflow Run Crate](workflow_run_crate).
+
+
 
 
 ## Requirements
@@ -86,6 +102,15 @@ Note that the command line shown in the action's `description` is not directly r
    <td><strong>Property</strong></td>
    <td><strong>Required?</strong></td>
    <td><strong>Description</strong></td>
+  </tr>
+
+  <tr>
+   <th colspan="3"><strong>Dataset</strong> (the <a href="https://www.researchobject.org/ro-crate/1.1/root-data-entity.html">root data entity</a>, e.g. <code>"@id": "./"</code>)</th>
+  </tr>
+  <tr>
+   <td>conformsTo</td>
+   <td>MUST</td>
+   <td>MUST reference a <code>CreativeWork</code> entity with an <code>@id</code> URI that is consistent with the versioned <em>Permalink</em> of this document, e.g. <code>{"@id": "https://w3id.org/ro/wfrun/process/0.1"}</code>
   </tr>
 
   <tr>

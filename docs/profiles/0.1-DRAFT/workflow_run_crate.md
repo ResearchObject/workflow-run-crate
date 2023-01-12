@@ -24,10 +24,25 @@ Some workflows have multiple inputs/outputs that, in conformance with the [Biosc
 ## Example
 
 ```json
-[
+{ "@context": "https://w3id.org/ro/crate/1.1/context", 
+  "@graph": [
+    {
+        "@id": "ro-crate-metadata.json",
+        "@type": "CreativeWork",
+        "about": {"@id": "./"},
+        "conformsTo": [
+            {"@id": "https://w3id.org/ro/crate/1.1"},
+            {"@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"}
+        ]
+    },
     {
         "@id": "./",
         "@type": "Dataset",
+        "conformsTo": [
+            { "@id": "https://w3id.org/ro/wfrun/process/0.1" },
+            { "@id": "https://w3id.org/ro/wfrun/workflow/0.1" },
+            { "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"}            
+        ],
         "hasPart": [
             {"@id": "Galaxy-Workflow-Hello_World.ga"},
             {"@id": "inputs/abcdef.txt"},
@@ -37,6 +52,21 @@ Some workflows have multiple inputs/outputs that, in conformance with the [Biosc
         "license": {"@id": "http://spdx.org/licenses/CC0-1.0"},
         "mainEntity": {"@id": "Galaxy-Workflow-Hello_World.ga"},
         "mentions": {"@id": "#wfrun-5a5970ab-4375-444d-9a87-a764a66e3a47"}
+    },
+    {   "@id": "https://w3id.org/ro/wfrun/process/0.1",
+        "@type": "CreativeWork",
+        "name": "Process Run Crate",
+        "version": "0.1"
+    },
+    {   "@id": "https://w3id.org/ro/wfrun/workflow/0.1",
+        "@type": "CreativeWork",
+        "name": "Workflow Run Crate",
+        "version": "0.1"
+    },
+    {   "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0",
+        "@type": "CreativeWork",
+        "name": "Workflow RO-Crate",
+        "version": "1.0"
     },
     {
         "@id": "Galaxy-Workflow-Hello_World.ga",
@@ -184,6 +214,15 @@ This profile inherits the requirements of [Process Run Crate](process_run_crate)
    <td><strong>Property</strong></td>
    <td><strong>Required?</strong></td>
    <td><strong>Description</strong></td>
+  </tr>
+
+  <tr>
+   <th colspan="3"><strong>Dataset</strong> (the <a href="https://www.researchobject.org/ro-crate/1.1/root-data-entity.html">root data entity</a>, e.g. <code>"@id": "./"</code>)</th>
+  </tr>
+  <tr>
+   <td>conformsTo</td>
+   <td>MUST</td>
+   <td>Array MUST reference a <code>CreativeWork</code> entity with an <code>@id</code> URI that is consistent with the versioned <em>Permalink</em> of this document, and SHOULD also reference versioned permalinks for <a href="https://w3id.org/ro/wfrun/process/0.1">Process Run Crate</a> and <a href="https://w3id.org/workflowhub/workflow-ro-crate/1.0">Workflow RO-Crate</a>.
   </tr>
 
   <tr>
