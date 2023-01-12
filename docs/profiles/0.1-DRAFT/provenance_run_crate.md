@@ -363,6 +363,46 @@ Note that the `workflow-run` terms are not part of the standard RO-Crate context
 ```
 
 
+## Engine configuration files
+
+A workflow engine may support configuration through a configuration file. In this case, the specific configuration file used in the engine run SHOULD be added to the `object` attribute of the corresponding `OrganizeAction`.
+
+```json
+{
+    "@id": "#e55c4723-7814-4cef-b3b6-96c1dbf1ae9b",
+    "@type": "SoftwareApplication",
+    "name": "StreamFlow 0.2.0.dev2"
+},
+{
+    "@id": "#7ff2f0b6-0294-4da5-9ecc-5846b8aa4e66",
+    "@type": "OrganizeAction",
+    "instrument": {"@id": "#e55c4723-7814-4cef-b3b6-96c1dbf1ae9b"},
+    "name": "Run of StreamFlow 0.2.0.dev2",
+    "object": [
+        {"@id": "7ff2f0b6-0294-4da5-9ecc-5846b8aa4e66/streamflow.yml"},
+        {"@id": "#a203c665-668d-4488-bf57-5b2eedf77905"},
+        ...
+    ],
+    "result": {"@id": "#9984d778-7cd8-49ea-984d-7c58a0404f85"}
+},
+{
+    "@id": "7ff2f0b6-0294-4da5-9ecc-5846b8aa4e66/streamflow.yml",
+    "@type": "File",
+    "name": "StreamFlow configuration file",
+    "encodingFormat": "application/yaml"
+},
+{
+    "@id": "#a203c665-668d-4488-bf57-5b2eedf77905",
+    "@type": "ControlAction",
+    "instrument": {"@id": "predictions.cwl#extract-tissue-low"},
+    "object": {"@id": "#465dafb2-66cf-4af9-a6cf-b8fea0e8acc9"}
+},
+...
+```
+
+See also the [section on referencing configuration files of executed tools](process_run_crate#referencing-configuration-files).
+
+
 ## Requirements
 
 The requirements of this profile are those of [Workflow Run Crate](workflow_run_crate) plus the ones listed below.
