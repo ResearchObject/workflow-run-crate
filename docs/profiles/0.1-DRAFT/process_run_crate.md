@@ -225,3 +225,87 @@ Some applications support the modification of their behavior via configuration f
         "name": "colors"
     }
 ```
+
+
+## Representing multi-file objects
+
+In some formats, the data belonging to a digital entity is stored in more than one file. For instance, the [Mirax2-Fluorescence-2](https://openslide.cs.cmu.edu/download/openslide-testdata/Mirax/Mirax2-Fluorescence-2.zip) image is stored as the following set of files:
+
+```
+Mirax2-Fluorescence-2.mrxs
+Mirax2-Fluorescence-2/Index.dat
+Mirax2-Fluorescence-2/Slidedat.ini
+Mirax2-Fluorescence-2/Data0000.dat
+Mirax2-Fluorescence-2/Data0001.dat
+...
+Mirax2-Fluorescence-2/Data0023.dat
+```
+
+An application that reads [this format](https://openslide.org/formats/mirax/) needs to be pointed to the `.mrxs` file, and expects to find a directory containing the other files in the same location as the `.mrxs` file, with the same name minus the extension. Thus, even though an application that processes MIRAX files would probably take only the `.mrxs` file as argument, the other ones must be present in the expected location and with the expected names (in CWL, this kind of relationship is expressed via `secondaryFiles`). In this case, the object SHOULD be represented by a [contextual entity](https://www.researchobject.org/ro-crate/1.1/contextual-entities.html) of type [Collection](http://schema.org/Collection) listing all files under `hasPart`, with a `mainEntity` referencing the main file. The collection SHOULD be referenced from the root data entity via `mentions`.
+
+```json
+{
+    "@id": "./",
+    "@type": "Dataset",
+    "hasPart": [
+        {"@id": "Mirax2-Fluorescence-2.mrxs"},
+        {"@id": "Mirax2-Fluorescence-2/"},
+        {"@id": "Mirax2-Fluorescence-2.png"}
+    ],
+    "mentions": [
+        {"@id": "https://openslide.cs.cmu.edu/download/openslide-testdata/Mirax/Mirax2-Fluorescence-2.zip"},
+		{"@id": "#conversion_1"}
+    ]
+},
+{
+    "@id": "https://openslide.org/",
+    "@type": "SoftwareApplication",
+    "url": "https://openslide.org/",
+    "name": "OpenSlide",
+    "version": "3.4.1"
+},
+{
+    "@id": "#conversion_1",
+    "@type": "CreateAction",
+    "name": "Convert image to PNG",
+    "endTime": "2018-09-19T17:01:07+10:00",
+    "instrument": {"@id": "https://openslide.org/"},
+    "object": {"@id": "https://openslide.cs.cmu.edu/download/openslide-testdata/Mirax/Mirax2-Fluorescence-2.zip"},
+    "result": {"@id": "Mirax2-Fluorescence-2.png"}
+},
+{
+    "@id": "https://openslide.cs.cmu.edu/download/openslide-testdata/Mirax/Mirax2-Fluorescence-2.zip",
+    "@type": "Collection",
+    "mainEntity": {"@id": "Mirax2-Fluorescence-2.mrxs"},
+    "hasPart": [
+        {"@id": "Mirax2-Fluorescence-2.mrxs"},
+        {"@id": "Mirax2-Fluorescence-2/"}
+    ]
+},
+{
+    "@id": "Mirax2-Fluorescence-2.mrxs",
+    "@type": "File"
+},
+{
+    "@id": "Mirax2-Fluorescence-2/",
+    "@type": "Dataset"
+}
+{
+    "@id": "Mirax2-Fluorescence-2.png",
+    "@type": "File"
+}
+```
+
+If the collection does not have a web presence, its `@id` can be an arbitrary internal one, possibly randomly generated (as for any other contextual entity):
+
+```json
+{
+    "@id": "#af0253d688f3409a2c6d24bf6b35df7c4e271292",
+    "@type": "Collection",
+    "mainEntity": {"@id": "Mirax2-Fluorescence-2.mrxs"},
+    "hasPart": [
+        {"@id": "Mirax2-Fluorescence-2.mrxs"},
+        {"@id": "Mirax2-Fluorescence-2/"}
+    ]
+}
+```
