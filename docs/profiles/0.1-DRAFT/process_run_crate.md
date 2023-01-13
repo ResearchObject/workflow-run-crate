@@ -190,6 +190,8 @@ Note that the command line shown in the action's `description` is not directly r
 
 Entities referenced by an action's [object](http://schema.org/object) or [result](http://schema.org/result) SHOULD be of type `File` (an RO-Crate alias for [MediaObject](http://schema.org/MediaObject)) or [Dataset](http://schema.org/Dataset) (directory), but MAY be a [CreativeWork](http://schema.org/CreativeWork) for other types of data (e.g. an online database); they MAY be of type [PropertyValue](http://schema.org/PropertyValue) to capture numbers/strings that are not stored as files.
 
+Data entities involved in an application's input and output SHOULD have an `@id` that reflects the original file or directory name as processed by the application, but MAY be renamed to avoid clashes with other entities in the crate. In this case, they SHOULD refer to the original name via [alternateName](http://schema.org/alternateName). This is particularly important to support reproducibility in cases where an application expects to find input in specific locations and with specific names (see the MIRAX example in [Representing multi-file objects](#representing-multi-file-objects).
+
 
 ## Multiple processes
 
@@ -289,7 +291,7 @@ An application that reads [this format](https://openslide.org/formats/mirax/) ne
 {
     "@id": "Mirax2-Fluorescence-2/",
     "@type": "Dataset"
-}
+},
 {
     "@id": "Mirax2-Fluorescence-2.png",
     "@type": "File"
@@ -308,4 +310,38 @@ If the collection does not have a web presence, its `@id` can be an arbitrary in
         {"@id": "Mirax2-Fluorescence-2/"}
     ]
 }
+```
+
+The use case shown here is an example of a situation where it's important to refer to the original names in case any renamings took place, as described in [Requirements](#requirements):
+
+```json
+{
+    "@id": "#af0253d688f3409a2c6d24bf6b35df7c4e271292",
+    "@type": "Collection",
+    "mainEntity": {"@id": "f62aa607a75508ac5fc6a22e9c0e39ef58a2c852"},
+    "hasPart": [
+        {"@id": "f62aa607a75508ac5fc6a22e9c0e39ef58a2c852"},
+        {"@id": "c7398fbf741b851e80ae731d60cbee9258ff81f3/"}
+    ]
+},
+{
+	"@id": "f62aa607a75508ac5fc6a22e9c0e39ef58a2c852",
+    "@type": "File",
+    "alternateName": "Mirax2-Fluorescence-2.mrxs"
+},
+{
+	"@id": "c7398fbf741b851e80ae731d60cbee9258ff81f3/",
+    "@type": "Dataset",
+    "alternateName": "Mirax2-Fluorescence-2/",
+	"hasPart": [
+        {"@id": "c7398fbf741b851e80ae731d60cbee9258ff81f3/46c443af080a36000c9298b49b675eb240eeb41c"},
+        ...
+    ]
+},
+{
+	"@id": "c7398fbf741b851e80ae731d60cbee9258ff81f3/46c443af080a36000c9298b49b675eb240eeb41c",
+    "@type": "File",
+    "alternateName": "Mirax2-Fluorescence-2/Index.dat"
+},
+...
 ```
