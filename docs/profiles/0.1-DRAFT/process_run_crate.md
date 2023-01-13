@@ -40,7 +40,7 @@ This profile requires the indication of [Software used to create files](https://
         "@type": "SoftwareApplication",
         "url": "https://www.imagemagick.org/",
         "name": "ImageMagick",
-        "version": "ImageMagick 6.9.7-4 Q16 x86_64 20170114"
+        "softwareVersion": "6.9.7-4"
     },
     {
         "@id": "#SepiaConversion_1",
@@ -119,7 +119,7 @@ Note that the command line shown in the action's `description` is not directly r
   <tr>
    <td>version</td>
    <td>SHOULD</td>
-   <td>The version string for the software application</td>
+   <td>The version string for the software application. In the case of a `SoftwareApplication`, this MAY be provided via the more specific [softwareVersion](http://schema.org/softwareVersion). `SoftwareApplication` entities SHOULD NOT specify both `version` and `softwareVersion`: in this case, consumers SHOULD prioritize `softwareVersion`. In order to facilitate comparison attempts by consumers, it is RECOMMENDED to specify a machine-readable version string if available (see for instance Python's [PEP 440](https://peps.python.org/pep-0440/)).</td>
   </tr>
 
   <tr>
