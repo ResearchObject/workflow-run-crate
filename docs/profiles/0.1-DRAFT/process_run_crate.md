@@ -35,7 +35,7 @@ This profile requires the indication of [Software used to create files](https://
     {
         "@id": "./",
         "@type": "Dataset",
-        "conformsTo": { "@id": "https://w3id.org/ro/wfrun/process/0.1" },
+        "conformsTo": {"@id": "https://w3id.org/ro/wfrun/process/0.1"},
         "hasPart": [
             {"@id": "pics/2017-06-11%2012.56.14.jpg"},
             {"@id": "pics/sepia_fence.jpg"}
@@ -92,8 +92,6 @@ This profile requires the indication of [Software used to create files](https://
 Note that the command line shown in the action's `description` is not directly re-executable, as file paths are not required to match the RO-Crate locations. For a more structural and reproducible description of tool executions, see [Workflow Run Crate](workflow_run_crate).
 
 
-
-
 ## Requirements
 
 <table>
@@ -110,7 +108,7 @@ Note that the command line shown in the action's `description` is not directly r
   <tr>
    <td>conformsTo</td>
    <td>MUST</td>
-   <td>MUST reference a <code>CreativeWork</code> entity with an <code>@id</code> URI that is consistent with the versioned <em>Permalink</em> of this document, e.g. <code>{"@id": "https://w3id.org/ro/wfrun/process/0.1"}</code>
+   <td>MUST reference a <code>CreativeWork</code> entity with an <code>@id</code> URI that is consistent with the versioned <em>Permalink</em> of this document, e.g. <code>{"@id": "https://w3id.org/ro/wfrun/process/0.1"}</code></td>
   </tr>
 
   <tr>
@@ -160,7 +158,7 @@ Note that the command line shown in the action's `description` is not directly r
   <tr>
    <td>@id</td>
    <td>MUST</td>
-   <td>A unique identifier for the execution, e.g. <code>"urn:uuid:50ec5c76-1f7a-4130-8ef6-846756b228c1"</code>, <code>"#f99a8e6c"</code>. MAY be an absolute URI, e.g. <a href="http://example.com/runs/846756b228c1">http://example.com/runs/846756b228c1</a>. The use of randomly generated <a href="https://datatracker.ietf.org/doc/html/rfc4122">UUIDs</a> (type 4) is RECOMMENDED. SHOULD be listed under <a href="http://schema.org/mentions">mentions</a> of the [root data entity](https://www.researchobject.org/ro-crate/1.1/root-data-entity.html).</td>
+   <td>A unique identifier for the execution, e.g. <code>"urn:uuid:50ec5c76-1f7a-4130-8ef6-846756b228c1"</code>, <code>"#f99a8e6c"</code>. MAY be an absolute URI, e.g. <a href="http://example.com/runs/846756b228c1">http://example.com/runs/846756b228c1</a>. The use of randomly generated <a href="https://datatracker.ietf.org/doc/html/rfc4122">UUIDs</a> (type 4) is RECOMMENDED. SHOULD be listed under <a href="http://schema.org/mentions">mentions</a> of the <a href="https://www.researchobject.org/ro-crate/1.1/root-data-entity.html">root data entity</a>.</td>
   </tr>
 
   <tr>

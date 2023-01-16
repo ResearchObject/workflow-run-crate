@@ -32,7 +32,7 @@ The following diagram shows the relationships between all provenance-related ent
 ## Example Metadata File (`ro-crate-metadata.json`)
 
 ```json
-{ "@context": "https://w3id.org/ro/crate/1.1/context", 
+{ "@context": "https://w3id.org/ro/crate/1.1/context",
   "@graph": [
     {
         "@id": "ro-crate-metadata.json",
@@ -47,10 +47,10 @@ The following diagram shows the relationships between all provenance-related ent
         "@id": "./",
         "@type": "Dataset",
         "conformsTo": [
-            { "@id": "https://w3id.org/ro/wfrun/process/0.1" },
-            { "@id": "https://w3id.org/ro/wfrun/workflow/0.1" },
-            { "@id": "https://w3id.org/ro/wfrun/provenance/0.1" },
-            { "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"}            
+            {"@id": "https://w3id.org/ro/wfrun/process/0.1"},
+            {"@id": "https://w3id.org/ro/wfrun/workflow/0.1"},
+            {"@id": "https://w3id.org/ro/wfrun/provenance/0.1"},
+            {"@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"}
         ],
         "hasPart": [
             {"@id": "packed.cwl"},
@@ -72,7 +72,7 @@ The following diagram shows the relationships between all provenance-related ent
         "@type": "CreativeWork",
         "name": "Workflow Run Crate",
         "version": "0.1"
-    },    
+    },
     {   "@id": "https://w3id.org/ro/wfrun/provenance/0.1",
         "@type": "CreativeWork",
         "name": "Provenance Run Crate",
@@ -321,6 +321,7 @@ The following diagram shows the relationships between all provenance-related ent
         "value": "True"
     }
 ]
+}
 ```
 
 
@@ -448,7 +449,7 @@ The requirements of this profile are those of [Workflow Run Crate](workflow_run_
   <tr>
    <td>conformsTo</td>
    <td>MUST</td>
-   <td>Array MUST reference a <code>CreativeWork</code> entity with an <code>@id</code> URI that is consistent with the versioned <em>Permalink</em> of this document, and SHOULD also reference versioned permalinks for <a href="https://w3id.org/ro/wfrun/process/0.1">Process Run Crate</a>, <a href="https://w3id.org/ro/wfrun/workflow/0.1">Workflow Run Crate</a> and <a href="https://w3id.org/workflowhub/workflow-ro-crate/1.0">Workflow RO-Crate</a>.
+   <td>Array MUST reference a <code>CreativeWork</code> entity with an <code>@id</code> URI that is consistent with the versioned <em>Permalink</em> of this document, and SHOULD also reference versioned permalinks for <a href="https://w3id.org/ro/wfrun/process/0.1">Process Run Crate</a>, <a href="https://w3id.org/ro/wfrun/workflow/0.1">Workflow Run Crate</a> and <a href="https://w3id.org/workflowhub/workflow-ro-crate/1.0">Workflow RO-Crate</a>.</td>
   </tr>
 
   <tr>
