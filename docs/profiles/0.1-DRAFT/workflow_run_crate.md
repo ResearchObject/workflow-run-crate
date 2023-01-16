@@ -21,13 +21,28 @@ This profile is a combination of [Process Run Crate](process_run_crate) and [Wor
 Some workflows have multiple inputs/outputs that, in conformance with the [Bioschemas ComputationalWorkflow profile](https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE) are defined as [FormalParameter](https://bioschemas.org/types/FormalParameter/1.0-RELEASE) entities. It is OPTIONAL to include these definitions on a `ComputationalWorkflow`. A data entity or `PropertyValue` that realizes a `FormalParameter` definition SHOULD refer to it via [exampleOfWork](https://schema.org/exampleOfWork); additionally, if the data entity or `PropertyValue` is an illustrative example of the parameter, the latter MAY refer back to the former using the reverse property [workExample](https://schema.org/workExample). This links the `input` of a `ComputationalWorkflow` to the `object` of a `CreateAction`, and the `output` of a `ComputationalWorkflow` to the `result` of a `CreateAction`. An `object` item that does not match a slot in the workflow's input interface (e.g., a [configuration file](process_run_crate#referencing-configuration-files) read from a predefined path) MUST NOT refer to a `FormalParameter` of the `ComputationalWorkflow` via `exampleOfWork`. A `FormalParameter` that maps to a `PropertyValue` SHOULD have a subclass of [DataType](https://schema.org/DataType) (e.g., [Integer](https://schema.org/Integer)) &mdash; or [PropertyValue](https://schema.org/PropertyValue), in the case of dictionary-like structured types &mdash; as its `additionalType`. See [CWL parameter mapping](/workflow-run-crate/cwl_param_mapping) for an example.
 
 
-## Example
+## Example Metadata File (`ro-crate-metadata.json`)
 
 ```json
-[
+{ "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+        "@id": "ro-crate-metadata.json",
+        "@type": "CreativeWork",
+        "about": {"@id": "./"},
+        "conformsTo": [
+            {"@id": "https://w3id.org/ro/crate/1.1"},
+            {"@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"}
+        ]
+    },
     {
         "@id": "./",
         "@type": "Dataset",
+        "conformsTo": [
+            {"@id": "https://w3id.org/ro/wfrun/process/0.1"},
+            {"@id": "https://w3id.org/ro/wfrun/workflow/0.1"},
+            {"@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"}
+        ],
         "hasPart": [
             {"@id": "Galaxy-Workflow-Hello_World.ga"},
             {"@id": "inputs/abcdef.txt"},
@@ -37,6 +52,21 @@ Some workflows have multiple inputs/outputs that, in conformance with the [Biosc
         "license": {"@id": "http://spdx.org/licenses/CC0-1.0"},
         "mainEntity": {"@id": "Galaxy-Workflow-Hello_World.ga"},
         "mentions": {"@id": "#wfrun-5a5970ab-4375-444d-9a87-a764a66e3a47"}
+    },
+    {   "@id": "https://w3id.org/ro/wfrun/process/0.1",
+        "@type": "CreativeWork",
+        "name": "Process Run Crate",
+        "version": "0.1"
+    },
+    {   "@id": "https://w3id.org/ro/wfrun/workflow/0.1",
+        "@type": "CreativeWork",
+        "name": "Workflow Run Crate",
+        "version": "0.1"
+    },
+    {   "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0",
+        "@type": "CreativeWork",
+        "name": "Workflow RO-Crate",
+        "version": "1.0"
     },
     {
         "@id": "Galaxy-Workflow-Hello_World.ga",
@@ -171,6 +201,7 @@ Some workflows have multiple inputs/outputs that, in conformance with the [Biosc
         "name": "Workflow Execution Summary of Hello World"
     }
 ]
+}
 ```
 
 
@@ -184,6 +215,15 @@ This profile inherits the requirements of [Process Run Crate](process_run_crate)
    <td><strong>Property</strong></td>
    <td><strong>Required?</strong></td>
    <td><strong>Description</strong></td>
+  </tr>
+
+  <tr>
+   <th colspan="3"><strong>Dataset</strong> (the <a href="https://www.researchobject.org/ro-crate/1.1/root-data-entity.html">root data entity</a>, e.g. <code>"@id": "./"</code>)</th>
+  </tr>
+  <tr>
+   <td>conformsTo</td>
+   <td>MUST</td>
+   <td>Array MUST reference a <code>CreativeWork</code> entity with an <code>@id</code> URI that is consistent with the versioned <em>Permalink</em> of this document, and SHOULD also reference versioned permalinks for <a href="https://w3id.org/ro/wfrun/process/0.1">Process Run Crate</a> and <a href="https://w3id.org/workflowhub/workflow-ro-crate/1.0">Workflow RO-Crate</a>.</td>
   </tr>
 
   <tr>
