@@ -51,6 +51,7 @@ Post [here](https://github.com/ResearchObject/workflow-run-crate/issues/1) to jo
 - Luiz Gadelha <https://orcid.org/0000-0002-8122-9522>
 - Mahnoor Zulfiqar <https://orcid.org/0000-0002-8330-4071>
 - Romain David <https://orcid.org/0000-0003-4073-7456>
+- Maciek Bąk <https://orcid.org/0000-0003-1361-7301>
 - ... [you](https://github.com/ResearchObject/workflow-run-crate/issues/1)?
 
 
