@@ -65,14 +65,13 @@ These RO-Crates are being co-developed as examples of using the [Workflow Run pr
 - [Machine learning pipeline example](examples/draft/ml-pipeline/) (conceptual draft from EOSC-Life WP6)
 
 
-## Related resources
+## Other resources
 
 - [Requirements for the Workflow Run RO-Crate profiles](requirements)
 - [Workflow RO-Crate profile](https://about.workflowhub.eu/Workflow-RO-Crate/) -- for describing workflows as reusable objects. (extended by [workflow run profile](profiles/workflow_run_crate))
 - [Profile for recording workflow runs](https://www.researchobject.org/2021-packaging-research-artefacts-with-ro-crate/manuscript.html#profile-for-recording-workflow-runs) (conceptual ideas from RO-Crate paper)
 - [Example of CreateAction and Docker Image](https://www.researchobject.org/2021-packaging-research-artefacts-with-ro-crate/ro-crate-preview.html#https%3A//github.com/stain/ro-crate-paper/actions/runs/1671704144) (tool invocation)
 
-## References
 
 ### RO-Crate links
 
