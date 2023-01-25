@@ -176,13 +176,13 @@ Note that the command line shown in the action's `description` is not directly r
   <tr>
    <td>endTime</td>
    <td>SHOULD</td>
-   <td>The time the process ended, i.e. when the result files have been created.</td>
+   <td>The time the process ended, i.e. when the last of the entities in <code>result</code> has been created. SHOULD be a <a href="http://schema.org/DateTime">DateTime</a> in ISO 8601 format.</td>
   </tr>
 
   <tr>
    <td>startTime</td>
    <td>MAY</td>
-   <td>The time the process started, i.e. the earliest time the process may have accessed its <code>object</code></td>
+   <td>The time the process started, i.e. the earliest time the process may have accessed an entity in <code>object</code>. SHOULD be a <a href="http://schema.org/DateTime">DateTime</a> in ISO 8601 format.</td>
   </tr>
 
   <tr>
