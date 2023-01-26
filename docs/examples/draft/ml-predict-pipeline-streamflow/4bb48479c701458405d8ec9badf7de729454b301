@@ -1,0 +1,27 @@
+#!/usr/bin/env streamflow
+version: v1.0
+workflows:
+  deephealth:
+    type: cwl
+    config:
+      file: cwl/predictions.cwl
+      settings: cwl/config.yml
+    bindings:
+      - step: /extract-tissue-low
+        target:
+          deployment: slaid
+      - step: /extract-tissue-high
+        target:
+          deployment: slaid
+      - step: /classify-tumor
+        target:
+          deployment: slaid   
+deployments:
+  slaid:
+    type: docker
+    config:
+      command: ["/bin/sh"]
+      entrypoint: ""
+      image: crs4/slaid:1.1.0-beta.25-tissue_model-eddl_2-cudnn
+      volume:
+        - /tmp/streamflow:/tmp/streamflow
