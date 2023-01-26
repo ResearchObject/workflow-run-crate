@@ -249,7 +249,7 @@ This profile inherits the requirements of [Process Run Crate](process_run_crate)
   <tr>
    <td>additionalType</td>
    <td>MUST</td>
-   <td>SHOULD include: <code>File</code> or <code>Dataset</code> if it maps to a file or directory, respectively; <code>PropertyValue</code> if it maps to a dictionary-like structured value (e.g. a CWL <em>record</em>); <a href="http://schema.org/DataType">DataType</a> or one of its subtypes (e.g. <a href="http://schema.org/Integer">Integer</a>) if it maps to a non-structured value. A more specific type MAY be used instead of <code>File</code> when appropriate (see <a href="http://schema.org/MediaObject#subtypes">MediaObject subtypes</a>), e.g. <a href="http://schema.org/ImageObject">ImageObject</a>. Note that multiple types can apply, e.g. <code>["File", "http://edamontology.org/data_3671"]</code>.</td>
+   <td>SHOULD include: <code>File</code>, <code>Dataset</code> or <code>Collection</code> if it maps to a file, directory or <a href="process_run_crate#representing-multi-file-objects">multi-file dataset</a>, respectively; <code>PropertyValue</code> if it maps to a dictionary-like structured value (e.g. a CWL <em>record</em>); <a href="http://schema.org/DataType">DataType</a> or one of its subtypes (e.g. <a href="http://schema.org/Integer">Integer</a>) if it maps to a non-structured value. A more specific type MAY be used instead of <code>File</code> when appropriate (see <a href="http://schema.org/MediaObject#subtypes">MediaObject subtypes</a>), e.g. <a href="http://schema.org/ImageObject">ImageObject</a>. Note that multiple types can apply, e.g. <code>["File", "http://edamontology.org/data_3671"]</code>.</td>
   </tr>
 
 </table>
