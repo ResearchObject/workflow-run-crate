@@ -471,7 +471,7 @@ The requirements of this profile are those of [Workflow Run Crate](workflow_run_
   <tr>
    <td>step</td>
    <td>SHOULD</td>
-   <td>Identifier of the <code>HowToStep</code> instances representing this workflow's steps. If this property is used, the workflow MUST include <code>HowTo</code> among its types.</td>
+   <td>Identifiers of the <code>HowToStep</code> instances representing this workflow's steps. If this property is used, the workflow MUST include <code>HowTo</code> among its types.</td>
   </tr>
 
   <tr>
@@ -503,7 +503,7 @@ The requirements of this profile are those of [Workflow Run Crate](workflow_run_
   <tr>
    <td>object</td>
    <td>MUST</td>
-   <td>Identifier of the <code>CreateAction</code> describing the <em>tool</em> execution corresponding to this <em>step</em> execution.</td>
+   <td>Identifier(s) of the <code>CreateAction</code> describing the <em>tool</em> execution(s) corresponding to this <em>step</em> execution.</td>
   </tr>
 
   <tr>
