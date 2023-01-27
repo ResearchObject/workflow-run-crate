@@ -16,7 +16,7 @@ This profile uses terminology from the [RO-Crate 1.1 specification](https://w3id
 
 This profile extends [Workflow Run Crate](workflow_run_crate) with specifications to describe internal details of the workflow run, such as step executions and intermediate outputs.
 
-A Provenance Run Crate MUST record the details of *tool* executions corresponding to each workflow *step* through additional [CreateAction](http://schema.org/CreateAction) entities, each of which MUST refer to the entity representing the tool via [instrument](http://schema.org/instrument). The workflow MUST refer to the orchestrated tools via [hasPart](http://schema.org/hasPart) (the usage of `hasPart` for this purpose follows the Bioschemas [ComputationalWorkflow profile](http://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE)).
+A Provenance Run Crate MUST record the details of *tool* executions orchestrated by the workflow through additional [CreateAction](http://schema.org/CreateAction) entities, each of which MUST refer to an entity representing the tool itself via [instrument](http://schema.org/instrument) as specified in [Process Run Crate](process_run_crate). Entities representing the tools MAY reference formal parameter definitions via `input` and `output` as specified in [Workflow Run Crate](workflow_run_crate). The workflow MUST refer to the orchestrated tools via [hasPart](http://schema.org/hasPart) (the usage of `hasPart` for this purpose follows the Bioschemas [ComputationalWorkflow profile](http://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE)).
 
 The crate SHOULD also record *step* executions via [ControlAction](http://schema.org/ControlAction) instances, each of which MUST reference: a [HowToStep](http://schema.org/HowToStep) instance representing the step via `instrument`; the `CreateAction` representing the corresponding tool run via `object`. The workflow MUST reference any `HowToStep` instances that represent its steps via [step](http://schema.org/step). Each `HowToStep` instance MUST reference the entity that represents its corresponding tool via [workExample](http://schema.org/workExample), and MAY indicate its position in the execution order via [position](http://schema.org/position). In addition to `File`, `SoftwareSourceCode` and `ComputationalWorkflow`, a workflow that points to step metadata via `step` MUST have a type of [HowTo](http://schema.org/HowTo).
 
@@ -465,13 +465,13 @@ The requirements of this profile are those of [Workflow Run Crate](workflow_run_
   <tr>
    <td>hasPart</td>
    <td>MUST</td>
-   <td>Identifiers of the <em>tools</em> (or subworkflows) orchestrated by this workflow.</td>
+   <td>Identifiers of the <em>tools</em> (including subworkflows) orchestrated by this workflow, represented as specified in the <a href="process_run_crate#requirements">Process Run Crate requirements</a> under "SoftwareApplication". The referenced tools MAY also incude formal parameter definitions via <code>input</code> and <code>output</code> as specified in <a href="workflow_run_crate">Workflow Run Crate</a>. In the case of subworkflows, the type MUST include <code>ComputationalWorkflow</code></td>
   </tr>
 
   <tr>
    <td>step</td>
    <td>SHOULD</td>
-   <td>Identifier of the <code>HowToStep</code> instances representing this workflow's steps. If this property is used, the workflow MUST include <code>HowTo</code> among its types.</td>
+   <td>Identifiers of the <code>HowToStep</code> instances representing this workflow's steps. If this property is used, the workflow MUST include <code>HowTo</code> among its types.</td>
   </tr>
 
   <tr>
@@ -503,7 +503,7 @@ The requirements of this profile are those of [Workflow Run Crate](workflow_run_
   <tr>
    <td>object</td>
    <td>MUST</td>
-   <td>Identifier of the <code>CreateAction</code> describing the <em>tool</em> execution corresponding to this <em>step</em> execution.</td>
+   <td>Identifier(s) of the <code>CreateAction</code> describing the <em>tool</em> execution(s) corresponding to this <em>step</em> execution.</td>
   </tr>
 
   <tr>
