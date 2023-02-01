@@ -507,6 +507,19 @@ The requirements of this profile are those of [Workflow Run Crate](workflow_run_
   </tr>
 
   <tr>
+   <td>actionStatus</td>
+   <td>MAY</td>
+   <td>SHOULD be <a href="https://schema.org/CompletedActionStatus">CompletedActionStatus</a> if the step completed successfully or <a href="https://schema.org/FailedActionStatus">FailedActionStatus</a> if it failed to complete. In the latter case, consumers should be prepared for the absence of any dependent actions (i.e., <code>CreateAction</code> instances corresponding to tool executions; the opposite is not necessarily true: a step can be successful even if some of its associated tool executions failed, e.g. in fault tolerant engines). If this attribute is not specified, consumers should assume that the step completed successfully.</td>
+
+  <tr>
+   <td>error</td>
+   <td>MAY</td>
+   <td>Additional information on the cause of the failure, if available. SHOULD NOT be specified unless <code>actionStatus</code> is set to <code>FailedActionStatus</code>.</td>
+  </tr>
+
+  </tr>
+
+  <tr>
    <th colspan="3"><strong>OrganizeAction</strong></th>
   </tr>
 
@@ -526,6 +539,17 @@ The requirements of this profile are those of [Workflow Run Crate](workflow_run_
    <td>result</td>
    <td>MUST</td>
    <td>Identifier of the <code>CreateAction</code> representing the workflow execution.</td>
+  </tr>
+
+  <tr>
+   <td>actionStatus</td>
+   <td>MAY</td>
+   <td>SHOULD be <a href="https://schema.org/CompletedActionStatus">CompletedActionStatus</a> if the engine execution was successful or <a href="https://schema.org/FailedActionStatus">FailedActionStatus</a> if it failed. In the latter case, consumers should be prepared for the absence of any dependent actions (i.e., <code>CreateAction</code> instances corresponding to workflow and tool executions, <code>ControlAction</code> instances corresponding to step executions). If this attribute is not specified, consumers should assume that the execution was successful.</td>
+
+  <tr>
+   <td>error</td>
+   <td>MAY</td>
+   <td>Additional information on the cause of the failure, if available. SHOULD NOT be specified unless <code>actionStatus</code> is set to <code>FailedActionStatus</code>.</td>
   </tr>
 
 </table>
