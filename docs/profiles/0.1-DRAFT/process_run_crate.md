@@ -209,6 +209,18 @@ Note that the command line shown in the action's `description` is not directly r
    <td>The identifier of one or more entities that were created or modified by this action, e.g. output files.</td>
   </tr>
 
+  <tr>
+   <td>actionStatus</td>
+   <td>MAY</td>
+   <td>SHOULD be <a href="https://schema.org/CompletedActionStatus">CompletedActionStatus</a> if the process completed successfully or <a href="https://schema.org/FailedActionStatus">FailedActionStatus</a> if it failed to complete. In the latter case, consumers should be prepared for the absence of any dependent actions in the metadata. If this attribute is not specified, consumers should assume that the process completed successfully.</td>
+  </tr>
+
+  <tr>
+   <td>error</td>
+   <td>MAY</td>
+   <td>Additional information on the cause of the failure, such as an error message from the application, if available. SHOULD NOT be specified unless <code>actionStatus</code> is set to <code>FailedActionStatus</code>.</td>
+  </tr>
+
 </table>
 
 Entities referenced by an action's [object](http://schema.org/object) or [result](http://schema.org/result) SHOULD be of type `File` (an RO-Crate alias for [MediaObject](http://schema.org/MediaObject)) for files, [Dataset](http://schema.org/Dataset) for directories and [Collection](http://schema.org/Collection) for [multi-file datasets](#representing-multi-file-objects), but MAY be a [CreativeWork](http://schema.org/CreativeWork) for other types of data (e.g. an online database); they MAY be of type [PropertyValue](http://schema.org/PropertyValue) to capture numbers/strings that are not stored as files.
