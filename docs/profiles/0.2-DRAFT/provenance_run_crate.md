@@ -5,9 +5,9 @@ title: Provenance Run Crate
 
 # Provenance Run Crate
 
-* Version: 0.1-DRAFT
-* Permalink: <https://w3id.org/ro/wfrun/provenance/0.1-DRAFT> `TODO: update`
-* Authors: [Workflow Run RO-Crate members](/workflow-run-crate/#community)
+* Version: 0.2-DRAFT
+* Permalink: <https://w3id.org/ro/wfrun/provenance/0.2-DRAFT>
+* Authors: Workflow Run RO-Crate working group
 
 This profile uses terminology from the [RO-Crate 1.1 specification](https://w3id.org/ro/crate/1.1), and [extends it](https://www.researchobject.org/ro-crate/1.1/appendix/jsonld.html#extending-ro-crate) with additional terms from the [workflow-run](https://github.com/ResearchObject/ro-terms/tree/master/workflow-run) ro-terms namespace.
 

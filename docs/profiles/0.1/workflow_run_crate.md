@@ -5,9 +5,9 @@ title: Workflow Run Crate
 
 # Workflow Run Crate
 
-* Version: 0.1-DRAFT
-* Permalink: <https://w3id.org/ro/wfrun/workflow/0.1-DRAFT> `TODO: update`
-* Authors: [Workflow Run RO-Crate members](/workflow-run-crate/#community)
+* Version: 0.1
+* Permalink: <https://w3id.org/ro/wfrun/workflow/0.1>
+* Authors: Workflow Run RO-Crate working group
 
 This profile uses terminology from the [RO-Crate 1.1 specification](https://w3id.org/ro/crate/1.1).
 
