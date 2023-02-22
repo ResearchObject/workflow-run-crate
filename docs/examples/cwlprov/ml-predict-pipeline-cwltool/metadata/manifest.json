@@ -1,0 +1,629 @@
+{
+    "@context": [
+        {
+            "@base": "arcp://uuid,e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca/metadata/"
+        },
+        "https://w3id.org/bundle/context"
+    ],
+    "id": "/",
+    "conformsTo": "https://w3id.org/cwl/prov/0.6.0",
+    "manifest": "manifest.json",
+    "createdOn": "2023-02-21T12:45:11.820033",
+    "createdBy": {
+        "uri": "urn:uuid:d6eb7d00-905f-4f38-b90e-c0ece005b4fe",
+        "name": "cwltool 3.1.20230213100550"
+    },
+    "authoredBy": null,
+    "aggregates": [
+        {
+            "uri": "urn:hash::sha1:f62aa607a75508ac5fc6a22e9c0e39ef58a2c852",
+            "bundledAs": {
+                "uri": "arcp://uuid,e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca/data/f6/f62aa607a75508ac5fc6a22e9c0e39ef58a2c852",
+                "folder": "/data/f6/",
+                "filename": "f62aa607a75508ac5fc6a22e9c0e39ef58a2c852"
+            }
+        },
+        {
+            "uri": "urn:hash::sha1:3c7901bab39947a3402da2687583e4dffb2530f9",
+            "bundledAs": {
+                "uri": "arcp://uuid,e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca/data/3c/3c7901bab39947a3402da2687583e4dffb2530f9",
+                "folder": "/data/3c/",
+                "filename": "3c7901bab39947a3402da2687583e4dffb2530f9"
+            },
+            "mediatype": "text/plain; charset=\"UTF-8\""
+        },
+        {
+            "uri": "urn:hash::sha1:869623a779aaf26d38a26e562703f624fa40d29f",
+            "bundledAs": {
+                "uri": "arcp://uuid,e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca/data/86/869623a779aaf26d38a26e562703f624fa40d29f",
+                "folder": "/data/86/",
+                "filename": "869623a779aaf26d38a26e562703f624fa40d29f"
+            },
+            "mediatype": "text/plain; charset=\"UTF-8\""
+        },
+        {
+            "uri": "urn:hash::sha1:0b2b5f414b65f0315615670701c2951670995ae1",
+            "bundledAs": {
+                "uri": "arcp://uuid,e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca/data/0b/0b2b5f414b65f0315615670701c2951670995ae1",
+                "folder": "/data/0b/",
+                "filename": "0b2b5f414b65f0315615670701c2951670995ae1"
+            },
+            "mediatype": "text/plain; charset=\"UTF-8\""
+        },
+        {
+            "uri": "urn:hash::sha1:ff7335228d2ffbe6347decead594cfc9618968e6",
+            "bundledAs": {
+                "uri": "arcp://uuid,e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca/data/ff/ff7335228d2ffbe6347decead594cfc9618968e6",
+                "folder": "/data/ff/",
+                "filename": "ff7335228d2ffbe6347decead594cfc9618968e6"
+            },
+            "mediatype": "text/plain; charset=\"UTF-8\""
+        },
+        {
+            "uri": "urn:hash::sha1:aa3939a63ace95f5ffeab3d1798d49b5adbe9e27",
+            "bundledAs": {
+                "uri": "arcp://uuid,e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca/data/aa/aa3939a63ace95f5ffeab3d1798d49b5adbe9e27",
+                "folder": "/data/aa/",
+                "filename": "aa3939a63ace95f5ffeab3d1798d49b5adbe9e27"
+            },
+            "mediatype": "text/plain; charset=\"UTF-8\""
+        },
+        {
+            "uri": "urn:hash::sha1:bc709e1a4da6e506f81150ee39907d0224e066fb",
+            "bundledAs": {
+                "uri": "arcp://uuid,e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca/data/bc/bc709e1a4da6e506f81150ee39907d0224e066fb",
+                "folder": "/data/bc/",
+                "filename": "bc709e1a4da6e506f81150ee39907d0224e066fb"
+            }
+        },
+        {
+            "uri": "urn:hash::sha1:d4061bed85711676d337bd8835e32413957485e3",
+            "bundledAs": {
+                "uri": "arcp://uuid,e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca/data/d4/d4061bed85711676d337bd8835e32413957485e3",
+                "folder": "/data/d4/",
+                "filename": "d4061bed85711676d337bd8835e32413957485e3"
+            }
+        },
+        {
+            "uri": "urn:hash::sha1:9e748097f79d8317b30fcc11833553434e19b02c",
+            "bundledAs": {
+                "uri": "arcp://uuid,e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca/data/9e/9e748097f79d8317b30fcc11833553434e19b02c",
+                "folder": "/data/9e/",
+                "filename": "9e748097f79d8317b30fcc11833553434e19b02c"
+            }
+        },
+        {
+            "uri": "urn:hash::sha1:6c1bc911505dc65551c4f0576e1c684723e57897",
+            "bundledAs": {
+                "uri": "arcp://uuid,e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca/data/6c/6c1bc911505dc65551c4f0576e1c684723e57897",
+                "folder": "/data/6c/",
+                "filename": "6c1bc911505dc65551c4f0576e1c684723e57897"
+            }
+        },
+        {
+            "uri": "urn:hash::sha1:ce3d0d6addaced3e58578e42c341f44737b5aa84",
+            "bundledAs": {
+                "uri": "arcp://uuid,e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca/data/ce/ce3d0d6addaced3e58578e42c341f44737b5aa84",
+                "folder": "/data/ce/",
+                "filename": "ce3d0d6addaced3e58578e42c341f44737b5aa84"
+            }
+        },
+        {
+            "uri": "urn:hash::sha1:52e0419ea116b78bc330d36f93bc2b4ec2bf8210",
+            "bundledAs": {
+                "uri": "arcp://uuid,e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca/data/52/52e0419ea116b78bc330d36f93bc2b4ec2bf8210",
+                "folder": "/data/52/",
+                "filename": "52e0419ea116b78bc330d36f93bc2b4ec2bf8210"
+            }
+        },
+        {
+            "uri": "urn:hash::sha1:d55cbe9ea0ac43eaa69bb8c21eac07539249734f",
+            "bundledAs": {
+                "uri": "arcp://uuid,e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca/data/d5/d55cbe9ea0ac43eaa69bb8c21eac07539249734f",
+                "folder": "/data/d5/",
+                "filename": "d55cbe9ea0ac43eaa69bb8c21eac07539249734f"
+            }
+        },
+        {
+            "uri": "urn:hash::sha1:4a1a998cf56818c183b02f93011a6c1c9ec47468",
+            "bundledAs": {
+                "uri": "arcp://uuid,e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca/data/4a/4a1a998cf56818c183b02f93011a6c1c9ec47468",
+                "folder": "/data/4a/",
+                "filename": "4a1a998cf56818c183b02f93011a6c1c9ec47468"
+            }
+        },
+        {
+            "uri": "urn:hash::sha1:ae7c542bebbacf8d167fae831b69480e19e9c3b0",
+            "bundledAs": {
+                "uri": "arcp://uuid,e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca/data/ae/ae7c542bebbacf8d167fae831b69480e19e9c3b0",
+                "folder": "/data/ae/",
+                "filename": "ae7c542bebbacf8d167fae831b69480e19e9c3b0"
+            }
+        },
+        {
+            "uri": "urn:hash::sha1:3099f7344d2004c58bfb3282dae47a0d204e12da",
+            "bundledAs": {
+                "uri": "arcp://uuid,e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca/data/30/3099f7344d2004c58bfb3282dae47a0d204e12da",
+                "folder": "/data/30/",
+                "filename": "3099f7344d2004c58bfb3282dae47a0d204e12da"
+            }
+        },
+        {
+            "uri": "urn:hash::sha1:a1ad0dfd5f6e24aa90bdf9da0a688e6a0c268905",
+            "bundledAs": {
+                "uri": "arcp://uuid,e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca/data/a1/a1ad0dfd5f6e24aa90bdf9da0a688e6a0c268905",
+                "folder": "/data/a1/",
+                "filename": "a1ad0dfd5f6e24aa90bdf9da0a688e6a0c268905"
+            }
+        },
+        {
+            "uri": "urn:hash::sha1:7f0a219f3c842e0c3eaae848caea165940b1ec48",
+            "bundledAs": {
+                "uri": "arcp://uuid,e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca/data/7f/7f0a219f3c842e0c3eaae848caea165940b1ec48",
+                "folder": "/data/7f/",
+                "filename": "7f0a219f3c842e0c3eaae848caea165940b1ec48"
+            }
+        },
+        {
+            "uri": "urn:hash::sha1:cf03a8a5713c038c566734cf11f81cc03a41efa6",
+            "bundledAs": {
+                "uri": "arcp://uuid,e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca/data/cf/cf03a8a5713c038c566734cf11f81cc03a41efa6",
+                "folder": "/data/cf/",
+                "filename": "cf03a8a5713c038c566734cf11f81cc03a41efa6"
+            }
+        },
+        {
+            "uri": "urn:hash::sha1:8e9d580e86f48791871b086f3c27269a03f57897",
+            "bundledAs": {
+                "uri": "arcp://uuid,e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca/data/8e/8e9d580e86f48791871b086f3c27269a03f57897",
+                "folder": "/data/8e/",
+                "filename": "8e9d580e86f48791871b086f3c27269a03f57897"
+            }
+        },
+        {
+            "uri": "urn:hash::sha1:06d5def8140f8e14b729a584f78289bc25e7f5ec",
+            "bundledAs": {
+                "uri": "arcp://uuid,e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca/data/06/06d5def8140f8e14b729a584f78289bc25e7f5ec",
+                "folder": "/data/06/",
+                "filename": "06d5def8140f8e14b729a584f78289bc25e7f5ec"
+            }
+        },
+        {
+            "uri": "urn:hash::sha1:46c443af080a36000c9298b49b675eb240eeb41c",
+            "bundledAs": {
+                "uri": "arcp://uuid,e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca/data/46/46c443af080a36000c9298b49b675eb240eeb41c",
+                "folder": "/data/46/",
+                "filename": "46c443af080a36000c9298b49b675eb240eeb41c"
+            }
+        },
+        {
+            "uri": "urn:hash::sha1:9575fdaa42c448ea550d982cf8e27d0b46320874",
+            "bundledAs": {
+                "uri": "arcp://uuid,e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca/data/95/9575fdaa42c448ea550d982cf8e27d0b46320874",
+                "folder": "/data/95/",
+                "filename": "9575fdaa42c448ea550d982cf8e27d0b46320874"
+            }
+        },
+        {
+            "uri": "urn:hash::sha1:590783315f628a3acd02b9341572138b3a3224db",
+            "bundledAs": {
+                "uri": "arcp://uuid,e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca/data/59/590783315f628a3acd02b9341572138b3a3224db",
+                "folder": "/data/59/",
+                "filename": "590783315f628a3acd02b9341572138b3a3224db"
+            }
+        },
+        {
+            "uri": "urn:hash::sha1:1d3d88c43eb7f44a667170a0e6cb8cd950a4ea16",
+            "bundledAs": {
+                "uri": "arcp://uuid,e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca/data/1d/1d3d88c43eb7f44a667170a0e6cb8cd950a4ea16",
+                "folder": "/data/1d/",
+                "filename": "1d3d88c43eb7f44a667170a0e6cb8cd950a4ea16"
+            }
+        },
+        {
+            "uri": "urn:hash::sha1:f642fc608c0edc49db59dfc1d38be7abeda0263a",
+            "bundledAs": {
+                "uri": "arcp://uuid,e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca/data/f6/f642fc608c0edc49db59dfc1d38be7abeda0263a",
+                "folder": "/data/f6/",
+                "filename": "f642fc608c0edc49db59dfc1d38be7abeda0263a"
+            }
+        },
+        {
+            "uri": "urn:hash::sha1:a16fec38b4b7adf7dc1f8e9e58f6956a249a0a08",
+            "bundledAs": {
+                "uri": "arcp://uuid,e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca/data/a1/a16fec38b4b7adf7dc1f8e9e58f6956a249a0a08",
+                "folder": "/data/a1/",
+                "filename": "a16fec38b4b7adf7dc1f8e9e58f6956a249a0a08"
+            }
+        },
+        {
+            "uri": "urn:hash::sha1:b43c1cd0875d23bd20dc794fa20255cf272108ec",
+            "bundledAs": {
+                "uri": "arcp://uuid,e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca/data/b4/b43c1cd0875d23bd20dc794fa20255cf272108ec",
+                "folder": "/data/b4/",
+                "filename": "b43c1cd0875d23bd20dc794fa20255cf272108ec"
+            }
+        },
+        {
+            "uri": "urn:hash::sha1:e238dcdb6aa71dac71335591439442c7cfef60e6",
+            "bundledAs": {
+                "uri": "arcp://uuid,e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca/data/e2/e238dcdb6aa71dac71335591439442c7cfef60e6",
+                "folder": "/data/e2/",
+                "filename": "e238dcdb6aa71dac71335591439442c7cfef60e6"
+            }
+        },
+        {
+            "uri": "urn:hash::sha1:862eeec8b906cff93bcd1c5ab5e5ec8fc93a2ef1",
+            "bundledAs": {
+                "uri": "arcp://uuid,e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca/data/86/862eeec8b906cff93bcd1c5ab5e5ec8fc93a2ef1",
+                "folder": "/data/86/",
+                "filename": "862eeec8b906cff93bcd1c5ab5e5ec8fc93a2ef1"
+            }
+        },
+        {
+            "uri": "urn:hash::sha1:854db6bca6b11fb9f6198dce67b3dcbb371f7ebb",
+            "bundledAs": {
+                "uri": "arcp://uuid,e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca/data/85/854db6bca6b11fb9f6198dce67b3dcbb371f7ebb",
+                "folder": "/data/85/",
+                "filename": "854db6bca6b11fb9f6198dce67b3dcbb371f7ebb"
+            }
+        },
+        {
+            "uri": "urn:hash::sha1:acc92df58c498b2567f6975c3e128aebc0c524c5",
+            "bundledAs": {
+                "uri": "arcp://uuid,e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca/data/ac/acc92df58c498b2567f6975c3e128aebc0c524c5",
+                "folder": "/data/ac/",
+                "filename": "acc92df58c498b2567f6975c3e128aebc0c524c5"
+            }
+        },
+        {
+            "uri": "urn:hash::sha1:8cdd835383bcc344a0dbc6892ac6949765400b5c",
+            "bundledAs": {
+                "uri": "arcp://uuid,e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca/data/8c/8cdd835383bcc344a0dbc6892ac6949765400b5c",
+                "folder": "/data/8c/",
+                "filename": "8cdd835383bcc344a0dbc6892ac6949765400b5c"
+            }
+        },
+        {
+            "uri": "urn:hash::sha1:254eb2d60fd6705c88a6b7746336ba86e09e23c7",
+            "bundledAs": {
+                "uri": "arcp://uuid,e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca/data/25/254eb2d60fd6705c88a6b7746336ba86e09e23c7",
+                "folder": "/data/25/",
+                "filename": "254eb2d60fd6705c88a6b7746336ba86e09e23c7"
+            }
+        },
+        {
+            "uri": "urn:hash::sha1:a1e03e58562319274d4ff792d2090763b7926d72",
+            "bundledAs": {
+                "uri": "arcp://uuid,e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca/data/a1/a1e03e58562319274d4ff792d2090763b7926d72",
+                "folder": "/data/a1/",
+                "filename": "a1e03e58562319274d4ff792d2090763b7926d72"
+            }
+        },
+        {
+            "uri": "../workflow/packed.cwl",
+            "mediatype": "text/x+yaml; charset=\"UTF-8\"",
+            "conformsTo": "https://w3id.org/cwl/",
+            "createdOn": "2023-02-21T12:45:11.820410",
+            "createdBy": {
+                "uri": "urn:uuid:d6eb7d00-905f-4f38-b90e-c0ece005b4fe",
+                "name": "cwltool 3.1.20230213100550"
+            }
+        },
+        {
+            "uri": "../metadata/directory-d3cbf540-5ea4-4ef8-a475-be0eebdde2cf.ttl",
+            "mediatype": "text/turtle; charset=\"UTF-8\"",
+            "conformsTo": null,
+            "createdOn": "2023-02-21T12:45:11.820441",
+            "createdBy": {
+                "uri": "urn:uuid:d6eb7d00-905f-4f38-b90e-c0ece005b4fe",
+                "name": "cwltool 3.1.20230213100550"
+            }
+        },
+        {
+            "uri": "../metadata/logs/engine.d6eb7d00-905f-4f38-b90e-c0ece005b4fe.txt",
+            "mediatype": "text/plain; charset=\"UTF-8\"",
+            "conformsTo": null,
+            "createdOn": "2023-02-21T12:45:11.820465",
+            "createdBy": {
+                "uri": "urn:uuid:d6eb7d00-905f-4f38-b90e-c0ece005b4fe",
+                "name": "cwltool 3.1.20230213100550"
+            }
+        },
+        {
+            "uri": "../metadata/provenance/primary.cwlprov.ttl",
+            "mediatype": "text/turtle; charset=\"UTF-8\"",
+            "conformsTo": [
+                "http://www.w3.org/TR/2013/REC-prov-o-20130430/",
+                "https://w3id.org/cwl/prov/0.6.0"
+            ],
+            "createdOn": "2023-02-21T12:45:11.820488",
+            "createdBy": {
+                "uri": "urn:uuid:d6eb7d00-905f-4f38-b90e-c0ece005b4fe",
+                "name": "cwltool 3.1.20230213100550"
+            }
+        },
+        {
+            "uri": "../metadata/provenance/primary.cwlprov.jsonld",
+            "mediatype": "application/ld+json",
+            "conformsTo": [
+                "http://www.w3.org/TR/2013/REC-prov-o-20130430/",
+                "https://w3id.org/cwl/prov/0.6.0"
+            ],
+            "createdOn": "2023-02-21T12:45:11.820512",
+            "createdBy": {
+                "uri": "urn:uuid:d6eb7d00-905f-4f38-b90e-c0ece005b4fe",
+                "name": "cwltool 3.1.20230213100550"
+            }
+        },
+        {
+            "uri": null,
+            "mediatype": null,
+            "conformsTo": null,
+            "createdOn": "2023-02-21T12:43:38.512081",
+            "bundledAs": null
+        },
+        {
+            "uri": "../metadata/provenance/primary.cwlprov.nt",
+            "mediatype": "application/n-triples",
+            "conformsTo": [
+                "http://www.w3.org/TR/2013/REC-prov-o-20130430/",
+                "https://w3id.org/cwl/prov/0.6.0"
+            ],
+            "createdOn": "2023-02-21T12:45:11.820557",
+            "createdBy": {
+                "uri": "urn:uuid:d6eb7d00-905f-4f38-b90e-c0ece005b4fe",
+                "name": "cwltool 3.1.20230213100550"
+            }
+        },
+        {
+            "uri": "../metadata/directory-4bd05cfc-1fe6-4769-9547-bf3c8e7ccae3.ttl",
+            "mediatype": "text/turtle; charset=\"UTF-8\"",
+            "conformsTo": null,
+            "createdOn": "2023-02-21T12:45:11.820579",
+            "createdBy": {
+                "uri": "urn:uuid:d6eb7d00-905f-4f38-b90e-c0ece005b4fe",
+                "name": "cwltool 3.1.20230213100550"
+            }
+        },
+        {
+            "uri": "../metadata/provenance/primary.cwlprov.provn",
+            "mediatype": "text/provenance-notation; charset=\"UTF-8\"",
+            "conformsTo": [
+                "http://www.w3.org/TR/2013/REC-prov-n-20130430/",
+                "https://w3id.org/cwl/prov/0.6.0"
+            ],
+            "createdOn": "2023-02-21T12:45:11.820601",
+            "createdBy": {
+                "uri": "urn:uuid:d6eb7d00-905f-4f38-b90e-c0ece005b4fe",
+                "name": "cwltool 3.1.20230213100550"
+            }
+        },
+        {
+            "uri": "../metadata/provenance/primary.cwlprov.json",
+            "mediatype": "application/json",
+            "conformsTo": [
+                "http://www.w3.org/Submission/2013/SUBM-prov-json-20130424/",
+                "https://w3id.org/cwl/prov/0.6.0"
+            ],
+            "createdOn": "2023-02-21T12:45:11.820623",
+            "createdBy": {
+                "uri": "urn:uuid:d6eb7d00-905f-4f38-b90e-c0ece005b4fe",
+                "name": "cwltool 3.1.20230213100550"
+            }
+        },
+        {
+            "uri": null,
+            "mediatype": null,
+            "conformsTo": null,
+            "createdOn": "2023-02-21T12:43:38.512081",
+            "bundledAs": null
+        },
+        {
+            "uri": "../metadata/provenance/primary.cwlprov.xml",
+            "mediatype": "application/xml",
+            "conformsTo": [
+                "http://www.w3.org/TR/2013/NOTE-prov-xml-20130430/",
+                "https://w3id.org/cwl/prov/0.6.0"
+            ],
+            "createdOn": "2023-02-21T12:45:11.820665",
+            "createdBy": {
+                "uri": "urn:uuid:d6eb7d00-905f-4f38-b90e-c0ece005b4fe",
+                "name": "cwltool 3.1.20230213100550"
+            }
+        },
+        {
+            "uri": "../workflow/primary-job.json",
+            "mediatype": "application/json",
+            "conformsTo": null,
+            "createdOn": "2023-02-21T12:45:11.820688",
+            "createdBy": {
+                "uri": "urn:uuid:d6eb7d00-905f-4f38-b90e-c0ece005b4fe",
+                "name": "cwltool 3.1.20230213100550"
+            }
+        },
+        {
+            "uri": "../metadata/directory-88a0ef4a-eb2f-4be9-ba26-f403aa5210a8.ttl",
+            "mediatype": "text/turtle; charset=\"UTF-8\"",
+            "conformsTo": null,
+            "createdOn": "2023-02-21T12:45:11.820711",
+            "createdBy": {
+                "uri": "urn:uuid:d6eb7d00-905f-4f38-b90e-c0ece005b4fe",
+                "name": "cwltool 3.1.20230213100550"
+            }
+        },
+        {
+            "uri": null,
+            "mediatype": null,
+            "conformsTo": null,
+            "createdOn": "2023-02-21T12:43:38.512081",
+            "bundledAs": null
+        },
+        {
+            "uri": "../workflow/primary-output.json",
+            "mediatype": "application/json",
+            "conformsTo": null,
+            "createdOn": "2023-02-21T12:45:11.820752",
+            "createdBy": {
+                "uri": "urn:uuid:d6eb7d00-905f-4f38-b90e-c0ece005b4fe",
+                "name": "cwltool 3.1.20230213100550"
+            }
+        },
+        {
+            "uri": "urn:uuid:fe5fd004-df2b-43f2-87c4-2abedda20cf9",
+            "createdOn": "2023-02-21T12:44:54.764974",
+            "createdBy": {
+                "uri": "urn:uuid:d6eb7d00-905f-4f38-b90e-c0ece005b4fe",
+                "name": "cwltool 3.1.20230213100550"
+            }
+        },
+        {
+            "uri": "urn:uuid:1c4c30e8-5a88-4fbc-8772-edc3cce7605a",
+            "createdOn": "2023-02-21T12:44:54.765575",
+            "createdBy": {
+                "uri": "urn:uuid:d6eb7d00-905f-4f38-b90e-c0ece005b4fe",
+                "name": "cwltool 3.1.20230213100550"
+            }
+        },
+        {
+            "uri": "urn:uuid:04f2acba-0642-4ef5-86a2-93a10e840080",
+            "createdOn": "2023-02-21T12:44:54.766651",
+            "createdBy": {
+                "uri": "urn:uuid:d6eb7d00-905f-4f38-b90e-c0ece005b4fe",
+                "name": "cwltool 3.1.20230213100550"
+            }
+        },
+        {
+            "uri": "urn:uuid:0eb3f6c7-50c9-4046-9156-7c5bd634b630",
+            "createdOn": "2023-02-21T12:44:54.895615",
+            "createdBy": {
+                "uri": "urn:uuid:d6eb7d00-905f-4f38-b90e-c0ece005b4fe",
+                "name": "cwltool 3.1.20230213100550"
+            }
+        },
+        {
+            "uri": "urn:uuid:88a0ef4a-eb2f-4be9-ba26-f403aa5210a8",
+            "createdOn": "2023-02-21T12:44:54.988546",
+            "createdBy": {
+                "uri": "urn:uuid:d6eb7d00-905f-4f38-b90e-c0ece005b4fe",
+                "name": "cwltool 3.1.20230213100550"
+            }
+        },
+        {
+            "uri": "urn:uuid:6bc3bbe8-36c0-409f-99a3-98aefa39b71f",
+            "createdOn": "2023-02-21T12:44:56.761707",
+            "createdBy": {
+                "uri": "urn:uuid:d6eb7d00-905f-4f38-b90e-c0ece005b4fe",
+                "name": "cwltool 3.1.20230213100550"
+            }
+        },
+        {
+            "uri": "urn:uuid:4bd05cfc-1fe6-4769-9547-bf3c8e7ccae3",
+            "createdOn": "2023-02-21T12:44:56.844330",
+            "createdBy": {
+                "uri": "urn:uuid:d6eb7d00-905f-4f38-b90e-c0ece005b4fe",
+                "name": "cwltool 3.1.20230213100550"
+            }
+        },
+        {
+            "uri": "urn:uuid:72b78027-6571-4138-a119-f88cc2790956",
+            "createdOn": "2023-02-21T12:44:58.645886",
+            "createdBy": {
+                "uri": "urn:uuid:d6eb7d00-905f-4f38-b90e-c0ece005b4fe",
+                "name": "cwltool 3.1.20230213100550"
+            }
+        },
+        {
+            "uri": "urn:uuid:d3cbf540-5ea4-4ef8-a475-be0eebdde2cf",
+            "createdOn": "2023-02-21T12:44:58.736708",
+            "createdBy": {
+                "uri": "urn:uuid:d6eb7d00-905f-4f38-b90e-c0ece005b4fe",
+                "name": "cwltool 3.1.20230213100550"
+            }
+        }
+    ],
+    "annotations": [
+        {
+            "uri": "urn:uuid:95eef031-ce53-4a7e-b4b8-06a75c588555",
+            "about": "urn:uuid:e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca",
+            "content": "/",
+            "oa:motivatedBy": {
+                "@id": "oa:describing"
+            }
+        },
+        {
+            "uri": "urn:uuid:7f731c06-0576-47ee-8ec2-7c3f1e0b8c28",
+            "about": "urn:uuid:e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca",
+            "content": [
+                "provenance/primary.cwlprov.ttl",
+                "provenance/primary.cwlprov.jsonld",
+                "provenance/primary.cwlprov.nt",
+                "provenance/primary.cwlprov.provn",
+                "provenance/primary.cwlprov.json",
+                "provenance/primary.cwlprov.xml"
+            ],
+            "oa:motivatedBy": {
+                "@id": "http://www.w3.org/ns/prov#has_provenance"
+            }
+        },
+        {
+            "uri": "urn:uuid:060d0f62-e5a1-41c0-8ec7-31ba77de915c",
+            "about": "../workflow/packed.cwl",
+            "content": null,
+            "oa:motivatedBy": {
+                "@id": "oa:highlighting"
+            }
+        },
+        {
+            "uri": "urn:uuid:98f8f1a1-e936-4846-8201-47a8a11e6c03",
+            "about": "urn:uuid:e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca",
+            "content": [
+                "../workflow/packed.cwl",
+                "../workflow/primary-job.json"
+            ],
+            "oa:motivatedBy": {
+                "@id": "oa:linking"
+            }
+        },
+        {
+            "uri": "urn:uuid:9a5c9f61-cd78-4e76-953c-81f2d2d8688c",
+            "about": "urn:uuid:d6eb7d00-905f-4f38-b90e-c0ece005b4fe",
+            "content": [
+                "metadata/logs/engine.d6eb7d00-905f-4f38-b90e-c0ece005b4fe.txt"
+            ],
+            "oa:motivatedBy": {
+                "@id": "https://w3id.org/cwl/prov#log"
+            }
+        },
+        {
+            "uri": "urn:uuid:ee8ccb31-e1fd-4e9d-b1b2-cf9fef028a2a",
+            "about": "urn:uuid:88a0ef4a-eb2f-4be9-ba26-f403aa5210a8",
+            "content": [
+                "directory-88a0ef4a-eb2f-4be9-ba26-f403aa5210a8.ttl"
+            ],
+            "oa:motivatedBy": {
+                "@id": "http://www.openarchives.org/ore/terms/isDescribedBy"
+            }
+        },
+        {
+            "uri": "urn:uuid:11dc542d-b371-487f-84fa-f72e6781e567",
+            "about": "urn:uuid:4bd05cfc-1fe6-4769-9547-bf3c8e7ccae3",
+            "content": [
+                "directory-4bd05cfc-1fe6-4769-9547-bf3c8e7ccae3.ttl"
+            ],
+            "oa:motivatedBy": {
+                "@id": "http://www.openarchives.org/ore/terms/isDescribedBy"
+            }
+        },
+        {
+            "uri": "urn:uuid:77dd4774-d6b9-47d1-bedd-2dab9302103d",
+            "about": "urn:uuid:d3cbf540-5ea4-4ef8-a475-be0eebdde2cf",
+            "content": [
+                "directory-d3cbf540-5ea4-4ef8-a475-be0eebdde2cf.ttl"
+            ],
+            "oa:motivatedBy": {
+                "@id": "http://www.openarchives.org/ore/terms/isDescribedBy"
+            }
+        }
+    ]
+}

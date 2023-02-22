@@ -1,0 +1,1985 @@
+@prefix cwlprov: <https://w3id.org/cwl/prov#> .
+@prefix data: <urn:hash::sha1:> .
+@prefix id: <urn:uuid:> .
+@prefix metadata: <arcp://uuid,e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca/metadata/> .
+@prefix ore: <http://www.openarchives.org/ore/terms/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ro: <http://purl.org/wf4ever/ro#> .
+@prefix wf: <arcp://uuid,e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca/workflow/packed.cwl#> .
+@prefix wf4ever: <http://purl.org/wf4ever/wf4ever#> .
+@prefix wfdesc: <http://purl.org/wf4ever/wfdesc#> .
+@prefix wfprov: <http://purl.org/wf4ever/wfprov#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+id:45b355ea-67b8-452b-9a0f-fe4098e0d438 a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity id:f6bd4404-843c-4b87-8c55-dbaabc6f5ed0 ;
+            prov:atTime "2023-02-21T12:45:11.256024"^^xsd:dateTime ;
+            prov:hadRole <arcp://uuid,e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca/workflow/packed.cwl#main/classify-tumor/tumor> ],
+        [ a prov:Generation ;
+            prov:activity id:e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca ;
+            prov:atTime "2023-02-21T12:45:11.260146"^^xsd:dateTime ;
+            prov:hadRole <arcp://uuid,e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca/workflow/packed.cwl#main/primary/tumor> ] ;
+    prov:specializationOf data:a1e03e58562319274d4ff792d2090763b7926d72 ;
+    cwlprov:basename "tumor.zip"^^xsd:string ;
+    cwlprov:nameext ".zip"^^xsd:string ;
+    cwlprov:nameroot "tumor"^^xsd:string .
+
+<urn:uuid:4bd05cfc-1fe6-4769-9547-bf3c8e7ccae3#ore> prov:asInBundle metadata:directory-4bd05cfc-1fe6-4769-9547-bf3c8e7ccae3.ttl ;
+    prov:mentionOf id:4bd05cfc-1fe6-4769-9547-bf3c8e7ccae3 .
+
+<urn:uuid:88a0ef4a-eb2f-4be9-ba26-f403aa5210a8#ore> prov:asInBundle metadata:directory-88a0ef4a-eb2f-4be9-ba26-f403aa5210a8.ttl ;
+    prov:mentionOf id:88a0ef4a-eb2f-4be9-ba26-f403aa5210a8 .
+
+id:ad7b6f14-996e-429c-973e-23dacb128edf a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity id:726bf96d-524a-4295-8490-240e88ea693f ;
+            prov:atTime "2023-02-21T12:44:58.538534"^^xsd:dateTime ;
+            prov:hadRole <arcp://uuid,e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca/workflow/packed.cwl#main/extract-tissue-high/tissue> ],
+        [ a prov:Generation ;
+            prov:activity id:e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca ;
+            prov:atTime "2023-02-21T12:45:11.260146"^^xsd:dateTime ;
+            prov:hadRole <arcp://uuid,e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca/workflow/packed.cwl#main/primary/tissue> ] ;
+    prov:specializationOf data:254eb2d60fd6705c88a6b7746336ba86e09e23c7 ;
+    cwlprov:basename "tissue_high.zip"^^xsd:string ;
+    cwlprov:nameext ".zip"^^xsd:string ;
+    cwlprov:nameroot "tissue_high"^^xsd:string .
+
+<urn:uuid:d3cbf540-5ea4-4ef8-a475-be0eebdde2cf#ore> prov:asInBundle metadata:directory-d3cbf540-5ea4-4ef8-a475-be0eebdde2cf.ttl ;
+    prov:mentionOf id:d3cbf540-5ea4-4ef8-a475-be0eebdde2cf .
+
+wf:main a wfdesc:Workflow,
+        prov:Entity,
+        prov:Plan ;
+    rdfs:label "Prospective provenance"^^xsd:string ;
+    wfdesc:hasSubProcess <arcp://uuid,e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca/workflow/packed.cwl#main/classify-tumor>,
+        <arcp://uuid,e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca/workflow/packed.cwl#main/extract-tissue-high>,
+        <arcp://uuid,e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca/workflow/packed.cwl#main/extract-tissue-low> .
+
+data:254eb2d60fd6705c88a6b7746336ba86e09e23c7 a wfprov:Artifact,
+        prov:Entity .
+
+data:8cdd835383bcc344a0dbc6892ac6949765400b5c a wfprov:Artifact,
+        prov:Entity .
+
+data:a1e03e58562319274d4ff792d2090763b7926d72 a wfprov:Artifact,
+        prov:Entity .
+
+id:04f2acba-0642-4ef5-86a2-93a10e840080 a prov:Entity ;
+    prov:value "1"^^xsd:int .
+
+id:0eb3f6c7-50c9-4046-9156-7c5bd634b630 a prov:Entity ;
+    prov:value "9"^^xsd:int .
+
+id:1c4c30e8-5a88-4fbc-8772-edc3cce7605a a prov:Entity ;
+    prov:value "9"^^xsd:int .
+
+id:6a0f0480-43fe-4a40-a491-c2885228c8a7 a prov:Agent,
+        prov:SoftwareAgent ;
+    rdfs:label "Container execution of image crs4/slaid:1.1.0-beta.25-tumor_model-level_1-v2.2-cudnn"^^xsd:string ;
+    cwlprov:image "crs4/slaid:1.1.0-beta.25-tumor_model-level_1-v2.2-cudnn"^^xsd:string .
+
+id:6bc3bbe8-36c0-409f-99a3-98aefa39b71f a prov:Entity ;
+    prov:value "4"^^xsd:int .
+
+id:726bf96d-524a-4295-8490-240e88ea693f a wfprov:ProcessRun,
+        prov:Activity ;
+    rdfs:label "Run of workflow/packed.cwl#main/extract-tissue-high"^^xsd:string ;
+    prov:qualifiedAssociation [ a prov:Association ;
+            prov:hadPlan <arcp://uuid,e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca/workflow/packed.cwl#main/extract-tissue-high> ] ;
+    prov:qualifiedEnd [ a prov:End ;
+            prov:atTime "2023-02-21T12:44:58.538525"^^xsd:dateTime ;
+            prov:hadActivity id:e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca ] ;
+    prov:qualifiedStart [ a prov:Start ;
+            prov:atTime "2023-02-21T12:44:56.753244"^^xsd:dateTime ;
+            prov:hadActivity id:e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca ] ;
+    prov:qualifiedUsage [ a prov:Usage ;
+            prov:atTime "2023-02-21T12:44:56.761138"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca/workflow/packed.cwl#main/extract-tissue-high/gpu> ],
+        [ a prov:Usage ;
+            prov:atTime "2023-02-21T12:44:56.761722"^^xsd:dateTime ;
+            prov:entity id:6bc3bbe8-36c0-409f-99a3-98aefa39b71f ;
+            prov:hadRole <arcp://uuid,e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca/workflow/packed.cwl#main/extract-tissue-high/level> ],
+        [ a prov:Usage ;
+            prov:atTime "2023-02-21T12:44:56.760337"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca/workflow/packed.cwl#main/extract-tissue-high/chunk-size> ],
+        [ a prov:Usage ;
+            prov:atTime "2023-02-21T12:44:56.844403"^^xsd:dateTime ;
+            prov:entity id:814b0bdd-c2cd-416e-9bcc-4e9feb8f9dba ;
+            prov:hadRole <arcp://uuid,e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca/workflow/packed.cwl#main/extract-tissue-high/src> ],
+        [ a prov:Usage ;
+            prov:atTime "2023-02-21T12:44:56.760247"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca/workflow/packed.cwl#main/extract-tissue-high/batch-size> ],
+        [ a prov:Usage ;
+            prov:atTime "2023-02-21T12:44:56.761083"^^xsd:dateTime ;
+            prov:entity id:5b816d95-62b3-451b-af92-ba26d92c9534 ;
+            prov:hadRole <arcp://uuid,e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca/workflow/packed.cwl#main/extract-tissue-high/filter_slide> ],
+        [ a prov:Usage ;
+            prov:atTime "2023-02-21T12:44:56.761555"^^xsd:dateTime ;
+            prov:entity data:869623a779aaf26d38a26e562703f624fa40d29f ;
+            prov:hadRole <arcp://uuid,e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca/workflow/packed.cwl#main/extract-tissue-high/label> ],
+        [ a prov:Usage ;
+            prov:atTime "2023-02-21T12:44:56.760913"^^xsd:dateTime ;
+            prov:entity data:3c7901bab39947a3402da2687583e4dffb2530f9 ;
+            prov:hadRole <arcp://uuid,e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca/workflow/packed.cwl#main/extract-tissue-high/filter> ] ;
+    prov:wasAssociatedWith id:c4dd2f49-a828-494b-b040-ab1b834c4434,
+        id:d6eb7d00-905f-4f38-b90e-c0ece005b4fe .
+
+id:72b78027-6571-4138-a119-f88cc2790956 a prov:Entity ;
+    prov:value "1"^^xsd:int .
+
+id:779c0b4d-af99-4626-a6ca-306a7654bf8d a prov:Agent,
+        prov:SoftwareAgent ;
+    rdfs:label "Container execution of image crs4/slaid:1.1.0-beta.25-tissue_model-eddl_2-cudnn"^^xsd:string ;
+    cwlprov:image "crs4/slaid:1.1.0-beta.25-tissue_model-eddl_2-cudnn"^^xsd:string .
+
+id:7d783444-a562-459e-aadb-4d2674746907 a wfprov:ProcessRun,
+        prov:Activity ;
+    rdfs:label "Run of workflow/packed.cwl#main/extract-tissue-low"^^xsd:string ;
+    prov:qualifiedAssociation [ a prov:Association ;
+            prov:hadPlan <arcp://uuid,e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca/workflow/packed.cwl#main/extract-tissue-low> ] ;
+    prov:qualifiedEnd [ a prov:End ;
+            prov:atTime "2023-02-21T12:44:56.740995"^^xsd:dateTime ;
+            prov:hadActivity id:e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca ] ;
+    prov:qualifiedStart [ a prov:Start ;
+            prov:atTime "2023-02-21T12:44:54.774746"^^xsd:dateTime ;
+            prov:hadActivity id:e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca ] ;
+    prov:qualifiedUsage [ a prov:Usage ;
+            prov:atTime "2023-02-21T12:44:54.988634"^^xsd:dateTime ;
+            prov:entity id:477fb317-0244-4980-a03a-6854049ced43 ;
+            prov:hadRole <arcp://uuid,e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca/workflow/packed.cwl#main/extract-tissue-low/src> ],
+        [ a prov:Usage ;
+            prov:atTime "2023-02-21T12:44:54.988691"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca/workflow/packed.cwl#main/extract-tissue-low/filter> ],
+        [ a prov:Usage ;
+            prov:atTime "2023-02-21T12:44:54.895629"^^xsd:dateTime ;
+            prov:entity id:0eb3f6c7-50c9-4046-9156-7c5bd634b630 ;
+            prov:hadRole <arcp://uuid,e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca/workflow/packed.cwl#main/extract-tissue-low/level> ],
+        [ a prov:Usage ;
+            prov:atTime "2023-02-21T12:44:54.894717"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca/workflow/packed.cwl#main/extract-tissue-low/chunk-size> ],
+        [ a prov:Usage ;
+            prov:atTime "2023-02-21T12:44:54.895448"^^xsd:dateTime ;
+            prov:entity data:0b2b5f414b65f0315615670701c2951670995ae1 ;
+            prov:hadRole <arcp://uuid,e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca/workflow/packed.cwl#main/extract-tissue-low/label> ],
+        [ a prov:Usage ;
+            prov:atTime "2023-02-21T12:44:54.988735"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca/workflow/packed.cwl#main/extract-tissue-low/filter_slide> ],
+        [ a prov:Usage ;
+            prov:atTime "2023-02-21T12:44:54.894635"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca/workflow/packed.cwl#main/extract-tissue-low/batch-size> ],
+        [ a prov:Usage ;
+            prov:atTime "2023-02-21T12:44:54.894759"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca/workflow/packed.cwl#main/extract-tissue-low/gpu> ] ;
+    prov:wasAssociatedWith id:779c0b4d-af99-4626-a6ca-306a7654bf8d,
+        id:d6eb7d00-905f-4f38-b90e-c0ece005b4fe .
+
+id:95de3a63-9de1-4abf-8eb1-1d347dc956de a prov:Agent .
+
+id:a90defd7-cf70-41fc-8c76-956e1a970f36 a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    prov:specializationOf data:f62aa607a75508ac5fc6a22e9c0e39ef58a2c852 ;
+    cwlprov:basename "Mirax2-Fluorescence-2.mrxs"^^xsd:string ;
+    cwlprov:nameext ".mrxs"^^xsd:string ;
+    cwlprov:nameroot "Mirax2-Fluorescence-2"^^xsd:string .
+
+id:c4dd2f49-a828-494b-b040-ab1b834c4434 a prov:Agent,
+        prov:SoftwareAgent ;
+    rdfs:label "Container execution of image crs4/slaid:1.1.0-beta.25-tissue_model-eddl_2-cudnn"^^xsd:string ;
+    cwlprov:image "crs4/slaid:1.1.0-beta.25-tissue_model-eddl_2-cudnn"^^xsd:string .
+
+id:f6bd4404-843c-4b87-8c55-dbaabc6f5ed0 a wfprov:ProcessRun,
+        prov:Activity ;
+    rdfs:label "Run of workflow/packed.cwl#main/classify-tumor"^^xsd:string ;
+    prov:qualifiedAssociation [ a prov:Association ;
+            prov:hadPlan <arcp://uuid,e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca/workflow/packed.cwl#main/classify-tumor> ] ;
+    prov:qualifiedEnd [ a prov:End ;
+            prov:atTime "2023-02-21T12:45:11.256012"^^xsd:dateTime ;
+            prov:hadActivity id:e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca ] ;
+    prov:qualifiedStart [ a prov:Start ;
+            prov:atTime "2023-02-21T12:44:58.553005"^^xsd:dateTime ;
+            prov:hadActivity id:e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca ] ;
+    prov:qualifiedUsage [ a prov:Usage ;
+            prov:atTime "2023-02-21T12:44:58.644471"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca/workflow/packed.cwl#main/classify-tumor/batch-size> ],
+        [ a prov:Usage ;
+            prov:atTime "2023-02-21T12:44:58.644567"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca/workflow/packed.cwl#main/classify-tumor/chunk-size> ],
+        [ a prov:Usage ;
+            prov:atTime "2023-02-21T12:44:58.736785"^^xsd:dateTime ;
+            prov:entity id:529b7beb-1767-4230-9632-c85e76c72324 ;
+            prov:hadRole <arcp://uuid,e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca/workflow/packed.cwl#main/classify-tumor/src> ],
+        [ a prov:Usage ;
+            prov:atTime "2023-02-21T12:44:58.645252"^^xsd:dateTime ;
+            prov:entity id:5b816d95-62b3-451b-af92-ba26d92c9534 ;
+            prov:hadRole <arcp://uuid,e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca/workflow/packed.cwl#main/classify-tumor/filter_slide> ],
+        [ a prov:Usage ;
+            prov:atTime "2023-02-21T12:44:58.645903"^^xsd:dateTime ;
+            prov:entity id:72b78027-6571-4138-a119-f88cc2790956 ;
+            prov:hadRole <arcp://uuid,e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca/workflow/packed.cwl#main/classify-tumor/level> ],
+        [ a prov:Usage ;
+            prov:atTime "2023-02-21T12:44:58.645152"^^xsd:dateTime ;
+            prov:entity data:ff7335228d2ffbe6347decead594cfc9618968e6 ;
+            prov:hadRole <arcp://uuid,e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca/workflow/packed.cwl#main/classify-tumor/filter> ],
+        [ a prov:Usage ;
+            prov:atTime "2023-02-21T12:44:58.645296"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca/workflow/packed.cwl#main/classify-tumor/gpu> ],
+        [ a prov:Usage ;
+            prov:atTime "2023-02-21T12:44:58.645717"^^xsd:dateTime ;
+            prov:entity data:aa3939a63ace95f5ffeab3d1798d49b5adbe9e27 ;
+            prov:hadRole <arcp://uuid,e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca/workflow/packed.cwl#main/classify-tumor/label> ] ;
+    prov:wasAssociatedWith id:6a0f0480-43fe-4a40-a491-c2885228c8a7,
+        id:d6eb7d00-905f-4f38-b90e-c0ece005b4fe .
+
+id:fe5fd004-df2b-43f2-87c4-2abedda20cf9 a prov:Entity ;
+    prov:value "4"^^xsd:int .
+
+<arcp://uuid,e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca/workflow/packed.cwl#main/classify-tumor> a wfdesc:Process,
+        prov:Entity,
+        prov:Plan .
+
+<arcp://uuid,e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca/workflow/packed.cwl#main/extract-tissue-high> a wfdesc:Process,
+        prov:Entity,
+        prov:Plan .
+
+<arcp://uuid,e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca/workflow/packed.cwl#main/extract-tissue-low> a wfdesc:Process,
+        prov:Entity,
+        prov:Plan .
+
+data:0b2b5f414b65f0315615670701c2951670995ae1 a wfprov:Artifact,
+        prov:Entity ;
+    prov:value "tissue_low"^^xsd:string .
+
+data:3c7901bab39947a3402da2687583e4dffb2530f9 a wfprov:Artifact,
+        prov:Entity ;
+    prov:value "tissue_low>0.9"^^xsd:string .
+
+data:869623a779aaf26d38a26e562703f624fa40d29f a wfprov:Artifact,
+        prov:Entity ;
+    prov:value "tissue_high"^^xsd:string .
+
+data:aa3939a63ace95f5ffeab3d1798d49b5adbe9e27 a wfprov:Artifact,
+        prov:Entity ;
+    prov:value "tumor"^^xsd:string .
+
+data:ff7335228d2ffbe6347decead594cfc9618968e6 a wfprov:Artifact,
+        prov:Entity ;
+    prov:value "tissue_low>0.99"^^xsd:string .
+
+id:00f090a7-de19-4d1e-9326-c8a49c35954d a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity,
+        prov:KeyEntityPair ;
+    ro:entryName "Data0023.dat"^^xsd:string ;
+    ore:proxyFor id:2a7b6f70-868e-4260-95e9-4e11668fefdb ;
+    ore:proxyIn id:d3cbf540-5ea4-4ef8-a475-be0eebdde2cf ;
+    prov:pairEntity id:2a7b6f70-868e-4260-95e9-4e11668fefdb ;
+    prov:pairKey "Data0023.dat"^^xsd:string .
+
+id:020966a5-b556-4ec7-be04-138c3e2635e1 a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity,
+        prov:KeyEntityPair ;
+    ro:entryName "Data0009.dat"^^xsd:string ;
+    ore:proxyFor id:3459bb37-129c-4d59-81d1-c702434ab8a5 ;
+    ore:proxyIn id:4bd05cfc-1fe6-4769-9547-bf3c8e7ccae3 ;
+    prov:pairEntity id:3459bb37-129c-4d59-81d1-c702434ab8a5 ;
+    prov:pairKey "Data0009.dat"^^xsd:string .
+
+id:033b6edd-d4f9-4e9d-874d-7408eeb9aa68 a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity,
+        prov:KeyEntityPair ;
+    ro:entryName "Data0001.dat"^^xsd:string ;
+    ore:proxyFor id:e39115f6-5681-437f-8703-fcec7a25eb49 ;
+    ore:proxyIn id:d3cbf540-5ea4-4ef8-a475-be0eebdde2cf ;
+    prov:pairEntity id:e39115f6-5681-437f-8703-fcec7a25eb49 ;
+    prov:pairKey "Data0001.dat"^^xsd:string .
+
+id:03d6e76b-b8ab-46ad-af4b-cc77e9245ce7 a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity,
+        prov:KeyEntityPair ;
+    ro:entryName "Data0002.dat"^^xsd:string ;
+    ore:proxyFor id:c99540f1-2450-4242-8856-3bfaeca9863d ;
+    ore:proxyIn id:4bd05cfc-1fe6-4769-9547-bf3c8e7ccae3 ;
+    prov:pairEntity id:c99540f1-2450-4242-8856-3bfaeca9863d ;
+    prov:pairKey "Data0002.dat"^^xsd:string .
+
+id:05100386-628d-48e4-a0ab-16f04aa6a377 a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity,
+        prov:KeyEntityPair ;
+    ro:entryName "Data0017.dat"^^xsd:string ;
+    ore:proxyFor id:a31c1a5a-2d2f-4e88-b143-332d2fe51a3d ;
+    ore:proxyIn id:d3cbf540-5ea4-4ef8-a475-be0eebdde2cf ;
+    prov:pairEntity id:a31c1a5a-2d2f-4e88-b143-332d2fe51a3d ;
+    prov:pairKey "Data0017.dat"^^xsd:string .
+
+id:06bb21d0-ae59-42c1-a6c6-3cdd1fc789be a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity,
+        prov:KeyEntityPair ;
+    ro:entryName "Data0018.dat"^^xsd:string ;
+    ore:proxyFor id:5d9d518d-6605-4ab1-8357-ac89b56998d8 ;
+    ore:proxyIn id:d3cbf540-5ea4-4ef8-a475-be0eebdde2cf ;
+    prov:pairEntity id:5d9d518d-6605-4ab1-8357-ac89b56998d8 ;
+    prov:pairKey "Data0018.dat"^^xsd:string .
+
+id:10eb8bd6-9ae9-44ff-85bd-46ab6bae0508 a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity,
+        prov:KeyEntityPair ;
+    ro:entryName "Data0008.dat"^^xsd:string ;
+    ore:proxyFor id:a1c9a1b1-6c2a-4add-b020-9f4d2944652a ;
+    ore:proxyIn id:4bd05cfc-1fe6-4769-9547-bf3c8e7ccae3 ;
+    prov:pairEntity id:a1c9a1b1-6c2a-4add-b020-9f4d2944652a ;
+    prov:pairKey "Data0008.dat"^^xsd:string .
+
+id:115cb83c-3a7e-4451-bb2f-f2571cf8151d a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity,
+        prov:KeyEntityPair ;
+    ro:entryName "Data0003.dat"^^xsd:string ;
+    ore:proxyFor id:1bcaaa2a-a6f5-48ad-b7e2-842f5613d0e7 ;
+    ore:proxyIn id:4bd05cfc-1fe6-4769-9547-bf3c8e7ccae3 ;
+    prov:pairEntity id:1bcaaa2a-a6f5-48ad-b7e2-842f5613d0e7 ;
+    prov:pairKey "Data0003.dat"^^xsd:string .
+
+id:12480395-8ba1-4941-908b-16f9c49e2fd1 a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity,
+        prov:KeyEntityPair ;
+    ro:entryName "Index.dat"^^xsd:string ;
+    ore:proxyFor id:52dc1bd9-5862-4768-9501-c61ecfdaaa28 ;
+    ore:proxyIn id:88a0ef4a-eb2f-4be9-ba26-f403aa5210a8 ;
+    prov:pairEntity id:52dc1bd9-5862-4768-9501-c61ecfdaaa28 ;
+    prov:pairKey "Index.dat"^^xsd:string .
+
+id:17fbdee3-a14e-4a73-b5e0-37592ae3529d a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity,
+        prov:KeyEntityPair ;
+    ro:entryName "Index.dat"^^xsd:string ;
+    ore:proxyFor id:d169331d-18b2-4207-bc98-39ae63e23b29 ;
+    ore:proxyIn id:d3cbf540-5ea4-4ef8-a475-be0eebdde2cf ;
+    prov:pairEntity id:d169331d-18b2-4207-bc98-39ae63e23b29 ;
+    prov:pairKey "Index.dat"^^xsd:string .
+
+id:18575450-7b23-4581-870a-32ea87c709a9 a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity,
+        prov:KeyEntityPair ;
+    ro:entryName "Data0014.dat"^^xsd:string ;
+    ore:proxyFor id:84295852-0c13-4da8-a0ef-04bb73d991a7 ;
+    ore:proxyIn id:88a0ef4a-eb2f-4be9-ba26-f403aa5210a8 ;
+    prov:pairEntity id:84295852-0c13-4da8-a0ef-04bb73d991a7 ;
+    prov:pairKey "Data0014.dat"^^xsd:string .
+
+id:1b32cb68-c7a7-4759-b663-ec8c00c45b94 a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity,
+        prov:KeyEntityPair ;
+    ro:entryName "Data0016.dat"^^xsd:string ;
+    ore:proxyFor id:1d4bae6e-b349-4555-a472-5922b1f54c17 ;
+    ore:proxyIn id:88a0ef4a-eb2f-4be9-ba26-f403aa5210a8 ;
+    prov:pairEntity id:1d4bae6e-b349-4555-a472-5922b1f54c17 ;
+    prov:pairKey "Data0016.dat"^^xsd:string .
+
+id:1bee2df1-25bd-42b5-b02d-e6a630779ac0 a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity,
+        prov:KeyEntityPair ;
+    ro:entryName "Data0016.dat"^^xsd:string ;
+    ore:proxyFor id:5a41fb39-1e88-4a0e-b34d-333793348c66 ;
+    ore:proxyIn id:d3cbf540-5ea4-4ef8-a475-be0eebdde2cf ;
+    prov:pairEntity id:5a41fb39-1e88-4a0e-b34d-333793348c66 ;
+    prov:pairKey "Data0016.dat"^^xsd:string .
+
+id:1e84e57f-7496-4cad-957e-9588c47a8f1b a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity,
+        prov:KeyEntityPair ;
+    ro:entryName "Data0012.dat"^^xsd:string ;
+    ore:proxyFor id:0ba96d2c-2f37-401f-8772-7b693bfbb2d0 ;
+    ore:proxyIn id:4bd05cfc-1fe6-4769-9547-bf3c8e7ccae3 ;
+    prov:pairEntity id:0ba96d2c-2f37-401f-8772-7b693bfbb2d0 ;
+    prov:pairKey "Data0012.dat"^^xsd:string .
+
+id:1e9f46f3-ffb7-4bff-ad37-a1ba1cb8f53e a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity,
+        prov:KeyEntityPair ;
+    ro:entryName "Data0010.dat"^^xsd:string ;
+    ore:proxyFor id:89ee305c-fa4d-46c7-8eaa-8ccbc7f94d02 ;
+    ore:proxyIn id:4bd05cfc-1fe6-4769-9547-bf3c8e7ccae3 ;
+    prov:pairEntity id:89ee305c-fa4d-46c7-8eaa-8ccbc7f94d02 ;
+    prov:pairKey "Data0010.dat"^^xsd:string .
+
+id:2a4ed625-e654-48ad-aeda-a578fe03a3ab a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity,
+        prov:KeyEntityPair ;
+    ro:entryName "Data0016.dat"^^xsd:string ;
+    ore:proxyFor id:a4a25196-274e-4048-9d1e-ba96bfd51d03 ;
+    ore:proxyIn id:4bd05cfc-1fe6-4769-9547-bf3c8e7ccae3 ;
+    prov:pairEntity id:a4a25196-274e-4048-9d1e-ba96bfd51d03 ;
+    prov:pairKey "Data0016.dat"^^xsd:string .
+
+id:2a6c3ac8-11ce-40ba-89e4-07d4b03e8e72 a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity,
+        prov:KeyEntityPair ;
+    ro:entryName "Data0006.dat"^^xsd:string ;
+    ore:proxyFor id:7a4768d6-bc1e-4242-8d22-8dd6bf30fbde ;
+    ore:proxyIn id:d3cbf540-5ea4-4ef8-a475-be0eebdde2cf ;
+    prov:pairEntity id:7a4768d6-bc1e-4242-8d22-8dd6bf30fbde ;
+    prov:pairKey "Data0006.dat"^^xsd:string .
+
+id:322ec937-bdfc-4db7-b739-48eb94a783af a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity,
+        prov:KeyEntityPair ;
+    ro:entryName "Data0009.dat"^^xsd:string ;
+    ore:proxyFor id:7dc91d91-4719-45d1-a14c-8a19622653ed ;
+    ore:proxyIn id:88a0ef4a-eb2f-4be9-ba26-f403aa5210a8 ;
+    prov:pairEntity id:7dc91d91-4719-45d1-a14c-8a19622653ed ;
+    prov:pairKey "Data0009.dat"^^xsd:string .
+
+id:3e033919-d20a-4615-b2e0-8e0a21df59ca a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity,
+        prov:KeyEntityPair ;
+    ro:entryName "Data0002.dat"^^xsd:string ;
+    ore:proxyFor id:0c4fc73a-461a-497e-8ac3-507aee7d0607 ;
+    ore:proxyIn id:d3cbf540-5ea4-4ef8-a475-be0eebdde2cf ;
+    prov:pairEntity id:0c4fc73a-461a-497e-8ac3-507aee7d0607 ;
+    prov:pairKey "Data0002.dat"^^xsd:string .
+
+id:477fb317-0244-4980-a03a-6854049ced43 a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    prov:specializationOf data:f62aa607a75508ac5fc6a22e9c0e39ef58a2c852 ;
+    cwlprov:basename "Mirax2-Fluorescence-2.mrxs"^^xsd:string ;
+    cwlprov:nameext ".mrxs"^^xsd:string ;
+    cwlprov:nameroot "Mirax2-Fluorescence-2"^^xsd:string .
+
+id:4c8115c0-b527-4f2b-b167-4bc66ab2ad80 a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity,
+        prov:KeyEntityPair ;
+    ro:entryName "Data0000.dat"^^xsd:string ;
+    ore:proxyFor id:555292e8-d8cf-4df4-adfd-4d7be20848f5 ;
+    ore:proxyIn id:88a0ef4a-eb2f-4be9-ba26-f403aa5210a8 ;
+    prov:pairEntity id:555292e8-d8cf-4df4-adfd-4d7be20848f5 ;
+    prov:pairKey "Data0000.dat"^^xsd:string .
+
+id:4e3ebe77-e9cf-45aa-95a8-fe8eea00815c a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity,
+        prov:KeyEntityPair ;
+    ro:entryName "Data0010.dat"^^xsd:string ;
+    ore:proxyFor id:59757717-0b81-4cdb-b001-1de4205378a6 ;
+    ore:proxyIn id:88a0ef4a-eb2f-4be9-ba26-f403aa5210a8 ;
+    prov:pairEntity id:59757717-0b81-4cdb-b001-1de4205378a6 ;
+    prov:pairKey "Data0010.dat"^^xsd:string .
+
+id:51eed2c3-4531-40b2-afdf-20208f92025e a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity,
+        prov:KeyEntityPair ;
+    ro:entryName "Data0017.dat"^^xsd:string ;
+    ore:proxyFor id:3367195f-42f7-4b14-8544-fcbc75c1fe1c ;
+    ore:proxyIn id:88a0ef4a-eb2f-4be9-ba26-f403aa5210a8 ;
+    prov:pairEntity id:3367195f-42f7-4b14-8544-fcbc75c1fe1c ;
+    prov:pairKey "Data0017.dat"^^xsd:string .
+
+id:529b7beb-1767-4230-9632-c85e76c72324 a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    prov:specializationOf data:f62aa607a75508ac5fc6a22e9c0e39ef58a2c852 ;
+    cwlprov:basename "Mirax2-Fluorescence-2.mrxs"^^xsd:string ;
+    cwlprov:nameext ".mrxs"^^xsd:string ;
+    cwlprov:nameroot "Mirax2-Fluorescence-2"^^xsd:string .
+
+id:536e0787-b3c0-4088-836f-e765728a102b a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity,
+        prov:KeyEntityPair ;
+    ro:entryName "Data0012.dat"^^xsd:string ;
+    ore:proxyFor id:044d0c1b-e1f4-4c0f-adfc-72682acba32c ;
+    ore:proxyIn id:88a0ef4a-eb2f-4be9-ba26-f403aa5210a8 ;
+    prov:pairEntity id:044d0c1b-e1f4-4c0f-adfc-72682acba32c ;
+    prov:pairKey "Data0012.dat"^^xsd:string .
+
+id:568a82ac-b02b-4430-82fe-541d8f82df95 a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity,
+        prov:KeyEntityPair ;
+    ro:entryName "Data0005.dat"^^xsd:string ;
+    ore:proxyFor id:38c003bb-e9e7-4d8c-9eee-63d1b3b81d74 ;
+    ore:proxyIn id:88a0ef4a-eb2f-4be9-ba26-f403aa5210a8 ;
+    prov:pairEntity id:38c003bb-e9e7-4d8c-9eee-63d1b3b81d74 ;
+    prov:pairKey "Data0005.dat"^^xsd:string .
+
+id:5ab64288-43b2-43b1-aee1-29717df541e3 a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity,
+        prov:KeyEntityPair ;
+    ro:entryName "Data0013.dat"^^xsd:string ;
+    ore:proxyFor id:14322b14-bc68-461b-b3d5-60daece52f48 ;
+    ore:proxyIn id:d3cbf540-5ea4-4ef8-a475-be0eebdde2cf ;
+    prov:pairEntity id:14322b14-bc68-461b-b3d5-60daece52f48 ;
+    prov:pairKey "Data0013.dat"^^xsd:string .
+
+id:5b515382-ec9d-427e-b81b-be466c999f4a a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity,
+        prov:KeyEntityPair ;
+    ro:entryName "Data0000.dat"^^xsd:string ;
+    ore:proxyFor id:5cdfc5c9-8b20-4114-b8db-da8bce86ea4f ;
+    ore:proxyIn id:d3cbf540-5ea4-4ef8-a475-be0eebdde2cf ;
+    prov:pairEntity id:5cdfc5c9-8b20-4114-b8db-da8bce86ea4f ;
+    prov:pairKey "Data0000.dat"^^xsd:string .
+
+id:5b816d95-62b3-451b-af92-ba26d92c9534 a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity id:7d783444-a562-459e-aadb-4d2674746907 ;
+            prov:atTime "2023-02-21T12:44:56.741009"^^xsd:dateTime ;
+            prov:hadRole <arcp://uuid,e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca/workflow/packed.cwl#main/extract-tissue-low/tissue> ] ;
+    prov:specializationOf data:8cdd835383bcc344a0dbc6892ac6949765400b5c ;
+    cwlprov:basename "tissue_low.zip"^^xsd:string ;
+    cwlprov:nameext ".zip"^^xsd:string ;
+    cwlprov:nameroot "tissue_low"^^xsd:string .
+
+id:61737fb8-112d-46e3-8bd0-4255eaef618b a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity,
+        prov:KeyEntityPair ;
+    ro:entryName "Data0006.dat"^^xsd:string ;
+    ore:proxyFor id:f04a61f4-a0db-4e65-9a8d-e8a33da34571 ;
+    ore:proxyIn id:88a0ef4a-eb2f-4be9-ba26-f403aa5210a8 ;
+    prov:pairEntity id:f04a61f4-a0db-4e65-9a8d-e8a33da34571 ;
+    prov:pairKey "Data0006.dat"^^xsd:string .
+
+id:64b0e025-420b-4494-af2d-c2652a70d267 a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity,
+        prov:KeyEntityPair ;
+    ro:entryName "Data0003.dat"^^xsd:string ;
+    ore:proxyFor id:af610ae8-d08e-4f80-8f4d-3676de94b402 ;
+    ore:proxyIn id:d3cbf540-5ea4-4ef8-a475-be0eebdde2cf ;
+    prov:pairEntity id:af610ae8-d08e-4f80-8f4d-3676de94b402 ;
+    prov:pairKey "Data0003.dat"^^xsd:string .
+
+id:692583c7-c670-45eb-ad70-1a669fb07302 a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity,
+        prov:KeyEntityPair ;
+    ro:entryName "Data0007.dat"^^xsd:string ;
+    ore:proxyFor id:4f19f2cf-9c4f-410c-a556-bfc234ef1c6b ;
+    ore:proxyIn id:4bd05cfc-1fe6-4769-9547-bf3c8e7ccae3 ;
+    prov:pairEntity id:4f19f2cf-9c4f-410c-a556-bfc234ef1c6b ;
+    prov:pairKey "Data0007.dat"^^xsd:string .
+
+id:6b0d342e-4b6f-4173-a01a-4f6103d6945c a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity,
+        prov:KeyEntityPair ;
+    ro:entryName "Data0014.dat"^^xsd:string ;
+    ore:proxyFor id:3c572551-fb8f-4608-80d9-48afe7c99ab4 ;
+    ore:proxyIn id:4bd05cfc-1fe6-4769-9547-bf3c8e7ccae3 ;
+    prov:pairEntity id:3c572551-fb8f-4608-80d9-48afe7c99ab4 ;
+    prov:pairKey "Data0014.dat"^^xsd:string .
+
+id:6daa18b9-60e5-40c9-aeda-59ab12e6319b a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity,
+        prov:KeyEntityPair ;
+    ro:entryName "Data0019.dat"^^xsd:string ;
+    ore:proxyFor id:e7ffd8ae-f4b8-4476-bf9e-93bbfaed09b1 ;
+    ore:proxyIn id:d3cbf540-5ea4-4ef8-a475-be0eebdde2cf ;
+    prov:pairEntity id:e7ffd8ae-f4b8-4476-bf9e-93bbfaed09b1 ;
+    prov:pairKey "Data0019.dat"^^xsd:string .
+
+id:6f271a7c-9799-4c8f-8973-3a3bed5bfbd8 a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity,
+        prov:KeyEntityPair ;
+    ro:entryName "Data0003.dat"^^xsd:string ;
+    ore:proxyFor id:82b04010-43c7-48d0-818e-61e1149d05e4 ;
+    ore:proxyIn id:88a0ef4a-eb2f-4be9-ba26-f403aa5210a8 ;
+    prov:pairEntity id:82b04010-43c7-48d0-818e-61e1149d05e4 ;
+    prov:pairKey "Data0003.dat"^^xsd:string .
+
+id:7274b92a-3773-4676-8532-b076f7b2712f a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity,
+        prov:KeyEntityPair ;
+    ro:entryName "Data0010.dat"^^xsd:string ;
+    ore:proxyFor id:9ef3782b-99d3-493a-96dc-3cdf906fa254 ;
+    ore:proxyIn id:d3cbf540-5ea4-4ef8-a475-be0eebdde2cf ;
+    prov:pairEntity id:9ef3782b-99d3-493a-96dc-3cdf906fa254 ;
+    prov:pairKey "Data0010.dat"^^xsd:string .
+
+id:7ba35b76-f3ee-40d8-99ad-321719f16b89 a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity,
+        prov:KeyEntityPair ;
+    ro:entryName "Data0021.dat"^^xsd:string ;
+    ore:proxyFor id:a7864b03-10e8-460a-9cf6-00555b01c832 ;
+    ore:proxyIn id:4bd05cfc-1fe6-4769-9547-bf3c8e7ccae3 ;
+    prov:pairEntity id:a7864b03-10e8-460a-9cf6-00555b01c832 ;
+    prov:pairKey "Data0021.dat"^^xsd:string .
+
+id:7f339800-15c0-4b6e-8bcb-74d0fcbf8edd a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity,
+        prov:KeyEntityPair ;
+    ro:entryName "Data0005.dat"^^xsd:string ;
+    ore:proxyFor id:1a4721a5-8a78-466f-89c1-8336cbc178ce ;
+    ore:proxyIn id:d3cbf540-5ea4-4ef8-a475-be0eebdde2cf ;
+    prov:pairEntity id:1a4721a5-8a78-466f-89c1-8336cbc178ce ;
+    prov:pairKey "Data0005.dat"^^xsd:string .
+
+id:814b0bdd-c2cd-416e-9bcc-4e9feb8f9dba a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    prov:specializationOf data:f62aa607a75508ac5fc6a22e9c0e39ef58a2c852 ;
+    cwlprov:basename "Mirax2-Fluorescence-2.mrxs"^^xsd:string ;
+    cwlprov:nameext ".mrxs"^^xsd:string ;
+    cwlprov:nameroot "Mirax2-Fluorescence-2"^^xsd:string .
+
+id:8376d064-f532-4146-be40-4aee42a5d335 a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity,
+        prov:KeyEntityPair ;
+    ro:entryName "Data0021.dat"^^xsd:string ;
+    ore:proxyFor id:a5af82c7-75f7-452e-9a16-fbcb9c19c70e ;
+    ore:proxyIn id:d3cbf540-5ea4-4ef8-a475-be0eebdde2cf ;
+    prov:pairEntity id:a5af82c7-75f7-452e-9a16-fbcb9c19c70e ;
+    prov:pairKey "Data0021.dat"^^xsd:string .
+
+id:8597df7e-6a16-4622-843c-f1813593d199 a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity,
+        prov:KeyEntityPair ;
+    ro:entryName "Data0008.dat"^^xsd:string ;
+    ore:proxyFor id:16e27114-3954-40a7-80d7-134252033090 ;
+    ore:proxyIn id:d3cbf540-5ea4-4ef8-a475-be0eebdde2cf ;
+    prov:pairEntity id:16e27114-3954-40a7-80d7-134252033090 ;
+    prov:pairKey "Data0008.dat"^^xsd:string .
+
+id:85d4c821-a623-46d7-a971-05ee30793f41 a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity,
+        prov:KeyEntityPair ;
+    ro:entryName "Data0020.dat"^^xsd:string ;
+    ore:proxyFor id:66555d09-322d-4e5a-afaf-c944a90b9376 ;
+    ore:proxyIn id:d3cbf540-5ea4-4ef8-a475-be0eebdde2cf ;
+    prov:pairEntity id:66555d09-322d-4e5a-afaf-c944a90b9376 ;
+    prov:pairKey "Data0020.dat"^^xsd:string .
+
+id:8a175474-7ddb-4c8b-8a59-db41591bdced a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity,
+        prov:KeyEntityPair ;
+    ro:entryName "Data0014.dat"^^xsd:string ;
+    ore:proxyFor id:e0746aa0-91eb-41f7-a8e9-60ce5fb230ca ;
+    ore:proxyIn id:d3cbf540-5ea4-4ef8-a475-be0eebdde2cf ;
+    prov:pairEntity id:e0746aa0-91eb-41f7-a8e9-60ce5fb230ca ;
+    prov:pairKey "Data0014.dat"^^xsd:string .
+
+id:8c9c5b37-8423-420f-b608-fc28270d79d0 a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity,
+        prov:KeyEntityPair ;
+    ro:entryName "Data0022.dat"^^xsd:string ;
+    ore:proxyFor id:91012340-8d19-46dd-a5fa-6985e624f62a ;
+    ore:proxyIn id:88a0ef4a-eb2f-4be9-ba26-f403aa5210a8 ;
+    prov:pairEntity id:91012340-8d19-46dd-a5fa-6985e624f62a ;
+    prov:pairKey "Data0022.dat"^^xsd:string .
+
+id:951ea4a6-2fdf-4251-9d29-17138588107c a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity,
+        prov:KeyEntityPair ;
+    ro:entryName "Data0019.dat"^^xsd:string ;
+    ore:proxyFor id:84457d2c-d5ae-4839-a63c-8490f22b0451 ;
+    ore:proxyIn id:88a0ef4a-eb2f-4be9-ba26-f403aa5210a8 ;
+    prov:pairEntity id:84457d2c-d5ae-4839-a63c-8490f22b0451 ;
+    prov:pairKey "Data0019.dat"^^xsd:string .
+
+id:9a356eec-1341-4da8-b37f-43c1ea9b341e a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity,
+        prov:KeyEntityPair ;
+    ro:entryName "Data0002.dat"^^xsd:string ;
+    ore:proxyFor id:0f0bf53c-84a1-47fe-92eb-e4a5e731f935 ;
+    ore:proxyIn id:88a0ef4a-eb2f-4be9-ba26-f403aa5210a8 ;
+    prov:pairEntity id:0f0bf53c-84a1-47fe-92eb-e4a5e731f935 ;
+    prov:pairKey "Data0002.dat"^^xsd:string .
+
+id:9acc297b-c03b-4091-9d8e-7446a211f1c0 a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity,
+        prov:KeyEntityPair ;
+    ro:entryName "Slidedat.ini"^^xsd:string ;
+    ore:proxyFor id:43230b15-82cb-4cd1-9c00-d0aed66f7673 ;
+    ore:proxyIn id:88a0ef4a-eb2f-4be9-ba26-f403aa5210a8 ;
+    prov:pairEntity id:43230b15-82cb-4cd1-9c00-d0aed66f7673 ;
+    prov:pairKey "Slidedat.ini"^^xsd:string .
+
+id:9c64f643-0322-4852-a31b-5de7f19e5779 a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity,
+        prov:KeyEntityPair ;
+    ro:entryName "Data0004.dat"^^xsd:string ;
+    ore:proxyFor id:df368069-0131-4771-8482-47a9559fa79c ;
+    ore:proxyIn id:d3cbf540-5ea4-4ef8-a475-be0eebdde2cf ;
+    prov:pairEntity id:df368069-0131-4771-8482-47a9559fa79c ;
+    prov:pairKey "Data0004.dat"^^xsd:string .
+
+id:a5305b2c-ec90-4a84-b4f2-fe3d1fe5cd32 a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity,
+        prov:KeyEntityPair ;
+    ro:entryName "Data0011.dat"^^xsd:string ;
+    ore:proxyFor id:68e05956-4474-47cc-84a3-2de15b34be1f ;
+    ore:proxyIn id:d3cbf540-5ea4-4ef8-a475-be0eebdde2cf ;
+    prov:pairEntity id:68e05956-4474-47cc-84a3-2de15b34be1f ;
+    prov:pairKey "Data0011.dat"^^xsd:string .
+
+id:a71a8750-2e77-448b-b68c-f8dafbc5e57d a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity,
+        prov:KeyEntityPair ;
+    ro:entryName "Data0004.dat"^^xsd:string ;
+    ore:proxyFor id:512f44a4-c8f9-4c05-a8fa-134b27f98de6 ;
+    ore:proxyIn id:88a0ef4a-eb2f-4be9-ba26-f403aa5210a8 ;
+    prov:pairEntity id:512f44a4-c8f9-4c05-a8fa-134b27f98de6 ;
+    prov:pairKey "Data0004.dat"^^xsd:string .
+
+id:ac7e6258-793f-4f4e-a6c4-2303fb5dcd33 a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity,
+        prov:KeyEntityPair ;
+    ro:entryName "Slidedat.ini"^^xsd:string ;
+    ore:proxyFor id:7a20ab73-b6f6-4cac-8e65-2217e3878e25 ;
+    ore:proxyIn id:4bd05cfc-1fe6-4769-9547-bf3c8e7ccae3 ;
+    prov:pairEntity id:7a20ab73-b6f6-4cac-8e65-2217e3878e25 ;
+    prov:pairKey "Slidedat.ini"^^xsd:string .
+
+id:ae0efc5c-e902-45a3-9483-eda3e96e28eb a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity,
+        prov:KeyEntityPair ;
+    ro:entryName "Index.dat"^^xsd:string ;
+    ore:proxyFor id:52b0c31d-6b2e-40ab-9f03-a236351e31fa ;
+    ore:proxyIn id:4bd05cfc-1fe6-4769-9547-bf3c8e7ccae3 ;
+    prov:pairEntity id:52b0c31d-6b2e-40ab-9f03-a236351e31fa ;
+    prov:pairKey "Index.dat"^^xsd:string .
+
+id:b0d0f8d2-f373-4b73-a94c-fc19ad9c950b a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity,
+        prov:KeyEntityPair ;
+    ro:entryName "Data0011.dat"^^xsd:string ;
+    ore:proxyFor id:1f2ad0b3-ea8e-4a04-a1e1-13eb6d8bab60 ;
+    ore:proxyIn id:4bd05cfc-1fe6-4769-9547-bf3c8e7ccae3 ;
+    prov:pairEntity id:1f2ad0b3-ea8e-4a04-a1e1-13eb6d8bab60 ;
+    prov:pairKey "Data0011.dat"^^xsd:string .
+
+id:b5466b67-1be3-4d6f-bbba-2d2d7e17b72d a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity,
+        prov:KeyEntityPair ;
+    ro:entryName "Data0008.dat"^^xsd:string ;
+    ore:proxyFor id:86bab910-fe52-4d4b-ad70-2c3d2f448f6b ;
+    ore:proxyIn id:88a0ef4a-eb2f-4be9-ba26-f403aa5210a8 ;
+    prov:pairEntity id:86bab910-fe52-4d4b-ad70-2c3d2f448f6b ;
+    prov:pairKey "Data0008.dat"^^xsd:string .
+
+id:b7e11585-33cd-4759-965f-5c98dcc52264 a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity,
+        prov:KeyEntityPair ;
+    ro:entryName "Data0023.dat"^^xsd:string ;
+    ore:proxyFor id:1b9a4d9c-f74e-4caf-8316-242156dcd3df ;
+    ore:proxyIn id:88a0ef4a-eb2f-4be9-ba26-f403aa5210a8 ;
+    prov:pairEntity id:1b9a4d9c-f74e-4caf-8316-242156dcd3df ;
+    prov:pairKey "Data0023.dat"^^xsd:string .
+
+id:b8cc83d4-2656-4091-98ef-e26a5c77bb77 a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity,
+        prov:KeyEntityPair ;
+    ro:entryName "Data0013.dat"^^xsd:string ;
+    ore:proxyFor id:aea7cb5a-4847-4bf2-8e01-19fb33611e93 ;
+    ore:proxyIn id:88a0ef4a-eb2f-4be9-ba26-f403aa5210a8 ;
+    prov:pairEntity id:aea7cb5a-4847-4bf2-8e01-19fb33611e93 ;
+    prov:pairKey "Data0013.dat"^^xsd:string .
+
+id:be34b750-a9ca-43be-81af-c30f6d4fff5d a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity,
+        prov:KeyEntityPair ;
+    ro:entryName "Data0004.dat"^^xsd:string ;
+    ore:proxyFor id:967a8c20-d495-44c9-854f-c05c87001eac ;
+    ore:proxyIn id:4bd05cfc-1fe6-4769-9547-bf3c8e7ccae3 ;
+    prov:pairEntity id:967a8c20-d495-44c9-854f-c05c87001eac ;
+    prov:pairKey "Data0004.dat"^^xsd:string .
+
+id:c3a10416-b121-4acd-a5b9-f3f52f0659a1 a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity,
+        prov:KeyEntityPair ;
+    ro:entryName "Data0020.dat"^^xsd:string ;
+    ore:proxyFor id:c4d9e255-748d-4280-b77b-9466c2b40de6 ;
+    ore:proxyIn id:88a0ef4a-eb2f-4be9-ba26-f403aa5210a8 ;
+    prov:pairEntity id:c4d9e255-748d-4280-b77b-9466c2b40de6 ;
+    prov:pairKey "Data0020.dat"^^xsd:string .
+
+id:cfefb0eb-6265-41de-9206-4e61c81bea7e a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity,
+        prov:KeyEntityPair ;
+    ro:entryName "Data0005.dat"^^xsd:string ;
+    ore:proxyFor id:fa583312-8972-4bed-adff-0638dea138e0 ;
+    ore:proxyIn id:4bd05cfc-1fe6-4769-9547-bf3c8e7ccae3 ;
+    prov:pairEntity id:fa583312-8972-4bed-adff-0638dea138e0 ;
+    prov:pairKey "Data0005.dat"^^xsd:string .
+
+id:d0021840-3b58-47a7-a5ff-3c2c2cfecc95 a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity,
+        prov:KeyEntityPair ;
+    ro:entryName "Data0009.dat"^^xsd:string ;
+    ore:proxyFor id:3cc99637-a618-4e52-9c10-989cabe99fc8 ;
+    ore:proxyIn id:d3cbf540-5ea4-4ef8-a475-be0eebdde2cf ;
+    prov:pairEntity id:3cc99637-a618-4e52-9c10-989cabe99fc8 ;
+    prov:pairKey "Data0009.dat"^^xsd:string .
+
+id:dcfc5fda-b0e9-4876-a5f7-9c473a3a4524 a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity,
+        prov:KeyEntityPair ;
+    ro:entryName "Data0022.dat"^^xsd:string ;
+    ore:proxyFor id:736765cf-1f1d-4bd0-abf9-7ab625800872 ;
+    ore:proxyIn id:d3cbf540-5ea4-4ef8-a475-be0eebdde2cf ;
+    prov:pairEntity id:736765cf-1f1d-4bd0-abf9-7ab625800872 ;
+    prov:pairKey "Data0022.dat"^^xsd:string .
+
+id:dd3468fa-6205-4171-9a20-39be1b054487 a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity,
+        prov:KeyEntityPair ;
+    ro:entryName "Data0015.dat"^^xsd:string ;
+    ore:proxyFor id:3a17eb17-0e8e-49a1-bfb0-9d66e1aac01d ;
+    ore:proxyIn id:88a0ef4a-eb2f-4be9-ba26-f403aa5210a8 ;
+    prov:pairEntity id:3a17eb17-0e8e-49a1-bfb0-9d66e1aac01d ;
+    prov:pairKey "Data0015.dat"^^xsd:string .
+
+id:de69c36f-00d7-4a56-a30a-1cf777d7e484 a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity,
+        prov:KeyEntityPair ;
+    ro:entryName "Data0001.dat"^^xsd:string ;
+    ore:proxyFor id:093a5a8b-b01c-46cd-a7b7-a66074b4ccab ;
+    ore:proxyIn id:88a0ef4a-eb2f-4be9-ba26-f403aa5210a8 ;
+    prov:pairEntity id:093a5a8b-b01c-46cd-a7b7-a66074b4ccab ;
+    prov:pairKey "Data0001.dat"^^xsd:string .
+
+id:df09a4d8-556d-4143-979f-35447aba61e6 a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity,
+        prov:KeyEntityPair ;
+    ro:entryName "Data0018.dat"^^xsd:string ;
+    ore:proxyFor id:7a67e7af-64dd-4e9c-ae88-fbcd2b5ba207 ;
+    ore:proxyIn id:4bd05cfc-1fe6-4769-9547-bf3c8e7ccae3 ;
+    prov:pairEntity id:7a67e7af-64dd-4e9c-ae88-fbcd2b5ba207 ;
+    prov:pairKey "Data0018.dat"^^xsd:string .
+
+id:e21b3443-80e3-4bb5-82f3-6614138d9900 a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity,
+        prov:KeyEntityPair ;
+    ro:entryName "Data0023.dat"^^xsd:string ;
+    ore:proxyFor id:bbef31f3-529e-448a-8116-1247a9bd9fa7 ;
+    ore:proxyIn id:4bd05cfc-1fe6-4769-9547-bf3c8e7ccae3 ;
+    prov:pairEntity id:bbef31f3-529e-448a-8116-1247a9bd9fa7 ;
+    prov:pairKey "Data0023.dat"^^xsd:string .
+
+id:e2dfb091-1991-419e-9a5c-4765da2d5d43 a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity,
+        prov:KeyEntityPair ;
+    ro:entryName "Data0001.dat"^^xsd:string ;
+    ore:proxyFor id:add31eb4-f100-4679-b798-0b98f1f77fc8 ;
+    ore:proxyIn id:4bd05cfc-1fe6-4769-9547-bf3c8e7ccae3 ;
+    prov:pairEntity id:add31eb4-f100-4679-b798-0b98f1f77fc8 ;
+    prov:pairKey "Data0001.dat"^^xsd:string .
+
+id:e31e637a-4751-4ec9-82d1-156135523284 a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity,
+        prov:KeyEntityPair ;
+    ro:entryName "Slidedat.ini"^^xsd:string ;
+    ore:proxyFor id:07d81587-5542-4bdb-8999-c1c8dd70e643 ;
+    ore:proxyIn id:d3cbf540-5ea4-4ef8-a475-be0eebdde2cf ;
+    prov:pairEntity id:07d81587-5542-4bdb-8999-c1c8dd70e643 ;
+    prov:pairKey "Slidedat.ini"^^xsd:string .
+
+id:e5664e9c-4f7a-41f5-b402-405948da9ed8 a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity,
+        prov:KeyEntityPair ;
+    ro:entryName "Data0021.dat"^^xsd:string ;
+    ore:proxyFor id:1ad545dd-e990-4505-b0ca-5fd60a652081 ;
+    ore:proxyIn id:88a0ef4a-eb2f-4be9-ba26-f403aa5210a8 ;
+    prov:pairEntity id:1ad545dd-e990-4505-b0ca-5fd60a652081 ;
+    prov:pairKey "Data0021.dat"^^xsd:string .
+
+id:e58f1969-bad5-4284-a14b-d7b542c8309a a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity,
+        prov:KeyEntityPair ;
+    ro:entryName "Data0020.dat"^^xsd:string ;
+    ore:proxyFor id:afed3a76-8b40-4ce6-9d27-1e8488453694 ;
+    ore:proxyIn id:4bd05cfc-1fe6-4769-9547-bf3c8e7ccae3 ;
+    prov:pairEntity id:afed3a76-8b40-4ce6-9d27-1e8488453694 ;
+    prov:pairKey "Data0020.dat"^^xsd:string .
+
+id:e660f049-0fd1-4965-a1e4-01e6f8ab3b01 a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity,
+        prov:KeyEntityPair ;
+    ro:entryName "Data0013.dat"^^xsd:string ;
+    ore:proxyFor id:a067a4f6-f11d-4db5-adb7-a07016f71d05 ;
+    ore:proxyIn id:4bd05cfc-1fe6-4769-9547-bf3c8e7ccae3 ;
+    prov:pairEntity id:a067a4f6-f11d-4db5-adb7-a07016f71d05 ;
+    prov:pairKey "Data0013.dat"^^xsd:string .
+
+id:e8058cb9-579a-4752-90c1-c6e1cd72b508 a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity,
+        prov:KeyEntityPair ;
+    ro:entryName "Data0015.dat"^^xsd:string ;
+    ore:proxyFor id:b383ea7a-611c-4bb5-9b5c-ea3eea0dbc59 ;
+    ore:proxyIn id:d3cbf540-5ea4-4ef8-a475-be0eebdde2cf ;
+    prov:pairEntity id:b383ea7a-611c-4bb5-9b5c-ea3eea0dbc59 ;
+    prov:pairKey "Data0015.dat"^^xsd:string .
+
+id:e9c39aea-27f6-47aa-9f3f-c9cb59c8966e a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity,
+        prov:KeyEntityPair ;
+    ro:entryName "Data0018.dat"^^xsd:string ;
+    ore:proxyFor id:74d2db41-f8e6-4015-b4b8-7113b8b71b1d ;
+    ore:proxyIn id:88a0ef4a-eb2f-4be9-ba26-f403aa5210a8 ;
+    prov:pairEntity id:74d2db41-f8e6-4015-b4b8-7113b8b71b1d ;
+    prov:pairKey "Data0018.dat"^^xsd:string .
+
+id:ebc7beee-3307-4ad4-841c-ba6a71b09eff a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity,
+        prov:KeyEntityPair ;
+    ro:entryName "Data0000.dat"^^xsd:string ;
+    ore:proxyFor id:b85bfd09-d267-46b3-a1ee-573963be57e2 ;
+    ore:proxyIn id:4bd05cfc-1fe6-4769-9547-bf3c8e7ccae3 ;
+    prov:pairEntity id:b85bfd09-d267-46b3-a1ee-573963be57e2 ;
+    prov:pairKey "Data0000.dat"^^xsd:string .
+
+id:eeaa5d88-5f48-4f62-9f08-790c61929367 a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity,
+        prov:KeyEntityPair ;
+    ro:entryName "Data0007.dat"^^xsd:string ;
+    ore:proxyFor id:f82fa272-7522-41f2-be39-e657f396fe5b ;
+    ore:proxyIn id:d3cbf540-5ea4-4ef8-a475-be0eebdde2cf ;
+    prov:pairEntity id:f82fa272-7522-41f2-be39-e657f396fe5b ;
+    prov:pairKey "Data0007.dat"^^xsd:string .
+
+id:ef03ae44-daf5-42fc-8c54-3a67d14b7aa7 a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity,
+        prov:KeyEntityPair ;
+    ro:entryName "Data0011.dat"^^xsd:string ;
+    ore:proxyFor id:f12d5361-e37b-4a45-9d4a-4db8ce334c14 ;
+    ore:proxyIn id:88a0ef4a-eb2f-4be9-ba26-f403aa5210a8 ;
+    prov:pairEntity id:f12d5361-e37b-4a45-9d4a-4db8ce334c14 ;
+    prov:pairKey "Data0011.dat"^^xsd:string .
+
+id:f7c558b1-f81a-4520-bf1a-efa5c0604a6d a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity,
+        prov:KeyEntityPair ;
+    ro:entryName "Data0017.dat"^^xsd:string ;
+    ore:proxyFor id:0c222c78-292a-41c4-a310-31dc4c6be646 ;
+    ore:proxyIn id:4bd05cfc-1fe6-4769-9547-bf3c8e7ccae3 ;
+    prov:pairEntity id:0c222c78-292a-41c4-a310-31dc4c6be646 ;
+    prov:pairKey "Data0017.dat"^^xsd:string .
+
+id:f7d876e2-c84d-46ba-a7ee-e976e30edc45 a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity,
+        prov:KeyEntityPair ;
+    ro:entryName "Data0015.dat"^^xsd:string ;
+    ore:proxyFor id:ef4b294a-8bd1-4ccb-b943-91a0921d6b3f ;
+    ore:proxyIn id:4bd05cfc-1fe6-4769-9547-bf3c8e7ccae3 ;
+    prov:pairEntity id:ef4b294a-8bd1-4ccb-b943-91a0921d6b3f ;
+    prov:pairKey "Data0015.dat"^^xsd:string .
+
+id:f8d84999-6780-479f-aa05-405cf6f86515 a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity,
+        prov:KeyEntityPair ;
+    ro:entryName "Data0012.dat"^^xsd:string ;
+    ore:proxyFor id:c0ecc513-37bf-4a2d-8137-5701b9c02b39 ;
+    ore:proxyIn id:d3cbf540-5ea4-4ef8-a475-be0eebdde2cf ;
+    prov:pairEntity id:c0ecc513-37bf-4a2d-8137-5701b9c02b39 ;
+    prov:pairKey "Data0012.dat"^^xsd:string .
+
+id:f90bf7de-c9c6-4a0e-b1fa-173b60cbfabe a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity,
+        prov:KeyEntityPair ;
+    ro:entryName "Data0006.dat"^^xsd:string ;
+    ore:proxyFor id:528d4ad2-b625-4222-8c88-2e9a87e03907 ;
+    ore:proxyIn id:4bd05cfc-1fe6-4769-9547-bf3c8e7ccae3 ;
+    prov:pairEntity id:528d4ad2-b625-4222-8c88-2e9a87e03907 ;
+    prov:pairKey "Data0006.dat"^^xsd:string .
+
+id:fb65a7d7-2e3e-489e-92ec-48962120f319 a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity,
+        prov:KeyEntityPair ;
+    ro:entryName "Data0022.dat"^^xsd:string ;
+    ore:proxyFor id:a1dab2c0-94ce-4ae4-8703-628211f7c683 ;
+    ore:proxyIn id:4bd05cfc-1fe6-4769-9547-bf3c8e7ccae3 ;
+    prov:pairEntity id:a1dab2c0-94ce-4ae4-8703-628211f7c683 ;
+    prov:pairKey "Data0022.dat"^^xsd:string .
+
+id:fe81b711-4a83-4489-8a26-d4cdbdd85e17 a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity,
+        prov:KeyEntityPair ;
+    ro:entryName "Data0007.dat"^^xsd:string ;
+    ore:proxyFor id:620506de-1d17-4172-a064-fc52b75de659 ;
+    ore:proxyIn id:88a0ef4a-eb2f-4be9-ba26-f403aa5210a8 ;
+    prov:pairEntity id:620506de-1d17-4172-a064-fc52b75de659 ;
+    prov:pairKey "Data0007.dat"^^xsd:string .
+
+id:ffed1723-12eb-4ab3-9f2e-867c3a03dfa9 a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity,
+        prov:KeyEntityPair ;
+    ro:entryName "Data0019.dat"^^xsd:string ;
+    ore:proxyFor id:add77bcc-6e92-48e2-ba54-e5edf74a71c7 ;
+    ore:proxyIn id:4bd05cfc-1fe6-4769-9547-bf3c8e7ccae3 ;
+    prov:pairEntity id:add77bcc-6e92-48e2-ba54-e5edf74a71c7 ;
+    prov:pairKey "Data0019.dat"^^xsd:string .
+
+data:06d5def8140f8e14b729a584f78289bc25e7f5ec a wfprov:Artifact,
+        prov:Entity .
+
+data:1d3d88c43eb7f44a667170a0e6cb8cd950a4ea16 a wfprov:Artifact,
+        prov:Entity .
+
+data:3099f7344d2004c58bfb3282dae47a0d204e12da a wfprov:Artifact,
+        prov:Entity .
+
+data:46c443af080a36000c9298b49b675eb240eeb41c a wfprov:Artifact,
+        prov:Entity .
+
+data:4a1a998cf56818c183b02f93011a6c1c9ec47468 a wfprov:Artifact,
+        prov:Entity .
+
+data:52e0419ea116b78bc330d36f93bc2b4ec2bf8210 a wfprov:Artifact,
+        prov:Entity .
+
+data:590783315f628a3acd02b9341572138b3a3224db a wfprov:Artifact,
+        prov:Entity .
+
+data:6c1bc911505dc65551c4f0576e1c684723e57897 a wfprov:Artifact,
+        prov:Entity .
+
+data:7f0a219f3c842e0c3eaae848caea165940b1ec48 a wfprov:Artifact,
+        prov:Entity .
+
+data:854db6bca6b11fb9f6198dce67b3dcbb371f7ebb a wfprov:Artifact,
+        prov:Entity .
+
+data:862eeec8b906cff93bcd1c5ab5e5ec8fc93a2ef1 a wfprov:Artifact,
+        prov:Entity .
+
+data:8e9d580e86f48791871b086f3c27269a03f57897 a wfprov:Artifact,
+        prov:Entity .
+
+data:9575fdaa42c448ea550d982cf8e27d0b46320874 a wfprov:Artifact,
+        prov:Entity .
+
+data:9e748097f79d8317b30fcc11833553434e19b02c a wfprov:Artifact,
+        prov:Entity .
+
+data:a16fec38b4b7adf7dc1f8e9e58f6956a249a0a08 a wfprov:Artifact,
+        prov:Entity .
+
+data:a1ad0dfd5f6e24aa90bdf9da0a688e6a0c268905 a wfprov:Artifact,
+        prov:Entity .
+
+data:acc92df58c498b2567f6975c3e128aebc0c524c5 a wfprov:Artifact,
+        prov:Entity .
+
+data:ae7c542bebbacf8d167fae831b69480e19e9c3b0 a wfprov:Artifact,
+        prov:Entity .
+
+data:b43c1cd0875d23bd20dc794fa20255cf272108ec a wfprov:Artifact,
+        prov:Entity .
+
+data:bc709e1a4da6e506f81150ee39907d0224e066fb a wfprov:Artifact,
+        prov:Entity .
+
+data:ce3d0d6addaced3e58578e42c341f44737b5aa84 a wfprov:Artifact,
+        prov:Entity .
+
+data:cf03a8a5713c038c566734cf11f81cc03a41efa6 a wfprov:Artifact,
+        prov:Entity .
+
+data:d4061bed85711676d337bd8835e32413957485e3 a wfprov:Artifact,
+        prov:Entity .
+
+data:d55cbe9ea0ac43eaa69bb8c21eac07539249734f a wfprov:Artifact,
+        prov:Entity .
+
+data:e238dcdb6aa71dac71335591439442c7cfef60e6 a wfprov:Artifact,
+        prov:Entity .
+
+data:f642fc608c0edc49db59dfc1d38be7abeda0263a a wfprov:Artifact,
+        prov:Entity .
+
+id:044d0c1b-e1f4-4c0f-adfc-72682acba32c a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    prov:specializationOf data:06d5def8140f8e14b729a584f78289bc25e7f5ec ;
+    cwlprov:basename "Data0012.dat"^^xsd:string .
+
+id:07d81587-5542-4bdb-8999-c1c8dd70e643 a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    prov:specializationOf data:acc92df58c498b2567f6975c3e128aebc0c524c5 ;
+    cwlprov:basename "Slidedat.ini"^^xsd:string .
+
+id:093a5a8b-b01c-46cd-a7b7-a66074b4ccab a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    prov:specializationOf data:52e0419ea116b78bc330d36f93bc2b4ec2bf8210 ;
+    cwlprov:basename "Data0001.dat"^^xsd:string .
+
+id:0ba96d2c-2f37-401f-8772-7b693bfbb2d0 a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    prov:specializationOf data:06d5def8140f8e14b729a584f78289bc25e7f5ec ;
+    cwlprov:basename "Data0012.dat"^^xsd:string .
+
+id:0c222c78-292a-41c4-a310-31dc4c6be646 a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    prov:specializationOf data:d4061bed85711676d337bd8835e32413957485e3 ;
+    cwlprov:basename "Data0017.dat"^^xsd:string .
+
+id:0c4fc73a-461a-497e-8ac3-507aee7d0607 a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    prov:specializationOf data:e238dcdb6aa71dac71335591439442c7cfef60e6 ;
+    cwlprov:basename "Data0002.dat"^^xsd:string .
+
+id:0f0bf53c-84a1-47fe-92eb-e4a5e731f935 a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    prov:specializationOf data:e238dcdb6aa71dac71335591439442c7cfef60e6 ;
+    cwlprov:basename "Data0002.dat"^^xsd:string .
+
+id:14322b14-bc68-461b-b3d5-60daece52f48 a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    prov:specializationOf data:1d3d88c43eb7f44a667170a0e6cb8cd950a4ea16 ;
+    cwlprov:basename "Data0013.dat"^^xsd:string .
+
+id:16e27114-3954-40a7-80d7-134252033090 a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    prov:specializationOf data:862eeec8b906cff93bcd1c5ab5e5ec8fc93a2ef1 ;
+    cwlprov:basename "Data0008.dat"^^xsd:string .
+
+id:1a4721a5-8a78-466f-89c1-8336cbc178ce a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    prov:specializationOf data:a1ad0dfd5f6e24aa90bdf9da0a688e6a0c268905 ;
+    cwlprov:basename "Data0005.dat"^^xsd:string .
+
+id:1ad545dd-e990-4505-b0ca-5fd60a652081 a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    prov:specializationOf data:590783315f628a3acd02b9341572138b3a3224db ;
+    cwlprov:basename "Data0021.dat"^^xsd:string .
+
+id:1b9a4d9c-f74e-4caf-8316-242156dcd3df a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    prov:specializationOf data:f642fc608c0edc49db59dfc1d38be7abeda0263a ;
+    cwlprov:basename "Data0023.dat"^^xsd:string .
+
+id:1bcaaa2a-a6f5-48ad-b7e2-842f5613d0e7 a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    prov:specializationOf data:bc709e1a4da6e506f81150ee39907d0224e066fb ;
+    cwlprov:basename "Data0003.dat"^^xsd:string .
+
+id:1d4bae6e-b349-4555-a472-5922b1f54c17 a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    prov:specializationOf data:4a1a998cf56818c183b02f93011a6c1c9ec47468 ;
+    cwlprov:basename "Data0016.dat"^^xsd:string .
+
+id:1f2ad0b3-ea8e-4a04-a1e1-13eb6d8bab60 a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    prov:specializationOf data:ce3d0d6addaced3e58578e42c341f44737b5aa84 ;
+    cwlprov:basename "Data0011.dat"^^xsd:string .
+
+id:2a7b6f70-868e-4260-95e9-4e11668fefdb a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    prov:specializationOf data:f642fc608c0edc49db59dfc1d38be7abeda0263a ;
+    cwlprov:basename "Data0023.dat"^^xsd:string .
+
+id:3367195f-42f7-4b14-8544-fcbc75c1fe1c a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    prov:specializationOf data:d4061bed85711676d337bd8835e32413957485e3 ;
+    cwlprov:basename "Data0017.dat"^^xsd:string .
+
+id:3459bb37-129c-4d59-81d1-c702434ab8a5 a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    prov:specializationOf data:9575fdaa42c448ea550d982cf8e27d0b46320874 ;
+    cwlprov:basename "Data0009.dat"^^xsd:string .
+
+id:38c003bb-e9e7-4d8c-9eee-63d1b3b81d74 a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    prov:specializationOf data:a1ad0dfd5f6e24aa90bdf9da0a688e6a0c268905 ;
+    cwlprov:basename "Data0005.dat"^^xsd:string .
+
+id:3a17eb17-0e8e-49a1-bfb0-9d66e1aac01d a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    prov:specializationOf data:8e9d580e86f48791871b086f3c27269a03f57897 ;
+    cwlprov:basename "Data0015.dat"^^xsd:string .
+
+id:3c572551-fb8f-4608-80d9-48afe7c99ab4 a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    prov:specializationOf data:ae7c542bebbacf8d167fae831b69480e19e9c3b0 ;
+    cwlprov:basename "Data0014.dat"^^xsd:string .
+
+id:3cc99637-a618-4e52-9c10-989cabe99fc8 a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    prov:specializationOf data:9575fdaa42c448ea550d982cf8e27d0b46320874 ;
+    cwlprov:basename "Data0009.dat"^^xsd:string .
+
+id:43230b15-82cb-4cd1-9c00-d0aed66f7673 a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    prov:specializationOf data:acc92df58c498b2567f6975c3e128aebc0c524c5 ;
+    cwlprov:basename "Slidedat.ini"^^xsd:string .
+
+id:4f19f2cf-9c4f-410c-a556-bfc234ef1c6b a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    prov:specializationOf data:d55cbe9ea0ac43eaa69bb8c21eac07539249734f ;
+    cwlprov:basename "Data0007.dat"^^xsd:string .
+
+id:512f44a4-c8f9-4c05-a8fa-134b27f98de6 a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    prov:specializationOf data:3099f7344d2004c58bfb3282dae47a0d204e12da ;
+    cwlprov:basename "Data0004.dat"^^xsd:string .
+
+id:528d4ad2-b625-4222-8c88-2e9a87e03907 a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    prov:specializationOf data:cf03a8a5713c038c566734cf11f81cc03a41efa6 ;
+    cwlprov:basename "Data0006.dat"^^xsd:string .
+
+id:52b0c31d-6b2e-40ab-9f03-a236351e31fa a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    prov:specializationOf data:46c443af080a36000c9298b49b675eb240eeb41c ;
+    cwlprov:basename "Index.dat"^^xsd:string .
+
+id:52dc1bd9-5862-4768-9501-c61ecfdaaa28 a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    prov:specializationOf data:46c443af080a36000c9298b49b675eb240eeb41c ;
+    cwlprov:basename "Index.dat"^^xsd:string .
+
+id:555292e8-d8cf-4df4-adfd-4d7be20848f5 a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    prov:specializationOf data:a16fec38b4b7adf7dc1f8e9e58f6956a249a0a08 ;
+    cwlprov:basename "Data0000.dat"^^xsd:string .
+
+id:59757717-0b81-4cdb-b001-1de4205378a6 a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    prov:specializationOf data:b43c1cd0875d23bd20dc794fa20255cf272108ec ;
+    cwlprov:basename "Data0010.dat"^^xsd:string .
+
+id:5a41fb39-1e88-4a0e-b34d-333793348c66 a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    prov:specializationOf data:4a1a998cf56818c183b02f93011a6c1c9ec47468 ;
+    cwlprov:basename "Data0016.dat"^^xsd:string .
+
+id:5cdfc5c9-8b20-4114-b8db-da8bce86ea4f a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    prov:specializationOf data:a16fec38b4b7adf7dc1f8e9e58f6956a249a0a08 ;
+    cwlprov:basename "Data0000.dat"^^xsd:string .
+
+id:5d9d518d-6605-4ab1-8357-ac89b56998d8 a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    prov:specializationOf data:9e748097f79d8317b30fcc11833553434e19b02c ;
+    cwlprov:basename "Data0018.dat"^^xsd:string .
+
+id:620506de-1d17-4172-a064-fc52b75de659 a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    prov:specializationOf data:d55cbe9ea0ac43eaa69bb8c21eac07539249734f ;
+    cwlprov:basename "Data0007.dat"^^xsd:string .
+
+id:66555d09-322d-4e5a-afaf-c944a90b9376 a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    prov:specializationOf data:854db6bca6b11fb9f6198dce67b3dcbb371f7ebb ;
+    cwlprov:basename "Data0020.dat"^^xsd:string .
+
+id:68e05956-4474-47cc-84a3-2de15b34be1f a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    prov:specializationOf data:ce3d0d6addaced3e58578e42c341f44737b5aa84 ;
+    cwlprov:basename "Data0011.dat"^^xsd:string .
+
+id:736765cf-1f1d-4bd0-abf9-7ab625800872 a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    prov:specializationOf data:7f0a219f3c842e0c3eaae848caea165940b1ec48 ;
+    cwlprov:basename "Data0022.dat"^^xsd:string .
+
+id:74d2db41-f8e6-4015-b4b8-7113b8b71b1d a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    prov:specializationOf data:9e748097f79d8317b30fcc11833553434e19b02c ;
+    cwlprov:basename "Data0018.dat"^^xsd:string .
+
+id:7a20ab73-b6f6-4cac-8e65-2217e3878e25 a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    prov:specializationOf data:acc92df58c498b2567f6975c3e128aebc0c524c5 ;
+    cwlprov:basename "Slidedat.ini"^^xsd:string .
+
+id:7a4768d6-bc1e-4242-8d22-8dd6bf30fbde a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    prov:specializationOf data:cf03a8a5713c038c566734cf11f81cc03a41efa6 ;
+    cwlprov:basename "Data0006.dat"^^xsd:string .
+
+id:7a67e7af-64dd-4e9c-ae88-fbcd2b5ba207 a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    prov:specializationOf data:9e748097f79d8317b30fcc11833553434e19b02c ;
+    cwlprov:basename "Data0018.dat"^^xsd:string .
+
+id:7dc91d91-4719-45d1-a14c-8a19622653ed a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    prov:specializationOf data:9575fdaa42c448ea550d982cf8e27d0b46320874 ;
+    cwlprov:basename "Data0009.dat"^^xsd:string .
+
+id:82b04010-43c7-48d0-818e-61e1149d05e4 a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    prov:specializationOf data:bc709e1a4da6e506f81150ee39907d0224e066fb ;
+    cwlprov:basename "Data0003.dat"^^xsd:string .
+
+id:84295852-0c13-4da8-a0ef-04bb73d991a7 a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    prov:specializationOf data:ae7c542bebbacf8d167fae831b69480e19e9c3b0 ;
+    cwlprov:basename "Data0014.dat"^^xsd:string .
+
+id:84457d2c-d5ae-4839-a63c-8490f22b0451 a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    prov:specializationOf data:6c1bc911505dc65551c4f0576e1c684723e57897 ;
+    cwlprov:basename "Data0019.dat"^^xsd:string .
+
+id:86bab910-fe52-4d4b-ad70-2c3d2f448f6b a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    prov:specializationOf data:862eeec8b906cff93bcd1c5ab5e5ec8fc93a2ef1 ;
+    cwlprov:basename "Data0008.dat"^^xsd:string .
+
+id:89ee305c-fa4d-46c7-8eaa-8ccbc7f94d02 a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    prov:specializationOf data:b43c1cd0875d23bd20dc794fa20255cf272108ec ;
+    cwlprov:basename "Data0010.dat"^^xsd:string .
+
+id:91012340-8d19-46dd-a5fa-6985e624f62a a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    prov:specializationOf data:7f0a219f3c842e0c3eaae848caea165940b1ec48 ;
+    cwlprov:basename "Data0022.dat"^^xsd:string .
+
+id:967a8c20-d495-44c9-854f-c05c87001eac a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    prov:specializationOf data:3099f7344d2004c58bfb3282dae47a0d204e12da ;
+    cwlprov:basename "Data0004.dat"^^xsd:string .
+
+id:9ef3782b-99d3-493a-96dc-3cdf906fa254 a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    prov:specializationOf data:b43c1cd0875d23bd20dc794fa20255cf272108ec ;
+    cwlprov:basename "Data0010.dat"^^xsd:string .
+
+id:a067a4f6-f11d-4db5-adb7-a07016f71d05 a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    prov:specializationOf data:1d3d88c43eb7f44a667170a0e6cb8cd950a4ea16 ;
+    cwlprov:basename "Data0013.dat"^^xsd:string .
+
+id:a1c9a1b1-6c2a-4add-b020-9f4d2944652a a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    prov:specializationOf data:862eeec8b906cff93bcd1c5ab5e5ec8fc93a2ef1 ;
+    cwlprov:basename "Data0008.dat"^^xsd:string .
+
+id:a1dab2c0-94ce-4ae4-8703-628211f7c683 a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    prov:specializationOf data:7f0a219f3c842e0c3eaae848caea165940b1ec48 ;
+    cwlprov:basename "Data0022.dat"^^xsd:string .
+
+id:a31c1a5a-2d2f-4e88-b143-332d2fe51a3d a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    prov:specializationOf data:d4061bed85711676d337bd8835e32413957485e3 ;
+    cwlprov:basename "Data0017.dat"^^xsd:string .
+
+id:a4a25196-274e-4048-9d1e-ba96bfd51d03 a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    prov:specializationOf data:4a1a998cf56818c183b02f93011a6c1c9ec47468 ;
+    cwlprov:basename "Data0016.dat"^^xsd:string .
+
+id:a5af82c7-75f7-452e-9a16-fbcb9c19c70e a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    prov:specializationOf data:590783315f628a3acd02b9341572138b3a3224db ;
+    cwlprov:basename "Data0021.dat"^^xsd:string .
+
+id:a7864b03-10e8-460a-9cf6-00555b01c832 a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    prov:specializationOf data:590783315f628a3acd02b9341572138b3a3224db ;
+    cwlprov:basename "Data0021.dat"^^xsd:string .
+
+id:add31eb4-f100-4679-b798-0b98f1f77fc8 a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    prov:specializationOf data:52e0419ea116b78bc330d36f93bc2b4ec2bf8210 ;
+    cwlprov:basename "Data0001.dat"^^xsd:string .
+
+id:add77bcc-6e92-48e2-ba54-e5edf74a71c7 a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    prov:specializationOf data:6c1bc911505dc65551c4f0576e1c684723e57897 ;
+    cwlprov:basename "Data0019.dat"^^xsd:string .
+
+id:aea7cb5a-4847-4bf2-8e01-19fb33611e93 a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    prov:specializationOf data:1d3d88c43eb7f44a667170a0e6cb8cd950a4ea16 ;
+    cwlprov:basename "Data0013.dat"^^xsd:string .
+
+id:af610ae8-d08e-4f80-8f4d-3676de94b402 a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    prov:specializationOf data:bc709e1a4da6e506f81150ee39907d0224e066fb ;
+    cwlprov:basename "Data0003.dat"^^xsd:string .
+
+id:afed3a76-8b40-4ce6-9d27-1e8488453694 a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    prov:specializationOf data:854db6bca6b11fb9f6198dce67b3dcbb371f7ebb ;
+    cwlprov:basename "Data0020.dat"^^xsd:string .
+
+id:b383ea7a-611c-4bb5-9b5c-ea3eea0dbc59 a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    prov:specializationOf data:8e9d580e86f48791871b086f3c27269a03f57897 ;
+    cwlprov:basename "Data0015.dat"^^xsd:string .
+
+id:b85bfd09-d267-46b3-a1ee-573963be57e2 a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    prov:specializationOf data:a16fec38b4b7adf7dc1f8e9e58f6956a249a0a08 ;
+    cwlprov:basename "Data0000.dat"^^xsd:string .
+
+id:bbef31f3-529e-448a-8116-1247a9bd9fa7 a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    prov:specializationOf data:f642fc608c0edc49db59dfc1d38be7abeda0263a ;
+    cwlprov:basename "Data0023.dat"^^xsd:string .
+
+id:c0ecc513-37bf-4a2d-8137-5701b9c02b39 a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    prov:specializationOf data:06d5def8140f8e14b729a584f78289bc25e7f5ec ;
+    cwlprov:basename "Data0012.dat"^^xsd:string .
+
+id:c4d9e255-748d-4280-b77b-9466c2b40de6 a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    prov:specializationOf data:854db6bca6b11fb9f6198dce67b3dcbb371f7ebb ;
+    cwlprov:basename "Data0020.dat"^^xsd:string .
+
+id:c99540f1-2450-4242-8856-3bfaeca9863d a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    prov:specializationOf data:e238dcdb6aa71dac71335591439442c7cfef60e6 ;
+    cwlprov:basename "Data0002.dat"^^xsd:string .
+
+id:d169331d-18b2-4207-bc98-39ae63e23b29 a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    prov:specializationOf data:46c443af080a36000c9298b49b675eb240eeb41c ;
+    cwlprov:basename "Index.dat"^^xsd:string .
+
+id:df368069-0131-4771-8482-47a9559fa79c a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    prov:specializationOf data:3099f7344d2004c58bfb3282dae47a0d204e12da ;
+    cwlprov:basename "Data0004.dat"^^xsd:string .
+
+id:e0746aa0-91eb-41f7-a8e9-60ce5fb230ca a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    prov:specializationOf data:ae7c542bebbacf8d167fae831b69480e19e9c3b0 ;
+    cwlprov:basename "Data0014.dat"^^xsd:string .
+
+id:e39115f6-5681-437f-8703-fcec7a25eb49 a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    prov:specializationOf data:52e0419ea116b78bc330d36f93bc2b4ec2bf8210 ;
+    cwlprov:basename "Data0001.dat"^^xsd:string .
+
+id:e7ffd8ae-f4b8-4476-bf9e-93bbfaed09b1 a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    prov:specializationOf data:6c1bc911505dc65551c4f0576e1c684723e57897 ;
+    cwlprov:basename "Data0019.dat"^^xsd:string .
+
+id:ef4b294a-8bd1-4ccb-b943-91a0921d6b3f a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    prov:specializationOf data:8e9d580e86f48791871b086f3c27269a03f57897 ;
+    cwlprov:basename "Data0015.dat"^^xsd:string .
+
+id:f04a61f4-a0db-4e65-9a8d-e8a33da34571 a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    prov:specializationOf data:cf03a8a5713c038c566734cf11f81cc03a41efa6 ;
+    cwlprov:basename "Data0006.dat"^^xsd:string .
+
+id:f12d5361-e37b-4a45-9d4a-4db8ce334c14 a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    prov:specializationOf data:ce3d0d6addaced3e58578e42c341f44737b5aa84 ;
+    cwlprov:basename "Data0011.dat"^^xsd:string .
+
+id:f82fa272-7522-41f2-be39-e657f396fe5b a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    prov:specializationOf data:d55cbe9ea0ac43eaa69bb8c21eac07539249734f ;
+    cwlprov:basename "Data0007.dat"^^xsd:string .
+
+id:fa583312-8972-4bed-adff-0638dea138e0 a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    prov:specializationOf data:a1ad0dfd5f6e24aa90bdf9da0a688e6a0c268905 ;
+    cwlprov:basename "Data0005.dat"^^xsd:string .
+
+data:f62aa607a75508ac5fc6a22e9c0e39ef58a2c852 a wfprov:Artifact,
+        prov:Entity .
+
+id:d6eb7d00-905f-4f38-b90e-c0ece005b4fe a wfprov:WorkflowEngine,
+        prov:Agent,
+        prov:SoftwareAgent ;
+    rdfs:label "cwltool 3.1.20230213100550"^^xsd:string ;
+    prov:qualifiedStart [ a prov:Start ;
+            prov:atTime "2023-02-21T12:44:53.363345"^^xsd:dateTime ;
+            prov:hadActivity id:95de3a63-9de1-4abf-8eb1-1d347dc956de ] .
+
+id:e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca a wfprov:WorkflowRun,
+        prov:Activity ;
+    rdfs:label "Run of workflow/packed.cwl#main"^^xsd:string ;
+    prov:qualifiedAssociation [ a prov:Association ;
+            prov:hadPlan wf:main ] ;
+    prov:qualifiedEnd [ a prov:End ;
+            prov:atTime "2023-02-21T12:45:11.260305"^^xsd:dateTime ;
+            prov:hadActivity id:d6eb7d00-905f-4f38-b90e-c0ece005b4fe ] ;
+    prov:qualifiedStart [ a prov:Start ;
+            prov:atTime "2023-02-21T12:44:53.363530"^^xsd:dateTime ;
+            prov:hadActivity id:d6eb7d00-905f-4f38-b90e-c0ece005b4fe ] ;
+    prov:qualifiedUsage [ a prov:Usage ;
+            prov:atTime "2023-02-21T12:44:54.765583"^^xsd:dateTime ;
+            prov:entity id:1c4c30e8-5a88-4fbc-8772-edc3cce7605a ;
+            prov:hadRole <arcp://uuid,e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca/workflow/packed.cwl#main/tissue-low-level> ],
+        [ a prov:Usage ;
+            prov:atTime "2023-02-21T12:44:54.766049"^^xsd:dateTime ;
+            prov:entity data:ff7335228d2ffbe6347decead594cfc9618968e6 ;
+            prov:hadRole <arcp://uuid,e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca/workflow/packed.cwl#main/tumor-filter> ],
+        [ a prov:Usage ;
+            prov:atTime "2023-02-21T12:44:54.764384"^^xsd:dateTime ;
+            prov:entity data:3c7901bab39947a3402da2687583e4dffb2530f9 ;
+            prov:hadRole <arcp://uuid,e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca/workflow/packed.cwl#main/tissue-high-filter> ],
+        [ a prov:Usage ;
+            prov:atTime "2023-02-21T12:44:54.764993"^^xsd:dateTime ;
+            prov:entity id:fe5fd004-df2b-43f2-87c4-2abedda20cf9 ;
+            prov:hadRole <arcp://uuid,e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca/workflow/packed.cwl#main/tissue-high-level> ],
+        [ a prov:Usage ;
+            prov:atTime "2023-02-21T12:44:54.766539"^^xsd:dateTime ;
+            prov:entity data:aa3939a63ace95f5ffeab3d1798d49b5adbe9e27 ;
+            prov:hadRole <arcp://uuid,e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca/workflow/packed.cwl#main/tumor-label> ],
+        [ a prov:Usage ;
+            prov:atTime "2023-02-21T12:44:54.762822"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca/workflow/packed.cwl#main/gpu> ],
+        [ a prov:Usage ;
+            prov:atTime "2023-02-21T12:44:54.766658"^^xsd:dateTime ;
+            prov:entity id:04f2acba-0642-4ef5-86a2-93a10e840080 ;
+            prov:hadRole <arcp://uuid,e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca/workflow/packed.cwl#main/tumor-level> ],
+        [ a prov:Usage ;
+            prov:atTime "2023-02-21T12:44:54.764850"^^xsd:dateTime ;
+            prov:entity data:869623a779aaf26d38a26e562703f624fa40d29f ;
+            prov:hadRole <arcp://uuid,e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca/workflow/packed.cwl#main/tissue-high-label> ],
+        [ a prov:Usage ;
+            prov:atTime "2023-02-21T12:44:54.763832"^^xsd:dateTime ;
+            prov:entity id:a90defd7-cf70-41fc-8c76-956e1a970f36 ;
+            prov:hadRole <arcp://uuid,e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca/workflow/packed.cwl#main/slide> ],
+        [ a prov:Usage ;
+            prov:atTime "2023-02-21T12:44:54.765460"^^xsd:dateTime ;
+            prov:entity data:0b2b5f414b65f0315615670701c2951670995ae1 ;
+            prov:hadRole <arcp://uuid,e01f8f1a-0fb1-4ac1-9275-cbb7c522eeca/workflow/packed.cwl#main/tissue-low-label> ] ;
+    prov:startedAtTime "2023-02-21T12:44:53.363407"^^xsd:dateTime ;
+    prov:wasAssociatedWith id:d6eb7d00-905f-4f38-b90e-c0ece005b4fe .
+
+cwlprov:None a prov:Entity ;
+    rdfs:label "None"^^xsd:string .
+
+id:4bd05cfc-1fe6-4769-9547-bf3c8e7ccae3 a ro:Folder,
+        wfprov:Artifact,
+        ore:Aggregation,
+        prov:Collection,
+        prov:Dictionary,
+        prov:Entity ;
+    ore:aggregates id:020966a5-b556-4ec7-be04-138c3e2635e1,
+        id:03d6e76b-b8ab-46ad-af4b-cc77e9245ce7,
+        id:10eb8bd6-9ae9-44ff-85bd-46ab6bae0508,
+        id:115cb83c-3a7e-4451-bb2f-f2571cf8151d,
+        id:1e84e57f-7496-4cad-957e-9588c47a8f1b,
+        id:1e9f46f3-ffb7-4bff-ad37-a1ba1cb8f53e,
+        id:2a4ed625-e654-48ad-aeda-a578fe03a3ab,
+        id:692583c7-c670-45eb-ad70-1a669fb07302,
+        id:6b0d342e-4b6f-4173-a01a-4f6103d6945c,
+        id:7ba35b76-f3ee-40d8-99ad-321719f16b89,
+        id:ac7e6258-793f-4f4e-a6c4-2303fb5dcd33,
+        id:ae0efc5c-e902-45a3-9483-eda3e96e28eb,
+        id:b0d0f8d2-f373-4b73-a94c-fc19ad9c950b,
+        id:be34b750-a9ca-43be-81af-c30f6d4fff5d,
+        id:cfefb0eb-6265-41de-9206-4e61c81bea7e,
+        id:df09a4d8-556d-4143-979f-35447aba61e6,
+        id:e21b3443-80e3-4bb5-82f3-6614138d9900,
+        id:e2dfb091-1991-419e-9a5c-4765da2d5d43,
+        id:e58f1969-bad5-4284-a14b-d7b542c8309a,
+        id:e660f049-0fd1-4965-a1e4-01e6f8ab3b01,
+        id:ebc7beee-3307-4ad4-841c-ba6a71b09eff,
+        id:f7c558b1-f81a-4520-bf1a-efa5c0604a6d,
+        id:f7d876e2-c84d-46ba-a7ee-e976e30edc45,
+        id:f90bf7de-c9c6-4a0e-b1fa-173b60cbfabe,
+        id:fb65a7d7-2e3e-489e-92ec-48962120f319,
+        id:ffed1723-12eb-4ab3-9f2e-867c3a03dfa9 ;
+    ore:isDescribedBy metadata:directory-4bd05cfc-1fe6-4769-9547-bf3c8e7ccae3.ttl ;
+    prov:hadDictionaryMember id:020966a5-b556-4ec7-be04-138c3e2635e1,
+        id:03d6e76b-b8ab-46ad-af4b-cc77e9245ce7,
+        id:10eb8bd6-9ae9-44ff-85bd-46ab6bae0508,
+        id:115cb83c-3a7e-4451-bb2f-f2571cf8151d,
+        id:1e84e57f-7496-4cad-957e-9588c47a8f1b,
+        id:1e9f46f3-ffb7-4bff-ad37-a1ba1cb8f53e,
+        id:2a4ed625-e654-48ad-aeda-a578fe03a3ab,
+        id:692583c7-c670-45eb-ad70-1a669fb07302,
+        id:6b0d342e-4b6f-4173-a01a-4f6103d6945c,
+        id:7ba35b76-f3ee-40d8-99ad-321719f16b89,
+        id:ac7e6258-793f-4f4e-a6c4-2303fb5dcd33,
+        id:ae0efc5c-e902-45a3-9483-eda3e96e28eb,
+        id:b0d0f8d2-f373-4b73-a94c-fc19ad9c950b,
+        id:be34b750-a9ca-43be-81af-c30f6d4fff5d,
+        id:cfefb0eb-6265-41de-9206-4e61c81bea7e,
+        id:df09a4d8-556d-4143-979f-35447aba61e6,
+        id:e21b3443-80e3-4bb5-82f3-6614138d9900,
+        id:e2dfb091-1991-419e-9a5c-4765da2d5d43,
+        id:e58f1969-bad5-4284-a14b-d7b542c8309a,
+        id:e660f049-0fd1-4965-a1e4-01e6f8ab3b01,
+        id:ebc7beee-3307-4ad4-841c-ba6a71b09eff,
+        id:f7c558b1-f81a-4520-bf1a-efa5c0604a6d,
+        id:f7d876e2-c84d-46ba-a7ee-e976e30edc45,
+        id:f90bf7de-c9c6-4a0e-b1fa-173b60cbfabe,
+        id:fb65a7d7-2e3e-489e-92ec-48962120f319,
+        id:ffed1723-12eb-4ab3-9f2e-867c3a03dfa9 ;
+    prov:hadMember id:0ba96d2c-2f37-401f-8772-7b693bfbb2d0,
+        id:0c222c78-292a-41c4-a310-31dc4c6be646,
+        id:1bcaaa2a-a6f5-48ad-b7e2-842f5613d0e7,
+        id:1f2ad0b3-ea8e-4a04-a1e1-13eb6d8bab60,
+        id:3459bb37-129c-4d59-81d1-c702434ab8a5,
+        id:3c572551-fb8f-4608-80d9-48afe7c99ab4,
+        id:4f19f2cf-9c4f-410c-a556-bfc234ef1c6b,
+        id:528d4ad2-b625-4222-8c88-2e9a87e03907,
+        id:52b0c31d-6b2e-40ab-9f03-a236351e31fa,
+        id:7a20ab73-b6f6-4cac-8e65-2217e3878e25,
+        id:7a67e7af-64dd-4e9c-ae88-fbcd2b5ba207,
+        id:89ee305c-fa4d-46c7-8eaa-8ccbc7f94d02,
+        id:967a8c20-d495-44c9-854f-c05c87001eac,
+        id:a067a4f6-f11d-4db5-adb7-a07016f71d05,
+        id:a1c9a1b1-6c2a-4add-b020-9f4d2944652a,
+        id:a1dab2c0-94ce-4ae4-8703-628211f7c683,
+        id:a4a25196-274e-4048-9d1e-ba96bfd51d03,
+        id:a7864b03-10e8-460a-9cf6-00555b01c832,
+        id:add31eb4-f100-4679-b798-0b98f1f77fc8,
+        id:add77bcc-6e92-48e2-ba54-e5edf74a71c7,
+        id:afed3a76-8b40-4ce6-9d27-1e8488453694,
+        id:b85bfd09-d267-46b3-a1ee-573963be57e2,
+        id:bbef31f3-529e-448a-8116-1247a9bd9fa7,
+        id:c99540f1-2450-4242-8856-3bfaeca9863d,
+        id:ef4b294a-8bd1-4ccb-b943-91a0921d6b3f,
+        id:fa583312-8972-4bed-adff-0638dea138e0 ;
+    prov:qualifiedDerivation [ a prov:Derivation,
+                cwlprov:SecondaryFile ;
+            prov:entity id:814b0bdd-c2cd-416e-9bcc-4e9feb8f9dba ] ;
+    cwlprov:basename "Mirax2-Fluorescence-2"^^xsd:string .
+
+id:88a0ef4a-eb2f-4be9-ba26-f403aa5210a8 a ro:Folder,
+        wfprov:Artifact,
+        ore:Aggregation,
+        prov:Collection,
+        prov:Dictionary,
+        prov:Entity ;
+    ore:aggregates id:12480395-8ba1-4941-908b-16f9c49e2fd1,
+        id:18575450-7b23-4581-870a-32ea87c709a9,
+        id:1b32cb68-c7a7-4759-b663-ec8c00c45b94,
+        id:322ec937-bdfc-4db7-b739-48eb94a783af,
+        id:4c8115c0-b527-4f2b-b167-4bc66ab2ad80,
+        id:4e3ebe77-e9cf-45aa-95a8-fe8eea00815c,
+        id:51eed2c3-4531-40b2-afdf-20208f92025e,
+        id:536e0787-b3c0-4088-836f-e765728a102b,
+        id:568a82ac-b02b-4430-82fe-541d8f82df95,
+        id:61737fb8-112d-46e3-8bd0-4255eaef618b,
+        id:6f271a7c-9799-4c8f-8973-3a3bed5bfbd8,
+        id:8c9c5b37-8423-420f-b608-fc28270d79d0,
+        id:951ea4a6-2fdf-4251-9d29-17138588107c,
+        id:9a356eec-1341-4da8-b37f-43c1ea9b341e,
+        id:9acc297b-c03b-4091-9d8e-7446a211f1c0,
+        id:a71a8750-2e77-448b-b68c-f8dafbc5e57d,
+        id:b5466b67-1be3-4d6f-bbba-2d2d7e17b72d,
+        id:b7e11585-33cd-4759-965f-5c98dcc52264,
+        id:b8cc83d4-2656-4091-98ef-e26a5c77bb77,
+        id:c3a10416-b121-4acd-a5b9-f3f52f0659a1,
+        id:dd3468fa-6205-4171-9a20-39be1b054487,
+        id:de69c36f-00d7-4a56-a30a-1cf777d7e484,
+        id:e5664e9c-4f7a-41f5-b402-405948da9ed8,
+        id:e9c39aea-27f6-47aa-9f3f-c9cb59c8966e,
+        id:ef03ae44-daf5-42fc-8c54-3a67d14b7aa7,
+        id:fe81b711-4a83-4489-8a26-d4cdbdd85e17 ;
+    ore:isDescribedBy metadata:directory-88a0ef4a-eb2f-4be9-ba26-f403aa5210a8.ttl ;
+    prov:hadDictionaryMember id:12480395-8ba1-4941-908b-16f9c49e2fd1,
+        id:18575450-7b23-4581-870a-32ea87c709a9,
+        id:1b32cb68-c7a7-4759-b663-ec8c00c45b94,
+        id:322ec937-bdfc-4db7-b739-48eb94a783af,
+        id:4c8115c0-b527-4f2b-b167-4bc66ab2ad80,
+        id:4e3ebe77-e9cf-45aa-95a8-fe8eea00815c,
+        id:51eed2c3-4531-40b2-afdf-20208f92025e,
+        id:536e0787-b3c0-4088-836f-e765728a102b,
+        id:568a82ac-b02b-4430-82fe-541d8f82df95,
+        id:61737fb8-112d-46e3-8bd0-4255eaef618b,
+        id:6f271a7c-9799-4c8f-8973-3a3bed5bfbd8,
+        id:8c9c5b37-8423-420f-b608-fc28270d79d0,
+        id:951ea4a6-2fdf-4251-9d29-17138588107c,
+        id:9a356eec-1341-4da8-b37f-43c1ea9b341e,
+        id:9acc297b-c03b-4091-9d8e-7446a211f1c0,
+        id:a71a8750-2e77-448b-b68c-f8dafbc5e57d,
+        id:b5466b67-1be3-4d6f-bbba-2d2d7e17b72d,
+        id:b7e11585-33cd-4759-965f-5c98dcc52264,
+        id:b8cc83d4-2656-4091-98ef-e26a5c77bb77,
+        id:c3a10416-b121-4acd-a5b9-f3f52f0659a1,
+        id:dd3468fa-6205-4171-9a20-39be1b054487,
+        id:de69c36f-00d7-4a56-a30a-1cf777d7e484,
+        id:e5664e9c-4f7a-41f5-b402-405948da9ed8,
+        id:e9c39aea-27f6-47aa-9f3f-c9cb59c8966e,
+        id:ef03ae44-daf5-42fc-8c54-3a67d14b7aa7,
+        id:fe81b711-4a83-4489-8a26-d4cdbdd85e17 ;
+    prov:hadMember id:044d0c1b-e1f4-4c0f-adfc-72682acba32c,
+        id:093a5a8b-b01c-46cd-a7b7-a66074b4ccab,
+        id:0f0bf53c-84a1-47fe-92eb-e4a5e731f935,
+        id:1ad545dd-e990-4505-b0ca-5fd60a652081,
+        id:1b9a4d9c-f74e-4caf-8316-242156dcd3df,
+        id:1d4bae6e-b349-4555-a472-5922b1f54c17,
+        id:3367195f-42f7-4b14-8544-fcbc75c1fe1c,
+        id:38c003bb-e9e7-4d8c-9eee-63d1b3b81d74,
+        id:3a17eb17-0e8e-49a1-bfb0-9d66e1aac01d,
+        id:43230b15-82cb-4cd1-9c00-d0aed66f7673,
+        id:512f44a4-c8f9-4c05-a8fa-134b27f98de6,
+        id:52dc1bd9-5862-4768-9501-c61ecfdaaa28,
+        id:555292e8-d8cf-4df4-adfd-4d7be20848f5,
+        id:59757717-0b81-4cdb-b001-1de4205378a6,
+        id:620506de-1d17-4172-a064-fc52b75de659,
+        id:74d2db41-f8e6-4015-b4b8-7113b8b71b1d,
+        id:7dc91d91-4719-45d1-a14c-8a19622653ed,
+        id:82b04010-43c7-48d0-818e-61e1149d05e4,
+        id:84295852-0c13-4da8-a0ef-04bb73d991a7,
+        id:84457d2c-d5ae-4839-a63c-8490f22b0451,
+        id:86bab910-fe52-4d4b-ad70-2c3d2f448f6b,
+        id:91012340-8d19-46dd-a5fa-6985e624f62a,
+        id:aea7cb5a-4847-4bf2-8e01-19fb33611e93,
+        id:c4d9e255-748d-4280-b77b-9466c2b40de6,
+        id:f04a61f4-a0db-4e65-9a8d-e8a33da34571,
+        id:f12d5361-e37b-4a45-9d4a-4db8ce334c14 ;
+    prov:qualifiedDerivation [ a prov:Derivation,
+                cwlprov:SecondaryFile ;
+            prov:entity id:477fb317-0244-4980-a03a-6854049ced43 ] ;
+    cwlprov:basename "Mirax2-Fluorescence-2"^^xsd:string .
+
+id:d3cbf540-5ea4-4ef8-a475-be0eebdde2cf a ro:Folder,
+        wfprov:Artifact,
+        ore:Aggregation,
+        prov:Collection,
+        prov:Dictionary,
+        prov:Entity ;
+    ore:aggregates id:00f090a7-de19-4d1e-9326-c8a49c35954d,
+        id:033b6edd-d4f9-4e9d-874d-7408eeb9aa68,
+        id:05100386-628d-48e4-a0ab-16f04aa6a377,
+        id:06bb21d0-ae59-42c1-a6c6-3cdd1fc789be,
+        id:17fbdee3-a14e-4a73-b5e0-37592ae3529d,
+        id:1bee2df1-25bd-42b5-b02d-e6a630779ac0,
+        id:2a6c3ac8-11ce-40ba-89e4-07d4b03e8e72,
+        id:3e033919-d20a-4615-b2e0-8e0a21df59ca,
+        id:5ab64288-43b2-43b1-aee1-29717df541e3,
+        id:5b515382-ec9d-427e-b81b-be466c999f4a,
+        id:64b0e025-420b-4494-af2d-c2652a70d267,
+        id:6daa18b9-60e5-40c9-aeda-59ab12e6319b,
+        id:7274b92a-3773-4676-8532-b076f7b2712f,
+        id:7f339800-15c0-4b6e-8bcb-74d0fcbf8edd,
+        id:8376d064-f532-4146-be40-4aee42a5d335,
+        id:8597df7e-6a16-4622-843c-f1813593d199,
+        id:85d4c821-a623-46d7-a971-05ee30793f41,
+        id:8a175474-7ddb-4c8b-8a59-db41591bdced,
+        id:9c64f643-0322-4852-a31b-5de7f19e5779,
+        id:a5305b2c-ec90-4a84-b4f2-fe3d1fe5cd32,
+        id:d0021840-3b58-47a7-a5ff-3c2c2cfecc95,
+        id:dcfc5fda-b0e9-4876-a5f7-9c473a3a4524,
+        id:e31e637a-4751-4ec9-82d1-156135523284,
+        id:e8058cb9-579a-4752-90c1-c6e1cd72b508,
+        id:eeaa5d88-5f48-4f62-9f08-790c61929367,
+        id:f8d84999-6780-479f-aa05-405cf6f86515 ;
+    ore:isDescribedBy metadata:directory-d3cbf540-5ea4-4ef8-a475-be0eebdde2cf.ttl ;
+    prov:hadDictionaryMember id:00f090a7-de19-4d1e-9326-c8a49c35954d,
+        id:033b6edd-d4f9-4e9d-874d-7408eeb9aa68,
+        id:05100386-628d-48e4-a0ab-16f04aa6a377,
+        id:06bb21d0-ae59-42c1-a6c6-3cdd1fc789be,
+        id:17fbdee3-a14e-4a73-b5e0-37592ae3529d,
+        id:1bee2df1-25bd-42b5-b02d-e6a630779ac0,
+        id:2a6c3ac8-11ce-40ba-89e4-07d4b03e8e72,
+        id:3e033919-d20a-4615-b2e0-8e0a21df59ca,
+        id:5ab64288-43b2-43b1-aee1-29717df541e3,
+        id:5b515382-ec9d-427e-b81b-be466c999f4a,
+        id:64b0e025-420b-4494-af2d-c2652a70d267,
+        id:6daa18b9-60e5-40c9-aeda-59ab12e6319b,
+        id:7274b92a-3773-4676-8532-b076f7b2712f,
+        id:7f339800-15c0-4b6e-8bcb-74d0fcbf8edd,
+        id:8376d064-f532-4146-be40-4aee42a5d335,
+        id:8597df7e-6a16-4622-843c-f1813593d199,
+        id:85d4c821-a623-46d7-a971-05ee30793f41,
+        id:8a175474-7ddb-4c8b-8a59-db41591bdced,
+        id:9c64f643-0322-4852-a31b-5de7f19e5779,
+        id:a5305b2c-ec90-4a84-b4f2-fe3d1fe5cd32,
+        id:d0021840-3b58-47a7-a5ff-3c2c2cfecc95,
+        id:dcfc5fda-b0e9-4876-a5f7-9c473a3a4524,
+        id:e31e637a-4751-4ec9-82d1-156135523284,
+        id:e8058cb9-579a-4752-90c1-c6e1cd72b508,
+        id:eeaa5d88-5f48-4f62-9f08-790c61929367,
+        id:f8d84999-6780-479f-aa05-405cf6f86515 ;
+    prov:hadMember id:07d81587-5542-4bdb-8999-c1c8dd70e643,
+        id:0c4fc73a-461a-497e-8ac3-507aee7d0607,
+        id:14322b14-bc68-461b-b3d5-60daece52f48,
+        id:16e27114-3954-40a7-80d7-134252033090,
+        id:1a4721a5-8a78-466f-89c1-8336cbc178ce,
+        id:2a7b6f70-868e-4260-95e9-4e11668fefdb,
+        id:3cc99637-a618-4e52-9c10-989cabe99fc8,
+        id:5a41fb39-1e88-4a0e-b34d-333793348c66,
+        id:5cdfc5c9-8b20-4114-b8db-da8bce86ea4f,
+        id:5d9d518d-6605-4ab1-8357-ac89b56998d8,
+        id:66555d09-322d-4e5a-afaf-c944a90b9376,
+        id:68e05956-4474-47cc-84a3-2de15b34be1f,
+        id:736765cf-1f1d-4bd0-abf9-7ab625800872,
+        id:7a4768d6-bc1e-4242-8d22-8dd6bf30fbde,
+        id:9ef3782b-99d3-493a-96dc-3cdf906fa254,
+        id:a31c1a5a-2d2f-4e88-b143-332d2fe51a3d,
+        id:a5af82c7-75f7-452e-9a16-fbcb9c19c70e,
+        id:af610ae8-d08e-4f80-8f4d-3676de94b402,
+        id:b383ea7a-611c-4bb5-9b5c-ea3eea0dbc59,
+        id:c0ecc513-37bf-4a2d-8137-5701b9c02b39,
+        id:d169331d-18b2-4207-bc98-39ae63e23b29,
+        id:df368069-0131-4771-8482-47a9559fa79c,
+        id:e0746aa0-91eb-41f7-a8e9-60ce5fb230ca,
+        id:e39115f6-5681-437f-8703-fcec7a25eb49,
+        id:e7ffd8ae-f4b8-4476-bf9e-93bbfaed09b1,
+        id:f82fa272-7522-41f2-be39-e657f396fe5b ;
+    prov:qualifiedDerivation [ a prov:Derivation,
+                cwlprov:SecondaryFile ;
+            prov:entity id:529b7beb-1767-4230-9632-c85e76c72324 ] ;
+    cwlprov:basename "Mirax2-Fluorescence-2"^^xsd:string .
+
