@@ -4,7 +4,18 @@
         {
             "@id": "./",
             "@type": "Dataset",
-            "datePublished": "2023-01-19T11:42:11+00:00",
+            "conformsTo": [
+                {
+                    "@id": "https://w3id.org/ro/wfrun/process/0.1"
+                },
+                {
+                    "@id": "https://w3id.org/ro/wfrun/workflow/0.1"
+                },
+                {
+                    "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+                }
+            ],
+            "datePublished": "2023-03-02T14:28:59+00:00",
             "hasPart": [
                 {
                     "@id": "datasets/Concatenate_dataset_collection_(for_test_workflows)_on_data_46,_data_45,_and_others_48.txt"
@@ -32,6 +43,30 @@
                 },
                 {
                     "@id": "workflows/6f27e6c317d4fa15.ga"
+                },
+                {
+                    "@id": "datasets_attrs.txt"
+                },
+                {
+                    "@id": "jobs_attrs.txt"
+                },
+                {
+                    "@id": "implicit_collection_jobs_attrs.txt"
+                },
+                {
+                    "@id": "collections_attrs.txt"
+                },
+                {
+                    "@id": "export_attrs.txt"
+                },
+                {
+                    "@id": "libraries_attrs.txt"
+                },
+                {
+                    "@id": "library_folders_attrs.txt"
+                },
+                {
+                    "@id": "invocation_attrs.txt"
                 }
             ],
             "license": "MIT",
@@ -47,6 +82,9 @@
                 },
                 {
                     "@id": "#dataset_collection-13"
+                },
+                {
+                    "@id": "#27819d09-7b13-425c-8520-32818449197e"
                 }
             ]
         },
@@ -70,7 +108,7 @@
             "@type": "File",
             "encodingFormat": "text/plain",
             "exampleOfWork": {
-                "@id": "urn:uuid:eabc423a-227e-4096-8e14-74d0088c8ef9"
+                "@id": "#eabc423a-227e-4096-8e14-74d0088c8ef9"
             },
             "name": "Concatenate dataset collection (for test workflows) on data 46, data 45, and others"
         },
@@ -79,7 +117,7 @@
             "@type": "File",
             "encodingFormat": "text/plain",
             "exampleOfWork": {
-                "@id": "urn:uuid:4a0f4078-5aff-4e02-9f9c-4ad510050e54"
+                "@id": "#4a0f4078-5aff-4e02-9f9c-4ad510050e54"
             },
             "name": "Select first on data 48"
         },
@@ -88,7 +126,7 @@
             "@type": "File",
             "encodingFormat": "text/plain",
             "exampleOfWork": {
-                "@id": "urn:uuid:d4e573fa-227f-4cdc-94a0-ac959de105e7"
+                "@id": "#d4e573fa-227f-4cdc-94a0-ac959de105e7"
             },
             "name": "hello"
         },
@@ -97,7 +135,7 @@
             "@type": "File",
             "encodingFormat": "text/plain",
             "exampleOfWork": {
-                "@id": "urn:uuid:369edbf0-e16a-45d8-bad8-b0ecb4f566a2"
+                "@id": "#369edbf0-e16a-45d8-bad8-b0ecb4f566a2"
             },
             "name": "world"
         },
@@ -106,7 +144,7 @@
             "@type": "File",
             "encodingFormat": "text/plain",
             "exampleOfWork": {
-                "@id": "urn:uuid:ba8af7ec-ef40-405a-bcc4-33c2df9fffed"
+                "@id": "#ba8af7ec-ef40-405a-bcc4-33c2df9fffed"
             },
             "name": "universe"
         },
@@ -231,28 +269,28 @@
                     "@id": "#lineNum-param"
                 },
                 {
-                    "@id": "urn:uuid:d4e573fa-227f-4cdc-94a0-ac959de105e7"
+                    "@id": "#d4e573fa-227f-4cdc-94a0-ac959de105e7"
                 },
                 {
-                    "@id": "urn:uuid:ba8af7ec-ef40-405a-bcc4-33c2df9fffed"
+                    "@id": "#ba8af7ec-ef40-405a-bcc4-33c2df9fffed"
                 },
                 {
-                    "@id": "urn:uuid:369edbf0-e16a-45d8-bad8-b0ecb4f566a2"
+                    "@id": "#369edbf0-e16a-45d8-bad8-b0ecb4f566a2"
                 },
                 {
                     "@id": "#advanced-param"
                 },
                 {
-                    "@id": "urn:uuid:eabc423a-227e-4096-8e14-74d0088c8ef9"
+                    "@id": "#eabc423a-227e-4096-8e14-74d0088c8ef9"
                 }
             ],
             "name": "collection_workflow",
             "output": [
                 {
-                    "@id": "urn:uuid:eabc423a-227e-4096-8e14-74d0088c8ef9"
+                    "@id": "#eabc423a-227e-4096-8e14-74d0088c8ef9"
                 },
                 {
-                    "@id": "urn:uuid:4a0f4078-5aff-4e02-9f9c-4ad510050e54"
+                    "@id": "#4a0f4078-5aff-4e02-9f9c-4ad510050e54"
                 }
             ],
             "programmingLanguage": {
@@ -260,18 +298,100 @@
             }
         },
         {
-            "@id": "#b484db83-c270-47ab-a7b9-50723cd9212a",
+            "@id": "#20cc7fbc-e96b-4177-bf52-e163fa5b49f2",
             "@type": "SoftwareApplication",
             "name": "Galaxy workflow engine"
         },
         {
-            "@id": "#e671bc15-59f0-44cc-bbe2-bf4fcc7e52d3",
+            "@id": "#c8bd61c2-3c98-4e94-a6b5-2db760acb261",
             "@type": "OrganizeAction",
+            "endTime": "2022-12-12T17:54:18.776936",
             "instrument": {
-                "@id": "#b484db83-c270-47ab-a7b9-50723cd9212a"
+                "@id": "#20cc7fbc-e96b-4177-bf52-e163fa5b49f2"
             },
             "name": "Run of Galaxy workflow engine",
             "startTime": "2022-12-12T17:54:18.224230"
+        },
+        {
+            "@id": "https://w3id.org/ro/wfrun/process/0.1",
+            "@type": "CreativeWork",
+            "name": "Process Run Crate",
+            "version": "0.1"
+        },
+        {
+            "@id": "https://w3id.org/ro/wfrun/workflow/0.1",
+            "@type": "CreativeWork",
+            "name": "Workflow Run Crate",
+            "version": "0.1"
+        },
+        {
+            "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0",
+            "@type": "CreativeWork",
+            "name": "Workflow RO-Crate",
+            "version": "1.0"
+        },
+        {
+            "@id": "datasets_attrs.txt",
+            "@type": "File",
+            "description": "datasets properties",
+            "encodingFormat": "application/json",
+            "version": "2.0"
+        },
+        {
+            "@id": "jobs_attrs.txt",
+            "@type": "File",
+            "description": "jobs properties",
+            "encodingFormat": "application/json",
+            "version": "2.0"
+        },
+        {
+            "@id": "implicit_collection_jobs_attrs.txt",
+            "@type": "File",
+            "description": "implicit collection jobs properties",
+            "encodingFormat": "application/json",
+            "version": "2.0"
+        },
+        {
+            "@id": "collections_attrs.txt",
+            "@type": "File",
+            "description": "collections properties",
+            "encodingFormat": "application/json",
+            "version": "2.0"
+        },
+        {
+            "@id": "export_attrs.txt",
+            "@type": "File",
+            "description": "export properties",
+            "encodingFormat": "application/json",
+            "version": "2.0"
+        },
+        {
+            "@id": "libraries_attrs.txt",
+            "@type": "File",
+            "description": "libraries properties",
+            "encodingFormat": "application/json",
+            "version": "2.0"
+        },
+        {
+            "@id": "library_folders_attrs.txt",
+            "@type": "File",
+            "description": "library folders properties",
+            "encodingFormat": "application/json",
+            "version": "2.0"
+        },
+        {
+            "@id": "invocation_attrs.txt",
+            "@type": "File",
+            "description": "invocation properties",
+            "encodingFormat": "application/json",
+            "version": "2.0"
+        },
+        {
+            "@id": "#datasets_attrs.txt.provenance",
+            "@type": "CreativeWork",
+            "description": "datasets provenance properties",
+            "encodingFormat": "json",
+            "version": "2.0"
         },
         {
             "@id": "#lineNum-pv",
@@ -285,27 +405,27 @@
         {
             "@id": "#lineNum-param",
             "@type": "FormalParameter",
-            "additionalType": "None",
-            "description": "select 3 lines",
-            "name": "select lines parameter",
-            "valueRequired": true
+            "additionalType": "Integer",
+            "description": "number of lines to select",
+            "name": "num_lines_param parameter",
+            "valueRequired": "True"
         },
         {
-            "@id": "urn:uuid:d4e573fa-227f-4cdc-94a0-ac959de105e7",
+            "@id": "#d4e573fa-227f-4cdc-94a0-ac959de105e7",
             "@type": "FormalParameter",
             "additionalType": "File",
             "description": "uploaded txt file",
             "name": "input13"
         },
         {
-            "@id": "urn:uuid:ba8af7ec-ef40-405a-bcc4-33c2df9fffed",
+            "@id": "#ba8af7ec-ef40-405a-bcc4-33c2df9fffed",
             "@type": "FormalParameter",
             "additionalType": "File",
             "description": "uploaded txt file",
             "name": "input14"
         },
         {
-            "@id": "urn:uuid:369edbf0-e16a-45d8-bad8-b0ecb4f566a2",
+            "@id": "#369edbf0-e16a-45d8-bad8-b0ecb4f566a2",
             "@type": "FormalParameter",
             "additionalType": "File",
             "description": "uploaded txt file",
@@ -323,28 +443,29 @@
         {
             "@id": "#advanced-param",
             "@type": "FormalParameter",
-            "additionalType": "None",
+            "additionalType": "Text",
             "description": "merged collections",
             "name": "merge collections tool parameter",
-            "valueRequired": true
+            "valueRequired": "True"
         },
         {
-            "@id": "urn:uuid:eabc423a-227e-4096-8e14-74d0088c8ef9",
+            "@id": "#eabc423a-227e-4096-8e14-74d0088c8ef9",
             "@type": "FormalParameter",
             "additionalType": "File",
             "description": "",
             "name": "input"
         },
         {
-            "@id": "urn:uuid:4a0f4078-5aff-4e02-9f9c-4ad510050e54",
+            "@id": "#4a0f4078-5aff-4e02-9f9c-4ad510050e54",
             "@type": "FormalParameter",
             "additionalType": "File",
             "description": "",
             "name": "out_file1"
         },
         {
-            "@id": "#b91b07ec-5752-465d-a0c4-912e0312abc0",
+            "@id": "#27819d09-7b13-425c-8520-32818449197e",
             "@type": "CreateAction",
+            "endTime": "2022-12-12T17:50:45.118254",
             "instrument": {
                 "@id": "workflows/6f27e6c317d4fa15.ga"
             },
@@ -391,7 +512,8 @@
                 {
                     "@id": "datasets/Select_first_on_data_48_49.txt"
                 }
-            ]
+            ],
+            "startTime": "2022-12-12T17:50:45.118248"
         }
     ]
 }

@@ -91,7 +91,7 @@ steps:
       lineNum:
         __class__: ConnectedValue
     in:
-      input:
-        source: concat collection/out_file1
       lineNum:
         source: num_lines_param
+      input:
+        source: concat collection/out_file1

@@ -18,6 +18,7 @@
             "uuid": "21e7a55d-5a22-4900-900e-136b92d51126",
             "label": "input collection 1",
             "annotation": "collection 1",
+            "when": null,
             "inputs": [
                 {
                     "name": "input collection 1",
@@ -44,6 +45,7 @@
             "uuid": "2a1dafdc-3b26-4cd2-83d3-9e3d4e615820",
             "label": "input collection 2",
             "annotation": "collection 2",
+            "when": null,
             "inputs": [
                 {
                     "name": "input collection 2",
@@ -70,6 +72,7 @@
             "uuid": "7a33097d-eaf5-496d-acd2-44ae2edc0f14",
             "label": "num_lines_param",
             "annotation": "number of lines to select",
+            "when": null,
             "inputs": [
                 {
                     "name": "num_lines_param",
@@ -102,6 +105,7 @@
             "uuid": "5c6f3142-596b-4ef8-8177-1ac35517d9ed",
             "label": "merge collections tool",
             "annotation": "merged collections",
+            "when": null,
             "post_job_actions": {},
             "inputs": [],
             "workflow_outputs": [
@@ -139,6 +143,7 @@
             "uuid": "8539c740-1580-4fce-b210-421f9de0dc23",
             "label": "concat collection",
             "annotation": "concatenate collection",
+            "when": null,
             "post_job_actions": {},
             "inputs": [],
             "workflow_outputs": [
@@ -172,6 +177,7 @@
             "uuid": "571f5a69-e94d-4520-9c76-46e3cb2bfa93",
             "label": "select lines",
             "annotation": "select 3 lines",
+            "when": null,
             "post_job_actions": {},
             "inputs": [],
             "workflow_outputs": [
@@ -183,13 +189,13 @@
             ],
             "outputs": [],
             "input_connections": {
-                "input": {
-                    "id": 4,
-                    "output_name": "out_file1"
-                },
                 "lineNum": {
                     "id": 2,
                     "output_name": "output"
+                },
+                "input": {
+                    "id": 4,
+                    "output_name": "out_file1"
                 }
             },
             "position": {

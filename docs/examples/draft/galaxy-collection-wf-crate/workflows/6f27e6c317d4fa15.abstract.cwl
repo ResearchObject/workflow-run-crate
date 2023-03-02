@@ -62,9 +62,9 @@ steps:
       inputs: {}
       outputs: {}
     in:
-      input:
-        source: concat collection/out_file1
       lineNum:
         source: num_lines_param
+      input:
+        source: concat collection/out_file1
     out:
     - out_file1
