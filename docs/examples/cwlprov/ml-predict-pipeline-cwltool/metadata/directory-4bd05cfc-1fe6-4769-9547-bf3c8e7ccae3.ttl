@@ -1,0 +1,218 @@
+@prefix id: <urn:uuid:> .
+@prefix ore: <http://www.openarchives.org/ore/terms/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix ro: <http://purl.org/wf4ever/ro#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+id:020966a5-b556-4ec7-be04-138c3e2635e1 a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity ;
+    ro:entryName "Data0009.dat"^^xsd:string ;
+    ore:proxyFor id:3459bb37-129c-4d59-81d1-c702434ab8a5 ;
+    ore:proxyIn id:4bd05cfc-1fe6-4769-9547-bf3c8e7ccae3 .
+
+id:03d6e76b-b8ab-46ad-af4b-cc77e9245ce7 a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity ;
+    ro:entryName "Data0002.dat"^^xsd:string ;
+    ore:proxyFor id:c99540f1-2450-4242-8856-3bfaeca9863d ;
+    ore:proxyIn id:4bd05cfc-1fe6-4769-9547-bf3c8e7ccae3 .
+
+id:10eb8bd6-9ae9-44ff-85bd-46ab6bae0508 a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity ;
+    ro:entryName "Data0008.dat"^^xsd:string ;
+    ore:proxyFor id:a1c9a1b1-6c2a-4add-b020-9f4d2944652a ;
+    ore:proxyIn id:4bd05cfc-1fe6-4769-9547-bf3c8e7ccae3 .
+
+id:115cb83c-3a7e-4451-bb2f-f2571cf8151d a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity ;
+    ro:entryName "Data0003.dat"^^xsd:string ;
+    ore:proxyFor id:1bcaaa2a-a6f5-48ad-b7e2-842f5613d0e7 ;
+    ore:proxyIn id:4bd05cfc-1fe6-4769-9547-bf3c8e7ccae3 .
+
+id:1e84e57f-7496-4cad-957e-9588c47a8f1b a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity ;
+    ro:entryName "Data0012.dat"^^xsd:string ;
+    ore:proxyFor id:0ba96d2c-2f37-401f-8772-7b693bfbb2d0 ;
+    ore:proxyIn id:4bd05cfc-1fe6-4769-9547-bf3c8e7ccae3 .
+
+id:1e9f46f3-ffb7-4bff-ad37-a1ba1cb8f53e a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity ;
+    ro:entryName "Data0010.dat"^^xsd:string ;
+    ore:proxyFor id:89ee305c-fa4d-46c7-8eaa-8ccbc7f94d02 ;
+    ore:proxyIn id:4bd05cfc-1fe6-4769-9547-bf3c8e7ccae3 .
+
+id:2a4ed625-e654-48ad-aeda-a578fe03a3ab a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity ;
+    ro:entryName "Data0016.dat"^^xsd:string ;
+    ore:proxyFor id:a4a25196-274e-4048-9d1e-ba96bfd51d03 ;
+    ore:proxyIn id:4bd05cfc-1fe6-4769-9547-bf3c8e7ccae3 .
+
+id:692583c7-c670-45eb-ad70-1a669fb07302 a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity ;
+    ro:entryName "Data0007.dat"^^xsd:string ;
+    ore:proxyFor id:4f19f2cf-9c4f-410c-a556-bfc234ef1c6b ;
+    ore:proxyIn id:4bd05cfc-1fe6-4769-9547-bf3c8e7ccae3 .
+
+id:6b0d342e-4b6f-4173-a01a-4f6103d6945c a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity ;
+    ro:entryName "Data0014.dat"^^xsd:string ;
+    ore:proxyFor id:3c572551-fb8f-4608-80d9-48afe7c99ab4 ;
+    ore:proxyIn id:4bd05cfc-1fe6-4769-9547-bf3c8e7ccae3 .
+
+id:7ba35b76-f3ee-40d8-99ad-321719f16b89 a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity ;
+    ro:entryName "Data0021.dat"^^xsd:string ;
+    ore:proxyFor id:a7864b03-10e8-460a-9cf6-00555b01c832 ;
+    ore:proxyIn id:4bd05cfc-1fe6-4769-9547-bf3c8e7ccae3 .
+
+id:ac7e6258-793f-4f4e-a6c4-2303fb5dcd33 a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity ;
+    ro:entryName "Slidedat.ini"^^xsd:string ;
+    ore:proxyFor id:7a20ab73-b6f6-4cac-8e65-2217e3878e25 ;
+    ore:proxyIn id:4bd05cfc-1fe6-4769-9547-bf3c8e7ccae3 .
+
+id:ae0efc5c-e902-45a3-9483-eda3e96e28eb a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity ;
+    ro:entryName "Index.dat"^^xsd:string ;
+    ore:proxyFor id:52b0c31d-6b2e-40ab-9f03-a236351e31fa ;
+    ore:proxyIn id:4bd05cfc-1fe6-4769-9547-bf3c8e7ccae3 .
+
+id:b0d0f8d2-f373-4b73-a94c-fc19ad9c950b a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity ;
+    ro:entryName "Data0011.dat"^^xsd:string ;
+    ore:proxyFor id:1f2ad0b3-ea8e-4a04-a1e1-13eb6d8bab60 ;
+    ore:proxyIn id:4bd05cfc-1fe6-4769-9547-bf3c8e7ccae3 .
+
+id:be34b750-a9ca-43be-81af-c30f6d4fff5d a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity ;
+    ro:entryName "Data0004.dat"^^xsd:string ;
+    ore:proxyFor id:967a8c20-d495-44c9-854f-c05c87001eac ;
+    ore:proxyIn id:4bd05cfc-1fe6-4769-9547-bf3c8e7ccae3 .
+
+id:cfefb0eb-6265-41de-9206-4e61c81bea7e a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity ;
+    ro:entryName "Data0005.dat"^^xsd:string ;
+    ore:proxyFor id:fa583312-8972-4bed-adff-0638dea138e0 ;
+    ore:proxyIn id:4bd05cfc-1fe6-4769-9547-bf3c8e7ccae3 .
+
+id:df09a4d8-556d-4143-979f-35447aba61e6 a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity ;
+    ro:entryName "Data0018.dat"^^xsd:string ;
+    ore:proxyFor id:7a67e7af-64dd-4e9c-ae88-fbcd2b5ba207 ;
+    ore:proxyIn id:4bd05cfc-1fe6-4769-9547-bf3c8e7ccae3 .
+
+id:e21b3443-80e3-4bb5-82f3-6614138d9900 a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity ;
+    ro:entryName "Data0023.dat"^^xsd:string ;
+    ore:proxyFor id:bbef31f3-529e-448a-8116-1247a9bd9fa7 ;
+    ore:proxyIn id:4bd05cfc-1fe6-4769-9547-bf3c8e7ccae3 .
+
+id:e2dfb091-1991-419e-9a5c-4765da2d5d43 a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity ;
+    ro:entryName "Data0001.dat"^^xsd:string ;
+    ore:proxyFor id:add31eb4-f100-4679-b798-0b98f1f77fc8 ;
+    ore:proxyIn id:4bd05cfc-1fe6-4769-9547-bf3c8e7ccae3 .
+
+id:e58f1969-bad5-4284-a14b-d7b542c8309a a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity ;
+    ro:entryName "Data0020.dat"^^xsd:string ;
+    ore:proxyFor id:afed3a76-8b40-4ce6-9d27-1e8488453694 ;
+    ore:proxyIn id:4bd05cfc-1fe6-4769-9547-bf3c8e7ccae3 .
+
+id:e660f049-0fd1-4965-a1e4-01e6f8ab3b01 a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity ;
+    ro:entryName "Data0013.dat"^^xsd:string ;
+    ore:proxyFor id:a067a4f6-f11d-4db5-adb7-a07016f71d05 ;
+    ore:proxyIn id:4bd05cfc-1fe6-4769-9547-bf3c8e7ccae3 .
+
+id:ebc7beee-3307-4ad4-841c-ba6a71b09eff a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity ;
+    ro:entryName "Data0000.dat"^^xsd:string ;
+    ore:proxyFor id:b85bfd09-d267-46b3-a1ee-573963be57e2 ;
+    ore:proxyIn id:4bd05cfc-1fe6-4769-9547-bf3c8e7ccae3 .
+
+id:f7c558b1-f81a-4520-bf1a-efa5c0604a6d a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity ;
+    ro:entryName "Data0017.dat"^^xsd:string ;
+    ore:proxyFor id:0c222c78-292a-41c4-a310-31dc4c6be646 ;
+    ore:proxyIn id:4bd05cfc-1fe6-4769-9547-bf3c8e7ccae3 .
+
+id:f7d876e2-c84d-46ba-a7ee-e976e30edc45 a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity ;
+    ro:entryName "Data0015.dat"^^xsd:string ;
+    ore:proxyFor id:ef4b294a-8bd1-4ccb-b943-91a0921d6b3f ;
+    ore:proxyIn id:4bd05cfc-1fe6-4769-9547-bf3c8e7ccae3 .
+
+id:f90bf7de-c9c6-4a0e-b1fa-173b60cbfabe a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity ;
+    ro:entryName "Data0006.dat"^^xsd:string ;
+    ore:proxyFor id:528d4ad2-b625-4222-8c88-2e9a87e03907 ;
+    ore:proxyIn id:4bd05cfc-1fe6-4769-9547-bf3c8e7ccae3 .
+
+id:fb65a7d7-2e3e-489e-92ec-48962120f319 a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity ;
+    ro:entryName "Data0022.dat"^^xsd:string ;
+    ore:proxyFor id:a1dab2c0-94ce-4ae4-8703-628211f7c683 ;
+    ore:proxyIn id:4bd05cfc-1fe6-4769-9547-bf3c8e7ccae3 .
+
+id:ffed1723-12eb-4ab3-9f2e-867c3a03dfa9 a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity ;
+    ro:entryName "Data0019.dat"^^xsd:string ;
+    ore:proxyFor id:add77bcc-6e92-48e2-ba54-e5edf74a71c7 ;
+    ore:proxyIn id:4bd05cfc-1fe6-4769-9547-bf3c8e7ccae3 .
+
+id:4bd05cfc-1fe6-4769-9547-bf3c8e7ccae3 a ro:Folder,
+        ore:Aggregation,
+        prov:Entity ;
+    ore:aggregates id:020966a5-b556-4ec7-be04-138c3e2635e1,
+        id:03d6e76b-b8ab-46ad-af4b-cc77e9245ce7,
+        id:10eb8bd6-9ae9-44ff-85bd-46ab6bae0508,
+        id:115cb83c-3a7e-4451-bb2f-f2571cf8151d,
+        id:1e84e57f-7496-4cad-957e-9588c47a8f1b,
+        id:1e9f46f3-ffb7-4bff-ad37-a1ba1cb8f53e,
+        id:2a4ed625-e654-48ad-aeda-a578fe03a3ab,
+        id:692583c7-c670-45eb-ad70-1a669fb07302,
+        id:6b0d342e-4b6f-4173-a01a-4f6103d6945c,
+        id:7ba35b76-f3ee-40d8-99ad-321719f16b89,
+        id:ac7e6258-793f-4f4e-a6c4-2303fb5dcd33,
+        id:ae0efc5c-e902-45a3-9483-eda3e96e28eb,
+        id:b0d0f8d2-f373-4b73-a94c-fc19ad9c950b,
+        id:be34b750-a9ca-43be-81af-c30f6d4fff5d,
+        id:cfefb0eb-6265-41de-9206-4e61c81bea7e,
+        id:df09a4d8-556d-4143-979f-35447aba61e6,
+        id:e21b3443-80e3-4bb5-82f3-6614138d9900,
+        id:e2dfb091-1991-419e-9a5c-4765da2d5d43,
+        id:e58f1969-bad5-4284-a14b-d7b542c8309a,
+        id:e660f049-0fd1-4965-a1e4-01e6f8ab3b01,
+        id:ebc7beee-3307-4ad4-841c-ba6a71b09eff,
+        id:f7c558b1-f81a-4520-bf1a-efa5c0604a6d,
+        id:f7d876e2-c84d-46ba-a7ee-e976e30edc45,
+        id:f90bf7de-c9c6-4a0e-b1fa-173b60cbfabe,
+        id:fb65a7d7-2e3e-489e-92ec-48962120f319,
+        id:ffed1723-12eb-4ab3-9f2e-867c3a03dfa9 .
+

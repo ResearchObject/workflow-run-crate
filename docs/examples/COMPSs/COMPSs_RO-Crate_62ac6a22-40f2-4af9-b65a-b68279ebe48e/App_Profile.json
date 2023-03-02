@@ -1,0 +1,583 @@
+{
+ "cloud": {},
+ "resources": {
+  "s18r2b58-ib0": {
+   "implementations": {
+    "backtrackbb.scripts.btbb_continuous.btbb_block": {
+     "maxTime": -9223372036854775808,
+     "executions": 0,
+     "avgTime": 100,
+     "minTime": 9223372036854775807
+    },
+    "backtrackbb.scripts.btbb_continuous.reading_data": {
+     "maxTime": -9223372036854775808,
+     "executions": 0,
+     "avgTime": 100,
+     "minTime": 9223372036854775807
+    },
+    "backtrackbb.plot.plt_SummaryOut": {
+     "maxTime": -9223372036854775808,
+     "executions": 0,
+     "avgTime": 100,
+     "minTime": 9223372036854775807
+    },
+    "backtrackbb.scripts.btbb_continuous.remove_mean_and_trend": {
+     "maxTime": -9223372036854775808,
+     "executions": 0,
+     "avgTime": 100,
+     "minTime": 9223372036854775807
+    },
+    "backtrackbb.init_filter.init_filter": {
+     "maxTime": -9223372036854775808,
+     "executions": 0,
+     "avgTime": 100,
+     "minTime": 9223372036854775807
+    },
+    "backtrackbb.read_grids.read_grid": {
+     "maxTime": -9223372036854775808,
+     "executions": 0,
+     "avgTime": 100,
+     "minTime": 9223372036854775807
+    },
+    "backtrackbb.summary_cf.summary_cf": {
+     "maxTime": -9223372036854775808,
+     "executions": 0,
+     "avgTime": 100,
+     "minTime": 9223372036854775807
+    },
+    "backtrackbb.scripts.btbb_continuous.filter_outputs": {
+     "maxTime": -9223372036854775808,
+     "executions": 0,
+     "avgTime": 100,
+     "minTime": 9223372036854775807
+    },
+    "backtrackbb.scripts.btbb_continuous.write_outputs": {
+     "maxTime": -9223372036854775808,
+     "executions": 0,
+     "avgTime": 100,
+     "minTime": 9223372036854775807
+    }
+   }
+  },
+  "s18r2b59-ib0": {
+   "implementations": {
+    "backtrackbb.scripts.btbb_continuous.btbb_block": {
+     "maxTime": 4366736,
+     "executions": 48,
+     "avgTime": 4253995,
+     "minTime": 4205004
+    },
+    "backtrackbb.scripts.btbb_continuous.reading_data": {
+     "maxTime": -9223372036854775808,
+     "executions": 0,
+     "avgTime": 100,
+     "minTime": 9223372036854775807
+    },
+    "backtrackbb.plot.plt_SummaryOut": {
+     "maxTime": 36492,
+     "executions": 2,
+     "avgTime": 36364,
+     "minTime": 36237
+    },
+    "backtrackbb.scripts.btbb_continuous.remove_mean_and_trend": {
+     "maxTime": 13630,
+     "executions": 4,
+     "avgTime": 13459,
+     "minTime": 13306
+    },
+    "backtrackbb.init_filter.init_filter": {
+     "maxTime": 8297,
+     "executions": 4,
+     "avgTime": 8190,
+     "minTime": 8085
+    },
+    "backtrackbb.read_grids.read_grid": {
+     "maxTime": -9223372036854775808,
+     "executions": 0,
+     "avgTime": 100,
+     "minTime": 9223372036854775807
+    },
+    "backtrackbb.summary_cf.summary_cf": {
+     "maxTime": 232738,
+     "executions": 4,
+     "avgTime": 229998,
+     "minTime": 228274
+    },
+    "backtrackbb.scripts.btbb_continuous.filter_outputs": {
+     "maxTime": 105,
+     "executions": 4,
+     "avgTime": 77,
+     "minTime": 66
+    },
+    "backtrackbb.scripts.btbb_continuous.write_outputs": {
+     "maxTime": 63,
+     "executions": 4,
+     "avgTime": 48,
+     "minTime": 43
+    }
+   }
+  },
+  "s18r2b64-ib0": {
+   "implementations": {
+    "backtrackbb.scripts.btbb_continuous.btbb_block": {
+     "maxTime": -9223372036854775808,
+     "executions": 0,
+     "avgTime": 100,
+     "minTime": 9223372036854775807
+    },
+    "backtrackbb.scripts.btbb_continuous.reading_data": {
+     "maxTime": -9223372036854775808,
+     "executions": 0,
+     "avgTime": 100,
+     "minTime": 9223372036854775807
+    },
+    "backtrackbb.plot.plt_SummaryOut": {
+     "maxTime": -9223372036854775808,
+     "executions": 0,
+     "avgTime": 100,
+     "minTime": 9223372036854775807
+    },
+    "backtrackbb.scripts.btbb_continuous.remove_mean_and_trend": {
+     "maxTime": -9223372036854775808,
+     "executions": 0,
+     "avgTime": 100,
+     "minTime": 9223372036854775807
+    },
+    "backtrackbb.init_filter.init_filter": {
+     "maxTime": -9223372036854775808,
+     "executions": 0,
+     "avgTime": 100,
+     "minTime": 9223372036854775807
+    },
+    "backtrackbb.read_grids.read_grid": {
+     "maxTime": -9223372036854775808,
+     "executions": 0,
+     "avgTime": 100,
+     "minTime": 9223372036854775807
+    },
+    "backtrackbb.summary_cf.summary_cf": {
+     "maxTime": -9223372036854775808,
+     "executions": 0,
+     "avgTime": 100,
+     "minTime": 9223372036854775807
+    },
+    "backtrackbb.scripts.btbb_continuous.filter_outputs": {
+     "maxTime": -9223372036854775808,
+     "executions": 0,
+     "avgTime": 100,
+     "minTime": 9223372036854775807
+    },
+    "backtrackbb.scripts.btbb_continuous.write_outputs": {
+     "maxTime": -9223372036854775808,
+     "executions": 0,
+     "avgTime": 100,
+     "minTime": 9223372036854775807
+    }
+   }
+  },
+  "s18r2b61-ib0": {
+   "implementations": {
+    "backtrackbb.scripts.btbb_continuous.btbb_block": {
+     "maxTime": -9223372036854775808,
+     "executions": 0,
+     "avgTime": 100,
+     "minTime": 9223372036854775807
+    },
+    "backtrackbb.scripts.btbb_continuous.reading_data": {
+     "maxTime": -9223372036854775808,
+     "executions": 0,
+     "avgTime": 100,
+     "minTime": 9223372036854775807
+    },
+    "backtrackbb.plot.plt_SummaryOut": {
+     "maxTime": -9223372036854775808,
+     "executions": 0,
+     "avgTime": 100,
+     "minTime": 9223372036854775807
+    },
+    "backtrackbb.scripts.btbb_continuous.remove_mean_and_trend": {
+     "maxTime": -9223372036854775808,
+     "executions": 0,
+     "avgTime": 100,
+     "minTime": 9223372036854775807
+    },
+    "backtrackbb.init_filter.init_filter": {
+     "maxTime": -9223372036854775808,
+     "executions": 0,
+     "avgTime": 100,
+     "minTime": 9223372036854775807
+    },
+    "backtrackbb.read_grids.read_grid": {
+     "maxTime": -9223372036854775808,
+     "executions": 0,
+     "avgTime": 100,
+     "minTime": 9223372036854775807
+    },
+    "backtrackbb.summary_cf.summary_cf": {
+     "maxTime": -9223372036854775808,
+     "executions": 0,
+     "avgTime": 100,
+     "minTime": 9223372036854775807
+    },
+    "backtrackbb.scripts.btbb_continuous.filter_outputs": {
+     "maxTime": -9223372036854775808,
+     "executions": 0,
+     "avgTime": 100,
+     "minTime": 9223372036854775807
+    },
+    "backtrackbb.scripts.btbb_continuous.write_outputs": {
+     "maxTime": -9223372036854775808,
+     "executions": 0,
+     "avgTime": 100,
+     "minTime": 9223372036854775807
+    }
+   }
+  },
+  "s18r2b60-ib0": {
+   "implementations": {
+    "backtrackbb.scripts.btbb_continuous.btbb_block": {
+     "maxTime": 4279546,
+     "executions": 24,
+     "avgTime": 4157865,
+     "minTime": 4119768
+    },
+    "backtrackbb.scripts.btbb_continuous.reading_data": {
+     "maxTime": -9223372036854775808,
+     "executions": 0,
+     "avgTime": 100,
+     "minTime": 9223372036854775807
+    },
+    "backtrackbb.plot.plt_SummaryOut": {
+     "maxTime": 20530,
+     "executions": 2,
+     "avgTime": 20516,
+     "minTime": 20503
+    },
+    "backtrackbb.scripts.btbb_continuous.remove_mean_and_trend": {
+     "maxTime": -9223372036854775808,
+     "executions": 0,
+     "avgTime": 100,
+     "minTime": 9223372036854775807
+    },
+    "backtrackbb.init_filter.init_filter": {
+     "maxTime": -9223372036854775808,
+     "executions": 0,
+     "avgTime": 100,
+     "minTime": 9223372036854775807
+    },
+    "backtrackbb.read_grids.read_grid": {
+     "maxTime": -9223372036854775808,
+     "executions": 0,
+     "avgTime": 100,
+     "minTime": 9223372036854775807
+    },
+    "backtrackbb.summary_cf.summary_cf": {
+     "maxTime": -9223372036854775808,
+     "executions": 0,
+     "avgTime": 100,
+     "minTime": 9223372036854775807
+    },
+    "backtrackbb.scripts.btbb_continuous.filter_outputs": {
+     "maxTime": -9223372036854775808,
+     "executions": 0,
+     "avgTime": 100,
+     "minTime": 9223372036854775807
+    },
+    "backtrackbb.scripts.btbb_continuous.write_outputs": {
+     "maxTime": -9223372036854775808,
+     "executions": 0,
+     "avgTime": 100,
+     "minTime": 9223372036854775807
+    }
+   }
+  },
+  "s18r2b56-ib0": {
+   "implementations": {
+    "backtrackbb.scripts.btbb_continuous.btbb_block": {
+     "maxTime": -9223372036854775808,
+     "executions": 0,
+     "avgTime": 100,
+     "minTime": 9223372036854775807
+    },
+    "backtrackbb.scripts.btbb_continuous.reading_data": {
+     "maxTime": -9223372036854775808,
+     "executions": 0,
+     "avgTime": 100,
+     "minTime": 9223372036854775807
+    },
+    "backtrackbb.plot.plt_SummaryOut": {
+     "maxTime": -9223372036854775808,
+     "executions": 0,
+     "avgTime": 100,
+     "minTime": 9223372036854775807
+    },
+    "backtrackbb.scripts.btbb_continuous.remove_mean_and_trend": {
+     "maxTime": -9223372036854775808,
+     "executions": 0,
+     "avgTime": 100,
+     "minTime": 9223372036854775807
+    },
+    "backtrackbb.init_filter.init_filter": {
+     "maxTime": -9223372036854775808,
+     "executions": 0,
+     "avgTime": 100,
+     "minTime": 9223372036854775807
+    },
+    "backtrackbb.read_grids.read_grid": {
+     "maxTime": 9567,
+     "executions": 48,
+     "avgTime": 9503,
+     "minTime": 9500
+    },
+    "backtrackbb.summary_cf.summary_cf": {
+     "maxTime": -9223372036854775808,
+     "executions": 0,
+     "avgTime": 100,
+     "minTime": 9223372036854775807
+    },
+    "backtrackbb.scripts.btbb_continuous.filter_outputs": {
+     "maxTime": -9223372036854775808,
+     "executions": 0,
+     "avgTime": 100,
+     "minTime": 9223372036854775807
+    },
+    "backtrackbb.scripts.btbb_continuous.write_outputs": {
+     "maxTime": -9223372036854775808,
+     "executions": 0,
+     "avgTime": 100,
+     "minTime": 9223372036854775807
+    }
+   }
+  },
+  "s18r2b62-ib0": {
+   "implementations": {
+    "backtrackbb.scripts.btbb_continuous.btbb_block": {
+     "maxTime": -9223372036854775808,
+     "executions": 0,
+     "avgTime": 100,
+     "minTime": 9223372036854775807
+    },
+    "backtrackbb.scripts.btbb_continuous.reading_data": {
+     "maxTime": 17274,
+     "executions": 4,
+     "avgTime": 17157,
+     "minTime": 17045
+    },
+    "backtrackbb.plot.plt_SummaryOut": {
+     "maxTime": -9223372036854775808,
+     "executions": 0,
+     "avgTime": 100,
+     "minTime": 9223372036854775807
+    },
+    "backtrackbb.scripts.btbb_continuous.remove_mean_and_trend": {
+     "maxTime": -9223372036854775808,
+     "executions": 0,
+     "avgTime": 100,
+     "minTime": 9223372036854775807
+    },
+    "backtrackbb.init_filter.init_filter": {
+     "maxTime": -9223372036854775808,
+     "executions": 0,
+     "avgTime": 100,
+     "minTime": 9223372036854775807
+    },
+    "backtrackbb.read_grids.read_grid": {
+     "maxTime": 9673,
+     "executions": 44,
+     "avgTime": 9634,
+     "minTime": 9626
+    },
+    "backtrackbb.summary_cf.summary_cf": {
+     "maxTime": -9223372036854775808,
+     "executions": 0,
+     "avgTime": 100,
+     "minTime": 9223372036854775807
+    },
+    "backtrackbb.scripts.btbb_continuous.filter_outputs": {
+     "maxTime": -9223372036854775808,
+     "executions": 0,
+     "avgTime": 100,
+     "minTime": 9223372036854775807
+    },
+    "backtrackbb.scripts.btbb_continuous.write_outputs": {
+     "maxTime": -9223372036854775808,
+     "executions": 0,
+     "avgTime": 100,
+     "minTime": 9223372036854775807
+    }
+   }
+  },
+  "s18r2b57-ib0": {
+   "implementations": {
+    "backtrackbb.scripts.btbb_continuous.btbb_block": {
+     "maxTime": -9223372036854775808,
+     "executions": 0,
+     "avgTime": 100,
+     "minTime": 9223372036854775807
+    },
+    "backtrackbb.scripts.btbb_continuous.reading_data": {
+     "maxTime": -9223372036854775808,
+     "executions": 0,
+     "avgTime": 100,
+     "minTime": 9223372036854775807
+    },
+    "backtrackbb.plot.plt_SummaryOut": {
+     "maxTime": -9223372036854775808,
+     "executions": 0,
+     "avgTime": 100,
+     "minTime": 9223372036854775807
+    },
+    "backtrackbb.scripts.btbb_continuous.remove_mean_and_trend": {
+     "maxTime": -9223372036854775808,
+     "executions": 0,
+     "avgTime": 100,
+     "minTime": 9223372036854775807
+    },
+    "backtrackbb.init_filter.init_filter": {
+     "maxTime": -9223372036854775808,
+     "executions": 0,
+     "avgTime": 100,
+     "minTime": 9223372036854775807
+    },
+    "backtrackbb.read_grids.read_grid": {
+     "maxTime": -9223372036854775808,
+     "executions": 0,
+     "avgTime": 100,
+     "minTime": 9223372036854775807
+    },
+    "backtrackbb.summary_cf.summary_cf": {
+     "maxTime": -9223372036854775808,
+     "executions": 0,
+     "avgTime": 100,
+     "minTime": 9223372036854775807
+    },
+    "backtrackbb.scripts.btbb_continuous.filter_outputs": {
+     "maxTime": -9223372036854775808,
+     "executions": 0,
+     "avgTime": 100,
+     "minTime": 9223372036854775807
+    },
+    "backtrackbb.scripts.btbb_continuous.write_outputs": {
+     "maxTime": -9223372036854775808,
+     "executions": 0,
+     "avgTime": 100,
+     "minTime": 9223372036854775807
+    }
+   }
+  },
+  "s18r2b55-ib0": {
+   "implementations": {
+    "backtrackbb.scripts.btbb_continuous.btbb_block": {
+     "maxTime": -9223372036854775808,
+     "executions": 0,
+     "avgTime": 100,
+     "minTime": 9223372036854775807
+    },
+    "backtrackbb.scripts.btbb_continuous.reading_data": {
+     "maxTime": -9223372036854775808,
+     "executions": 0,
+     "avgTime": 100,
+     "minTime": 9223372036854775807
+    },
+    "backtrackbb.plot.plt_SummaryOut": {
+     "maxTime": -9223372036854775808,
+     "executions": 0,
+     "avgTime": 100,
+     "minTime": 9223372036854775807
+    },
+    "backtrackbb.scripts.btbb_continuous.remove_mean_and_trend": {
+     "maxTime": -9223372036854775808,
+     "executions": 0,
+     "avgTime": 100,
+     "minTime": 9223372036854775807
+    },
+    "backtrackbb.init_filter.init_filter": {
+     "maxTime": -9223372036854775808,
+     "executions": 0,
+     "avgTime": 100,
+     "minTime": 9223372036854775807
+    },
+    "backtrackbb.read_grids.read_grid": {
+     "maxTime": 8302,
+     "executions": 8,
+     "avgTime": 8295,
+     "minTime": 8294
+    },
+    "backtrackbb.summary_cf.summary_cf": {
+     "maxTime": -9223372036854775808,
+     "executions": 0,
+     "avgTime": 100,
+     "minTime": 9223372036854775807
+    },
+    "backtrackbb.scripts.btbb_continuous.filter_outputs": {
+     "maxTime": -9223372036854775808,
+     "executions": 0,
+     "avgTime": 100,
+     "minTime": 9223372036854775807
+    },
+    "backtrackbb.scripts.btbb_continuous.write_outputs": {
+     "maxTime": -9223372036854775808,
+     "executions": 0,
+     "avgTime": 100,
+     "minTime": 9223372036854775807
+    }
+   }
+  }
+ },
+ "implementations": {
+  "backtrackbb.scripts.btbb_continuous.btbb_block": {
+   "maxTime": 4366736,
+   "executions": 72,
+   "avgTime": 4221951,
+   "minTime": 4119768
+  },
+  "backtrackbb.scripts.btbb_continuous.reading_data": {
+   "maxTime": 17274,
+   "executions": 4,
+   "avgTime": 17157,
+   "minTime": 17045
+  },
+  "backtrackbb.plot.plt_SummaryOut": {
+   "maxTime": 36492,
+   "executions": 4,
+   "avgTime": 28440,
+   "minTime": 20503
+  },
+  "backtrackbb.scripts.btbb_continuous.remove_mean_and_trend": {
+   "maxTime": 13630,
+   "executions": 4,
+   "avgTime": 13459,
+   "minTime": 13306
+  },
+  "backtrackbb.init_filter.init_filter": {
+   "maxTime": 8297,
+   "executions": 4,
+   "avgTime": 8190,
+   "minTime": 8085
+  },
+  "backtrackbb.read_grids.read_grid": {
+   "maxTime": 9673,
+   "executions": 100,
+   "avgTime": 9463,
+   "minTime": 8294
+  },
+  "backtrackbb.summary_cf.summary_cf": {
+   "maxTime": 232738,
+   "executions": 4,
+   "avgTime": 229998,
+   "minTime": 228274
+  },
+  "backtrackbb.scripts.btbb_continuous.filter_outputs": {
+   "maxTime": 105,
+   "executions": 4,
+   "avgTime": 77,
+   "minTime": 66
+  },
+  "backtrackbb.scripts.btbb_continuous.write_outputs": {
+   "maxTime": 63,
+   "executions": 4,
+   "avgTime": 48,
+   "minTime": 43
+  }
+ }
+}

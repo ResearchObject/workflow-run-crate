@@ -51,19 +51,30 @@ Post [here](https://github.com/ResearchObject/workflow-run-crate/issues/1) to jo
 - Luiz Gadelha <https://orcid.org/0000-0002-8122-9522>
 - Mahnoor Zulfiqar <https://orcid.org/0000-0002-8330-4071>
 - Romain David <https://orcid.org/0000-0003-4073-7456>
+- Maciek Bąk <https://orcid.org/0000-0003-1361-7301>
+- Petr Holub <https://orcid.org/0000-0002-5358-616X>
+- Milan Markovic <https://orcid.org/0000-0002-5477-287X>
+- Bruno P. Kinoshita <https://orcid.org/0000-0001-8250-4074>
 - ... [you](https://github.com/ResearchObject/workflow-run-crate/issues/1)?
 
 
-## Resources
+## Examples
 
-- [Requirements for the Workflow Run RO-Crate profiles](requirements)
-- [Profile for recording workflow runs](https://www.researchobject.org/2021-packaging-research-artefacts-with-ro-crate/manuscript.html#profile-for-recording-workflow-runs) (conceptual ideas from RO-Crate paper)
+These RO-Crates are being co-developed as examples of using the [Workflow Run profiles](profiles):
+
+- [Provenance Run Crate Example](examples/draft/revsort-run-1-crate/), converted from the [CWLProv example](https://github.com/common-workflow-language/cwlprov/tree/ce3f469745f4c8a2c029f872d522a4c57fba947b/examples/revsort-run-1)
+- [Baseline Use Case: COVID-19 vaccine effectiveness assessment](https://by-covid.github.io/baseline-use-case-synthetic-crate/) -- a [process run crate](profiles/process_run_crate) from the BY-COVID project showing how synthetic dataset generation using Jupyter Notebook can be tracked
 - [Workflow Run RO-Crate for a ML prediction pipeline run](examples/draft/ml-predict-pipeline/) ([pipeline repo](https://github.com/crs4/deephealth-pipelines) -- part of the DeepHealth digital pathology platform)
 - [Machine learning pipeline example](examples/draft/ml-pipeline/) (conceptual draft from EOSC-Life WP6)
-- [Example of CreateAction and Docker Image](https://www.researchobject.org/2021-packaging-research-artefacts-with-ro-crate/ro-crate-preview.html#https%3A//github.com/stain/ro-crate-paper/actions/runs/1671704144) (tool invocation)
-- [Provenance Run Crate Example](examples/draft/revsort-run-1-crate/), converted from the [CWLProv example](https://github.com/common-workflow-language/cwlprov/tree/ce3f469745f4c8a2c029f872d522a4c57fba947b/examples/revsort-run-1)
 
-## References
+
+## Other resources
+
+- [Requirements for the Workflow Run RO-Crate profiles](requirements)
+- [Workflow RO-Crate profile](https://about.workflowhub.eu/Workflow-RO-Crate/) -- for describing workflows as reusable objects. (extended by [workflow run profile](profiles/workflow_run_crate))
+- [Profile for recording workflow runs](https://www.researchobject.org/2021-packaging-research-artefacts-with-ro-crate/manuscript.html#profile-for-recording-workflow-runs) (conceptual ideas from RO-Crate paper)
+- [Example of CreateAction and Docker Image](https://www.researchobject.org/2021-packaging-research-artefacts-with-ro-crate/ro-crate-preview.html#https%3A//github.com/stain/ro-crate-paper/actions/runs/1671704144) (tool invocation)
+
 
 ### RO-Crate links
 

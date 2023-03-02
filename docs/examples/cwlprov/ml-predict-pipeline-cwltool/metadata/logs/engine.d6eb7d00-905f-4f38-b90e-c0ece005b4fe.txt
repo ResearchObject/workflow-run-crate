@@ -1,0 +1,109 @@
+[2023-02-21T11:44:43,457.195044Z] [cwltool] /home/simleo/sandbox/venv/bin/cwltool --provenance ro predictions.cwl params.yaml
+[2023-02-21T11:44:43,459.018230Z] Resolved 'predictions.cwl' to 'file:///home/simleo/git/workflow-run-crate/docs/examples/cwlprov/temp/predictions.cwl'
+[2023-02-21T11:44:54,757.635117Z] [provenance] Adding to RO file:///home/simleo/git/workflow-run-crate/docs/examples/cwlprov/temp/data/Mirax2-Fluorescence-2.mrxs
+[2023-02-21T11:44:54,766.781092Z] [workflow ] start
+[2023-02-21T11:44:54,767.721891Z] [workflow ] starting step extract-tissue-low
+[2023-02-21T11:44:54,768.100023Z] [step extract-tissue-low] start
+[2023-02-21T11:44:54,894.192219Z] [job extract-tissue-low] /tmp/jou_64j_$ docker \
+    run \
+    -i \
+    --mount=type=bind,source=/tmp/jou_64j_,target=/hcENBh \
+    --mount=type=bind,source=/tmp/o64z7z5t,target=/tmp \
+    --mount=type=bind,source=/home/simleo/git/workflow-run-crate/docs/examples/cwlprov/temp/data/Mirax2-Fluorescence-2.mrxs,target=/hcENBh/Mirax2-Fluorescence-2.mrxs,readonly \
+    --mount=type=bind,source=/home/simleo/git/workflow-run-crate/docs/examples/cwlprov/temp/data//Mirax2-Fluorescence-2,target=/hcENBh/Mirax2-Fluorescence-2,readonly \
+    --workdir=/hcENBh \
+    --read-only=true \
+    --net=none \
+    --user=1000:1000 \
+    --rm \
+    --cidfile=/tmp/gkyz7taf/20230221124454-893955.cid \
+    --env=TMPDIR=/tmp \
+    --env=HOME=/hcENBh \
+    crs4/slaid:1.1.0-beta.25-tissue_model-eddl_2-cudnn \
+    fixed-batch \
+    -o \
+    /hcENBh \
+    --writer \
+    zip \
+    -L \
+    tissue_low \
+    -l \
+    9 \
+    /hcENBh/Mirax2-Fluorescence-2.mrxs
+[2023-02-21T11:44:56,730.277538Z] [job extract-tissue-low] Max memory used: 31MiB
+[2023-02-21T11:44:56,742.267132Z] [job extract-tissue-low] completed success
+[2023-02-21T11:44:56,742.506981Z] [step extract-tissue-low] completed success
+[2023-02-21T11:44:56,743.488550Z] [workflow ] starting step extract-tissue-high
+[2023-02-21T11:44:56,744.013786Z] [step extract-tissue-high] start
+[2023-02-21T11:44:56,759.763479Z] [job extract-tissue-high] /tmp/rbncfi3x$ docker \
+    run \
+    -i \
+    --mount=type=bind,source=/tmp/rbncfi3x,target=/hcENBh \
+    --mount=type=bind,source=/tmp/k94pd758,target=/tmp \
+    --mount=type=bind,source=/tmp/jou_64j_/Mirax2-Fluorescence-2.mrxs.zip,target=/var/lib/cwl/stgce4ff1fd-f8c9-4093-b875-b6e0aef59402/tissue_low.zip,readonly \
+    --mount=type=bind,source=/home/simleo/git/workflow-run-crate/docs/examples/cwlprov/temp/data/Mirax2-Fluorescence-2.mrxs,target=/hcENBh/Mirax2-Fluorescence-2.mrxs,readonly \
+    --mount=type=bind,source=/home/simleo/git/workflow-run-crate/docs/examples/cwlprov/temp/data//Mirax2-Fluorescence-2,target=/hcENBh/Mirax2-Fluorescence-2,readonly \
+    --workdir=/hcENBh \
+    --read-only=true \
+    --net=none \
+    --user=1000:1000 \
+    --rm \
+    --cidfile=/tmp/ykw_y186/20230221124456-759511.cid \
+    --env=TMPDIR=/tmp \
+    --env=HOME=/hcENBh \
+    crs4/slaid:1.1.0-beta.25-tissue_model-eddl_2-cudnn \
+    fixed-batch \
+    -o \
+    /hcENBh \
+    --writer \
+    zip \
+    -F \
+    'tissue_low>0.9' \
+    --filter-slide \
+    /var/lib/cwl/stgce4ff1fd-f8c9-4093-b875-b6e0aef59402/tissue_low.zip \
+    -L \
+    tissue_high \
+    -l \
+    4 \
+    /hcENBh/Mirax2-Fluorescence-2.mrxs
+[2023-02-21T11:44:58,517.104149Z] [job extract-tissue-high] Max memory used: 41MiB
+[2023-02-21T11:44:58,547.022820Z] [job extract-tissue-high] completed success
+[2023-02-21T11:44:58,547.226429Z] [step extract-tissue-high] completed success
+[2023-02-21T11:44:58,547.862291Z] [workflow ] starting step classify-tumor
+[2023-02-21T11:44:58,548.136473Z] [step classify-tumor] start
+[2023-02-21T11:44:58,643.846035Z] [job classify-tumor] /tmp/if8s9ht1$ docker \
+    run \
+    -i \
+    --mount=type=bind,source=/tmp/if8s9ht1,target=/hcENBh \
+    --mount=type=bind,source=/tmp/iv285hg1,target=/tmp \
+    --mount=type=bind,source=/tmp/jou_64j_/Mirax2-Fluorescence-2.mrxs.zip,target=/var/lib/cwl/stg98a285f1-dffd-43d2-bd1f-30f83ba70f4c/tissue_low.zip,readonly \
+    --mount=type=bind,source=/home/simleo/git/workflow-run-crate/docs/examples/cwlprov/temp/data/Mirax2-Fluorescence-2.mrxs,target=/hcENBh/Mirax2-Fluorescence-2.mrxs,readonly \
+    --mount=type=bind,source=/home/simleo/git/workflow-run-crate/docs/examples/cwlprov/temp/data//Mirax2-Fluorescence-2,target=/hcENBh/Mirax2-Fluorescence-2,readonly \
+    --workdir=/hcENBh \
+    --read-only=true \
+    --net=none \
+    --user=1000:1000 \
+    --rm \
+    --cidfile=/tmp/4tgmzw6r/20230221124458-643607.cid \
+    --env=TMPDIR=/tmp \
+    --env=HOME=/hcENBh \
+    crs4/slaid:1.1.0-beta.25-tumor_model-level_1-v2.2-cudnn \
+    fixed-batch \
+    -o \
+    /hcENBh \
+    --writer \
+    zip \
+    -F \
+    'tissue_low>0.99' \
+    --filter-slide \
+    /var/lib/cwl/stg98a285f1-dffd-43d2-bd1f-30f83ba70f4c/tissue_low.zip \
+    -L \
+    tumor \
+    -l \
+    1 \
+    /hcENBh/Mirax2-Fluorescence-2.mrxs
+[2023-02-21T11:45:11,245.111465Z] [job classify-tumor] Max memory used: 4846MiB
+[2023-02-21T11:45:11,257.243395Z] [job classify-tumor] completed success
+[2023-02-21T11:45:11,257.437706Z] [step classify-tumor] completed success
+[2023-02-21T11:45:11,257.688522Z] [workflow ] completed success
+[2023-02-21T11:45:11,806.195259Z] Final process status is success
