@@ -11,6 +11,7 @@
     {
       "ParameterConnection": "https://w3id.org/ro/terms/workflow-run#ParameterConnection",
       "connection": "https://w3id.org/ro/terms/workflow-run#connection",
+      "sha1": "https://w3id.org/ro/terms/workflow-run#sha1",
       "sourceParameter": "https://w3id.org/ro/terms/workflow-run#sourceParameter",
       "targetParameter": "https://w3id.org/ro/terms/workflow-run#targetParameter"
     }
@@ -19,7 +20,21 @@
     {
       "@id": "./",
       "@type": "Dataset",
-      "datePublished": "2022-09-30T13:26:32+00:00",
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/wfrun/process/0.1"
+        },
+        {
+          "@id": "https://w3id.org/ro/wfrun/workflow/0.1"
+        },
+        {
+          "@id": "https://w3id.org/ro/wfrun/provenance/0.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ],
+      "datePublished": "2023-03-07T15:07:40+00:00",
       "hasPart": [
         {
           "@id": "packed.cwl"
@@ -28,12 +43,13 @@
           "@id": "4bd8e7e358488e833bf32cf5028695292cecb05b"
         }
       ],
+      "license": "Apache-2.0",
       "mainEntity": {
         "@id": "packed.cwl"
       },
       "mentions": [
         {
-          "@id": "#5ac8cc2e-d6a0-4cab-9e1e-cd9e25a5b394"
+          "@id": "#707d335a-b9a0-48ef-9795-3ed5a5c3e861"
         }
       ],
       "@reverse": {
@@ -58,6 +74,61 @@
           "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
         }
       ]
+    },
+    {
+      "@id": "https://w3id.org/ro/wfrun/process/0.1",
+      "@type": "CreativeWork",
+      "name": "Process Run Crate",
+      "version": "0.1",
+      "@reverse": {
+        "conformsTo": [
+          {
+            "@id": "./"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "https://w3id.org/ro/wfrun/workflow/0.1",
+      "@type": "CreativeWork",
+      "name": "Workflow Run Crate",
+      "version": "0.1",
+      "@reverse": {
+        "conformsTo": [
+          {
+            "@id": "./"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "https://w3id.org/ro/wfrun/provenance/0.1",
+      "@type": "CreativeWork",
+      "name": "Provenance Run Crate",
+      "version": "0.1",
+      "@reverse": {
+        "conformsTo": [
+          {
+            "@id": "./"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0",
+      "@type": "CreativeWork",
+      "name": "Workflow RO-Crate",
+      "version": "1.0",
+      "@reverse": {
+        "conformsTo": [
+          {
+            "@id": "./"
+          },
+          {
+            "@id": "ro-crate-metadata.json"
+          }
+        ]
+      }
     },
     {
       "@id": "packed.cwl",
@@ -124,7 +195,7 @@
         ],
         "instrument": [
           {
-            "@id": "#5ac8cc2e-d6a0-4cab-9e1e-cd9e25a5b394"
+            "@id": "#707d335a-b9a0-48ef-9795-3ed5a5c3e861"
           }
         ]
       }
@@ -374,31 +445,31 @@
       }
     },
     {
-      "@id": "#f9cee66e-1ed9-4466-baaf-5edca43eebbd",
+      "@id": "#387f3435-f687-4fd8-be88-0b2b420c6cf7",
       "@type": "SoftwareApplication",
       "name": "cwltool 3.1.20220224085855",
       "@reverse": {
         "instrument": [
           {
-            "@id": "#9ce0b1c7-065c-423a-bfb5-c6d8ef154f5f"
+            "@id": "#e409a44e-9598-41f2-8a8f-9006a6724035"
           }
         ]
       }
     },
     {
-      "@id": "#9ce0b1c7-065c-423a-bfb5-c6d8ef154f5f",
+      "@id": "#e409a44e-9598-41f2-8a8f-9006a6724035",
       "@type": "OrganizeAction",
       "instrument": {
-        "@id": "#f9cee66e-1ed9-4466-baaf-5edca43eebbd"
+        "@id": "#387f3435-f687-4fd8-be88-0b2b420c6cf7"
       },
       "name": "Run of cwltool 3.1.20220224085855",
       "result": {
-        "@id": "#5ac8cc2e-d6a0-4cab-9e1e-cd9e25a5b394"
+        "@id": "#707d335a-b9a0-48ef-9795-3ed5a5c3e861"
       },
       "startTime": "2022-04-22T12:27:13.313333"
     },
     {
-      "@id": "#5ac8cc2e-d6a0-4cab-9e1e-cd9e25a5b394",
+      "@id": "#707d335a-b9a0-48ef-9795-3ed5a5c3e861",
       "@type": "CreateAction",
       "endTime": "2022-04-22T12:27:13.328912",
       "instrument": {
@@ -454,7 +525,7 @@
         ],
         "result": [
           {
-            "@id": "#9ce0b1c7-065c-423a-bfb5-c6d8ef154f5f"
+            "@id": "#e409a44e-9598-41f2-8a8f-9006a6724035"
           }
         ]
       }
@@ -473,7 +544,7 @@
       "@reverse": {
         "object": [
           {
-            "@id": "#5ac8cc2e-d6a0-4cab-9e1e-cd9e25a5b394"
+            "@id": "#707d335a-b9a0-48ef-9795-3ed5a5c3e861"
           }
         ]
       }
@@ -489,7 +560,7 @@
       "@reverse": {
         "object": [
           {
-            "@id": "#5ac8cc2e-d6a0-4cab-9e1e-cd9e25a5b394"
+            "@id": "#707d335a-b9a0-48ef-9795-3ed5a5c3e861"
           }
         ]
       }
@@ -505,7 +576,7 @@
       "@reverse": {
         "object": [
           {
-            "@id": "#5ac8cc2e-d6a0-4cab-9e1e-cd9e25a5b394"
+            "@id": "#707d335a-b9a0-48ef-9795-3ed5a5c3e861"
           }
         ]
       }
@@ -521,7 +592,7 @@
       "@reverse": {
         "object": [
           {
-            "@id": "#5ac8cc2e-d6a0-4cab-9e1e-cd9e25a5b394"
+            "@id": "#707d335a-b9a0-48ef-9795-3ed5a5c3e861"
           }
         ]
       }
@@ -537,7 +608,7 @@
       "@reverse": {
         "object": [
           {
-            "@id": "#5ac8cc2e-d6a0-4cab-9e1e-cd9e25a5b394"
+            "@id": "#707d335a-b9a0-48ef-9795-3ed5a5c3e861"
           }
         ]
       }
@@ -553,7 +624,7 @@
       "@reverse": {
         "object": [
           {
-            "@id": "#5ac8cc2e-d6a0-4cab-9e1e-cd9e25a5b394"
+            "@id": "#707d335a-b9a0-48ef-9795-3ed5a5c3e861"
           }
         ]
       }
@@ -569,7 +640,7 @@
       "@reverse": {
         "object": [
           {
-            "@id": "#5ac8cc2e-d6a0-4cab-9e1e-cd9e25a5b394"
+            "@id": "#707d335a-b9a0-48ef-9795-3ed5a5c3e861"
           }
         ]
       }
@@ -585,7 +656,7 @@
       "@reverse": {
         "object": [
           {
-            "@id": "#5ac8cc2e-d6a0-4cab-9e1e-cd9e25a5b394"
+            "@id": "#707d335a-b9a0-48ef-9795-3ed5a5c3e861"
           }
         ]
       }
@@ -601,7 +672,7 @@
       "@reverse": {
         "object": [
           {
-            "@id": "#5ac8cc2e-d6a0-4cab-9e1e-cd9e25a5b394"
+            "@id": "#707d335a-b9a0-48ef-9795-3ed5a5c3e861"
           }
         ]
       }
@@ -650,7 +721,7 @@
       "@reverse": {
         "object": [
           {
-            "@id": "#5ac8cc2e-d6a0-4cab-9e1e-cd9e25a5b394"
+            "@id": "#707d335a-b9a0-48ef-9795-3ed5a5c3e861"
           }
         ]
       }
@@ -666,7 +737,7 @@
       "@reverse": {
         "object": [
           {
-            "@id": "#5ac8cc2e-d6a0-4cab-9e1e-cd9e25a5b394"
+            "@id": "#707d335a-b9a0-48ef-9795-3ed5a5c3e861"
           }
         ]
       }
@@ -674,9 +745,11 @@
     {
       "@id": "4bd8e7e358488e833bf32cf5028695292cecb05b",
       "@type": "File",
+      "alternateName": "output.txt",
       "exampleOfWork": {
         "@id": "packed.cwl#main/cl_dump"
       },
+      "sha1": "4bd8e7e358488e833bf32cf5028695292cecb05b",
       "@reverse": {
         "hasPart": [
           {
@@ -685,7 +758,7 @@
         ],
         "result": [
           {
-            "@id": "#5ac8cc2e-d6a0-4cab-9e1e-cd9e25a5b394"
+            "@id": "#707d335a-b9a0-48ef-9795-3ed5a5c3e861"
           }
         ]
       }
@@ -756,7 +829,18 @@ table.table {
             <td style='text-align:left'><span>Dataset</span></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">datePublished<span>&nbsp;</span><a href="http://schema.org/datePublished">[?]</a></th>
-            <td style='text-align:left'><span>2022-09-30T13:26:32+00:00</span></td>
+            <td style='text-align:left'><span>2023-03-07T15:07:40+00:00</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">conformsTo<span>&nbsp;</span><a href="http://purl.org/dc/terms/conformsTo">[?]</a></th>
+            <td style='text-align:left'><ul>
+                        <li><a href="#https%3A//w3id.org/ro/wfrun/process/0.1">Process Run Crate</a></li>
+                        
+                        <li><a href="#https%3A//w3id.org/ro/wfrun/workflow/0.1">Workflow Run Crate</a></li>
+                        
+                        <li><a href="#https%3A//w3id.org/ro/wfrun/provenance/0.1">Provenance Run Crate</a></li>
+                        
+                        <li><a href="#https%3A//w3id.org/workflowhub/workflow-ro-crate/1.0">Workflow RO-Crate</a></li>
+                        </ul></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
             <td style='text-align:left'><ul>
@@ -765,14 +849,141 @@ table.table {
                         <li><a href="#4bd8e7e358488e833bf32cf5028695292cecb05b">4bd8e7e358488e833bf32cf5028695292cecb05b</a></li>
                         </ul></td>
             </tr><tr>
+            <th style="text-align:left;" class="prop">license<span>&nbsp;</span><a href="http://schema.org/license">[?]</a></th>
+            <td style='text-align:left'><span>Apache-2.0</span></td>
+            </tr><tr>
             <th style="text-align:left;" class="prop">mainEntity<span>&nbsp;</span><a href="http://schema.org/mainEntity">[?]</a></th>
             <td style='text-align:left'><a href="#packed.cwl">packed.cwl</a></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
-            <td style='text-align:left'><a href="#%235ac8cc2e-d6a0-4cab-9e1e-cd9e25a5b394">Run of workflow/packed.cwl#main</a></td>
+            <td style='text-align:left'><a href="#%23707d335a-b9a0-48ef-9795-3ed5a5c3e861">Run of workflow/packed.cwl#main</a></td>
             </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
             <th style="text-align:left;" class="prop">about<span>&nbsp;</span><a href="http://schema.org/about">[?]</a></th>
             <td style='text-align:left'><a href="#ro-crate-metadata.json">ro-crate-metadata.json</a></td>
+            </tr></tbody>
+            </table>
+        </div>
+
+        </div>
+        <hr/><br/><br/>
+           <div>
+            <h3><a href="https://w3id.org/ro/wfrun/process/0.1">Go to: </a> Process Run Crate</h3>
+            
+            
+            
+            
+        <div id="https://w3id.org/ro/wfrun/process/0.1">
+            
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><a href="https://w3id.org/ro/wfrun/process/0.1">https://w3id.org/ro/wfrun/process/0.1</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
+            <td style='text-align:left'><span>Process Run Crate</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><span>CreativeWork</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">version<span>&nbsp;</span><a href="http://schema.org/version">[?]</a></th>
+            <td style='text-align:left'><span>0.1</span></td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">conformsTo<span>&nbsp;</span><a href="http://purl.org/dc/terms/conformsTo">[?]</a></th>
+            <td style='text-align:left'><a href="#./">./</a></td>
+            </tr></tbody>
+            </table>
+        </div>
+
+        </div>
+        <hr/><br/><br/>
+           <div>
+            <h3><a href="https://w3id.org/ro/wfrun/workflow/0.1">Go to: </a> Workflow Run Crate</h3>
+            
+            
+            
+            
+        <div id="https://w3id.org/ro/wfrun/workflow/0.1">
+            
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><a href="https://w3id.org/ro/wfrun/workflow/0.1">https://w3id.org/ro/wfrun/workflow/0.1</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
+            <td style='text-align:left'><span>Workflow Run Crate</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><span>CreativeWork</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">version<span>&nbsp;</span><a href="http://schema.org/version">[?]</a></th>
+            <td style='text-align:left'><span>0.1</span></td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">conformsTo<span>&nbsp;</span><a href="http://purl.org/dc/terms/conformsTo">[?]</a></th>
+            <td style='text-align:left'><a href="#./">./</a></td>
+            </tr></tbody>
+            </table>
+        </div>
+
+        </div>
+        <hr/><br/><br/>
+           <div>
+            <h3><a href="https://w3id.org/ro/wfrun/provenance/0.1">Go to: </a> Provenance Run Crate</h3>
+            
+            
+            
+            
+        <div id="https://w3id.org/ro/wfrun/provenance/0.1">
+            
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><a href="https://w3id.org/ro/wfrun/provenance/0.1">https://w3id.org/ro/wfrun/provenance/0.1</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
+            <td style='text-align:left'><span>Provenance Run Crate</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><span>CreativeWork</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">version<span>&nbsp;</span><a href="http://schema.org/version">[?]</a></th>
+            <td style='text-align:left'><span>0.1</span></td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">conformsTo<span>&nbsp;</span><a href="http://purl.org/dc/terms/conformsTo">[?]</a></th>
+            <td style='text-align:left'><a href="#./">./</a></td>
+            </tr></tbody>
+            </table>
+        </div>
+
+        </div>
+        <hr/><br/><br/>
+           <div>
+            <h3><a href="https://w3id.org/workflowhub/workflow-ro-crate/1.0">Go to: </a> Workflow RO-Crate</h3>
+            
+            
+            
+            
+        <div id="https://w3id.org/workflowhub/workflow-ro-crate/1.0">
+            
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><a href="https://w3id.org/workflowhub/workflow-ro-crate/1.0">https://w3id.org/workflowhub/workflow-ro-crate/1.0</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
+            <td style='text-align:left'><span>Workflow RO-Crate</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><span>CreativeWork</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">version<span>&nbsp;</span><a href="http://schema.org/version">[?]</a></th>
+            <td style='text-align:left'><span>1.0</span></td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">conformsTo<span>&nbsp;</span><a href="http://purl.org/dc/terms/conformsTo">[?]</a></th>
+            <td style='text-align:left'><ul>
+                        <li><a href="#./">./</a></li>
+                        
+                        <li><a href="#ro-crate-metadata.json">ro-crate-metadata.json</a></li>
+                        </ul></td>
             </tr></tbody>
             </table>
         </div>
@@ -844,7 +1055,7 @@ table.table {
             <td style='text-align:left'><a href="#./">./</a></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">instrument<span>&nbsp;</span><a href="http://schema.org/instrument">[?]</a></th>
-            <td style='text-align:left'><a href="#%235ac8cc2e-d6a0-4cab-9e1e-cd9e25a5b394">Run of workflow/packed.cwl#main</a></td>
+            <td style='text-align:left'><a href="#%23707d335a-b9a0-48ef-9795-3ed5a5c3e861">Run of workflow/packed.cwl#main</a></td>
             </tr></tbody>
             </table>
         </div>
@@ -867,14 +1078,20 @@ table.table {
             <th style="text-align:left;" class="prop">@type</th>
             <td style='text-align:left'><span>File</span></td>
             </tr><tr>
+            <th style="text-align:left;" class="prop">alternateName<span>&nbsp;</span><a href="http://schema.org/alternateName">[?]</a></th>
+            <td style='text-align:left'><span>output.txt</span></td>
+            </tr><tr>
             <th style="text-align:left;" class="prop">exampleOfWork<span>&nbsp;</span><a href="http://schema.org/exampleOfWork">[?]</a></th>
             <td style='text-align:left'><a href="#packed.cwl%23main/cl_dump">main/cl_dump</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">sha1<span>&nbsp;</span><a href="https://w3id.org/ro/terms/workflow-run#sha1">[?]</a></th>
+            <td style='text-align:left'><span>4bd8e7e358488e833bf32cf5028695292cecb05b</span></td>
             </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
             <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
             <td style='text-align:left'><a href="#./">./</a></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">result<span>&nbsp;</span><a href="http://schema.org/result">[?]</a></th>
-            <td style='text-align:left'><a href="#%235ac8cc2e-d6a0-4cab-9e1e-cd9e25a5b394">Run of workflow/packed.cwl#main</a></td>
+            <td style='text-align:left'><a href="#%23707d335a-b9a0-48ef-9795-3ed5a5c3e861">Run of workflow/packed.cwl#main</a></td>
             </tr></tbody>
             </table>
         </div>
@@ -887,12 +1104,12 @@ table.table {
             
             
             
-        <div id="#5ac8cc2e-d6a0-4cab-9e1e-cd9e25a5b394">
+        <div id="#707d335a-b9a0-48ef-9795-3ed5a5c3e861">
             
             <table class="table metadata table-striped" >
                 <tbody><tr>
             <th style="text-align:left;" class="prop">@id</th>
-            <td style='text-align:left'><span>#5ac8cc2e-d6a0-4cab-9e1e-cd9e25a5b394</span></td>
+            <td style='text-align:left'><span>#707d335a-b9a0-48ef-9795-3ed5a5c3e861</span></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
             <td style='text-align:left'><span>Run of workflow/packed.cwl#main</span></td>
@@ -941,7 +1158,7 @@ table.table {
             <td style='text-align:left'><a href="#./">./</a></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">result<span>&nbsp;</span><a href="http://schema.org/result">[?]</a></th>
-            <td style='text-align:left'><a href="#%239ce0b1c7-065c-423a-bfb5-c6d8ef154f5f">Run of cwltool 3.1.20220224085855</a></td>
+            <td style='text-align:left'><a href="#%23e409a44e-9598-41f2-8a8f-9006a6724035">Run of cwltool 3.1.20220224085855</a></td>
             </tr></tbody>
             </table>
         </div>

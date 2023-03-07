@@ -4,6 +4,7 @@
         {
             "ParameterConnection": "https://w3id.org/ro/terms/workflow-run#ParameterConnection",
             "connection": "https://w3id.org/ro/terms/workflow-run#connection",
+            "sha1": "https://w3id.org/ro/terms/workflow-run#sha1",
             "sourceParameter": "https://w3id.org/ro/terms/workflow-run#sourceParameter",
             "targetParameter": "https://w3id.org/ro/terms/workflow-run#targetParameter"
         }
@@ -12,7 +13,21 @@
         {
             "@id": "./",
             "@type": "Dataset",
-            "datePublished": "2022-09-30T13:26:31+00:00",
+            "conformsTo": [
+                {
+                    "@id": "https://w3id.org/ro/wfrun/process/0.1"
+                },
+                {
+                    "@id": "https://w3id.org/ro/wfrun/workflow/0.1"
+                },
+                {
+                    "@id": "https://w3id.org/ro/wfrun/provenance/0.1"
+                },
+                {
+                    "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+                }
+            ],
+            "datePublished": "2023-03-07T15:07:38+00:00",
             "hasPart": [
                 {
                     "@id": "packed.cwl"
@@ -27,12 +42,13 @@
                     "@id": "97fe1b50b4582cebc7d853796ebd62e3e163aa3f"
                 }
             ],
+            "license": "Apache-2.0",
             "mainEntity": {
                 "@id": "packed.cwl"
             },
             "mentions": [
                 {
-                    "@id": "#32ca4def-841c-4891-a946-3f1df06ad0db"
+                    "@id": "#c9cc7d53-505f-44cd-b81e-654460e300da"
                 }
             ]
         },
@@ -52,6 +68,30 @@
             ]
         },
         {
+            "@id": "https://w3id.org/ro/wfrun/process/0.1",
+            "@type": "CreativeWork",
+            "name": "Process Run Crate",
+            "version": "0.1"
+        },
+        {
+            "@id": "https://w3id.org/ro/wfrun/workflow/0.1",
+            "@type": "CreativeWork",
+            "name": "Workflow Run Crate",
+            "version": "0.1"
+        },
+        {
+            "@id": "https://w3id.org/ro/wfrun/provenance/0.1",
+            "@type": "CreativeWork",
+            "name": "Provenance Run Crate",
+            "version": "0.1"
+        },
+        {
+            "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0",
+            "@type": "CreativeWork",
+            "name": "Workflow RO-Crate",
+            "version": "1.0"
+        },
+        {
             "@id": "packed.cwl",
             "@type": [
                 "File",
@@ -61,16 +101,7 @@
             ],
             "connection": [
                 {
-                    "@id": "#89a06644-ba03-4cc1-a0b9-ef1eab6c65da"
-                },
-                {
-                    "@id": "#cbfdbe32-5fbc-4e64-945f-9d38e4774902"
-                },
-                {
-                    "@id": "#53230304-7c90-4ead-a5c3-1a3d675816be"
-                },
-                {
-                    "@id": "#d707ab8d-8e88-4892-bc1c-92eae281bd2d"
+                    "@id": "#43baa72e-a5e3-4034-bb52-b3c98c57ecee"
                 }
             ],
             "hasPart": [
@@ -144,6 +175,11 @@
         {
             "@id": "packed.cwl#main/rev",
             "@type": "HowToStep",
+            "connection": [
+                {
+                    "@id": "#245d20ae-50fd-48e9-8300-64b61f551f01"
+                }
+            ],
             "position": "0",
             "workExample": {
                 "@id": "packed.cwl#revtool.cwl"
@@ -180,6 +216,14 @@
         {
             "@id": "packed.cwl#main/sorted",
             "@type": "HowToStep",
+            "connection": [
+                {
+                    "@id": "#98d7875a-25c1-4630-8991-799fb7fee396"
+                },
+                {
+                    "@id": "#61c122a3-5373-4699-ac5c-7eabb0a008fc"
+                }
+            ],
             "position": "1",
             "workExample": {
                 "@id": "packed.cwl#sorttool.cwl"
@@ -223,7 +267,7 @@
             "name": "sorttool.cwl/output"
         },
         {
-            "@id": "#89a06644-ba03-4cc1-a0b9-ef1eab6c65da",
+            "@id": "#245d20ae-50fd-48e9-8300-64b61f551f01",
             "@type": "ParameterConnection",
             "sourceParameter": {
                 "@id": "packed.cwl#main/input"
@@ -233,7 +277,7 @@
             }
         },
         {
-            "@id": "#cbfdbe32-5fbc-4e64-945f-9d38e4774902",
+            "@id": "#98d7875a-25c1-4630-8991-799fb7fee396",
             "@type": "ParameterConnection",
             "sourceParameter": {
                 "@id": "packed.cwl#revtool.cwl/output"
@@ -243,7 +287,7 @@
             }
         },
         {
-            "@id": "#53230304-7c90-4ead-a5c3-1a3d675816be",
+            "@id": "#61c122a3-5373-4699-ac5c-7eabb0a008fc",
             "@type": "ParameterConnection",
             "sourceParameter": {
                 "@id": "packed.cwl#main/reverse_sort"
@@ -253,7 +297,7 @@
             }
         },
         {
-            "@id": "#d707ab8d-8e88-4892-bc1c-92eae281bd2d",
+            "@id": "#43baa72e-a5e3-4034-bb52-b3c98c57ecee",
             "@type": "ParameterConnection",
             "sourceParameter": {
                 "@id": "packed.cwl#sorttool.cwl/output"
@@ -263,30 +307,30 @@
             }
         },
         {
-            "@id": "#06db2071-a06a-429b-a23f-962b61299043",
+            "@id": "#7ab777eb-a4b0-480d-bc29-fc93396a0af7",
             "@type": "SoftwareApplication",
             "name": "cwltool 1.0.20181012180214"
         },
         {
-            "@id": "#90e681a3-cddc-4739-acda-48efe6dd0b72",
+            "@id": "#acd9131e-7bf3-4399-8cda-b309828ad206",
             "@type": "OrganizeAction",
             "agent": {
                 "@id": "https://orcid.org/0000-0001-9842-9718"
             },
             "instrument": {
-                "@id": "#06db2071-a06a-429b-a23f-962b61299043"
+                "@id": "#7ab777eb-a4b0-480d-bc29-fc93396a0af7"
             },
             "name": "Run of cwltool 1.0.20181012180214",
             "object": [
                 {
-                    "@id": "#e8e65758-2555-444c-8b7e-f235b2be1e05"
+                    "@id": "#0d28433e-3c4f-485c-8186-38c6c9543d89"
                 },
                 {
-                    "@id": "#b358502a-e63b-4c51-9062-7493e37a332b"
+                    "@id": "#5126d85a-ed5b-4074-8c56-8006e384c351"
                 }
             ],
             "result": {
-                "@id": "#32ca4def-841c-4891-a946-3f1df06ad0db"
+                "@id": "#c9cc7d53-505f-44cd-b81e-654460e300da"
             },
             "startTime": "2018-10-25T15:46:35.210973"
         },
@@ -296,7 +340,7 @@
             "name": "Stian Soiland-Reyes"
         },
         {
-            "@id": "#32ca4def-841c-4891-a946-3f1df06ad0db",
+            "@id": "#c9cc7d53-505f-44cd-b81e-654460e300da",
             "@type": "CreateAction",
             "endTime": "2018-10-25T15:46:43.020168",
             "instrument": {
@@ -321,14 +365,16 @@
         {
             "@id": "327fc7aedf4f6b69a42a7c8b808dc5a7aff61376",
             "@type": "File",
+            "alternateName": "whale.txt",
             "exampleOfWork": [
                 {
-                    "@id": "packed.cwl#main/input"
+                    "@id": "packed.cwl#revtool.cwl/input"
                 },
                 {
-                    "@id": "packed.cwl#revtool.cwl/input"
+                    "@id": "packed.cwl#main/input"
                 }
-            ]
+            ],
+            "sha1": "327fc7aedf4f6b69a42a7c8b808dc5a7aff61376"
         },
         {
             "@id": "#pv-main/reverse_sort",
@@ -342,17 +388,19 @@
         {
             "@id": "b9214658cc453331b62c2282b772a5c063dbd284",
             "@type": "File",
+            "alternateName": "output.txt",
             "exampleOfWork": [
                 {
-                    "@id": "packed.cwl#main/output"
+                    "@id": "packed.cwl#sorttool.cwl/output"
                 },
                 {
-                    "@id": "packed.cwl#sorttool.cwl/output"
+                    "@id": "packed.cwl#main/output"
                 }
-            ]
+            ],
+            "sha1": "b9214658cc453331b62c2282b772a5c063dbd284"
         },
         {
-            "@id": "#a7806fee-e17b-470a-8a47-0f75d5a66535",
+            "@id": "#b212b600-40fa-4f04-bd33-cde498a3672f",
             "@type": "CreateAction",
             "endTime": "2018-10-25T15:46:36.967359",
             "instrument": {
@@ -372,30 +420,32 @@
             "startTime": "2018-10-25T15:46:35.314101"
         },
         {
-            "@id": "#e8e65758-2555-444c-8b7e-f235b2be1e05",
+            "@id": "#0d28433e-3c4f-485c-8186-38c6c9543d89",
             "@type": "ControlAction",
             "instrument": {
                 "@id": "packed.cwl#main/rev"
             },
             "name": "orchestrate revtool.cwl",
             "object": {
-                "@id": "#a7806fee-e17b-470a-8a47-0f75d5a66535"
+                "@id": "#b212b600-40fa-4f04-bd33-cde498a3672f"
             }
         },
         {
             "@id": "97fe1b50b4582cebc7d853796ebd62e3e163aa3f",
             "@type": "File",
+            "alternateName": "output.txt",
             "exampleOfWork": [
                 {
-                    "@id": "packed.cwl#revtool.cwl/output"
+                    "@id": "packed.cwl#sorttool.cwl/input"
                 },
                 {
-                    "@id": "packed.cwl#sorttool.cwl/input"
+                    "@id": "packed.cwl#revtool.cwl/output"
                 }
-            ]
+            ],
+            "sha1": "97fe1b50b4582cebc7d853796ebd62e3e163aa3f"
         },
         {
-            "@id": "#0f042b96-243f-4233-8e74-a77e0c7a7d38",
+            "@id": "#16a5b702-472a-4b77-8316-527c209f0124",
             "@type": "CreateAction",
             "endTime": "2018-10-25T15:46:38.069110",
             "instrument": {
@@ -418,14 +468,14 @@
             "startTime": "2018-10-25T15:46:36.975235"
         },
         {
-            "@id": "#b358502a-e63b-4c51-9062-7493e37a332b",
+            "@id": "#5126d85a-ed5b-4074-8c56-8006e384c351",
             "@type": "ControlAction",
             "instrument": {
                 "@id": "packed.cwl#main/sorted"
             },
             "name": "orchestrate sorttool.cwl",
             "object": {
-                "@id": "#0f042b96-243f-4233-8e74-a77e0c7a7d38"
+                "@id": "#16a5b702-472a-4b77-8316-527c209f0124"
             }
         },
         {
