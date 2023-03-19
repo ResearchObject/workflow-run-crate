@@ -4,6 +4,7 @@
         {
             "ParameterConnection": "https://w3id.org/ro/terms/workflow-run#ParameterConnection",
             "connection": "https://w3id.org/ro/terms/workflow-run#connection",
+            "sha1": "https://w3id.org/ro/terms/workflow-run#sha1",
             "sourceParameter": "https://w3id.org/ro/terms/workflow-run#sourceParameter",
             "targetParameter": "https://w3id.org/ro/terms/workflow-run#targetParameter"
         }
@@ -12,7 +13,21 @@
         {
             "@id": "./",
             "@type": "Dataset",
-            "datePublished": "2022-09-30T13:26:32+00:00",
+            "conformsTo": [
+                {
+                    "@id": "https://w3id.org/ro/wfrun/process/0.1"
+                },
+                {
+                    "@id": "https://w3id.org/ro/wfrun/workflow/0.1"
+                },
+                {
+                    "@id": "https://w3id.org/ro/wfrun/provenance/0.1"
+                },
+                {
+                    "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+                }
+            ],
+            "datePublished": "2023-03-07T15:07:40+00:00",
             "hasPart": [
                 {
                     "@id": "packed.cwl"
@@ -21,12 +36,13 @@
                     "@id": "4bd8e7e358488e833bf32cf5028695292cecb05b"
                 }
             ],
+            "license": "Apache-2.0",
             "mainEntity": {
                 "@id": "packed.cwl"
             },
             "mentions": [
                 {
-                    "@id": "#5ac8cc2e-d6a0-4cab-9e1e-cd9e25a5b394"
+                    "@id": "#707d335a-b9a0-48ef-9795-3ed5a5c3e861"
                 }
             ]
         },
@@ -44,6 +60,30 @@
                     "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
                 }
             ]
+        },
+        {
+            "@id": "https://w3id.org/ro/wfrun/process/0.1",
+            "@type": "CreativeWork",
+            "name": "Process Run Crate",
+            "version": "0.1"
+        },
+        {
+            "@id": "https://w3id.org/ro/wfrun/workflow/0.1",
+            "@type": "CreativeWork",
+            "name": "Workflow Run Crate",
+            "version": "0.1"
+        },
+        {
+            "@id": "https://w3id.org/ro/wfrun/provenance/0.1",
+            "@type": "CreativeWork",
+            "name": "Provenance Run Crate",
+            "version": "0.1"
+        },
+        {
+            "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0",
+            "@type": "CreativeWork",
+            "name": "Workflow RO-Crate",
+            "version": "1.0"
         },
         {
             "@id": "packed.cwl",
@@ -192,24 +232,24 @@
             "name": "main/cl_dump"
         },
         {
-            "@id": "#f9cee66e-1ed9-4466-baaf-5edca43eebbd",
+            "@id": "#387f3435-f687-4fd8-be88-0b2b420c6cf7",
             "@type": "SoftwareApplication",
             "name": "cwltool 3.1.20220224085855"
         },
         {
-            "@id": "#9ce0b1c7-065c-423a-bfb5-c6d8ef154f5f",
+            "@id": "#e409a44e-9598-41f2-8a8f-9006a6724035",
             "@type": "OrganizeAction",
             "instrument": {
-                "@id": "#f9cee66e-1ed9-4466-baaf-5edca43eebbd"
+                "@id": "#387f3435-f687-4fd8-be88-0b2b420c6cf7"
             },
             "name": "Run of cwltool 3.1.20220224085855",
             "result": {
-                "@id": "#5ac8cc2e-d6a0-4cab-9e1e-cd9e25a5b394"
+                "@id": "#707d335a-b9a0-48ef-9795-3ed5a5c3e861"
             },
             "startTime": "2022-04-22T12:27:13.313333"
         },
         {
-            "@id": "#5ac8cc2e-d6a0-4cab-9e1e-cd9e25a5b394",
+            "@id": "#707d335a-b9a0-48ef-9795-3ed5a5c3e861",
             "@type": "CreateAction",
             "endTime": "2022-04-22T12:27:13.328912",
             "instrument": {
@@ -382,9 +422,11 @@
         {
             "@id": "4bd8e7e358488e833bf32cf5028695292cecb05b",
             "@type": "File",
+            "alternateName": "output.txt",
             "exampleOfWork": {
                 "@id": "packed.cwl#main/cl_dump"
-            }
+            },
+            "sha1": "4bd8e7e358488e833bf32cf5028695292cecb05b"
         }
     ]
 }
