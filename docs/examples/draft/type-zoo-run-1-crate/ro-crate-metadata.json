@@ -27,7 +27,7 @@
                     "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
                 }
             ],
-            "datePublished": "2023-03-07T15:07:40+00:00",
+            "datePublished": "2023-03-24T07:53:37+00:00",
             "hasPart": [
                 {
                     "@id": "packed.cwl"
@@ -42,7 +42,7 @@
             },
             "mentions": [
                 {
-                    "@id": "#707d335a-b9a0-48ef-9795-3ed5a5c3e861"
+                    "@id": "#f4a43df6-8216-4b72-abf2-8beab8ca9894"
                 }
             ]
         },
@@ -155,51 +155,51 @@
             "@id": "packed.cwl#main/in_any",
             "@type": "FormalParameter",
             "additionalType": "DataType",
-            "name": "main/in_any"
+            "name": "in_any"
         },
         {
             "@id": "packed.cwl#main/in_array",
             "@type": "FormalParameter",
             "additionalType": "Text",
             "multipleValues": "True",
-            "name": "main/in_array"
+            "name": "in_array"
         },
         {
             "@id": "packed.cwl#main/in_bool",
             "@type": "FormalParameter",
             "additionalType": "Boolean",
-            "name": "main/in_bool"
+            "name": "in_bool"
         },
         {
             "@id": "packed.cwl#main/in_double",
             "@type": "FormalParameter",
             "additionalType": "Float",
-            "name": "main/in_double"
+            "name": "in_double"
         },
         {
             "@id": "packed.cwl#main/in_enum",
             "@type": "FormalParameter",
             "additionalType": "Text",
-            "name": "main/in_enum",
+            "name": "in_enum",
             "valuePattern": "A|B"
         },
         {
             "@id": "packed.cwl#main/in_float",
             "@type": "FormalParameter",
             "additionalType": "Float",
-            "name": "main/in_float"
+            "name": "in_float"
         },
         {
             "@id": "packed.cwl#main/in_int",
             "@type": "FormalParameter",
             "additionalType": "Integer",
-            "name": "main/in_int"
+            "name": "in_int"
         },
         {
             "@id": "packed.cwl#main/in_long",
             "@type": "FormalParameter",
             "additionalType": "Integer",
-            "name": "main/in_long"
+            "name": "in_long"
         },
         {
             "@id": "packed.cwl#main/in_multi",
@@ -209,7 +209,7 @@
                 "Integer"
             ],
             "defaultValue": "9.99",
-            "name": "main/in_multi",
+            "name": "in_multi",
             "valueRequired": "False"
         },
         {
@@ -217,39 +217,39 @@
             "@type": "FormalParameter",
             "additionalType": "PropertyValue",
             "multipleValues": "True",
-            "name": "main/in_record"
+            "name": "in_record"
         },
         {
             "@id": "packed.cwl#main/in_str",
             "@type": "FormalParameter",
             "additionalType": "Text",
-            "name": "main/in_str"
+            "name": "in_str"
         },
         {
             "@id": "packed.cwl#main/cl_dump",
             "@type": "FormalParameter",
             "additionalType": "File",
-            "name": "main/cl_dump"
+            "name": "cl_dump"
         },
         {
-            "@id": "#387f3435-f687-4fd8-be88-0b2b420c6cf7",
+            "@id": "#011ba6cb-9622-4cec-bb95-da634b2ffc5e",
             "@type": "SoftwareApplication",
             "name": "cwltool 3.1.20220224085855"
         },
         {
-            "@id": "#e409a44e-9598-41f2-8a8f-9006a6724035",
+            "@id": "#74481571-11f4-493c-8edf-3eb9bd5994e0",
             "@type": "OrganizeAction",
             "instrument": {
-                "@id": "#387f3435-f687-4fd8-be88-0b2b420c6cf7"
+                "@id": "#011ba6cb-9622-4cec-bb95-da634b2ffc5e"
             },
             "name": "Run of cwltool 3.1.20220224085855",
             "result": {
-                "@id": "#707d335a-b9a0-48ef-9795-3ed5a5c3e861"
+                "@id": "#f4a43df6-8216-4b72-abf2-8beab8ca9894"
             },
             "startTime": "2022-04-22T12:27:13.313333"
         },
         {
-            "@id": "#707d335a-b9a0-48ef-9795-3ed5a5c3e861",
+            "@id": "#f4a43df6-8216-4b72-abf2-8beab8ca9894",
             "@type": "CreateAction",
             "endTime": "2022-04-22T12:27:13.328912",
             "instrument": {
@@ -304,7 +304,7 @@
             "exampleOfWork": {
                 "@id": "packed.cwl#main/in_array"
             },
-            "name": "main/in_array",
+            "name": "in_array",
             "value": [
                 "foo",
                 "bar"
@@ -316,7 +316,7 @@
             "exampleOfWork": {
                 "@id": "packed.cwl#main/in_any"
             },
-            "name": "main/in_any",
+            "name": "in_any",
             "value": "tar"
         },
         {
@@ -325,7 +325,7 @@
             "exampleOfWork": {
                 "@id": "packed.cwl#main/in_str"
             },
-            "name": "main/in_str",
+            "name": "in_str",
             "value": "spam"
         },
         {
@@ -334,7 +334,7 @@
             "exampleOfWork": {
                 "@id": "packed.cwl#main/in_bool"
             },
-            "name": "main/in_bool",
+            "name": "in_bool",
             "value": "True"
         },
         {
@@ -343,7 +343,7 @@
             "exampleOfWork": {
                 "@id": "packed.cwl#main/in_int"
             },
-            "name": "main/in_int",
+            "name": "in_int",
             "value": "42"
         },
         {
@@ -352,7 +352,7 @@
             "exampleOfWork": {
                 "@id": "packed.cwl#main/in_long"
             },
-            "name": "main/in_long",
+            "name": "in_long",
             "value": "420"
         },
         {
@@ -361,7 +361,7 @@
             "exampleOfWork": {
                 "@id": "packed.cwl#main/in_float"
             },
-            "name": "main/in_float",
+            "name": "in_float",
             "value": "3.14"
         },
         {
@@ -370,7 +370,7 @@
             "exampleOfWork": {
                 "@id": "packed.cwl#main/in_double"
             },
-            "name": "main/in_double",
+            "name": "in_double",
             "value": "3.142"
         },
         {
@@ -379,19 +379,19 @@
             "exampleOfWork": {
                 "@id": "packed.cwl#main/in_enum"
             },
-            "name": "main/in_enum",
+            "name": "in_enum",
             "value": "B"
         },
         {
             "@id": "#pv-main/in_record/in_record_B",
             "@type": "PropertyValue",
-            "name": "main/in_record/in_record_B",
+            "name": "in_record_B",
             "value": "Jerry"
         },
         {
             "@id": "#pv-main/in_record/in_record_A",
             "@type": "PropertyValue",
-            "name": "main/in_record/in_record_A",
+            "name": "in_record_A",
             "value": "Tom"
         },
         {
@@ -400,7 +400,7 @@
             "exampleOfWork": {
                 "@id": "packed.cwl#main/in_record"
             },
-            "name": "main/in_record",
+            "name": "in_record",
             "value": [
                 {
                     "@id": "#pv-main/in_record/in_record_B"
@@ -416,7 +416,7 @@
             "exampleOfWork": {
                 "@id": "packed.cwl#main/in_multi"
             },
-            "name": "main/in_multi",
+            "name": "in_multi",
             "value": "9.99"
         },
         {
