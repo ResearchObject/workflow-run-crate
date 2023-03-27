@@ -27,7 +27,7 @@
                     "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
                 }
             ],
-            "datePublished": "2023-03-07T15:07:38+00:00",
+            "datePublished": "2023-03-23T14:39:57+00:00",
             "hasPart": [
                 {
                     "@id": "packed.cwl"
@@ -48,7 +48,7 @@
             },
             "mentions": [
                 {
-                    "@id": "#c9cc7d53-505f-44cd-b81e-654460e300da"
+                    "@id": "#654421a2-66b7-47c0-889a-4047fd22aace"
                 }
             ]
         },
@@ -101,7 +101,7 @@
             ],
             "connection": [
                 {
-                    "@id": "#43baa72e-a5e3-4034-bb52-b3c98c57ecee"
+                    "@id": "#994ee4db-540c-431c-9d04-f46379582100"
                 }
             ],
             "hasPart": [
@@ -157,27 +157,27 @@
             "additionalType": "File",
             "defaultValue": "file:///home/stain/src/cwltool/tests/wf/hello.txt",
             "encodingFormat": "https://www.iana.org/assignments/media-types/text/plain",
-            "name": "main/input"
+            "name": "input"
         },
         {
             "@id": "packed.cwl#main/reverse_sort",
             "@type": "FormalParameter",
             "additionalType": "Boolean",
             "defaultValue": "True",
-            "name": "main/reverse_sort"
+            "name": "reverse_sort"
         },
         {
             "@id": "packed.cwl#main/output",
             "@type": "FormalParameter",
             "additionalType": "File",
-            "name": "main/output"
+            "name": "output"
         },
         {
             "@id": "packed.cwl#main/rev",
             "@type": "HowToStep",
             "connection": [
                 {
-                    "@id": "#245d20ae-50fd-48e9-8300-64b61f551f01"
+                    "@id": "#4e3f8730-756f-472e-a4db-4686b6c444a3"
                 }
             ],
             "position": "0",
@@ -205,23 +205,23 @@
             "@id": "packed.cwl#revtool.cwl/input",
             "@type": "FormalParameter",
             "additionalType": "File",
-            "name": "revtool.cwl/input"
+            "name": "input"
         },
         {
             "@id": "packed.cwl#revtool.cwl/output",
             "@type": "FormalParameter",
             "additionalType": "File",
-            "name": "revtool.cwl/output"
+            "name": "output"
         },
         {
             "@id": "packed.cwl#main/sorted",
             "@type": "HowToStep",
             "connection": [
                 {
-                    "@id": "#98d7875a-25c1-4630-8991-799fb7fee396"
+                    "@id": "#cb69807f-1a47-499b-9eae-b8c993457eee"
                 },
                 {
-                    "@id": "#61c122a3-5373-4699-ac5c-7eabb0a008fc"
+                    "@id": "#6c946f3d-4945-4bb6-9a7c-1c7e5c32cd2b"
                 }
             ],
             "position": "1",
@@ -252,22 +252,22 @@
             "@id": "packed.cwl#sorttool.cwl/reverse",
             "@type": "FormalParameter",
             "additionalType": "Boolean",
-            "name": "sorttool.cwl/reverse"
+            "name": "reverse"
         },
         {
             "@id": "packed.cwl#sorttool.cwl/input",
             "@type": "FormalParameter",
             "additionalType": "File",
-            "name": "sorttool.cwl/input"
+            "name": "input"
         },
         {
             "@id": "packed.cwl#sorttool.cwl/output",
             "@type": "FormalParameter",
             "additionalType": "File",
-            "name": "sorttool.cwl/output"
+            "name": "output"
         },
         {
-            "@id": "#245d20ae-50fd-48e9-8300-64b61f551f01",
+            "@id": "#4e3f8730-756f-472e-a4db-4686b6c444a3",
             "@type": "ParameterConnection",
             "sourceParameter": {
                 "@id": "packed.cwl#main/input"
@@ -277,7 +277,7 @@
             }
         },
         {
-            "@id": "#98d7875a-25c1-4630-8991-799fb7fee396",
+            "@id": "#cb69807f-1a47-499b-9eae-b8c993457eee",
             "@type": "ParameterConnection",
             "sourceParameter": {
                 "@id": "packed.cwl#revtool.cwl/output"
@@ -287,7 +287,7 @@
             }
         },
         {
-            "@id": "#61c122a3-5373-4699-ac5c-7eabb0a008fc",
+            "@id": "#6c946f3d-4945-4bb6-9a7c-1c7e5c32cd2b",
             "@type": "ParameterConnection",
             "sourceParameter": {
                 "@id": "packed.cwl#main/reverse_sort"
@@ -297,7 +297,7 @@
             }
         },
         {
-            "@id": "#43baa72e-a5e3-4034-bb52-b3c98c57ecee",
+            "@id": "#994ee4db-540c-431c-9d04-f46379582100",
             "@type": "ParameterConnection",
             "sourceParameter": {
                 "@id": "packed.cwl#sorttool.cwl/output"
@@ -307,30 +307,30 @@
             }
         },
         {
-            "@id": "#7ab777eb-a4b0-480d-bc29-fc93396a0af7",
+            "@id": "#2a265285-7ed6-4774-a5c7-0ab3831df354",
             "@type": "SoftwareApplication",
             "name": "cwltool 1.0.20181012180214"
         },
         {
-            "@id": "#acd9131e-7bf3-4399-8cda-b309828ad206",
+            "@id": "#9307838c-bdc9-45fd-9761-3859ca4438f7",
             "@type": "OrganizeAction",
             "agent": {
                 "@id": "https://orcid.org/0000-0001-9842-9718"
             },
             "instrument": {
-                "@id": "#7ab777eb-a4b0-480d-bc29-fc93396a0af7"
+                "@id": "#2a265285-7ed6-4774-a5c7-0ab3831df354"
             },
             "name": "Run of cwltool 1.0.20181012180214",
             "object": [
                 {
-                    "@id": "#0d28433e-3c4f-485c-8186-38c6c9543d89"
+                    "@id": "#f9cf3a53-8979-4173-80b4-02c99eb9a668"
                 },
                 {
-                    "@id": "#5126d85a-ed5b-4074-8c56-8006e384c351"
+                    "@id": "#1b55fe55-3117-460c-98cb-2f50eed3a200"
                 }
             ],
             "result": {
-                "@id": "#c9cc7d53-505f-44cd-b81e-654460e300da"
+                "@id": "#654421a2-66b7-47c0-889a-4047fd22aace"
             },
             "startTime": "2018-10-25T15:46:35.210973"
         },
@@ -340,7 +340,7 @@
             "name": "Stian Soiland-Reyes"
         },
         {
-            "@id": "#c9cc7d53-505f-44cd-b81e-654460e300da",
+            "@id": "#654421a2-66b7-47c0-889a-4047fd22aace",
             "@type": "CreateAction",
             "endTime": "2018-10-25T15:46:43.020168",
             "instrument": {
@@ -368,10 +368,10 @@
             "alternateName": "whale.txt",
             "exampleOfWork": [
                 {
-                    "@id": "packed.cwl#revtool.cwl/input"
+                    "@id": "packed.cwl#main/input"
                 },
                 {
-                    "@id": "packed.cwl#main/input"
+                    "@id": "packed.cwl#revtool.cwl/input"
                 }
             ],
             "sha1": "327fc7aedf4f6b69a42a7c8b808dc5a7aff61376"
@@ -382,7 +382,7 @@
             "exampleOfWork": {
                 "@id": "packed.cwl#main/reverse_sort"
             },
-            "name": "main/reverse_sort",
+            "name": "reverse_sort",
             "value": "True"
         },
         {
@@ -391,16 +391,16 @@
             "alternateName": "output.txt",
             "exampleOfWork": [
                 {
-                    "@id": "packed.cwl#sorttool.cwl/output"
+                    "@id": "packed.cwl#main/output"
                 },
                 {
-                    "@id": "packed.cwl#main/output"
+                    "@id": "packed.cwl#sorttool.cwl/output"
                 }
             ],
             "sha1": "b9214658cc453331b62c2282b772a5c063dbd284"
         },
         {
-            "@id": "#b212b600-40fa-4f04-bd33-cde498a3672f",
+            "@id": "#1b0a99b0-bff6-486f-b9d9-50e89f9f8cc0",
             "@type": "CreateAction",
             "endTime": "2018-10-25T15:46:36.967359",
             "instrument": {
@@ -420,14 +420,14 @@
             "startTime": "2018-10-25T15:46:35.314101"
         },
         {
-            "@id": "#0d28433e-3c4f-485c-8186-38c6c9543d89",
+            "@id": "#f9cf3a53-8979-4173-80b4-02c99eb9a668",
             "@type": "ControlAction",
             "instrument": {
                 "@id": "packed.cwl#main/rev"
             },
             "name": "orchestrate revtool.cwl",
             "object": {
-                "@id": "#b212b600-40fa-4f04-bd33-cde498a3672f"
+                "@id": "#1b0a99b0-bff6-486f-b9d9-50e89f9f8cc0"
             }
         },
         {
@@ -436,16 +436,16 @@
             "alternateName": "output.txt",
             "exampleOfWork": [
                 {
-                    "@id": "packed.cwl#sorttool.cwl/input"
+                    "@id": "packed.cwl#revtool.cwl/output"
                 },
                 {
-                    "@id": "packed.cwl#revtool.cwl/output"
+                    "@id": "packed.cwl#sorttool.cwl/input"
                 }
             ],
             "sha1": "97fe1b50b4582cebc7d853796ebd62e3e163aa3f"
         },
         {
-            "@id": "#16a5b702-472a-4b77-8316-527c209f0124",
+            "@id": "#4d406f10-e4a8-4767-8b91-fc0631825b3a",
             "@type": "CreateAction",
             "endTime": "2018-10-25T15:46:38.069110",
             "instrument": {
@@ -468,14 +468,14 @@
             "startTime": "2018-10-25T15:46:36.975235"
         },
         {
-            "@id": "#5126d85a-ed5b-4074-8c56-8006e384c351",
+            "@id": "#1b55fe55-3117-460c-98cb-2f50eed3a200",
             "@type": "ControlAction",
             "instrument": {
                 "@id": "packed.cwl#main/sorted"
             },
             "name": "orchestrate sorttool.cwl",
             "object": {
-                "@id": "#16a5b702-472a-4b77-8316-527c209f0124"
+                "@id": "#4d406f10-e4a8-4767-8b91-fc0631825b3a"
             }
         },
         {
@@ -484,7 +484,7 @@
             "exampleOfWork": {
                 "@id": "packed.cwl#sorttool.cwl/reverse"
             },
-            "name": "main/sorted/reverse",
+            "name": "reverse",
             "value": "True"
         }
     ]
