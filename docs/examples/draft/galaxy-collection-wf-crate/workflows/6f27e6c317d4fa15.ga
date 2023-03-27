@@ -117,12 +117,12 @@
             ],
             "outputs": [],
             "input_connections": {
-                "inputs_0|input": {
-                    "id": 0,
-                    "output_name": "output"
-                },
                 "inputs_1|input": {
                     "id": 1,
+                    "output_name": "output"
+                },
+                "inputs_0|input": {
+                    "id": 0,
                     "output_name": "output"
                 }
             },

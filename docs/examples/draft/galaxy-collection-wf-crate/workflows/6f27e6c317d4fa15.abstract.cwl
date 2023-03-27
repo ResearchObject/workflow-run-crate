@@ -37,10 +37,10 @@ steps:
       inputs: {}
       outputs: {}
     in:
-      inputs_0|input:
-        source: input collection 1
       inputs_1|input:
         source: input collection 2
+      inputs_0|input:
+        source: input collection 1
     out: []
   concat collection:
     doc: concatenate collection

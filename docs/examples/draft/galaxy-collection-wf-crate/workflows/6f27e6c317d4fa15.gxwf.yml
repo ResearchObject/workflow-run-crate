@@ -61,10 +61,10 @@ steps:
         input:
           __class__: ConnectedValue
     in:
-      inputs_0|input:
-        source: input collection 1
       inputs_1|input:
         source: input collection 2
+      inputs_0|input:
+        source: input collection 1
   concat collection:
     tool_id: cat_collection
     tool_version: 1.0.0

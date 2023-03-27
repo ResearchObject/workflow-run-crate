@@ -15,7 +15,7 @@
                     "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
                 }
             ],
-            "datePublished": "2023-03-19T17:17:57+00:00",
+            "datePublished": "2023-03-27T11:28:47+00:00",
             "hasPart": [
                 {
                     "@id": "workflows/6f27e6c317d4fa15.abstract.cwl"
@@ -75,7 +75,7 @@
             },
             "mentions": [
                 {
-                    "@id": "#5134102f-4c93-495f-a553-9d09c0d18c89"
+                    "@id": "#32b7307b-c30f-46b6-aba7-7ec7a1e295e0"
                 },
                 {
                     "@id": "#dataset_collection-11"
@@ -144,9 +144,6 @@
                 },
                 {
                     "@id": "#num_lines_param-param"
-                },
-                {
-                    "@id": "#advanced-param"
                 }
             ],
             "name": "collection_workflow",
@@ -205,22 +202,22 @@
             }
         },
         {
-            "@id": "#8c83f2a2-0ffb-4922-9271-fab0a289490e",
+            "@id": "#48f46b6a-1030-4084-9e51-dca5c8844217",
             "@type": "SoftwareApplication",
             "name": "Galaxy workflow engine"
         },
         {
-            "@id": "#6b1b8048-48e7-4ccc-9b1a-82f262cf8ccd",
+            "@id": "#84b0d69f-d15b-4166-8730-22bd81c7d4ad",
             "@type": "OrganizeAction",
             "endTime": "2022-12-12T17:54:18.776936",
             "instrument": {
-                "@id": "#8c83f2a2-0ffb-4922-9271-fab0a289490e"
+                "@id": "#48f46b6a-1030-4084-9e51-dca5c8844217"
             },
             "name": "Run of Galaxy workflow engine",
             "startTime": "2022-12-12T17:54:18.224230"
         },
         {
-            "@id": "#5134102f-4c93-495f-a553-9d09c0d18c89",
+            "@id": "#32b7307b-c30f-46b6-aba7-7ec7a1e295e0",
             "@type": "CreateAction",
             "endTime": "2022-12-12T17:50:45.118254",
             "instrument": {
@@ -236,9 +233,6 @@
                 },
                 {
                     "@id": "#num_lines_param-pv"
-                },
-                {
-                    "@id": "#advanced-pv"
                 }
             ],
             "result": [
@@ -271,7 +265,7 @@
             "@type": "Collection",
             "additionalType": "https://training.galaxyproject.org/training-material/faqs/galaxy/collections_build_list.html",
             "exampleOfWork": {
-                "@id": "dataset_collection-11-param"
+                "@id": "#dataset_collection-11-param"
             },
             "hasPart": [
                 {
@@ -286,7 +280,7 @@
         {
             "@id": "#dataset_collection-11-param",
             "@type": "FormalParameter",
-            "additionalType": "File",
+            "additionalType": "Collection",
             "description": "",
             "name": "hello_world"
         },
@@ -301,7 +295,7 @@
             "@type": "Collection",
             "additionalType": "https://training.galaxyproject.org/training-material/faqs/galaxy/collections_build_list.html",
             "exampleOfWork": {
-                "@id": "dataset_collection-10-param"
+                "@id": "#dataset_collection-10-param"
             },
             "hasPart": [
                 {
@@ -316,7 +310,7 @@
         {
             "@id": "#dataset_collection-10-param",
             "@type": "FormalParameter",
-            "additionalType": "File",
+            "additionalType": "Collection",
             "description": "",
             "name": "hello_universe"
         },
@@ -325,7 +319,7 @@
             "@type": "Collection",
             "additionalType": "https://training.galaxyproject.org/training-material/faqs/galaxy/collections_build_list.html",
             "exampleOfWork": {
-                "@id": "dataset_collection-13-param"
+                "@id": "#dataset_collection-13-param"
             },
             "hasPart": [
                 {
@@ -333,9 +327,6 @@
                 },
                 {
                     "@id": "datasets/world_34.txt"
-                },
-                {
-                    "@id": "datasets/hello_33.txt"
                 },
                 {
                     "@id": "datasets/universe_31.txt"
@@ -346,7 +337,7 @@
         {
             "@id": "#dataset_collection-13-param",
             "@type": "FormalParameter",
-            "additionalType": "File",
+            "additionalType": "Collection",
             "description": "",
             "name": "data 31, data 30, and others (merged)"
         },
@@ -406,23 +397,16 @@
             "exampleOfWork": {
                 "@id": "#num_lines_param-param"
             },
-            "name": "num_lines_param PropertyValue",
+            "name": "num_lines_param",
             "value": "2"
         },
         {
-            "@id": "#advanced-pv",
-            "@type": "PropertyValue",
-            "exampleOfWork": {
-                "@id": "#advanced-param"
-            },
-            "name": "merge collections tool PropertyValue",
-            "value": {
-                "conflict": {
-                    "__current_case__": 0,
-                    "duplicate_options": "suffix_conflict",
-                    "suffix_pattern": "_#"
-                }
-            }
+            "@id": "#num_lines_param-param",
+            "@type": "FormalParameter",
+            "additionalType": "Integer",
+            "description": "number of lines to select",
+            "name": "num_lines_param",
+            "valueRequired": "True"
         },
         {
             "@id": "datasets_attrs.txt",
@@ -484,7 +468,7 @@
             "@id": "#datasets_attrs.txt.provenance",
             "@type": "CreativeWork",
             "description": "datasets provenance properties",
-            "encodingFormat": "json",
+            "encodingFormat": "application/json",
             "version": "2.0"
         }
     ]
