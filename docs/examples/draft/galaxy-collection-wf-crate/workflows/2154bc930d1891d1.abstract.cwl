@@ -37,10 +37,10 @@ steps:
       inputs: {}
       outputs: {}
     in:
-      inputs_1|input:
-        source: input collection 2
       inputs_0|input:
         source: input collection 1
+      inputs_1|input:
+        source: input collection 2
     out: []
   concat collection:
     doc: concatenate collection
@@ -62,9 +62,9 @@ steps:
       inputs: {}
       outputs: {}
     in:
-      lineNum:
-        source: num_lines_param
       input:
         source: concat collection/out_file1
+      lineNum:
+        source: num_lines_param
     out:
     - out_file1
