@@ -262,7 +262,7 @@ This profile inherits the requirements of [Process Run Crate](process_run_crate)
   <tr>
    <td>exampleOfWork</td>
    <td>SHOULD</td>
-   <td>Identifier of the <code>FormalParameter</code> instance realized by this entity.
+   <td>Identifier of the <code>FormalParameter</code> instance realized by this entity.</td>
   </tr>
 
   <tr>
