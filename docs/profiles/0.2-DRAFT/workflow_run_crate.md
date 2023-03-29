@@ -99,7 +99,7 @@ Additional properties described in the [Bioschemas FormalParameter profile](http
             {"@id": "http://edamontology.org/format_2330"}
         ],
         "workExample": {"@id": "inputs/abcdef.txt"},
-        "name": "Simple input",
+        "name": "simple_input",
         "valueRequired": "True"
     },
     {
@@ -122,7 +122,7 @@ Additional properties described in the [Bioschemas FormalParameter profile](http
             "text/plain",
             {"@id": "http://edamontology.org/format_2330"}
         ],
-        "name": "Reversed lines",
+        "name": "reversed",
         "workExample": {"@id": "outputs/tac_on_data_360_1.txt"}
     },
     {
@@ -135,7 +135,7 @@ Additional properties described in the [Bioschemas FormalParameter profile](http
             "text/plain",
             {"@id": "http://edamontology.org/format_2330"}
         ],
-        "name": "Last lines",
+        "name": "last_lines",
         "workExample": {"@id": "outputs/Select_first_on_data_1_2.txt"}
     },
     {
