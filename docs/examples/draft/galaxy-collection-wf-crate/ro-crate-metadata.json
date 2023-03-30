@@ -1,0 +1,475 @@
+{
+    "@context": "https://w3id.org/ro/crate/1.1/context",
+    "@graph": [
+        {
+            "@id": "./",
+            "@type": "Dataset",
+            "conformsTo": [
+                {
+                    "@id": "https://w3id.org/ro/wfrun/process/0.1"
+                },
+                {
+                    "@id": "https://w3id.org/ro/wfrun/workflow/0.1"
+                },
+                {
+                    "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+                }
+            ],
+            "datePublished": "2023-03-28T14:17:30+00:00",
+            "hasPart": [
+                {
+                    "@id": "workflows/2154bc930d1891d1.ga"
+                },
+                {
+                    "@id": "workflows/2154bc930d1891d1.html"
+                },
+                {
+                    "@id": "workflows/2154bc930d1891d1.abstract.cwl"
+                },
+                {
+                    "@id": "workflows/2154bc930d1891d1.gxwf.yml"
+                },
+                {
+                    "@id": "datasets/hello_33.txt"
+                },
+                {
+                    "@id": "datasets/world_34.txt"
+                },
+                {
+                    "@id": "datasets/universe_31.txt"
+                },
+                {
+                    "@id": "datasets/Concatenate_dataset_collection_(for_test_workflows)_on_data_5,_data_4,_and_data_3_7.txt"
+                },
+                {
+                    "@id": "datasets/Select_first_on_data_7_8.txt"
+                },
+                {
+                    "@id": "datasets_attrs.txt"
+                },
+                {
+                    "@id": "jobs_attrs.txt"
+                },
+                {
+                    "@id": "implicit_collection_jobs_attrs.txt"
+                },
+                {
+                    "@id": "collections_attrs.txt"
+                },
+                {
+                    "@id": "export_attrs.txt"
+                },
+                {
+                    "@id": "libraries_attrs.txt"
+                },
+                {
+                    "@id": "library_folders_attrs.txt"
+                },
+                {
+                    "@id": "invocation_attrs.txt"
+                }
+            ],
+            "license": "MIT",
+            "mainEntity": {
+                "@id": "workflows/2154bc930d1891d1.gxwf.yml"
+            },
+            "mentions": [
+                {
+                    "@id": "#86e2d3b1-38d0-4b0c-9a23-5a70041b5132"
+                },
+                {
+                    "@id": "#dataset_collection-14"
+                },
+                {
+                    "@id": "#dataset_collection-15"
+                },
+                {
+                    "@id": "#dataset_collection-16"
+                }
+            ]
+        },
+        {
+            "@id": "ro-crate-metadata.json",
+            "@type": "CreativeWork",
+            "about": {
+                "@id": "./"
+            },
+            "conformsTo": [
+                {
+                    "@id": "https://w3id.org/ro/crate/1.1"
+                },
+                {
+                    "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+                }
+            ]
+        },
+        {
+            "@id": "workflows/2154bc930d1891d1.ga",
+            "@type": [
+                "File",
+                "SoftwareSourceCode",
+                "ComputationalWorkflow"
+            ],
+            "name": "workflows/2154bc930d1891d1",
+            "programmingLanguage": {
+                "@id": "https://w3id.org/workflowhub/workflow-ro-crate#galaxy"
+            }
+        },
+        {
+            "@id": "https://w3id.org/workflowhub/workflow-ro-crate#galaxy",
+            "@type": "ComputerLanguage",
+            "identifier": {
+                "@id": "https://galaxyproject.org/"
+            },
+            "name": "Galaxy",
+            "url": {
+                "@id": "https://galaxyproject.org/"
+            },
+            "version": "21.09"
+        },
+        {
+            "@id": "workflows/2154bc930d1891d1.html",
+            "@type": [
+                "File",
+                "SoftwareSourceCode",
+                "ComputationalWorkflow"
+            ],
+            "name": "workflows/2154bc930d1891d1",
+            "programmingLanguage": {
+                "@id": "https://w3id.org/workflowhub/workflow-ro-crate#galaxy"
+            }
+        },
+        {
+            "@id": "workflows/2154bc930d1891d1.abstract.cwl",
+            "@type": [
+                "File",
+                "SoftwareSourceCode",
+                "HowTo"
+            ],
+            "name": "workflows/2154bc930d1891d1.abstract",
+            "programmingLanguage": {
+                "@id": "https://w3id.org/workflowhub/workflow-ro-crate#cwl"
+            }
+        },
+        {
+            "@id": "https://w3id.org/workflowhub/workflow-ro-crate#cwl",
+            "@type": "ComputerLanguage",
+            "alternateName": "CWL",
+            "identifier": {
+                "@id": "https://w3id.org/cwl/1.2/"
+            },
+            "name": "Common Workflow Language",
+            "url": {
+                "@id": "https://www.commonwl.org/"
+            },
+            "version": "1.2"
+        },
+        {
+            "@id": "workflows/2154bc930d1891d1.gxwf.yml",
+            "@type": [
+                "File",
+                "SoftwareSourceCode",
+                "ComputationalWorkflow"
+            ],
+            "input": [
+                {
+                    "@id": "#dataset_collection-14-param"
+                },
+                {
+                    "@id": "#dataset_collection-15-param"
+                },
+                {
+                    "@id": "#num_lines_param-param"
+                }
+            ],
+            "name": "collection_workflow",
+            "output": [
+                {
+                    "@id": "#dataset_collection-16-param"
+                },
+                {
+                    "@id": "#eda9f373-52a4-4dd4-8983-54a6ed0aae80"
+                },
+                {
+                    "@id": "#13e34265-0eec-4639-932b-24811bb3682d"
+                }
+            ],
+            "programmingLanguage": {
+                "@id": "https://w3id.org/workflowhub/workflow-ro-crate#galaxy"
+            },
+            "subjectOf": {
+                "@id": "workflows/2154bc930d1891d1.abstract.cwl"
+            }
+        },
+        {
+            "@id": "#90e2b046-8044-4811-b76a-fda2fa4b604b",
+            "@type": "SoftwareApplication",
+            "name": "Galaxy workflow engine"
+        },
+        {
+            "@id": "#6a5fad64-73f5-417c-acef-220f2a16606d",
+            "@type": "OrganizeAction",
+            "endTime": "2023-03-28T13:52:44.327168",
+            "instrument": {
+                "@id": "#90e2b046-8044-4811-b76a-fda2fa4b604b"
+            },
+            "name": "Run of Galaxy workflow engine",
+            "startTime": "2023-03-28T13:52:42.214286"
+        },
+        {
+            "@id": "#86e2d3b1-38d0-4b0c-9a23-5a70041b5132",
+            "@type": "CreateAction",
+            "endTime": "2023-03-28T13:51:15.507046",
+            "instrument": {
+                "@id": "workflows/2154bc930d1891d1.gxwf.yml"
+            },
+            "name": "collection_workflow",
+            "object": [
+                {
+                    "@id": "#dataset_collection-14"
+                },
+                {
+                    "@id": "#dataset_collection-15"
+                },
+                {
+                    "@id": "#num_lines_param-pv"
+                }
+            ],
+            "result": [
+                {
+                    "@id": "#dataset_collection-16"
+                },
+                {
+                    "@id": "datasets/Concatenate_dataset_collection_(for_test_workflows)_on_data_5,_data_4,_and_data_3_7.txt"
+                },
+                {
+                    "@id": "datasets/Select_first_on_data_7_8.txt"
+                }
+            ],
+            "startTime": "2023-03-28T13:51:15.507014"
+        },
+        {
+            "@id": "datasets/hello_33.txt",
+            "@type": "File",
+            "encodingFormat": "text/plain",
+            "name": "hello"
+        },
+        {
+            "@id": "datasets/world_34.txt",
+            "@type": "File",
+            "encodingFormat": "text/plain",
+            "name": "world"
+        },
+        {
+            "@id": "#dataset_collection-14",
+            "@type": "Collection",
+            "additionalType": "https://training.galaxyproject.org/training-material/faqs/galaxy/collections_build_list.html",
+            "exampleOfWork": {
+                "@id": "#dataset_collection-14-param"
+            },
+            "hasPart": [
+                {
+                    "@id": "datasets/hello_33.txt"
+                },
+                {
+                    "@id": "datasets/world_34.txt"
+                }
+            ],
+            "name": "hello_world"
+        },
+        {
+            "@id": "#dataset_collection-14-param",
+            "@type": "FormalParameter",
+            "additionalType": "Collection",
+            "description": "",
+            "name": "hello_world"
+        },
+        {
+            "@id": "datasets/universe_31.txt",
+            "@type": "File",
+            "encodingFormat": "text/plain",
+            "name": "universe"
+        },
+        {
+            "@id": "#dataset_collection-15",
+            "@type": "Collection",
+            "additionalType": "https://training.galaxyproject.org/training-material/faqs/galaxy/collections_build_list.html",
+            "exampleOfWork": {
+                "@id": "#dataset_collection-15-param"
+            },
+            "hasPart": [
+                {
+                    "@id": "datasets/hello_33.txt"
+                },
+                {
+                    "@id": "datasets/universe_31.txt"
+                }
+            ],
+            "name": "hello_universe"
+        },
+        {
+            "@id": "#dataset_collection-15-param",
+            "@type": "FormalParameter",
+            "additionalType": "Collection",
+            "description": "",
+            "name": "hello_universe"
+        },
+        {
+            "@id": "#dataset_collection-16",
+            "@type": "Collection",
+            "additionalType": "https://training.galaxyproject.org/training-material/faqs/galaxy/collections_build_list.html",
+            "exampleOfWork": {
+                "@id": "#dataset_collection-16-param"
+            },
+            "hasPart": [
+                {
+                    "@id": "datasets/hello_33.txt"
+                },
+                {
+                    "@id": "datasets/world_34.txt"
+                },
+                {
+                    "@id": "datasets/universe_31.txt"
+                }
+            ],
+            "name": "data 31, data 30, and others (merged)"
+        },
+        {
+            "@id": "#dataset_collection-16-param",
+            "@type": "FormalParameter",
+            "additionalType": "Collection",
+            "description": "",
+            "name": "data 31, data 30, and others (merged)"
+        },
+        {
+            "@id": "datasets/Concatenate_dataset_collection_(for_test_workflows)_on_data_5,_data_4,_and_data_3_7.txt",
+            "@type": "File",
+            "encodingFormat": "text/plain",
+            "exampleOfWork": {
+                "@id": "#eda9f373-52a4-4dd4-8983-54a6ed0aae80"
+            },
+            "name": "Concatenate dataset collection (for test workflows) on data 5, data 4, and data 3"
+        },
+        {
+            "@id": "#eda9f373-52a4-4dd4-8983-54a6ed0aae80",
+            "@type": "FormalParameter",
+            "additionalType": "File",
+            "description": "",
+            "name": "Concatenate dataset collection (for test workflows) on data 5, data 4, and data 3"
+        },
+        {
+            "@id": "datasets/Select_first_on_data_7_8.txt",
+            "@type": "File",
+            "encodingFormat": "text/plain",
+            "exampleOfWork": {
+                "@id": "#13e34265-0eec-4639-932b-24811bb3682d"
+            },
+            "name": "Select first on data 7"
+        },
+        {
+            "@id": "#13e34265-0eec-4639-932b-24811bb3682d",
+            "@type": "FormalParameter",
+            "additionalType": "File",
+            "description": "",
+            "name": "Select first on data 7"
+        },
+        {
+            "@id": "https://w3id.org/ro/wfrun/process/0.1",
+            "@type": "CreativeWork",
+            "name": "Process Run Crate",
+            "version": "0.1"
+        },
+        {
+            "@id": "https://w3id.org/ro/wfrun/workflow/0.1",
+            "@type": "CreativeWork",
+            "name": "Workflow Run Crate",
+            "version": "0.1"
+        },
+        {
+            "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0",
+            "@type": "CreativeWork",
+            "name": "Workflow RO-Crate",
+            "version": "1.0"
+        },
+        {
+            "@id": "#num_lines_param-pv",
+            "@type": "PropertyValue",
+            "exampleOfWork": {
+                "@id": "#num_lines_param-param"
+            },
+            "name": "num_lines_param",
+            "value": "2"
+        },
+        {
+            "@id": "#num_lines_param-param",
+            "@type": "FormalParameter",
+            "additionalType": "Integer",
+            "description": "number of lines to select",
+            "name": "num_lines_param",
+            "valueRequired": "True"
+        },
+        {
+            "@id": "datasets_attrs.txt",
+            "@type": "File",
+            "description": "datasets properties",
+            "encodingFormat": "application/json",
+            "version": "2.0"
+        },
+        {
+            "@id": "jobs_attrs.txt",
+            "@type": "File",
+            "description": "jobs properties",
+            "encodingFormat": "application/json",
+            "version": "2.0"
+        },
+        {
+            "@id": "implicit_collection_jobs_attrs.txt",
+            "@type": "File",
+            "description": "implicit collection jobs properties",
+            "encodingFormat": "application/json",
+            "version": "2.0"
+        },
+        {
+            "@id": "collections_attrs.txt",
+            "@type": "File",
+            "description": "collections properties",
+            "encodingFormat": "application/json",
+            "version": "2.0"
+        },
+        {
+            "@id": "export_attrs.txt",
+            "@type": "File",
+            "description": "export properties",
+            "encodingFormat": "application/json",
+            "version": "2.0"
+        },
+        {
+            "@id": "libraries_attrs.txt",
+            "@type": "File",
+            "description": "libraries properties",
+            "encodingFormat": "application/json",
+            "version": "2.0"
+        },
+        {
+            "@id": "library_folders_attrs.txt",
+            "@type": "File",
+            "description": "library folders properties",
+            "encodingFormat": "application/json",
+            "version": "2.0"
+        },
+        {
+            "@id": "invocation_attrs.txt",
+            "@type": "File",
+            "description": "invocation properties",
+            "encodingFormat": "application/json",
+            "version": "2.0"
+        },
+        {
+            "@id": "#datasets_attrs.txt.provenance",
+            "@type": "CreativeWork",
+            "description": "datasets provenance properties",
+            "encodingFormat": "application/json",
+            "version": "2.0"
+        }
+    ]
+}

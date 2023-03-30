@@ -1,0 +1,214 @@
+{
+    "a_galaxy_workflow": "true",
+    "format-version": "0.1",
+    "name": "collection_workflow",
+    "annotation": "Test workflow with a collection",
+    "tags": [],
+    "uuid": "a7b8315e-0bd7-486b-8e8c-02a52b79269f",
+    "steps": {
+        "0": {
+            "id": 0,
+            "type": "data_collection_input",
+            "content_id": null,
+            "tool_id": null,
+            "tool_version": null,
+            "name": "Input dataset collection",
+            "tool_state": "{\"optional\": false, \"tag\": \"\", \"collection_type\": \"list\"}",
+            "errors": null,
+            "uuid": "21e7a55d-5a22-4900-900e-136b92d51126",
+            "label": "input collection 1",
+            "annotation": "collection 1",
+            "when": null,
+            "inputs": [
+                {
+                    "name": "input collection 1",
+                    "description": "collection 1"
+                }
+            ],
+            "workflow_outputs": [],
+            "outputs": [],
+            "input_connections": {},
+            "position": {
+                "left": 4,
+                "top": 12
+            }
+        },
+        "1": {
+            "id": 1,
+            "type": "data_collection_input",
+            "content_id": null,
+            "tool_id": null,
+            "tool_version": null,
+            "name": "Input dataset collection",
+            "tool_state": "{\"optional\": false, \"tag\": \"\", \"collection_type\": \"list\"}",
+            "errors": null,
+            "uuid": "2a1dafdc-3b26-4cd2-83d3-9e3d4e615820",
+            "label": "input collection 2",
+            "annotation": "collection 2",
+            "when": null,
+            "inputs": [
+                {
+                    "name": "input collection 2",
+                    "description": "collection 2"
+                }
+            ],
+            "workflow_outputs": [],
+            "outputs": [],
+            "input_connections": {},
+            "position": {
+                "left": 0,
+                "top": 144
+            }
+        },
+        "2": {
+            "id": 2,
+            "type": "parameter_input",
+            "content_id": null,
+            "tool_id": null,
+            "tool_version": null,
+            "name": "Input parameter",
+            "tool_state": "{\"parameter_type\": \"integer\", \"optional\": false}",
+            "errors": null,
+            "uuid": "7a33097d-eaf5-496d-acd2-44ae2edc0f14",
+            "label": "num_lines_param",
+            "annotation": "number of lines to select",
+            "when": null,
+            "inputs": [
+                {
+                    "name": "num_lines_param",
+                    "description": "number of lines to select"
+                }
+            ],
+            "workflow_outputs": [
+                {
+                    "output_name": "output",
+                    "label": null,
+                    "uuid": "9d99c74f-8e0a-4555-84c6-5cc0e8e04bfb"
+                }
+            ],
+            "outputs": [],
+            "input_connections": {},
+            "position": {
+                "left": 653,
+                "top": 0
+            }
+        },
+        "3": {
+            "id": 3,
+            "type": "tool",
+            "content_id": "__MERGE_COLLECTION__",
+            "tool_id": "__MERGE_COLLECTION__",
+            "tool_version": "1.0.0",
+            "name": "__MERGE_COLLECTION__",
+            "tool_state": "{\"__page__\": null, \"__rerun_remap_job_id__\": null, \"advanced\": {\"conflict\": {\"__current_case__\": 3, \"duplicate_options\": \"keep_first\"}}, \"inputs\": [{\"__index__\": 0, \"input\": {\"__class__\": \"RuntimeValue\"}}, {\"__index__\": 1, \"input\": {\"__class__\": \"RuntimeValue\"}}]}",
+            "errors": "Tool is not installed",
+            "uuid": "5c6f3142-596b-4ef8-8177-1ac35517d9ed",
+            "label": "merge collections tool",
+            "annotation": "merged collections",
+            "when": null,
+            "post_job_actions": {},
+            "inputs": [],
+            "workflow_outputs": [
+                {
+                    "output_name": "output",
+                    "label": "output_collection",
+                    "uuid": "40859551-8532-4f3e-9ef8-05954eee8e3f"
+                }
+            ],
+            "outputs": [],
+            "input_connections": {
+                "inputs_0|input": {
+                    "id": 0,
+                    "output_name": "output"
+                },
+                "inputs_1|input": {
+                    "id": 1,
+                    "output_name": "output"
+                }
+            },
+            "position": {
+                "left": 328.953125,
+                "top": 17.96875
+            }
+        },
+        "4": {
+            "id": 4,
+            "type": "tool",
+            "content_id": "cat_collection",
+            "tool_id": "cat_collection",
+            "tool_version": "1.0.0",
+            "name": "cat_collection",
+            "tool_state": "{\"__page__\": null, \"__rerun_remap_job_id__\": null, \"input1\": {\"__class__\": \"ConnectedValue\"}}",
+            "errors": "Tool is not installed",
+            "uuid": "8539c740-1580-4fce-b210-421f9de0dc23",
+            "label": "concat collection",
+            "annotation": "concatenate collection",
+            "when": null,
+            "post_job_actions": {},
+            "inputs": [],
+            "workflow_outputs": [
+                {
+                    "output_name": "out_file1",
+                    "label": "concatenated_collection",
+                    "uuid": "b6690e70-ef0d-4e4a-a107-332c274a7907"
+                }
+            ],
+            "outputs": [],
+            "input_connections": {
+                "input1": {
+                    "id": 3,
+                    "output_name": "output"
+                }
+            },
+            "position": {
+                "left": 637,
+                "top": 147.96875
+            }
+        },
+        "5": {
+            "id": 5,
+            "type": "tool",
+            "content_id": "head",
+            "tool_id": "head",
+            "tool_version": "1.0.0",
+            "name": "head",
+            "tool_state": "{\"__page__\": null, \"__rerun_remap_job_id__\": null, \"input\": {\"__class__\": \"ConnectedValue\"}, \"lineNum\": {\"__class__\": \"ConnectedValue\"}}",
+            "errors": "Tool is not installed",
+            "uuid": "571f5a69-e94d-4520-9c76-46e3cb2bfa93",
+            "label": "select lines",
+            "annotation": "select 3 lines",
+            "when": null,
+            "post_job_actions": {},
+            "inputs": [],
+            "workflow_outputs": [
+                {
+                    "output_name": "out_file1",
+                    "label": "output",
+                    "uuid": "5d5dee8f-6989-4369-bc07-626419a570f5"
+                }
+            ],
+            "outputs": [],
+            "input_connections": {
+                "input": {
+                    "id": 4,
+                    "output_name": "out_file1"
+                },
+                "lineNum": {
+                    "id": 2,
+                    "output_name": "output"
+                }
+            },
+            "position": {
+                "left": 944.03125,
+                "top": 120.453125
+            }
+        }
+    },
+    "creator": [
+        {
+            "class": "Organization",
+            "name": "Paul"
+        }
+    ],
+    "license": "MIT"
+}

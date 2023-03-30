@@ -1,0 +1,96 @@
+class: GalaxyWorkflow
+doc: Test workflow with a collection
+label: collection_workflow
+creator:
+- class: Organization
+  name: Paul
+license: MIT
+uuid: a7b8315e-0bd7-486b-8e8c-02a52b79269f
+inputs:
+  input collection 1:
+    type: collection
+    collection_type: list
+    optional: false
+    doc: collection 1
+    position:
+      left: 4
+      top: 12
+  input collection 2:
+    type: collection
+    collection_type: list
+    optional: false
+    doc: collection 2
+    position:
+      left: 0
+      top: 144
+  num_lines_param:
+    type: int
+    optional: false
+    doc: number of lines to select
+    position:
+      left: 653
+      top: 0
+outputs:
+  _anonymous_output_1:
+    outputSource: num_lines_param
+  output_collection:
+    outputSource: merge collections tool
+  concatenated_collection:
+    outputSource: concat collection/out_file1
+  output:
+    outputSource: select lines/out_file1
+steps:
+  merge collections tool:
+    tool_id: __MERGE_COLLECTION__
+    tool_version: 1.0.0
+    doc: merged collections
+    position:
+      left: 328.953125
+      top: 17.96875
+    tool_state:
+      advanced:
+        conflict:
+          __current_case__: 3
+          duplicate_options: keep_first
+      inputs:
+      - __index__: 0
+        input:
+          __class__: RuntimeValue
+      - __index__: 1
+        input:
+          __class__: RuntimeValue
+    in:
+      inputs_0|input:
+        source: input collection 1
+      inputs_1|input:
+        source: input collection 2
+  concat collection:
+    tool_id: cat_collection
+    tool_version: 1.0.0
+    doc: concatenate collection
+    position:
+      left: 637
+      top: 147.96875
+    tool_state:
+      input1:
+        __class__: ConnectedValue
+    in:
+      input1:
+        source: merge collections tool
+  select lines:
+    tool_id: head
+    tool_version: 1.0.0
+    doc: select 3 lines
+    position:
+      left: 944.03125
+      top: 120.453125
+    tool_state:
+      input:
+        __class__: ConnectedValue
+      lineNum:
+        __class__: ConnectedValue
+    in:
+      input:
+        source: concat collection/out_file1
+      lineNum:
+        source: num_lines_param
