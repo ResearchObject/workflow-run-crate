@@ -14,13 +14,13 @@ This profile uses terminology from the [RO-Crate 1.1 specification](https://w3id
 
 ## Overview
 
-This profile is used to describe the execution of a computational tool that has orchestrated the execution of other tools. Such a tool is represented as a [workflow](https://www.researchobject.org/ro-crate/1.1/workflows.html) that can be executed using a *workflow engine* (e.g. [cwltool](https://github.com/common-workflow-language/cwltool)).
+This profile is used to describe the execution of a computational tool that has orchestrated the execution of other tools. Such a tool is represented as a [workflow](https://www.researchobject.org/ro-crate/1.1/workflows.html) that can be executed using a *Workflow Management System (WMS)*, or *workflow engine* (e.g. [cwltool](https://github.com/common-workflow-language/cwltool)).
 
-This profile is a combination of [Process Run Crate](process_run_crate) and [Workflow RO-Crate](https://w3id.org/workflowhub/workflow-ro-crate/). The entity referenced by the action's `instrument` (which represents the software application that's been run) MUST be a `ComputationalWorkflow` that is further described according to the Workflow RO-Crate requirements. In particular, it MUST be the [mainEntity](http://schema.org/mainEntity) of the RO-Crate. The crate SHOULD have only one `CreateAction` corresponding to the workflow's execution. Details regarding the execution of individual workflow steps can be described with the [Provenance Run Crate](provenance_run_crate) profile.
+Workflow Run Crate is a combination of [Process Run Crate](process_run_crate) and [Workflow RO-Crate](https://w3id.org/workflowhub/workflow-ro-crate/). In particular, the RO-Crate MUST have a `ComputationalWorkflow` [mainEntity](http://schema.org/mainEntity) described according to the Workflow RO-Crate specification (*main workflow*), and `CreateAction` instances corresponding to its execution (thus having the main workflow as `instrument`) MUST be described as specified in Process Run Crate and this profile. Details regarding the execution of individual workflow steps can be described with the [Provenance Run Crate](provenance_run_crate) profile.
 
 Workflows can have multiple input and output parameter slots that have to be mapped to actual files, directories or other values (e.g., a string or a number) before they can be executed. It is OPTIONAL to define such entities for a `ComputationalWorkflow`. If included, parameter definitions MUST be provided as [FormalParameter](https://bioschemas.org/types/FormalParameter/1.0-RELEASE) entities and referenced from the `ComputationalWorkflow` via `input` and `output` (see the [Bioschemas ComputationalWorkflow profile](https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE)).
 
-A data entity or `PropertyValue` that realizes a `FormalParameter` definition SHOULD refer to it via [exampleOfWork](https://schema.org/exampleOfWork); additionally, if the data entity or `PropertyValue` is an illustrative example of the parameter, the latter MAY refer back to the former using the reverse property [workExample](https://schema.org/workExample). This links the `input` of a `ComputationalWorkflow` to the `object` of a `CreateAction`, and the `output` of a `ComputationalWorkflow` to the `result` of a `CreateAction`. An `object` item that does not match a slot in the workflow's input interface (e.g., a [configuration file](process_run_crate#referencing-configuration-files) read from a predefined path) MUST NOT refer to a `FormalParameter` of the `ComputationalWorkflow` via `exampleOfWork`. A `FormalParameter` that maps to a `PropertyValue` SHOULD have a subclass of [DataType](https://schema.org/DataType) (e.g., [Integer](https://schema.org/Integer)) &mdash; or [PropertyValue](https://schema.org/PropertyValue), in the case of dictionary-like structured types &mdash; as its `additionalType`. See [CWL parameter mapping](/workflow-run-crate/cwl_param_mapping) for an example.
+A data entity or `PropertyValue` that realizes a `FormalParameter` definition SHOULD refer to it via [exampleOfWork](https://schema.org/exampleOfWork); additionally, if the data entity or `PropertyValue` is an illustrative example of the parameter, the latter MAY refer back to the former using the reverse property [workExample](https://schema.org/workExample). This links the `input` of a `ComputationalWorkflow` to the `object` of a `CreateAction`, and the `output` of a `ComputationalWorkflow` to the `result` of a `CreateAction`. An `object` item that does not match a slot in the workflow's input interface (e.g., a [configuration file](process_run_crate#referencing-configuration-files) read from a predefined path) MUST NOT refer to a `FormalParameter` of the `ComputationalWorkflow` via `exampleOfWork`. A `FormalParameter` that maps to a `PropertyValue` SHOULD have a subclass of [DataType](https://schema.org/DataType) (e.g., [Integer](https://schema.org/Integer)) &mdash; or [PropertyValue](https://schema.org/PropertyValue), in the case of dictionary-like structured types &mdash; as its `additionalType`. See [CWL parameter mapping](/workflow-run-crate/cwl_param_mapping) for an example. To support reproducibility, the `name` field of a `FormalParameter` instance SHOULD match the name of the corresponding workflow parameter slot.
 
 Additional properties described in the [Bioschemas FormalParameter profile](https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE) (e.g., `defaultValue`) MAY be used to provide additional information, but strict conformance is not required. A `FormalParameter` definition that strictly conforms to the Bioschemas profile SHOULD reference the relevant versioned URL via `conformsTo`.
 
@@ -99,7 +99,7 @@ Additional properties described in the [Bioschemas FormalParameter profile](http
             {"@id": "http://edamontology.org/format_2330"}
         ],
         "workExample": {"@id": "inputs/abcdef.txt"},
-        "name": "Simple input",
+        "name": "simple_input",
         "valueRequired": "True"
     },
     {
@@ -122,7 +122,7 @@ Additional properties described in the [Bioschemas FormalParameter profile](http
             "text/plain",
             {"@id": "http://edamontology.org/format_2330"}
         ],
-        "name": "Reversed lines",
+        "name": "reversed",
         "workExample": {"@id": "outputs/tac_on_data_360_1.txt"}
     },
     {
@@ -135,7 +135,7 @@ Additional properties described in the [Bioschemas FormalParameter profile](http
             "text/plain",
             {"@id": "http://edamontology.org/format_2330"}
         ],
-        "name": "Last lines",
+        "name": "last_lines",
         "workExample": {"@id": "outputs/Select_first_on_data_1_2.txt"}
     },
     {
@@ -236,7 +236,7 @@ Some engines are able to generate contextual information about workflow runs in 
 
 ## Requirements
 
-This profile inherits the requirements of [Process Run Crate](process_run_crate) and [Workflow RO-Crate](https://w3id.org/workflowhub/workflow-ro-crate/). In particular, the entity acting as the `instrument` of the `CreateAction` MUST be the *main workflow*. This and other additional specifications are listed below.
+This profile inherits the requirements of [Process Run Crate](process_run_crate) and [Workflow RO-Crate](https://w3id.org/workflowhub/workflow-ro-crate/). Additional specifications are listed below.
 
 <table>
 
@@ -256,17 +256,29 @@ This profile inherits the requirements of [Process Run Crate](process_run_crate)
   </tr>
 
   <tr>
-   <th colspan="3"><strong>CreateAction</strong></th>
+   <th colspan="3"><strong>PropertyValue</strong> or data entity that realizes a FormalParameter</th>
   </tr>
 
   <tr>
-   <td>instrument</td>
-   <td>MUST</td>
-   <td>Identifier of the <em>main workflow</em>, as specified in <a href="https://w3id.org/workflowhub/workflow-ro-crate/">Workflow RO-Crate</a>.</td>
+   <td>exampleOfWork</td>
+   <td>SHOULD</td>
+   <td>Identifier of the <code>FormalParameter</code> instance realized by this entity.</td>
   </tr>
 
   <tr>
    <th colspan="3"><strong>FormalParameter</strong></th>
+  </tr>
+
+  <tr>
+   <td>name</td>
+   <td>SHOULD</td>
+   <td>SHOULD match the name of the corresponding workflow parameter slot, e.g. <code>n_lines</code></td>
+  </tr>
+
+  <tr>
+   <td>description</td>
+   <td>MAY</td>
+   <td>A description of the parameter's purpose, e.g. <code>Number of lines</code></td>
   </tr>
 
   <tr>
@@ -278,7 +290,7 @@ This profile inherits the requirements of [Process Run Crate](process_run_crate)
   <tr>
    <td>additionalType</td>
    <td>MUST</td>
-   <td>SHOULD include: <code>File</code>, <code>Dataset</code> or <code>Collection</code> if it maps to a file, directory or <a href="process_run_crate#representing-multi-file-objects">multi-file dataset</a>, respectively; <code>PropertyValue</code> if it maps to a dictionary-like structured value (e.g. a CWL <em>record</em>); <a href="http://schema.org/DataType">DataType</a> or one of its subtypes (e.g. <a href="http://schema.org/Integer">Integer</a>) if it maps to a non-structured value. A more specific type MAY be used instead of <code>File</code> when appropriate (see <a href="http://schema.org/MediaObject#subtypes">MediaObject subtypes</a>), e.g. <a href="http://schema.org/ImageObject">ImageObject</a>. Note that multiple types can apply, e.g. <code>["File", "http://edamontology.org/data_3671"]</code>.</td>
+   <td>SHOULD include: <code>File</code>, <code>Dataset</code> or <code>Collection</code> if it maps to a file, directory or <a href="process_run_crate#representing-multi-file-objects">multi-file dataset</a>, respectively; <code>PropertyValue</code> if it maps to a dictionary-like structured value (e.g. a CWL <em>record</em>); <a href="http://schema.org/DataType">DataType</a> or one of its subtypes (e.g. <a href="http://schema.org/Integer">Integer</a>) if it maps to a non-structured value.</td>
   </tr>
 
 </table>

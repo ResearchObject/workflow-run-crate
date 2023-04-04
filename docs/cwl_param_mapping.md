@@ -8,16 +8,16 @@ Map to [Text](http://schema.org/Text).
 
 ```json
 {
-    "@id": "#param-main/in_str",
+    "@id": "#param/in_str",
     "@type": "FormalParameter",
     "additionalType": "Text",
-    "name": "main/in_str"
+    "name": "in_str"
 },
 {
-    "@id": "#pv-main/in_str",
+    "@id": "#pv/in_str",
     "@type": "PropertyValue",
-    "exampleOfWork": {"@id": "#param-main/in_str"},
-    "name": "main/in_str",
+    "exampleOfWork": {"@id": "#param/in_str"},
+    "name": "in_str",
     "value": "spam"
 }
 ```
@@ -28,17 +28,17 @@ A property in RO-Crate can have a single value or multiple values, so the `addit
 
 ```json
 {
-    "@id": "#param-main/in_array",
+    "@id": "#param/in_array",
     "@type": "FormalParameter",
     "additionalType": "Text",
     "multipleValues": "True",
-    "name": "main/in_array"
+    "name": "in_array"
 },
 {
-    "@id": "#pv-main/in_array",
+    "@id": "#pv/in_array",
     "@type": "PropertyValue",
-    "exampleOfWork": {"@id": "#param-main/in_array"},
-    "name": "main/in_array",
+    "exampleOfWork": {"@id": "#param/in_array"},
+    "name": "in_array",
     "value": ["foo", "bar"]
 }
 ```
@@ -51,16 +51,16 @@ Map to [DataType](http://schema.org/DataType).
 
 ```json
 {
-    "@id": "#param-main/in_any",
+    "@id": "#param/in_any",
     "@type": "FormalParameter",
     "additionalType": "DataType",
-    "name": "main/in_any"
+    "name": "in_any"
 },
 {
-    "@id": "#pv-main/in_any",
+    "@id": "#pv/in_any",
     "@type": "PropertyValue",
-    "exampleOfWork": {"@id": "#param-main/in_any"},
-    "name": "main/in_any",
+    "exampleOfWork": {"@id": "#param/in_any"},
+    "name": "in_any",
     "value": "tar"
 }
 ```
@@ -71,16 +71,16 @@ Map to [Boolean](http://schema.org/Boolean).
 
 ```json
 {
-    "@id": "#param-main/in_bool",
+    "@id": "#param/in_bool",
     "@type": "FormalParameter",
     "additionalType": "Boolean",
-    "name": "main/in_bool"
+    "name": "in_bool"
 },
 {
-    "@id": "#pv-main/in_bool",
+    "@id": "#pv/in_bool",
     "@type": "PropertyValue",
-    "exampleOfWork": {"@id": "#param-main/in_bool"},
-    "name": "main/in_bool",
+    "exampleOfWork": {"@id": "#param/in_bool"},
+    "name": "in_bool",
     "value": "True"
 }
 ```
@@ -91,16 +91,16 @@ Map to [Integer](http://schema.org/Integer).
 
 ```json
 {
-    "@id": "#param-main/in_int",
+    "@id": "#param/in_int",
     "@type": "FormalParameter",
     "additionalType": "Integer",
-    "name": "main/in_int"
+    "name": "in_int"
 },
 {
-    "@id": "#pv-main/in_int",
+    "@id": "#pv/in_int",
     "@type": "PropertyValue",
-    "exampleOfWork": {"@id": "#param-main/in_int"},
-    "name": "main/in_int",
+    "exampleOfWork": {"@id": "#param/in_int"},
+    "name": "in_int",
     "value": "42"
 }
 ```
@@ -111,16 +111,16 @@ Map to [Float](http://schema.org/Float).
 
 ```json
 {
-    "@id": "#param-main/in_float",
+    "@id": "#param/in_float",
     "@type": "FormalParameter",
     "additionalType": "Float",
-    "name": "main/in_float"
+    "name": "in_float"
 },
 {
-    "@id": "#pv-main/in_float",
+    "@id": "#pv/in_float",
     "@type": "PropertyValue",
-    "exampleOfWork": {"@id": "#param-main/in_float"},
-    "name": "main/in_float",
+    "exampleOfWork": {"@id": "#param/in_float"},
+    "name": "in_float",
     "value": "3.14"
 }
 ```
@@ -131,18 +131,18 @@ Map to array of mappings of each type, e.g., `[int, float]` to `["Integer", "Flo
 
 ```json
 {
-    "@id": "#param-main/in_multi",
+    "@id": "#param/in_multi",
     "@type": "FormalParameter",
     "additionalType": ["Float", "Integer"],
     "defaultValue": "9.99",
-    "name": "main/in_multi",
+    "name": "in_multi",
     "valueRequired": "False"
 },
 {
-    "@id": "#pv-main/in_multi",
+    "@id": "#pv/in_multi",
     "@type": "PropertyValue",
-    "exampleOfWork": {"@id": "#param-main/in_multi"},
-    "name": "main/in_multi",
+    "exampleOfWork": {"@id": "#param/in_multi"},
+    "name": "in_multi",
     "value": "9.99"
 } 
 ```
@@ -153,17 +153,17 @@ Map to [Text](http://schema.org/Text). The set of predefined allowed values can 
 
 ```json
 {
-    "@id": "#param-main/in_enum",
+    "@id": "#param/in_enum",
     "@type": "FormalParameter",
     "additionalType": "Text",
-    "name": "main/in_enum",
+    "name": "in_enum",
     "valuePattern": "A|B"
 },
 {
-    "@id": "#pv-main/in_enum",
+    "@id": "#pv/in_enum",
     "@type": "PropertyValue",
-    "exampleOfWork": {"@id": "#param-main/in_enum"},
-    "name": "main/in_enum",
+    "exampleOfWork": {"@id": "#param/in_enum"},
+    "name": "in_enum",
     "value": "B"
 }
 ```
@@ -175,32 +175,32 @@ Map to [PropertyValue](http://schema.org/PropertyValue). It actually maps to an 
 
 ```json
 {
-    "@id": "#param-main/in_record",
+    "@id": "#param/in_record",
     "@type": "FormalParameter",
     "additionalType": "PropertyValue",
     "multipleValues": "True",
-    "name": "main/in_record"
+    "name": "in_record"
 },
 {
-    "@id": "#pv-main/in_record",
+    "@id": "#pv/in_record",
     "@type": "PropertyValue",
-    "exampleOfWork": {"@id": "#param-main/in_record"},
-    "name": "main/in_record",
+    "exampleOfWork": {"@id": "#param/in_record"},
+    "name": "in_record",
     "value": [
-        {"@id": "#pv-main/in_record/in_record_A"},
-        {"@id": "#pv-main/in_record/in_record_B"}
+        {"@id": "#pv/in_record/in_record_A"},
+        {"@id": "#pv/in_record/in_record_B"}
     ]
 }
 {
-    "@id": "#pv-main/in_record/in_record_A",
+    "@id": "#pv/in_record/in_record_A",
     "@type": "PropertyValue",
-    "name": "main/in_record/in_record_A",
+    "name": "in_record/in_record_A",
     "value": "Tom"
 },
 {
-    "@id": "#pv-main/in_record/in_record_B",
+    "@id": "#pv/in_record/in_record_B",
     "@type": "PropertyValue",
-    "name": "main/in_record/in_record_B",
+    "name": "in_record/in_record_B",
     "value": "Jerry"
 },
 ```
@@ -216,10 +216,10 @@ Use [FormalParameter](https://bioschemas.org/types/FormalParameter/1.0-RELEASE)'
 
 ```json
 {
-    "@id": "#param-main/input",
+    "@id": "#param/input",
     "@type": "FormalParameter",
     "additionalType": "File",
     "encodingFormat": "https://www.iana.org/assignments/media-types/text/csv",
-    "name": "main/input"
+    "name": "input"
 }
 ```
