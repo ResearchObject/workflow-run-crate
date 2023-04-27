@@ -5,8 +5,8 @@ title: Process Run Crate
 
 # Process Run Crate
 
-* Version: 0.2-DRAFT
-* Permalink: <https://w3id.org/ro/wfrun/process/0.2-DRAFT>
+* Version: 0.2
+* Permalink: <https://w3id.org/ro/wfrun/process/0.2>
 * Authors: Workflow Run RO-Crate working group
 
 This profile uses terminology from the [RO-Crate 1.1 specification](https://w3id.org/ro/crate/1.1).

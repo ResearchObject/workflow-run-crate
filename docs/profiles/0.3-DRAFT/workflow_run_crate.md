@@ -5,8 +5,8 @@ title: Workflow Run Crate
 
 # Workflow Run Crate
 
-* Version: 0.2-DRAFT
-* Permalink: <https://w3id.org/ro/wfrun/workflow/0.2-DRAFT>
+* Version: 0.3-DRAFT
+* Permalink: <https://w3id.org/ro/wfrun/workflow/0.3-DRAFT>
 * Authors: Workflow Run RO-Crate working group
 
 This profile uses terminology from the [RO-Crate 1.1 specification](https://w3id.org/ro/crate/1.1).
