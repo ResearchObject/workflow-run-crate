@@ -1,6 +1,5 @@
 cwlVersion: v1.1
 class: CommandLineTool
-baseCommand: ["classify.py"]
 requirements:
   InlineJavascriptRequirement: {}
   DockerRequirement:
@@ -8,6 +7,7 @@ requirements:
   InitialWorkDirRequirement:
     listing:
       -  $(inputs.src)
+baseCommand: [classify.py]
 inputs:
   src:
     type: File

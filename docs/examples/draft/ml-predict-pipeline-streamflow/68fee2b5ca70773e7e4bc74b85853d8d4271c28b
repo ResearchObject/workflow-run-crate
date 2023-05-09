@@ -1,0 +1,16 @@
+#!/usr/bin/env streamflow
+version: v1.0
+workflows:
+  deephealth:
+    type: cwl
+    config:
+      file: cwl/predictions.cwl
+      settings: cwl/config.yml
+      docker:
+        - step: /
+          deployment:
+            type: docker
+            config:
+              command:
+                - /bin/sh
+              entrypoint: ''
