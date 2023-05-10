@@ -26,7 +26,7 @@ The tool that implements a step can in turn be a workflow (*nested workflow* or 
 
 The following diagram shows the relationships between all provenance-related entities. Note the distinction between *prospective* provenance (plans for activities, e.g. a workflow) and *retrospective* provenance (what actually happened, e.g. the execution of a workflow).
 
-<img alt="Entity-relationship diagram" src="img/er_diagram.svg" width="920" />
+<img alt="Entity-relationship diagram" src="img/er_diagram_provenance.svg" width="920" />
 
 
 ## Example Metadata File (`ro-crate-metadata.json`)

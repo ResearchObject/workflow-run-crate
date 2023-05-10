@@ -20,6 +20,10 @@ By "implicit workflow" we mean that the composition of these tools may have been
 
 This profile requires the indication of [Software used to create files](https://www.researchobject.org/ro-crate/1.1/provenance.html#software-used-to-create-files), namely a [SoftwareApplication](http://schema.org/SoftwareApplication) (the tool) and a [CreateAction](http://schema.org/CreateAction) (the execution of said tool).
 
+The following diagram shows the relationships between provenance-related entities. Note the distinction between *prospective* provenance (plans for activities, e.g., an application) and *retrospective* provenance (what actually happened, e.g. the execution of an application).
+
+<img alt="Entity-relationship diagram" src="img/er_diagram_process.svg" width="500" />
+
 
 ## Example Metadata File (`ro-crate-metadata.json`)
 

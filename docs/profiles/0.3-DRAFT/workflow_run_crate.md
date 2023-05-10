@@ -24,6 +24,10 @@ A data entity or `PropertyValue` that realizes a `FormalParameter` definition SH
 
 Additional properties described in the [Bioschemas FormalParameter profile](https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE) (e.g., `defaultValue`) MAY be used to provide additional information, but strict conformance is not required. A `FormalParameter` definition that strictly conforms to the Bioschemas profile SHOULD reference the relevant versioned URL via `conformsTo`.
 
+The following diagram shows the relationships between provenance-related entities. Note the distinction between *prospective* provenance (plans for activities, e.g. a workflow) and *retrospective* provenance (what actually happened, e.g. the execution of a workflow).
+
+<img alt="Entity-relationship diagram" src="img/er_diagram_workflow.svg" width="650" />
+
 
 ## Example Metadata File (`ro-crate-metadata.json`)
 
