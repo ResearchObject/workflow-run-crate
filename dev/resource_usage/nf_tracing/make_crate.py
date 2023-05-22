@@ -31,6 +31,12 @@ PROFILES_BASE = "https://w3id.org/ro/wfrun"
 PROFILES_VERSION = "0.1"
 
 
+EXTRA_TERMS = {
+    "resourceUsage": "https://w3id.org/ro/terms/workflow-run#resourceUsage",
+}
+NF_TRACE_NS = "https://w3id.org/ro/terms/nf-trace"
+
+
 def add_profiles(crate):
     profiles = []
     for p in "process", "workflow", "provenance":
@@ -74,10 +80,72 @@ def add_tasks(crate):
             action["instrument"] = tool
             action["startTime"] = start.isoformat()
             action["endTime"] = end.isoformat()
+            resource_usage = []
+            stat = "realTime"
+            resource_usage.append(
+                crate.add(ContextEntity(crate, f"{action_id}-{stat}", properties={
+                    "@type": "PropertyValue",
+                    "name": stat,
+                    "propertyID": f"{NF_TRACE_NS}#{stat}",
+                    "value": str(record["realtime"]),
+                    "unitCode": "https://qudt.org/vocab/unit/MilliSEC",
+                }))
+            )
+            stat = "percentCPU"
+            resource_usage.append(
+                crate.add(ContextEntity(crate, f"{action_id}-{stat}", properties={
+                    "@type": "PropertyValue",
+                    "name": stat,
+                    "propertyID": f"{NF_TRACE_NS}#{stat}",
+                    "value": str(record["%cpu"])
+                }))
+            )
+            stat = "peakRSS"
+            resource_usage.append(
+                crate.add(ContextEntity(crate, f"{action_id}-{stat}", properties={
+                    "@type": "PropertyValue",
+                    "name": stat,
+                    "propertyID": f"{NF_TRACE_NS}#{stat}",
+                    "value": str(record["peak_rss"]),
+                    "unitCode": "https://qudt.org/vocab/unit/BYTE",
+                }))
+            )
+            stat = "peakVMEM"
+            resource_usage.append(
+                crate.add(ContextEntity(crate, f"{action_id}-{stat}", properties={
+                    "@type": "PropertyValue",
+                    "name": stat,
+                    "propertyID": f"{NF_TRACE_NS}#{stat}",
+                    "value": str(record["peak_vmem"]),
+                    "unitCode": "https://qudt.org/vocab/unit/BYTE",
+                }))
+            )
+            stat = "rChar"
+            resource_usage.append(
+                crate.add(ContextEntity(crate, f"{action_id}-{stat}", properties={
+                    "@type": "PropertyValue",
+                    "name": stat,
+                    "propertyID": f"{NF_TRACE_NS}#{stat}",
+                    "value": str(record["rchar"]),
+                    "unitCode": "https://qudt.org/vocab/unit/BYTE",
+                }))
+            )
+            stat = "wChar"
+            resource_usage.append(
+                crate.add(ContextEntity(crate, f"{action_id}-{stat}", properties={
+                    "@type": "PropertyValue",
+                    "name": stat,
+                    "propertyID": f"{NF_TRACE_NS}#{stat}",
+                    "value": str(record["wchar"]),
+                    "unitCode": "https://qudt.org/vocab/unit/BYTE",
+                }))
+            )
+            action["resourceUsage"] = resource_usage
 
 
 def main(args):
     crate = ROCrate(gen_preview=False)
+    crate.metadata.extra_terms.update(EXTRA_TERMS)
     crate.root_dataset["license"] = "https://creativecommons.org/licenses/by-sa/4.0/"
     add_profiles(crate)
     wf_properties = {
