@@ -56,6 +56,7 @@ Post [here](https://github.com/ResearchObject/workflow-run-crate/issues/1) to jo
 - Milan Markovic <https://orcid.org/0000-0002-5477-287X>
 - Bruno P. Kinoshita <https://orcid.org/0000-0001-8250-4074>
 - Renske de Wit <https://orcid.org/0000-0003-0902-0086>
+- Jasper Koehorst <https://orcid.org/0000-0001-8172-8981>
 - ... [you](https://github.com/ResearchObject/workflow-run-crate/issues/1)?
 
 
