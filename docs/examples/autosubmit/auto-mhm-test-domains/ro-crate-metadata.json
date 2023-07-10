@@ -18,7 +18,7 @@
             "creator": {
                 "@id": "https://orcid.org/0000-0001-8250-4074"
             },
-            "datePublished": "2023-06-06T13:56:17+00:00",
+            "datePublished": "2023-07-10T15:33:06+00:00",
             "description": "Autosubmit mHM test domains",
             "hasPart": [
                 {
@@ -31,67 +31,67 @@
                     "@id": "conf/"
                 },
                 {
-                    "@id": "tmp/a00d_CLEAN_TOTAL_STATS"
-                },
-                {
-                    "@id": "tmp/a00d_19930101_SIM.cmd"
-                },
-                {
-                    "@id": "tmp/a00d_19910101_SIM_TOTAL_STATS"
-                },
-                {
-                    "@id": "tmp/a00d_REMOTE_SETUP_COMPLETED"
-                },
-                {
-                    "@id": "tmp/a00d_19910101_SIM.cmd"
-                },
-                {
-                    "@id": "tmp/a00d_REMOTE_SETUP_STAT"
-                },
-                {
-                    "@id": "tmp/a00d_19910101_GRAPH.cmd"
-                },
-                {
-                    "@id": "tmp/a00d_19910101_SIM_COMPLETED"
-                },
-                {
-                    "@id": "tmp/a00d_19930101_GRAPH_COMPLETED"
-                },
-                {
-                    "@id": "tmp/a00d_CLEAN_STAT"
-                },
-                {
-                    "@id": "tmp/a00d_SYNC_TO_REMOTE_STAT"
-                },
-                {
-                    "@id": "tmp/a00d_REMOTE_SETUP_TOTAL_STATS"
-                },
-                {
-                    "@id": "tmp/a00d_19930101_SIM_TOTAL_STATS"
+                    "@id": "tmp/a00d_SYNC_FROM_REMOTE_TOTAL_STATS"
                 },
                 {
                     "@id": "tmp/a00d_19930101_GRAPH_STAT"
                 },
                 {
-                    "@id": "tmp/a00d_SYNC_FROM_REMOTE_COMPLETED"
+                    "@id": "tmp/a00d_REMOTE_SETUP_STAT"
                 },
                 {
-                    "@id": "tmp/a00d_CLEAN_COMPLETED"
+                    "@id": "tmp/a00d_19930101_SIM_COMPLETED"
+                },
+                {
+                    "@id": "tmp/a00d_19910101_SIM_TOTAL_STATS"
+                },
+                {
+                    "@id": "tmp/a00d_19910101_SIM_COMPLETED"
+                },
+                {
+                    "@id": "tmp/a00d_19910101_GRAPH_STAT"
+                },
+                {
+                    "@id": "tmp/a00d_19930101_SIM_TOTAL_STATS"
+                },
+                {
+                    "@id": "tmp/a00d_SYNC_TO_REMOTE_TOTAL_STATS"
+                },
+                {
+                    "@id": "tmp/a00d_19910101_GRAPH_COMPLETED"
+                },
+                {
+                    "@id": "tmp/a00d_19930101_GRAPH_COMPLETED"
+                },
+                {
+                    "@id": "tmp/a00d_19910101_SIM_STAT"
                 },
                 {
                     "@id": "tmp/a00d_SYNC_TO_REMOTE_COMPLETED"
                 },
                 {
-                    "@id": "tmp/a00d_REMOTE_SETUP.cmd"
+                    "@id": "tmp/a00d_19910101_SIM.cmd"
+                },
+                {
+                    "@id": "tmp/a00d_SYNC_FROM_REMOTE_COMPLETED"
+                },
+                {
+                    "@id": "tmp/a00d_19910101_GRAPH_TOTAL_STATS"
+                },
+                {
+                    "@id": "tmp/a00d_CLEAN_TOTAL_STATS"
                 },
                 {
                     "@id": "tmp/a00d_19930101_GRAPH.cmd"
                 },
                 {
-                    "@id": "tmp/a00d_SYNC_FROM_REMOTE_STAT"
+                    "@id": "tmp/a00d_19930101_GRAPH_TOTAL_STATS"
                 },
                 {
-                    "@id": "tmp/a00d_19910101_SIM_STAT"
+                    "@id": "tmp/a00d_CLEAN_COMPLETED"
+                },
+                {
+                    "@id": "tmp/a00d_SYNC_TO_REMOTE_STAT"
                 },
                 {
                     "@id": "tmp/a00d_SYNC_TO_REMOTE.cmd"
@@ -100,97 +100,97 @@
                     "@id": "tmp/a00d_CLEAN.cmd"
                 },
                 {
-                    "@id": "tmp/a00d_SYNC_TO_REMOTE_TOTAL_STATS"
+                    "@id": "tmp/a00d_REMOTE_SETUP_TOTAL_STATS"
                 },
                 {
                     "@id": "tmp/a00d_SYNC_FROM_REMOTE.cmd"
                 },
                 {
-                    "@id": "tmp/a00d_19930101_GRAPH_TOTAL_STATS"
+                    "@id": "tmp/a00d_SYNC_FROM_REMOTE_STAT"
                 },
                 {
-                    "@id": "tmp/a00d_19910101_GRAPH_TOTAL_STATS"
+                    "@id": "tmp/a00d_REMOTE_SETUP.cmd"
                 },
                 {
                     "@id": "tmp/a00d_19930101_SIM_STAT"
                 },
                 {
-                    "@id": "tmp/a00d_19910101_GRAPH_COMPLETED"
+                    "@id": "tmp/a00d_19930101_SIM.cmd"
                 },
                 {
-                    "@id": "tmp/a00d_SYNC_FROM_REMOTE_TOTAL_STATS"
+                    "@id": "tmp/a00d_REMOTE_SETUP_COMPLETED"
                 },
                 {
-                    "@id": "tmp/a00d_19910101_GRAPH_STAT"
+                    "@id": "tmp/a00d_CLEAN_STAT"
                 },
                 {
-                    "@id": "tmp/a00d_19930101_SIM_COMPLETED"
-                },
-                {
-                    "@id": "tmp/LOG_a00d/a00d_CLEAN.20230606155335.out"
-                },
-                {
-                    "@id": "tmp/LOG_a00d/a00d_CLEAN.20230606155335.err"
-                },
-                {
-                    "@id": "tmp/LOG_a00d/a00d_SYNC_TO_REMOTE.20230606153936.out"
-                },
-                {
-                    "@id": "tmp/LOG_a00d/a00d_SYNC_TO_REMOTE.20230606153936.err"
-                },
-                {
-                    "@id": "tmp/LOG_a00d/a00d_SYNC_FROM_REMOTE.20230606155323.out"
-                },
-                {
-                    "@id": "tmp/LOG_a00d/a00d_19930101_SIM.20230606154015.err"
-                },
-                {
-                    "@id": "tmp/LOG_a00d/a00d_REMOTE_SETUP.20230606153948.err"
+                    "@id": "tmp/a00d_19910101_GRAPH.cmd"
                 },
                 {
                     "@id": "tmp/LOG_a00d/a00d_19910101_SIM.20230606154015.out"
                 },
                 {
-                    "@id": "tmp/LOG_a00d/a00d_19930101_SIM.20230606154015.out"
+                    "@id": "tmp/LOG_a00d/a00d_19930101_SIM.20230606154015.err"
                 },
                 {
                     "@id": "tmp/LOG_a00d/a00d_SYNC_FROM_REMOTE.20230606155323.err"
                 },
                 {
-                    "@id": "tmp/LOG_a00d/a00d_19910101_GRAPH.20230606155311.out"
-                },
-                {
                     "@id": "tmp/LOG_a00d/a00d_19910101_SIM.20230606154015.err"
                 },
                 {
-                    "@id": "tmp/LOG_a00d/a00d_19930101_GRAPH.20230606155311.out"
+                    "@id": "tmp/LOG_a00d/a00d_SYNC_TO_REMOTE.20230606153936.out"
                 },
                 {
                     "@id": "tmp/LOG_a00d/a00d_19930101_GRAPH.20230606155311.err"
                 },
                 {
+                    "@id": "tmp/LOG_a00d/a00d_CLEAN.20230606155335.err"
+                },
+                {
+                    "@id": "tmp/LOG_a00d/a00d_SYNC_FROM_REMOTE.20230606155323.out"
+                },
+                {
+                    "@id": "tmp/LOG_a00d/a00d_REMOTE_SETUP.20230606153948.err"
+                },
+                {
+                    "@id": "tmp/LOG_a00d/a00d_19910101_GRAPH.20230606155311.out"
+                },
+                {
+                    "@id": "tmp/LOG_a00d/a00d_SYNC_TO_REMOTE.20230606153936.err"
+                },
+                {
                     "@id": "tmp/LOG_a00d/a00d_REMOTE_SETUP.20230606153948.out"
+                },
+                {
+                    "@id": "tmp/LOG_a00d/a00d_19930101_GRAPH.20230606155311.out"
                 },
                 {
                     "@id": "tmp/LOG_a00d/a00d_19910101_GRAPH.20230606155311.err"
                 },
                 {
-                    "@id": "tmp/ASLOGS/jobs_active_status.log"
+                    "@id": "tmp/LOG_a00d/a00d_19930101_SIM.20230606154015.out"
                 },
                 {
-                    "@id": "tmp/ASLOGS/jobs_failed_status.log"
-                },
-                {
-                    "@id": "tmp/ASLOGS/20230606_153827_create_err.log"
-                },
-                {
-                    "@id": "tmp/ASLOGS/20230606_153922_run.log"
+                    "@id": "tmp/LOG_a00d/a00d_CLEAN.20230606155335.out"
                 },
                 {
                     "@id": "tmp/ASLOGS/20230606_153922_run_err.log"
                 },
                 {
+                    "@id": "tmp/ASLOGS/20230606_153922_run.log"
+                },
+                {
+                    "@id": "tmp/ASLOGS/jobs_failed_status.log"
+                },
+                {
                     "@id": "tmp/ASLOGS/20230606_153827_create.log"
+                },
+                {
+                    "@id": "tmp/ASLOGS/20230606_153827_create_err.log"
+                },
+                {
+                    "@id": "tmp/ASLOGS/jobs_active_status.log"
                 },
                 {
                     "@id": "tmp/"
@@ -230,6 +230,9 @@
             "mainEntity": {
                 "@id": "workflow.yml"
             },
+            "mentions": {
+                "@id": "#create-action"
+            },
             "publisher": {
                 "@id": "https://ror.org/05sd8tv96"
             }
@@ -247,18 +250,12 @@
             ],
             "conformsTo": [
                 {
-                    "@id": "https://w3id.org/ro/wfrun/process/0.1"
-                },
-                {
-                    "@id": "https://w3id.org/ro/wfrun/workflow/0.1"
+                    "@id": "https://w3id.org/ro/crate/1.1"
                 },
                 {
                     "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
                 }
-            ],
-            "license": "https://spdx.org/licenses/Apache-2.0.html",
-            "mainEntity": "workflow.yml",
-            "mentions": "#create-action"
+            ]
         },
         {
             "@id": "https://w3id.org/ro/wfrun/process/0.1",
@@ -285,582 +282,11 @@
                 "SoftwareSourceCode",
                 "ComputationalWorkflow"
             ],
-            "name": "workflow",
-            "programmingLanguage": {
-                "@id": "#autosubmit"
-            }
-        },
-        {
-            "@id": "#autosubmit",
-            "@type": "ComputerLanguage",
-            "alternateName": "AS",
-            "citation": "https://doi.org/10.1109/HPCSim.2016.7568429",
-            "name": "Autosubmit",
-            "url": "https://autosubmit.readthedocs.io/",
-            "version": "4.0.0b"
-        },
-        {
-            "@id": "conf/minimal.yml",
-            "@type": "File",
-            "contentSize": 493,
-            "dateModified": "2023-06-06T13:38:22",
-            "encodingFormat": null,
-            "name": "minimal.yml",
-            "sdDatePublished": "2023-06-06T13:56:17+00:00"
-        },
-        {
-            "@id": "conf/",
-            "@type": "Dataset"
-        },
-        {
-            "@id": "tmp/a00d_CLEAN_TOTAL_STATS",
-            "@type": "File",
-            "contentSize": 54,
-            "dateModified": "2023-06-06T13:53:35",
-            "encodingFormat": "text/plain",
-            "name": "a00d_CLEAN_TOTAL_STATS",
-            "sdDatePublished": "2023-06-06T13:56:17+00:00"
-        },
-        {
-            "@id": "tmp/a00d_19930101_SIM.cmd",
-            "@type": "File",
-            "contentSize": 3113,
-            "dateModified": "2023-06-06T13:40:01",
-            "encodingFormat": "text/plain",
-            "name": "a00d_19930101_SIM.cmd",
-            "sdDatePublished": "2023-06-06T13:56:17+00:00"
-        },
-        {
-            "@id": "tmp/a00d_19910101_SIM_TOTAL_STATS",
-            "@type": "File",
-            "contentSize": 54,
-            "dateModified": "2023-06-06T13:52:57",
-            "encodingFormat": "text/plain",
-            "name": "a00d_19910101_SIM_TOTAL_STATS",
-            "sdDatePublished": "2023-06-06T13:56:17+00:00"
-        },
-        {
-            "@id": "tmp/a00d_REMOTE_SETUP_COMPLETED",
-            "@type": "File",
-            "contentSize": 0,
-            "dateModified": "2023-06-06T13:40:01",
-            "encodingFormat": "text/plain",
-            "name": "a00d_REMOTE_SETUP_COMPLETED",
-            "sdDatePublished": "2023-06-06T13:56:17+00:00"
-        },
-        {
-            "@id": "tmp/a00d_19910101_SIM.cmd",
-            "@type": "File",
-            "contentSize": 3113,
-            "dateModified": "2023-06-06T13:40:01",
-            "encodingFormat": "text/plain",
-            "name": "a00d_19910101_SIM.cmd",
-            "sdDatePublished": "2023-06-06T13:56:17+00:00"
-        },
-        {
-            "@id": "tmp/a00d_REMOTE_SETUP_STAT",
-            "@type": "File",
-            "contentSize": 22,
-            "dateModified": "2023-06-06T13:40:01",
-            "encodingFormat": "text/plain",
-            "name": "a00d_REMOTE_SETUP_STAT",
-            "sdDatePublished": "2023-06-06T13:56:17+00:00"
-        },
-        {
-            "@id": "tmp/a00d_19910101_GRAPH.cmd",
-            "@type": "File",
-            "contentSize": 3388,
-            "dateModified": "2023-06-06T13:52:57",
-            "encodingFormat": "text/plain",
-            "name": "a00d_19910101_GRAPH.cmd",
-            "sdDatePublished": "2023-06-06T13:56:17+00:00"
-        },
-        {
-            "@id": "tmp/a00d_19910101_SIM_COMPLETED",
-            "@type": "File",
-            "contentSize": 0,
-            "dateModified": "2023-06-06T13:52:57",
-            "encodingFormat": "text/plain",
-            "name": "a00d_19910101_SIM_COMPLETED",
-            "sdDatePublished": "2023-06-06T13:56:17+00:00"
-        },
-        {
-            "@id": "tmp/a00d_19930101_GRAPH_COMPLETED",
-            "@type": "File",
-            "contentSize": 0,
-            "dateModified": "2023-06-06T13:53:11",
-            "encodingFormat": "text/plain",
-            "name": "a00d_19930101_GRAPH_COMPLETED",
-            "sdDatePublished": "2023-06-06T13:56:17+00:00"
-        },
-        {
-            "@id": "tmp/a00d_CLEAN_STAT",
-            "@type": "File",
-            "contentSize": 22,
-            "dateModified": "2023-06-06T13:53:35",
-            "encodingFormat": "text/plain",
-            "name": "a00d_CLEAN_STAT",
-            "sdDatePublished": "2023-06-06T13:56:17+00:00"
-        },
-        {
-            "@id": "tmp/a00d_SYNC_TO_REMOTE_STAT",
-            "@type": "File",
-            "contentSize": 22,
-            "dateModified": "2023-06-06T13:39:36",
-            "encodingFormat": "text/plain",
-            "name": "a00d_SYNC_TO_REMOTE_STAT",
-            "sdDatePublished": "2023-06-06T13:56:17+00:00"
-        },
-        {
-            "@id": "tmp/a00d_REMOTE_SETUP_TOTAL_STATS",
-            "@type": "File",
-            "contentSize": 54,
-            "dateModified": "2023-06-06T13:40:01",
-            "encodingFormat": "text/plain",
-            "name": "a00d_REMOTE_SETUP_TOTAL_STATS",
-            "sdDatePublished": "2023-06-06T13:56:17+00:00"
-        },
-        {
-            "@id": "tmp/a00d_19930101_SIM_TOTAL_STATS",
-            "@type": "File",
-            "contentSize": 54,
-            "dateModified": "2023-06-06T13:52:57",
-            "encodingFormat": "text/plain",
-            "name": "a00d_19930101_SIM_TOTAL_STATS",
-            "sdDatePublished": "2023-06-06T13:56:17+00:00"
-        },
-        {
-            "@id": "tmp/a00d_19930101_GRAPH_STAT",
-            "@type": "File",
-            "contentSize": 22,
-            "dateModified": "2023-06-06T13:53:11",
-            "encodingFormat": "text/plain",
-            "name": "a00d_19930101_GRAPH_STAT",
-            "sdDatePublished": "2023-06-06T13:56:17+00:00"
-        },
-        {
-            "@id": "tmp/a00d_SYNC_FROM_REMOTE_COMPLETED",
-            "@type": "File",
-            "contentSize": 0,
-            "dateModified": "2023-06-06T13:53:23",
-            "encodingFormat": "text/plain",
-            "name": "a00d_SYNC_FROM_REMOTE_COMPLETED",
-            "sdDatePublished": "2023-06-06T13:56:17+00:00"
-        },
-        {
-            "@id": "tmp/a00d_CLEAN_COMPLETED",
-            "@type": "File",
-            "contentSize": 0,
-            "dateModified": "2023-06-06T13:53:35",
-            "encodingFormat": "text/plain",
-            "name": "a00d_CLEAN_COMPLETED",
-            "sdDatePublished": "2023-06-06T13:56:17+00:00"
-        },
-        {
-            "@id": "tmp/a00d_SYNC_TO_REMOTE_COMPLETED",
-            "@type": "File",
-            "contentSize": 0,
-            "dateModified": "2023-06-06T13:39:36",
-            "encodingFormat": "text/plain",
-            "name": "a00d_SYNC_TO_REMOTE_COMPLETED",
-            "sdDatePublished": "2023-06-06T13:56:17+00:00"
-        },
-        {
-            "@id": "tmp/a00d_REMOTE_SETUP.cmd",
-            "@type": "File",
-            "contentSize": 3696,
-            "dateModified": "2023-06-06T13:39:36",
-            "encodingFormat": "text/plain",
-            "name": "a00d_REMOTE_SETUP.cmd",
-            "sdDatePublished": "2023-06-06T13:56:17+00:00"
-        },
-        {
-            "@id": "tmp/a00d_19930101_GRAPH.cmd",
-            "@type": "File",
-            "contentSize": 3388,
-            "dateModified": "2023-06-06T13:52:57",
-            "encodingFormat": "text/plain",
-            "name": "a00d_19930101_GRAPH.cmd",
-            "sdDatePublished": "2023-06-06T13:56:17+00:00"
-        },
-        {
-            "@id": "tmp/a00d_SYNC_FROM_REMOTE_STAT",
-            "@type": "File",
-            "contentSize": 22,
-            "dateModified": "2023-06-06T13:53:23",
-            "encodingFormat": "text/plain",
-            "name": "a00d_SYNC_FROM_REMOTE_STAT",
-            "sdDatePublished": "2023-06-06T13:56:17+00:00"
-        },
-        {
-            "@id": "tmp/a00d_19910101_SIM_STAT",
-            "@type": "File",
-            "contentSize": 22,
-            "dateModified": "2023-06-06T13:52:57",
-            "encodingFormat": "text/plain",
-            "name": "a00d_19910101_SIM_STAT",
-            "sdDatePublished": "2023-06-06T13:56:17+00:00"
-        },
-        {
-            "@id": "tmp/a00d_SYNC_TO_REMOTE.cmd",
-            "@type": "File",
-            "contentSize": 1989,
-            "dateModified": "2023-06-06T13:39:24",
-            "encodingFormat": "text/plain",
-            "name": "a00d_SYNC_TO_REMOTE.cmd",
-            "sdDatePublished": "2023-06-06T13:56:17+00:00"
-        },
-        {
-            "@id": "tmp/a00d_CLEAN.cmd",
-            "@type": "File",
-            "contentSize": 2105,
-            "dateModified": "2023-06-06T13:53:23",
-            "encodingFormat": "text/plain",
-            "name": "a00d_CLEAN.cmd",
-            "sdDatePublished": "2023-06-06T13:56:17+00:00"
-        },
-        {
-            "@id": "tmp/a00d_SYNC_TO_REMOTE_TOTAL_STATS",
-            "@type": "File",
-            "contentSize": 54,
-            "dateModified": "2023-06-06T13:39:36",
-            "encodingFormat": "text/plain",
-            "name": "a00d_SYNC_TO_REMOTE_TOTAL_STATS",
-            "sdDatePublished": "2023-06-06T13:56:17+00:00"
-        },
-        {
-            "@id": "tmp/a00d_SYNC_FROM_REMOTE.cmd",
-            "@type": "File",
-            "contentSize": 2005,
-            "dateModified": "2023-06-06T13:53:11",
-            "encodingFormat": "text/plain",
-            "name": "a00d_SYNC_FROM_REMOTE.cmd",
-            "sdDatePublished": "2023-06-06T13:56:17+00:00"
-        },
-        {
-            "@id": "tmp/a00d_19930101_GRAPH_TOTAL_STATS",
-            "@type": "File",
-            "contentSize": 54,
-            "dateModified": "2023-06-06T13:53:11",
-            "encodingFormat": "text/plain",
-            "name": "a00d_19930101_GRAPH_TOTAL_STATS",
-            "sdDatePublished": "2023-06-06T13:56:17+00:00"
-        },
-        {
-            "@id": "tmp/a00d_19910101_GRAPH_TOTAL_STATS",
-            "@type": "File",
-            "contentSize": 54,
-            "dateModified": "2023-06-06T13:53:11",
-            "encodingFormat": "text/plain",
-            "name": "a00d_19910101_GRAPH_TOTAL_STATS",
-            "sdDatePublished": "2023-06-06T13:56:17+00:00"
-        },
-        {
-            "@id": "tmp/a00d_19930101_SIM_STAT",
-            "@type": "File",
-            "contentSize": 22,
-            "dateModified": "2023-06-06T13:52:57",
-            "encodingFormat": "text/plain",
-            "name": "a00d_19930101_SIM_STAT",
-            "sdDatePublished": "2023-06-06T13:56:17+00:00"
-        },
-        {
-            "@id": "tmp/a00d_19910101_GRAPH_COMPLETED",
-            "@type": "File",
-            "contentSize": 0,
-            "dateModified": "2023-06-06T13:53:11",
-            "encodingFormat": "text/plain",
-            "name": "a00d_19910101_GRAPH_COMPLETED",
-            "sdDatePublished": "2023-06-06T13:56:17+00:00"
-        },
-        {
-            "@id": "tmp/a00d_SYNC_FROM_REMOTE_TOTAL_STATS",
-            "@type": "File",
-            "contentSize": 54,
-            "dateModified": "2023-06-06T13:53:23",
-            "encodingFormat": "text/plain",
-            "name": "a00d_SYNC_FROM_REMOTE_TOTAL_STATS",
-            "sdDatePublished": "2023-06-06T13:56:17+00:00"
-        },
-        {
-            "@id": "tmp/a00d_19910101_GRAPH_STAT",
-            "@type": "File",
-            "contentSize": 22,
-            "dateModified": "2023-06-06T13:53:11",
-            "encodingFormat": "text/plain",
-            "name": "a00d_19910101_GRAPH_STAT",
-            "sdDatePublished": "2023-06-06T13:56:17+00:00"
-        },
-        {
-            "@id": "tmp/a00d_19930101_SIM_COMPLETED",
-            "@type": "File",
-            "contentSize": 0,
-            "dateModified": "2023-06-06T13:52:57",
-            "encodingFormat": "text/plain",
-            "name": "a00d_19930101_SIM_COMPLETED",
-            "sdDatePublished": "2023-06-06T13:56:17+00:00"
-        },
-        {
-            "@id": "tmp/LOG_a00d/a00d_CLEAN.20230606155335.out",
-            "@type": "File",
-            "contentSize": 27138535,
-            "dateModified": "2023-06-06T13:53:42",
-            "encodingFormat": "text/plain",
-            "name": "a00d_CLEAN.20230606155335.out",
-            "sdDatePublished": "2023-06-06T13:56:17+00:00"
-        },
-        {
-            "@id": "tmp/LOG_a00d/a00d_CLEAN.20230606155335.err",
-            "@type": "File",
-            "contentSize": 2041,
-            "dateModified": "2023-06-06T13:53:42",
-            "encodingFormat": "text/plain",
-            "name": "a00d_CLEAN.20230606155335.err",
-            "sdDatePublished": "2023-06-06T13:56:17+00:00"
-        },
-        {
-            "@id": "tmp/LOG_a00d/a00d_SYNC_TO_REMOTE.20230606153936.out",
-            "@type": "File",
-            "contentSize": 110,
-            "dateModified": "2023-06-06T13:39:42",
-            "encodingFormat": "text/plain",
-            "name": "a00d_SYNC_TO_REMOTE.20230606153936.out",
-            "sdDatePublished": "2023-06-06T13:56:17+00:00"
-        },
-        {
-            "@id": "tmp/LOG_a00d/a00d_SYNC_TO_REMOTE.20230606153936.err",
-            "@type": "File",
-            "contentSize": 1897,
-            "dateModified": "2023-06-06T13:39:42",
-            "encodingFormat": "text/plain",
-            "name": "a00d_SYNC_TO_REMOTE.20230606153936.err",
-            "sdDatePublished": "2023-06-06T13:56:17+00:00"
-        },
-        {
-            "@id": "tmp/LOG_a00d/a00d_SYNC_FROM_REMOTE.20230606155323.out",
-            "@type": "File",
-            "contentSize": 67,
-            "dateModified": "2023-06-06T13:53:29",
-            "encodingFormat": "text/plain",
-            "name": "a00d_SYNC_FROM_REMOTE.20230606155323.out",
-            "sdDatePublished": "2023-06-06T13:56:17+00:00"
-        },
-        {
-            "@id": "tmp/LOG_a00d/a00d_19930101_SIM.20230606154015.err",
-            "@type": "File",
-            "contentSize": 3640,
-            "dateModified": "2023-06-06T13:53:03",
-            "encodingFormat": "text/plain",
-            "name": "a00d_19930101_SIM.20230606154015.err",
-            "sdDatePublished": "2023-06-06T13:56:17+00:00"
-        },
-        {
-            "@id": "tmp/LOG_a00d/a00d_REMOTE_SETUP.20230606153948.err",
-            "@type": "File",
-            "contentSize": 6013,
-            "dateModified": "2023-06-06T13:40:09",
-            "encodingFormat": "text/plain",
-            "name": "a00d_REMOTE_SETUP.20230606153948.err",
-            "sdDatePublished": "2023-06-06T13:56:17+00:00"
-        },
-        {
-            "@id": "tmp/LOG_a00d/a00d_19910101_SIM.20230606154015.out",
-            "@type": "File",
-            "contentSize": 5221,
-            "dateModified": "2023-06-06T13:53:03",
-            "encodingFormat": "text/plain",
-            "name": "a00d_19910101_SIM.20230606154015.out",
-            "sdDatePublished": "2023-06-06T13:56:17+00:00"
-        },
-        {
-            "@id": "tmp/LOG_a00d/a00d_19930101_SIM.20230606154015.out",
-            "@type": "File",
-            "contentSize": 5221,
-            "dateModified": "2023-06-06T13:53:03",
-            "encodingFormat": "text/plain",
-            "name": "a00d_19930101_SIM.20230606154015.out",
-            "sdDatePublished": "2023-06-06T13:56:17+00:00"
-        },
-        {
-            "@id": "tmp/LOG_a00d/a00d_SYNC_FROM_REMOTE.20230606155323.err",
-            "@type": "File",
-            "contentSize": 1865,
-            "dateModified": "2023-06-06T13:53:29",
-            "encodingFormat": "text/plain",
-            "name": "a00d_SYNC_FROM_REMOTE.20230606155323.err",
-            "sdDatePublished": "2023-06-06T13:56:17+00:00"
-        },
-        {
-            "@id": "tmp/LOG_a00d/a00d_19910101_GRAPH.20230606155311.out",
-            "@type": "File",
-            "contentSize": 1307,
-            "dateModified": "2023-06-06T13:53:17",
-            "encodingFormat": "text/plain",
-            "name": "a00d_19910101_GRAPH.20230606155311.out",
-            "sdDatePublished": "2023-06-06T13:56:17+00:00"
-        },
-        {
-            "@id": "tmp/LOG_a00d/a00d_19910101_SIM.20230606154015.err",
-            "@type": "File",
-            "contentSize": 3640,
-            "dateModified": "2023-06-06T13:53:03",
-            "encodingFormat": "text/plain",
-            "name": "a00d_19910101_SIM.20230606154015.err",
-            "sdDatePublished": "2023-06-06T13:56:17+00:00"
-        },
-        {
-            "@id": "tmp/LOG_a00d/a00d_19930101_GRAPH.20230606155311.out",
-            "@type": "File",
-            "contentSize": 755,
-            "dateModified": "2023-06-06T13:53:17",
-            "encodingFormat": "text/plain",
-            "name": "a00d_19930101_GRAPH.20230606155311.out",
-            "sdDatePublished": "2023-06-06T13:56:17+00:00"
-        },
-        {
-            "@id": "tmp/LOG_a00d/a00d_19930101_GRAPH.20230606155311.err",
-            "@type": "File",
-            "contentSize": 4266,
-            "dateModified": "2023-06-06T13:53:17",
-            "encodingFormat": "text/plain",
-            "name": "a00d_19930101_GRAPH.20230606155311.err",
-            "sdDatePublished": "2023-06-06T13:56:17+00:00"
-        },
-        {
-            "@id": "tmp/LOG_a00d/a00d_REMOTE_SETUP.20230606153948.out",
-            "@type": "File",
-            "contentSize": 4562,
-            "dateModified": "2023-06-06T13:40:09",
-            "encodingFormat": "text/plain",
-            "name": "a00d_REMOTE_SETUP.20230606153948.out",
-            "sdDatePublished": "2023-06-06T13:56:17+00:00"
-        },
-        {
-            "@id": "tmp/LOG_a00d/a00d_19910101_GRAPH.20230606155311.err",
-            "@type": "File",
-            "contentSize": 4266,
-            "dateModified": "2023-06-06T13:53:17",
-            "encodingFormat": "text/plain",
-            "name": "a00d_19910101_GRAPH.20230606155311.err",
-            "sdDatePublished": "2023-06-06T13:56:17+00:00"
-        },
-        {
-            "@id": "tmp/ASLOGS/jobs_active_status.log",
-            "@type": "File",
-            "contentSize": 607,
-            "dateModified": "2023-06-06T13:53:35",
-            "encodingFormat": "text/plain",
-            "name": "jobs_active_status.log",
-            "sdDatePublished": "2023-06-06T13:56:17+00:00"
-        },
-        {
-            "@id": "tmp/ASLOGS/jobs_failed_status.log",
-            "@type": "File",
-            "contentSize": 0,
-            "dateModified": "2023-06-06T13:53:35",
-            "encodingFormat": "text/plain",
-            "name": "jobs_failed_status.log",
-            "sdDatePublished": "2023-06-06T13:56:17+00:00"
-        },
-        {
-            "@id": "tmp/ASLOGS/20230606_153827_create_err.log",
-            "@type": "File",
-            "contentSize": 0,
-            "dateModified": "2023-06-06T13:38:28",
-            "encodingFormat": "text/plain",
-            "name": "20230606_153827_create_err.log",
-            "sdDatePublished": "2023-06-06T13:56:17+00:00"
-        },
-        {
-            "@id": "tmp/ASLOGS/20230606_153922_run.log",
-            "@type": "File",
-            "contentSize": 82245,
-            "dateModified": "2023-06-06T13:53:45",
-            "encodingFormat": "text/plain",
-            "name": "20230606_153922_run.log",
-            "sdDatePublished": "2023-06-06T13:56:17+00:00"
-        },
-        {
-            "@id": "tmp/ASLOGS/20230606_153922_run_err.log",
-            "@type": "File",
-            "contentSize": 0,
-            "dateModified": "2023-06-06T13:39:23",
-            "encodingFormat": "text/plain",
-            "name": "20230606_153922_run_err.log",
-            "sdDatePublished": "2023-06-06T13:56:17+00:00"
-        },
-        {
-            "@id": "tmp/ASLOGS/20230606_153827_create.log",
-            "@type": "File",
-            "contentSize": 4235,
-            "dateModified": "2023-06-06T13:38:34",
-            "encodingFormat": "text/plain",
-            "name": "20230606_153827_create.log",
-            "sdDatePublished": "2023-06-06T13:56:17+00:00"
-        },
-        {
-            "@id": "tmp/",
-            "@type": "Dataset"
-        },
-        {
-            "@id": "plot/a00d_20230606_1538.pdf",
-            "@type": "File",
-            "contentSize": 10173,
-            "dateModified": "2023-06-06T13:38:33",
-            "encodingFormat": "application/pdf",
-            "name": "a00d_20230606_1538.pdf",
-            "sdDatePublished": "2023-06-06T13:56:17+00:00"
-        },
-        {
-            "@id": "plot/",
-            "@type": "Dataset"
-        },
-        {
-            "@id": "status/a00d_20230606_1538.txt",
-            "@type": "File",
-            "contentSize": 225,
-            "dateModified": "2023-06-06T13:38:33",
-            "encodingFormat": "text/plain",
-            "name": "a00d_20230606_1538.txt",
-            "sdDatePublished": "2023-06-06T13:56:17+00:00"
-        },
-        {
-            "@id": "status/",
-            "@type": "Dataset"
-        },
-        {
-            "@id": "pkl/job_list_a00d.pkl",
-            "@type": "File",
-            "contentSize": 1290,
-            "dateModified": "2023-06-06T13:53:35",
-            "encodingFormat": "application/binary",
-            "name": "job_list_a00d.pkl",
-            "sdDatePublished": "2023-06-06T13:56:17+00:00"
-        },
-        {
-            "@id": "pkl/job_packages_a00d.db",
-            "@type": "File",
-            "contentSize": 16384,
-            "dateModified": "2023-06-06T13:38:33",
-            "encodingFormat": "application/binary",
-            "name": "job_packages_a00d.db",
-            "sdDatePublished": "2023-06-06T13:56:17+00:00"
-        },
-        {
-            "@id": "pkl/",
-            "@type": "Dataset"
-        },
-        {
-            "@id": "#create-action",
-            "@type": "CreateAction",
-            "actionStatus": {
-                "@id": "http://schema.org/PotentialActionStatus"
-            },
-            "agent": {
-                "@id": "https://orcid.org/0000-0001-8250-4074"
-            },
-            "description": "Autosubmit mHM test domains",
-            "endTime": "2023-06-06T15:53:06",
+            "hasPart": [
+                {
+                    "@id": "https://github.com/kinow/auto-mhm-test-domains.git"
+                }
+            ],
             "input": [
                 {
                     "@id": "#DEFAULT.EXPID-param"
@@ -929,10 +355,7 @@
                     "@id": "#MHM.EVAL_PERIOD_DURATION_YEARS-param"
                 }
             ],
-            "instrument": {
-                "@id": "https://mhm.pages.ufz.de/mhm/stable/"
-            },
-            "name": "Run mHM",
+            "name": "workflow",
             "output": [
                 {
                     "@id": "#/home/bdepaula/autosubmit/a00d/proj/git_project/docs/plot_1993_1995.gif-param"
@@ -941,7 +364,674 @@
                     "@id": "#/home/bdepaula/autosubmit/a00d/proj/git_project/docs/plot_1991_1993.gif-param"
                 }
             ],
-            "startTime": "2023-06-06T15:53:11"
+            "programmingLanguage": {
+                "@id": "#autosubmit"
+            }
+        },
+        {
+            "@id": "#autosubmit",
+            "@type": "ComputerLanguage",
+            "alternateName": "AS",
+            "citation": "https://doi.org/10.1109/HPCSim.2016.7568429",
+            "name": "Autosubmit",
+            "url": "https://autosubmit.readthedocs.io/",
+            "version": "4.0.0b"
+        },
+        {
+            "@id": "conf/minimal.yml",
+            "@type": "File",
+            "contentSize": 781,
+            "dateModified": "2023-07-10T14:19:04",
+            "name": "minimal.yml",
+            "sdDatePublished": "2023-07-10T15:33:06+00:00"
+        },
+        {
+            "@id": "conf/",
+            "@type": "Dataset"
+        },
+        {
+            "@id": "tmp/a00d_SYNC_FROM_REMOTE_TOTAL_STATS",
+            "@type": "File",
+            "additionalType": "text/plain",
+            "contentSize": 0,
+            "dateModified": "2023-07-10T13:58:18",
+            "name": "a00d_SYNC_FROM_REMOTE_TOTAL_STATS",
+            "sdDatePublished": "2023-07-10T15:33:06+00:00"
+        },
+        {
+            "@id": "tmp/a00d_19930101_GRAPH_STAT",
+            "@type": "File",
+            "additionalType": "text/plain",
+            "contentSize": 0,
+            "dateModified": "2023-07-10T13:58:18",
+            "name": "a00d_19930101_GRAPH_STAT",
+            "sdDatePublished": "2023-07-10T15:33:06+00:00"
+        },
+        {
+            "@id": "tmp/a00d_REMOTE_SETUP_STAT",
+            "@type": "File",
+            "additionalType": "text/plain",
+            "contentSize": 0,
+            "dateModified": "2023-07-10T13:58:18",
+            "name": "a00d_REMOTE_SETUP_STAT",
+            "sdDatePublished": "2023-07-10T15:33:06+00:00"
+        },
+        {
+            "@id": "tmp/a00d_19930101_SIM_COMPLETED",
+            "@type": "File",
+            "additionalType": "text/plain",
+            "contentSize": 0,
+            "dateModified": "2023-07-10T13:58:18",
+            "name": "a00d_19930101_SIM_COMPLETED",
+            "sdDatePublished": "2023-07-10T15:33:06+00:00"
+        },
+        {
+            "@id": "tmp/a00d_19910101_SIM_TOTAL_STATS",
+            "@type": "File",
+            "additionalType": "text/plain",
+            "contentSize": 0,
+            "dateModified": "2023-07-10T13:58:18",
+            "name": "a00d_19910101_SIM_TOTAL_STATS",
+            "sdDatePublished": "2023-07-10T15:33:06+00:00"
+        },
+        {
+            "@id": "tmp/a00d_19910101_SIM_COMPLETED",
+            "@type": "File",
+            "additionalType": "text/plain",
+            "contentSize": 0,
+            "dateModified": "2023-07-10T13:58:18",
+            "name": "a00d_19910101_SIM_COMPLETED",
+            "sdDatePublished": "2023-07-10T15:33:06+00:00"
+        },
+        {
+            "@id": "tmp/a00d_19910101_GRAPH_STAT",
+            "@type": "File",
+            "additionalType": "text/plain",
+            "contentSize": 0,
+            "dateModified": "2023-07-10T13:58:18",
+            "name": "a00d_19910101_GRAPH_STAT",
+            "sdDatePublished": "2023-07-10T15:33:06+00:00"
+        },
+        {
+            "@id": "tmp/a00d_19930101_SIM_TOTAL_STATS",
+            "@type": "File",
+            "additionalType": "text/plain",
+            "contentSize": 0,
+            "dateModified": "2023-07-10T13:58:18",
+            "name": "a00d_19930101_SIM_TOTAL_STATS",
+            "sdDatePublished": "2023-07-10T15:33:06+00:00"
+        },
+        {
+            "@id": "tmp/a00d_SYNC_TO_REMOTE_TOTAL_STATS",
+            "@type": "File",
+            "additionalType": "text/plain",
+            "contentSize": 0,
+            "dateModified": "2023-07-10T13:58:18",
+            "name": "a00d_SYNC_TO_REMOTE_TOTAL_STATS",
+            "sdDatePublished": "2023-07-10T15:33:06+00:00"
+        },
+        {
+            "@id": "tmp/a00d_19910101_GRAPH_COMPLETED",
+            "@type": "File",
+            "additionalType": "text/plain",
+            "contentSize": 0,
+            "dateModified": "2023-07-10T13:58:18",
+            "name": "a00d_19910101_GRAPH_COMPLETED",
+            "sdDatePublished": "2023-07-10T15:33:06+00:00"
+        },
+        {
+            "@id": "tmp/a00d_19930101_GRAPH_COMPLETED",
+            "@type": "File",
+            "additionalType": "text/plain",
+            "contentSize": 0,
+            "dateModified": "2023-07-10T13:58:18",
+            "name": "a00d_19930101_GRAPH_COMPLETED",
+            "sdDatePublished": "2023-07-10T15:33:06+00:00"
+        },
+        {
+            "@id": "tmp/a00d_19910101_SIM_STAT",
+            "@type": "File",
+            "additionalType": "text/plain",
+            "contentSize": 0,
+            "dateModified": "2023-07-10T13:58:18",
+            "name": "a00d_19910101_SIM_STAT",
+            "sdDatePublished": "2023-07-10T15:33:06+00:00"
+        },
+        {
+            "@id": "tmp/a00d_SYNC_TO_REMOTE_COMPLETED",
+            "@type": "File",
+            "additionalType": "text/plain",
+            "contentSize": 0,
+            "dateModified": "2023-07-10T13:58:18",
+            "name": "a00d_SYNC_TO_REMOTE_COMPLETED",
+            "sdDatePublished": "2023-07-10T15:33:06+00:00"
+        },
+        {
+            "@id": "tmp/a00d_19910101_SIM.cmd",
+            "@type": "File",
+            "additionalType": "text/plain",
+            "contentSize": 0,
+            "dateModified": "2023-07-10T13:58:18",
+            "name": "a00d_19910101_SIM.cmd",
+            "sdDatePublished": "2023-07-10T15:33:06+00:00"
+        },
+        {
+            "@id": "tmp/a00d_SYNC_FROM_REMOTE_COMPLETED",
+            "@type": "File",
+            "additionalType": "text/plain",
+            "contentSize": 0,
+            "dateModified": "2023-07-10T13:58:18",
+            "name": "a00d_SYNC_FROM_REMOTE_COMPLETED",
+            "sdDatePublished": "2023-07-10T15:33:06+00:00"
+        },
+        {
+            "@id": "tmp/a00d_19910101_GRAPH_TOTAL_STATS",
+            "@type": "File",
+            "additionalType": "text/plain",
+            "contentSize": 0,
+            "dateModified": "2023-07-10T13:58:18",
+            "name": "a00d_19910101_GRAPH_TOTAL_STATS",
+            "sdDatePublished": "2023-07-10T15:33:06+00:00"
+        },
+        {
+            "@id": "tmp/a00d_CLEAN_TOTAL_STATS",
+            "@type": "File",
+            "additionalType": "text/plain",
+            "contentSize": 0,
+            "dateModified": "2023-07-10T13:58:18",
+            "name": "a00d_CLEAN_TOTAL_STATS",
+            "sdDatePublished": "2023-07-10T15:33:06+00:00"
+        },
+        {
+            "@id": "tmp/a00d_19930101_GRAPH.cmd",
+            "@type": "File",
+            "additionalType": "text/plain",
+            "contentSize": 0,
+            "dateModified": "2023-07-10T13:58:18",
+            "name": "a00d_19930101_GRAPH.cmd",
+            "sdDatePublished": "2023-07-10T15:33:06+00:00"
+        },
+        {
+            "@id": "tmp/a00d_19930101_GRAPH_TOTAL_STATS",
+            "@type": "File",
+            "additionalType": "text/plain",
+            "contentSize": 0,
+            "dateModified": "2023-07-10T13:58:18",
+            "name": "a00d_19930101_GRAPH_TOTAL_STATS",
+            "sdDatePublished": "2023-07-10T15:33:06+00:00"
+        },
+        {
+            "@id": "tmp/a00d_CLEAN_COMPLETED",
+            "@type": "File",
+            "additionalType": "text/plain",
+            "contentSize": 0,
+            "dateModified": "2023-07-10T13:58:18",
+            "name": "a00d_CLEAN_COMPLETED",
+            "sdDatePublished": "2023-07-10T15:33:06+00:00"
+        },
+        {
+            "@id": "tmp/a00d_SYNC_TO_REMOTE_STAT",
+            "@type": "File",
+            "additionalType": "text/plain",
+            "contentSize": 0,
+            "dateModified": "2023-07-10T13:58:18",
+            "name": "a00d_SYNC_TO_REMOTE_STAT",
+            "sdDatePublished": "2023-07-10T15:33:06+00:00"
+        },
+        {
+            "@id": "tmp/a00d_SYNC_TO_REMOTE.cmd",
+            "@type": "File",
+            "additionalType": "text/plain",
+            "contentSize": 0,
+            "dateModified": "2023-07-10T13:58:18",
+            "name": "a00d_SYNC_TO_REMOTE.cmd",
+            "sdDatePublished": "2023-07-10T15:33:06+00:00"
+        },
+        {
+            "@id": "tmp/a00d_CLEAN.cmd",
+            "@type": "File",
+            "additionalType": "text/plain",
+            "contentSize": 0,
+            "dateModified": "2023-07-10T13:58:18",
+            "name": "a00d_CLEAN.cmd",
+            "sdDatePublished": "2023-07-10T15:33:06+00:00"
+        },
+        {
+            "@id": "tmp/a00d_REMOTE_SETUP_TOTAL_STATS",
+            "@type": "File",
+            "additionalType": "text/plain",
+            "contentSize": 0,
+            "dateModified": "2023-07-10T13:58:18",
+            "name": "a00d_REMOTE_SETUP_TOTAL_STATS",
+            "sdDatePublished": "2023-07-10T15:33:06+00:00"
+        },
+        {
+            "@id": "tmp/a00d_SYNC_FROM_REMOTE.cmd",
+            "@type": "File",
+            "additionalType": "text/plain",
+            "contentSize": 0,
+            "dateModified": "2023-07-10T13:58:18",
+            "name": "a00d_SYNC_FROM_REMOTE.cmd",
+            "sdDatePublished": "2023-07-10T15:33:06+00:00"
+        },
+        {
+            "@id": "tmp/a00d_SYNC_FROM_REMOTE_STAT",
+            "@type": "File",
+            "additionalType": "text/plain",
+            "contentSize": 0,
+            "dateModified": "2023-07-10T13:58:18",
+            "name": "a00d_SYNC_FROM_REMOTE_STAT",
+            "sdDatePublished": "2023-07-10T15:33:06+00:00"
+        },
+        {
+            "@id": "tmp/a00d_REMOTE_SETUP.cmd",
+            "@type": "File",
+            "additionalType": "text/plain",
+            "contentSize": 0,
+            "dateModified": "2023-07-10T13:58:18",
+            "name": "a00d_REMOTE_SETUP.cmd",
+            "sdDatePublished": "2023-07-10T15:33:06+00:00"
+        },
+        {
+            "@id": "tmp/a00d_19930101_SIM_STAT",
+            "@type": "File",
+            "additionalType": "text/plain",
+            "contentSize": 0,
+            "dateModified": "2023-07-10T13:58:18",
+            "name": "a00d_19930101_SIM_STAT",
+            "sdDatePublished": "2023-07-10T15:33:06+00:00"
+        },
+        {
+            "@id": "tmp/a00d_19930101_SIM.cmd",
+            "@type": "File",
+            "additionalType": "text/plain",
+            "contentSize": 0,
+            "dateModified": "2023-07-10T13:58:18",
+            "name": "a00d_19930101_SIM.cmd",
+            "sdDatePublished": "2023-07-10T15:33:06+00:00"
+        },
+        {
+            "@id": "tmp/a00d_REMOTE_SETUP_COMPLETED",
+            "@type": "File",
+            "additionalType": "text/plain",
+            "contentSize": 0,
+            "dateModified": "2023-07-10T13:58:18",
+            "name": "a00d_REMOTE_SETUP_COMPLETED",
+            "sdDatePublished": "2023-07-10T15:33:06+00:00"
+        },
+        {
+            "@id": "tmp/a00d_CLEAN_STAT",
+            "@type": "File",
+            "additionalType": "text/plain",
+            "contentSize": 0,
+            "dateModified": "2023-07-10T13:58:18",
+            "name": "a00d_CLEAN_STAT",
+            "sdDatePublished": "2023-07-10T15:33:06+00:00"
+        },
+        {
+            "@id": "tmp/a00d_19910101_GRAPH.cmd",
+            "@type": "File",
+            "additionalType": "text/plain",
+            "contentSize": 0,
+            "dateModified": "2023-07-10T13:58:18",
+            "name": "a00d_19910101_GRAPH.cmd",
+            "sdDatePublished": "2023-07-10T15:33:06+00:00"
+        },
+        {
+            "@id": "tmp/LOG_a00d/a00d_19910101_SIM.20230606154015.out",
+            "@type": "File",
+            "additionalType": "text/plain",
+            "contentSize": 0,
+            "dateModified": "2023-07-10T13:58:18",
+            "name": "a00d_19910101_SIM.20230606154015.out",
+            "sdDatePublished": "2023-07-10T15:33:06+00:00"
+        },
+        {
+            "@id": "tmp/LOG_a00d/a00d_19930101_SIM.20230606154015.err",
+            "@type": "File",
+            "additionalType": "text/plain",
+            "contentSize": 0,
+            "dateModified": "2023-07-10T13:58:18",
+            "name": "a00d_19930101_SIM.20230606154015.err",
+            "sdDatePublished": "2023-07-10T15:33:06+00:00"
+        },
+        {
+            "@id": "tmp/LOG_a00d/a00d_SYNC_FROM_REMOTE.20230606155323.err",
+            "@type": "File",
+            "additionalType": "text/plain",
+            "contentSize": 0,
+            "dateModified": "2023-07-10T13:58:18",
+            "name": "a00d_SYNC_FROM_REMOTE.20230606155323.err",
+            "sdDatePublished": "2023-07-10T15:33:06+00:00"
+        },
+        {
+            "@id": "tmp/LOG_a00d/a00d_19910101_SIM.20230606154015.err",
+            "@type": "File",
+            "additionalType": "text/plain",
+            "contentSize": 0,
+            "dateModified": "2023-07-10T13:58:18",
+            "name": "a00d_19910101_SIM.20230606154015.err",
+            "sdDatePublished": "2023-07-10T15:33:06+00:00"
+        },
+        {
+            "@id": "tmp/LOG_a00d/a00d_SYNC_TO_REMOTE.20230606153936.out",
+            "@type": "File",
+            "additionalType": "text/plain",
+            "contentSize": 0,
+            "dateModified": "2023-07-10T13:58:18",
+            "name": "a00d_SYNC_TO_REMOTE.20230606153936.out",
+            "sdDatePublished": "2023-07-10T15:33:06+00:00"
+        },
+        {
+            "@id": "tmp/LOG_a00d/a00d_19930101_GRAPH.20230606155311.err",
+            "@type": "File",
+            "additionalType": "text/plain",
+            "contentSize": 0,
+            "dateModified": "2023-07-10T13:58:18",
+            "name": "a00d_19930101_GRAPH.20230606155311.err",
+            "sdDatePublished": "2023-07-10T15:33:06+00:00"
+        },
+        {
+            "@id": "tmp/LOG_a00d/a00d_CLEAN.20230606155335.err",
+            "@type": "File",
+            "additionalType": "text/plain",
+            "contentSize": 0,
+            "dateModified": "2023-07-10T13:58:18",
+            "name": "a00d_CLEAN.20230606155335.err",
+            "sdDatePublished": "2023-07-10T15:33:06+00:00"
+        },
+        {
+            "@id": "tmp/LOG_a00d/a00d_SYNC_FROM_REMOTE.20230606155323.out",
+            "@type": "File",
+            "additionalType": "text/plain",
+            "contentSize": 0,
+            "dateModified": "2023-07-10T13:58:18",
+            "name": "a00d_SYNC_FROM_REMOTE.20230606155323.out",
+            "sdDatePublished": "2023-07-10T15:33:06+00:00"
+        },
+        {
+            "@id": "tmp/LOG_a00d/a00d_REMOTE_SETUP.20230606153948.err",
+            "@type": "File",
+            "additionalType": "text/plain",
+            "contentSize": 0,
+            "dateModified": "2023-07-10T13:58:18",
+            "name": "a00d_REMOTE_SETUP.20230606153948.err",
+            "sdDatePublished": "2023-07-10T15:33:06+00:00"
+        },
+        {
+            "@id": "tmp/LOG_a00d/a00d_19910101_GRAPH.20230606155311.out",
+            "@type": "File",
+            "additionalType": "text/plain",
+            "contentSize": 0,
+            "dateModified": "2023-07-10T13:58:18",
+            "name": "a00d_19910101_GRAPH.20230606155311.out",
+            "sdDatePublished": "2023-07-10T15:33:06+00:00"
+        },
+        {
+            "@id": "tmp/LOG_a00d/a00d_SYNC_TO_REMOTE.20230606153936.err",
+            "@type": "File",
+            "additionalType": "text/plain",
+            "contentSize": 0,
+            "dateModified": "2023-07-10T13:58:18",
+            "name": "a00d_SYNC_TO_REMOTE.20230606153936.err",
+            "sdDatePublished": "2023-07-10T15:33:06+00:00"
+        },
+        {
+            "@id": "tmp/LOG_a00d/a00d_REMOTE_SETUP.20230606153948.out",
+            "@type": "File",
+            "additionalType": "text/plain",
+            "contentSize": 0,
+            "dateModified": "2023-07-10T13:58:18",
+            "name": "a00d_REMOTE_SETUP.20230606153948.out",
+            "sdDatePublished": "2023-07-10T15:33:06+00:00"
+        },
+        {
+            "@id": "tmp/LOG_a00d/a00d_19930101_GRAPH.20230606155311.out",
+            "@type": "File",
+            "additionalType": "text/plain",
+            "contentSize": 0,
+            "dateModified": "2023-07-10T13:58:18",
+            "name": "a00d_19930101_GRAPH.20230606155311.out",
+            "sdDatePublished": "2023-07-10T15:33:06+00:00"
+        },
+        {
+            "@id": "tmp/LOG_a00d/a00d_19910101_GRAPH.20230606155311.err",
+            "@type": "File",
+            "additionalType": "text/plain",
+            "contentSize": 0,
+            "dateModified": "2023-07-10T13:58:18",
+            "name": "a00d_19910101_GRAPH.20230606155311.err",
+            "sdDatePublished": "2023-07-10T15:33:06+00:00"
+        },
+        {
+            "@id": "tmp/LOG_a00d/a00d_19930101_SIM.20230606154015.out",
+            "@type": "File",
+            "additionalType": "text/plain",
+            "contentSize": 0,
+            "dateModified": "2023-07-10T13:58:18",
+            "name": "a00d_19930101_SIM.20230606154015.out",
+            "sdDatePublished": "2023-07-10T15:33:06+00:00"
+        },
+        {
+            "@id": "tmp/LOG_a00d/a00d_CLEAN.20230606155335.out",
+            "@type": "File",
+            "additionalType": "text/plain",
+            "contentSize": 0,
+            "dateModified": "2023-07-10T13:58:18",
+            "name": "a00d_CLEAN.20230606155335.out",
+            "sdDatePublished": "2023-07-10T15:33:06+00:00"
+        },
+        {
+            "@id": "tmp/ASLOGS/20230606_153922_run_err.log",
+            "@type": "File",
+            "additionalType": "text/plain",
+            "contentSize": 0,
+            "dateModified": "2023-07-10T13:58:18",
+            "name": "20230606_153922_run_err.log",
+            "sdDatePublished": "2023-07-10T15:33:06+00:00"
+        },
+        {
+            "@id": "tmp/ASLOGS/20230606_153922_run.log",
+            "@type": "File",
+            "additionalType": "text/plain",
+            "contentSize": 0,
+            "dateModified": "2023-07-10T13:58:18",
+            "name": "20230606_153922_run.log",
+            "sdDatePublished": "2023-07-10T15:33:06+00:00"
+        },
+        {
+            "@id": "tmp/ASLOGS/jobs_failed_status.log",
+            "@type": "File",
+            "additionalType": "text/plain",
+            "contentSize": 0,
+            "dateModified": "2023-07-10T13:58:18",
+            "name": "jobs_failed_status.log",
+            "sdDatePublished": "2023-07-10T15:33:06+00:00"
+        },
+        {
+            "@id": "tmp/ASLOGS/20230606_153827_create.log",
+            "@type": "File",
+            "additionalType": "text/plain",
+            "contentSize": 0,
+            "dateModified": "2023-07-10T13:58:18",
+            "name": "20230606_153827_create.log",
+            "sdDatePublished": "2023-07-10T15:33:06+00:00"
+        },
+        {
+            "@id": "tmp/ASLOGS/20230606_153827_create_err.log",
+            "@type": "File",
+            "additionalType": "text/plain",
+            "contentSize": 0,
+            "dateModified": "2023-07-10T13:58:18",
+            "name": "20230606_153827_create_err.log",
+            "sdDatePublished": "2023-07-10T15:33:06+00:00"
+        },
+        {
+            "@id": "tmp/ASLOGS/jobs_active_status.log",
+            "@type": "File",
+            "additionalType": "text/plain",
+            "contentSize": 0,
+            "dateModified": "2023-07-10T13:58:18",
+            "name": "jobs_active_status.log",
+            "sdDatePublished": "2023-07-10T15:33:06+00:00"
+        },
+        {
+            "@id": "tmp/",
+            "@type": "Dataset"
+        },
+        {
+            "@id": "plot/a00d_20230606_1538.pdf",
+            "@type": "File",
+            "additionalType": "application/pdf",
+            "contentSize": 10173,
+            "dateModified": "2023-07-10T13:58:18",
+            "name": "a00d_20230606_1538.pdf",
+            "sdDatePublished": "2023-07-10T15:33:06+00:00"
+        },
+        {
+            "@id": "plot/",
+            "@type": "Dataset"
+        },
+        {
+            "@id": "status/a00d_20230606_1538.txt",
+            "@type": "File",
+            "additionalType": "text/plain",
+            "contentSize": 225,
+            "dateModified": "2023-07-10T13:58:18",
+            "name": "a00d_20230606_1538.txt",
+            "sdDatePublished": "2023-07-10T15:33:06+00:00"
+        },
+        {
+            "@id": "status/",
+            "@type": "Dataset"
+        },
+        {
+            "@id": "pkl/job_list_a00d.pkl",
+            "@type": "File",
+            "additionalType": "application/binary",
+            "contentSize": 1290,
+            "dateModified": "2023-07-10T13:58:18",
+            "name": "job_list_a00d.pkl",
+            "sdDatePublished": "2023-07-10T15:33:06+00:00"
+        },
+        {
+            "@id": "pkl/job_packages_a00d.db",
+            "@type": "File",
+            "additionalType": "application/binary",
+            "contentSize": 16384,
+            "dateModified": "2023-07-10T13:58:18",
+            "name": "job_packages_a00d.db",
+            "sdDatePublished": "2023-07-10T15:33:06+00:00"
+        },
+        {
+            "@id": "pkl/",
+            "@type": "Dataset"
+        },
+        {
+            "@id": "#create-action",
+            "@type": "CreateAction",
+            "actionStatus": {
+                "@id": "http://schema.org/CompletedActionStatus"
+            },
+            "agent": {
+                "@id": "https://orcid.org/0000-0001-8250-4074"
+            },
+            "description": "Autosubmit mHM test domains",
+            "endTime": null,
+            "instrument": {
+                "@id": "workflow.yml"
+            },
+            "name": "Run mHM",
+            "object": [
+                {
+                    "@id": "#DEFAULT.EXPID-pv"
+                },
+                {
+                    "@id": "#DEFAULT.HPCARCH-pv"
+                },
+                {
+                    "@id": "#DEFAULT.CUSTOM_CONFIG-pv"
+                },
+                {
+                    "@id": "#EXPERIMENT.DATELIST-pv"
+                },
+                {
+                    "@id": "#EXPERIMENT.CALENDAR-pv"
+                },
+                {
+                    "@id": "#EXPERIMENT.CHUNKSIZE-pv"
+                },
+                {
+                    "@id": "#EXPERIMENT.NUMCHUNKS-pv"
+                },
+                {
+                    "@id": "#EXPERIMENT.CHUNKSIZEUNIT-pv"
+                },
+                {
+                    "@id": "#EXPERIMENT.MEMBERS-pv"
+                },
+                {
+                    "@id": "#CONFIG.AUTOSUBMIT_VERSION-pv"
+                },
+                {
+                    "@id": "#CONFIG.TOTALJOBS-pv"
+                },
+                {
+                    "@id": "#CONFIG.MAXWAITINGJOBS-pv"
+                },
+                {
+                    "@id": "#PROJECT.PROJECT_TYPE-pv"
+                },
+                {
+                    "@id": "#PROJECT.PROJECT_DESTINATION-pv"
+                },
+                {
+                    "@id": "#GIT.PROJECT_ORIGIN-pv"
+                },
+                {
+                    "@id": "#GIT.PROJECT_BRANCH-pv"
+                },
+                {
+                    "@id": "#GIT.PROJECT_COMMIT-pv"
+                },
+                {
+                    "@id": "#GIT.PROJECT_SUBMODULES-pv"
+                },
+                {
+                    "@id": "#GIT.FETCH_SINGLE_BRANCH-pv"
+                },
+                {
+                    "@id": "#MHM.BRANCH_NAME-pv"
+                },
+                {
+                    "@id": "#MHM.DOMAIN-pv"
+                },
+                {
+                    "@id": "#MHM.EVAL_PERIOD_DURATION_YEARS-pv"
+                }
+            ],
+            "result": [
+                {
+                    "@id": "#/home/bdepaula/autosubmit/a00d/proj/git_project/docs/plot_1993_1995.gif-pv"
+                },
+                {
+                    "@id": "#/home/bdepaula/autosubmit/a00d/proj/git_project/docs/plot_1991_1993.gif-pv"
+                }
+            ],
+            "startTime": null
+        },
+        {
+            "@id": "https://github.com/kinow/auto-mhm-test-domains.git",
+            "@type": "SoftwareSourceCode",
+            "abstract": "The Autosubmit project. It contains the templates used\nby Autosubmit for the scripts used in the workflow, as well as any other\nsource code used by the scripts (i.e. any files sourced, or other source\ncode compiled or executed in the workflow).",
+            "codeRepository": "https://github.com/kinow/auto-mhm-test-domains.git",
+            "codeSampleType": "template",
+            "name": "https://github.com/kinow/auto-mhm-test-domains.git",
+            "programmingLanguage": "Any",
+            "runtimePlatform": "Autosubmit 4.0.0b",
+            "sdDatePublished": "2023-07-10T15:33:06+00:00",
+            "targetProduct": "Autosubmit",
+            "version": "9ab36021b2f342e6a5d3a9fd74e5f8b9e25cc51a"
         },
         {
             "@id": "#DEFAULT.EXPID-param",
@@ -951,9 +1041,9 @@
             "valueRequired": "True"
         },
         {
-            "@id": "DEFAULT.EXPID-pv",
+            "@id": "#DEFAULT.EXPID-pv",
             "@type": "PropertyValue",
-            "exampleWork": {
+            "exampleOfWork": {
                 "@id": "#DEFAULT.EXPID-param"
             },
             "name": "DEFAULT.EXPID",
@@ -967,9 +1057,9 @@
             "valueRequired": "True"
         },
         {
-            "@id": "DEFAULT.HPCARCH-pv",
+            "@id": "#DEFAULT.HPCARCH-pv",
             "@type": "PropertyValue",
-            "exampleWork": {
+            "exampleOfWork": {
                 "@id": "#DEFAULT.HPCARCH-param"
             },
             "name": "DEFAULT.HPCARCH",
@@ -983,9 +1073,9 @@
             "valueRequired": "True"
         },
         {
-            "@id": "DEFAULT.CUSTOM_CONFIG-pv",
+            "@id": "#DEFAULT.CUSTOM_CONFIG-pv",
             "@type": "PropertyValue",
-            "exampleWork": {
+            "exampleOfWork": {
                 "@id": "#DEFAULT.CUSTOM_CONFIG-param"
             },
             "name": "DEFAULT.CUSTOM_CONFIG",
@@ -999,9 +1089,9 @@
             "valueRequired": "True"
         },
         {
-            "@id": "EXPERIMENT.DATELIST-pv",
+            "@id": "#EXPERIMENT.DATELIST-pv",
             "@type": "PropertyValue",
-            "exampleWork": {
+            "exampleOfWork": {
                 "@id": "#EXPERIMENT.DATELIST-param"
             },
             "name": "EXPERIMENT.DATELIST",
@@ -1015,9 +1105,9 @@
             "valueRequired": "True"
         },
         {
-            "@id": "EXPERIMENT.CALENDAR-pv",
+            "@id": "#EXPERIMENT.CALENDAR-pv",
             "@type": "PropertyValue",
-            "exampleWork": {
+            "exampleOfWork": {
                 "@id": "#EXPERIMENT.CALENDAR-param"
             },
             "name": "EXPERIMENT.CALENDAR",
@@ -1031,9 +1121,9 @@
             "valueRequired": "True"
         },
         {
-            "@id": "EXPERIMENT.CHUNKSIZE-pv",
+            "@id": "#EXPERIMENT.CHUNKSIZE-pv",
             "@type": "PropertyValue",
-            "exampleWork": {
+            "exampleOfWork": {
                 "@id": "#EXPERIMENT.CHUNKSIZE-param"
             },
             "name": "EXPERIMENT.CHUNKSIZE",
@@ -1047,9 +1137,9 @@
             "valueRequired": "True"
         },
         {
-            "@id": "EXPERIMENT.NUMCHUNKS-pv",
+            "@id": "#EXPERIMENT.NUMCHUNKS-pv",
             "@type": "PropertyValue",
-            "exampleWork": {
+            "exampleOfWork": {
                 "@id": "#EXPERIMENT.NUMCHUNKS-param"
             },
             "name": "EXPERIMENT.NUMCHUNKS",
@@ -1063,9 +1153,9 @@
             "valueRequired": "True"
         },
         {
-            "@id": "EXPERIMENT.CHUNKSIZEUNIT-pv",
+            "@id": "#EXPERIMENT.CHUNKSIZEUNIT-pv",
             "@type": "PropertyValue",
-            "exampleWork": {
+            "exampleOfWork": {
                 "@id": "#EXPERIMENT.CHUNKSIZEUNIT-param"
             },
             "name": "EXPERIMENT.CHUNKSIZEUNIT",
@@ -1079,9 +1169,9 @@
             "valueRequired": "True"
         },
         {
-            "@id": "EXPERIMENT.MEMBERS-pv",
+            "@id": "#EXPERIMENT.MEMBERS-pv",
             "@type": "PropertyValue",
-            "exampleWork": {
+            "exampleOfWork": {
                 "@id": "#EXPERIMENT.MEMBERS-param"
             },
             "name": "EXPERIMENT.MEMBERS",
@@ -1095,9 +1185,9 @@
             "valueRequired": "True"
         },
         {
-            "@id": "CONFIG.AUTOSUBMIT_VERSION-pv",
+            "@id": "#CONFIG.AUTOSUBMIT_VERSION-pv",
             "@type": "PropertyValue",
-            "exampleWork": {
+            "exampleOfWork": {
                 "@id": "#CONFIG.AUTOSUBMIT_VERSION-param"
             },
             "name": "CONFIG.AUTOSUBMIT_VERSION",
@@ -1111,9 +1201,9 @@
             "valueRequired": "True"
         },
         {
-            "@id": "CONFIG.TOTALJOBS-pv",
+            "@id": "#CONFIG.TOTALJOBS-pv",
             "@type": "PropertyValue",
-            "exampleWork": {
+            "exampleOfWork": {
                 "@id": "#CONFIG.TOTALJOBS-param"
             },
             "name": "CONFIG.TOTALJOBS",
@@ -1127,9 +1217,9 @@
             "valueRequired": "True"
         },
         {
-            "@id": "CONFIG.MAXWAITINGJOBS-pv",
+            "@id": "#CONFIG.MAXWAITINGJOBS-pv",
             "@type": "PropertyValue",
-            "exampleWork": {
+            "exampleOfWork": {
                 "@id": "#CONFIG.MAXWAITINGJOBS-param"
             },
             "name": "CONFIG.MAXWAITINGJOBS",
@@ -1143,9 +1233,9 @@
             "valueRequired": "True"
         },
         {
-            "@id": "PROJECT.PROJECT_TYPE-pv",
+            "@id": "#PROJECT.PROJECT_TYPE-pv",
             "@type": "PropertyValue",
-            "exampleWork": {
+            "exampleOfWork": {
                 "@id": "#PROJECT.PROJECT_TYPE-param"
             },
             "name": "PROJECT.PROJECT_TYPE",
@@ -1159,9 +1249,9 @@
             "valueRequired": "True"
         },
         {
-            "@id": "PROJECT.PROJECT_DESTINATION-pv",
+            "@id": "#PROJECT.PROJECT_DESTINATION-pv",
             "@type": "PropertyValue",
-            "exampleWork": {
+            "exampleOfWork": {
                 "@id": "#PROJECT.PROJECT_DESTINATION-param"
             },
             "name": "PROJECT.PROJECT_DESTINATION",
@@ -1175,9 +1265,9 @@
             "valueRequired": "True"
         },
         {
-            "@id": "GIT.PROJECT_ORIGIN-pv",
+            "@id": "#GIT.PROJECT_ORIGIN-pv",
             "@type": "PropertyValue",
-            "exampleWork": {
+            "exampleOfWork": {
                 "@id": "#GIT.PROJECT_ORIGIN-param"
             },
             "name": "GIT.PROJECT_ORIGIN",
@@ -1191,9 +1281,9 @@
             "valueRequired": "True"
         },
         {
-            "@id": "GIT.PROJECT_BRANCH-pv",
+            "@id": "#GIT.PROJECT_BRANCH-pv",
             "@type": "PropertyValue",
-            "exampleWork": {
+            "exampleOfWork": {
                 "@id": "#GIT.PROJECT_BRANCH-param"
             },
             "name": "GIT.PROJECT_BRANCH",
@@ -1207,9 +1297,9 @@
             "valueRequired": "True"
         },
         {
-            "@id": "GIT.PROJECT_COMMIT-pv",
+            "@id": "#GIT.PROJECT_COMMIT-pv",
             "@type": "PropertyValue",
-            "exampleWork": {
+            "exampleOfWork": {
                 "@id": "#GIT.PROJECT_COMMIT-param"
             },
             "name": "GIT.PROJECT_COMMIT",
@@ -1223,9 +1313,9 @@
             "valueRequired": "True"
         },
         {
-            "@id": "GIT.PROJECT_SUBMODULES-pv",
+            "@id": "#GIT.PROJECT_SUBMODULES-pv",
             "@type": "PropertyValue",
-            "exampleWork": {
+            "exampleOfWork": {
                 "@id": "#GIT.PROJECT_SUBMODULES-param"
             },
             "name": "GIT.PROJECT_SUBMODULES",
@@ -1239,9 +1329,9 @@
             "valueRequired": "True"
         },
         {
-            "@id": "GIT.FETCH_SINGLE_BRANCH-pv",
+            "@id": "#GIT.FETCH_SINGLE_BRANCH-pv",
             "@type": "PropertyValue",
-            "exampleWork": {
+            "exampleOfWork": {
                 "@id": "#GIT.FETCH_SINGLE_BRANCH-param"
             },
             "name": "GIT.FETCH_SINGLE_BRANCH",
@@ -1255,9 +1345,9 @@
             "valueRequired": "True"
         },
         {
-            "@id": "MHM.BRANCH_NAME-pv",
+            "@id": "#MHM.BRANCH_NAME-pv",
             "@type": "PropertyValue",
-            "exampleWork": {
+            "exampleOfWork": {
                 "@id": "#MHM.BRANCH_NAME-param"
             },
             "name": "MHM.BRANCH_NAME",
@@ -1271,9 +1361,9 @@
             "valueRequired": "True"
         },
         {
-            "@id": "MHM.DOMAIN-pv",
+            "@id": "#MHM.DOMAIN-pv",
             "@type": "PropertyValue",
-            "exampleWork": {
+            "exampleOfWork": {
                 "@id": "#MHM.DOMAIN-param"
             },
             "name": "MHM.DOMAIN",
@@ -1287,9 +1377,9 @@
             "valueRequired": "True"
         },
         {
-            "@id": "MHM.EVAL_PERIOD_DURATION_YEARS-pv",
+            "@id": "#MHM.EVAL_PERIOD_DURATION_YEARS-pv",
             "@type": "PropertyValue",
-            "exampleWork": {
+            "exampleOfWork": {
                 "@id": "#MHM.EVAL_PERIOD_DURATION_YEARS-param"
             },
             "name": "MHM.EVAL_PERIOD_DURATION_YEARS",
@@ -1307,22 +1397,22 @@
             "valueRequired": "True"
         },
         {
-            "@id": "MHM.EVAL_PERIOD_DURATION_YEARS-pv",
+            "@id": "#/home/bdepaula/autosubmit/a00d/proj/git_project/docs/plot_1993_1995.gif-pv",
             "@type": "File",
-            "exampleWork": {
+            "exampleOfWork": {
                 "@id": "#/home/bdepaula/autosubmit/a00d/proj/git_project/docs/plot_1993_1995.gif-param"
             },
-            "name": "MHM.EVAL_PERIOD_DURATION_YEARS",
+            "name": "/home/bdepaula/autosubmit/a00d/proj/git_project/docs/plot_1993_1995.gif",
             "value": 2
         },
         {
             "@id": "proj/git_project/docs/plot_1993_1995.gif",
             "@type": "File",
             "contentSize": 395236,
-            "dateModified": "2023-06-06T13:38:32",
+            "dateModified": "2023-07-10T13:58:18",
             "encodingFormat": "image/gif",
             "name": "/home/bdepaula/autosubmit/a00d/proj/git_project/docs/plot_1993_1995.gif",
-            "sdDatePublished": "2023-06-06T13:56:17+00:00"
+            "sdDatePublished": "2023-07-10T15:33:06+00:00"
         },
         {
             "@id": "#/home/bdepaula/autosubmit/a00d/proj/git_project/docs/plot_1991_1993.gif-param",
@@ -1332,34 +1422,28 @@
             "valueRequired": "True"
         },
         {
-            "@id": "MHM.EVAL_PERIOD_DURATION_YEARS-pv",
+            "@id": "#/home/bdepaula/autosubmit/a00d/proj/git_project/docs/plot_1991_1993.gif-pv",
             "@type": "File",
-            "exampleWork": {
+            "exampleOfWork": {
                 "@id": "#/home/bdepaula/autosubmit/a00d/proj/git_project/docs/plot_1991_1993.gif-param"
             },
-            "name": "MHM.EVAL_PERIOD_DURATION_YEARS",
+            "name": "/home/bdepaula/autosubmit/a00d/proj/git_project/docs/plot_1991_1993.gif",
             "value": 2
         },
         {
             "@id": "proj/git_project/docs/plot_1991_1993.gif",
             "@type": "File",
             "contentSize": 1184793,
-            "dateModified": "2023-06-06T13:38:32",
+            "dateModified": "2023-07-10T13:58:18",
             "encodingFormat": "image/gif",
             "name": "/home/bdepaula/autosubmit/a00d/proj/git_project/docs/plot_1991_1993.gif",
-            "sdDatePublished": "2023-06-06T13:56:17+00:00"
-        },
-        {
-            "@id": "https://mhm.pages.ufz.de/mhm/stable/",
-            "@type": "SoftwareApplication",
-            "name": "mHM",
-            "softwareVersion": "5.12.1.dev228"
+            "sdDatePublished": "2023-07-10T15:33:06+00:00"
         },
         {
             "@id": "https://orcid.org/0000-0001-8250-4074",
             "@type": "Person",
             "affiliation": {
-                "@id": "mailto: https://ror.org/05sd8tv96"
+                "@id": "https://ror.org/05sd8tv96"
             },
             "contactPoint": {
                 "@id": "mailto: bruno.depaulakinoshita@bsc.es"

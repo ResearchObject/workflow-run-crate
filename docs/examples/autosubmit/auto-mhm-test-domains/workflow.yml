@@ -9,6 +9,30 @@ EXPERIMENT:
   NUMCHUNKS: 0
   CHUNKSIZEUNIT: year
   MEMBERS: fc0
+ROCRATE:
+  INPUTS:
+  - MHM
+  OUTPUTS:
+  - '*/*.gif'
+  PATCH: "{\n  \"@graph\": [\n    {\n      \"@id\": \"./\",\n      \"license\": \"\
+    Apache-2.0\",\n      \"creator\": {\n        \"@id\": \"https://orcid.org/0000-0001-8250-4074\"\
+    \n      },\n      \"publisher\": {\n        \"@id\": \"https://ror.org/05sd8tv96\"\
+    \n      }\n    },\n    {\n      \"@id\": \"#create-action\",\n      \"@type\"\
+    : \"CreateAction\",\n      \"name\": \"Run mHM\",\n      \"instrument\": { \"\
+    @id\": \"workflow.yml\" },\n      \"agent\": { \"@id\": \"https://orcid.org/0000-0001-8250-4074\"\
+    \ }\n    },\n    {\n      \"@id\": \"ro-crate-metadata.json\",\n      \"author\"\
+    : [\n        {\n          \"@id\": \"https://orcid.org/0000-0001-8250-4074\"\n\
+    \        }\n      ]\n    },\n    {\n      \"@id\": \"https://orcid.org/0000-0001-8250-4074\"\
+    ,\n      \"@type\": \"Person\",\n      \"affiliation\": {\n          \"@id\":\
+    \ \"https://ror.org/05sd8tv96\"\n      },\n      \"contactPoint\": {\n       \
+    \   \"@id\": \"mailto: bruno.depaulakinoshita@bsc.es\"\n      },\n      \"name\"\
+    : \"Bruno P. Kinoshita\"\n    },\n    {\n        \"@id\": \"mailto: bruno.depaulakinoshita@bsc.es\"\
+    ,\n        \"@type\": \"ContactPoint\",\n        \"contactType\": \"Author\",\n\
+    \        \"email\": \"bruno.depaulakinoshita@bsc.es\",\n        \"identifier\"\
+    : \"bruno.depaulakinoshita@bsc.es\",\n        \"url\": \"https://orcid.org/0000-0001-8250-4074\"\
+    \n    },\n    {\n        \"@id\": \"https://ror.org/05sd8tv96\",\n        \"@type\"\
+    : \"Organization\",\n        \"name\": \"Barcelona Supercomputing Center\"\n \
+    \   }\n  ]\n}\n"
 JOBS:
   SYNC_TO_REMOTE:
     FILE: templates/sync_to_remote.sh
@@ -82,34 +106,6 @@ PLATFORMS:
     USER: bdepaula
     ADD_PROJECT_TO_HOST: false
     SCRATCH_DIR: /tmp/remote/
-ROCRATE:
-  INPUTS:
-  - MHM
-  OUTPUTS:
-  - '*/*.gif'
-  PATCH: "{\n  \"@graph\": [\n    {\n      \"@id\": \"./\",\n      \"license\": \"\
-    Apache-2.0\",\n      \"creator\": {\n        \"@id\": \"https://orcid.org/0000-0001-8250-4074\"\
-    \n      },\n      \"publisher\": {\n        \"@id\": \"https://ror.org/05sd8tv96\"\
-    \n      }\n    },\n    {\n        \"@id\": \"https://mhm.pages.ufz.de/mhm/stable/\"\
-    ,\n        \"@type\": \"SoftwareApplication\",\n        \"name\": \"mHM\",\n \
-    \       \"softwareVersion\": \"5.12.1.dev228\"\n    },\n    {\n      \"@id\":\
-    \ \"#create-action\",\n      \"@type\": \"CreateAction\",\n      \"name\": \"\
-    Run mHM\",\n      \"instrument\": { \"@id\": \"https://mhm.pages.ufz.de/mhm/stable/\"\
-    \ },\n      \"agent\": { \"@id\": \"https://orcid.org/0000-0001-8250-4074\" }\n\
-    \    },\n    {\n      \"@id\": \"ro-crate-metadata.json\",\n      \"license\"\
-    : \"https://spdx.org/licenses/Apache-2.0.html\",\n      \"author\": [\n      \
-    \  {\n          \"@id\": \"https://orcid.org/0000-0001-8250-4074\"\n        }\n\
-    \      ]\n    },\n    {\n      \"@id\": \"https://orcid.org/0000-0001-8250-4074\"\
-    ,\n      \"@type\": \"Person\",\n      \"affiliation\": {\n          \"@id\":\
-    \ \"mailto: https://ror.org/05sd8tv96\"\n      },\n      \"contactPoint\": {\n\
-    \          \"@id\": \"mailto: bruno.depaulakinoshita@bsc.es\"\n      },\n    \
-    \  \"name\": \"Bruno P. Kinoshita\"\n    },\n    {\n        \"@id\": \"mailto:\
-    \ bruno.depaulakinoshita@bsc.es\",\n        \"@type\": \"ContactPoint\",\n   \
-    \     \"contactType\": \"Author\",\n        \"email\": \"bruno.depaulakinoshita@bsc.es\"\
-    ,\n        \"identifier\": \"bruno.depaulakinoshita@bsc.es\",\n        \"url\"\
-    : \"https://orcid.org/0000-0001-8250-4074\"\n    },\n    {\n        \"@id\": \"\
-    https://ror.org/05sd8tv96\",\n        \"@type\": \"Organization\",\n        \"\
-    name\": \"Barcelona Supercomputing Center\"\n    }\n  ]\n}\n"
 MHM:
   BRANCH_NAME: develop
   DOMAIN: 1
