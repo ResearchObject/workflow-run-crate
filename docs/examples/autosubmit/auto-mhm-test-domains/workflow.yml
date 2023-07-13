@@ -1,0 +1,129 @@
+DEFAULT:
+  EXPID: a000
+  HPCARCH: local
+  CUSTOM_CONFIG: /home/kinow/autosubmit/a000/proj/git_project/conf/bootstrap
+EXPERIMENT:
+  DATELIST: 19910101 19930101
+  CALENDAR: standard
+  CHUNKSIZE: 0
+  NUMCHUNKS: 0
+  CHUNKSIZEUNIT: year
+  MEMBERS: fc0
+ROCRATE:
+  INPUTS:
+  - MHM
+  OUTPUTS:
+  - '*/*.gif'
+  PATCH: "{\n  \"@graph\": [\n    {\n      \"@id\": \"./\",\n      \"license\": \"\
+    Apache-2.0\",\n      \"creator\": {\n        \"@id\": \"https://orcid.org/0000-0001-8250-4074\"\
+    \n      },\n      \"publisher\": {\n        \"@id\": \"https://ror.org/05sd8tv96\"\
+    \n      }\n    },\n    {\n      \"@id\": \"#create-action\",\n      \"@type\"\
+    : \"CreateAction\",\n      \"name\": \"Run mHM\",\n      \"instrument\": { \"\
+    @id\": \"workflow.yml\" },\n      \"agent\": { \"@id\": \"https://orcid.org/0000-0001-8250-4074\"\
+    \ }\n    },\n    {\n      \"@id\": \"ro-crate-metadata.json\",\n      \"author\"\
+    : [\n        {\n          \"@id\": \"https://orcid.org/0000-0001-8250-4074\"\n\
+    \        }\n      ]\n    },\n    {\n      \"@id\": \"https://orcid.org/0000-0001-8250-4074\"\
+    ,\n      \"@type\": \"Person\",\n      \"affiliation\": {\n          \"@id\":\
+    \ \"https://ror.org/05sd8tv96\"\n      },\n      \"contactPoint\": {\n       \
+    \   \"@id\": \"mailto: bruno.depaulakinoshita@bsc.es\"\n      },\n      \"name\"\
+    : \"Bruno P. Kinoshita\"\n    },\n    {\n        \"@id\": \"mailto: bruno.depaulakinoshita@bsc.es\"\
+    ,\n        \"@type\": \"ContactPoint\",\n        \"contactType\": \"Author\",\n\
+    \        \"email\": \"bruno.depaulakinoshita@bsc.es\",\n        \"identifier\"\
+    : \"bruno.depaulakinoshita@bsc.es\",\n        \"url\": \"https://orcid.org/0000-0001-8250-4074\"\
+    \n    },\n    {\n        \"@id\": \"https://ror.org/05sd8tv96\",\n        \"@type\"\
+    : \"Organization\",\n        \"name\": \"Barcelona Supercomputing Center\"\n \
+    \   }\n  ]\n}\n"
+JOBS:
+  SYNC_TO_REMOTE:
+    FILE: templates/sync_to_remote.sh
+    PLATFORM: local
+    RUNNING: once
+    TITLE: Synchronize local data to remote platform
+    DOC: "This task synchronizes the local files with\nthe remote platform. More specifically,\
+      \ it\nwill `scp` the singularity image.\n"
+    DEPENDENCIES: {}
+    ADDITIONAL_FILES: []
+  REMOTE_SETUP:
+    FILE: templates/remote_setup.sh
+    PLATFORM: remote
+    RUNNING: once
+    DEPENDENCIES:
+      SYNC_TO_REMOTE: {}
+    TITLE: Remote setup
+    DOC: "This task will fetch the test domain data\nfor mHM from their Git tag.\n"
+    ADDITIONAL_FILES: []
+  SIM:
+    FILE: templates/sim.sh
+    PLATFORM: remote
+    RUNNING: date
+    DEPENDENCIES:
+      REMOTE_SETUP: {}
+      SIM-1: {}
+    TITLE: Simulation
+    DOC: "This is the main task of the workflow. It\nwill replace the period dates\
+      \ in the test\nmhm.nml creating a new file to be used in\nthe simulation with\
+      \ mHM (--nml).\n"
+    ADDITIONAL_FILES: []
+  GRAPH:
+    FILE: templates/graph.sh
+    PLATFORM: remote
+    RUNNING: date
+    DEPENDENCIES:
+      SIM: {}
+      SIM-1: {}
+    TITLE: Plot graph
+    DOC: "This is the step in the simulation, where\nwe plot the graphs for mHM.\n"
+    ADDITIONAL_FILES: []
+  SYNC_FROM_REMOTE:
+    FILE: templates/sync_from_remote.sh
+    PLATFORM: local
+    RUNNING: once
+    DEPENDENCIES:
+      GRAPH: {}
+    TITLE: Synchronize remote data to local platform
+    DOC: "This task copies remote data produced by mHM\nto the local platform.\n"
+    ADDITIONAL_FILES: []
+  CLEAN:
+    FILE: templates/clean.sh
+    PLATFORM: remote
+    RUNNING: once
+    DEPENDENCIES:
+      SYNC_FROM_REMOTE: {}
+    TITLE: Clean remote files
+    DOC: "The very final step. It will stop and clean\nthe containers used for this\
+      \ simulation. It\nwill also delete the output files of mHM.\n"
+    ADDITIONAL_FILES: []
+PLATFORMS:
+  LOCAL:
+    TYPE: ps
+    HOST: localhost
+    USER: kinow
+    ADD_PROJECT_TO_HOST: false
+    SCRATCH_DIR: /tmp/local/
+  REMOTE:
+    TYPE: ps
+    HOST: localhost
+    USER: kinow
+    ADD_PROJECT_TO_HOST: false
+    SCRATCH_DIR: /tmp/remote/
+MHM:
+  BRANCH_NAME: develop
+  DOMAIN: 1
+  EVAL_PERIOD_DURATION_YEARS: 2
+ROOTDIR: /home/kinow/autosubmit/a000
+PROJDIR: /home/kinow/autosubmit/a000/proj/project_files
+CONFIG:
+  AUTOSUBMIT_VERSION: 4.0.0b
+  TOTALJOBS: 20
+  MAXWAITINGJOBS: 20
+PROJECT:
+  PROJECT_TYPE: git
+  PROJECT_DESTINATION: git_project
+GIT:
+  PROJECT_ORIGIN: https://github.com/kinow/auto-mhm-test-domains.git
+  PROJECT_BRANCH: rocrate
+  PROJECT_COMMIT: ''
+  PROJECT_SUBMODULES: ''
+  FETCH_SINGLE_BRANCH: true
+AS_TEMP:
+  FILENAME_TO_LOAD: /home/kinow/.config/autosubmit/platforms.yml

@@ -1,0 +1,130 @@
+AS_TEMP:
+  FILENAME_TO_LOAD: /home/kinow/.config/autosubmit/platforms.yml
+CONFIG:
+  AUTOSUBMIT_VERSION: 4.0.0b
+  MAXWAITINGJOBS: 20
+  TOTALJOBS: 20
+DEFAULT:
+  CUSTOM_CONFIG: /home/kinow/autosubmit/a000/proj/git_project/conf/bootstrap
+  EXPID: a000
+  HPCARCH: local
+EXPERIMENT:
+  CALENDAR: standard
+  CHUNKSIZE: 0
+  CHUNKSIZEUNIT: year
+  DATELIST: 19910101 19930101
+  MEMBERS: fc0
+  NUMCHUNKS: 0
+GIT:
+  FETCH_SINGLE_BRANCH: true
+  PROJECT_BRANCH: rocrate
+  PROJECT_COMMIT: ''
+  PROJECT_ORIGIN: https://github.com/kinow/auto-mhm-test-domains.git
+  PROJECT_SUBMODULES: ''
+JOBS:
+  CLEAN:
+    ADDITIONAL_FILES: []
+    DEPENDENCIES:
+      SYNC_FROM_REMOTE: {}
+    DOC: "The very final step. It will stop and clean\nthe containers used for this\
+      \ simulation. It\nwill also delete the output files of mHM.\n"
+    FILE: templates/clean.sh
+    PLATFORM: remote
+    RUNNING: once
+    TITLE: Clean remote files
+  GRAPH:
+    ADDITIONAL_FILES: []
+    DEPENDENCIES:
+      SIM: {}
+      SIM-1: {}
+    DOC: "This is the step in the simulation, where\nwe plot the graphs for mHM.\n"
+    FILE: templates/graph.sh
+    PLATFORM: remote
+    RUNNING: date
+    TITLE: Plot graph
+  REMOTE_SETUP:
+    ADDITIONAL_FILES: []
+    DEPENDENCIES:
+      SYNC_TO_REMOTE: {}
+    DOC: "This task will fetch the test domain data\nfor mHM from their Git tag.\n"
+    FILE: templates/remote_setup.sh
+    PLATFORM: remote
+    RUNNING: once
+    TITLE: Remote setup
+  SIM:
+    ADDITIONAL_FILES: []
+    DEPENDENCIES:
+      REMOTE_SETUP: {}
+      SIM-1: {}
+    DOC: "This is the main task of the workflow. It\nwill replace the period dates\
+      \ in the test\nmhm.nml creating a new file to be used in\nthe simulation with\
+      \ mHM (--nml).\n"
+    FILE: templates/sim.sh
+    PLATFORM: remote
+    RUNNING: date
+    TITLE: Simulation
+  SYNC_FROM_REMOTE:
+    ADDITIONAL_FILES: []
+    DEPENDENCIES:
+      GRAPH: {}
+    DOC: "This task copies remote data produced by mHM\nto the local platform.\n"
+    FILE: templates/sync_from_remote.sh
+    PLATFORM: local
+    RUNNING: once
+    TITLE: Synchronize remote data to local platform
+  SYNC_TO_REMOTE:
+    ADDITIONAL_FILES: []
+    DEPENDENCIES: {}
+    DOC: "This task synchronizes the local files with\nthe remote platform. More specifically,\
+      \ it\nwill `scp` the singularity image.\n"
+    FILE: templates/sync_to_remote.sh
+    PLATFORM: local
+    RUNNING: once
+    TITLE: Synchronize local data to remote platform
+MHM:
+  BRANCH_NAME: develop
+  DOMAIN: 1
+  EVAL_PERIOD_DURATION_YEARS: 2
+PLATFORMS:
+  LOCAL:
+    ADD_PROJECT_TO_HOST: false
+    HOST: localhost
+    SCRATCH_DIR: /tmp/local/
+    TYPE: ps
+    USER: kinow
+  REMOTE:
+    ADD_PROJECT_TO_HOST: false
+    HOST: localhost
+    SCRATCH_DIR: /tmp/remote/
+    TYPE: ps
+    USER: kinow
+PROJDIR: /home/kinow/autosubmit/a000/proj/project_files
+PROJECT:
+  PROJECT_DESTINATION: git_project
+  PROJECT_TYPE: git
+ROCRATE:
+  INPUTS:
+  - MHM
+  OUTPUTS:
+  - '*/*.gif'
+  PATCH: "{\n  \"@graph\": [\n    {\n      \"@id\": \"./\",\n      \"license\": \"\
+    Apache-2.0\",\n      \"creator\": {\n        \"@id\": \"https://orcid.org/0000-0001-8250-4074\"\
+    \n      },\n      \"publisher\": {\n        \"@id\": \"https://ror.org/05sd8tv96\"\
+    \n      }\n    },\n    {\n      \"@id\": \"#create-action\",\n      \"@type\"\
+    : \"CreateAction\",\n      \"name\": \"Run mHM\",\n      \"instrument\": { \"\
+    @id\": \"workflow.yml\" },\n      \"agent\": { \"@id\": \"https://orcid.org/0000-0001-8250-4074\"\
+    \ }\n    },\n    {\n      \"@id\": \"ro-crate-metadata.json\",\n      \"author\"\
+    : [\n        {\n          \"@id\": \"https://orcid.org/0000-0001-8250-4074\"\n\
+    \        }\n      ]\n    },\n    {\n      \"@id\": \"https://orcid.org/0000-0001-8250-4074\"\
+    ,\n      \"@type\": \"Person\",\n      \"affiliation\": {\n          \"@id\":\
+    \ \"https://ror.org/05sd8tv96\"\n      },\n      \"contactPoint\": {\n       \
+    \   \"@id\": \"mailto: bruno.depaulakinoshita@bsc.es\"\n      },\n      \"name\"\
+    : \"Bruno P. Kinoshita\"\n    },\n    {\n        \"@id\": \"mailto: bruno.depaulakinoshita@bsc.es\"\
+    ,\n        \"@type\": \"ContactPoint\",\n        \"contactType\": \"Author\",\n\
+    \        \"email\": \"bruno.depaulakinoshita@bsc.es\",\n        \"identifier\"\
+    : \"bruno.depaulakinoshita@bsc.es\",\n        \"url\": \"https://orcid.org/0000-0001-8250-4074\"\
+    \n    },\n    {\n        \"@id\": \"https://ror.org/05sd8tv96\",\n        \"@type\"\
+    : \"Organization\",\n        \"name\": \"Barcelona Supercomputing Center\"\n \
+    \   }\n  ]\n}\n"
+ROOTDIR: /home/kinow/autosubmit/a000
+STORAGE: {}
