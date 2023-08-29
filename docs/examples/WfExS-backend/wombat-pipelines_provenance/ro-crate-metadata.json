@@ -1,0 +1,3219 @@
+{
+    "@context": "https://w3id.org/ro/crate/1.1/context",
+    "@graph": [
+        {
+            "@id": "./",
+            "@type": "Dataset",
+            "conformsTo": [
+                {
+                    "@id": "https://w3id.org/ro/wfrun/process/0.2"
+                },
+                {
+                    "@id": "https://w3id.org/ro/wfrun/workflow/0.2"
+                },
+                {
+                    "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+                }
+            ],
+            "datePublished": "2023-08-29T13:18:44+00:00",
+            "hasPart": [
+                {
+                    "@id": "workflow/main.nf"
+                },
+                {
+                    "@id": "workflow/nextflow.config"
+                },
+                {
+                    "@id": "workflow/conf/base.config"
+                },
+                {
+                    "@id": "workflow/conf/test.config"
+                },
+                {
+                    "@id": "workflow/conf/test_full.config"
+                },
+                {
+                    "@id": "workflow/conf/modules.config"
+                },
+                {
+                    "@id": "workflow/workflows/wombat.nf"
+                },
+                {
+                    "@id": "workflow/subworkflows/local/proline.nf"
+                },
+                {
+                    "@id": "workflow/subworkflows/local/maxquant.nf"
+                },
+                {
+                    "@id": "workflow/subworkflows/local/compomics.nf"
+                },
+                {
+                    "@id": "workflow/subworkflows/local/tpp.nf"
+                },
+                {
+                    "@id": "workflow/modules/local/prepare_files/main.nf"
+                },
+                {
+                    "@id": "workflow/modules/local/calcbenchmarks/main.nf"
+                },
+                {
+                    "@id": "workflow/modules/local/sdrfpipelines/sdrfmerge/main.nf"
+                },
+                {
+                    "@id": "workflow/modules/local/raw2mzdb/main.nf"
+                },
+                {
+                    "@id": "workflow/modules/local/mzdb2mgf/main.nf"
+                },
+                {
+                    "@id": "workflow/modules/local/searchgui/create_decoy_database/main.nf"
+                },
+                {
+                    "@id": "workflow/modules/local/searchgui/prepare_searchgui/main.nf"
+                },
+                {
+                    "@id": "workflow/modules/local/searchgui/run_searchgui/main.nf"
+                },
+                {
+                    "@id": "workflow/modules/local/proline/config_proline/main.nf"
+                },
+                {
+                    "@id": "workflow/modules/local/proline/exp_design_proline/main.nf"
+                },
+                {
+                    "@id": "workflow/modules/local/proline/run_proline/main.nf"
+                },
+                {
+                    "@id": "workflow/modules/local/polystest/run_polystest/main.nf"
+                },
+                {
+                    "@id": "workflow/modules/local/polystest/convert_polystest/main.nf"
+                },
+                {
+                    "@id": "workflow/modules/local/sdrfpipelines/convert_maxquant/main.nf"
+                },
+                {
+                    "@id": "workflow/modules/nf-core/modules/maxquant/lfq/main.nf"
+                },
+                {
+                    "@id": "workflow/modules/local/normalyzerde/main.nf"
+                },
+                {
+                    "@id": "workflow/modules/local/raw2mzml/main.nf"
+                },
+                {
+                    "@id": "workflow/modules/local/peptideshaker/run_peptideshaker/main.nf"
+                },
+                {
+                    "@id": "workflow/modules/local/peptideshaker/peptideshaker_report/main.nf"
+                },
+                {
+                    "@id": "workflow/modules/local/flashlfq/main.nf"
+                },
+                {
+                    "@id": "workflow/modules/local/msqrob/main.nf"
+                },
+                {
+                    "@id": "workflow/modules/local/comet/write_config/main.nf"
+                },
+                {
+                    "@id": "workflow/modules/local/comet/run_comet/main.nf"
+                },
+                {
+                    "@id": "workflow/modules/local/tpp/peptideprophet/main.nf"
+                },
+                {
+                    "@id": "workflow/modules/local/tpp/proteinprophet/main.nf"
+                },
+                {
+                    "@id": "workflow/modules/local/tpp/stpeter/main.nf"
+                },
+                {
+                    "@id": "workflow/modules/local/tpp/protxml2csv/main.nf"
+                },
+                {
+                    "@id": "workflow/modules/local/tpp/mergeoutput/main.nf"
+                },
+                {
+                    "@id": "workflow/modules/local/rots/main.nf"
+                },
+                {
+                    "@id": "https://raw.githubusercontent.com/wombat-p/WOMBAT-Pipelines/f0505c28540ad07929684e3565616e91f7248fa2/test_data/OVEMB150205_12.raw"
+                },
+                {
+                    "@id": "https://raw.githubusercontent.com/wombat-p/WOMBAT-Pipelines/f0505c28540ad07929684e3565616e91f7248fa2/test_data/OVEMB150205_14.raw"
+                },
+                {
+                    "@id": "https://raw.githubusercontent.com/wombat-p/WOMBAT-Pipelines/f0505c28540ad07929684e3565616e91f7248fa2/test_data/exp_design.txt"
+                },
+                {
+                    "@id": "https://raw.githubusercontent.com/wombat-p/WOMBAT-Pipelines/f0505c28540ad07929684e3565616e91f7248fa2/test_data/test_params.yml"
+                },
+                {
+                    "@id": "https://raw.githubusercontent.com/wombat-p/WOMBAT-Pipelines/f0505c28540ad07929684e3565616e91f7248fa2/test_data/ABRF_iPRG_2012_target.fasta"
+                },
+                {
+                    "@id": "https://raw.githubusercontent.com/bigbio/proteomics-metadata-standard/master/sdrf-proteomics/assets/param2sdrf.yml"
+                },
+                {
+                    "@id": "outputs/_1691692432/mgf/"
+                },
+                {
+                    "@id": "outputs/_1691692432/mgf/OVEMB150205_12.mgf"
+                },
+                {
+                    "@id": "outputs/_1691692432/mgf/OVEMB150205_14.mgf"
+                },
+                {
+                    "@id": "outputs/_1691692432/sdrf_merge/"
+                },
+                {
+                    "@id": "outputs/_1691692432/sdrf_merge/params_out.yml"
+                },
+                {
+                    "@id": "outputs/_1691692432/sdrf_merge/changed_params.txt"
+                },
+                {
+                    "@id": "outputs/_1691692432/sdrf_merge/sdrf_local.tsv"
+                },
+                {
+                    "@id": "outputs/_1691692432/prepare_files/"
+                },
+                {
+                    "@id": "outputs/_1691692432/prepare_files/sdrf_temp.tsv"
+                },
+                {
+                    "@id": "outputs/_1691692432/prepare_files/exp_design.txt"
+                },
+                {
+                    "@id": "outputs/_1691692432/prepare_files/OVEMB150205_14.raw"
+                },
+                {
+                    "@id": "outputs/_1691692432/prepare_files/prepare_files.version.txt"
+                },
+                {
+                    "@id": "outputs/_1691692432/prepare_files/params.yml"
+                },
+                {
+                    "@id": "outputs/_1691692432/prepare_files/OVEMB150205_12.raw"
+                },
+                {
+                    "@id": "outputs/_1691692432/stand_pep_quant_mergedproline.csv"
+                },
+                {
+                    "@id": "outputs/_1691692432/polystest/"
+                },
+                {
+                    "@id": "outputs/_1691692432/polystest/polystest_pep_res.csv"
+                },
+                {
+                    "@id": "outputs/_1691692432/polystest/stand_prot_quant_merged.csv"
+                },
+                {
+                    "@id": "outputs/_1691692432/polystest/stand_pep_quant_merged.csv"
+                },
+                {
+                    "@id": "outputs/_1691692432/polystest/exp_design.txt"
+                },
+                {
+                    "@id": "outputs/_1691692432/polystest/polystest_prot_res.csv"
+                },
+                {
+                    "@id": "outputs/_1691692432/benchmarks_proline.json"
+                },
+                {
+                    "@id": "outputs/_1691692432/proline/"
+                },
+                {
+                    "@id": "outputs/_1691692432/proline/quant_exp_design.txt"
+                },
+                {
+                    "@id": "outputs/_1691692432/proline/import_file_list.txt"
+                },
+                {
+                    "@id": "outputs/_1691692432/proline/OVEMB150205_14.t.xml"
+                },
+                {
+                    "@id": "outputs/_1691692432/proline/lfq_param_file.txt"
+                },
+                {
+                    "@id": "outputs/_1691692432/proline/proline_results/"
+                },
+                {
+                    "@id": "outputs/_1691692432/proline/proline_results/proline_results_3f13993f-6948-43e9-99b4-60203ecb62d3.xlsx"
+                },
+                {
+                    "@id": "outputs/_1691692432/proline/OVEMB150205_12.t.xml"
+                },
+                {
+                    "@id": "outputs/_1691692432/mzdb/"
+                },
+                {
+                    "@id": "outputs/_1691692432/mzdb/OVEMB150205_14.mzDB"
+                },
+                {
+                    "@id": "outputs/_1691692432/mzdb/OVEMB150205_12.mzDB"
+                },
+                {
+                    "@id": "outputs/_1691692432/searchgui/"
+                },
+                {
+                    "@id": "outputs/_1691692432/searchgui/OVEMB150205_12.zip"
+                },
+                {
+                    "@id": "outputs/_1691692432/searchgui/OVEMB150205_14.zip"
+                },
+                {
+                    "@id": "outputs/_1691692432/stand_prot_quant_mergedproline.csv"
+                },
+                {
+                    "@id": "outputs/_1691692432/.nextflow/"
+                },
+                {
+                    "@id": "outputs/_1691692432/.nextflow/history"
+                },
+                {
+                    "@id": "outputs/_1691692432/.nextflow/plr/"
+                },
+                {
+                    "@id": "outputs/_1691692432/.nextflow/cache/"
+                },
+                {
+                    "@id": "outputs/_1691692432/.nextflow/cache/df02320f-54ed-496b-9315-9e366c5f542d/"
+                },
+                {
+                    "@id": "outputs/_1691692432/.nextflow/cache/df02320f-54ed-496b-9315-9e366c5f542d/index.WfExS-run_20230810T203352"
+                },
+                {
+                    "@id": "outputs/_1691692432/.nextflow/cache/df02320f-54ed-496b-9315-9e366c5f542d/db/"
+                },
+                {
+                    "@id": "outputs/_1691692432/.nextflow/cache/df02320f-54ed-496b-9315-9e366c5f542d/db/000003.log"
+                },
+                {
+                    "@id": "outputs/_1691692432/.nextflow/cache/df02320f-54ed-496b-9315-9e366c5f542d/db/LOCK"
+                },
+                {
+                    "@id": "outputs/_1691692432/.nextflow/cache/df02320f-54ed-496b-9315-9e366c5f542d/db/MANIFEST-000002"
+                },
+                {
+                    "@id": "outputs/_1691692432/.nextflow/cache/df02320f-54ed-496b-9315-9e366c5f542d/db/CURRENT"
+                },
+                {
+                    "@id": "outputs/_1691692432/searchgui_params/"
+                },
+                {
+                    "@id": "outputs/_1691692432/searchgui_params/searchgui.par"
+                },
+                {
+                    "@id": "outputs/_1691692432/decoy_database/"
+                },
+                {
+                    "@id": "outputs/_1691692432/decoy_database/ABRF_iPRG_2012_target_concatenated_target_decoy.fasta"
+                }
+            ],
+            "mainEntity": {
+                "@id": "workflow/main.nf"
+            },
+            "mentions": [
+                {
+                    "@id": "#3b061507-8e24-4cd0-a890-f78587c16a81"
+                }
+            ]
+        },
+        {
+            "@id": "ro-crate-metadata.json",
+            "@type": "CreativeWork",
+            "about": {
+                "@id": "./"
+            },
+            "conformsTo": [
+                {
+                    "@id": "https://w3id.org/ro/crate/1.1"
+                },
+                {
+                    "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+                }
+            ]
+        },
+        {
+            "@id": "https://w3id.org/workflowhub/workflow-ro-crate#nextflow",
+            "@type": "ComputerLanguage",
+            "alternateName": "NFL",
+            "identifier": {
+                "@id": "https://www.nextflow.io/"
+            },
+            "name": "Nextflow",
+            "url": {
+                "@id": "https://www.nextflow.io/"
+            },
+            "version": "23.04.2"
+        },
+        {
+            "@id": "https://w3id.org/ro/wfrun/process/0.2",
+            "@type": "CreativeWork",
+            "name": "ProcessRun Crate",
+            "version": "0.2"
+        },
+        {
+            "@id": "https://w3id.org/ro/wfrun/workflow/0.2",
+            "@type": "CreativeWork",
+            "name": "Workflow Run Crate",
+            "version": "0.2"
+        },
+        {
+            "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0",
+            "@type": "CreativeWork",
+            "name": "Workflow RO-Crate",
+            "version": "1.0"
+        },
+        {
+            "@id": "https://github.com/inab/WfExS-backend",
+            "@type": "SoftwareApplication",
+            "name": "WfExS-backend",
+            "url": "https://github.com/inab/WfExS-backend",
+            "version": [
+                "0.9.3-66-g04ba30c",
+                "04ba30c79567a9b5a34e9a84f5e110b58b683949"
+            ]
+        },
+        {
+            "@id": "https://www.nextflow.io/",
+            "@type": "SoftwareApplication",
+            "softwareVersion": "nextflow version 23.04.2.5871"
+        },
+        {
+            "@id": "workflow/main.nf",
+            "@type": [
+                "File",
+                "SoftwareSourceCode",
+                "ComputationalWorkflow"
+            ],
+            "alternateName": "main.nf",
+            "codeRepository": "https://github.com/jmfernandez/WOMBAT-Pipelines.git",
+            "conformsTo": [
+                {
+                    "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE"
+                }
+            ],
+            "contentSize": 1678,
+            "description": "Workflow Entrypoint",
+            "encodingFormat": "text/plain",
+            "hasPart": [
+                {
+                    "@id": "workflow/nextflow.config"
+                },
+                {
+                    "@id": "workflow/conf/base.config"
+                },
+                {
+                    "@id": "workflow/conf/test.config"
+                },
+                {
+                    "@id": "workflow/conf/test_full.config"
+                },
+                {
+                    "@id": "workflow/conf/modules.config"
+                },
+                {
+                    "@id": "workflow/workflows/wombat.nf"
+                },
+                {
+                    "@id": "workflow/subworkflows/local/proline.nf"
+                },
+                {
+                    "@id": "workflow/subworkflows/local/maxquant.nf"
+                },
+                {
+                    "@id": "workflow/subworkflows/local/compomics.nf"
+                },
+                {
+                    "@id": "workflow/subworkflows/local/tpp.nf"
+                },
+                {
+                    "@id": "workflow/modules/local/prepare_files/main.nf"
+                },
+                {
+                    "@id": "workflow/modules/local/calcbenchmarks/main.nf"
+                },
+                {
+                    "@id": "workflow/modules/local/sdrfpipelines/sdrfmerge/main.nf"
+                },
+                {
+                    "@id": "workflow/modules/local/raw2mzdb/main.nf"
+                },
+                {
+                    "@id": "workflow/modules/local/mzdb2mgf/main.nf"
+                },
+                {
+                    "@id": "workflow/modules/local/searchgui/create_decoy_database/main.nf"
+                },
+                {
+                    "@id": "workflow/modules/local/searchgui/prepare_searchgui/main.nf"
+                },
+                {
+                    "@id": "workflow/modules/local/searchgui/run_searchgui/main.nf"
+                },
+                {
+                    "@id": "workflow/modules/local/proline/config_proline/main.nf"
+                },
+                {
+                    "@id": "workflow/modules/local/proline/exp_design_proline/main.nf"
+                },
+                {
+                    "@id": "workflow/modules/local/proline/run_proline/main.nf"
+                },
+                {
+                    "@id": "workflow/modules/local/polystest/run_polystest/main.nf"
+                },
+                {
+                    "@id": "workflow/modules/local/polystest/convert_polystest/main.nf"
+                },
+                {
+                    "@id": "workflow/modules/local/sdrfpipelines/convert_maxquant/main.nf"
+                },
+                {
+                    "@id": "workflow/modules/nf-core/modules/maxquant/lfq/main.nf"
+                },
+                {
+                    "@id": "workflow/modules/local/normalyzerde/main.nf"
+                },
+                {
+                    "@id": "workflow/modules/local/raw2mzml/main.nf"
+                },
+                {
+                    "@id": "workflow/modules/local/peptideshaker/run_peptideshaker/main.nf"
+                },
+                {
+                    "@id": "workflow/modules/local/peptideshaker/peptideshaker_report/main.nf"
+                },
+                {
+                    "@id": "workflow/modules/local/flashlfq/main.nf"
+                },
+                {
+                    "@id": "workflow/modules/local/msqrob/main.nf"
+                },
+                {
+                    "@id": "workflow/modules/local/comet/write_config/main.nf"
+                },
+                {
+                    "@id": "workflow/modules/local/comet/run_comet/main.nf"
+                },
+                {
+                    "@id": "workflow/modules/local/tpp/peptideprophet/main.nf"
+                },
+                {
+                    "@id": "workflow/modules/local/tpp/proteinprophet/main.nf"
+                },
+                {
+                    "@id": "workflow/modules/local/tpp/stpeter/main.nf"
+                },
+                {
+                    "@id": "workflow/modules/local/tpp/protxml2csv/main.nf"
+                },
+                {
+                    "@id": "workflow/modules/local/tpp/mergeoutput/main.nf"
+                },
+                {
+                    "@id": "workflow/modules/local/rots/main.nf"
+                }
+            ],
+            "identifier": "git+https://github.com/jmfernandez/WOMBAT-Pipelines.git@e016edf2e5a3196cf313b46084348b79f63aa89d",
+            "input": [
+                {
+                    "@id": "workflow/main.nf#param:mzmls"
+                },
+                {
+                    "@id": "workflow/main.nf#param:raws"
+                },
+                {
+                    "@id": "workflow/main.nf#param:exp_design"
+                },
+                {
+                    "@id": "workflow/main.nf#param:sdrf"
+                },
+                {
+                    "@id": "workflow/main.nf#param:parameters"
+                },
+                {
+                    "@id": "workflow/main.nf#param:run_statistics"
+                },
+                {
+                    "@id": "workflow/main.nf#param:add_decoys"
+                },
+                {
+                    "@id": "workflow/main.nf#param:comps"
+                },
+                {
+                    "@id": "workflow/main.nf#param:proline_engine"
+                },
+                {
+                    "@id": "workflow/main.nf#param:workflow"
+                },
+                {
+                    "@id": "workflow/main.nf#param:multiqc_config"
+                },
+                {
+                    "@id": "workflow/main.nf#param:multiqc_title"
+                },
+                {
+                    "@id": "workflow/main.nf#param:max_multiqc_email_size"
+                },
+                {
+                    "@id": "workflow/main.nf#param:outdir"
+                },
+                {
+                    "@id": "workflow/main.nf#param:tracedir"
+                },
+                {
+                    "@id": "workflow/main.nf#param:publish_dir_mode"
+                },
+                {
+                    "@id": "workflow/main.nf#param:email"
+                },
+                {
+                    "@id": "workflow/main.nf#param:email_on_fail"
+                },
+                {
+                    "@id": "workflow/main.nf#param:plaintext_email"
+                },
+                {
+                    "@id": "workflow/main.nf#param:monochrome_logs"
+                },
+                {
+                    "@id": "workflow/main.nf#param:help"
+                },
+                {
+                    "@id": "workflow/main.nf#param:validate_params"
+                },
+                {
+                    "@id": "workflow/main.nf#param:show_hidden_params"
+                },
+                {
+                    "@id": "workflow/main.nf#param:enable_conda"
+                },
+                {
+                    "@id": "workflow/main.nf#param:schema_ignore_params"
+                },
+                {
+                    "@id": "workflow/main.nf#param:genomes"
+                },
+                {
+                    "@id": "workflow/main.nf#param:custom_config_version"
+                },
+                {
+                    "@id": "workflow/main.nf#param:custom_config_base"
+                },
+                {
+                    "@id": "workflow/main.nf#param:config_profile_description"
+                },
+                {
+                    "@id": "workflow/main.nf#param:config_profile_contact"
+                },
+                {
+                    "@id": "workflow/main.nf#param:config_profile_url"
+                },
+                {
+                    "@id": "workflow/main.nf#param:config_profile_name"
+                },
+                {
+                    "@id": "workflow/main.nf#param:max_memory"
+                },
+                {
+                    "@id": "workflow/main.nf#param:max_cpus"
+                },
+                {
+                    "@id": "workflow/main.nf#param:max_time"
+                },
+                {
+                    "@id": "workflow/main.nf#param:fasta"
+                },
+                {
+                    "@id": "workflow/main.nf#param:sdrfmapping"
+                }
+            ],
+            "name": "workflow/main",
+            "output": [
+                {
+                    "@id": "workflow/main.nf#output:unnamed_output_0"
+                },
+                {
+                    "@id": "workflow/main.nf#output:unnamed_output_1"
+                },
+                {
+                    "@id": "workflow/main.nf#output:unnamed_output_2"
+                },
+                {
+                    "@id": "workflow/main.nf#output:unnamed_output_3"
+                },
+                {
+                    "@id": "workflow/main.nf#output:unnamed_output_4"
+                },
+                {
+                    "@id": "workflow/main.nf#output:unnamed_output_5"
+                },
+                {
+                    "@id": "workflow/main.nf#output:unnamed_output_6"
+                },
+                {
+                    "@id": "workflow/main.nf#output:unnamed_output_7"
+                },
+                {
+                    "@id": "workflow/main.nf#output:unnamed_output_8"
+                },
+                {
+                    "@id": "workflow/main.nf#output:unnamed_output_9"
+                },
+                {
+                    "@id": "workflow/main.nf#output:unnamed_output_10"
+                },
+                {
+                    "@id": "workflow/main.nf#output:unnamed_output_11"
+                },
+                {
+                    "@id": "workflow/main.nf#output:unnamed_output_12"
+                }
+            ],
+            "programmingLanguage": {
+                "@id": "https://w3id.org/workflowhub/workflow-ro-crate#nextflow"
+            },
+            "runtimePlatform": "nextflow version 23.04.2.5871",
+            "sha256": "3495be22e5d946bd804ac87528c352cd46768a9a7e36dbc43d8157127781ff70",
+            "softwareRequirements": [
+                {
+                    "@id": "https://www.nextflow.io/"
+                },
+                {
+                    "@id": "https://apptainer.org/"
+                },
+                {
+                    "@id": "docker://wombatp/maxquant-pipeline:dev"
+                },
+                {
+                    "@id": "docker://wombatp/maxquant-pipeline:v0.2"
+                },
+                {
+                    "@id": "docker://wombatp/proline-pipeline:v0.18"
+                },
+                {
+                    "@id": "docker://veitveit/searchgui:4.2.9--hdfd78af_0"
+                },
+                {
+                    "@id": "docker://quay.io/biocontainers/searchgui:4.2.9--hdfd78af_0"
+                },
+                {
+                    "@id": "docker://quay.io/biocontainers/polystest:1.3.4--hdfd78af_0"
+                },
+                {
+                    "@id": "https://depot.galaxyproject.org/singularity/maxquant:2.0.3.0--py310hdfd78af_1"
+                },
+                {
+                    "@id": "docker://quay.io/biocontainers/maxquant:2.0.3.0--py310hdfd78af_1"
+                },
+                {
+                    "@id": "docker://computationalproteomics/normalyzerde:1.14.0"
+                },
+                {
+                    "@id": "docker://quay.io/biocontainers/thermorawfileparser:1.4.0--ha8f3691_0"
+                },
+                {
+                    "@id": "docker://veitveit/peptide-shaker:2.2.23--hdfd78af_0"
+                },
+                {
+                    "@id": "docker://quay.io/biocontainers/peptide-shaker:2.2.23--hdfd78af_0"
+                },
+                {
+                    "@id": "docker://quay.io/biocontainers/flashlfq:1.2.4--hdfd78af_0"
+                },
+                {
+                    "@id": "docker://quay.io/biocontainers/r-msqrob:0.7.7--r41hdfd78af_1"
+                },
+                {
+                    "@id": "docker://quay.io/biocontainers/comet-ms:2021010--h87f3376_1"
+                },
+                {
+                    "@id": "docker://spctools/tpp:version6.1"
+                },
+                {
+                    "@id": "docker://wombatp/transproteomic-pipeline:0.24"
+                },
+                {
+                    "@id": "docker://rocker/tidyverse:4.2.1"
+                }
+            ],
+            "url": "https://github.com/jmfernandez/WOMBAT-Pipelines/tree/e016edf2e5a3196cf313b46084348b79f63aa89d",
+            "version": "e016edf2e5a3196cf313b46084348b79f63aa89d"
+        },
+        {
+            "@id": "https://apptainer.org/",
+            "@type": "SoftwareApplication",
+            "name": "singularity",
+            "softwareVersion": "apptainer version 1.1.7"
+        },
+        {
+            "@id": "docker://wombatp/maxquant-pipeline:dev",
+            "@type": "SoftwareApplication",
+            "operatingSystem": "linux",
+            "processorRequirements": "amd64",
+            "softwareRequirements": {
+                "@id": "https://apptainer.org/"
+            },
+            "softwareVersion": "wombatp/maxquant-pipeline@sha256:02141cdca45d4a92982a0671a7dde7ac5e4a760bf29eae1fb82975f8484d26f0"
+        },
+        {
+            "@id": "docker://wombatp/maxquant-pipeline:v0.2",
+            "@type": "SoftwareApplication",
+            "operatingSystem": "linux",
+            "processorRequirements": "amd64",
+            "softwareRequirements": {
+                "@id": "https://apptainer.org/"
+            },
+            "softwareVersion": "wombatp/maxquant-pipeline@sha256:02141cdca45d4a92982a0671a7dde7ac5e4a760bf29eae1fb82975f8484d26f0"
+        },
+        {
+            "@id": "docker://wombatp/proline-pipeline:v0.18",
+            "@type": "SoftwareApplication",
+            "operatingSystem": "linux",
+            "processorRequirements": "amd64",
+            "softwareRequirements": {
+                "@id": "https://apptainer.org/"
+            },
+            "softwareVersion": "wombatp/proline-pipeline@sha256:77fcdd44749d1c4a354d33221c106de2ec68fd9c72f467ee99761eb72d8db172"
+        },
+        {
+            "@id": "docker://veitveit/searchgui:4.2.9--hdfd78af_0",
+            "@type": "SoftwareApplication",
+            "operatingSystem": "linux",
+            "processorRequirements": "amd64",
+            "softwareRequirements": {
+                "@id": "https://apptainer.org/"
+            },
+            "softwareVersion": "veitveit/searchgui@sha256:744379255b7fd27c89a3d04e267c635519a399c33b64db81e9520a5886d5555a"
+        },
+        {
+            "@id": "docker://quay.io/biocontainers/searchgui:4.2.9--hdfd78af_0",
+            "@type": "SoftwareApplication",
+            "operatingSystem": "linux",
+            "processorRequirements": "amd64",
+            "softwareRequirements": {
+                "@id": "https://apptainer.org/"
+            },
+            "softwareVersion": "biocontainers/searchgui@sha256:94c44408a1f3a1be3b8eb754b25a908505f460b34c4a1a08b8db77eaee41d7aa"
+        },
+        {
+            "@id": "docker://quay.io/biocontainers/polystest:1.3.4--hdfd78af_0",
+            "@type": "SoftwareApplication",
+            "operatingSystem": "linux",
+            "processorRequirements": "amd64",
+            "softwareRequirements": {
+                "@id": "https://apptainer.org/"
+            },
+            "softwareVersion": "biocontainers/polystest@sha256:7df22edd0d62e320fbc09c8ebc4e6683765314a99c2b1d4e41fb15af9762f638"
+        },
+        {
+            "@id": "https://depot.galaxyproject.org/singularity/maxquant:2.0.3.0--py310hdfd78af_1",
+            "@type": "SoftwareApplication",
+            "operatingSystem": "linux",
+            "processorRequirements": "amd64",
+            "softwareRequirements": {
+                "@id": "https://apptainer.org/"
+            },
+            "softwareVersion": "https://depot.galaxyproject.org/singularity/maxquant:2.0.3.0--py310hdfd78af_1"
+        },
+        {
+            "@id": "docker://quay.io/biocontainers/maxquant:2.0.3.0--py310hdfd78af_1",
+            "@type": "SoftwareApplication",
+            "operatingSystem": "linux",
+            "processorRequirements": "amd64",
+            "softwareRequirements": {
+                "@id": "https://apptainer.org/"
+            },
+            "softwareVersion": "biocontainers/maxquant@sha256:3fddb6ffc8888e58537d07991d923f80252015463879b8719d98324ec317f7fe"
+        },
+        {
+            "@id": "docker://computationalproteomics/normalyzerde:1.14.0",
+            "@type": "SoftwareApplication",
+            "operatingSystem": "linux",
+            "processorRequirements": "amd64",
+            "softwareRequirements": {
+                "@id": "https://apptainer.org/"
+            },
+            "softwareVersion": "computationalproteomics/normalyzerde@sha256:da242fc2e7f4781fc5e248a5df42568bdc7c4f8a4857543c19d5407e30a0558e"
+        },
+        {
+            "@id": "docker://quay.io/biocontainers/thermorawfileparser:1.4.0--ha8f3691_0",
+            "@type": "SoftwareApplication",
+            "operatingSystem": "linux",
+            "processorRequirements": "amd64",
+            "softwareRequirements": {
+                "@id": "https://apptainer.org/"
+            },
+            "softwareVersion": "biocontainers/thermorawfileparser@sha256:76c17e3124b723f271bc3d5cf0555650288676bb1a827bd1bae9bb684444a404"
+        },
+        {
+            "@id": "docker://veitveit/peptide-shaker:2.2.23--hdfd78af_0",
+            "@type": "SoftwareApplication",
+            "operatingSystem": "linux",
+            "processorRequirements": "amd64",
+            "softwareRequirements": {
+                "@id": "https://apptainer.org/"
+            },
+            "softwareVersion": "veitveit/peptide-shaker@sha256:c4ec9fdb396b4bc4881132c0dc78f9b6cd76abbda7a5087e960fd06e5e1102cd"
+        },
+        {
+            "@id": "docker://quay.io/biocontainers/peptide-shaker:2.2.23--hdfd78af_0",
+            "@type": "SoftwareApplication",
+            "operatingSystem": "linux",
+            "processorRequirements": "amd64",
+            "softwareRequirements": {
+                "@id": "https://apptainer.org/"
+            },
+            "softwareVersion": "biocontainers/peptide-shaker@sha256:51dbe1485efb713eec9d8a0e6a4e5e834818de21ed4601feed7b891718c5c911"
+        },
+        {
+            "@id": "docker://quay.io/biocontainers/flashlfq:1.2.4--hdfd78af_0",
+            "@type": "SoftwareApplication",
+            "operatingSystem": "linux",
+            "processorRequirements": "amd64",
+            "softwareRequirements": {
+                "@id": "https://apptainer.org/"
+            },
+            "softwareVersion": "biocontainers/flashlfq@sha256:d1654b13f30566096da690a28eae8e8e4f36394bb4b3cca4578c49adc4bad714"
+        },
+        {
+            "@id": "docker://quay.io/biocontainers/r-msqrob:0.7.7--r41hdfd78af_1",
+            "@type": "SoftwareApplication",
+            "operatingSystem": "linux",
+            "processorRequirements": "amd64",
+            "softwareRequirements": {
+                "@id": "https://apptainer.org/"
+            },
+            "softwareVersion": "biocontainers/r-msqrob@sha256:6c74888fad76eda9219757914712d86e2e32f4c751f6e0a8f00be7d19c5c6dd6"
+        },
+        {
+            "@id": "docker://quay.io/biocontainers/comet-ms:2021010--h87f3376_1",
+            "@type": "SoftwareApplication",
+            "operatingSystem": "linux",
+            "processorRequirements": "amd64",
+            "softwareRequirements": {
+                "@id": "https://apptainer.org/"
+            },
+            "softwareVersion": "biocontainers/comet-ms@sha256:d143f6cf56752be58858965b6626e7ab66c1e2b87505e6f6f663112f30fc92a0"
+        },
+        {
+            "@id": "docker://spctools/tpp:version6.1",
+            "@type": "SoftwareApplication",
+            "operatingSystem": "linux",
+            "processorRequirements": "amd64",
+            "softwareRequirements": {
+                "@id": "https://apptainer.org/"
+            },
+            "softwareVersion": "spctools/tpp@sha256:0a1026177c691ff7188b80b83e9fe926c7d00ab1da7cbd3c13319945fccc57a6"
+        },
+        {
+            "@id": "docker://wombatp/transproteomic-pipeline:0.24",
+            "@type": "SoftwareApplication",
+            "operatingSystem": "linux",
+            "processorRequirements": "amd64",
+            "softwareRequirements": {
+                "@id": "https://apptainer.org/"
+            },
+            "softwareVersion": "wombatp/transproteomic-pipeline@sha256:406538cd3f5666a6ef9ddde57a9eb9b0795d96775ae8350244571cd3ae6f5277"
+        },
+        {
+            "@id": "docker://rocker/tidyverse:4.2.1",
+            "@type": "SoftwareApplication",
+            "operatingSystem": "linux",
+            "processorRequirements": "amd64",
+            "softwareRequirements": {
+                "@id": "https://apptainer.org/"
+            },
+            "softwareVersion": "rocker/tidyverse@sha256:2276cf3f1fa29057a057cb8feb85ebd14310c18aff781696db6656ffa170f302"
+        },
+        {
+            "@id": "workflow/nextflow.config",
+            "@type": [
+                "File",
+                "SoftwareSourceCode"
+            ],
+            "alternateName": "nextflow.config",
+            "contentSize": 7672,
+            "encodingFormat": "text/plain",
+            "identifier": "git+https://github.com/jmfernandez/WOMBAT-Pipelines.git@e016edf2e5a3196cf313b46084348b79f63aa89d/nextflow.config",
+            "sha256": "49534f6ccd36e548f9dd5e949508a4f79e49909c7a0511e605961fe942f90632"
+        },
+        {
+            "@id": "workflow/conf/base.config",
+            "@type": [
+                "File",
+                "SoftwareSourceCode"
+            ],
+            "alternateName": "conf/base.config",
+            "contentSize": 2543,
+            "encodingFormat": "text/plain",
+            "identifier": "git+https://github.com/jmfernandez/WOMBAT-Pipelines.git@e016edf2e5a3196cf313b46084348b79f63aa89d/conf/base.config",
+            "sha256": "32f5a7698fc49d68f13e8454c33bd774731abf08abb918af662148bd42b6a996"
+        },
+        {
+            "@id": "workflow/conf/test.config",
+            "@type": [
+                "File",
+                "SoftwareSourceCode"
+            ],
+            "alternateName": "conf/test.config",
+            "contentSize": 1188,
+            "encodingFormat": "text/plain",
+            "identifier": "git+https://github.com/jmfernandez/WOMBAT-Pipelines.git@e016edf2e5a3196cf313b46084348b79f63aa89d/conf/test.config",
+            "sha256": "41fc89b1a7cf807f4a2b910b16d7a5363fc18f1dda81587f0aa2bb113342ee54"
+        },
+        {
+            "@id": "workflow/conf/test_full.config",
+            "@type": [
+                "File",
+                "SoftwareSourceCode"
+            ],
+            "alternateName": "conf/test_full.config",
+            "contentSize": 1117,
+            "encodingFormat": "text/plain",
+            "identifier": "git+https://github.com/jmfernandez/WOMBAT-Pipelines.git@e016edf2e5a3196cf313b46084348b79f63aa89d/conf/test_full.config",
+            "sha256": "fd2cab93f941998b01b003d7781a51c542325132ad386a0ce181bd053d48bce0"
+        },
+        {
+            "@id": "workflow/conf/modules.config",
+            "@type": [
+                "File",
+                "SoftwareSourceCode"
+            ],
+            "alternateName": "conf/modules.config",
+            "contentSize": 981,
+            "encodingFormat": "text/plain",
+            "identifier": "git+https://github.com/jmfernandez/WOMBAT-Pipelines.git@e016edf2e5a3196cf313b46084348b79f63aa89d/conf/modules.config",
+            "sha256": "6e0ccb2c2736872951a1e52f79de283c4dab00c6bdc6db5dfa27201dc3e1a6e7"
+        },
+        {
+            "@id": "workflow/workflows/wombat.nf",
+            "@type": [
+                "File",
+                "SoftwareSourceCode"
+            ],
+            "alternateName": "workflows/wombat.nf",
+            "contentSize": 8695,
+            "encodingFormat": "text/plain",
+            "identifier": "git+https://github.com/jmfernandez/WOMBAT-Pipelines.git@e016edf2e5a3196cf313b46084348b79f63aa89d/workflows/wombat.nf",
+            "sha256": "9900f50ba3db2309539df8f309d82aad14516f2a7ab049f645d3ca1b9defaa1d"
+        },
+        {
+            "@id": "workflow/subworkflows/local/proline.nf",
+            "@type": [
+                "File",
+                "SoftwareSourceCode"
+            ],
+            "alternateName": "subworkflows/local/proline.nf",
+            "contentSize": 2532,
+            "encodingFormat": "text/plain",
+            "identifier": "git+https://github.com/jmfernandez/WOMBAT-Pipelines.git@e016edf2e5a3196cf313b46084348b79f63aa89d/subworkflows/local/proline.nf",
+            "sha256": "76ba1c41f3123d58021f72661c63959e96319bd27e60a4e475e237a89de9c068"
+        },
+        {
+            "@id": "workflow/subworkflows/local/maxquant.nf",
+            "@type": [
+                "File",
+                "SoftwareSourceCode"
+            ],
+            "alternateName": "subworkflows/local/maxquant.nf",
+            "contentSize": 855,
+            "encodingFormat": "text/plain",
+            "identifier": "git+https://github.com/jmfernandez/WOMBAT-Pipelines.git@e016edf2e5a3196cf313b46084348b79f63aa89d/subworkflows/local/maxquant.nf",
+            "sha256": "2eae733d817e050b21eb473456bccb23983af364a05ab35db6174c5ead3879ff"
+        },
+        {
+            "@id": "workflow/subworkflows/local/compomics.nf",
+            "@type": [
+                "File",
+                "SoftwareSourceCode"
+            ],
+            "alternateName": "subworkflows/local/compomics.nf",
+            "contentSize": 2099,
+            "encodingFormat": "text/plain",
+            "identifier": "git+https://github.com/jmfernandez/WOMBAT-Pipelines.git@e016edf2e5a3196cf313b46084348b79f63aa89d/subworkflows/local/compomics.nf",
+            "sha256": "c42b4bee230d9306d27abc2c30dc54d39b92d52d2972fa9bcb2414f0599a671b"
+        },
+        {
+            "@id": "workflow/subworkflows/local/tpp.nf",
+            "@type": [
+                "File",
+                "SoftwareSourceCode"
+            ],
+            "alternateName": "subworkflows/local/tpp.nf",
+            "contentSize": 1710,
+            "encodingFormat": "text/plain",
+            "identifier": "git+https://github.com/jmfernandez/WOMBAT-Pipelines.git@e016edf2e5a3196cf313b46084348b79f63aa89d/subworkflows/local/tpp.nf",
+            "sha256": "247c3b8a1cfd793b777d424a9ee12aa14021c78d455f1bd16faf0c33b8b56edc"
+        },
+        {
+            "@id": "workflow/modules/local/prepare_files/main.nf",
+            "@type": [
+                "File",
+                "SoftwareSourceCode"
+            ],
+            "alternateName": "modules/local/prepare_files/main.nf",
+            "contentSize": 2595,
+            "encodingFormat": "text/plain",
+            "identifier": "git+https://github.com/jmfernandez/WOMBAT-Pipelines.git@e016edf2e5a3196cf313b46084348b79f63aa89d/modules/local/prepare_files/main.nf",
+            "sha256": "69e6cb5d70ce7b8ce1d1ce7bb5c512c3e490f973fa684465fd29044f552a9acd"
+        },
+        {
+            "@id": "workflow/modules/local/calcbenchmarks/main.nf",
+            "@type": [
+                "File",
+                "SoftwareSourceCode"
+            ],
+            "alternateName": "modules/local/calcbenchmarks/main.nf",
+            "contentSize": 1292,
+            "encodingFormat": "text/plain",
+            "identifier": "git+https://github.com/jmfernandez/WOMBAT-Pipelines.git@e016edf2e5a3196cf313b46084348b79f63aa89d/modules/local/calcbenchmarks/main.nf",
+            "sha256": "a0e1cc6d21a38a63a221fc04dc41bf832701e76cca627f7e485690399822fcfb"
+        },
+        {
+            "@id": "workflow/modules/local/sdrfpipelines/sdrfmerge/main.nf",
+            "@type": [
+                "File",
+                "SoftwareSourceCode"
+            ],
+            "alternateName": "modules/local/sdrfpipelines/sdrfmerge/main.nf",
+            "contentSize": 1409,
+            "encodingFormat": "text/plain",
+            "identifier": "git+https://github.com/jmfernandez/WOMBAT-Pipelines.git@e016edf2e5a3196cf313b46084348b79f63aa89d/modules/local/sdrfpipelines/sdrfmerge/main.nf",
+            "sha256": "0b1c27886273a4e02c9d2fc5d65887506e73f16c4fe1f42c61bef5ac93465b3e"
+        },
+        {
+            "@id": "workflow/modules/local/raw2mzdb/main.nf",
+            "@type": [
+                "File",
+                "SoftwareSourceCode"
+            ],
+            "alternateName": "modules/local/raw2mzdb/main.nf",
+            "contentSize": 608,
+            "encodingFormat": "text/plain",
+            "identifier": "git+https://github.com/jmfernandez/WOMBAT-Pipelines.git@e016edf2e5a3196cf313b46084348b79f63aa89d/modules/local/raw2mzdb/main.nf",
+            "sha256": "e938e8bae32014bffeaab0cdb34065aa78b4e6d1cd2f29c83e0d05ac2db3124d"
+        },
+        {
+            "@id": "workflow/modules/local/mzdb2mgf/main.nf",
+            "@type": [
+                "File",
+                "SoftwareSourceCode"
+            ],
+            "alternateName": "modules/local/mzdb2mgf/main.nf",
+            "contentSize": 601,
+            "encodingFormat": "text/plain",
+            "identifier": "git+https://github.com/jmfernandez/WOMBAT-Pipelines.git@e016edf2e5a3196cf313b46084348b79f63aa89d/modules/local/mzdb2mgf/main.nf",
+            "sha256": "b0fdf9e20b4e6556ba069899ddbf67381e662ab14a00fb5357a8117b7f9b768f"
+        },
+        {
+            "@id": "workflow/modules/local/searchgui/create_decoy_database/main.nf",
+            "@type": [
+                "File",
+                "SoftwareSourceCode"
+            ],
+            "alternateName": "modules/local/searchgui/create_decoy_database/main.nf",
+            "contentSize": 719,
+            "encodingFormat": "text/plain",
+            "identifier": "git+https://github.com/jmfernandez/WOMBAT-Pipelines.git@e016edf2e5a3196cf313b46084348b79f63aa89d/modules/local/searchgui/create_decoy_database/main.nf",
+            "sha256": "c9c6fc46561bfecccc5facc5fdbdb311086d80e7b33727d6227bba5869df27da"
+        },
+        {
+            "@id": "workflow/modules/local/searchgui/prepare_searchgui/main.nf",
+            "@type": [
+                "File",
+                "SoftwareSourceCode"
+            ],
+            "alternateName": "modules/local/searchgui/prepare_searchgui/main.nf",
+            "contentSize": 4384,
+            "encodingFormat": "text/plain",
+            "identifier": "git+https://github.com/jmfernandez/WOMBAT-Pipelines.git@e016edf2e5a3196cf313b46084348b79f63aa89d/modules/local/searchgui/prepare_searchgui/main.nf",
+            "sha256": "e67cf9bca5af421658f130bd8d3173cb2b951c425bbf83515bd41556d91c9244"
+        },
+        {
+            "@id": "workflow/modules/local/searchgui/run_searchgui/main.nf",
+            "@type": [
+                "File",
+                "SoftwareSourceCode"
+            ],
+            "alternateName": "modules/local/searchgui/run_searchgui/main.nf",
+            "contentSize": 1569,
+            "encodingFormat": "text/plain",
+            "identifier": "git+https://github.com/jmfernandez/WOMBAT-Pipelines.git@e016edf2e5a3196cf313b46084348b79f63aa89d/modules/local/searchgui/run_searchgui/main.nf",
+            "sha256": "42daa9bdaf753f34ce80d7deff480c1c58ecce5a99ce23d9869cdfd9d80c4717"
+        },
+        {
+            "@id": "workflow/modules/local/proline/config_proline/main.nf",
+            "@type": [
+                "File",
+                "SoftwareSourceCode"
+            ],
+            "alternateName": "modules/local/proline/config_proline/main.nf",
+            "contentSize": 1715,
+            "encodingFormat": "text/plain",
+            "identifier": "git+https://github.com/jmfernandez/WOMBAT-Pipelines.git@e016edf2e5a3196cf313b46084348b79f63aa89d/modules/local/proline/config_proline/main.nf",
+            "sha256": "398aca90a48647522fc1736de25bc0414f11ac38066b789be91cd7700d7bad0a"
+        },
+        {
+            "@id": "workflow/modules/local/proline/exp_design_proline/main.nf",
+            "@type": [
+                "File",
+                "SoftwareSourceCode"
+            ],
+            "alternateName": "modules/local/proline/exp_design_proline/main.nf",
+            "contentSize": 1376,
+            "encodingFormat": "text/plain",
+            "identifier": "git+https://github.com/jmfernandez/WOMBAT-Pipelines.git@e016edf2e5a3196cf313b46084348b79f63aa89d/modules/local/proline/exp_design_proline/main.nf",
+            "sha256": "7e08e5ed340e0740a7515b46fbf3c5433a93994aefe517e77274dd99ef90e9fd"
+        },
+        {
+            "@id": "workflow/modules/local/proline/run_proline/main.nf",
+            "@type": [
+                "File",
+                "SoftwareSourceCode"
+            ],
+            "alternateName": "modules/local/proline/run_proline/main.nf",
+            "contentSize": 897,
+            "encodingFormat": "text/plain",
+            "identifier": "git+https://github.com/jmfernandez/WOMBAT-Pipelines.git@e016edf2e5a3196cf313b46084348b79f63aa89d/modules/local/proline/run_proline/main.nf",
+            "sha256": "4ba2974cc54d0c4c7add43bb052d0073b5005fb173508675ae2f571878b67ed5"
+        },
+        {
+            "@id": "workflow/modules/local/polystest/run_polystest/main.nf",
+            "@type": [
+                "File",
+                "SoftwareSourceCode"
+            ],
+            "alternateName": "modules/local/polystest/run_polystest/main.nf",
+            "contentSize": 1103,
+            "encodingFormat": "text/plain",
+            "identifier": "git+https://github.com/jmfernandez/WOMBAT-Pipelines.git@e016edf2e5a3196cf313b46084348b79f63aa89d/modules/local/polystest/run_polystest/main.nf",
+            "sha256": "8e7aa763dfc683243430c5d003bbb32ac5c1bf7d67460c8cfc4e1ea08100f063"
+        },
+        {
+            "@id": "workflow/modules/local/polystest/convert_polystest/main.nf",
+            "@type": [
+                "File",
+                "SoftwareSourceCode"
+            ],
+            "alternateName": "modules/local/polystest/convert_polystest/main.nf",
+            "contentSize": 804,
+            "encodingFormat": "text/plain",
+            "identifier": "git+https://github.com/jmfernandez/WOMBAT-Pipelines.git@e016edf2e5a3196cf313b46084348b79f63aa89d/modules/local/polystest/convert_polystest/main.nf",
+            "sha256": "8fa72165d71b62894945fc770161f0c4c87c0c5591d0e137be780dd0e2302ca9"
+        },
+        {
+            "@id": "workflow/modules/local/sdrfpipelines/convert_maxquant/main.nf",
+            "@type": [
+                "File",
+                "SoftwareSourceCode"
+            ],
+            "alternateName": "modules/local/sdrfpipelines/convert_maxquant/main.nf",
+            "contentSize": 1121,
+            "encodingFormat": "text/plain",
+            "identifier": "git+https://github.com/jmfernandez/WOMBAT-Pipelines.git@e016edf2e5a3196cf313b46084348b79f63aa89d/modules/local/sdrfpipelines/convert_maxquant/main.nf",
+            "sha256": "5b812efc7d902c818943cd44bc18cbc2636936a7aa4ccaa9792c5b607a919cb7"
+        },
+        {
+            "@id": "workflow/modules/nf-core/modules/maxquant/lfq/main.nf",
+            "@type": [
+                "File",
+                "SoftwareSourceCode"
+            ],
+            "alternateName": "modules/nf-core/modules/maxquant/lfq/main.nf",
+            "contentSize": 1352,
+            "encodingFormat": "text/plain",
+            "identifier": "git+https://github.com/jmfernandez/WOMBAT-Pipelines.git@e016edf2e5a3196cf313b46084348b79f63aa89d/modules/nf-core/modules/maxquant/lfq/main.nf",
+            "sha256": "18c28aa6e569c352241a8371c824d2fafb317a867e3532f58f3ad400db869a38"
+        },
+        {
+            "@id": "workflow/modules/local/normalyzerde/main.nf",
+            "@type": [
+                "File",
+                "SoftwareSourceCode"
+            ],
+            "alternateName": "modules/local/normalyzerde/main.nf",
+            "contentSize": 1278,
+            "encodingFormat": "text/plain",
+            "identifier": "git+https://github.com/jmfernandez/WOMBAT-Pipelines.git@e016edf2e5a3196cf313b46084348b79f63aa89d/modules/local/normalyzerde/main.nf",
+            "sha256": "244c8ec4efc56071443c39edf3f9609d0f9074bcb4d2840d3588d50bafb28af2"
+        },
+        {
+            "@id": "workflow/modules/local/raw2mzml/main.nf",
+            "@type": [
+                "File",
+                "SoftwareSourceCode"
+            ],
+            "alternateName": "modules/local/raw2mzml/main.nf",
+            "contentSize": 959,
+            "encodingFormat": "text/plain",
+            "identifier": "git+https://github.com/jmfernandez/WOMBAT-Pipelines.git@e016edf2e5a3196cf313b46084348b79f63aa89d/modules/local/raw2mzml/main.nf",
+            "sha256": "a2fa1ab3a729e2be1b438810a3f615cd6ddf7cc0817cad0a921e1a05b0b4e914"
+        },
+        {
+            "@id": "workflow/modules/local/peptideshaker/run_peptideshaker/main.nf",
+            "@type": [
+                "File",
+                "SoftwareSourceCode"
+            ],
+            "alternateName": "modules/local/peptideshaker/run_peptideshaker/main.nf",
+            "contentSize": 1162,
+            "encodingFormat": "text/plain",
+            "identifier": "git+https://github.com/jmfernandez/WOMBAT-Pipelines.git@e016edf2e5a3196cf313b46084348b79f63aa89d/modules/local/peptideshaker/run_peptideshaker/main.nf",
+            "sha256": "c18f48ce3dc797a2d3670ec94c1a0129c4262f93b7119cbe172b6dec1281d77c"
+        },
+        {
+            "@id": "workflow/modules/local/peptideshaker/peptideshaker_report/main.nf",
+            "@type": [
+                "File",
+                "SoftwareSourceCode"
+            ],
+            "alternateName": "modules/local/peptideshaker/peptideshaker_report/main.nf",
+            "contentSize": 1408,
+            "encodingFormat": "text/plain",
+            "identifier": "git+https://github.com/jmfernandez/WOMBAT-Pipelines.git@e016edf2e5a3196cf313b46084348b79f63aa89d/modules/local/peptideshaker/peptideshaker_report/main.nf",
+            "sha256": "aad21f7e5a9506bb99cb317631fc7d0a405223b775a9fbad36adb7ea563244e8"
+        },
+        {
+            "@id": "workflow/modules/local/flashlfq/main.nf",
+            "@type": [
+                "File",
+                "SoftwareSourceCode"
+            ],
+            "alternateName": "modules/local/flashlfq/main.nf",
+            "contentSize": 3575,
+            "encodingFormat": "text/plain",
+            "identifier": "git+https://github.com/jmfernandez/WOMBAT-Pipelines.git@e016edf2e5a3196cf313b46084348b79f63aa89d/modules/local/flashlfq/main.nf",
+            "sha256": "be79dba1513ff91c77ba1ab5b61ac74ad82d88ceecdd2e72253ded05b898c5ed"
+        },
+        {
+            "@id": "workflow/modules/local/msqrob/main.nf",
+            "@type": [
+                "File",
+                "SoftwareSourceCode"
+            ],
+            "alternateName": "modules/local/msqrob/main.nf",
+            "contentSize": 1502,
+            "encodingFormat": "text/plain",
+            "identifier": "git+https://github.com/jmfernandez/WOMBAT-Pipelines.git@e016edf2e5a3196cf313b46084348b79f63aa89d/modules/local/msqrob/main.nf",
+            "sha256": "8a53e22a4be71650b25a60ed24e4c7e65304fd8e2bdfd458b424229f1077cddd"
+        },
+        {
+            "@id": "workflow/modules/local/comet/write_config/main.nf",
+            "@type": [
+                "File",
+                "SoftwareSourceCode"
+            ],
+            "alternateName": "modules/local/comet/write_config/main.nf",
+            "contentSize": 5939,
+            "encodingFormat": "text/plain",
+            "identifier": "git+https://github.com/jmfernandez/WOMBAT-Pipelines.git@e016edf2e5a3196cf313b46084348b79f63aa89d/modules/local/comet/write_config/main.nf",
+            "sha256": "7d032a3e2e9bbfffab513085db912e7c84b63965fe343a539901b15393b391fd"
+        },
+        {
+            "@id": "workflow/modules/local/comet/run_comet/main.nf",
+            "@type": [
+                "File",
+                "SoftwareSourceCode"
+            ],
+            "alternateName": "modules/local/comet/run_comet/main.nf",
+            "contentSize": 722,
+            "encodingFormat": "text/plain",
+            "identifier": "git+https://github.com/jmfernandez/WOMBAT-Pipelines.git@e016edf2e5a3196cf313b46084348b79f63aa89d/modules/local/comet/run_comet/main.nf",
+            "sha256": "eb5745952744b2afec1db5235c4b3bd08e856cc8a9cb900b4f0653f0e9ae7d14"
+        },
+        {
+            "@id": "workflow/modules/local/tpp/peptideprophet/main.nf",
+            "@type": [
+                "File",
+                "SoftwareSourceCode"
+            ],
+            "alternateName": "modules/local/tpp/peptideprophet/main.nf",
+            "contentSize": 1124,
+            "encodingFormat": "text/plain",
+            "identifier": "git+https://github.com/jmfernandez/WOMBAT-Pipelines.git@e016edf2e5a3196cf313b46084348b79f63aa89d/modules/local/tpp/peptideprophet/main.nf",
+            "sha256": "56c533714187354bcbec09ea6949d7003525edb705282ffbb7bf9c9a9ffaba88"
+        },
+        {
+            "@id": "workflow/modules/local/tpp/proteinprophet/main.nf",
+            "@type": [
+                "File",
+                "SoftwareSourceCode"
+            ],
+            "alternateName": "modules/local/tpp/proteinprophet/main.nf",
+            "contentSize": 930,
+            "encodingFormat": "text/plain",
+            "identifier": "git+https://github.com/jmfernandez/WOMBAT-Pipelines.git@e016edf2e5a3196cf313b46084348b79f63aa89d/modules/local/tpp/proteinprophet/main.nf",
+            "sha256": "4f323ef0e2937e3054abc5211615d73a79222575961c62995eeb187d34fc10c1"
+        },
+        {
+            "@id": "workflow/modules/local/tpp/stpeter/main.nf",
+            "@type": [
+                "File",
+                "SoftwareSourceCode"
+            ],
+            "alternateName": "modules/local/tpp/stpeter/main.nf",
+            "contentSize": 1087,
+            "encodingFormat": "text/plain",
+            "identifier": "git+https://github.com/jmfernandez/WOMBAT-Pipelines.git@e016edf2e5a3196cf313b46084348b79f63aa89d/modules/local/tpp/stpeter/main.nf",
+            "sha256": "e95d6b97fad7cb4e847b9b6c10232a6429cd0bcfa646644e1078d234c5e66129"
+        },
+        {
+            "@id": "workflow/modules/local/tpp/protxml2csv/main.nf",
+            "@type": [
+                "File",
+                "SoftwareSourceCode"
+            ],
+            "alternateName": "modules/local/tpp/protxml2csv/main.nf",
+            "contentSize": 1018,
+            "encodingFormat": "text/plain",
+            "identifier": "git+https://github.com/jmfernandez/WOMBAT-Pipelines.git@e016edf2e5a3196cf313b46084348b79f63aa89d/modules/local/tpp/protxml2csv/main.nf",
+            "sha256": "47bd8830b926f4ec4294a25b342d2bd4333799403eebab81d33e9d3358ecdcba"
+        },
+        {
+            "@id": "workflow/modules/local/tpp/mergeoutput/main.nf",
+            "@type": [
+                "File",
+                "SoftwareSourceCode"
+            ],
+            "alternateName": "modules/local/tpp/mergeoutput/main.nf",
+            "contentSize": 1340,
+            "encodingFormat": "text/plain",
+            "identifier": "git+https://github.com/jmfernandez/WOMBAT-Pipelines.git@e016edf2e5a3196cf313b46084348b79f63aa89d/modules/local/tpp/mergeoutput/main.nf",
+            "sha256": "201daf5388303b245faeb2142c597f47024dbc6008507cd659ea616817e6595e"
+        },
+        {
+            "@id": "workflow/modules/local/rots/main.nf",
+            "@type": [
+                "File",
+                "SoftwareSourceCode"
+            ],
+            "alternateName": "modules/local/rots/main.nf",
+            "contentSize": 841,
+            "encodingFormat": "text/plain",
+            "identifier": "git+https://github.com/jmfernandez/WOMBAT-Pipelines.git@e016edf2e5a3196cf313b46084348b79f63aa89d/modules/local/rots/main.nf",
+            "sha256": "f437bbe0a49e98ab95bd23c041618a21997933e6c50e5c8eb78ffa9f7de7a26e"
+        },
+        {
+            "@id": "#3b061507-8e24-4cd0-a890-f78587c16a81",
+            "@type": "CreateAction",
+            "actionStatus": [
+                {
+                    "@id": "http://schema.org/CompletedActionStatus"
+                }
+            ],
+            "endTime": "2023-08-10T18:34:56.294642+00:00",
+            "instrument": {
+                "@id": "workflow/main.nf"
+            },
+            "name": "Run outputs/_1691692432 of workflow/main.nf",
+            "object": [
+                {
+                    "@id": "#cd5c26a0-9f70-4f63-8e35-e82e169ff1fe"
+                },
+                {
+                    "@id": "#dba54dda-4267-43f3-b1b2-ce1b85408c0c"
+                },
+                {
+                    "@id": "https://raw.githubusercontent.com/wombat-p/WOMBAT-Pipelines/f0505c28540ad07929684e3565616e91f7248fa2/test_data/exp_design.txt"
+                },
+                {
+                    "@id": "#9b12b5f9-c515-4ab7-ad4a-34f8fe020d97"
+                },
+                {
+                    "@id": "https://raw.githubusercontent.com/wombat-p/WOMBAT-Pipelines/f0505c28540ad07929684e3565616e91f7248fa2/test_data/test_params.yml"
+                },
+                {
+                    "@id": "#9e20451a-4039-4ed0-b61b-7cf593e76798"
+                },
+                {
+                    "@id": "#b61ac84c-729e-4409-a230-6c4813e4b79a"
+                },
+                {
+                    "@id": "#dd9f4392-602a-44fc-afd2-4aaac7e4657e"
+                },
+                {
+                    "@id": "#d80e8c9a-4ab5-499a-9fca-815cf9ffa632"
+                },
+                {
+                    "@id": "#874767b6-62e8-412e-ac3e-19b291eab918"
+                },
+                {
+                    "@id": "#babb1110-3094-4e29-976d-e609358efec2"
+                },
+                {
+                    "@id": "#bd80ea10-d4af-483c-9a27-85efe6efb5f3"
+                },
+                {
+                    "@id": "#173fa837-1dc7-4d22-a254-6a65e365adec"
+                },
+                {
+                    "@id": "#32c7629a-0020-4cc0-96ec-d8c32c38e71b"
+                },
+                {
+                    "@id": "#8d641420-f07c-48ab-a07b-2237364c3976"
+                },
+                {
+                    "@id": "#8c2af2f7-d5d5-4938-ae43-180e1b046c7a"
+                },
+                {
+                    "@id": "#2c52c68c-865d-450a-bdb5-e67237d77a2e"
+                },
+                {
+                    "@id": "#2f50ab07-8bdf-4b09-ae23-d8789d05073e"
+                },
+                {
+                    "@id": "#c2feaa8f-33dd-4737-a188-3d786b513057"
+                },
+                {
+                    "@id": "#ce0b4947-94d2-4d1a-a55a-a1b6620999ce"
+                },
+                {
+                    "@id": "#d2a85801-34b4-4f52-890d-9ec6e4f5c966"
+                },
+                {
+                    "@id": "#cc6b70f6-cfd6-445d-a9e8-b2a4b354ad6f"
+                },
+                {
+                    "@id": "#2a06ac31-b2dc-4f2d-b9ff-e046c32ccbc7"
+                },
+                {
+                    "@id": "#1df604ab-a624-4d38-8d8c-1509937329cd"
+                },
+                {
+                    "@id": "#2feb0b2e-8ecb-4c0c-a6df-44cac21011ba"
+                },
+                {
+                    "@id": "#ddea061b-48c4-40e8-a984-d8426d476466"
+                },
+                {
+                    "@id": "#8f77de1e-0cf9-494a-9a02-0dc88c6c59c5"
+                },
+                {
+                    "@id": "#fc2d5703-e27a-4b85-990d-7bed1933f4f2"
+                },
+                {
+                    "@id": "#7e27ac79-b27b-4fcc-af8a-b0ff86b3ffcb"
+                },
+                {
+                    "@id": "#5adc2604-36f3-4963-be37-14a931244a2e"
+                },
+                {
+                    "@id": "#3a0ac2d4-ed52-4e0e-b276-726ae4557597"
+                },
+                {
+                    "@id": "#c5394ffe-d7b9-4271-875f-5c689ab218da"
+                },
+                {
+                    "@id": "#b86730fc-3593-4769-81bb-47ef54777342"
+                },
+                {
+                    "@id": "#10426833-0b63-4c48-9598-8bf2f6a807e8"
+                },
+                {
+                    "@id": "#b8dff9f4-2c31-4988-90d4-1690fc2fd794"
+                },
+                {
+                    "@id": "https://raw.githubusercontent.com/wombat-p/WOMBAT-Pipelines/f0505c28540ad07929684e3565616e91f7248fa2/test_data/ABRF_iPRG_2012_target.fasta"
+                },
+                {
+                    "@id": "https://raw.githubusercontent.com/bigbio/proteomics-metadata-standard/master/sdrf-proteomics/assets/param2sdrf.yml"
+                }
+            ],
+            "result": [
+                {
+                    "@id": "outputs/_1691692432/mgf/"
+                },
+                {
+                    "@id": "outputs/_1691692432/sdrf_merge/"
+                },
+                {
+                    "@id": "outputs/_1691692432/prepare_files/"
+                },
+                {
+                    "@id": "outputs/_1691692432/stand_pep_quant_mergedproline.csv"
+                },
+                {
+                    "@id": "outputs/_1691692432/polystest/"
+                },
+                {
+                    "@id": "outputs/_1691692432/benchmarks_proline.json"
+                },
+                {
+                    "@id": "outputs/_1691692432/proline/"
+                },
+                {
+                    "@id": "outputs/_1691692432/mzdb/"
+                },
+                {
+                    "@id": "outputs/_1691692432/searchgui/"
+                },
+                {
+                    "@id": "outputs/_1691692432/stand_prot_quant_mergedproline.csv"
+                },
+                {
+                    "@id": "outputs/_1691692432/.nextflow/"
+                },
+                {
+                    "@id": "outputs/_1691692432/searchgui_params/"
+                },
+                {
+                    "@id": "outputs/_1691692432/decoy_database/"
+                }
+            ],
+            "startTime": "2023-08-10T18:33:52.684918+00:00"
+        },
+        {
+            "@id": "workflow/main.nf#param:mzmls",
+            "@type": "FormalParameter",
+            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "name": "mzmls",
+            "workExample": [
+                {
+                    "@id": "#cd5c26a0-9f70-4f63-8e35-e82e169ff1fe"
+                }
+            ]
+        },
+        {
+            "@id": "#cd5c26a0-9f70-4f63-8e35-e82e169ff1fe",
+            "@type": "Intangible",
+            "additionalType": "String",
+            "exampleOfWork": [
+                {
+                    "@id": "workflow/main.nf#param:mzmls"
+                }
+            ],
+            "name": "mzmls"
+        },
+        {
+            "@id": "workflow/main.nf#param:raws",
+            "@type": "FormalParameter",
+            "additionalType": "Collection",
+            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "name": "raws",
+            "workExample": [
+                {
+                    "@id": "#dba54dda-4267-43f3-b1b2-ce1b85408c0c"
+                }
+            ]
+        },
+        {
+            "@id": "#dba54dda-4267-43f3-b1b2-ce1b85408c0c",
+            "@type": "Collection",
+            "exampleOfWork": [
+                {
+                    "@id": "workflow/main.nf#param:raws"
+                }
+            ],
+            "hasPart": [
+                {
+                    "@id": "https://raw.githubusercontent.com/wombat-p/WOMBAT-Pipelines/f0505c28540ad07929684e3565616e91f7248fa2/test_data/OVEMB150205_12.raw"
+                },
+                {
+                    "@id": "https://raw.githubusercontent.com/wombat-p/WOMBAT-Pipelines/f0505c28540ad07929684e3565616e91f7248fa2/test_data/OVEMB150205_14.raw"
+                }
+            ]
+        },
+        {
+            "@id": "https://raw.githubusercontent.com/wombat-p/WOMBAT-Pipelines/f0505c28540ad07929684e3565616e91f7248fa2/test_data/OVEMB150205_12.raw",
+            "@type": "File",
+            "contentSize": 23550514,
+            "encodingFormat": "application/octet-stream",
+            "sha256": "aa6ce131b273439979d6dd2387fd74ecd1701da91ad453055d91fa28fd0446cb"
+        },
+        {
+            "@id": "https://raw.githubusercontent.com/wombat-p/WOMBAT-Pipelines/f0505c28540ad07929684e3565616e91f7248fa2/test_data/OVEMB150205_14.raw",
+            "@type": "File",
+            "contentSize": 27785742,
+            "encodingFormat": "application/octet-stream",
+            "sha256": "47ea6448d797ec5c4b87b8cc754b3dde646a9d5584c4a0134c7d47e8156e102e"
+        },
+        {
+            "@id": "workflow/main.nf#param:exp_design",
+            "@type": "FormalParameter",
+            "additionalType": "File",
+            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "name": "exp_design",
+            "workExample": [
+                {
+                    "@id": "https://raw.githubusercontent.com/wombat-p/WOMBAT-Pipelines/f0505c28540ad07929684e3565616e91f7248fa2/test_data/exp_design.txt"
+                }
+            ]
+        },
+        {
+            "@id": "https://raw.githubusercontent.com/wombat-p/WOMBAT-Pipelines/f0505c28540ad07929684e3565616e91f7248fa2/test_data/exp_design.txt",
+            "@type": "File",
+            "contentSize": 101,
+            "encodingFormat": "text/plain",
+            "exampleOfWork": [
+                {
+                    "@id": "workflow/main.nf#param:exp_design"
+                }
+            ],
+            "sha256": "f6c66ab878726d83bc210f8921617e5719981811e986d040fb2849265654ade8"
+        },
+        {
+            "@id": "workflow/main.nf#param:sdrf",
+            "@type": "FormalParameter",
+            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "name": "sdrf",
+            "workExample": [
+                {
+                    "@id": "#9b12b5f9-c515-4ab7-ad4a-34f8fe020d97"
+                }
+            ]
+        },
+        {
+            "@id": "#9b12b5f9-c515-4ab7-ad4a-34f8fe020d97",
+            "@type": "Intangible",
+            "additionalType": "String",
+            "exampleOfWork": [
+                {
+                    "@id": "workflow/main.nf#param:sdrf"
+                }
+            ],
+            "name": "sdrf"
+        },
+        {
+            "@id": "workflow/main.nf#param:parameters",
+            "@type": "FormalParameter",
+            "additionalType": "File",
+            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "name": "parameters",
+            "workExample": [
+                {
+                    "@id": "https://raw.githubusercontent.com/wombat-p/WOMBAT-Pipelines/f0505c28540ad07929684e3565616e91f7248fa2/test_data/test_params.yml"
+                }
+            ]
+        },
+        {
+            "@id": "https://raw.githubusercontent.com/wombat-p/WOMBAT-Pipelines/f0505c28540ad07929684e3565616e91f7248fa2/test_data/test_params.yml",
+            "@type": "File",
+            "contentSize": 819,
+            "encodingFormat": "text/plain",
+            "exampleOfWork": [
+                {
+                    "@id": "workflow/main.nf#param:parameters"
+                }
+            ],
+            "sha256": "ce8bfa5e0908ae59b1b98fed775997b404a7fdedea526c8596d5726965964116"
+        },
+        {
+            "@id": "workflow/main.nf#param:run_statistics",
+            "@type": "FormalParameter",
+            "additionalType": "Integer",
+            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "name": "run_statistics",
+            "workExample": [
+                {
+                    "@id": "#9e20451a-4039-4ed0-b61b-7cf593e76798"
+                }
+            ]
+        },
+        {
+            "@id": "#9e20451a-4039-4ed0-b61b-7cf593e76798",
+            "@type": "PropertyValue",
+            "exampleOfWork": [
+                {
+                    "@id": "workflow/main.nf#param:run_statistics"
+                }
+            ],
+            "name": "run_statistics",
+            "value": true
+        },
+        {
+            "@id": "workflow/main.nf#param:add_decoys",
+            "@type": "FormalParameter",
+            "additionalType": "Integer",
+            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "name": "add_decoys",
+            "workExample": [
+                {
+                    "@id": "#b61ac84c-729e-4409-a230-6c4813e4b79a"
+                }
+            ]
+        },
+        {
+            "@id": "#b61ac84c-729e-4409-a230-6c4813e4b79a",
+            "@type": "PropertyValue",
+            "exampleOfWork": [
+                {
+                    "@id": "workflow/main.nf#param:add_decoys"
+                }
+            ],
+            "name": "add_decoys",
+            "value": true
+        },
+        {
+            "@id": "workflow/main.nf#param:comps",
+            "@type": "FormalParameter",
+            "additionalType": "String",
+            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "name": "comps",
+            "workExample": [
+                {
+                    "@id": "#dd9f4392-602a-44fc-afd2-4aaac7e4657e"
+                }
+            ]
+        },
+        {
+            "@id": "#dd9f4392-602a-44fc-afd2-4aaac7e4657e",
+            "@type": "PropertyValue",
+            "exampleOfWork": [
+                {
+                    "@id": "workflow/main.nf#param:comps"
+                }
+            ],
+            "name": "comps",
+            "value": ""
+        },
+        {
+            "@id": "workflow/main.nf#param:proline_engine",
+            "@type": "FormalParameter",
+            "additionalType": "String",
+            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "name": "proline_engine",
+            "workExample": [
+                {
+                    "@id": "#d80e8c9a-4ab5-499a-9fca-815cf9ffa632"
+                }
+            ]
+        },
+        {
+            "@id": "#d80e8c9a-4ab5-499a-9fca-815cf9ffa632",
+            "@type": "PropertyValue",
+            "exampleOfWork": [
+                {
+                    "@id": "workflow/main.nf#param:proline_engine"
+                }
+            ],
+            "name": "proline_engine",
+            "value": "xtandem"
+        },
+        {
+            "@id": "workflow/main.nf#param:workflow",
+            "@type": "FormalParameter",
+            "additionalType": "String",
+            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "name": "workflow",
+            "workExample": [
+                {
+                    "@id": "#874767b6-62e8-412e-ac3e-19b291eab918"
+                }
+            ]
+        },
+        {
+            "@id": "#874767b6-62e8-412e-ac3e-19b291eab918",
+            "@type": "PropertyValue",
+            "exampleOfWork": [
+                {
+                    "@id": "workflow/main.nf#param:workflow"
+                }
+            ],
+            "name": "workflow",
+            "value": "proline"
+        },
+        {
+            "@id": "workflow/main.nf#param:multiqc_config",
+            "@type": "FormalParameter",
+            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "name": "multiqc_config",
+            "workExample": [
+                {
+                    "@id": "#babb1110-3094-4e29-976d-e609358efec2"
+                }
+            ]
+        },
+        {
+            "@id": "#babb1110-3094-4e29-976d-e609358efec2",
+            "@type": "Intangible",
+            "additionalType": "String",
+            "exampleOfWork": [
+                {
+                    "@id": "workflow/main.nf#param:multiqc_config"
+                }
+            ],
+            "name": "multiqc_config"
+        },
+        {
+            "@id": "workflow/main.nf#param:multiqc_title",
+            "@type": "FormalParameter",
+            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "name": "multiqc_title",
+            "workExample": [
+                {
+                    "@id": "#bd80ea10-d4af-483c-9a27-85efe6efb5f3"
+                }
+            ]
+        },
+        {
+            "@id": "#bd80ea10-d4af-483c-9a27-85efe6efb5f3",
+            "@type": "Intangible",
+            "additionalType": "String",
+            "exampleOfWork": [
+                {
+                    "@id": "workflow/main.nf#param:multiqc_title"
+                }
+            ],
+            "name": "multiqc_title"
+        },
+        {
+            "@id": "workflow/main.nf#param:max_multiqc_email_size",
+            "@type": "FormalParameter",
+            "additionalType": "String",
+            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "name": "max_multiqc_email_size",
+            "workExample": [
+                {
+                    "@id": "#173fa837-1dc7-4d22-a254-6a65e365adec"
+                }
+            ]
+        },
+        {
+            "@id": "#173fa837-1dc7-4d22-a254-6a65e365adec",
+            "@type": "PropertyValue",
+            "exampleOfWork": [
+                {
+                    "@id": "workflow/main.nf#param:max_multiqc_email_size"
+                }
+            ],
+            "name": "max_multiqc_email_size",
+            "value": "25.MB"
+        },
+        {
+            "@id": "workflow/main.nf#param:outdir",
+            "@type": "FormalParameter",
+            "additionalType": "String",
+            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "name": "outdir",
+            "workExample": [
+                {
+                    "@id": "#32c7629a-0020-4cc0-96ec-d8c32c38e71b"
+                }
+            ]
+        },
+        {
+            "@id": "#32c7629a-0020-4cc0-96ec-d8c32c38e71b",
+            "@type": "PropertyValue",
+            "exampleOfWork": [
+                {
+                    "@id": "workflow/main.nf#param:outdir"
+                }
+            ],
+            "name": "outdir",
+            "value": "/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/0897c3ff-a917-4cd5-b66e-48618b547c69/outputs/_1691692432/."
+        },
+        {
+            "@id": "workflow/main.nf#param:tracedir",
+            "@type": "FormalParameter",
+            "additionalType": "String",
+            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "name": "tracedir",
+            "workExample": [
+                {
+                    "@id": "#8d641420-f07c-48ab-a07b-2237364c3976"
+                }
+            ]
+        },
+        {
+            "@id": "#8d641420-f07c-48ab-a07b-2237364c3976",
+            "@type": "PropertyValue",
+            "exampleOfWork": [
+                {
+                    "@id": "workflow/main.nf#param:tracedir"
+                }
+            ],
+            "name": "tracedir",
+            "value": "results/pipeline_info"
+        },
+        {
+            "@id": "workflow/main.nf#param:publish_dir_mode",
+            "@type": "FormalParameter",
+            "additionalType": "String",
+            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "name": "publish_dir_mode",
+            "workExample": [
+                {
+                    "@id": "#8c2af2f7-d5d5-4938-ae43-180e1b046c7a"
+                }
+            ]
+        },
+        {
+            "@id": "#8c2af2f7-d5d5-4938-ae43-180e1b046c7a",
+            "@type": "PropertyValue",
+            "exampleOfWork": [
+                {
+                    "@id": "workflow/main.nf#param:publish_dir_mode"
+                }
+            ],
+            "name": "publish_dir_mode",
+            "value": "copy"
+        },
+        {
+            "@id": "workflow/main.nf#param:email",
+            "@type": "FormalParameter",
+            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "name": "email",
+            "workExample": [
+                {
+                    "@id": "#2c52c68c-865d-450a-bdb5-e67237d77a2e"
+                }
+            ]
+        },
+        {
+            "@id": "#2c52c68c-865d-450a-bdb5-e67237d77a2e",
+            "@type": "Intangible",
+            "additionalType": "String",
+            "exampleOfWork": [
+                {
+                    "@id": "workflow/main.nf#param:email"
+                }
+            ],
+            "name": "email"
+        },
+        {
+            "@id": "workflow/main.nf#param:email_on_fail",
+            "@type": "FormalParameter",
+            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "name": "email_on_fail",
+            "workExample": [
+                {
+                    "@id": "#2f50ab07-8bdf-4b09-ae23-d8789d05073e"
+                }
+            ]
+        },
+        {
+            "@id": "#2f50ab07-8bdf-4b09-ae23-d8789d05073e",
+            "@type": "Intangible",
+            "additionalType": "String",
+            "exampleOfWork": [
+                {
+                    "@id": "workflow/main.nf#param:email_on_fail"
+                }
+            ],
+            "name": "email_on_fail"
+        },
+        {
+            "@id": "workflow/main.nf#param:plaintext_email",
+            "@type": "FormalParameter",
+            "additionalType": "Integer",
+            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "name": "plaintext_email",
+            "workExample": [
+                {
+                    "@id": "#c2feaa8f-33dd-4737-a188-3d786b513057"
+                }
+            ]
+        },
+        {
+            "@id": "#c2feaa8f-33dd-4737-a188-3d786b513057",
+            "@type": "PropertyValue",
+            "exampleOfWork": [
+                {
+                    "@id": "workflow/main.nf#param:plaintext_email"
+                }
+            ],
+            "name": "plaintext_email",
+            "value": false
+        },
+        {
+            "@id": "workflow/main.nf#param:monochrome_logs",
+            "@type": "FormalParameter",
+            "additionalType": "Integer",
+            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "name": "monochrome_logs",
+            "workExample": [
+                {
+                    "@id": "#ce0b4947-94d2-4d1a-a55a-a1b6620999ce"
+                }
+            ]
+        },
+        {
+            "@id": "#ce0b4947-94d2-4d1a-a55a-a1b6620999ce",
+            "@type": "PropertyValue",
+            "exampleOfWork": [
+                {
+                    "@id": "workflow/main.nf#param:monochrome_logs"
+                }
+            ],
+            "name": "monochrome_logs",
+            "value": false
+        },
+        {
+            "@id": "workflow/main.nf#param:help",
+            "@type": "FormalParameter",
+            "additionalType": "Integer",
+            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "name": "help",
+            "workExample": [
+                {
+                    "@id": "#d2a85801-34b4-4f52-890d-9ec6e4f5c966"
+                }
+            ]
+        },
+        {
+            "@id": "#d2a85801-34b4-4f52-890d-9ec6e4f5c966",
+            "@type": "PropertyValue",
+            "exampleOfWork": [
+                {
+                    "@id": "workflow/main.nf#param:help"
+                }
+            ],
+            "name": "help",
+            "value": false
+        },
+        {
+            "@id": "workflow/main.nf#param:validate_params",
+            "@type": "FormalParameter",
+            "additionalType": "Integer",
+            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "name": "validate_params",
+            "workExample": [
+                {
+                    "@id": "#cc6b70f6-cfd6-445d-a9e8-b2a4b354ad6f"
+                }
+            ]
+        },
+        {
+            "@id": "#cc6b70f6-cfd6-445d-a9e8-b2a4b354ad6f",
+            "@type": "PropertyValue",
+            "exampleOfWork": [
+                {
+                    "@id": "workflow/main.nf#param:validate_params"
+                }
+            ],
+            "name": "validate_params",
+            "value": true
+        },
+        {
+            "@id": "workflow/main.nf#param:show_hidden_params",
+            "@type": "FormalParameter",
+            "additionalType": "Integer",
+            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "name": "show_hidden_params",
+            "workExample": [
+                {
+                    "@id": "#2a06ac31-b2dc-4f2d-b9ff-e046c32ccbc7"
+                }
+            ]
+        },
+        {
+            "@id": "#2a06ac31-b2dc-4f2d-b9ff-e046c32ccbc7",
+            "@type": "PropertyValue",
+            "exampleOfWork": [
+                {
+                    "@id": "workflow/main.nf#param:show_hidden_params"
+                }
+            ],
+            "name": "show_hidden_params",
+            "value": false
+        },
+        {
+            "@id": "workflow/main.nf#param:enable_conda",
+            "@type": "FormalParameter",
+            "additionalType": "Integer",
+            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "name": "enable_conda",
+            "workExample": [
+                {
+                    "@id": "#1df604ab-a624-4d38-8d8c-1509937329cd"
+                }
+            ]
+        },
+        {
+            "@id": "#1df604ab-a624-4d38-8d8c-1509937329cd",
+            "@type": "PropertyValue",
+            "exampleOfWork": [
+                {
+                    "@id": "workflow/main.nf#param:enable_conda"
+                }
+            ],
+            "name": "enable_conda",
+            "value": false
+        },
+        {
+            "@id": "workflow/main.nf#param:schema_ignore_params",
+            "@type": "FormalParameter",
+            "additionalType": "String",
+            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "name": "schema_ignore_params",
+            "workExample": [
+                {
+                    "@id": "#2feb0b2e-8ecb-4c0c-a6df-44cac21011ba"
+                }
+            ]
+        },
+        {
+            "@id": "#2feb0b2e-8ecb-4c0c-a6df-44cac21011ba",
+            "@type": "PropertyValue",
+            "exampleOfWork": [
+                {
+                    "@id": "workflow/main.nf#param:schema_ignore_params"
+                }
+            ],
+            "name": "schema_ignore_params",
+            "value": "fasta,genomes,multiqc_title,workflow,proline_engine,comps,add_decoys,run_statistics,parameters,sdrf,exp_design,raws,mzmls"
+        },
+        {
+            "@id": "workflow/main.nf#param:genomes",
+            "@type": "FormalParameter",
+            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "name": "genomes",
+            "workExample": [
+                {
+                    "@id": "#ddea061b-48c4-40e8-a984-d8426d476466"
+                }
+            ]
+        },
+        {
+            "@id": "#ddea061b-48c4-40e8-a984-d8426d476466",
+            "@type": "Intangible",
+            "additionalType": "String",
+            "exampleOfWork": [
+                {
+                    "@id": "workflow/main.nf#param:genomes"
+                }
+            ],
+            "name": "genomes"
+        },
+        {
+            "@id": "workflow/main.nf#param:custom_config_version",
+            "@type": "FormalParameter",
+            "additionalType": "String",
+            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "name": "custom_config_version",
+            "workExample": [
+                {
+                    "@id": "#8f77de1e-0cf9-494a-9a02-0dc88c6c59c5"
+                }
+            ]
+        },
+        {
+            "@id": "#8f77de1e-0cf9-494a-9a02-0dc88c6c59c5",
+            "@type": "PropertyValue",
+            "exampleOfWork": [
+                {
+                    "@id": "workflow/main.nf#param:custom_config_version"
+                }
+            ],
+            "name": "custom_config_version",
+            "value": "master"
+        },
+        {
+            "@id": "workflow/main.nf#param:custom_config_base",
+            "@type": "FormalParameter",
+            "additionalType": "String",
+            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "name": "custom_config_base",
+            "workExample": [
+                {
+                    "@id": "#fc2d5703-e27a-4b85-990d-7bed1933f4f2"
+                }
+            ]
+        },
+        {
+            "@id": "#fc2d5703-e27a-4b85-990d-7bed1933f4f2",
+            "@type": "PropertyValue",
+            "exampleOfWork": [
+                {
+                    "@id": "workflow/main.nf#param:custom_config_base"
+                }
+            ],
+            "name": "custom_config_base",
+            "value": "https://raw.githubusercontent.com/nf-core/configs/master"
+        },
+        {
+            "@id": "workflow/main.nf#param:config_profile_description",
+            "@type": "FormalParameter",
+            "additionalType": "String",
+            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "name": "config_profile_description",
+            "workExample": [
+                {
+                    "@id": "#7e27ac79-b27b-4fcc-af8a-b0ff86b3ffcb"
+                }
+            ]
+        },
+        {
+            "@id": "#7e27ac79-b27b-4fcc-af8a-b0ff86b3ffcb",
+            "@type": "PropertyValue",
+            "exampleOfWork": [
+                {
+                    "@id": "workflow/main.nf#param:config_profile_description"
+                }
+            ],
+            "name": "config_profile_description",
+            "value": "Minimal test dataset to check pipeline function"
+        },
+        {
+            "@id": "workflow/main.nf#param:config_profile_contact",
+            "@type": "FormalParameter",
+            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "name": "config_profile_contact",
+            "workExample": [
+                {
+                    "@id": "#5adc2604-36f3-4963-be37-14a931244a2e"
+                }
+            ]
+        },
+        {
+            "@id": "#5adc2604-36f3-4963-be37-14a931244a2e",
+            "@type": "Intangible",
+            "additionalType": "String",
+            "exampleOfWork": [
+                {
+                    "@id": "workflow/main.nf#param:config_profile_contact"
+                }
+            ],
+            "name": "config_profile_contact"
+        },
+        {
+            "@id": "workflow/main.nf#param:config_profile_url",
+            "@type": "FormalParameter",
+            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "name": "config_profile_url",
+            "workExample": [
+                {
+                    "@id": "#3a0ac2d4-ed52-4e0e-b276-726ae4557597"
+                }
+            ]
+        },
+        {
+            "@id": "#3a0ac2d4-ed52-4e0e-b276-726ae4557597",
+            "@type": "Intangible",
+            "additionalType": "String",
+            "exampleOfWork": [
+                {
+                    "@id": "workflow/main.nf#param:config_profile_url"
+                }
+            ],
+            "name": "config_profile_url"
+        },
+        {
+            "@id": "workflow/main.nf#param:config_profile_name",
+            "@type": "FormalParameter",
+            "additionalType": "String",
+            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "name": "config_profile_name",
+            "workExample": [
+                {
+                    "@id": "#c5394ffe-d7b9-4271-875f-5c689ab218da"
+                }
+            ]
+        },
+        {
+            "@id": "#c5394ffe-d7b9-4271-875f-5c689ab218da",
+            "@type": "PropertyValue",
+            "exampleOfWork": [
+                {
+                    "@id": "workflow/main.nf#param:config_profile_name"
+                }
+            ],
+            "name": "config_profile_name",
+            "value": "Test profile"
+        },
+        {
+            "@id": "workflow/main.nf#param:max_memory",
+            "@type": "FormalParameter",
+            "additionalType": "String",
+            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "name": "max_memory",
+            "workExample": [
+                {
+                    "@id": "#b86730fc-3593-4769-81bb-47ef54777342"
+                }
+            ]
+        },
+        {
+            "@id": "#b86730fc-3593-4769-81bb-47ef54777342",
+            "@type": "PropertyValue",
+            "exampleOfWork": [
+                {
+                    "@id": "workflow/main.nf#param:max_memory"
+                }
+            ],
+            "name": "max_memory",
+            "value": "6.GB"
+        },
+        {
+            "@id": "workflow/main.nf#param:max_cpus",
+            "@type": "FormalParameter",
+            "additionalType": "Integer",
+            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "name": "max_cpus",
+            "workExample": [
+                {
+                    "@id": "#10426833-0b63-4c48-9598-8bf2f6a807e8"
+                }
+            ]
+        },
+        {
+            "@id": "#10426833-0b63-4c48-9598-8bf2f6a807e8",
+            "@type": "PropertyValue",
+            "exampleOfWork": [
+                {
+                    "@id": "workflow/main.nf#param:max_cpus"
+                }
+            ],
+            "name": "max_cpus",
+            "value": 2
+        },
+        {
+            "@id": "workflow/main.nf#param:max_time",
+            "@type": "FormalParameter",
+            "additionalType": "String",
+            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "name": "max_time",
+            "workExample": [
+                {
+                    "@id": "#b8dff9f4-2c31-4988-90d4-1690fc2fd794"
+                }
+            ]
+        },
+        {
+            "@id": "#b8dff9f4-2c31-4988-90d4-1690fc2fd794",
+            "@type": "PropertyValue",
+            "exampleOfWork": [
+                {
+                    "@id": "workflow/main.nf#param:max_time"
+                }
+            ],
+            "name": "max_time",
+            "value": "6.h"
+        },
+        {
+            "@id": "workflow/main.nf#param:fasta",
+            "@type": "FormalParameter",
+            "additionalType": "File",
+            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "name": "fasta",
+            "workExample": [
+                {
+                    "@id": "https://raw.githubusercontent.com/wombat-p/WOMBAT-Pipelines/f0505c28540ad07929684e3565616e91f7248fa2/test_data/ABRF_iPRG_2012_target.fasta"
+                }
+            ]
+        },
+        {
+            "@id": "https://raw.githubusercontent.com/wombat-p/WOMBAT-Pipelines/f0505c28540ad07929684e3565616e91f7248fa2/test_data/ABRF_iPRG_2012_target.fasta",
+            "@type": "File",
+            "contentSize": 28588796,
+            "encodingFormat": "text/plain",
+            "exampleOfWork": [
+                {
+                    "@id": "workflow/main.nf#param:fasta"
+                }
+            ],
+            "sha256": "a091763faa9156de56aeeb37bb82c0f0f8ab5b939659bf0d9b44854cc1995e28"
+        },
+        {
+            "@id": "workflow/main.nf#param:sdrfmapping",
+            "@type": "FormalParameter",
+            "additionalType": "File",
+            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "name": "sdrfmapping",
+            "workExample": [
+                {
+                    "@id": "https://raw.githubusercontent.com/bigbio/proteomics-metadata-standard/master/sdrf-proteomics/assets/param2sdrf.yml"
+                }
+            ]
+        },
+        {
+            "@id": "https://raw.githubusercontent.com/bigbio/proteomics-metadata-standard/master/sdrf-proteomics/assets/param2sdrf.yml",
+            "@type": "File",
+            "contentSize": 4376,
+            "encodingFormat": "text/plain",
+            "exampleOfWork": [
+                {
+                    "@id": "workflow/main.nf#param:sdrfmapping"
+                }
+            ],
+            "sha256": "aa3a6b763be0c458c1c55143bb06d5164179ac9f5c94c3d752b5c90d3b059b02"
+        },
+        {
+            "@id": "workflow/main.nf#output:unnamed_output_0",
+            "@type": "FormalParameter",
+            "additionalType": "Dataset",
+            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "name": "unnamed_output_0",
+            "workExample": [
+                {
+                    "@id": "outputs/_1691692432/mgf/"
+                }
+            ]
+        },
+        {
+            "@id": "outputs/_1691692432/mgf/",
+            "@type": "Dataset",
+            "alternateName": "mgf/",
+            "exampleOfWork": [
+                {
+                    "@id": "workflow/main.nf#output:unnamed_output_0"
+                }
+            ],
+            "hasPart": [
+                {
+                    "@id": "outputs/_1691692432/mgf/OVEMB150205_12.mgf"
+                },
+                {
+                    "@id": "outputs/_1691692432/mgf/OVEMB150205_14.mgf"
+                }
+            ]
+        },
+        {
+            "@id": "outputs/_1691692432/mgf/OVEMB150205_12.mgf",
+            "@type": "File",
+            "alternateName": "mgf/OVEMB150205_12.mgf",
+            "contentSize": 6699878,
+            "encodingFormat": "text/plain",
+            "sha256": "ff98cdedca9c2ddc550ae73c478b9f7dff5884a91aa934a80cf45880c709779b"
+        },
+        {
+            "@id": "outputs/_1691692432/mgf/OVEMB150205_14.mgf",
+            "@type": "File",
+            "alternateName": "mgf/OVEMB150205_14.mgf",
+            "contentSize": 5754714,
+            "encodingFormat": "text/plain",
+            "sha256": "6f053a35688883455a9fbd12b00a2310b942a21582616f232723b22857c9aa23"
+        },
+        {
+            "@id": "workflow/main.nf#output:unnamed_output_1",
+            "@type": "FormalParameter",
+            "additionalType": "Dataset",
+            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "name": "unnamed_output_1",
+            "workExample": [
+                {
+                    "@id": "outputs/_1691692432/sdrf_merge/"
+                }
+            ]
+        },
+        {
+            "@id": "outputs/_1691692432/sdrf_merge/",
+            "@type": "Dataset",
+            "alternateName": "sdrf_merge/",
+            "exampleOfWork": [
+                {
+                    "@id": "workflow/main.nf#output:unnamed_output_1"
+                }
+            ],
+            "hasPart": [
+                {
+                    "@id": "outputs/_1691692432/sdrf_merge/params_out.yml"
+                },
+                {
+                    "@id": "outputs/_1691692432/sdrf_merge/changed_params.txt"
+                },
+                {
+                    "@id": "outputs/_1691692432/sdrf_merge/sdrf_local.tsv"
+                }
+            ]
+        },
+        {
+            "@id": "outputs/_1691692432/sdrf_merge/params_out.yml",
+            "@type": "File",
+            "alternateName": "sdrf_merge/params_out.yml",
+            "contentSize": 823,
+            "encodingFormat": "text/plain",
+            "sha256": "5dc39436d1cdc51a572dad159ae7afe71c81098f65922e32274aa796122682ec"
+        },
+        {
+            "@id": "outputs/_1691692432/sdrf_merge/changed_params.txt",
+            "@type": "File",
+            "alternateName": "sdrf_merge/changed_params.txt",
+            "contentSize": 2471,
+            "encodingFormat": "text/plain",
+            "sha256": "a2b00e093425c0586dbb88b0cffe45fb7050383ef9264c4a9fd1b64141916092"
+        },
+        {
+            "@id": "outputs/_1691692432/sdrf_merge/sdrf_local.tsv",
+            "@type": "File",
+            "alternateName": "sdrf_merge/sdrf_local.tsv",
+            "contentSize": 2088,
+            "encodingFormat": "text/plain",
+            "sha256": "38905e6a0264dafe09832b31b32a9047df9ca271a68f5723ba3e197459a41df2"
+        },
+        {
+            "@id": "workflow/main.nf#output:unnamed_output_2",
+            "@type": "FormalParameter",
+            "additionalType": "Dataset",
+            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "name": "unnamed_output_2",
+            "workExample": [
+                {
+                    "@id": "outputs/_1691692432/prepare_files/"
+                }
+            ]
+        },
+        {
+            "@id": "outputs/_1691692432/prepare_files/",
+            "@type": "Dataset",
+            "alternateName": "prepare_files/",
+            "exampleOfWork": [
+                {
+                    "@id": "workflow/main.nf#output:unnamed_output_2"
+                }
+            ],
+            "hasPart": [
+                {
+                    "@id": "outputs/_1691692432/prepare_files/sdrf_temp.tsv"
+                },
+                {
+                    "@id": "outputs/_1691692432/prepare_files/exp_design.txt"
+                },
+                {
+                    "@id": "outputs/_1691692432/prepare_files/OVEMB150205_14.raw"
+                },
+                {
+                    "@id": "outputs/_1691692432/prepare_files/prepare_files.version.txt"
+                },
+                {
+                    "@id": "outputs/_1691692432/prepare_files/params.yml"
+                },
+                {
+                    "@id": "outputs/_1691692432/prepare_files/OVEMB150205_12.raw"
+                }
+            ]
+        },
+        {
+            "@id": "outputs/_1691692432/prepare_files/sdrf_temp.tsv",
+            "@type": "File",
+            "alternateName": "prepare_files/sdrf_temp.tsv",
+            "contentSize": 529,
+            "encodingFormat": "inode/symlink",
+            "sha256": "980479b77659c7ee2d3ad7aea148f107ec9efae2cb33ee48c138cd601efcb166"
+        },
+        {
+            "@id": "outputs/_1691692432/prepare_files/exp_design.txt",
+            "@type": "File",
+            "alternateName": "prepare_files/exp_design.txt",
+            "contentSize": 101,
+            "encodingFormat": "inode/symlink",
+            "sha256": "f6c66ab878726d83bc210f8921617e5719981811e986d040fb2849265654ade8"
+        },
+        {
+            "@id": "outputs/_1691692432/prepare_files/OVEMB150205_14.raw",
+            "@type": "File",
+            "alternateName": "prepare_files/OVEMB150205_14.raw",
+            "contentSize": 27785742,
+            "encodingFormat": "inode/symlink",
+            "sha256": "47ea6448d797ec5c4b87b8cc754b3dde646a9d5584c4a0134c7d47e8156e102e"
+        },
+        {
+            "@id": "outputs/_1691692432/prepare_files/prepare_files.version.txt",
+            "@type": "File",
+            "alternateName": "prepare_files/prepare_files.version.txt",
+            "contentSize": 21,
+            "encodingFormat": "inode/symlink",
+            "sha256": "6634e4c336c74be557c1418bafbb1d5b4f3541fa0edb41770c8a3f4aac499f59"
+        },
+        {
+            "@id": "outputs/_1691692432/prepare_files/params.yml",
+            "@type": "File",
+            "alternateName": "prepare_files/params.yml",
+            "contentSize": 819,
+            "encodingFormat": "inode/symlink",
+            "sha256": "ce8bfa5e0908ae59b1b98fed775997b404a7fdedea526c8596d5726965964116"
+        },
+        {
+            "@id": "outputs/_1691692432/prepare_files/OVEMB150205_12.raw",
+            "@type": "File",
+            "alternateName": "prepare_files/OVEMB150205_12.raw",
+            "contentSize": 23550514,
+            "encodingFormat": "inode/symlink",
+            "sha256": "aa6ce131b273439979d6dd2387fd74ecd1701da91ad453055d91fa28fd0446cb"
+        },
+        {
+            "@id": "workflow/main.nf#output:unnamed_output_3",
+            "@type": "FormalParameter",
+            "additionalType": "File",
+            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "name": "unnamed_output_3",
+            "workExample": [
+                {
+                    "@id": "outputs/_1691692432/stand_pep_quant_mergedproline.csv"
+                }
+            ]
+        },
+        {
+            "@id": "outputs/_1691692432/stand_pep_quant_mergedproline.csv",
+            "@type": "File",
+            "alternateName": "stand_pep_quant_mergedproline.csv",
+            "contentSize": 8584,
+            "encodingFormat": "text/csv",
+            "exampleOfWork": [
+                {
+                    "@id": "workflow/main.nf#output:unnamed_output_3"
+                }
+            ],
+            "sha256": "b51d9163ba6527d783b8ac3d6af24295284dc7c3078c4b65b155de960472cde6"
+        },
+        {
+            "@id": "workflow/main.nf#output:unnamed_output_4",
+            "@type": "FormalParameter",
+            "additionalType": "Dataset",
+            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "name": "unnamed_output_4",
+            "workExample": [
+                {
+                    "@id": "outputs/_1691692432/polystest/"
+                }
+            ]
+        },
+        {
+            "@id": "outputs/_1691692432/polystest/",
+            "@type": "Dataset",
+            "alternateName": "polystest/",
+            "exampleOfWork": [
+                {
+                    "@id": "workflow/main.nf#output:unnamed_output_4"
+                }
+            ],
+            "hasPart": [
+                {
+                    "@id": "outputs/_1691692432/polystest/polystest_pep_res.csv"
+                },
+                {
+                    "@id": "outputs/_1691692432/polystest/stand_prot_quant_merged.csv"
+                },
+                {
+                    "@id": "outputs/_1691692432/polystest/stand_pep_quant_merged.csv"
+                },
+                {
+                    "@id": "outputs/_1691692432/polystest/exp_design.txt"
+                },
+                {
+                    "@id": "outputs/_1691692432/polystest/polystest_prot_res.csv"
+                }
+            ]
+        },
+        {
+            "@id": "outputs/_1691692432/polystest/polystest_pep_res.csv",
+            "@type": "File",
+            "alternateName": "polystest/polystest_pep_res.csv",
+            "contentSize": 45787,
+            "encodingFormat": "text/csv",
+            "sha256": "e5c6d969f3c722b5f723c613ef69cee2f85bcaf71f6d3eb9bb73d6304ce37440"
+        },
+        {
+            "@id": "outputs/_1691692432/polystest/stand_prot_quant_merged.csv",
+            "@type": "File",
+            "alternateName": "polystest/stand_prot_quant_merged.csv",
+            "contentSize": 2004,
+            "encodingFormat": "text/csv",
+            "sha256": "d0eff8c283e98481896532f029e7e8f635ad30339d987e5ed4cb3cd00c40d42b"
+        },
+        {
+            "@id": "outputs/_1691692432/polystest/stand_pep_quant_merged.csv",
+            "@type": "File",
+            "alternateName": "polystest/stand_pep_quant_merged.csv",
+            "contentSize": 8584,
+            "encodingFormat": "text/csv",
+            "sha256": "b51d9163ba6527d783b8ac3d6af24295284dc7c3078c4b65b155de960472cde6"
+        },
+        {
+            "@id": "outputs/_1691692432/polystest/exp_design.txt",
+            "@type": "File",
+            "alternateName": "polystest/exp_design.txt",
+            "contentSize": 203,
+            "encodingFormat": "text/plain",
+            "sha256": "01287a52c985e9c9ce027e912dc9965b31f9d74b869a38f6300bd0b0f219b1b8"
+        },
+        {
+            "@id": "outputs/_1691692432/polystest/polystest_prot_res.csv",
+            "@type": "File",
+            "alternateName": "polystest/polystest_prot_res.csv",
+            "contentSize": 8894,
+            "encodingFormat": "text/csv",
+            "sha256": "7d0eb3ea65e4c6f0ade7a1dd1957a757f9f3c23e7663cc8f0ea1e2f847b6f9eb"
+        },
+        {
+            "@id": "workflow/main.nf#output:unnamed_output_5",
+            "@type": "FormalParameter",
+            "additionalType": "File",
+            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "name": "unnamed_output_5",
+            "workExample": [
+                {
+                    "@id": "outputs/_1691692432/benchmarks_proline.json"
+                }
+            ]
+        },
+        {
+            "@id": "outputs/_1691692432/benchmarks_proline.json",
+            "@type": "File",
+            "alternateName": "benchmarks_proline.json",
+            "contentSize": 1469,
+            "encodingFormat": "application/json",
+            "exampleOfWork": [
+                {
+                    "@id": "workflow/main.nf#output:unnamed_output_5"
+                }
+            ],
+            "sha256": "743118ebe7c4f6dde8f00b9125627a8e11455934cd5128cc6991b92d5981ea6b"
+        },
+        {
+            "@id": "workflow/main.nf#output:unnamed_output_6",
+            "@type": "FormalParameter",
+            "additionalType": "Dataset",
+            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "name": "unnamed_output_6",
+            "workExample": [
+                {
+                    "@id": "outputs/_1691692432/proline/"
+                }
+            ]
+        },
+        {
+            "@id": "outputs/_1691692432/proline/",
+            "@type": "Dataset",
+            "alternateName": "proline/",
+            "exampleOfWork": [
+                {
+                    "@id": "workflow/main.nf#output:unnamed_output_6"
+                }
+            ],
+            "hasPart": [
+                {
+                    "@id": "outputs/_1691692432/proline/quant_exp_design.txt"
+                },
+                {
+                    "@id": "outputs/_1691692432/proline/import_file_list.txt"
+                },
+                {
+                    "@id": "outputs/_1691692432/proline/OVEMB150205_14.t.xml"
+                },
+                {
+                    "@id": "outputs/_1691692432/proline/lfq_param_file.txt"
+                },
+                {
+                    "@id": "outputs/_1691692432/proline/proline_results/"
+                },
+                {
+                    "@id": "outputs/_1691692432/proline/proline_results/proline_results_3f13993f-6948-43e9-99b4-60203ecb62d3.xlsx"
+                },
+                {
+                    "@id": "outputs/_1691692432/proline/OVEMB150205_12.t.xml"
+                }
+            ]
+        },
+        {
+            "@id": "outputs/_1691692432/proline/quant_exp_design.txt",
+            "@type": "File",
+            "alternateName": "proline/quant_exp_design.txt",
+            "contentSize": 72,
+            "encodingFormat": "text/plain",
+            "sha256": "c5ef7b7eea39790abc6d382faf8537c53ea10e90d24360cac1f0dfebd536f241"
+        },
+        {
+            "@id": "outputs/_1691692432/proline/import_file_list.txt",
+            "@type": "File",
+            "alternateName": "proline/import_file_list.txt",
+            "contentSize": 50,
+            "encodingFormat": "text/plain",
+            "sha256": "c4e91c8b52cf0ff4a772ba4562921994ab5d34bd59fcc26b51a8bbe9409252c1"
+        },
+        {
+            "@id": "outputs/_1691692432/proline/OVEMB150205_14.t.xml",
+            "@type": "File",
+            "alternateName": "proline/OVEMB150205_14.t.xml",
+            "contentSize": 863159,
+            "encodingFormat": "text/xml",
+            "sha256": "10edbc1802d3073a9156ef77b329ad32c54aabdc60a568436683da20a49b2ef0"
+        },
+        {
+            "@id": "outputs/_1691692432/proline/lfq_param_file.txt",
+            "@type": "File",
+            "alternateName": "proline/lfq_param_file.txt",
+            "contentSize": 2468,
+            "encodingFormat": "text/plain",
+            "sha256": "044ac95e3524d2403b1ddf09cccde0f07685c18c30dbc30a46a7c651848b2b96"
+        },
+        {
+            "@id": "outputs/_1691692432/proline/proline_results/",
+            "@type": "Dataset",
+            "alternateName": "proline/proline_results/",
+            "hasPart": [
+                {
+                    "@id": "outputs/_1691692432/proline/proline_results/proline_results_3f13993f-6948-43e9-99b4-60203ecb62d3.xlsx"
+                }
+            ]
+        },
+        {
+            "@id": "outputs/_1691692432/proline/proline_results/proline_results_3f13993f-6948-43e9-99b4-60203ecb62d3.xlsx",
+            "@type": "File",
+            "alternateName": "proline/proline_results/proline_results_3f13993f-6948-43e9-99b4-60203ecb62d3.xlsx",
+            "contentSize": 72408,
+            "encodingFormat": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+            "sha256": "98647543fbbfa6481e72dfc263459e12958527ec64831e1747f33eebf5d1a51c"
+        },
+        {
+            "@id": "outputs/_1691692432/proline/OVEMB150205_12.t.xml",
+            "@type": "File",
+            "alternateName": "proline/OVEMB150205_12.t.xml",
+            "contentSize": 896135,
+            "encodingFormat": "text/xml",
+            "sha256": "1a79dac6f5ba966cafd0c48edfa6a17f9ba8cd2e23c1ae54f98cce65af4492b8"
+        },
+        {
+            "@id": "workflow/main.nf#output:unnamed_output_7",
+            "@type": "FormalParameter",
+            "additionalType": "Dataset",
+            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "name": "unnamed_output_7",
+            "workExample": [
+                {
+                    "@id": "outputs/_1691692432/mzdb/"
+                }
+            ]
+        },
+        {
+            "@id": "outputs/_1691692432/mzdb/",
+            "@type": "Dataset",
+            "alternateName": "mzdb/",
+            "exampleOfWork": [
+                {
+                    "@id": "workflow/main.nf#output:unnamed_output_7"
+                }
+            ],
+            "hasPart": [
+                {
+                    "@id": "outputs/_1691692432/mzdb/OVEMB150205_14.mzDB"
+                },
+                {
+                    "@id": "outputs/_1691692432/mzdb/OVEMB150205_12.mzDB"
+                }
+            ]
+        },
+        {
+            "@id": "outputs/_1691692432/mzdb/OVEMB150205_14.mzDB",
+            "@type": "File",
+            "alternateName": "mzdb/OVEMB150205_14.mzDB",
+            "contentSize": 17666048,
+            "encodingFormat": "application/vnd.sqlite3",
+            "sha256": "29fb8f1f3087d9c65137a7def6db99b0f81d03493976e7fc24cae2d847276e32"
+        },
+        {
+            "@id": "outputs/_1691692432/mzdb/OVEMB150205_12.mzDB",
+            "@type": "File",
+            "alternateName": "mzdb/OVEMB150205_12.mzDB",
+            "contentSize": 18083840,
+            "encodingFormat": "application/vnd.sqlite3",
+            "sha256": "750d0ff063482cc1cd1605055c20596d26e82bd11d6d8d35674aeb50afca42f4"
+        },
+        {
+            "@id": "workflow/main.nf#output:unnamed_output_8",
+            "@type": "FormalParameter",
+            "additionalType": "Dataset",
+            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "name": "unnamed_output_8",
+            "workExample": [
+                {
+                    "@id": "outputs/_1691692432/searchgui/"
+                }
+            ]
+        },
+        {
+            "@id": "outputs/_1691692432/searchgui/",
+            "@type": "Dataset",
+            "alternateName": "searchgui/",
+            "exampleOfWork": [
+                {
+                    "@id": "workflow/main.nf#output:unnamed_output_8"
+                }
+            ],
+            "hasPart": [
+                {
+                    "@id": "outputs/_1691692432/searchgui/OVEMB150205_12.zip"
+                },
+                {
+                    "@id": "outputs/_1691692432/searchgui/OVEMB150205_14.zip"
+                }
+            ]
+        },
+        {
+            "@id": "outputs/_1691692432/searchgui/OVEMB150205_12.zip",
+            "@type": "File",
+            "alternateName": "searchgui/OVEMB150205_12.zip",
+            "contentSize": 161552,
+            "encodingFormat": "application/zip",
+            "sha256": "f250740f7b1f79774be71cc65aca7ce68fd58f27bff6838836329412976c30d0"
+        },
+        {
+            "@id": "outputs/_1691692432/searchgui/OVEMB150205_14.zip",
+            "@type": "File",
+            "alternateName": "searchgui/OVEMB150205_14.zip",
+            "contentSize": 156652,
+            "encodingFormat": "application/zip",
+            "sha256": "ea39ce03b0a378e64169dcf835cd6263c0070bafe2e46afd336fde4623ade89c"
+        },
+        {
+            "@id": "workflow/main.nf#output:unnamed_output_9",
+            "@type": "FormalParameter",
+            "additionalType": "File",
+            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "name": "unnamed_output_9",
+            "workExample": [
+                {
+                    "@id": "outputs/_1691692432/stand_prot_quant_mergedproline.csv"
+                }
+            ]
+        },
+        {
+            "@id": "outputs/_1691692432/stand_prot_quant_mergedproline.csv",
+            "@type": "File",
+            "alternateName": "stand_prot_quant_mergedproline.csv",
+            "contentSize": 2004,
+            "encodingFormat": "text/csv",
+            "exampleOfWork": [
+                {
+                    "@id": "workflow/main.nf#output:unnamed_output_9"
+                }
+            ],
+            "sha256": "d0eff8c283e98481896532f029e7e8f635ad30339d987e5ed4cb3cd00c40d42b"
+        },
+        {
+            "@id": "workflow/main.nf#output:unnamed_output_10",
+            "@type": "FormalParameter",
+            "additionalType": "Dataset",
+            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "name": "unnamed_output_10",
+            "workExample": [
+                {
+                    "@id": "outputs/_1691692432/.nextflow/"
+                }
+            ]
+        },
+        {
+            "@id": "outputs/_1691692432/.nextflow/",
+            "@type": "Dataset",
+            "alternateName": ".nextflow/",
+            "exampleOfWork": [
+                {
+                    "@id": "workflow/main.nf#output:unnamed_output_10"
+                }
+            ],
+            "hasPart": [
+                {
+                    "@id": "outputs/_1691692432/.nextflow/history"
+                },
+                {
+                    "@id": "outputs/_1691692432/.nextflow/plr/"
+                },
+                {
+                    "@id": "outputs/_1691692432/.nextflow/cache/"
+                },
+                {
+                    "@id": "outputs/_1691692432/.nextflow/cache/df02320f-54ed-496b-9315-9e366c5f542d/index.WfExS-run_20230810T203352"
+                },
+                {
+                    "@id": "outputs/_1691692432/.nextflow/cache/df02320f-54ed-496b-9315-9e366c5f542d/db/000003.log"
+                },
+                {
+                    "@id": "outputs/_1691692432/.nextflow/cache/df02320f-54ed-496b-9315-9e366c5f542d/db/LOCK"
+                },
+                {
+                    "@id": "outputs/_1691692432/.nextflow/cache/df02320f-54ed-496b-9315-9e366c5f542d/db/MANIFEST-000002"
+                },
+                {
+                    "@id": "outputs/_1691692432/.nextflow/cache/df02320f-54ed-496b-9315-9e366c5f542d/db/CURRENT"
+                }
+            ]
+        },
+        {
+            "@id": "outputs/_1691692432/.nextflow/history",
+            "@type": "File",
+            "alternateName": ".nextflow/history",
+            "contentSize": 883,
+            "encodingFormat": "text/plain",
+            "sha256": "759c14f91b83676002967fcaa08854b91f6bf8062451625216847138ba070867"
+        },
+        {
+            "@id": "outputs/_1691692432/.nextflow/plr/",
+            "@type": "Dataset",
+            "alternateName": ".nextflow/plr/"
+        },
+        {
+            "@id": "outputs/_1691692432/.nextflow/cache/",
+            "@type": "Dataset",
+            "alternateName": ".nextflow/cache/",
+            "hasPart": [
+                {
+                    "@id": "outputs/_1691692432/.nextflow/cache/df02320f-54ed-496b-9315-9e366c5f542d/"
+                },
+                {
+                    "@id": "outputs/_1691692432/.nextflow/cache/df02320f-54ed-496b-9315-9e366c5f542d/index.WfExS-run_20230810T203352"
+                },
+                {
+                    "@id": "outputs/_1691692432/.nextflow/cache/df02320f-54ed-496b-9315-9e366c5f542d/db/000003.log"
+                },
+                {
+                    "@id": "outputs/_1691692432/.nextflow/cache/df02320f-54ed-496b-9315-9e366c5f542d/db/LOCK"
+                },
+                {
+                    "@id": "outputs/_1691692432/.nextflow/cache/df02320f-54ed-496b-9315-9e366c5f542d/db/MANIFEST-000002"
+                },
+                {
+                    "@id": "outputs/_1691692432/.nextflow/cache/df02320f-54ed-496b-9315-9e366c5f542d/db/CURRENT"
+                }
+            ]
+        },
+        {
+            "@id": "outputs/_1691692432/.nextflow/cache/df02320f-54ed-496b-9315-9e366c5f542d/",
+            "@type": "Dataset",
+            "alternateName": ".nextflow/cache/df02320f-54ed-496b-9315-9e366c5f542d/",
+            "hasPart": [
+                {
+                    "@id": "outputs/_1691692432/.nextflow/cache/df02320f-54ed-496b-9315-9e366c5f542d/index.WfExS-run_20230810T203352"
+                },
+                {
+                    "@id": "outputs/_1691692432/.nextflow/cache/df02320f-54ed-496b-9315-9e366c5f542d/db/"
+                },
+                {
+                    "@id": "outputs/_1691692432/.nextflow/cache/df02320f-54ed-496b-9315-9e366c5f542d/db/000003.log"
+                },
+                {
+                    "@id": "outputs/_1691692432/.nextflow/cache/df02320f-54ed-496b-9315-9e366c5f542d/db/LOCK"
+                },
+                {
+                    "@id": "outputs/_1691692432/.nextflow/cache/df02320f-54ed-496b-9315-9e366c5f542d/db/MANIFEST-000002"
+                },
+                {
+                    "@id": "outputs/_1691692432/.nextflow/cache/df02320f-54ed-496b-9315-9e366c5f542d/db/CURRENT"
+                }
+            ]
+        },
+        {
+            "@id": "outputs/_1691692432/.nextflow/cache/df02320f-54ed-496b-9315-9e366c5f542d/index.WfExS-run_20230810T203352",
+            "@type": "File",
+            "alternateName": ".nextflow/cache/df02320f-54ed-496b-9315-9e366c5f542d/index.WfExS-run_20230810T203352",
+            "contentSize": 272,
+            "encodingFormat": "application/octet-stream",
+            "sha256": "dc549d90dbbae6b752b83e417d1feabcb4908155afd4310ebbf196ad574c322f"
+        },
+        {
+            "@id": "outputs/_1691692432/.nextflow/cache/df02320f-54ed-496b-9315-9e366c5f542d/db/",
+            "@type": "Dataset",
+            "alternateName": ".nextflow/cache/df02320f-54ed-496b-9315-9e366c5f542d/db/",
+            "hasPart": [
+                {
+                    "@id": "outputs/_1691692432/.nextflow/cache/df02320f-54ed-496b-9315-9e366c5f542d/db/000003.log"
+                },
+                {
+                    "@id": "outputs/_1691692432/.nextflow/cache/df02320f-54ed-496b-9315-9e366c5f542d/db/LOCK"
+                },
+                {
+                    "@id": "outputs/_1691692432/.nextflow/cache/df02320f-54ed-496b-9315-9e366c5f542d/db/MANIFEST-000002"
+                },
+                {
+                    "@id": "outputs/_1691692432/.nextflow/cache/df02320f-54ed-496b-9315-9e366c5f542d/db/CURRENT"
+                }
+            ]
+        },
+        {
+            "@id": "outputs/_1691692432/.nextflow/cache/df02320f-54ed-496b-9315-9e366c5f542d/db/000003.log",
+            "@type": "File",
+            "alternateName": ".nextflow/cache/df02320f-54ed-496b-9315-9e366c5f542d/db/000003.log",
+            "contentSize": 65923,
+            "encodingFormat": "application/octet-stream",
+            "sha256": "4938db8832d7f36e4a1ef4b96f3ad7edc42d34357d15a2038291e4dbae1bfd45"
+        },
+        {
+            "@id": "outputs/_1691692432/.nextflow/cache/df02320f-54ed-496b-9315-9e366c5f542d/db/LOCK",
+            "@type": "File",
+            "alternateName": ".nextflow/cache/df02320f-54ed-496b-9315-9e366c5f542d/db/LOCK",
+            "contentSize": 0,
+            "encodingFormat": "inode/x-empty",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+            "@id": "outputs/_1691692432/.nextflow/cache/df02320f-54ed-496b-9315-9e366c5f542d/db/MANIFEST-000002",
+            "@type": "File",
+            "alternateName": ".nextflow/cache/df02320f-54ed-496b-9315-9e366c5f542d/db/MANIFEST-000002",
+            "contentSize": 50,
+            "encodingFormat": "audio/x-mp4a-latm",
+            "sha256": "e292f241daafc3df90f3e2d339c61c6e2787a0d0739aac764e1ea9bb8544ee97"
+        },
+        {
+            "@id": "outputs/_1691692432/.nextflow/cache/df02320f-54ed-496b-9315-9e366c5f542d/db/CURRENT",
+            "@type": "File",
+            "alternateName": ".nextflow/cache/df02320f-54ed-496b-9315-9e366c5f542d/db/CURRENT",
+            "contentSize": 16,
+            "encodingFormat": "text/plain",
+            "sha256": "1005a525006f148c86efcbfb36c6eac091b311532448010f70f7de9a68007167"
+        },
+        {
+            "@id": "workflow/main.nf#output:unnamed_output_11",
+            "@type": "FormalParameter",
+            "additionalType": "Dataset",
+            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "name": "unnamed_output_11",
+            "workExample": [
+                {
+                    "@id": "outputs/_1691692432/searchgui_params/"
+                }
+            ]
+        },
+        {
+            "@id": "outputs/_1691692432/searchgui_params/",
+            "@type": "Dataset",
+            "alternateName": "searchgui_params/",
+            "exampleOfWork": [
+                {
+                    "@id": "workflow/main.nf#output:unnamed_output_11"
+                }
+            ],
+            "hasPart": [
+                {
+                    "@id": "outputs/_1691692432/searchgui_params/searchgui.par"
+                }
+            ]
+        },
+        {
+            "@id": "outputs/_1691692432/searchgui_params/searchgui.par",
+            "@type": "File",
+            "alternateName": "searchgui_params/searchgui.par",
+            "contentSize": 25467,
+            "encodingFormat": "application/json",
+            "sha256": "dcad57b20a7e0b6d93bd87f7e9bbe8e379dcc74cfd7b645fac6c6c937c8b9134"
+        },
+        {
+            "@id": "workflow/main.nf#output:unnamed_output_12",
+            "@type": "FormalParameter",
+            "additionalType": "Dataset",
+            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "name": "unnamed_output_12",
+            "workExample": [
+                {
+                    "@id": "outputs/_1691692432/decoy_database/"
+                }
+            ]
+        },
+        {
+            "@id": "outputs/_1691692432/decoy_database/",
+            "@type": "Dataset",
+            "alternateName": "decoy_database/",
+            "exampleOfWork": [
+                {
+                    "@id": "workflow/main.nf#output:unnamed_output_12"
+                }
+            ],
+            "hasPart": [
+                {
+                    "@id": "outputs/_1691692432/decoy_database/ABRF_iPRG_2012_target_concatenated_target_decoy.fasta"
+                }
+            ]
+        },
+        {
+            "@id": "outputs/_1691692432/decoy_database/ABRF_iPRG_2012_target_concatenated_target_decoy.fasta",
+            "@type": "File",
+            "alternateName": "decoy_database/ABRF_iPRG_2012_target_concatenated_target_decoy.fasta",
+            "contentSize": 57272886,
+            "encodingFormat": "text/plain",
+            "sha256": "bafac29ca959fda942f22558b6eb1e6e02aa7c9ca2a85c8aff21f2033d3e3416"
+        }
+    ]
+}
