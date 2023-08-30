@@ -295,7 +295,7 @@ An application that reads [this format](https://openslide.org/formats/mirax/) ne
     ],
     "mentions": [
         {"@id": "https://openslide.cs.cmu.edu/download/openslide-testdata/Mirax/Mirax2-Fluorescence-2.zip"},
-		{"@id": "#conversion_1"}
+        {"@id": "#conversion_1"}
     ]
 },
 {
@@ -394,7 +394,7 @@ The behavior of some applications may be modified by setting appropriate environ
 {
     "@context": [
         "https://w3id.org/ro/crate/1.1/context",
-		"https://w3id.org/ro/terms/workflow-run"
+        "https://w3id.org/ro/terms/workflow-run"
     ],
     "@graph": [
         ...
