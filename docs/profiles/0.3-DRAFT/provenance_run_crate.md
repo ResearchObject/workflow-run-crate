@@ -426,6 +426,44 @@ A workflow engine may support configuration through a configuration file. In thi
 See also the [section on referencing configuration files of executed tools](process_run_crate#referencing-configuration-files).
 
 
+## Environment variables as formal parameters
+
+The Process Run Crate profile specifies how to [represent environment variable settings](process_run_crate#representing-environment-variable-settings) that affected the execution of a particular action via `environment`. Applications, in turn, MAY indicate that they are affected by a certain environment variable by using the same `environment` property and having it point to a `FormalParameter` whose `name` is equal to the variable's name. If an action corresponding to an execution of that application sets that variable, the `PropertyValue` SHOULD point to the `FormalParameter` via `exampleOfWork`:
+
+```json
+{
+    "@id": "run_blast.cwl",
+    "@type": "SoftwareApplication",
+    ...
+    "environment": [
+        {"@id": "run_blast.cwl#batch_size"}
+    ]
+},
+{
+    "@id": "run_blast.cwl#batch_size",
+    "@type": "FormalParameter",
+    "additionalType": "Integer",
+    "name": "BATCH_SIZE",
+},
+{
+    "@id": "#cb04c897-eb92-4c53-8a38-bcc1a16fd650",
+    "@type": "CreateAction",
+    "instrument": {"@id": "run_blast.cwl"},
+    ...
+    "environment": [
+        {"@id": "#batch_size-pv"}
+    ]
+},
+{
+    "@id": "#batch_size-pv",
+    "@type": "PropertyValue",
+    "exampleOfWork": {"@id": "run_blast.cwl#batch_size"},
+    "name": "BATCH_SIZE",
+    "value": "100"
+}
+```
+
+
 ## Requirements
 
 The requirements of this profile are those of [Workflow Run Crate](workflow_run_crate) plus the ones listed below.
