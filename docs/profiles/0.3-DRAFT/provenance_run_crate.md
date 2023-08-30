@@ -379,12 +379,7 @@ Note that the `workflow-run` terms are not part of the standard RO-Crate context
 {
     "@context": [
         "https://w3id.org/ro/crate/1.1/context",
-        {
-            "ParameterConnection": "https://w3id.org/ro/terms/workflow-run#ParameterConnection",
-            "connection": "https://w3id.org/ro/terms/workflow-run#connection",
-            "sourceParameter": "https://w3id.org/ro/terms/workflow-run#sourceParameter",
-            "targetParameter": "https://w3id.org/ro/terms/workflow-run#targetParameter"
-        }
+        "https://w3id.org/ro/terms/workflow-run"
     ],
     "@graph": [...]
 }
