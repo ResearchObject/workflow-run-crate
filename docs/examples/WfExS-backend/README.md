@@ -8,7 +8,26 @@ execution, and the other one contains those details and all the provenance
 gathered through and *after* the execution.
 
 As WfExS-backend can run staged workflows more than once, all the different
-executions should be represented inside the generated RO-Crates.
+executions should be represented inside the generated RO-Crates as several
+`CreateAction`.
+
+## WOMBAT-Pipelines
+
+* Nextflow workflow is available at https://github.com/wombat-p/WOMBAT-Pipelines
+
+* Provenance RO-Crate from an execution using Docker containers. It includes a snapshot of the workflow: [wombat-pipelines_provenance](Wetlab2Variations_CWL_provenance).
+
+## Wetlab2Variations (CWL flavor).
+
+* CWL workflow is available at https://github.com/inab/Wetlab2Variations/blob/eosc-life/cwl-workflows/workflows/workflow.cwl
+
+* Provenance RO-Crate from an execution using Singularity containers. It includes a snapshot of the consolidated workflow: [Wetlab2Variations_CWL_provenance](Wetlab2Variations_CWL_provenance)
+
+## nf-core RNASeq
+
+* Nextflow workflow is available at https://github.com/nf-core/rnaseq/
+
+* Provenance RO-Crate from an execution using Singularity containers. It includes a snapshot of the consolidated workflow: [nfcore-rnaseq_provenance](nfcore-rnaseq_provenance).
 
 ## COSIFER cwl workflow
 
