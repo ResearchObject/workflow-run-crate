@@ -15,7 +15,7 @@
                     "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
                 }
             ],
-            "datePublished": "2023-08-31T00:45:44+00:00",
+            "datePublished": "2023-08-31T00:59:23+00:00",
             "description": "RO-Crate from staged WfExS working directory 0897c3ff-a917-4cd5-b66e-48618b547c69 (onychomycotic buquiterine)",
             "hasPart": [
                 {
@@ -318,7 +318,7 @@
             },
             "mentions": [
                 {
-                    "@id": "#afb0ce51-4027-498a-8a48-a2776ac63708"
+                    "@id": "#425b79c4-5625-4fd4-adfb-6eb4d50db82a"
                 }
             ]
         },
@@ -374,8 +374,8 @@
             "name": "WfExS-backend",
             "url": "https://github.com/inab/WfExS-backend",
             "version": [
-                "0.9.3-94-ga506473",
-                "a506473cc162f1b89a4d687af841e50ee0b610a4"
+                "0.9.3-95-g122eb68",
+                "122eb680108fde0a98df5aba5800519bb41b1c31"
             ]
         },
         {
@@ -1400,7 +1400,7 @@
             "sha256": "f437bbe0a49e98ab95bd23c041618a21997933e6c50e5c8eb78ffa9f7de7a26e"
         },
         {
-            "@id": "#afb0ce51-4027-498a-8a48-a2776ac63708",
+            "@id": "#425b79c4-5625-4fd4-adfb-6eb4d50db82a",
             "@type": "CreateAction",
             "actionStatus": [
                 {
@@ -1414,109 +1414,109 @@
             "name": "Run outputs/_1691692432 of workflow/main.nf",
             "object": [
                 {
-                    "@id": "#7b1f339a-81c6-490e-a10e-858b2dee2c0a"
+                    "@id": "#bdcd1b06-6d8c-4fd6-b77c-7bfca9f0f1cd"
                 },
                 {
-                    "@id": "#28d42559-e3e1-4659-adf2-d917efa850e4"
+                    "@id": "#a40730ce-06a9-4d2f-a458-0f302587dab9"
                 },
                 {
                     "@id": "https://raw.githubusercontent.com/wombat-p/WOMBAT-Pipelines/f0505c28540ad07929684e3565616e91f7248fa2/test_data/exp_design.txt"
                 },
                 {
-                    "@id": "#4c62cca8-2750-4b7b-9784-d4785810781e"
+                    "@id": "#855205af-7289-48c3-8522-a4322ac3f16e"
                 },
                 {
                     "@id": "https://raw.githubusercontent.com/wombat-p/WOMBAT-Pipelines/f0505c28540ad07929684e3565616e91f7248fa2/test_data/test_params.yml"
                 },
                 {
-                    "@id": "#6dfdb60b-15a4-4935-a9b8-a2c70934548f"
+                    "@id": "#ac8f1bcd-e6eb-49a5-b17b-5fe24ef480a4"
                 },
                 {
-                    "@id": "#5f74f6ee-a3eb-4922-b093-399736eac2fe"
+                    "@id": "#c364f614-7088-46df-beb1-f1239de21f1f"
                 },
                 {
-                    "@id": "#1833c604-d3c7-42cc-a876-3b90fa6a3366"
+                    "@id": "#cad114a9-944a-4d7e-be5b-5cd92da7dd56"
                 },
                 {
-                    "@id": "#83f9c761-bb47-4b73-a597-31579a8c2929"
+                    "@id": "#1d3c93a8-161d-4b83-b386-fee6e3ab0ba0"
                 },
                 {
-                    "@id": "#c63d1467-7893-4054-a669-2ae186d88b10"
+                    "@id": "#025b12f5-d619-4d18-9967-b3710291229f"
                 },
                 {
-                    "@id": "#8d166b20-05a0-4e22-a5de-06c61e2d2d0e"
+                    "@id": "#abd22887-964f-45b4-b37a-91431e63b145"
                 },
                 {
-                    "@id": "#dc16c252-0af1-4242-bce6-5da661ce8cfe"
+                    "@id": "#50692244-e1b4-4337-a47a-62871ec39fc2"
                 },
                 {
-                    "@id": "#e52be284-59f6-4c25-a65f-7331b4b091cd"
+                    "@id": "#655f0d77-76bf-462a-9f86-b380f809747b"
                 },
                 {
-                    "@id": "#b943ca1a-b22c-43ed-9b9a-c2648d0bee69"
+                    "@id": "#09264a84-27c6-4f35-8296-eaef327a88e9"
                 },
                 {
-                    "@id": "#2f3edfdb-6206-4c56-80b2-1dcbe294405c"
+                    "@id": "#5d87b00c-1560-4d20-8b3e-0966d81d5587"
                 },
                 {
-                    "@id": "#f43d41bf-e28c-4cb1-843e-4d50461b1867"
+                    "@id": "#7a8105f0-1752-454f-b551-58ef43caed2c"
                 },
                 {
-                    "@id": "#ab49cc55-bef4-4c9e-8a4e-dde062e025a9"
+                    "@id": "#8f1109ab-8fe4-4178-82a4-0a34a44c2376"
                 },
                 {
-                    "@id": "#6d16dc3a-8f89-409a-b998-6e7948ecfaba"
+                    "@id": "#58a0357b-33dc-4ad3-99b8-4324cea4e9c9"
                 },
                 {
-                    "@id": "#148134f3-05f6-4051-894c-56eb414599a0"
+                    "@id": "#43834113-f745-4ba8-a410-2074680dabaa"
                 },
                 {
-                    "@id": "#25f318f6-60e0-4ad5-90af-d479203d7dd7"
+                    "@id": "#1ed1fffa-2241-430c-a528-8327ff274693"
                 },
                 {
-                    "@id": "#743f0250-9a62-4956-a376-3383925fb581"
+                    "@id": "#8559abc6-c352-4f13-a55a-b9485072efda"
                 },
                 {
-                    "@id": "#6a6b6f4b-da04-4491-9368-449b47d782c3"
+                    "@id": "#8e60b02c-9788-4fae-8d91-5433ba05ddc4"
                 },
                 {
-                    "@id": "#4fff178c-36c2-4a10-ae3a-2ecfcc0307ce"
+                    "@id": "#0ac2062a-458c-491e-96a6-6781047570ff"
                 },
                 {
-                    "@id": "#a748a0b9-c023-43ad-9e99-a0ebc29d8cb0"
+                    "@id": "#fdc3fbbc-2115-4db3-9fac-591382da9593"
                 },
                 {
-                    "@id": "#7ab62c7d-25a7-482b-b94f-9968f47f8650"
+                    "@id": "#49aabb7e-9681-4952-9835-e569f4ceeba5"
                 },
                 {
-                    "@id": "#e5c85792-e083-46da-b8f6-1a9c0158c72d"
+                    "@id": "#19f9230e-2fa2-4d7e-ba3b-26ed94ff6175"
                 },
                 {
-                    "@id": "#53881847-041c-4d7b-b107-5237f2b99607"
+                    "@id": "#89a14d0d-d1e6-474c-b53b-6cbbe00d300f"
                 },
                 {
-                    "@id": "#3e064a12-111d-43b6-8b18-69fea65735ba"
+                    "@id": "#ddcb9380-b836-4163-9567-7641afd94ad9"
                 },
                 {
-                    "@id": "#e77d8c21-1116-4351-9810-6f973ce435e2"
+                    "@id": "#6142dd31-4a40-4e15-864b-64e4dbbe7fcc"
                 },
                 {
-                    "@id": "#eb8f3158-78f6-47d5-b5df-af193dcef930"
+                    "@id": "#73ab27a7-5d4e-49cc-a420-03193d1ec681"
                 },
                 {
-                    "@id": "#8fc91d9b-2f4c-49e4-b1bf-cb32625549ae"
+                    "@id": "#3d9fbfbb-8bd1-48ca-a3a2-8b6b6e88dd11"
                 },
                 {
-                    "@id": "#9b6c1b2b-c366-423d-af95-1434f21c1f4e"
+                    "@id": "#e11c256e-d581-4133-ac93-64d1d257768d"
                 },
                 {
-                    "@id": "#73066602-cd40-41c0-bba3-d07d24e0e3f0"
+                    "@id": "#d8c3d998-dda7-459c-8cbd-c04d448ceac8"
                 },
                 {
-                    "@id": "#28d43715-0a70-4382-8b8f-cc184596a152"
+                    "@id": "#df2e6385-ca01-42a1-96d6-5777256cf778"
                 },
                 {
-                    "@id": "#b4907752-a17c-473f-98ef-c54575f2307a"
+                    "@id": "#a0fd4f01-6ba6-41c9-8b99-edb3d976d217"
                 },
                 {
                     "@id": "https://raw.githubusercontent.com/wombat-p/WOMBAT-Pipelines/f0505c28540ad07929684e3565616e91f7248fa2/test_data/ABRF_iPRG_2012_target.fasta"
@@ -1575,12 +1575,12 @@
             "name": "mzmls",
             "workExample": [
                 {
-                    "@id": "#7b1f339a-81c6-490e-a10e-858b2dee2c0a"
+                    "@id": "#bdcd1b06-6d8c-4fd6-b77c-7bfca9f0f1cd"
                 }
             ]
         },
         {
-            "@id": "#7b1f339a-81c6-490e-a10e-858b2dee2c0a",
+            "@id": "#bdcd1b06-6d8c-4fd6-b77c-7bfca9f0f1cd",
             "@type": "Intangible",
             "additionalType": "String",
             "exampleOfWork": [
@@ -1598,12 +1598,12 @@
             "name": "raws",
             "workExample": [
                 {
-                    "@id": "#28d42559-e3e1-4659-adf2-d917efa850e4"
+                    "@id": "#a40730ce-06a9-4d2f-a458-0f302587dab9"
                 }
             ]
         },
         {
-            "@id": "#28d42559-e3e1-4659-adf2-d917efa850e4",
+            "@id": "#a40730ce-06a9-4d2f-a458-0f302587dab9",
             "@type": "Collection",
             "exampleOfWork": [
                 {
@@ -1664,12 +1664,12 @@
             "name": "sdrf",
             "workExample": [
                 {
-                    "@id": "#4c62cca8-2750-4b7b-9784-d4785810781e"
+                    "@id": "#855205af-7289-48c3-8522-a4322ac3f16e"
                 }
             ]
         },
         {
-            "@id": "#4c62cca8-2750-4b7b-9784-d4785810781e",
+            "@id": "#855205af-7289-48c3-8522-a4322ac3f16e",
             "@type": "Intangible",
             "additionalType": "String",
             "exampleOfWork": [
@@ -1711,12 +1711,12 @@
             "name": "run_statistics",
             "workExample": [
                 {
-                    "@id": "#6dfdb60b-15a4-4935-a9b8-a2c70934548f"
+                    "@id": "#ac8f1bcd-e6eb-49a5-b17b-5fe24ef480a4"
                 }
             ]
         },
         {
-            "@id": "#6dfdb60b-15a4-4935-a9b8-a2c70934548f",
+            "@id": "#ac8f1bcd-e6eb-49a5-b17b-5fe24ef480a4",
             "@type": "PropertyValue",
             "exampleOfWork": [
                 {
@@ -1734,12 +1734,12 @@
             "name": "add_decoys",
             "workExample": [
                 {
-                    "@id": "#5f74f6ee-a3eb-4922-b093-399736eac2fe"
+                    "@id": "#c364f614-7088-46df-beb1-f1239de21f1f"
                 }
             ]
         },
         {
-            "@id": "#5f74f6ee-a3eb-4922-b093-399736eac2fe",
+            "@id": "#c364f614-7088-46df-beb1-f1239de21f1f",
             "@type": "PropertyValue",
             "exampleOfWork": [
                 {
@@ -1757,12 +1757,12 @@
             "name": "comps",
             "workExample": [
                 {
-                    "@id": "#1833c604-d3c7-42cc-a876-3b90fa6a3366"
+                    "@id": "#cad114a9-944a-4d7e-be5b-5cd92da7dd56"
                 }
             ]
         },
         {
-            "@id": "#1833c604-d3c7-42cc-a876-3b90fa6a3366",
+            "@id": "#cad114a9-944a-4d7e-be5b-5cd92da7dd56",
             "@type": "PropertyValue",
             "exampleOfWork": [
                 {
@@ -1780,12 +1780,12 @@
             "name": "proline_engine",
             "workExample": [
                 {
-                    "@id": "#83f9c761-bb47-4b73-a597-31579a8c2929"
+                    "@id": "#1d3c93a8-161d-4b83-b386-fee6e3ab0ba0"
                 }
             ]
         },
         {
-            "@id": "#83f9c761-bb47-4b73-a597-31579a8c2929",
+            "@id": "#1d3c93a8-161d-4b83-b386-fee6e3ab0ba0",
             "@type": "PropertyValue",
             "exampleOfWork": [
                 {
@@ -1803,12 +1803,12 @@
             "name": "workflow",
             "workExample": [
                 {
-                    "@id": "#c63d1467-7893-4054-a669-2ae186d88b10"
+                    "@id": "#025b12f5-d619-4d18-9967-b3710291229f"
                 }
             ]
         },
         {
-            "@id": "#c63d1467-7893-4054-a669-2ae186d88b10",
+            "@id": "#025b12f5-d619-4d18-9967-b3710291229f",
             "@type": "PropertyValue",
             "exampleOfWork": [
                 {
@@ -1825,12 +1825,12 @@
             "name": "multiqc_config",
             "workExample": [
                 {
-                    "@id": "#8d166b20-05a0-4e22-a5de-06c61e2d2d0e"
+                    "@id": "#abd22887-964f-45b4-b37a-91431e63b145"
                 }
             ]
         },
         {
-            "@id": "#8d166b20-05a0-4e22-a5de-06c61e2d2d0e",
+            "@id": "#abd22887-964f-45b4-b37a-91431e63b145",
             "@type": "Intangible",
             "additionalType": "String",
             "exampleOfWork": [
@@ -1847,12 +1847,12 @@
             "name": "multiqc_title",
             "workExample": [
                 {
-                    "@id": "#dc16c252-0af1-4242-bce6-5da661ce8cfe"
+                    "@id": "#50692244-e1b4-4337-a47a-62871ec39fc2"
                 }
             ]
         },
         {
-            "@id": "#dc16c252-0af1-4242-bce6-5da661ce8cfe",
+            "@id": "#50692244-e1b4-4337-a47a-62871ec39fc2",
             "@type": "Intangible",
             "additionalType": "String",
             "exampleOfWork": [
@@ -1870,12 +1870,12 @@
             "name": "max_multiqc_email_size",
             "workExample": [
                 {
-                    "@id": "#e52be284-59f6-4c25-a65f-7331b4b091cd"
+                    "@id": "#655f0d77-76bf-462a-9f86-b380f809747b"
                 }
             ]
         },
         {
-            "@id": "#e52be284-59f6-4c25-a65f-7331b4b091cd",
+            "@id": "#655f0d77-76bf-462a-9f86-b380f809747b",
             "@type": "PropertyValue",
             "exampleOfWork": [
                 {
@@ -1893,12 +1893,12 @@
             "name": "outdir",
             "workExample": [
                 {
-                    "@id": "#b943ca1a-b22c-43ed-9b9a-c2648d0bee69"
+                    "@id": "#09264a84-27c6-4f35-8296-eaef327a88e9"
                 }
             ]
         },
         {
-            "@id": "#b943ca1a-b22c-43ed-9b9a-c2648d0bee69",
+            "@id": "#09264a84-27c6-4f35-8296-eaef327a88e9",
             "@type": "PropertyValue",
             "exampleOfWork": [
                 {
@@ -1906,7 +1906,7 @@
                 }
             ],
             "name": "outdir",
-            "value": "/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/0897c3ff-a917-4cd5-b66e-48618b547c69/outputs/_1691692432/."
+            "value": "outputs/_1691692432"
         },
         {
             "@id": "workflow/main.nf#param:tracedir",
@@ -1916,12 +1916,12 @@
             "name": "tracedir",
             "workExample": [
                 {
-                    "@id": "#2f3edfdb-6206-4c56-80b2-1dcbe294405c"
+                    "@id": "#5d87b00c-1560-4d20-8b3e-0966d81d5587"
                 }
             ]
         },
         {
-            "@id": "#2f3edfdb-6206-4c56-80b2-1dcbe294405c",
+            "@id": "#5d87b00c-1560-4d20-8b3e-0966d81d5587",
             "@type": "PropertyValue",
             "exampleOfWork": [
                 {
@@ -1939,12 +1939,12 @@
             "name": "publish_dir_mode",
             "workExample": [
                 {
-                    "@id": "#f43d41bf-e28c-4cb1-843e-4d50461b1867"
+                    "@id": "#7a8105f0-1752-454f-b551-58ef43caed2c"
                 }
             ]
         },
         {
-            "@id": "#f43d41bf-e28c-4cb1-843e-4d50461b1867",
+            "@id": "#7a8105f0-1752-454f-b551-58ef43caed2c",
             "@type": "PropertyValue",
             "exampleOfWork": [
                 {
@@ -1961,12 +1961,12 @@
             "name": "email",
             "workExample": [
                 {
-                    "@id": "#ab49cc55-bef4-4c9e-8a4e-dde062e025a9"
+                    "@id": "#8f1109ab-8fe4-4178-82a4-0a34a44c2376"
                 }
             ]
         },
         {
-            "@id": "#ab49cc55-bef4-4c9e-8a4e-dde062e025a9",
+            "@id": "#8f1109ab-8fe4-4178-82a4-0a34a44c2376",
             "@type": "Intangible",
             "additionalType": "String",
             "exampleOfWork": [
@@ -1983,12 +1983,12 @@
             "name": "email_on_fail",
             "workExample": [
                 {
-                    "@id": "#6d16dc3a-8f89-409a-b998-6e7948ecfaba"
+                    "@id": "#58a0357b-33dc-4ad3-99b8-4324cea4e9c9"
                 }
             ]
         },
         {
-            "@id": "#6d16dc3a-8f89-409a-b998-6e7948ecfaba",
+            "@id": "#58a0357b-33dc-4ad3-99b8-4324cea4e9c9",
             "@type": "Intangible",
             "additionalType": "String",
             "exampleOfWork": [
@@ -2006,12 +2006,12 @@
             "name": "plaintext_email",
             "workExample": [
                 {
-                    "@id": "#148134f3-05f6-4051-894c-56eb414599a0"
+                    "@id": "#43834113-f745-4ba8-a410-2074680dabaa"
                 }
             ]
         },
         {
-            "@id": "#148134f3-05f6-4051-894c-56eb414599a0",
+            "@id": "#43834113-f745-4ba8-a410-2074680dabaa",
             "@type": "PropertyValue",
             "exampleOfWork": [
                 {
@@ -2029,12 +2029,12 @@
             "name": "monochrome_logs",
             "workExample": [
                 {
-                    "@id": "#25f318f6-60e0-4ad5-90af-d479203d7dd7"
+                    "@id": "#1ed1fffa-2241-430c-a528-8327ff274693"
                 }
             ]
         },
         {
-            "@id": "#25f318f6-60e0-4ad5-90af-d479203d7dd7",
+            "@id": "#1ed1fffa-2241-430c-a528-8327ff274693",
             "@type": "PropertyValue",
             "exampleOfWork": [
                 {
@@ -2052,12 +2052,12 @@
             "name": "help",
             "workExample": [
                 {
-                    "@id": "#743f0250-9a62-4956-a376-3383925fb581"
+                    "@id": "#8559abc6-c352-4f13-a55a-b9485072efda"
                 }
             ]
         },
         {
-            "@id": "#743f0250-9a62-4956-a376-3383925fb581",
+            "@id": "#8559abc6-c352-4f13-a55a-b9485072efda",
             "@type": "PropertyValue",
             "exampleOfWork": [
                 {
@@ -2075,12 +2075,12 @@
             "name": "validate_params",
             "workExample": [
                 {
-                    "@id": "#6a6b6f4b-da04-4491-9368-449b47d782c3"
+                    "@id": "#8e60b02c-9788-4fae-8d91-5433ba05ddc4"
                 }
             ]
         },
         {
-            "@id": "#6a6b6f4b-da04-4491-9368-449b47d782c3",
+            "@id": "#8e60b02c-9788-4fae-8d91-5433ba05ddc4",
             "@type": "PropertyValue",
             "exampleOfWork": [
                 {
@@ -2098,12 +2098,12 @@
             "name": "show_hidden_params",
             "workExample": [
                 {
-                    "@id": "#4fff178c-36c2-4a10-ae3a-2ecfcc0307ce"
+                    "@id": "#0ac2062a-458c-491e-96a6-6781047570ff"
                 }
             ]
         },
         {
-            "@id": "#4fff178c-36c2-4a10-ae3a-2ecfcc0307ce",
+            "@id": "#0ac2062a-458c-491e-96a6-6781047570ff",
             "@type": "PropertyValue",
             "exampleOfWork": [
                 {
@@ -2121,12 +2121,12 @@
             "name": "enable_conda",
             "workExample": [
                 {
-                    "@id": "#a748a0b9-c023-43ad-9e99-a0ebc29d8cb0"
+                    "@id": "#fdc3fbbc-2115-4db3-9fac-591382da9593"
                 }
             ]
         },
         {
-            "@id": "#a748a0b9-c023-43ad-9e99-a0ebc29d8cb0",
+            "@id": "#fdc3fbbc-2115-4db3-9fac-591382da9593",
             "@type": "PropertyValue",
             "exampleOfWork": [
                 {
@@ -2144,12 +2144,12 @@
             "name": "schema_ignore_params",
             "workExample": [
                 {
-                    "@id": "#7ab62c7d-25a7-482b-b94f-9968f47f8650"
+                    "@id": "#49aabb7e-9681-4952-9835-e569f4ceeba5"
                 }
             ]
         },
         {
-            "@id": "#7ab62c7d-25a7-482b-b94f-9968f47f8650",
+            "@id": "#49aabb7e-9681-4952-9835-e569f4ceeba5",
             "@type": "PropertyValue",
             "exampleOfWork": [
                 {
@@ -2166,12 +2166,12 @@
             "name": "genomes",
             "workExample": [
                 {
-                    "@id": "#e5c85792-e083-46da-b8f6-1a9c0158c72d"
+                    "@id": "#19f9230e-2fa2-4d7e-ba3b-26ed94ff6175"
                 }
             ]
         },
         {
-            "@id": "#e5c85792-e083-46da-b8f6-1a9c0158c72d",
+            "@id": "#19f9230e-2fa2-4d7e-ba3b-26ed94ff6175",
             "@type": "Intangible",
             "additionalType": "String",
             "exampleOfWork": [
@@ -2189,12 +2189,12 @@
             "name": "custom_config_version",
             "workExample": [
                 {
-                    "@id": "#53881847-041c-4d7b-b107-5237f2b99607"
+                    "@id": "#89a14d0d-d1e6-474c-b53b-6cbbe00d300f"
                 }
             ]
         },
         {
-            "@id": "#53881847-041c-4d7b-b107-5237f2b99607",
+            "@id": "#89a14d0d-d1e6-474c-b53b-6cbbe00d300f",
             "@type": "PropertyValue",
             "exampleOfWork": [
                 {
@@ -2212,12 +2212,12 @@
             "name": "custom_config_base",
             "workExample": [
                 {
-                    "@id": "#3e064a12-111d-43b6-8b18-69fea65735ba"
+                    "@id": "#ddcb9380-b836-4163-9567-7641afd94ad9"
                 }
             ]
         },
         {
-            "@id": "#3e064a12-111d-43b6-8b18-69fea65735ba",
+            "@id": "#ddcb9380-b836-4163-9567-7641afd94ad9",
             "@type": "PropertyValue",
             "exampleOfWork": [
                 {
@@ -2235,12 +2235,12 @@
             "name": "config_profile_description",
             "workExample": [
                 {
-                    "@id": "#e77d8c21-1116-4351-9810-6f973ce435e2"
+                    "@id": "#6142dd31-4a40-4e15-864b-64e4dbbe7fcc"
                 }
             ]
         },
         {
-            "@id": "#e77d8c21-1116-4351-9810-6f973ce435e2",
+            "@id": "#6142dd31-4a40-4e15-864b-64e4dbbe7fcc",
             "@type": "PropertyValue",
             "exampleOfWork": [
                 {
@@ -2257,12 +2257,12 @@
             "name": "config_profile_contact",
             "workExample": [
                 {
-                    "@id": "#eb8f3158-78f6-47d5-b5df-af193dcef930"
+                    "@id": "#73ab27a7-5d4e-49cc-a420-03193d1ec681"
                 }
             ]
         },
         {
-            "@id": "#eb8f3158-78f6-47d5-b5df-af193dcef930",
+            "@id": "#73ab27a7-5d4e-49cc-a420-03193d1ec681",
             "@type": "Intangible",
             "additionalType": "String",
             "exampleOfWork": [
@@ -2279,12 +2279,12 @@
             "name": "config_profile_url",
             "workExample": [
                 {
-                    "@id": "#8fc91d9b-2f4c-49e4-b1bf-cb32625549ae"
+                    "@id": "#3d9fbfbb-8bd1-48ca-a3a2-8b6b6e88dd11"
                 }
             ]
         },
         {
-            "@id": "#8fc91d9b-2f4c-49e4-b1bf-cb32625549ae",
+            "@id": "#3d9fbfbb-8bd1-48ca-a3a2-8b6b6e88dd11",
             "@type": "Intangible",
             "additionalType": "String",
             "exampleOfWork": [
@@ -2302,12 +2302,12 @@
             "name": "config_profile_name",
             "workExample": [
                 {
-                    "@id": "#9b6c1b2b-c366-423d-af95-1434f21c1f4e"
+                    "@id": "#e11c256e-d581-4133-ac93-64d1d257768d"
                 }
             ]
         },
         {
-            "@id": "#9b6c1b2b-c366-423d-af95-1434f21c1f4e",
+            "@id": "#e11c256e-d581-4133-ac93-64d1d257768d",
             "@type": "PropertyValue",
             "exampleOfWork": [
                 {
@@ -2325,12 +2325,12 @@
             "name": "max_memory",
             "workExample": [
                 {
-                    "@id": "#73066602-cd40-41c0-bba3-d07d24e0e3f0"
+                    "@id": "#d8c3d998-dda7-459c-8cbd-c04d448ceac8"
                 }
             ]
         },
         {
-            "@id": "#73066602-cd40-41c0-bba3-d07d24e0e3f0",
+            "@id": "#d8c3d998-dda7-459c-8cbd-c04d448ceac8",
             "@type": "PropertyValue",
             "exampleOfWork": [
                 {
@@ -2348,12 +2348,12 @@
             "name": "max_cpus",
             "workExample": [
                 {
-                    "@id": "#28d43715-0a70-4382-8b8f-cc184596a152"
+                    "@id": "#df2e6385-ca01-42a1-96d6-5777256cf778"
                 }
             ]
         },
         {
-            "@id": "#28d43715-0a70-4382-8b8f-cc184596a152",
+            "@id": "#df2e6385-ca01-42a1-96d6-5777256cf778",
             "@type": "PropertyValue",
             "exampleOfWork": [
                 {
@@ -2371,12 +2371,12 @@
             "name": "max_time",
             "workExample": [
                 {
-                    "@id": "#b4907752-a17c-473f-98ef-c54575f2307a"
+                    "@id": "#a0fd4f01-6ba6-41c9-8b99-edb3d976d217"
                 }
             ]
         },
         {
-            "@id": "#b4907752-a17c-473f-98ef-c54575f2307a",
+            "@id": "#a0fd4f01-6ba6-41c9-8b99-edb3d976d217",
             "@type": "PropertyValue",
             "exampleOfWork": [
                 {
