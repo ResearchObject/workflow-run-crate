@@ -2,92 +2,58 @@
     "@context": "https://w3id.org/ro/crate/1.1/context",
     "@graph": [
         {
-            "@id": "ro-crate-preview.html",
-            "@type": "CreativeWork",
-            "about": {
-                "@id": "./"
-            }
-        },
-        {
             "@id": "./",
             "@type": "Dataset",
             "conformsTo": [
                 {
-                    "@id": "https://w3id.org/ro/wfrun/process/0.1"
+                    "@id": "https://w3id.org/ro/wfrun/process/0.2"
                 },
                 {
-                    "@id": "https://w3id.org/ro/wfrun/workflow/0.1"
-                },
-                {
-                    "@id": "https://w3id.org/ro/wfrun/provenance/0.1"
+                    "@id": "https://w3id.org/ro/wfrun/workflow/0.2"
                 },
                 {
                     "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
                 }
             ],
-            "datePublished": "2023-03-16T01:15:27+00:00",
+            "datePublished": "2023-08-31T02:09:17+00:00",
+            "description": "RO-Crate from staged WfExS working directory 2400c32e-f875-4cd4-9d41-be6da8224c67 (preferencial buquinolate)",
             "hasPart": [
                 {
-                    "@id": "d029b862-586c-54dd-8247-bada763c02df/d0868652-07e6-4d2b-a179-fa67ffcbcec4_workflow.cwl"
+                    "@id": "workflow/cosifer/cwl/cosifer-workflow.cwl"
                 },
                 {
-                    "@id": "d029b862-586c-54dd-8247-bada763c02df/cosifer/cwl/cosifer-workflow.cwl"
+                    "@id": "workflow/cosifer/cwl/cosifer.cwl"
                 },
                 {
-                    "@id": "d029b862-586c-54dd-8247-bada763c02df/cosifer/cwl/cosifer.cwl"
+                    "@id": "consolidated-workflow/2400c32e-f875-4cd4-9d41-be6da8224c67_workflow.cwl"
                 },
                 {
-                    "@id": "https://raw.githubusercontent.com/PhosphorylatedRabbits/cosifer/f2e2a259d218b9a56a01d84bc9d6a7cd7c8d9bf1/examples/interactive/data_matrix.csv"
+                    "@id": "inputs/data_matrix.csv"
                 },
                 {
-                    "@id": "nih:sha-256;5905-1d24-3b95-74a7-ee67-3bda-1623-c852-f784-066a-0080-abaa-b353-e68b-592e-2b0c;4/"
+                    "@id": "outputs/_1693447347/output/"
                 },
                 {
-                    "@id": "nih:sha-256;de80-4a12-57a5-cba9-9e9b-20bb-b9a7-8842-fefc-18fc-2548-fcd9-a769-702e-1943-9ade;4"
+                    "@id": "outputs/_1693447347/output/aracne.csv.gz"
                 },
                 {
-                    "@id": "nih:sha-256;132a-015d-536e-3c39-d829-8bad-d94d-d4db-770b-63de-d538-6e54-be9d-49ab-02d8-02a1;e"
+                    "@id": "outputs/_1693447347/output/mrnet.csv.gz"
                 },
                 {
-                    "@id": "nih:sha-256;95fe-414b-b4e0-e193-6230-ea67-cd55-4ca8-cf30-6281-0870-0748-5d76-2df3-67b7-8bf4;9"
+                    "@id": "outputs/_1693447347/output/clr.csv.gz"
                 },
                 {
-                    "@id": "nih:sha-256;6b17-e4f5-9ba5-732c-2a2c-db2d-b550-4c55-eece-74af-32d1-1b38-fa48-cad2-1242-2938;1"
-                },
-                {
-                    "@id": "nih:sha-256;d0cf-3cca-c489-4915-468a-b856-3970-c0f1-8235-6f80-ebc6-3226-035c-2431-a0bc-04a6;f/"
-                },
-                {
-                    "@id": "nih:sha-256;4fe3-014d-1152-8517-4b65-464b-cf22-4dc2-36ab-0b6f-3ac7-4806-17eb-c756-345b-3418;3"
-                },
-                {
-                    "@id": "nih:sha-256;a775-f7fc-e6ee-6f87-32cb-0ba2-9fb5-277a-0527-72aa-be94-6162-a6a8-b78c-bcfb-771e;3"
-                },
-                {
-                    "@id": "nih:sha-256;b6f6-9701-babc-473d-9661-0346-470d-5063-652f-45d3-4ce3-bf4c-85ca-a11f-d771-574c;3"
-                },
-                {
-                    "@id": "nih:sha-256;e985-b245-8647-a550-d4cb-4607-a4f2-2cc9-9270-95e9-39fb-9383-0cb5-e763-8020-f7a1;2"
-                },
-                {
-                    "@id": "nih:sha-256;8775-073d-93c2-f9f8-cabe-8bb3-9193-e278-08c1-a7f0-eaf7-09b3-c744-9a4e-aea6-fab3;e/"
-                },
-                {
-                    "@id": "nih:sha-256;61bb-f199-d90e-bbae-4c01-0274-17b3-ce06-0eba-2c66-b70d-c7e8-cc3f-336c-f948-c2a0;5"
-                },
-                {
-                    "@id": "nih:sha-256;34d6-a152-bee4-bd27-51ae-09b3-4a9a-6c2e-30fa-a8f7-9027-44ac-d9b2-f1af-f492-f85d;8"
-                },
-                {
-                    "@id": "nih:sha-256;a21a-751c-c455-0686-4c6d-b6c2-0f1f-b77e-eb2f-816d-b617-cc8e-72d6-05e9-2ca1-636b;d"
-                },
-                {
-                    "@id": "nih:sha-256;ec6d-64d8-c533-4c03-f63f-4c8b-bc13-1a9b-d379-d4ad-a2c7-d814-8f4c-d5a7-9f66-85d3;8"
+                    "@id": "outputs/_1693447347/output/summa.csv.gz"
                 }
             ],
             "mainEntity": {
-                "@id": "d029b862-586c-54dd-8247-bada763c02df/d0868652-07e6-4d2b-a179-fa67ffcbcec4_workflow.cwl"
-            }
+                "@id": "consolidated-workflow/2400c32e-f875-4cd4-9d41-be6da8224c67_workflow.cwl"
+            },
+            "mentions": [
+                {
+                    "@id": "#2aa46bb8-f7e5-4082-83f7-405448a1353d"
+                }
+            ]
         },
         {
             "@id": "ro-crate-metadata.json",
@@ -105,22 +71,29 @@
             ]
         },
         {
-            "@id": "https://w3id.org/ro/wfrun/process/0.1",
+            "@id": "https://w3id.org/workflowhub/workflow-ro-crate#cwl",
+            "@type": "ComputerLanguage",
+            "alternateName": "CWL",
+            "identifier": {
+                "@id": "https://w3id.org/cwl/v1.0/"
+            },
+            "name": "Common Workflow Language",
+            "url": {
+                "@id": "https://www.commonwl.org/"
+            },
+            "version": "v1.0"
+        },
+        {
+            "@id": "https://w3id.org/ro/wfrun/process/0.2",
             "@type": "CreativeWork",
             "name": "ProcessRun Crate",
-            "version": "0.1"
+            "version": "0.2"
         },
         {
-            "@id": "https://w3id.org/ro/wfrun/workflow/0.1",
+            "@id": "https://w3id.org/ro/wfrun/workflow/0.2",
             "@type": "CreativeWork",
             "name": "Workflow Run Crate",
-            "version": "0.1"
-        },
-        {
-            "@id": "https://w3id.org/ro/wfrun/provenance/0.1",
-            "@type": "CreativeWork",
-            "name": "Provenance Run Crate",
-            "version": "0.1"
+            "version": "0.2"
         },
         {
             "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0",
@@ -134,83 +107,8 @@
             "name": "WfExS-backend",
             "url": "https://github.com/inab/WfExS-backend",
             "version": [
-                "0.6.0-37-gb058b53",
-                "b058b538f3334a4b8c657a541dc9b9fb40434f55"
-            ]
-        },
-        {
-            "@id": "d029b862-586c-54dd-8247-bada763c02df/d0868652-07e6-4d2b-a179-fa67ffcbcec4_workflow.cwl",
-            "@type": [
-                "File",
-                "SoftwareSourceCode",
-                "ComputationalWorkflow"
-            ],
-            "conformsTo": [
-                {
-                    "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE"
-                }
-            ],
-            "input": [
-                {
-                    "@id": "d029b862-586c-54dd-8247-bada763c02df/d0868652-07e6-4d2b-a179-fa67ffcbcec4_workflow.cwl#param:data_matrix"
-                },
-                {
-                    "@id": "d029b862-586c-54dd-8247-bada763c02df/d0868652-07e6-4d2b-a179-fa67ffcbcec4_workflow.cwl#param:separator"
-                },
-                {
-                    "@id": "d029b862-586c-54dd-8247-bada763c02df/d0868652-07e6-4d2b-a179-fa67ffcbcec4_workflow.cwl#param:outdir"
-                },
-                {
-                    "@id": "d029b862-586c-54dd-8247-bada763c02df/d0868652-07e6-4d2b-a179-fa67ffcbcec4_workflow.cwl#param:data_matrix"
-                },
-                {
-                    "@id": "d029b862-586c-54dd-8247-bada763c02df/d0868652-07e6-4d2b-a179-fa67ffcbcec4_workflow.cwl#param:separator"
-                },
-                {
-                    "@id": "d029b862-586c-54dd-8247-bada763c02df/d0868652-07e6-4d2b-a179-fa67ffcbcec4_workflow.cwl#param:outdir"
-                },
-                {
-                    "@id": "d029b862-586c-54dd-8247-bada763c02df/d0868652-07e6-4d2b-a179-fa67ffcbcec4_workflow.cwl#param:data_matrix"
-                },
-                {
-                    "@id": "d029b862-586c-54dd-8247-bada763c02df/d0868652-07e6-4d2b-a179-fa67ffcbcec4_workflow.cwl#param:separator"
-                },
-                {
-                    "@id": "d029b862-586c-54dd-8247-bada763c02df/d0868652-07e6-4d2b-a179-fa67ffcbcec4_workflow.cwl#param:outdir"
-                }
-            ],
-            "isBasedOn": {
-                "@id": "d029b862-586c-54dd-8247-bada763c02df/cosifer/cwl/cosifer-workflow.cwl"
-            },
-            "name": "d029b862-586c-54dd-8247-bada763c02df/d0868652-07e6-4d2b-a179-fa67ffcbcec4_workflow",
-            "output": [
-                {
-                    "@id": "d029b862-586c-54dd-8247-bada763c02df/d0868652-07e6-4d2b-a179-fa67ffcbcec4_workflow.cwl#output:resdir"
-                },
-                {
-                    "@id": "d029b862-586c-54dd-8247-bada763c02df/d0868652-07e6-4d2b-a179-fa67ffcbcec4_workflow.cwl#output:resdir"
-                },
-                {
-                    "@id": "d029b862-586c-54dd-8247-bada763c02df/d0868652-07e6-4d2b-a179-fa67ffcbcec4_workflow.cwl#output:resdir"
-                }
-            ],
-            "programmingLanguage": {
-                "@id": "https://w3id.org/workflowhub/workflow-ro-crate#cwl"
-            },
-            "runtimePlatform": "cwltool 3.1.20220913185150",
-            "softwareRequirements": [
-                {
-                    "@id": "https://pypi.org/project/cwltool/"
-                },
-                {
-                    "@id": "https://apptainer.org/"
-                },
-                {
-                    "@id": "docker://tsenit/cosifer:b4d5af45d2fc54b6bff2a9153a8e9054e560302e"
-                },
-                {
-                    "@id": "https://apptainer.org/"
-                }
+                "0.9.3-95-g122eb68",
+                "122eb680108fde0a98df5aba5800519bb41b1c31"
             ]
         },
         {
@@ -221,19 +119,62 @@
                     "@id": "docker://docker.io/node:slim"
                 }
             ],
-            "softwareVersion": "cwltool 3.1.20220913185150"
+            "softwareVersion": "cwltool 3.1"
+        },
+        {
+            "@id": "workflow/cosifer/cwl/cosifer-workflow.cwl",
+            "@type": [
+                "File",
+                "SoftwareSourceCode",
+                "ComputationalWorkflow"
+            ],
+            "alternateName": "cosifer/cwl/cosifer-workflow.cwl",
+            "codeRepository": "https://github.com/inab/ipc_workflows.git",
+            "conformsTo": [
+                {
+                    "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE"
+                }
+            ],
+            "contentSize": 583,
+            "contentUrl": "https://raw.githubusercontent.com/inab/ipc_workflows/cosifer-20210322/cosifer/cwl/cosifer-workflow.cwl",
+            "description": "Unconsolidated Workflow Entrypoint",
+            "encodingFormat": "text/plain",
+            "hasPart": [
+                {
+                    "@id": "workflow/cosifer/cwl/cosifer.cwl"
+                }
+            ],
+            "name": "workflow/cosifer/cwl/cosifer-workflow",
+            "programmingLanguage": {
+                "@id": "https://w3id.org/workflowhub/workflow-ro-crate#cwl"
+            },
+            "runtimePlatform": "cwltool 3.1",
+            "sha256": "652a8a76f52dca54e24663e1dd97c74cf5656761194694cb0af3cc86dec93b91",
+            "softwareRequirements": [
+                {
+                    "@id": "https://pypi.org/project/cwltool/"
+                },
+                {
+                    "@id": "https://apptainer.org/"
+                },
+                {
+                    "@id": "docker://tsenit/cosifer:b4d5af45d2fc54b6bff2a9153a8e9054e560302e"
+                }
+            ],
+            "url": "https://github.com/inab/ipc_workflows/tree/cosifer-20210322",
+            "version": "b6ff7c65652408f905d0e2b8340c2e65f0253fd2"
         },
         {
             "@id": "https://apptainer.org/",
             "@type": "SoftwareApplication",
             "name": "singularity",
-            "softwareVersion": "apptainer version 1.1.5"
+            "softwareVersion": "apptainer version 1.2.2"
         },
         {
             "@id": "docker://tsenit/cosifer:b4d5af45d2fc54b6bff2a9153a8e9054e560302e",
             "@type": "SoftwareApplication",
             "operatingSystem": "linux",
-            "processorRequirements": "x86_64",
+            "processorRequirements": "amd64",
             "softwareRequirements": {
                 "@id": "https://apptainer.org/"
             },
@@ -243,438 +184,266 @@
             "@id": "docker://docker.io/node:slim",
             "@type": "SoftwareApplication",
             "operatingSystem": "linux",
-            "processorRequirements": "x86_64",
+            "processorRequirements": "amd64",
             "softwareRequirements": {
                 "@id": "https://apptainer.org/"
             },
-            "softwareVersion": "library/node@sha256:ea46185af8498b01a0af84e32c8b17933944e2444e1bee7602ef74bf6c758c0a"
+            "softwareVersion": "library/node@sha256:dc1906714d1993d291e1e7b5f236291236b0a0b6dfacdb164e4a9ea44d09c52e"
         },
         {
-            "@id": "d029b862-586c-54dd-8247-bada763c02df/cosifer/cwl/cosifer-workflow.cwl",
+            "@id": "workflow/cosifer/cwl/cosifer.cwl",
+            "@type": [
+                "File",
+                "SoftwareSourceCode"
+            ],
+            "alternateName": "cosifer/cwl/cosifer.cwl",
+            "contentSize": 860,
+            "contentUrl": "https://raw.githubusercontent.com/inab/ipc_workflows/cosifer-20210322/cosifer/cwl/cosifer-workflow.cwl/cosifer/cwl/cosifer.cwl",
+            "encodingFormat": "text/plain",
+            "sha256": "9a60cb61535f661f13125b1c137319f71afdcdbefb2b8ba4814498812439f3c4"
+        },
+        {
+            "@id": "consolidated-workflow/2400c32e-f875-4cd4-9d41-be6da8224c67_workflow.cwl",
             "@type": [
                 "File",
                 "SoftwareSourceCode",
                 "ComputationalWorkflow"
             ],
-            "codeRepository": "https://github.com/inab/ipc_workflows",
+            "alternateName": "2400c32e-f875-4cd4-9d41-be6da8224c67_workflow.cwl",
             "conformsTo": [
                 {
                     "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE"
                 }
             ],
-            "contentSize": 583,
-            "encodingFormat": "text/plain",
-            "hasPart": [
+            "contentSize": 5655,
+            "description": "Consolidated Workflow Entrypoint",
+            "encodingFormat": "application/json",
+            "input": [
                 {
-                    "@id": "d029b862-586c-54dd-8247-bada763c02df/cosifer/cwl/cosifer-workflow.cwl"
+                    "@id": "consolidated-workflow/2400c32e-f875-4cd4-9d41-be6da8224c67_workflow.cwl#param:data_matrix"
                 },
                 {
-                    "@id": "d029b862-586c-54dd-8247-bada763c02df/cosifer/cwl/cosifer.cwl"
+                    "@id": "consolidated-workflow/2400c32e-f875-4cd4-9d41-be6da8224c67_workflow.cwl#param:separator"
+                },
+                {
+                    "@id": "consolidated-workflow/2400c32e-f875-4cd4-9d41-be6da8224c67_workflow.cwl#param:outdir"
                 }
             ],
-            "identifier": "d029b862-586c-54dd-8247-bada763c02df/cosifer/cwl/cosifer-workflow.cwl",
-            "name": "Unconsolidated Workflow Entrypoint",
+            "isBasedOn": {
+                "@id": "workflow/cosifer/cwl/cosifer-workflow.cwl"
+            },
+            "name": "consolidated-workflow/2400c32e-f875-4cd4-9d41-be6da8224c67_workflow",
+            "output": [
+                {
+                    "@id": "consolidated-workflow/2400c32e-f875-4cd4-9d41-be6da8224c67_workflow.cwl#output:resdir"
+                }
+            ],
             "programmingLanguage": {
                 "@id": "https://w3id.org/workflowhub/workflow-ro-crate#cwl"
             },
-            "sha256": "652a8a76f52dca54e24663e1dd97c74cf5656761194694cb0af3cc86dec93b91",
-            "url": "https://raw.githubusercontent.com/inab/ipc_workflows/b6ff7c65652408f905d0e2b8340c2e65f0253fd2/cosifer/cwl/cosifer-workflow.cwl",
+            "runtimePlatform": "cwltool 3.1",
+            "sha256": "3dc9d2ff094deb781e3f15a92c7c828f04c7ad2876beb803f74ce41a6368b4ac",
+            "softwareRequirements": [
+                {
+                    "@id": "https://pypi.org/project/cwltool/"
+                },
+                {
+                    "@id": "docker://tsenit/cosifer:b4d5af45d2fc54b6bff2a9153a8e9054e560302e"
+                }
+            ],
             "version": "b6ff7c65652408f905d0e2b8340c2e65f0253fd2"
         },
         {
-            "@id": "d029b862-586c-54dd-8247-bada763c02df/cosifer/cwl/cosifer.cwl",
-            "@type": "File",
-            "contentSize": 860,
-            "encodingFormat": "text/plain",
-            "identifier": "d029b862-586c-54dd-8247-bada763c02df/cosifer/cwl/cosifer.cwl",
-            "sha256": "9a60cb61535f661f13125b1c137319f71afdcdbefb2b8ba4814498812439f3c4"
-        },
-        {
-            "@id": "#d2c3e066-b92b-4e27-80c7-90ca50a8bd57",
+            "@id": "#e15e390b-abb2-4efd-9c55-2bb0f65ed623",
             "@type": "CreateAction",
-            "instrument": {
+            "actionStatus": [
+                {
+                    "@id": "http://schema.org/CompletedActionStatus"
+                }
+            ],
+            "agent": {
                 "@id": "https://github.com/inab/WfExS-backend"
+            },
+            "instrument": {
+                "@id": "https://pypi.org/project/cwltool/"
             },
             "name": "Workflow consolidation",
             "object": {
-                "@id": "d029b862-586c-54dd-8247-bada763c02df/cosifer/cwl/cosifer-workflow.cwl"
+                "@id": "workflow/cosifer/cwl/cosifer-workflow.cwl"
             },
             "result": {
-                "@id": "d029b862-586c-54dd-8247-bada763c02df/d0868652-07e6-4d2b-a179-fa67ffcbcec4_workflow.cwl"
+                "@id": "consolidated-workflow/2400c32e-f875-4cd4-9d41-be6da8224c67_workflow.cwl"
             }
         },
         {
-            "@id": "#462c64fc-4c40-4809-97df-2f097ef8756c",
+            "@id": "#2aa46bb8-f7e5-4082-83f7-405448a1353d",
             "@type": "CreateAction",
-            "endTime": "2023-03-16T01:01:59.255408+00:00",
+            "actionStatus": [
+                {
+                    "@id": "http://schema.org/CompletedActionStatus"
+                }
+            ],
+            "endTime": "2023-08-31T02:02:35.362831+00:00",
             "instrument": {
-                "@id": "d029b862-586c-54dd-8247-bada763c02df/d0868652-07e6-4d2b-a179-fa67ffcbcec4_workflow.cwl"
+                "@id": "consolidated-workflow/2400c32e-f875-4cd4-9d41-be6da8224c67_workflow.cwl"
             },
-            "name": "outputs/_1678928501",
+            "name": "Run outputs/_1693447347 of consolidated-workflow/2400c32e-f875-4cd4-9d41-be6da8224c67_workflow.cwl",
             "object": [
                 {
-                    "@id": "https://raw.githubusercontent.com/PhosphorylatedRabbits/cosifer/f2e2a259d218b9a56a01d84bc9d6a7cd7c8d9bf1/examples/interactive/data_matrix.csv"
+                    "@id": "inputs/data_matrix.csv"
                 },
                 {
-                    "@id": "#cb072280-c01a-4542-8c79-deaa78685e05"
+                    "@id": "#d6978155-8c26-4324-aa35-58daf8eb4c21"
                 },
                 {
-                    "@id": "#c5591026-0a7b-4e2a-ab12-877588d747cf"
+                    "@id": "#a47c733e-f029-40e1-9d48-625c1dd74310"
                 }
             ],
             "result": [
                 {
-                    "@id": "nih:sha-256;5905-1d24-3b95-74a7-ee67-3bda-1623-c852-f784-066a-0080-abaa-b353-e68b-592e-2b0c;4/"
+                    "@id": "outputs/_1693447347/output/"
                 }
             ],
-            "startTime": "2023-03-16T01:01:41.347484+00:00"
+            "startTime": "2023-08-31T02:02:27.822343+00:00"
         },
         {
-            "@id": "d029b862-586c-54dd-8247-bada763c02df/d0868652-07e6-4d2b-a179-fa67ffcbcec4_workflow.cwl#param:data_matrix",
+            "@id": "consolidated-workflow/2400c32e-f875-4cd4-9d41-be6da8224c67_workflow.cwl#param:data_matrix",
             "@type": "FormalParameter",
             "additionalType": "File",
             "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
             "name": "data_matrix",
             "workExample": [
                 {
-                    "@id": "https://raw.githubusercontent.com/PhosphorylatedRabbits/cosifer/f2e2a259d218b9a56a01d84bc9d6a7cd7c8d9bf1/examples/interactive/data_matrix.csv"
+                    "@id": "inputs/data_matrix.csv"
                 }
             ]
         },
         {
-            "@id": "https://raw.githubusercontent.com/PhosphorylatedRabbits/cosifer/f2e2a259d218b9a56a01d84bc9d6a7cd7c8d9bf1/examples/interactive/data_matrix.csv",
+            "@id": "inputs/data_matrix.csv",
             "@type": "File",
             "contentSize": 98392,
+            "contentUrl": "https://raw.githubusercontent.com/PhosphorylatedRabbits/cosifer/f2e2a259d218b9a56a01d84bc9d6a7cd7c8d9bf1/examples/interactive/data_matrix.csv",
             "encodingFormat": "text/csv",
             "exampleOfWork": [
                 {
-                    "@id": "d029b862-586c-54dd-8247-bada763c02df/d0868652-07e6-4d2b-a179-fa67ffcbcec4_workflow.cwl#param:data_matrix"
+                    "@id": "consolidated-workflow/2400c32e-f875-4cd4-9d41-be6da8224c67_workflow.cwl#param:data_matrix"
                 }
             ],
-            "name": "inputs/data_matrix.csv",
             "sha256": "f839fa092cc34be8513c5a5805b39c9bec4cb9df1451e7db6a29db31d183f3c0"
         },
         {
-            "@id": "d029b862-586c-54dd-8247-bada763c02df/d0868652-07e6-4d2b-a179-fa67ffcbcec4_workflow.cwl#param:separator",
+            "@id": "consolidated-workflow/2400c32e-f875-4cd4-9d41-be6da8224c67_workflow.cwl#param:separator",
             "@type": "FormalParameter",
             "additionalType": "String",
             "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
             "name": "separator",
             "workExample": [
                 {
-                    "@id": "#e4b6cf9b-37cb-48a9-85ae-5f9550063969"
+                    "@id": "#d6978155-8c26-4324-aa35-58daf8eb4c21"
                 }
             ]
         },
         {
-            "@id": "#cb072280-c01a-4542-8c79-deaa78685e05",
+            "@id": "#d6978155-8c26-4324-aa35-58daf8eb4c21",
             "@type": "PropertyValue",
             "exampleOfWork": [
                 {
-                    "@id": "d029b862-586c-54dd-8247-bada763c02df/d0868652-07e6-4d2b-a179-fa67ffcbcec4_workflow.cwl#param:separator"
+                    "@id": "consolidated-workflow/2400c32e-f875-4cd4-9d41-be6da8224c67_workflow.cwl#param:separator"
                 }
             ],
             "name": "separator",
             "value": ","
         },
         {
-            "@id": "d029b862-586c-54dd-8247-bada763c02df/d0868652-07e6-4d2b-a179-fa67ffcbcec4_workflow.cwl#param:outdir",
+            "@id": "consolidated-workflow/2400c32e-f875-4cd4-9d41-be6da8224c67_workflow.cwl#param:outdir",
             "@type": "FormalParameter",
             "additionalType": "String",
             "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
             "name": "outdir",
             "workExample": [
                 {
-                    "@id": "#ccd91ed0-f591-4a9c-bd0d-2e4864b2a995"
+                    "@id": "#a47c733e-f029-40e1-9d48-625c1dd74310"
                 }
             ]
         },
         {
-            "@id": "#c5591026-0a7b-4e2a-ab12-877588d747cf",
+            "@id": "#a47c733e-f029-40e1-9d48-625c1dd74310",
             "@type": "PropertyValue",
             "exampleOfWork": [
                 {
-                    "@id": "d029b862-586c-54dd-8247-bada763c02df/d0868652-07e6-4d2b-a179-fa67ffcbcec4_workflow.cwl#param:outdir"
+                    "@id": "consolidated-workflow/2400c32e-f875-4cd4-9d41-be6da8224c67_workflow.cwl#param:outdir"
                 }
             ],
             "name": "outdir",
             "value": "output"
         },
         {
-            "@id": "d029b862-586c-54dd-8247-bada763c02df/d0868652-07e6-4d2b-a179-fa67ffcbcec4_workflow.cwl#output:resdir",
+            "@id": "consolidated-workflow/2400c32e-f875-4cd4-9d41-be6da8224c67_workflow.cwl#output:resdir",
             "@type": "FormalParameter",
             "additionalType": "Dataset",
             "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
             "name": "resdir",
             "workExample": [
                 {
-                    "@id": "nih:sha-256;8775-073d-93c2-f9f8-cabe-8bb3-9193-e278-08c1-a7f0-eaf7-09b3-c744-9a4e-aea6-fab3;e/"
+                    "@id": "outputs/_1693447347/output/"
                 }
             ]
         },
         {
-            "@id": "nih:sha-256;5905-1d24-3b95-74a7-ee67-3bda-1623-c852-f784-066a-0080-abaa-b353-e68b-592e-2b0c;4/",
+            "@id": "outputs/_1693447347/output/",
             "@type": "Dataset",
+            "alternateName": "output/",
             "exampleOfWork": [
                 {
-                    "@id": "d029b862-586c-54dd-8247-bada763c02df/d0868652-07e6-4d2b-a179-fa67ffcbcec4_workflow.cwl#output:resdir"
+                    "@id": "consolidated-workflow/2400c32e-f875-4cd4-9d41-be6da8224c67_workflow.cwl#output:resdir"
                 }
             ],
             "hasPart": [
                 {
-                    "@id": "nih:sha-256;de80-4a12-57a5-cba9-9e9b-20bb-b9a7-8842-fefc-18fc-2548-fcd9-a769-702e-1943-9ade;4"
+                    "@id": "outputs/_1693447347/output/aracne.csv.gz"
                 },
                 {
-                    "@id": "nih:sha-256;132a-015d-536e-3c39-d829-8bad-d94d-d4db-770b-63de-d538-6e54-be9d-49ab-02d8-02a1;e"
+                    "@id": "outputs/_1693447347/output/mrnet.csv.gz"
                 },
                 {
-                    "@id": "nih:sha-256;95fe-414b-b4e0-e193-6230-ea67-cd55-4ca8-cf30-6281-0870-0748-5d76-2df3-67b7-8bf4;9"
+                    "@id": "outputs/_1693447347/output/clr.csv.gz"
                 },
                 {
-                    "@id": "nih:sha-256;6b17-e4f5-9ba5-732c-2a2c-db2d-b550-4c55-eece-74af-32d1-1b38-fa48-cad2-1242-2938;1"
+                    "@id": "outputs/_1693447347/output/summa.csv.gz"
                 }
-            ],
-            "name": "outputs/_1678928501/output"
+            ]
         },
         {
-            "@id": "nih:sha-256;de80-4a12-57a5-cba9-9e9b-20bb-b9a7-8842-fefc-18fc-2548-fcd9-a769-702e-1943-9ade;4",
+            "@id": "outputs/_1693447347/output/aracne.csv.gz",
             "@type": "File",
-            "contentSize": 26622,
-            "encodingFormat": "application/gzip",
-            "name": "outputs/_1678928501/output/mrnet.csv.gz",
-            "sha256": "de804a1257a5cba99e9b20bbb9a78842fefc18fc2548fcd9a769702e19439ade"
-        },
-        {
-            "@id": "nih:sha-256;132a-015d-536e-3c39-d829-8bad-d94d-d4db-770b-63de-d538-6e54-be9d-49ab-02d8-02a1;e",
-            "@type": "File",
-            "contentSize": 25423,
-            "encodingFormat": "application/gzip",
-            "name": "outputs/_1678928501/output/clr.csv.gz",
-            "sha256": "132a015d536e3c39d8298badd94dd4db770b63ded5386e54be9d49ab02d802a1"
-        },
-        {
-            "@id": "nih:sha-256;95fe-414b-b4e0-e193-6230-ea67-cd55-4ca8-cf30-6281-0870-0748-5d76-2df3-67b7-8bf4;9",
-            "@type": "File",
-            "contentSize": 69039,
-            "encodingFormat": "application/gzip",
-            "name": "outputs/_1678928501/output/summa.csv.gz",
-            "sha256": "95fe414bb4e0e1936230ea67cd554ca8cf306281087007485d762df367b78bf4"
-        },
-        {
-            "@id": "nih:sha-256;6b17-e4f5-9ba5-732c-2a2c-db2d-b550-4c55-eece-74af-32d1-1b38-fa48-cad2-1242-2938;1",
-            "@type": "File",
+            "alternateName": "output/aracne.csv.gz",
             "contentSize": 64996,
             "encodingFormat": "application/gzip",
-            "name": "outputs/_1678928501/output/aracne.csv.gz",
-            "sha256": "6b17e4f59ba5732c2a2cdb2db5504c55eece74af32d11b38fa48cad212422938"
+            "sha256": "c216ddf993ccc2ba665ee9dece4f60cba8a0ef1bc2de6b7b70253e95d9df3cbb"
         },
         {
-            "@id": "#4ebd6df9-0502-4fb6-80ce-ed19c20f510a",
-            "@type": "CreateAction",
-            "endTime": "2023-03-16T01:05:49.756801+00:00",
-            "instrument": {
-                "@id": "d029b862-586c-54dd-8247-bada763c02df/d0868652-07e6-4d2b-a179-fa67ffcbcec4_workflow.cwl"
-            },
-            "name": "outputs/_1678928739",
-            "object": [
-                {
-                    "@id": "https://raw.githubusercontent.com/PhosphorylatedRabbits/cosifer/f2e2a259d218b9a56a01d84bc9d6a7cd7c8d9bf1/examples/interactive/data_matrix.csv"
-                },
-                {
-                    "@id": "#1457bfac-8e15-4b8d-9f3e-092f7b1777c8"
-                },
-                {
-                    "@id": "#923c0a8e-406d-49f7-ae05-6caabe6faa97"
-                }
-            ],
-            "result": [
-                {
-                    "@id": "nih:sha-256;d0cf-3cca-c489-4915-468a-b856-3970-c0f1-8235-6f80-ebc6-3226-035c-2431-a0bc-04a6;f/"
-                }
-            ],
-            "startTime": "2023-03-16T01:05:39.029028+00:00"
-        },
-        {
-            "@id": "#1457bfac-8e15-4b8d-9f3e-092f7b1777c8",
-            "@type": "PropertyValue",
-            "exampleOfWork": [
-                {
-                    "@id": "d029b862-586c-54dd-8247-bada763c02df/d0868652-07e6-4d2b-a179-fa67ffcbcec4_workflow.cwl#param:separator"
-                }
-            ],
-            "name": "separator",
-            "value": ","
-        },
-        {
-            "@id": "#923c0a8e-406d-49f7-ae05-6caabe6faa97",
-            "@type": "PropertyValue",
-            "exampleOfWork": [
-                {
-                    "@id": "d029b862-586c-54dd-8247-bada763c02df/d0868652-07e6-4d2b-a179-fa67ffcbcec4_workflow.cwl#param:outdir"
-                }
-            ],
-            "name": "outdir",
-            "value": "output"
-        },
-        {
-            "@id": "nih:sha-256;d0cf-3cca-c489-4915-468a-b856-3970-c0f1-8235-6f80-ebc6-3226-035c-2431-a0bc-04a6;f/",
-            "@type": "Dataset",
-            "exampleOfWork": [
-                {
-                    "@id": "d029b862-586c-54dd-8247-bada763c02df/d0868652-07e6-4d2b-a179-fa67ffcbcec4_workflow.cwl#output:resdir"
-                }
-            ],
-            "hasPart": [
-                {
-                    "@id": "nih:sha-256;4fe3-014d-1152-8517-4b65-464b-cf22-4dc2-36ab-0b6f-3ac7-4806-17eb-c756-345b-3418;3"
-                },
-                {
-                    "@id": "nih:sha-256;a775-f7fc-e6ee-6f87-32cb-0ba2-9fb5-277a-0527-72aa-be94-6162-a6a8-b78c-bcfb-771e;3"
-                },
-                {
-                    "@id": "nih:sha-256;b6f6-9701-babc-473d-9661-0346-470d-5063-652f-45d3-4ce3-bf4c-85ca-a11f-d771-574c;3"
-                },
-                {
-                    "@id": "nih:sha-256;e985-b245-8647-a550-d4cb-4607-a4f2-2cc9-9270-95e9-39fb-9383-0cb5-e763-8020-f7a1;2"
-                }
-            ],
-            "name": "outputs/_1678928739/output"
-        },
-        {
-            "@id": "nih:sha-256;4fe3-014d-1152-8517-4b65-464b-cf22-4dc2-36ab-0b6f-3ac7-4806-17eb-c756-345b-3418;3",
+            "@id": "outputs/_1693447347/output/mrnet.csv.gz",
             "@type": "File",
+            "alternateName": "output/mrnet.csv.gz",
             "contentSize": 26622,
             "encodingFormat": "application/gzip",
-            "name": "outputs/_1678928739/output/mrnet.csv.gz",
-            "sha256": "4fe3014d115285174b65464bcf224dc236ab0b6f3ac7480617ebc756345b3418"
+            "sha256": "bb61cb88e35360a83db47a0d08acaa0ab659e4fae0b5659680f4de873fc790b7"
         },
         {
-            "@id": "nih:sha-256;a775-f7fc-e6ee-6f87-32cb-0ba2-9fb5-277a-0527-72aa-be94-6162-a6a8-b78c-bcfb-771e;3",
+            "@id": "outputs/_1693447347/output/clr.csv.gz",
             "@type": "File",
+            "alternateName": "output/clr.csv.gz",
             "contentSize": 25423,
             "encodingFormat": "application/gzip",
-            "name": "outputs/_1678928739/output/clr.csv.gz",
-            "sha256": "a775f7fce6ee6f8732cb0ba29fb5277a052772aabe946162a6a8b78cbcfb771e"
+            "sha256": "5b3a5e70cdb766d2bd181edfc05a86a9f1f98a9ddd0e3ead7a9542d574966607"
         },
         {
-            "@id": "nih:sha-256;b6f6-9701-babc-473d-9661-0346-470d-5063-652f-45d3-4ce3-bf4c-85ca-a11f-d771-574c;3",
+            "@id": "outputs/_1693447347/output/summa.csv.gz",
             "@type": "File",
-            "contentSize": 69039,
+            "alternateName": "output/summa.csv.gz",
+            "contentSize": 69014,
             "encodingFormat": "application/gzip",
-            "name": "outputs/_1678928739/output/summa.csv.gz",
-            "sha256": "b6f69701babc473d96610346470d5063652f45d34ce3bf4c85caa11fd771574c"
-        },
-        {
-            "@id": "nih:sha-256;e985-b245-8647-a550-d4cb-4607-a4f2-2cc9-9270-95e9-39fb-9383-0cb5-e763-8020-f7a1;2",
-            "@type": "File",
-            "contentSize": 64996,
-            "encodingFormat": "application/gzip",
-            "name": "outputs/_1678928739/output/aracne.csv.gz",
-            "sha256": "e985b2458647a550d4cb4607a4f22cc9927095e939fb93830cb5e7638020f7a1"
-        },
-        {
-            "@id": "#a44f0376-57f0-46fc-baf6-abe8643c9d28",
-            "@type": "CreateAction",
-            "endTime": "2023-03-16T01:06:41.937914+00:00",
-            "instrument": {
-                "@id": "d029b862-586c-54dd-8247-bada763c02df/d0868652-07e6-4d2b-a179-fa67ffcbcec4_workflow.cwl"
-            },
-            "name": "outputs/_1678928791",
-            "object": [
-                {
-                    "@id": "https://raw.githubusercontent.com/PhosphorylatedRabbits/cosifer/f2e2a259d218b9a56a01d84bc9d6a7cd7c8d9bf1/examples/interactive/data_matrix.csv"
-                },
-                {
-                    "@id": "#e4b6cf9b-37cb-48a9-85ae-5f9550063969"
-                },
-                {
-                    "@id": "#ccd91ed0-f591-4a9c-bd0d-2e4864b2a995"
-                }
-            ],
-            "result": [
-                {
-                    "@id": "nih:sha-256;8775-073d-93c2-f9f8-cabe-8bb3-9193-e278-08c1-a7f0-eaf7-09b3-c744-9a4e-aea6-fab3;e/"
-                }
-            ],
-            "startTime": "2023-03-16T01:06:31.260912+00:00"
-        },
-        {
-            "@id": "#e4b6cf9b-37cb-48a9-85ae-5f9550063969",
-            "@type": "PropertyValue",
-            "exampleOfWork": [
-                {
-                    "@id": "d029b862-586c-54dd-8247-bada763c02df/d0868652-07e6-4d2b-a179-fa67ffcbcec4_workflow.cwl#param:separator"
-                }
-            ],
-            "name": "separator",
-            "value": ","
-        },
-        {
-            "@id": "#ccd91ed0-f591-4a9c-bd0d-2e4864b2a995",
-            "@type": "PropertyValue",
-            "exampleOfWork": [
-                {
-                    "@id": "d029b862-586c-54dd-8247-bada763c02df/d0868652-07e6-4d2b-a179-fa67ffcbcec4_workflow.cwl#param:outdir"
-                }
-            ],
-            "name": "outdir",
-            "value": "output"
-        },
-        {
-            "@id": "nih:sha-256;8775-073d-93c2-f9f8-cabe-8bb3-9193-e278-08c1-a7f0-eaf7-09b3-c744-9a4e-aea6-fab3;e/",
-            "@type": "Dataset",
-            "exampleOfWork": [
-                {
-                    "@id": "d029b862-586c-54dd-8247-bada763c02df/d0868652-07e6-4d2b-a179-fa67ffcbcec4_workflow.cwl#output:resdir"
-                }
-            ],
-            "hasPart": [
-                {
-                    "@id": "nih:sha-256;61bb-f199-d90e-bbae-4c01-0274-17b3-ce06-0eba-2c66-b70d-c7e8-cc3f-336c-f948-c2a0;5"
-                },
-                {
-                    "@id": "nih:sha-256;34d6-a152-bee4-bd27-51ae-09b3-4a9a-6c2e-30fa-a8f7-9027-44ac-d9b2-f1af-f492-f85d;8"
-                },
-                {
-                    "@id": "nih:sha-256;a21a-751c-c455-0686-4c6d-b6c2-0f1f-b77e-eb2f-816d-b617-cc8e-72d6-05e9-2ca1-636b;d"
-                },
-                {
-                    "@id": "nih:sha-256;ec6d-64d8-c533-4c03-f63f-4c8b-bc13-1a9b-d379-d4ad-a2c7-d814-8f4c-d5a7-9f66-85d3;8"
-                }
-            ],
-            "name": "outputs/_1678928791/output"
-        },
-        {
-            "@id": "nih:sha-256;61bb-f199-d90e-bbae-4c01-0274-17b3-ce06-0eba-2c66-b70d-c7e8-cc3f-336c-f948-c2a0;5",
-            "@type": "File",
-            "contentSize": 26622,
-            "encodingFormat": "application/gzip",
-            "name": "outputs/_1678928791/output/mrnet.csv.gz",
-            "sha256": "61bbf199d90ebbae4c01027417b3ce060eba2c66b70dc7e8cc3f336cf948c2a0"
-        },
-        {
-            "@id": "nih:sha-256;34d6-a152-bee4-bd27-51ae-09b3-4a9a-6c2e-30fa-a8f7-9027-44ac-d9b2-f1af-f492-f85d;8",
-            "@type": "File",
-            "contentSize": 25423,
-            "encodingFormat": "application/gzip",
-            "name": "outputs/_1678928791/output/clr.csv.gz",
-            "sha256": "34d6a152bee4bd2751ae09b34a9a6c2e30faa8f7902744acd9b2f1aff492f85d"
-        },
-        {
-            "@id": "nih:sha-256;a21a-751c-c455-0686-4c6d-b6c2-0f1f-b77e-eb2f-816d-b617-cc8e-72d6-05e9-2ca1-636b;d",
-            "@type": "File",
-            "contentSize": 69039,
-            "encodingFormat": "application/gzip",
-            "name": "outputs/_1678928791/output/summa.csv.gz",
-            "sha256": "a21a751cc45506864c6db6c20f1fb77eeb2f816db617cc8e72d605e92ca1636b"
-        },
-        {
-            "@id": "nih:sha-256;ec6d-64d8-c533-4c03-f63f-4c8b-bc13-1a9b-d379-d4ad-a2c7-d814-8f4c-d5a7-9f66-85d3;8",
-            "@type": "File",
-            "contentSize": 64996,
-            "encodingFormat": "application/gzip",
-            "name": "outputs/_1678928791/output/aracne.csv.gz",
-            "sha256": "ec6d64d8c5334c03f63f4c8bbc131a9bd379d4ada2c7d8148f4cd5a79f6685d3"
+            "sha256": "576672a12500106a5638f63e27775840b7487028eae97f418a9ed3dd55f36490"
         }
     ]
 }

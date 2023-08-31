@@ -2,89 +2,73 @@
     "@context": "https://w3id.org/ro/crate/1.1/context",
     "@graph": [
         {
-            "@id": "ro-crate-preview.html",
-            "@type": "CreativeWork",
-            "about": {
-                "@id": "./"
-            }
-        },
-        {
             "@id": "./",
             "@type": "Dataset",
             "conformsTo": [
                 {
-                    "@id": "https://w3id.org/ro/wfrun/process/0.1"
+                    "@id": "https://w3id.org/ro/wfrun/process/0.2"
                 },
                 {
-                    "@id": "https://w3id.org/ro/wfrun/workflow/0.1"
-                },
-                {
-                    "@id": "https://w3id.org/ro/wfrun/provenance/0.1"
+                    "@id": "https://w3id.org/ro/wfrun/workflow/0.2"
                 },
                 {
                     "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
                 }
             ],
-            "datePublished": "2023-03-16T01:17:00+00:00",
+            "datePublished": "2023-08-31T02:29:48+00:00",
+            "description": "RO-Crate from staged WfExS working directory 597708f2-952e-47c7-9b86-dbe3a9e5f651 (paraphalangeal hind teat)",
             "hasPart": [
                 {
-                    "@id": "207b546c-4192-585e-b171-7d29124aa277/nextflow.nf"
+                    "@id": "workflow/cosifer/nextflow/nextflow.nf"
                 },
                 {
-                    "@id": "207b546c-4192-585e-b171-7d29124aa277/nextflow.config"
+                    "@id": "workflow/cosifer/nextflow/nextflow.config"
                 },
                 {
-                    "@id": "https://raw.githubusercontent.com/PhosphorylatedRabbits/cosifer/f2e2a259d218b9a56a01d84bc9d6a7cd7c8d9bf1/examples/interactive/data_matrix.csv"
+                    "@id": "inputs/data_matrix.csv"
                 },
                 {
-                    "@id": "nih:sha-256;942f-83c9-31da-a543-80e0-306a-a669-dc05-bb65-3735-858b-7803-501e-d428-13b6-7c7d;f/"
+                    "@id": "outputs/_1693448929/outputsDir/"
                 },
                 {
-                    "@id": "nih:sha-256;414d-64b3-d56d-7fdd-9369-d422-af87-a50e-b958-5a7b-be64-1098-9cba-e893-a602-3e6f;7"
+                    "@id": "outputs/_1693448929/outputsDir/aracne.csv.gz"
                 },
                 {
-                    "@id": "nih:sha-256;5110-1128-f9ae-471e-47c4-4a08-82fe-8168-5836-58af-9f4a-4db1-bc3e-020f-4f99-5c95;8"
+                    "@id": "outputs/_1693448929/outputsDir/clr.csv.gz"
                 },
                 {
-                    "@id": "nih:sha-256;e238-398d-b8a2-fd78-a95d-1a35-74fd-a1aa-da3a-c9aa-a5fd-747c-e45c-a6e0-d6e8-3921;2"
+                    "@id": "outputs/_1693448929/outputsDir/mrnet.csv.gz"
                 },
                 {
-                    "@id": "nih:sha-256;2e9b-123b-ca97-49ae-61e7-9e00-2b7c-f051-9416-2f73-cb43-6dc1-0101-8925-86ab-f582;6"
+                    "@id": "outputs/_1693448929/outputsDir/summa.csv.gz"
                 },
                 {
-                    "@id": "nih:sha-256;9973-5173-11d7-25dd-9166-ca94-52c7-5ab9-9f86-e285-b403-42be-faf3-fc53-d305-4386;7/"
+                    "@id": "outputs/_1693448942/outputsDir/"
                 },
                 {
-                    "@id": "nih:sha-256;31c3-bea8-2a9b-8aea-f076-53fe-03c0-a902-7d58-54f0-ad4b-9525-4d77-6486-a93e-e1eb;8"
+                    "@id": "outputs/_1693448942/outputsDir/aracne.csv.gz"
                 },
                 {
-                    "@id": "nih:sha-256;4ff2-b608-aedd-f022-b5a4-72b1-647f-b05e-4316-8575-22b1-2913-ddb4-cab6-60aa-a797;e"
+                    "@id": "outputs/_1693448942/outputsDir/clr.csv.gz"
                 },
                 {
-                    "@id": "nih:sha-256;7e9d-0abe-e312-31fd-3972-880c-055d-08d9-0665-dfcd-ffba-d5c1-91aa-e127-adda-20a6;a"
+                    "@id": "outputs/_1693448942/outputsDir/mrnet.csv.gz"
                 },
                 {
-                    "@id": "nih:sha-256;1047-d0aa-0969-298e-fabd-66bb-5730-4705-dc9c-fe2a-b4e1-c4d9-9448-f0a3-83cb-f283;2"
-                },
-                {
-                    "@id": "nih:sha-256;1318-af72-6999-a361-e5a8-7f76-bee3-6394-f8f1-0f52-a0ba-fef2-483f-17bb-e98f-91bd;e/"
-                },
-                {
-                    "@id": "nih:sha-256;823a-e48c-eb81-110a-3f6d-8fed-8c4c-3f77-d683-befb-c45c-be58-085a-68fb-6212-cd91;8"
-                },
-                {
-                    "@id": "nih:sha-256;c6cf-3faa-7ed5-af26-2b32-9030-f9b5-2492-5fc5-7119-cf5f-02c1-5f67-0e9a-ebfa-de46;2"
-                },
-                {
-                    "@id": "nih:sha-256;1636-28a1-b5be-5c78-a380-24d6-7dcd-0651-e465-5b34-e527-6a93-fa72-5f9e-767b-af1c;f"
-                },
-                {
-                    "@id": "nih:sha-256;cdc0-cc08-d2c1-3409-edc6-ca33-dac9-0c89-7637-c111-0057-d737-7351-402e-bc65-e025;1"
+                    "@id": "outputs/_1693448942/outputsDir/summa.csv.gz"
                 }
             ],
             "mainEntity": {
-                "@id": "207b546c-4192-585e-b171-7d29124aa277/nextflow.nf"
-            }
+                "@id": "workflow/cosifer/nextflow/nextflow.nf"
+            },
+            "mentions": [
+                {
+                    "@id": "#871d142a-d494-410e-9312-0d0781bb22af"
+                },
+                {
+                    "@id": "#f92cbe6d-ddbd-4053-879d-65ebcdff5431"
+                }
+            ]
         },
         {
             "@id": "ro-crate-metadata.json",
@@ -102,22 +86,29 @@
             ]
         },
         {
-            "@id": "https://w3id.org/ro/wfrun/process/0.1",
+            "@id": "https://w3id.org/workflowhub/workflow-ro-crate#nextflow",
+            "@type": "ComputerLanguage",
+            "alternateName": "NFL",
+            "identifier": {
+                "@id": "https://www.nextflow.io/"
+            },
+            "name": "Nextflow",
+            "url": {
+                "@id": "https://www.nextflow.io/"
+            },
+            "version": "19.10.0"
+        },
+        {
+            "@id": "https://w3id.org/ro/wfrun/process/0.2",
             "@type": "CreativeWork",
             "name": "ProcessRun Crate",
-            "version": "0.1"
+            "version": "0.2"
         },
         {
-            "@id": "https://w3id.org/ro/wfrun/workflow/0.1",
+            "@id": "https://w3id.org/ro/wfrun/workflow/0.2",
             "@type": "CreativeWork",
             "name": "Workflow Run Crate",
-            "version": "0.1"
-        },
-        {
-            "@id": "https://w3id.org/ro/wfrun/provenance/0.1",
-            "@type": "CreativeWork",
-            "name": "Provenance Run Crate",
-            "version": "0.1"
+            "version": "0.2"
         },
         {
             "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0",
@@ -131,109 +122,90 @@
             "name": "WfExS-backend",
             "url": "https://github.com/inab/WfExS-backend",
             "version": [
-                "0.6.0-37-gb058b53",
-                "b058b538f3334a4b8c657a541dc9b9fb40434f55"
+                "0.9.3-95-g122eb68",
+                "122eb680108fde0a98df5aba5800519bb41b1c31"
             ]
         },
         {
-            "@id": "207b546c-4192-585e-b171-7d29124aa277/nextflow.nf",
+            "@id": "https://www.nextflow.io/",
+            "@type": "SoftwareApplication",
+            "softwareVersion": "nextflow version 19.10.0.5169"
+        },
+        {
+            "@id": "workflow/cosifer/nextflow/nextflow.nf",
             "@type": [
                 "File",
                 "SoftwareSourceCode",
                 "ComputationalWorkflow"
             ],
-            "codeRepository": "https://github.com/inab/ipc_workflows.git",
+            "alternateName": "nextflow.nf",
+            "codeRepository": "https://github.com/inab/ipc_workflows",
             "conformsTo": [
                 {
                     "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE"
                 }
             ],
+            "contentSize": 1362,
+            "description": "Workflow Entrypoint",
+            "encodingFormat": "text/plain",
             "hasPart": [
                 {
-                    "@id": "207b546c-4192-585e-b171-7d29124aa277/nextflow.config"
+                    "@id": "workflow/cosifer/nextflow/nextflow.config"
                 }
             ],
+            "identifier": "trs://workflowhub.eu/119/1",
             "input": [
                 {
-                    "@id": "207b546c-4192-585e-b171-7d29124aa277/nextflow.nf#param:data_matrix"
+                    "@id": "workflow/cosifer/nextflow/nextflow.nf#param:data_matrix"
                 },
                 {
-                    "@id": "207b546c-4192-585e-b171-7d29124aa277/nextflow.nf#param:outputsDir"
+                    "@id": "workflow/cosifer/nextflow/nextflow.nf#param:outputsDir"
                 },
                 {
-                    "@id": "207b546c-4192-585e-b171-7d29124aa277/nextflow.nf#param:outputs-dir"
+                    "@id": "workflow/cosifer/nextflow/nextflow.nf#param:index_col"
                 },
                 {
-                    "@id": "207b546c-4192-585e-b171-7d29124aa277/nextflow.nf#param:index_col"
+                    "@id": "workflow/cosifer/nextflow/nextflow.nf#param:hallmark_gene_sets_file"
                 },
                 {
-                    "@id": "207b546c-4192-585e-b171-7d29124aa277/nextflow.nf#param:hallmark_gene_sets_file"
+                    "@id": "workflow/cosifer/nextflow/nextflow.nf#param:sep"
                 },
                 {
-                    "@id": "207b546c-4192-585e-b171-7d29124aa277/nextflow.nf#param:sep"
+                    "@id": "workflow/cosifer/nextflow/nextflow.nf#param:samples_on_rows"
                 },
                 {
-                    "@id": "207b546c-4192-585e-b171-7d29124aa277/nextflow.nf#param:samples_on_rows"
+                    "@id": "workflow/cosifer/nextflow/nextflow.nf#param:data_matrix"
                 },
                 {
-                    "@id": "207b546c-4192-585e-b171-7d29124aa277/nextflow.nf#param:data_matrix"
+                    "@id": "workflow/cosifer/nextflow/nextflow.nf#param:outputsDir"
                 },
                 {
-                    "@id": "207b546c-4192-585e-b171-7d29124aa277/nextflow.nf#param:outputsDir"
+                    "@id": "workflow/cosifer/nextflow/nextflow.nf#param:index_col"
                 },
                 {
-                    "@id": "207b546c-4192-585e-b171-7d29124aa277/nextflow.nf#param:outputs-dir"
+                    "@id": "workflow/cosifer/nextflow/nextflow.nf#param:hallmark_gene_sets_file"
                 },
                 {
-                    "@id": "207b546c-4192-585e-b171-7d29124aa277/nextflow.nf#param:index_col"
+                    "@id": "workflow/cosifer/nextflow/nextflow.nf#param:sep"
                 },
                 {
-                    "@id": "207b546c-4192-585e-b171-7d29124aa277/nextflow.nf#param:hallmark_gene_sets_file"
-                },
-                {
-                    "@id": "207b546c-4192-585e-b171-7d29124aa277/nextflow.nf#param:sep"
-                },
-                {
-                    "@id": "207b546c-4192-585e-b171-7d29124aa277/nextflow.nf#param:samples_on_rows"
-                },
-                {
-                    "@id": "207b546c-4192-585e-b171-7d29124aa277/nextflow.nf#param:data_matrix"
-                },
-                {
-                    "@id": "207b546c-4192-585e-b171-7d29124aa277/nextflow.nf#param:outputsDir"
-                },
-                {
-                    "@id": "207b546c-4192-585e-b171-7d29124aa277/nextflow.nf#param:outputs-dir"
-                },
-                {
-                    "@id": "207b546c-4192-585e-b171-7d29124aa277/nextflow.nf#param:index_col"
-                },
-                {
-                    "@id": "207b546c-4192-585e-b171-7d29124aa277/nextflow.nf#param:hallmark_gene_sets_file"
-                },
-                {
-                    "@id": "207b546c-4192-585e-b171-7d29124aa277/nextflow.nf#param:sep"
-                },
-                {
-                    "@id": "207b546c-4192-585e-b171-7d29124aa277/nextflow.nf#param:samples_on_rows"
+                    "@id": "workflow/cosifer/nextflow/nextflow.nf#param:samples_on_rows"
                 }
             ],
-            "name": "Workflow Entrypoint",
+            "name": "workflow/cosifer/nextflow/nextflow",
             "output": [
                 {
-                    "@id": "207b546c-4192-585e-b171-7d29124aa277/nextflow.nf#output:resdir"
+                    "@id": "workflow/cosifer/nextflow/nextflow.nf#output:resdir"
                 },
                 {
-                    "@id": "207b546c-4192-585e-b171-7d29124aa277/nextflow.nf#output:resdir"
-                },
-                {
-                    "@id": "207b546c-4192-585e-b171-7d29124aa277/nextflow.nf#output:resdir"
+                    "@id": "workflow/cosifer/nextflow/nextflow.nf#output:resdir"
                 }
             ],
             "programmingLanguage": {
                 "@id": "https://w3id.org/workflowhub/workflow-ro-crate#nextflow"
             },
-            "runtimePlatform": "nextflow version 19.10.0.5170",
+            "runtimePlatform": "nextflow version 19.10.0.5169",
+            "sha256": "09ad218c0bd8e829976f4d43c7540707aa7109bf1a6f13083b41ef65592554c9",
             "softwareRequirements": [
                 {
                     "@id": "https://www.nextflow.io/"
@@ -245,626 +217,435 @@
                     "@id": "docker://tsenit/cosifer:b4d5af45d2fc54b6bff2a9153a8e9054e560302e"
                 }
             ],
-            "url": "https://raw.githubusercontent.com/inab/ipc_workflows/fefede132f217184a25767fc4f42e2ae4606ff25/nextflow.nf",
-            "version": "fefede132f217184a25767fc4f42e2ae4606ff25"
-        },
-        {
-            "@id": "https://www.nextflow.io/",
-            "@type": "SoftwareApplication",
-            "softwareVersion": "nextflow version 19.10.0.5170"
+            "url": "https://github.com/inab/ipc_workflowstree/main/cosifer/nextflow",
+            "version": "3bc3283a7e62f646703bcca2cd5a32955f2f5a31"
         },
         {
             "@id": "https://apptainer.org/",
             "@type": "SoftwareApplication",
             "name": "singularity",
-            "softwareVersion": "apptainer version 1.1.5"
+            "softwareVersion": "apptainer version 1.2.2"
         },
         {
             "@id": "docker://tsenit/cosifer:b4d5af45d2fc54b6bff2a9153a8e9054e560302e",
             "@type": "SoftwareApplication",
             "operatingSystem": "linux",
-            "processorRequirements": "x86_64",
+            "processorRequirements": "amd64",
             "softwareRequirements": {
                 "@id": "https://apptainer.org/"
             },
             "softwareVersion": "tsenit/cosifer@sha256:61e445ec73d54f9b389688eb3d9671a62b1d5e7b5cd5b7497a7683cc13a9e187"
         },
         {
-            "@id": "207b546c-4192-585e-b171-7d29124aa277/nextflow.config",
-            "@type": "File",
+            "@id": "workflow/cosifer/nextflow/nextflow.config",
+            "@type": [
+                "File",
+                "SoftwareSourceCode"
+            ],
+            "alternateName": "nextflow.config",
             "contentSize": 511,
             "encodingFormat": "text/plain",
-            "identifier": "207b546c-4192-585e-b171-7d29124aa277/nextflow.config",
+            "identifier": "trs://workflowhub.eu/119/1/nextflow.config",
             "sha256": "4802bc8e5744d2dfc9544f7fe3bc3d681ce165b76d47564389b8d1ddd6fe24fe"
         },
         {
-            "@id": "#bffd138d-ce3a-4258-a0b7-2c075d587163",
+            "@id": "#871d142a-d494-410e-9312-0d0781bb22af",
             "@type": "CreateAction",
-            "endTime": "2023-03-16T01:11:00.858674+00:00",
+            "actionStatus": [
+                {
+                    "@id": "http://schema.org/CompletedActionStatus"
+                }
+            ],
+            "endTime": "2023-08-31T02:28:57.862641+00:00",
             "instrument": {
-                "@id": "207b546c-4192-585e-b171-7d29124aa277/nextflow.nf"
+                "@id": "workflow/cosifer/nextflow/nextflow.nf"
             },
-            "name": "outputs/_1678929042",
+            "name": "Run outputs/_1693448929 of workflow/cosifer/nextflow/nextflow.nf",
             "object": [
                 {
-                    "@id": "https://raw.githubusercontent.com/PhosphorylatedRabbits/cosifer/f2e2a259d218b9a56a01d84bc9d6a7cd7c8d9bf1/examples/interactive/data_matrix.csv"
+                    "@id": "inputs/data_matrix.csv"
                 },
                 {
-                    "@id": "#ac19f6ae-df0a-4267-8e0a-31ef3cd94a0c"
+                    "@id": "#62235326-e711-4b66-a2fe-940a8336d648"
                 },
                 {
-                    "@id": "#838a1529-faa9-4c65-b84a-d4fd3bb9a157"
+                    "@id": "#443920df-01ff-417b-8de0-7020f8c71916"
                 },
                 {
-                    "@id": "#d054e1aa-998e-4f1f-a99f-c504b57ccbb5"
+                    "@id": "#ed756bb6-aee2-4164-a7fc-158669bcccda"
                 },
                 {
-                    "@id": "#390c3064-d20f-4cc6-b029-dd1f386b2222"
+                    "@id": "#99c6ee3f-d8bc-4228-8e93-528dee7badb7"
                 },
                 {
-                    "@id": "#b380b112-43c8-4e9d-b7fb-3a3d50201f08"
-                },
-                {
-                    "@id": "#cc9780cf-0a26-44a4-86f2-527d030f8ee7"
+                    "@id": "#b8d2950e-354a-4360-959d-9927e0bef9f9"
                 }
             ],
             "result": [
                 {
-                    "@id": "nih:sha-256;942f-83c9-31da-a543-80e0-306a-a669-dc05-bb65-3735-858b-7803-501e-d428-13b6-7c7d;f/"
+                    "@id": "outputs/_1693448929/outputsDir/"
                 }
             ],
-            "startTime": "2023-03-16T01:10:42.115769+00:00"
+            "startTime": "2023-08-31T02:28:49.576875+00:00"
         },
         {
-            "@id": "207b546c-4192-585e-b171-7d29124aa277/nextflow.nf#param:data_matrix",
+            "@id": "workflow/cosifer/nextflow/nextflow.nf#param:data_matrix",
             "@type": "FormalParameter",
             "additionalType": "File",
             "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
             "name": "data_matrix",
             "workExample": [
                 {
-                    "@id": "https://raw.githubusercontent.com/PhosphorylatedRabbits/cosifer/f2e2a259d218b9a56a01d84bc9d6a7cd7c8d9bf1/examples/interactive/data_matrix.csv"
+                    "@id": "inputs/data_matrix.csv"
                 }
             ]
         },
         {
-            "@id": "https://raw.githubusercontent.com/PhosphorylatedRabbits/cosifer/f2e2a259d218b9a56a01d84bc9d6a7cd7c8d9bf1/examples/interactive/data_matrix.csv",
+            "@id": "inputs/data_matrix.csv",
             "@type": "File",
             "contentSize": 98392,
+            "contentUrl": "https://raw.githubusercontent.com/PhosphorylatedRabbits/cosifer/f2e2a259d218b9a56a01d84bc9d6a7cd7c8d9bf1/examples/interactive/data_matrix.csv",
             "encodingFormat": "text/csv",
             "exampleOfWork": [
                 {
-                    "@id": "207b546c-4192-585e-b171-7d29124aa277/nextflow.nf#param:data_matrix"
+                    "@id": "workflow/cosifer/nextflow/nextflow.nf#param:data_matrix"
                 }
             ],
-            "name": "inputs/data_matrix.csv",
             "sha256": "f839fa092cc34be8513c5a5805b39c9bec4cb9df1451e7db6a29db31d183f3c0"
         },
         {
-            "@id": "207b546c-4192-585e-b171-7d29124aa277/nextflow.nf#param:outputsDir",
+            "@id": "workflow/cosifer/nextflow/nextflow.nf#param:outputsDir",
             "@type": "FormalParameter",
             "additionalType": "String",
             "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
             "name": "outputsDir",
             "workExample": [
                 {
-                    "@id": "#a329b9a1-c1e5-4d6b-9f56-e564d0006a16"
+                    "@id": "#fa251c79-ba93-44cf-9ab4-d385fe2b67df"
                 }
             ]
         },
         {
-            "@id": "#ac19f6ae-df0a-4267-8e0a-31ef3cd94a0c",
+            "@id": "#62235326-e711-4b66-a2fe-940a8336d648",
             "@type": "PropertyValue",
             "exampleOfWork": [
                 {
-                    "@id": "207b546c-4192-585e-b171-7d29124aa277/nextflow.nf#param:outputsDir"
+                    "@id": "workflow/cosifer/nextflow/nextflow.nf#param:outputsDir"
                 }
             ],
             "name": "outputsDir",
-            "value": "/home/jmfernandez/projects/WfExS-backend/wfexs-backend-test_WorkDir/18f39ce6-a37f-4391-b560-4186bcf99b76/outputs/_1678929042/outputsDir"
+            "value": "meta/outputs/_1693448929/nxf_trojan/test/results"
         },
         {
-            "@id": "207b546c-4192-585e-b171-7d29124aa277/nextflow.nf#param:outputs-dir",
-            "@type": "FormalParameter",
-            "additionalType": "String",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
-            "name": "outputs-dir",
-            "workExample": [
-                {
-                    "@id": "#593aed08-4905-4af0-8ab7-d91f71f1eb52"
-                }
-            ]
-        },
-        {
-            "@id": "#838a1529-faa9-4c65-b84a-d4fd3bb9a157",
-            "@type": "PropertyValue",
-            "exampleOfWork": [
-                {
-                    "@id": "207b546c-4192-585e-b171-7d29124aa277/nextflow.nf#param:outputs-dir"
-                }
-            ],
-            "name": "outputs-dir",
-            "value": "/home/jmfernandez/projects/WfExS-backend/wfexs-backend-test_WorkDir/18f39ce6-a37f-4391-b560-4186bcf99b76/outputs/_1678929042/outputsDir"
-        },
-        {
-            "@id": "207b546c-4192-585e-b171-7d29124aa277/nextflow.nf#param:index_col",
+            "@id": "workflow/cosifer/nextflow/nextflow.nf#param:index_col",
             "@type": "FormalParameter",
             "additionalType": "String",
             "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
             "name": "index_col",
             "workExample": [
                 {
-                    "@id": "#dbac9fd6-c43c-4271-81c3-3086d12b5de9"
+                    "@id": "#dc965f3b-5373-4463-9630-f655140ee4b2"
                 }
             ]
         },
         {
-            "@id": "#d054e1aa-998e-4f1f-a99f-c504b57ccbb5",
+            "@id": "#443920df-01ff-417b-8de0-7020f8c71916",
             "@type": "PropertyValue",
             "exampleOfWork": [
                 {
-                    "@id": "207b546c-4192-585e-b171-7d29124aa277/nextflow.nf#param:index_col"
+                    "@id": "workflow/cosifer/nextflow/nextflow.nf#param:index_col"
                 }
             ],
             "name": "index_col",
             "value": ""
         },
         {
-            "@id": "207b546c-4192-585e-b171-7d29124aa277/nextflow.nf#param:hallmark_gene_sets_file",
+            "@id": "workflow/cosifer/nextflow/nextflow.nf#param:hallmark_gene_sets_file",
             "@type": "FormalParameter",
             "additionalType": "String",
             "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
             "name": "hallmark_gene_sets_file",
             "workExample": [
                 {
-                    "@id": "#13dcdda9-de2b-4b84-b1c3-3d0936f0e123"
+                    "@id": "#4f7dcb5c-29c3-4a05-ba2a-0d71eab65ee6"
                 }
             ]
         },
         {
-            "@id": "#390c3064-d20f-4cc6-b029-dd1f386b2222",
+            "@id": "#ed756bb6-aee2-4164-a7fc-158669bcccda",
             "@type": "PropertyValue",
             "exampleOfWork": [
                 {
-                    "@id": "207b546c-4192-585e-b171-7d29124aa277/nextflow.nf#param:hallmark_gene_sets_file"
+                    "@id": "workflow/cosifer/nextflow/nextflow.nf#param:hallmark_gene_sets_file"
                 }
             ],
             "name": "hallmark_gene_sets_file",
             "value": ""
         },
         {
-            "@id": "207b546c-4192-585e-b171-7d29124aa277/nextflow.nf#param:sep",
+            "@id": "workflow/cosifer/nextflow/nextflow.nf#param:sep",
             "@type": "FormalParameter",
             "additionalType": "String",
             "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
             "name": "sep",
             "workExample": [
                 {
-                    "@id": "#7772062f-62f0-4b86-8e63-3353900828ea"
+                    "@id": "#37bf7a77-5879-4aca-bdd8-d63eafeb48fa"
                 }
             ]
         },
         {
-            "@id": "#b380b112-43c8-4e9d-b7fb-3a3d50201f08",
+            "@id": "#99c6ee3f-d8bc-4228-8e93-528dee7badb7",
             "@type": "PropertyValue",
             "exampleOfWork": [
                 {
-                    "@id": "207b546c-4192-585e-b171-7d29124aa277/nextflow.nf#param:sep"
+                    "@id": "workflow/cosifer/nextflow/nextflow.nf#param:sep"
                 }
             ],
             "name": "sep",
             "value": ","
         },
         {
-            "@id": "207b546c-4192-585e-b171-7d29124aa277/nextflow.nf#param:samples_on_rows",
+            "@id": "workflow/cosifer/nextflow/nextflow.nf#param:samples_on_rows",
             "@type": "FormalParameter",
             "additionalType": "String",
             "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
             "name": "samples_on_rows",
             "workExample": [
                 {
-                    "@id": "#19e3e6c2-fb5f-41ea-b077-e65d3476fa5f"
+                    "@id": "#82cf0638-9f6a-436f-a662-0de4d5fd4fe2"
                 }
             ]
         },
         {
-            "@id": "#cc9780cf-0a26-44a4-86f2-527d030f8ee7",
+            "@id": "#b8d2950e-354a-4360-959d-9927e0bef9f9",
             "@type": "PropertyValue",
             "exampleOfWork": [
                 {
-                    "@id": "207b546c-4192-585e-b171-7d29124aa277/nextflow.nf#param:samples_on_rows"
+                    "@id": "workflow/cosifer/nextflow/nextflow.nf#param:samples_on_rows"
                 }
             ],
             "name": "samples_on_rows",
             "value": ""
         },
         {
-            "@id": "207b546c-4192-585e-b171-7d29124aa277/nextflow.nf#output:resdir",
+            "@id": "workflow/cosifer/nextflow/nextflow.nf#output:resdir",
             "@type": "FormalParameter",
             "additionalType": "Dataset",
             "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
             "name": "resdir",
             "workExample": [
                 {
-                    "@id": "nih:sha-256;1318-af72-6999-a361-e5a8-7f76-bee3-6394-f8f1-0f52-a0ba-fef2-483f-17bb-e98f-91bd;e/"
+                    "@id": "outputs/_1693448942/outputsDir/"
                 }
             ]
         },
         {
-            "@id": "nih:sha-256;942f-83c9-31da-a543-80e0-306a-a669-dc05-bb65-3735-858b-7803-501e-d428-13b6-7c7d;f/",
+            "@id": "outputs/_1693448929/outputsDir/",
             "@type": "Dataset",
+            "alternateName": "outputsDir/",
             "exampleOfWork": [
                 {
-                    "@id": "207b546c-4192-585e-b171-7d29124aa277/nextflow.nf#output:resdir"
+                    "@id": "workflow/cosifer/nextflow/nextflow.nf#output:resdir"
                 }
             ],
             "hasPart": [
                 {
-                    "@id": "nih:sha-256;414d-64b3-d56d-7fdd-9369-d422-af87-a50e-b958-5a7b-be64-1098-9cba-e893-a602-3e6f;7"
+                    "@id": "outputs/_1693448929/outputsDir/aracne.csv.gz"
                 },
                 {
-                    "@id": "nih:sha-256;5110-1128-f9ae-471e-47c4-4a08-82fe-8168-5836-58af-9f4a-4db1-bc3e-020f-4f99-5c95;8"
+                    "@id": "outputs/_1693448929/outputsDir/clr.csv.gz"
                 },
                 {
-                    "@id": "nih:sha-256;e238-398d-b8a2-fd78-a95d-1a35-74fd-a1aa-da3a-c9aa-a5fd-747c-e45c-a6e0-d6e8-3921;2"
+                    "@id": "outputs/_1693448929/outputsDir/mrnet.csv.gz"
                 },
                 {
-                    "@id": "nih:sha-256;2e9b-123b-ca97-49ae-61e7-9e00-2b7c-f051-9416-2f73-cb43-6dc1-0101-8925-86ab-f582;6"
+                    "@id": "outputs/_1693448929/outputsDir/summa.csv.gz"
                 }
-            ],
-            "name": "outputs/_1678929042/outputsDir"
+            ]
         },
         {
-            "@id": "nih:sha-256;414d-64b3-d56d-7fdd-9369-d422-af87-a50e-b958-5a7b-be64-1098-9cba-e893-a602-3e6f;7",
+            "@id": "outputs/_1693448929/outputsDir/aracne.csv.gz",
             "@type": "File",
-            "contentSize": 26622,
-            "encodingFormat": "inode/symlink",
-            "name": "outputs/_1678929042/outputsDir/mrnet.csv.gz",
-            "sha256": "414d64b3d56d7fdd9369d422af87a50eb9585a7bbe6410989cbae893a6023e6f"
-        },
-        {
-            "@id": "nih:sha-256;5110-1128-f9ae-471e-47c4-4a08-82fe-8168-5836-58af-9f4a-4db1-bc3e-020f-4f99-5c95;8",
-            "@type": "File",
-            "contentSize": 25423,
-            "encodingFormat": "inode/symlink",
-            "name": "outputs/_1678929042/outputsDir/clr.csv.gz",
-            "sha256": "51101128f9ae471e47c44a0882fe8168583658af9f4a4db1bc3e020f4f995c95"
-        },
-        {
-            "@id": "nih:sha-256;e238-398d-b8a2-fd78-a95d-1a35-74fd-a1aa-da3a-c9aa-a5fd-747c-e45c-a6e0-d6e8-3921;2",
-            "@type": "File",
-            "contentSize": 69039,
-            "encodingFormat": "inode/symlink",
-            "name": "outputs/_1678929042/outputsDir/summa.csv.gz",
-            "sha256": "e238398db8a2fd78a95d1a3574fda1aada3ac9aaa5fd747ce45ca6e0d6e83921"
-        },
-        {
-            "@id": "nih:sha-256;2e9b-123b-ca97-49ae-61e7-9e00-2b7c-f051-9416-2f73-cb43-6dc1-0101-8925-86ab-f582;6",
-            "@type": "File",
+            "alternateName": "outputsDir/aracne.csv.gz",
             "contentSize": 64996,
             "encodingFormat": "inode/symlink",
-            "name": "outputs/_1678929042/outputsDir/aracne.csv.gz",
-            "sha256": "2e9b123bca9749ae61e79e002b7cf05194162f73cb436dc10101892586abf582"
+            "sha256": "49d41087cd1e190e7d3f998db02a0a1f1043ea3eacc0a319614be54ee5211a90"
         },
         {
-            "@id": "#9694ee1f-e44d-4cb2-8176-3b2d19c06fe1",
+            "@id": "outputs/_1693448929/outputsDir/clr.csv.gz",
+            "@type": "File",
+            "alternateName": "outputsDir/clr.csv.gz",
+            "contentSize": 25423,
+            "encodingFormat": "inode/symlink",
+            "sha256": "ccb4989fc636723d8fcb9b9d9bafd8a048b6d40eb315d831ba61104e073a9966"
+        },
+        {
+            "@id": "outputs/_1693448929/outputsDir/mrnet.csv.gz",
+            "@type": "File",
+            "alternateName": "outputsDir/mrnet.csv.gz",
+            "contentSize": 26622,
+            "encodingFormat": "inode/symlink",
+            "sha256": "11478d4339eee5bbe001fddea0e9ddd0683c4638633201661f9064e5503f257f"
+        },
+        {
+            "@id": "outputs/_1693448929/outputsDir/summa.csv.gz",
+            "@type": "File",
+            "alternateName": "outputsDir/summa.csv.gz",
+            "contentSize": 69014,
+            "encodingFormat": "inode/symlink",
+            "sha256": "7bd905121bec73e3d3735ea0eec417b4eeb5d4c4d0e3867080bf4c3d2045129a"
+        },
+        {
+            "@id": "#f92cbe6d-ddbd-4053-879d-65ebcdff5431",
             "@type": "CreateAction",
-            "endTime": "2023-03-16T01:12:09.777039+00:00",
+            "actionStatus": [
+                {
+                    "@id": "http://schema.org/CompletedActionStatus"
+                }
+            ],
+            "endTime": "2023-08-31T02:29:10.026287+00:00",
             "instrument": {
-                "@id": "207b546c-4192-585e-b171-7d29124aa277/nextflow.nf"
+                "@id": "workflow/cosifer/nextflow/nextflow.nf"
             },
-            "name": "outputs/_1678929116",
+            "name": "Run outputs/_1693448942 of workflow/cosifer/nextflow/nextflow.nf",
             "object": [
                 {
-                    "@id": "https://raw.githubusercontent.com/PhosphorylatedRabbits/cosifer/f2e2a259d218b9a56a01d84bc9d6a7cd7c8d9bf1/examples/interactive/data_matrix.csv"
+                    "@id": "inputs/data_matrix.csv"
                 },
                 {
-                    "@id": "#3d829bdf-1d92-46c0-9790-66c16f401bf2"
+                    "@id": "#fa251c79-ba93-44cf-9ab4-d385fe2b67df"
                 },
                 {
-                    "@id": "#d512f8fc-9cdb-4c46-8b83-ce2457736d30"
+                    "@id": "#dc965f3b-5373-4463-9630-f655140ee4b2"
                 },
                 {
-                    "@id": "#fcbbe03e-111f-46f8-929b-d768c6eea4bc"
+                    "@id": "#4f7dcb5c-29c3-4a05-ba2a-0d71eab65ee6"
                 },
                 {
-                    "@id": "#6b6f4006-c872-4d84-a56f-9aa0ace9e7b2"
+                    "@id": "#37bf7a77-5879-4aca-bdd8-d63eafeb48fa"
                 },
                 {
-                    "@id": "#68959218-2ef1-41fe-882e-eaf407a60eb5"
-                },
-                {
-                    "@id": "#73c51d7b-3247-43db-8a80-c1829ff2c0fb"
+                    "@id": "#82cf0638-9f6a-436f-a662-0de4d5fd4fe2"
                 }
             ],
             "result": [
                 {
-                    "@id": "nih:sha-256;9973-5173-11d7-25dd-9166-ca94-52c7-5ab9-9f86-e285-b403-42be-faf3-fc53-d305-4386;7/"
+                    "@id": "outputs/_1693448942/outputsDir/"
                 }
             ],
-            "startTime": "2023-03-16T01:11:56.183624+00:00"
+            "startTime": "2023-08-31T02:29:02.041398+00:00"
         },
         {
-            "@id": "#3d829bdf-1d92-46c0-9790-66c16f401bf2",
+            "@id": "#fa251c79-ba93-44cf-9ab4-d385fe2b67df",
             "@type": "PropertyValue",
             "exampleOfWork": [
                 {
-                    "@id": "207b546c-4192-585e-b171-7d29124aa277/nextflow.nf#param:outputsDir"
+                    "@id": "workflow/cosifer/nextflow/nextflow.nf#param:outputsDir"
                 }
             ],
             "name": "outputsDir",
-            "value": "/home/jmfernandez/projects/WfExS-backend/wfexs-backend-test_WorkDir/18f39ce6-a37f-4391-b560-4186bcf99b76/outputs/_1678929116/outputsDir"
+            "value": "meta/outputs/_1693448942/nxf_trojan/test/results"
         },
         {
-            "@id": "#d512f8fc-9cdb-4c46-8b83-ce2457736d30",
+            "@id": "#dc965f3b-5373-4463-9630-f655140ee4b2",
             "@type": "PropertyValue",
             "exampleOfWork": [
                 {
-                    "@id": "207b546c-4192-585e-b171-7d29124aa277/nextflow.nf#param:outputs-dir"
-                }
-            ],
-            "name": "outputs-dir",
-            "value": "/home/jmfernandez/projects/WfExS-backend/wfexs-backend-test_WorkDir/18f39ce6-a37f-4391-b560-4186bcf99b76/outputs/_1678929116/outputsDir"
-        },
-        {
-            "@id": "#fcbbe03e-111f-46f8-929b-d768c6eea4bc",
-            "@type": "PropertyValue",
-            "exampleOfWork": [
-                {
-                    "@id": "207b546c-4192-585e-b171-7d29124aa277/nextflow.nf#param:index_col"
+                    "@id": "workflow/cosifer/nextflow/nextflow.nf#param:index_col"
                 }
             ],
             "name": "index_col",
             "value": ""
         },
         {
-            "@id": "#6b6f4006-c872-4d84-a56f-9aa0ace9e7b2",
+            "@id": "#4f7dcb5c-29c3-4a05-ba2a-0d71eab65ee6",
             "@type": "PropertyValue",
             "exampleOfWork": [
                 {
-                    "@id": "207b546c-4192-585e-b171-7d29124aa277/nextflow.nf#param:hallmark_gene_sets_file"
+                    "@id": "workflow/cosifer/nextflow/nextflow.nf#param:hallmark_gene_sets_file"
                 }
             ],
             "name": "hallmark_gene_sets_file",
             "value": ""
         },
         {
-            "@id": "#68959218-2ef1-41fe-882e-eaf407a60eb5",
+            "@id": "#37bf7a77-5879-4aca-bdd8-d63eafeb48fa",
             "@type": "PropertyValue",
             "exampleOfWork": [
                 {
-                    "@id": "207b546c-4192-585e-b171-7d29124aa277/nextflow.nf#param:sep"
+                    "@id": "workflow/cosifer/nextflow/nextflow.nf#param:sep"
                 }
             ],
             "name": "sep",
             "value": ","
         },
         {
-            "@id": "#73c51d7b-3247-43db-8a80-c1829ff2c0fb",
+            "@id": "#82cf0638-9f6a-436f-a662-0de4d5fd4fe2",
             "@type": "PropertyValue",
             "exampleOfWork": [
                 {
-                    "@id": "207b546c-4192-585e-b171-7d29124aa277/nextflow.nf#param:samples_on_rows"
+                    "@id": "workflow/cosifer/nextflow/nextflow.nf#param:samples_on_rows"
                 }
             ],
             "name": "samples_on_rows",
             "value": ""
         },
         {
-            "@id": "nih:sha-256;9973-5173-11d7-25dd-9166-ca94-52c7-5ab9-9f86-e285-b403-42be-faf3-fc53-d305-4386;7/",
+            "@id": "outputs/_1693448942/outputsDir/",
             "@type": "Dataset",
+            "alternateName": "outputsDir/",
             "exampleOfWork": [
                 {
-                    "@id": "207b546c-4192-585e-b171-7d29124aa277/nextflow.nf#output:resdir"
+                    "@id": "workflow/cosifer/nextflow/nextflow.nf#output:resdir"
                 }
             ],
             "hasPart": [
                 {
-                    "@id": "nih:sha-256;31c3-bea8-2a9b-8aea-f076-53fe-03c0-a902-7d58-54f0-ad4b-9525-4d77-6486-a93e-e1eb;8"
+                    "@id": "outputs/_1693448942/outputsDir/aracne.csv.gz"
                 },
                 {
-                    "@id": "nih:sha-256;4ff2-b608-aedd-f022-b5a4-72b1-647f-b05e-4316-8575-22b1-2913-ddb4-cab6-60aa-a797;e"
+                    "@id": "outputs/_1693448942/outputsDir/clr.csv.gz"
                 },
                 {
-                    "@id": "nih:sha-256;7e9d-0abe-e312-31fd-3972-880c-055d-08d9-0665-dfcd-ffba-d5c1-91aa-e127-adda-20a6;a"
+                    "@id": "outputs/_1693448942/outputsDir/mrnet.csv.gz"
                 },
                 {
-                    "@id": "nih:sha-256;1047-d0aa-0969-298e-fabd-66bb-5730-4705-dc9c-fe2a-b4e1-c4d9-9448-f0a3-83cb-f283;2"
+                    "@id": "outputs/_1693448942/outputsDir/summa.csv.gz"
                 }
-            ],
-            "name": "outputs/_1678929116/outputsDir"
+            ]
         },
         {
-            "@id": "nih:sha-256;31c3-bea8-2a9b-8aea-f076-53fe-03c0-a902-7d58-54f0-ad4b-9525-4d77-6486-a93e-e1eb;8",
+            "@id": "outputs/_1693448942/outputsDir/aracne.csv.gz",
             "@type": "File",
-            "contentSize": 26622,
-            "encodingFormat": "inode/symlink",
-            "name": "outputs/_1678929116/outputsDir/mrnet.csv.gz",
-            "sha256": "31c3bea82a9b8aeaf07653fe03c0a9027d5854f0ad4b95254d776486a93ee1eb"
-        },
-        {
-            "@id": "nih:sha-256;4ff2-b608-aedd-f022-b5a4-72b1-647f-b05e-4316-8575-22b1-2913-ddb4-cab6-60aa-a797;e",
-            "@type": "File",
-            "contentSize": 25423,
-            "encodingFormat": "inode/symlink",
-            "name": "outputs/_1678929116/outputsDir/clr.csv.gz",
-            "sha256": "4ff2b608aeddf022b5a472b1647fb05e4316857522b12913ddb4cab660aaa797"
-        },
-        {
-            "@id": "nih:sha-256;7e9d-0abe-e312-31fd-3972-880c-055d-08d9-0665-dfcd-ffba-d5c1-91aa-e127-adda-20a6;a",
-            "@type": "File",
-            "contentSize": 69039,
-            "encodingFormat": "inode/symlink",
-            "name": "outputs/_1678929116/outputsDir/summa.csv.gz",
-            "sha256": "7e9d0abee31231fd3972880c055d08d90665dfcdffbad5c191aae127adda20a6"
-        },
-        {
-            "@id": "nih:sha-256;1047-d0aa-0969-298e-fabd-66bb-5730-4705-dc9c-fe2a-b4e1-c4d9-9448-f0a3-83cb-f283;2",
-            "@type": "File",
+            "alternateName": "outputsDir/aracne.csv.gz",
             "contentSize": 64996,
             "encodingFormat": "inode/symlink",
-            "name": "outputs/_1678929116/outputsDir/aracne.csv.gz",
-            "sha256": "1047d0aa0969298efabd66bb57304705dc9cfe2ab4e1c4d99448f0a383cbf283"
+            "sha256": "c2fb666a3a1aa109f327aab6c7ecd707787bf019a8949d1b27d71f134d63b200"
         },
         {
-            "@id": "#ae5cfdc5-56e8-41cf-85ad-4c2e1f68461a",
-            "@type": "CreateAction",
-            "endTime": "2023-03-16T01:13:01.931662+00:00",
-            "instrument": {
-                "@id": "207b546c-4192-585e-b171-7d29124aa277/nextflow.nf"
-            },
-            "name": "outputs/_1678929167",
-            "object": [
-                {
-                    "@id": "https://raw.githubusercontent.com/PhosphorylatedRabbits/cosifer/f2e2a259d218b9a56a01d84bc9d6a7cd7c8d9bf1/examples/interactive/data_matrix.csv"
-                },
-                {
-                    "@id": "#a329b9a1-c1e5-4d6b-9f56-e564d0006a16"
-                },
-                {
-                    "@id": "#593aed08-4905-4af0-8ab7-d91f71f1eb52"
-                },
-                {
-                    "@id": "#dbac9fd6-c43c-4271-81c3-3086d12b5de9"
-                },
-                {
-                    "@id": "#13dcdda9-de2b-4b84-b1c3-3d0936f0e123"
-                },
-                {
-                    "@id": "#7772062f-62f0-4b86-8e63-3353900828ea"
-                },
-                {
-                    "@id": "#19e3e6c2-fb5f-41ea-b077-e65d3476fa5f"
-                }
-            ],
-            "result": [
-                {
-                    "@id": "nih:sha-256;1318-af72-6999-a361-e5a8-7f76-bee3-6394-f8f1-0f52-a0ba-fef2-483f-17bb-e98f-91bd;e/"
-                }
-            ],
-            "startTime": "2023-03-16T01:12:47.851637+00:00"
-        },
-        {
-            "@id": "#a329b9a1-c1e5-4d6b-9f56-e564d0006a16",
-            "@type": "PropertyValue",
-            "exampleOfWork": [
-                {
-                    "@id": "207b546c-4192-585e-b171-7d29124aa277/nextflow.nf#param:outputsDir"
-                }
-            ],
-            "name": "outputsDir",
-            "value": "/home/jmfernandez/projects/WfExS-backend/wfexs-backend-test_WorkDir/18f39ce6-a37f-4391-b560-4186bcf99b76/outputs/_1678929167/outputsDir"
-        },
-        {
-            "@id": "#593aed08-4905-4af0-8ab7-d91f71f1eb52",
-            "@type": "PropertyValue",
-            "exampleOfWork": [
-                {
-                    "@id": "207b546c-4192-585e-b171-7d29124aa277/nextflow.nf#param:outputs-dir"
-                }
-            ],
-            "name": "outputs-dir",
-            "value": "/home/jmfernandez/projects/WfExS-backend/wfexs-backend-test_WorkDir/18f39ce6-a37f-4391-b560-4186bcf99b76/outputs/_1678929167/outputsDir"
-        },
-        {
-            "@id": "#dbac9fd6-c43c-4271-81c3-3086d12b5de9",
-            "@type": "PropertyValue",
-            "exampleOfWork": [
-                {
-                    "@id": "207b546c-4192-585e-b171-7d29124aa277/nextflow.nf#param:index_col"
-                }
-            ],
-            "name": "index_col",
-            "value": ""
-        },
-        {
-            "@id": "#13dcdda9-de2b-4b84-b1c3-3d0936f0e123",
-            "@type": "PropertyValue",
-            "exampleOfWork": [
-                {
-                    "@id": "207b546c-4192-585e-b171-7d29124aa277/nextflow.nf#param:hallmark_gene_sets_file"
-                }
-            ],
-            "name": "hallmark_gene_sets_file",
-            "value": ""
-        },
-        {
-            "@id": "#7772062f-62f0-4b86-8e63-3353900828ea",
-            "@type": "PropertyValue",
-            "exampleOfWork": [
-                {
-                    "@id": "207b546c-4192-585e-b171-7d29124aa277/nextflow.nf#param:sep"
-                }
-            ],
-            "name": "sep",
-            "value": ","
-        },
-        {
-            "@id": "#19e3e6c2-fb5f-41ea-b077-e65d3476fa5f",
-            "@type": "PropertyValue",
-            "exampleOfWork": [
-                {
-                    "@id": "207b546c-4192-585e-b171-7d29124aa277/nextflow.nf#param:samples_on_rows"
-                }
-            ],
-            "name": "samples_on_rows",
-            "value": ""
-        },
-        {
-            "@id": "nih:sha-256;1318-af72-6999-a361-e5a8-7f76-bee3-6394-f8f1-0f52-a0ba-fef2-483f-17bb-e98f-91bd;e/",
-            "@type": "Dataset",
-            "exampleOfWork": [
-                {
-                    "@id": "207b546c-4192-585e-b171-7d29124aa277/nextflow.nf#output:resdir"
-                }
-            ],
-            "hasPart": [
-                {
-                    "@id": "nih:sha-256;823a-e48c-eb81-110a-3f6d-8fed-8c4c-3f77-d683-befb-c45c-be58-085a-68fb-6212-cd91;8"
-                },
-                {
-                    "@id": "nih:sha-256;c6cf-3faa-7ed5-af26-2b32-9030-f9b5-2492-5fc5-7119-cf5f-02c1-5f67-0e9a-ebfa-de46;2"
-                },
-                {
-                    "@id": "nih:sha-256;1636-28a1-b5be-5c78-a380-24d6-7dcd-0651-e465-5b34-e527-6a93-fa72-5f9e-767b-af1c;f"
-                },
-                {
-                    "@id": "nih:sha-256;cdc0-cc08-d2c1-3409-edc6-ca33-dac9-0c89-7637-c111-0057-d737-7351-402e-bc65-e025;1"
-                }
-            ],
-            "name": "outputs/_1678929167/outputsDir"
-        },
-        {
-            "@id": "nih:sha-256;823a-e48c-eb81-110a-3f6d-8fed-8c4c-3f77-d683-befb-c45c-be58-085a-68fb-6212-cd91;8",
+            "@id": "outputs/_1693448942/outputsDir/clr.csv.gz",
             "@type": "File",
-            "contentSize": 26622,
-            "encodingFormat": "inode/symlink",
-            "name": "outputs/_1678929167/outputsDir/mrnet.csv.gz",
-            "sha256": "823ae48ceb81110a3f6d8fed8c4c3f77d683befbc45cbe58085a68fb6212cd91"
-        },
-        {
-            "@id": "nih:sha-256;c6cf-3faa-7ed5-af26-2b32-9030-f9b5-2492-5fc5-7119-cf5f-02c1-5f67-0e9a-ebfa-de46;2",
-            "@type": "File",
+            "alternateName": "outputsDir/clr.csv.gz",
             "contentSize": 25423,
             "encodingFormat": "inode/symlink",
-            "name": "outputs/_1678929167/outputsDir/clr.csv.gz",
-            "sha256": "c6cf3faa7ed5af262b329030f9b524925fc57119cf5f02c15f670e9aebfade46"
+            "sha256": "2f6794384316a1151766603d4ed25c77ff025ba54d976abf0a0a067b92778686"
         },
         {
-            "@id": "nih:sha-256;1636-28a1-b5be-5c78-a380-24d6-7dcd-0651-e465-5b34-e527-6a93-fa72-5f9e-767b-af1c;f",
+            "@id": "outputs/_1693448942/outputsDir/mrnet.csv.gz",
             "@type": "File",
-            "contentSize": 69039,
+            "alternateName": "outputsDir/mrnet.csv.gz",
+            "contentSize": 26622,
             "encodingFormat": "inode/symlink",
-            "name": "outputs/_1678929167/outputsDir/summa.csv.gz",
-            "sha256": "163628a1b5be5c78a38024d67dcd0651e4655b34e5276a93fa725f9e767baf1c"
+            "sha256": "28aedf243a348dd98b595f0790ba837358dbfe8703d9a2763e65ea97ac638690"
         },
         {
-            "@id": "nih:sha-256;cdc0-cc08-d2c1-3409-edc6-ca33-dac9-0c89-7637-c111-0057-d737-7351-402e-bc65-e025;1",
+            "@id": "outputs/_1693448942/outputsDir/summa.csv.gz",
             "@type": "File",
-            "contentSize": 64996,
+            "alternateName": "outputsDir/summa.csv.gz",
+            "contentSize": 69014,
             "encodingFormat": "inode/symlink",
-            "name": "outputs/_1678929167/outputsDir/aracne.csv.gz",
-            "sha256": "cdc0cc08d2c13409edc6ca33dac90c897637c1110057d7377351402ebc65e025"
+            "sha256": "3e17f1b15b3a47e5a504e8281b4703c6ea17a0280a19fbe2721a55de3fb709c8"
         }
     ]
 }

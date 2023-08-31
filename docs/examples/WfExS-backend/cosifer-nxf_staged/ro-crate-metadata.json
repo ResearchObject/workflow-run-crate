@@ -2,43 +2,34 @@
     "@context": "https://w3id.org/ro/crate/1.1/context",
     "@graph": [
         {
-            "@id": "ro-crate-preview.html",
-            "@type": "CreativeWork",
-            "about": {
-                "@id": "./"
-            }
-        },
-        {
             "@id": "./",
             "@type": "Dataset",
             "conformsTo": [
                 {
-                    "@id": "https://w3id.org/ro/wfrun/process/0.1"
+                    "@id": "https://w3id.org/ro/wfrun/process/0.2"
                 },
                 {
-                    "@id": "https://w3id.org/ro/wfrun/workflow/0.1"
-                },
-                {
-                    "@id": "https://w3id.org/ro/wfrun/provenance/0.1"
+                    "@id": "https://w3id.org/ro/wfrun/workflow/0.2"
                 },
                 {
                     "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
                 }
             ],
-            "datePublished": "2023-03-16T01:16:21+00:00",
+            "datePublished": "2023-08-31T02:30:17+00:00",
+            "description": "RO-Crate from staged WfExS working directory 597708f2-952e-47c7-9b86-dbe3a9e5f651 (paraphalangeal hind teat)",
             "hasPart": [
                 {
-                    "@id": "207b546c-4192-585e-b171-7d29124aa277/nextflow.nf"
+                    "@id": "workflow/cosifer/nextflow/nextflow.nf"
                 },
                 {
-                    "@id": "207b546c-4192-585e-b171-7d29124aa277/nextflow.config"
+                    "@id": "workflow/cosifer/nextflow/nextflow.config"
                 },
                 {
-                    "@id": "https://raw.githubusercontent.com/PhosphorylatedRabbits/cosifer/f2e2a259d218b9a56a01d84bc9d6a7cd7c8d9bf1/examples/interactive/data_matrix.csv"
+                    "@id": "inputs/data_matrix.csv"
                 }
             ],
             "mainEntity": {
-                "@id": "207b546c-4192-585e-b171-7d29124aa277/nextflow.nf"
+                "@id": "workflow/cosifer/nextflow/nextflow.nf"
             }
         },
         {
@@ -57,22 +48,29 @@
             ]
         },
         {
-            "@id": "https://w3id.org/ro/wfrun/process/0.1",
+            "@id": "https://w3id.org/workflowhub/workflow-ro-crate#nextflow",
+            "@type": "ComputerLanguage",
+            "alternateName": "NFL",
+            "identifier": {
+                "@id": "https://www.nextflow.io/"
+            },
+            "name": "Nextflow",
+            "url": {
+                "@id": "https://www.nextflow.io/"
+            },
+            "version": "19.10.0"
+        },
+        {
+            "@id": "https://w3id.org/ro/wfrun/process/0.2",
             "@type": "CreativeWork",
             "name": "ProcessRun Crate",
-            "version": "0.1"
+            "version": "0.2"
         },
         {
-            "@id": "https://w3id.org/ro/wfrun/workflow/0.1",
+            "@id": "https://w3id.org/ro/wfrun/workflow/0.2",
             "@type": "CreativeWork",
             "name": "Workflow Run Crate",
-            "version": "0.1"
-        },
-        {
-            "@id": "https://w3id.org/ro/wfrun/provenance/0.1",
-            "@type": "CreativeWork",
-            "name": "Provenance Run Crate",
-            "version": "0.1"
+            "version": "0.2"
         },
         {
             "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0",
@@ -86,49 +84,60 @@
             "name": "WfExS-backend",
             "url": "https://github.com/inab/WfExS-backend",
             "version": [
-                "0.9.0-37-gb058b53",
-                "b058b538f3334a4b8c657a541dc9b9fb40434f55"
+                "0.9.3-95-g122eb68",
+                "122eb680108fde0a98df5aba5800519bb41b1c31"
             ]
         },
         {
-            "@id": "207b546c-4192-585e-b171-7d29124aa277/nextflow.nf",
+            "@id": "https://www.nextflow.io/",
+            "@type": "SoftwareApplication",
+            "softwareVersion": "nextflow version 19.10.0.5169"
+        },
+        {
+            "@id": "workflow/cosifer/nextflow/nextflow.nf",
             "@type": [
                 "File",
                 "SoftwareSourceCode",
                 "ComputationalWorkflow"
             ],
-            "codeRepository": "https://github.com/inab/ipc_workflows.git",
+            "alternateName": "nextflow.nf",
+            "codeRepository": "https://github.com/inab/ipc_workflows",
             "conformsTo": [
                 {
                     "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE"
                 }
             ],
+            "contentSize": 1362,
+            "description": "Workflow Entrypoint",
+            "encodingFormat": "text/plain",
             "hasPart": [
                 {
-                    "@id": "207b546c-4192-585e-b171-7d29124aa277/nextflow.config"
+                    "@id": "workflow/cosifer/nextflow/nextflow.config"
                 }
             ],
+            "identifier": "trs://workflowhub.eu/119/1",
             "input": [
                 {
-                    "@id": "207b546c-4192-585e-b171-7d29124aa277/nextflow.nf#param:data_matrix"
+                    "@id": "workflow/cosifer/nextflow/nextflow.nf#param:data_matrix"
                 },
                 {
-                    "@id": "207b546c-4192-585e-b171-7d29124aa277/nextflow.nf#param:sep"
+                    "@id": "workflow/cosifer/nextflow/nextflow.nf#param:sep"
                 },
                 {
-                    "@id": "207b546c-4192-585e-b171-7d29124aa277/nextflow.nf#param:outputsDir"
+                    "@id": "workflow/cosifer/nextflow/nextflow.nf#param:outputsDir"
                 }
             ],
-            "name": "Workflow Entrypoint",
+            "name": "workflow/cosifer/nextflow/nextflow",
             "output": [
                 {
-                    "@id": "207b546c-4192-585e-b171-7d29124aa277/nextflow.nf#output:resdir"
+                    "@id": "workflow/cosifer/nextflow/nextflow.nf#output:resdir"
                 }
             ],
             "programmingLanguage": {
                 "@id": "https://w3id.org/workflowhub/workflow-ro-crate#nextflow"
             },
-            "runtimePlatform": "nextflow version 19.10.0.5170",
+            "runtimePlatform": "nextflow version 19.10.0.5169",
+            "sha256": "09ad218c0bd8e829976f4d43c7540707aa7109bf1a6f13083b41ef65592554c9",
             "softwareRequirements": [
                 {
                     "@id": "https://www.nextflow.io/"
@@ -140,111 +149,110 @@
                     "@id": "docker://tsenit/cosifer:b4d5af45d2fc54b6bff2a9153a8e9054e560302e"
                 }
             ],
-            "url": "https://raw.githubusercontent.com/inab/ipc_workflows/fefede132f217184a25767fc4f42e2ae4606ff25/nextflow.nf",
-            "version": "fefede132f217184a25767fc4f42e2ae4606ff25"
-        },
-        {
-            "@id": "https://www.nextflow.io/",
-            "@type": "SoftwareApplication",
-            "softwareVersion": "nextflow version 19.10.0.5170"
+            "url": "https://github.com/inab/ipc_workflowstree/main/cosifer/nextflow",
+            "version": "3bc3283a7e62f646703bcca2cd5a32955f2f5a31"
         },
         {
             "@id": "https://apptainer.org/",
             "@type": "SoftwareApplication",
             "name": "singularity",
-            "softwareVersion": "apptainer version 1.1.5"
+            "softwareVersion": "apptainer version 1.2.2"
         },
         {
             "@id": "docker://tsenit/cosifer:b4d5af45d2fc54b6bff2a9153a8e9054e560302e",
             "@type": "SoftwareApplication",
             "operatingSystem": "linux",
-            "processorRequirements": "x86_64",
+            "processorRequirements": "amd64",
             "softwareRequirements": {
                 "@id": "https://apptainer.org/"
             },
             "softwareVersion": "tsenit/cosifer@sha256:61e445ec73d54f9b389688eb3d9671a62b1d5e7b5cd5b7497a7683cc13a9e187"
         },
         {
-            "@id": "207b546c-4192-585e-b171-7d29124aa277/nextflow.config",
-            "@type": "File",
+            "@id": "workflow/cosifer/nextflow/nextflow.config",
+            "@type": [
+                "File",
+                "SoftwareSourceCode"
+            ],
+            "alternateName": "nextflow.config",
             "contentSize": 511,
             "encodingFormat": "text/plain",
-            "identifier": "207b546c-4192-585e-b171-7d29124aa277/nextflow.config",
+            "identifier": "trs://workflowhub.eu/119/1/nextflow.config",
             "sha256": "4802bc8e5744d2dfc9544f7fe3bc3d681ce165b76d47564389b8d1ddd6fe24fe"
         },
         {
-            "@id": "207b546c-4192-585e-b171-7d29124aa277/nextflow.nf#param:data_matrix",
+            "@id": "workflow/cosifer/nextflow/nextflow.nf#param:data_matrix",
             "@type": "FormalParameter",
             "additionalType": "File",
             "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
             "name": "data_matrix",
             "workExample": [
                 {
-                    "@id": "https://raw.githubusercontent.com/PhosphorylatedRabbits/cosifer/f2e2a259d218b9a56a01d84bc9d6a7cd7c8d9bf1/examples/interactive/data_matrix.csv"
+                    "@id": "inputs/data_matrix.csv"
                 }
             ]
         },
         {
-            "@id": "https://raw.githubusercontent.com/PhosphorylatedRabbits/cosifer/f2e2a259d218b9a56a01d84bc9d6a7cd7c8d9bf1/examples/interactive/data_matrix.csv",
+            "@id": "inputs/data_matrix.csv",
             "@type": "File",
             "contentSize": 98392,
+            "contentUrl": "https://raw.githubusercontent.com/PhosphorylatedRabbits/cosifer/f2e2a259d218b9a56a01d84bc9d6a7cd7c8d9bf1/examples/interactive/data_matrix.csv",
             "encodingFormat": "text/csv",
             "exampleOfWork": [
                 {
-                    "@id": "207b546c-4192-585e-b171-7d29124aa277/nextflow.nf#param:data_matrix"
+                    "@id": "workflow/cosifer/nextflow/nextflow.nf#param:data_matrix"
                 }
             ],
-            "name": "inputs/data_matrix.csv",
             "sha256": "f839fa092cc34be8513c5a5805b39c9bec4cb9df1451e7db6a29db31d183f3c0"
         },
         {
-            "@id": "207b546c-4192-585e-b171-7d29124aa277/nextflow.nf#param:sep",
+            "@id": "workflow/cosifer/nextflow/nextflow.nf#param:sep",
             "@type": "FormalParameter",
             "additionalType": "String",
             "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
             "name": "sep",
             "workExample": [
                 {
-                    "@id": "#afc84894-eefd-44b1-bf41-99ece4ebea27"
+                    "@id": "#a1f4b6ab-2d54-400a-8065-9093b6a82887"
                 }
             ]
         },
         {
-            "@id": "#afc84894-eefd-44b1-bf41-99ece4ebea27",
+            "@id": "#a1f4b6ab-2d54-400a-8065-9093b6a82887",
             "@type": "PropertyValue",
             "exampleOfWork": [
                 {
-                    "@id": "207b546c-4192-585e-b171-7d29124aa277/nextflow.nf#param:sep"
+                    "@id": "workflow/cosifer/nextflow/nextflow.nf#param:sep"
                 }
             ],
             "name": "sep",
             "value": ","
         },
         {
-            "@id": "207b546c-4192-585e-b171-7d29124aa277/nextflow.nf#param:outputsDir",
+            "@id": "workflow/cosifer/nextflow/nextflow.nf#param:outputsDir",
             "@type": "FormalParameter",
             "additionalType": "String",
             "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
             "name": "outputsDir",
             "workExample": [
                 {
-                    "@id": "#2bcc6ba9-262e-4eb7-bb97-4979118caaee"
+                    "@id": "#db4f9a9f-b888-4450-a635-f2fe88ce0296"
                 }
             ]
         },
         {
-            "@id": "#2bcc6ba9-262e-4eb7-bb97-4979118caaee",
+            "@id": "#db4f9a9f-b888-4450-a635-f2fe88ce0296",
             "@type": "PropertyValue",
             "exampleOfWork": [
                 {
-                    "@id": "207b546c-4192-585e-b171-7d29124aa277/nextflow.nf#param:outputsDir"
+                    "@id": "workflow/cosifer/nextflow/nextflow.nf#param:outputsDir"
                 }
             ],
             "name": "outputsDir",
-            "value": "/home/jmfernandez/projects/WfExS-backend/wfexs-backend-test_WorkDir/18f39ce6-a37f-4391-b560-4186bcf99b76/outputs/outputsDir"
+            "value": "outputs/outputsDir"
         },
         {
-            "@id": "207b546c-4192-585e-b171-7d29124aa277/nextflow.nf#output:resdir",
+            "@id": "workflow/cosifer/nextflow/nextflow.nf#output:resdir",
             "@type": "FormalParameter",
             "additionalType": "Dataset",
             "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
