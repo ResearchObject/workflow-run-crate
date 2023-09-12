@@ -3,7 +3,7 @@ process NORMALYZERDE {
 //    label 'process_single_thread'
     publishDir "${params.outdir}/normalyzerde", mode:'copy'
     conda (params.enable_conda ? "bioconda:bionconductor-normalyzerde=1.14.0" : null)
-    if (workflow.containerEngine == 'singularity' && !params.singularity_pull_docker_container) {
+    if (workflow.containerEngine == 'singularity'|| workflow.containerEngine == 'apptainer') {
         container "docker://computationalproteomics/normalyzerde:1.14.0"
     } else {
         container "computationalproteomics/normalyzerde:1.14.0"

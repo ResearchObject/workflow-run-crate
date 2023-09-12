@@ -1,7 +1,7 @@
 process MERGEOUTPUT {
   label 'process_medium'
   conda (params.enable_conda ? "conda-forge::r-dplyr-1.0.9-r40ha35a809_0" : null)
-if (workflow.containerEngine == 'singularity' && !params.singularity_pull_docker_container) {
+if (workflow.containerEngine == 'singularity'|| workflow.containerEngine == 'apptainer') {
         container "docker://rocker/tidyverse:4.2.1"
 } else {
         container "rocker/tidyverse:4.2.1"

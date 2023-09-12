@@ -1,7 +1,7 @@
 process RAW2MZML {
     label 'process_intermediate'
     conda (params.enable_conda ? "bioconda::thermorawfileparser==1.4.0-ha8f3691_0" : null)
-    if (workflow.containerEngine == 'singularity' && !params.singularity_pull_docker_container) {
+    if (workflow.containerEngine == 'singularity'|| workflow.containerEngine == 'apptainer') {
         container "docker://quay.io/biocontainers/thermorawfileparser:1.4.0--ha8f3691_0"
     } else {
         container "quay.io/biocontainers/thermorawfileparser:1.4.0--ha8f3691_0"

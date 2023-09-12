@@ -1,7 +1,7 @@
 process MSQROB {
   label 'process_high'
   conda (params.enable_conda ? "bioconda::r-msqrob-0.7.7" : null)
-if (workflow.containerEngine == 'singularity' && !params.singularity_pull_docker_container) {
+if (workflow.containerEngine == 'singularity'|| workflow.containerEngine == 'apptainer') {
         container "docker://quay.io/biocontainers/r-msqrob:0.7.7--r41hdfd78af_1"
 } else {
         container "quay.io/biocontainers/r-msqrob:0.7.7--r41hdfd78af_1"

@@ -18,7 +18,13 @@ the original workflow to the packed one.
 
 * Nextflow workflow is available at https://github.com/wombat-p/WOMBAT-Pipelines
 
-* Provenance RO-Crate from an execution using Docker containers. It includes a snapshot of the workflow: [wombat-pipelines_provenance](Wetlab2Variations_CWL_provenance).
+* Provenance RO-Crate from an execution using Docker containers. It includes a snapshot of the workflow: [wombat-pipelines_provenance](wombat-pipelines_provenance).
+
+
+```bash
+# Example of command line to generate these RO-Crate
+python WfExS-backend.py -L workflow_examples/montblanc_config_gocryptfs.yaml staged-workdir create-prov-crate 047b6dfc-3547-4e09-92f8-df7143038ff4 /tmp/wombat-pipelines_provenance.zip --workflow --orcid 0000-0002-4806-5140 --licence https://spdx.org/licenses/CC-BY-4.0.html
+```
 
 ## Wetlab2Variations (CWL flavor).
 

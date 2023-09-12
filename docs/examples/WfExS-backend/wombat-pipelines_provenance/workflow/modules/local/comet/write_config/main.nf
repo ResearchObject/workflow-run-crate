@@ -2,7 +2,7 @@ process WRITE_CONFIG {
   label 'process_low'
   label 'process_single_thread'
 conda (params.enable_conda ? "bioconda::comet-ms-2021010-h87f3376_1" : null)
-if (workflow.containerEngine == 'singularity' && !params.singularity_pull_docker_container) {
+if (workflow.containerEngine == 'singularity'|| workflow.containerEngine == 'apptainer') {
         container "docker://quay.io/biocontainers/comet-ms:2021010--h87f3376_1"
 } else {
         container "quay.io/biocontainers/comet-ms:2021010--h87f3376_1"

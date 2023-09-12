@@ -2,7 +2,7 @@ process PROTEINPROPHET {
 label 'process_medium'
 
 conda (params.enable_conda ? "bioconda::tpp-5.0.0-pl5.22.0_0" : null)
-if (workflow.containerEngine == 'singularity' && !params.singularity_pull_docker_container) {
+if (workflow.containerEngine == 'singularity'|| workflow.containerEngine == 'apptainer') {
         container "docker://spctools/tpp:version6.1"
 } else {
         container "spctools/tpp:version6.1"

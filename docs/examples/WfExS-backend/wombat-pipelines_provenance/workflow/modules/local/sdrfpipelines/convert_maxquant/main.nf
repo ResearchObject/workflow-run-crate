@@ -2,7 +2,7 @@ process CONVERT_MAXQUANT {
     publishDir "${params.outdir}/prepare_maxquant"
     label 'process_medium'
     conda (params.enable_conda ? "bioconda::sdrf-pipelines=0.0.21--py_0" : null)
-    if (workflow.containerEngine == 'singularity' && !params.singularity_pull_docker_container) {
+    if (workflow.containerEngine == 'singularity'|| workflow.containerEngine == 'apptainer') {
         container "docker://wombatp/maxquant-pipeline:v0.2"
     } else {
         container "wombatp/maxquant-pipeline:v0.2"

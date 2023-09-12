@@ -2,7 +2,7 @@ process ROTS {
 label 'process_medium'
   label 'process_single_thread'
   conda (params.enable_conda ? "bioconda::bioconductor-rots::1.22.0" : null)
-if (workflow.containerEngine == 'singularity' && !params.singularity_pull_docker_container) {
+if (workflow.containerEngine == 'singularity'|| workflow.containerEngine == 'apptainer') {
         container "wombatp/transproteomic-pipeline:0.24"
 } else {
         container "wombatp/transproteomic-pipeline:0.24"

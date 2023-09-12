@@ -2,7 +2,7 @@ process PROTXML2CSV {
   label 'process_medium'
   // TODO: add container that contains only the required R packages (XML, stringi, progress)
   conda (params.enable_conda ? "bioconda::xxx" : null)
-if (workflow.containerEngine == 'singularity' && !params.singularity_pull_docker_container) {
+if (workflow.containerEngine == 'singularity'|| workflow.containerEngine == 'apptainer') {
         container "docker://wombatp/transproteomic-pipeline:0.24"
 } else {
         container "wombatp/transproteomic-pipeline:0.24"

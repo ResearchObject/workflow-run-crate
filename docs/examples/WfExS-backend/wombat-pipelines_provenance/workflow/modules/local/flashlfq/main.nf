@@ -3,7 +3,7 @@
 process FLASHLFQ {
   label 'process_high'
   conda (params.enable_conda ? "bioconda::flashlfq-1.2.4" : null)
-  if (workflow.containerEngine == 'singularity' && !params.singularity_pull_docker_container) {
+  if (workflow.containerEngine == 'singularity'|| workflow.containerEngine == 'apptainer') {
         container "docker://quay.io/biocontainers/flashlfq:1.2.4--hdfd78af_0"
   } else {
         container "quay.io/biocontainers/flashlfq:1.2.4--hdfd78af_0"
@@ -34,7 +34,7 @@ process FLASHLFQ {
   }
 
 
-  if (workflow.containerEngine == 'singularity' && !params.singularity_pull_docker_container) {
+  if (workflow.containerEngine == 'singularity'|| workflow.containerEngine == 'apptainer') {
   """
   first_line=""
   # avoid exp_design ending with .txt

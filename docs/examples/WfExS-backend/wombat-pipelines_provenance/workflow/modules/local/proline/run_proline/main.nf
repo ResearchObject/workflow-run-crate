@@ -2,7 +2,7 @@ process RUN_PROLINE {
 label 'process_high'
 
 conda (params.enable_conda ? "bioconda::proline_todo" : null)
-if (workflow.containerEngine == 'singularity' && !params.singularity_pull_docker_container) {
+if (workflow.containerEngine == 'singularity'|| workflow.containerEngine == 'apptainer') {
         container "docker://wombatp/proline-pipeline:v0.18"
 } else {
         container "wombatp/proline-pipeline:v0.18"

@@ -2,7 +2,7 @@ process CONVERT_POLYSTEST {
 label 'process_low'
 
 conda (params.enable_conda ? "bioconda::polystest-1.3.4" : null)
-if (workflow.containerEngine == 'singularity' && !params.singularity_pull_docker_container) {
+if (workflow.containerEngine == 'singularity'|| workflow.containerEngine == 'apptainer') {
         container "docker://quay.io/biocontainers/polystest:1.3.4--hdfd78af_0"
 } else {
         container "quay.io/biocontainers/polystest:1.3.4--hdfd78af_0"

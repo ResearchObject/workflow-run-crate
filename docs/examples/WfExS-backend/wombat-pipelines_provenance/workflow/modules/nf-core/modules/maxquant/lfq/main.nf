@@ -4,7 +4,7 @@ process MAXQUANT_LFQ {
     
     label 'process_high'
     conda (params.enable_conda ? "bioconda::maxquant=2.0.3.0=py310hdfd78af_1" : null)
-    if (workflow.containerEngine == 'singularity' && !params.singularity_pull_docker_container) {
+    if (workflow.containerEngine == 'singularity'|| workflow.containerEngine == 'apptainer') {
         container "https://depot.galaxyproject.org/singularity/maxquant:2.0.3.0--py310hdfd78af_1"
     } else {
         container "quay.io/biocontainers/maxquant:2.0.3.0--py310hdfd78af_1"
