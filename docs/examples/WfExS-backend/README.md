@@ -44,6 +44,12 @@ the original workflow to the packed one.
 
 * Provenance RO-Crate: [cosifer-cwl_provenance](cosifer-cwl_provenance)
 
+
+```bash
+# Example of command line to generate these RO-Crate
+python WfExS-backend.py -L workflow_examples/local_config_gocryptfs.yaml staged-workdir create-prov-crate 2400c32e-f875-4cd4-9d41-be6da8224c67 /tmp/cosifer-cwl_provenance.zip --inputs --outputs --workflow  --orcid 0000-0002-4806-5140 --orcid 0000-0003-4929-1219 --licence https://spdx.org/licenses/CC-BY-4.0.html
+```
+
 ## COSIFER Nextflow workflow (using singularity)
 
 * Generated RO-Crates contain a copy of the inputs, outputs and workflow.
@@ -55,3 +61,9 @@ the original workflow to the packed one.
 * Staged RO-Crate: [cosifer-nxf_staged](cosifer-nxf_staged)
 
 * Provenance RO-Crate: [cosifer-nxf_provenance](cosifer-nxf_provenance)
+
+
+```bash
+# Example of command line to generate these RO-Crate
+python WfExS-backend.py -L workflow_examples/local_config_gocryptfs.yaml staged-workdir create-prov-crate 597708f2-952e-47c7-9b86-dbe3a9e5f651 /tmp/cosifer-nxf_provenance.zip --inputs --outputs --workflow --orcid 0000-0002-4806-5140 --orcid 0000-0003-4929-1219 --licence https://spdx.org/licenses/CC-BY-4.0.html
+```

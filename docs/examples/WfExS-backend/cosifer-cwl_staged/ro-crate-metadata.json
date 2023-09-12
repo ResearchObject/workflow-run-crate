@@ -20,7 +20,7 @@
                     "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
                 }
             ],
-            "datePublished": "2023-09-12T17:22:55+00:00",
+            "datePublished": "2023-09-12T17:31:07+00:00",
             "description": "RO-Crate from staged WfExS working directory 2400c32e-f875-4cd4-9d41-be6da8224c67 (preferencial buquinolate)",
             "hasPart": [
                 {
@@ -43,7 +43,7 @@
                 }
             ],
             "license": [
-                "notspecified"
+                "https://spdx.org/licenses/CC-BY-4.0.html"
             ],
             "mainEntity": {
                 "@id": "consolidated-workflow/2400c32e-f875-4cd4-9d41-be6da8224c67_workflow.cwl"
@@ -76,6 +76,40 @@
                 "@id": "https://www.commonwl.org/"
             },
             "version": "v1.0"
+        },
+        {
+            "@id": "https://orcid.org/0000-0002-4806-5140",
+            "@type": "Person",
+            "name": "Jos\u00e9 Mar\u00eda Fern\u00e1ndez Gonz\u00e1lez"
+        },
+        {
+            "@id": "mailto:lrodrigueznava@uoc.edu",
+            "@type": "ContactPoint",
+            "contactType": "Author",
+            "email": "lrodrigueznava@uoc.edu",
+            "identifier": "lrodrigueznava@uoc.edu",
+            "url": "https://orcid.org/0000-0003-4929-1219"
+        },
+        {
+            "@id": "mailto:lrodrin@gmail.com",
+            "@type": "ContactPoint",
+            "contactType": "Author",
+            "email": "lrodrin@gmail.com",
+            "identifier": "lrodrin@gmail.com",
+            "url": "https://orcid.org/0000-0003-4929-1219"
+        },
+        {
+            "@id": "https://orcid.org/0000-0003-4929-1219",
+            "@type": "Person",
+            "contactPoint": [
+                {
+                    "@id": "mailto:lrodrigueznava@uoc.edu"
+                },
+                {
+                    "@id": "mailto:lrodrin@gmail.com"
+                }
+            ],
+            "name": "Laura Rodr\u00edguez-Navas"
         },
         {
             "@id": "https://w3id.org/ro/wfrun/process/0.2",
@@ -257,11 +291,19 @@
             "version": "b6ff7c65652408f905d0e2b8340c2e65f0253fd2"
         },
         {
-            "@id": "#81eaa601-fd09-4f72-8b22-70f8d57de939",
+            "@id": "#9316a0f6-afab-420a-9fbb-3ee59d44c4d6",
             "@type": "CreateAction",
             "actionStatus": [
                 {
                     "@id": "http://schema.org/CompletedActionStatus"
+                }
+            ],
+            "agent": [
+                {
+                    "@id": "https://orcid.org/0000-0002-4806-5140"
+                },
+                {
+                    "@id": "https://orcid.org/0000-0003-4929-1219"
                 }
             ],
             "instrument": [
@@ -321,12 +363,12 @@
             "valueRequired": "True",
             "workExample": [
                 {
-                    "@id": "#69f36694-ceea-4a1c-9ea3-d0151c18cfb4"
+                    "@id": "#6035d123-4b35-4faf-a0c8-e0e1db9f1aa1"
                 }
             ]
         },
         {
-            "@id": "#69f36694-ceea-4a1c-9ea3-d0151c18cfb4",
+            "@id": "#6035d123-4b35-4faf-a0c8-e0e1db9f1aa1",
             "@type": "PropertyValue",
             "exampleOfWork": [
                 {
@@ -345,12 +387,12 @@
             "valueRequired": "True",
             "workExample": [
                 {
-                    "@id": "#5f0346e2-98c1-4e97-b618-7bdcfcd3e90a"
+                    "@id": "#bb379440-2fd2-421b-bc2a-3813bebf35d8"
                 }
             ]
         },
         {
-            "@id": "#5f0346e2-98c1-4e97-b618-7bdcfcd3e90a",
+            "@id": "#bb379440-2fd2-421b-bc2a-3813bebf35d8",
             "@type": "PropertyValue",
             "exampleOfWork": [
                 {

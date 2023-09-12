@@ -20,7 +20,7 @@
                     "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
                 }
             ],
-            "datePublished": "2023-09-12T17:23:13+00:00",
+            "datePublished": "2023-09-12T17:30:55+00:00",
             "description": "RO-Crate from staged WfExS working directory 597708f2-952e-47c7-9b86-dbe3a9e5f651 (paraphalangeal hind teat)",
             "hasPart": [
                 {
@@ -37,7 +37,7 @@
                 }
             ],
             "license": [
-                "notspecified"
+                "https://spdx.org/licenses/CC-BY-4.0.html"
             ],
             "mainEntity": {
                 "@id": "workflow/cosifer/nextflow/nextflow.nf"
@@ -70,6 +70,40 @@
                 "@id": "https://www.nextflow.io/"
             },
             "version": "19.10.0"
+        },
+        {
+            "@id": "https://orcid.org/0000-0002-4806-5140",
+            "@type": "Person",
+            "name": "Jos\u00e9 Mar\u00eda Fern\u00e1ndez Gonz\u00e1lez"
+        },
+        {
+            "@id": "mailto:lrodrigueznava@uoc.edu",
+            "@type": "ContactPoint",
+            "contactType": "Author",
+            "email": "lrodrigueznava@uoc.edu",
+            "identifier": "lrodrigueznava@uoc.edu",
+            "url": "https://orcid.org/0000-0003-4929-1219"
+        },
+        {
+            "@id": "mailto:lrodrin@gmail.com",
+            "@type": "ContactPoint",
+            "contactType": "Author",
+            "email": "lrodrin@gmail.com",
+            "identifier": "lrodrin@gmail.com",
+            "url": "https://orcid.org/0000-0003-4929-1219"
+        },
+        {
+            "@id": "https://orcid.org/0000-0003-4929-1219",
+            "@type": "Person",
+            "contactPoint": [
+                {
+                    "@id": "mailto:lrodrigueznava@uoc.edu"
+                },
+                {
+                    "@id": "mailto:lrodrin@gmail.com"
+                }
+            ],
+            "name": "Laura Rodr\u00edguez-Navas"
         },
         {
             "@id": "https://w3id.org/ro/wfrun/process/0.2",
@@ -230,12 +264,12 @@
             "valueRequired": "True",
             "workExample": [
                 {
-                    "@id": "#c7f7f8f7-41f9-48f8-adb1-003df93d87d1"
+                    "@id": "#0a88ca4e-f35a-46d2-938d-8c0ed7427845"
                 }
             ]
         },
         {
-            "@id": "#c7f7f8f7-41f9-48f8-adb1-003df93d87d1",
+            "@id": "#0a88ca4e-f35a-46d2-938d-8c0ed7427845",
             "@type": "PropertyValue",
             "exampleOfWork": [
                 {
@@ -254,12 +288,12 @@
             "valueRequired": "True",
             "workExample": [
                 {
-                    "@id": "#6d082490-18d0-4288-8c25-22a95f07de1d"
+                    "@id": "#938e3021-7b75-4c1d-ab7b-705e517ce96c"
                 }
             ]
         },
         {
-            "@id": "#6d082490-18d0-4288-8c25-22a95f07de1d",
+            "@id": "#938e3021-7b75-4c1d-ab7b-705e517ce96c",
             "@type": "PropertyValue",
             "exampleOfWork": [
                 {
