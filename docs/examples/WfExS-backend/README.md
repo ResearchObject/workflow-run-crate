@@ -22,7 +22,7 @@ the original workflow to the packed one.
 
 
 ```bash
-# Example of command line to generate these RO-Crate
+# Example of command line to generate this RO-Crate
 python WfExS-backend.py -L workflow_examples/montblanc_config_gocryptfs.yaml staged-workdir create-prov-crate 047b6dfc-3547-4e09-92f8-df7143038ff4 /tmp/wombat-pipelines_provenance.zip --workflow --orcid 0000-0002-4806-5140 --licence https://spdx.org/licenses/CC-BY-4.0.html
 ```
 
@@ -31,6 +31,12 @@ python WfExS-backend.py -L workflow_examples/montblanc_config_gocryptfs.yaml sta
 * CWL workflow is available at https://github.com/inab/Wetlab2Variations/blob/eosc-life/cwl-workflows/workflows/workflow.cwl
 
 * Provenance RO-Crate from an execution using Singularity containers. It includes a snapshot of the consolidated workflow: [Wetlab2Variations_CWL_provenance](Wetlab2Variations_CWL_provenance)
+
+
+```bash
+# Example of command line to generate this RO-Crate
+python WfExS-backend.py -L workflow_examples/local_config_gocryptfs.yaml staged-workdir create-prov-crate a37fee9e-4288-4a9e-b493-993a867207d0 /tmp/Wetlab2Variations_CWL_provenance.zip  --orcid 0000-0002-4806-5140  --licence https://spdx.org/licenses/CC-BY-4.0.html
+```
 
 ## nf-core RNASeq
 
@@ -59,6 +65,7 @@ python WfExS-backend.py -L workflow_examples/bsclife002_config_docker_gocryptfs_
 
 ```bash
 # Example of command line to generate this RO-Crate
+python WfExS-backend.py -L workflow_examples/local_config_gocryptfs.yaml staged-workdir create-prov-crate 2400c32e-f875-4cd4-9d41-be6da8224c67 /tmp/cosifer-cwl_provenance.zip --inputs --outputs --workflow  --orcid 0000-0002-4806-5140 --orcid 0000-0003-4929-1219 --licence https://spdx.org/licenses/CC-BY-4.0.html
 ```
 
 ## COSIFER Nextflow workflow (using singularity)
@@ -75,6 +82,6 @@ python WfExS-backend.py -L workflow_examples/bsclife002_config_docker_gocryptfs_
 
 
 ```bash
-# Example of command line to generate these RO-Crate
+# Example of command line to generate this RO-Crate
 python WfExS-backend.py -L workflow_examples/local_config_gocryptfs.yaml staged-workdir create-prov-crate 597708f2-952e-47c7-9b86-dbe3a9e5f651 /tmp/cosifer-nxf_provenance.zip --inputs --outputs --workflow --orcid 0000-0002-4806-5140 --orcid 0000-0003-4929-1219 --licence https://spdx.org/licenses/CC-BY-4.0.html
 ```
