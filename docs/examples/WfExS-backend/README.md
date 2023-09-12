@@ -38,6 +38,12 @@ python WfExS-backend.py -L workflow_examples/montblanc_config_gocryptfs.yaml sta
 
 * Provenance RO-Crate from an execution using Singularity containers. It includes a snapshot of the consolidated workflow: [nfcore-rnaseq_provenance](nfcore-rnaseq_provenance).
 
+
+```bash
+# Example of command line to generate this RO-Crate
+python WfExS-backend.py -L workflow_examples/bsclife002_config_docker_gocryptfs_20.yaml staged-workdir create-prov-crate 'sex-linked aortectasis' /tmp/example_nfcore_rnaseq_1.zip --orcid 0000-0002-4806-5140 --licence https://spdx.org/licenses/CC-BY-4.0.html
+```
+
 ## COSIFER cwl workflow (using singularity)
 
 * Generated RO-Crates contain a copy of the inputs, outputs and workflow.
@@ -52,8 +58,7 @@ python WfExS-backend.py -L workflow_examples/montblanc_config_gocryptfs.yaml sta
 
 
 ```bash
-# Example of command line to generate these RO-Crate
-python WfExS-backend.py -L workflow_examples/local_config_gocryptfs.yaml staged-workdir create-prov-crate 2400c32e-f875-4cd4-9d41-be6da8224c67 /tmp/cosifer-cwl_provenance.zip --inputs --outputs --workflow  --orcid 0000-0002-4806-5140 --orcid 0000-0003-4929-1219 --licence https://spdx.org/licenses/CC-BY-4.0.html
+# Example of command line to generate this RO-Crate
 ```
 
 ## COSIFER Nextflow workflow (using singularity)
