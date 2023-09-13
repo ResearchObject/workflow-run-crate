@@ -20,7 +20,7 @@
                     "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
                 }
             ],
-            "datePublished": "2023-09-12T17:54:58+00:00",
+            "datePublished": "2023-09-13T18:17:17+00:00",
             "description": "RO-Crate from staged WfExS working directory 047b6dfc-3547-4e09-92f8-df7143038ff4 (overbridging templon)",
             "hasPart": [
                 {
@@ -687,11 +687,9 @@
             "mainEntity": {
                 "@id": "workflow/main.nf"
             },
-            "mentions": [
-                {
-                    "@id": "#89a0762b-5208-4949-b41c-0e4ee699250f"
-                }
-            ]
+            "mentions": {
+                "@id": "#5bea4cc1-fb2e-4a31-a733-aa35a6c16c85"
+            }
         },
         {
             "@id": "ro-crate-metadata.json",
@@ -748,7 +746,7 @@
             "@id": "https://github.com/inab/WfExS-backend",
             "@type": "SoftwareApplication",
             "name": "WfExS-backend",
-            "softwareVersion": "0.9.3-147-g0ca0c1a (0ca0c1a07d6d0d993c4af092671b03a435b9a73f)",
+            "softwareVersion": "0.9.3-148-g2371d27 (2371d27cdc5d46d60f28f91ac12fd8262cec10b4)",
             "url": "https://github.com/inab/WfExS-backend"
         },
         {
@@ -766,11 +764,9 @@
             ],
             "alternateName": "main.nf",
             "codeRepository": "https://github.com/wombat-p/WOMBAT-Pipelines.git",
-            "conformsTo": [
-                {
-                    "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE"
-                }
-            ],
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE"
+            },
             "contentSize": "1678",
             "description": "Workflow Entrypoint",
             "encodingFormat": "text/plain",
@@ -1114,23 +1110,25 @@
             },
             "runtimePlatform": "nextflow version 23.04.2.5871",
             "sha256": "3495be22e5d946bd804ac87528c352cd46768a9a7e36dbc43d8157127781ff70",
-            "softwareRequirements": [
-                {
-                    "@id": "https://www.nextflow.io/"
-                }
-            ],
+            "softwareRequirements": {
+                "@id": "https://www.nextflow.io/"
+            },
             "url": "https://github.com/wombat-p/WOMBAT-Pipelines/tree/51d0be8aa1b22142b1ba09edb5ee4465618e8e05",
             "version": "51d0be8aa1b22142b1ba09edb5ee4465618e8e05"
         },
         {
             "@id": "https://apptainer.org/",
             "@type": "SoftwareApplication",
+            "applicationCategory": "https://www.wikidata.org/wiki/Q7935198",
             "name": "singularity",
             "softwareVersion": "apptainer version 1.1.7"
         },
         {
             "@id": "containers/wombatp-maxquant-pipeline-dev.img_meta.json",
             "@type": "File",
+            "about": {
+                "@id": "docker://wombatp/maxquant-pipeline:dev"
+            },
             "contentSize": "2854",
             "encodingFormat": "application/json",
             "sha256": "c2642c75c682a6ec79991c2e04d0429ade2d68d7284008b62d4e11726f3aa6a7"
@@ -1138,11 +1136,10 @@
         {
             "@id": "docker://wombatp/maxquant-pipeline:dev",
             "@type": "SoftwareApplication",
-            "hasPart": [
-                {
-                    "@id": "containers/wombatp-maxquant-pipeline-dev.img_meta.json"
-                }
-            ],
+            "applicationCategory": "https://www.wikidata.org/wiki/Q51294208",
+            "hasPart": {
+                "@id": "containers/wombatp-maxquant-pipeline-dev.img_meta.json"
+            },
             "operatingSystem": "linux",
             "processorRequirements": "amd64",
             "softwareRequirements": {
@@ -1153,6 +1150,9 @@
         {
             "@id": "containers/wombatp-maxquant-pipeline-v0.2.img_meta.json",
             "@type": "File",
+            "about": {
+                "@id": "docker://wombatp/maxquant-pipeline:v0.2"
+            },
             "contentSize": "2854",
             "encodingFormat": "application/json",
             "sha256": "c2642c75c682a6ec79991c2e04d0429ade2d68d7284008b62d4e11726f3aa6a7"
@@ -1160,11 +1160,10 @@
         {
             "@id": "docker://wombatp/maxquant-pipeline:v0.2",
             "@type": "SoftwareApplication",
-            "hasPart": [
-                {
-                    "@id": "containers/wombatp-maxquant-pipeline-v0.2.img_meta.json"
-                }
-            ],
+            "applicationCategory": "https://www.wikidata.org/wiki/Q51294208",
+            "hasPart": {
+                "@id": "containers/wombatp-maxquant-pipeline-v0.2.img_meta.json"
+            },
             "operatingSystem": "linux",
             "processorRequirements": "amd64",
             "softwareRequirements": {
@@ -1175,6 +1174,9 @@
         {
             "@id": "containers/wombatp-proline-pipeline-v0.20.img_meta.json",
             "@type": "File",
+            "about": {
+                "@id": "docker://wombatp/proline-pipeline:v0.20"
+            },
             "contentSize": "2532",
             "encodingFormat": "application/json",
             "sha256": "540401fa56052fbe4ca9284261c2df776274d18d236700a14a366c7925689ba9"
@@ -1182,11 +1184,10 @@
         {
             "@id": "docker://wombatp/proline-pipeline:v0.20",
             "@type": "SoftwareApplication",
-            "hasPart": [
-                {
-                    "@id": "containers/wombatp-proline-pipeline-v0.20.img_meta.json"
-                }
-            ],
+            "applicationCategory": "https://www.wikidata.org/wiki/Q51294208",
+            "hasPart": {
+                "@id": "containers/wombatp-proline-pipeline-v0.20.img_meta.json"
+            },
             "operatingSystem": "linux",
             "processorRequirements": "amd64",
             "softwareRequirements": {
@@ -1197,6 +1198,9 @@
         {
             "@id": "containers/wombatp-proline-pipeline-v0.18.img_meta.json",
             "@type": "File",
+            "about": {
+                "@id": "docker://wombatp/proline-pipeline:v0.18"
+            },
             "contentSize": "178",
             "encodingFormat": "application/json",
             "sha256": "ffbe10d1e7b179c95a7081a6d7bc359dd2e75b3e62a3c0fa34869908ced15a84"
@@ -1204,11 +1208,10 @@
         {
             "@id": "docker://wombatp/proline-pipeline:v0.18",
             "@type": "SoftwareApplication",
-            "hasPart": [
-                {
-                    "@id": "containers/wombatp-proline-pipeline-v0.18.img_meta.json"
-                }
-            ],
+            "applicationCategory": "https://www.wikidata.org/wiki/Q51294208",
+            "hasPart": {
+                "@id": "containers/wombatp-proline-pipeline-v0.18.img_meta.json"
+            },
             "operatingSystem": "linux",
             "processorRequirements": "amd64",
             "softwareRequirements": {
@@ -1219,6 +1222,9 @@
         {
             "@id": "containers/veitveit-searchgui-4.2.9--hdfd78af_0.img_meta.json",
             "@type": "File",
+            "about": {
+                "@id": "docker://veitveit/searchgui:4.2.9--hdfd78af_0"
+            },
             "contentSize": "1178",
             "encodingFormat": "application/json",
             "sha256": "39321d034e308a11d450938982ace15074c0726a812cbab69c9e57654b97c29f"
@@ -1226,11 +1232,10 @@
         {
             "@id": "docker://veitveit/searchgui:4.2.9--hdfd78af_0",
             "@type": "SoftwareApplication",
-            "hasPart": [
-                {
-                    "@id": "containers/veitveit-searchgui-4.2.9--hdfd78af_0.img_meta.json"
-                }
-            ],
+            "applicationCategory": "https://www.wikidata.org/wiki/Q51294208",
+            "hasPart": {
+                "@id": "containers/veitveit-searchgui-4.2.9--hdfd78af_0.img_meta.json"
+            },
             "operatingSystem": "linux",
             "processorRequirements": "amd64",
             "softwareRequirements": {
@@ -1241,6 +1246,9 @@
         {
             "@id": "containers/quay.io-biocontainers-searchgui-4.2.9--hdfd78af_0.img_meta.json",
             "@type": "File",
+            "about": {
+                "@id": "docker://quay.io/biocontainers/searchgui:4.2.9--hdfd78af_0"
+            },
             "contentSize": "998",
             "encodingFormat": "application/json",
             "sha256": "ea80f32c893ba70c3f636f98a6eebd1643404bba9991cb22ce5e58e00a441cff"
@@ -1248,11 +1256,10 @@
         {
             "@id": "docker://quay.io/biocontainers/searchgui:4.2.9--hdfd78af_0",
             "@type": "SoftwareApplication",
-            "hasPart": [
-                {
-                    "@id": "containers/quay.io-biocontainers-searchgui-4.2.9--hdfd78af_0.img_meta.json"
-                }
-            ],
+            "applicationCategory": "https://www.wikidata.org/wiki/Q51294208",
+            "hasPart": {
+                "@id": "containers/quay.io-biocontainers-searchgui-4.2.9--hdfd78af_0.img_meta.json"
+            },
             "operatingSystem": "linux",
             "processorRequirements": "amd64",
             "softwareRequirements": {
@@ -1263,6 +1270,9 @@
         {
             "@id": "containers/quay.io-biocontainers-polystest-1.3.4--hdfd78af_0.img_meta.json",
             "@type": "File",
+            "about": {
+                "@id": "docker://quay.io/biocontainers/polystest:1.3.4--hdfd78af_0"
+            },
             "contentSize": "998",
             "encodingFormat": "application/json",
             "sha256": "c2fc7ba290aca02997d4552bc15aa143e63e78ba49ba675b80bedb49d5ba1f89"
@@ -1270,11 +1280,10 @@
         {
             "@id": "docker://quay.io/biocontainers/polystest:1.3.4--hdfd78af_0",
             "@type": "SoftwareApplication",
-            "hasPart": [
-                {
-                    "@id": "containers/quay.io-biocontainers-polystest-1.3.4--hdfd78af_0.img_meta.json"
-                }
-            ],
+            "applicationCategory": "https://www.wikidata.org/wiki/Q51294208",
+            "hasPart": {
+                "@id": "containers/quay.io-biocontainers-polystest-1.3.4--hdfd78af_0.img_meta.json"
+            },
             "operatingSystem": "linux",
             "processorRequirements": "amd64",
             "softwareRequirements": {
@@ -1285,6 +1294,9 @@
         {
             "@id": "containers/depot.galaxyproject.org-singularity-maxquant-2.0.3.0--py310hdfd78af_1.img_meta.json",
             "@type": "File",
+            "about": {
+                "@id": "https://depot.galaxyproject.org/singularity/maxquant:2.0.3.0--py310hdfd78af_1"
+            },
             "contentSize": "2",
             "encodingFormat": "application/json",
             "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a"
@@ -1292,11 +1304,10 @@
         {
             "@id": "https://depot.galaxyproject.org/singularity/maxquant:2.0.3.0--py310hdfd78af_1",
             "@type": "SoftwareApplication",
-            "hasPart": [
-                {
-                    "@id": "containers/depot.galaxyproject.org-singularity-maxquant-2.0.3.0--py310hdfd78af_1.img_meta.json"
-                }
-            ],
+            "applicationCategory": "https://www.wikidata.org/wiki/Q51294208",
+            "hasPart": {
+                "@id": "containers/depot.galaxyproject.org-singularity-maxquant-2.0.3.0--py310hdfd78af_1.img_meta.json"
+            },
             "operatingSystem": "linux",
             "processorRequirements": "amd64",
             "softwareRequirements": {
@@ -1307,6 +1318,9 @@
         {
             "@id": "containers/quay.io-biocontainers-maxquant-2.0.3.0--py310hdfd78af_1.img_meta.json",
             "@type": "File",
+            "about": {
+                "@id": "docker://quay.io/biocontainers/maxquant:2.0.3.0--py310hdfd78af_1"
+            },
             "contentSize": "182",
             "encodingFormat": "application/json",
             "sha256": "2431ff292202ff958a2ff741c47eeed34967d3be4b2ff070ff2d7c65b096b185"
@@ -1314,11 +1328,10 @@
         {
             "@id": "docker://quay.io/biocontainers/maxquant:2.0.3.0--py310hdfd78af_1",
             "@type": "SoftwareApplication",
-            "hasPart": [
-                {
-                    "@id": "containers/quay.io-biocontainers-maxquant-2.0.3.0--py310hdfd78af_1.img_meta.json"
-                }
-            ],
+            "applicationCategory": "https://www.wikidata.org/wiki/Q51294208",
+            "hasPart": {
+                "@id": "containers/quay.io-biocontainers-maxquant-2.0.3.0--py310hdfd78af_1.img_meta.json"
+            },
             "operatingSystem": "linux",
             "processorRequirements": "amd64",
             "softwareRequirements": {
@@ -1329,6 +1342,9 @@
         {
             "@id": "containers/computationalproteomics-normalyzerde-1.14.0.img_meta.json",
             "@type": "File",
+            "about": {
+                "@id": "docker://computationalproteomics/normalyzerde:1.14.0"
+            },
             "contentSize": "191",
             "encodingFormat": "application/json",
             "sha256": "2c47feed9b2789854dbce8f638ddae950e4971c31c0288d247ed66926c7f8080"
@@ -1336,11 +1352,10 @@
         {
             "@id": "docker://computationalproteomics/normalyzerde:1.14.0",
             "@type": "SoftwareApplication",
-            "hasPart": [
-                {
-                    "@id": "containers/computationalproteomics-normalyzerde-1.14.0.img_meta.json"
-                }
-            ],
+            "applicationCategory": "https://www.wikidata.org/wiki/Q51294208",
+            "hasPart": {
+                "@id": "containers/computationalproteomics-normalyzerde-1.14.0.img_meta.json"
+            },
             "operatingSystem": "linux",
             "processorRequirements": "amd64",
             "softwareRequirements": {
@@ -1351,6 +1366,9 @@
         {
             "@id": "containers/quay.io-biocontainers-thermorawfileparser-1.4.0--ha8f3691_0.img_meta.json",
             "@type": "File",
+            "about": {
+                "@id": "docker://quay.io/biocontainers/thermorawfileparser:1.4.0--ha8f3691_0"
+            },
             "contentSize": "186",
             "encodingFormat": "application/json",
             "sha256": "727c0f5a4e7d721af1b50f8349594a253e5e73b83e1310280c6b732995556bc0"
@@ -1358,11 +1376,10 @@
         {
             "@id": "docker://quay.io/biocontainers/thermorawfileparser:1.4.0--ha8f3691_0",
             "@type": "SoftwareApplication",
-            "hasPart": [
-                {
-                    "@id": "containers/quay.io-biocontainers-thermorawfileparser-1.4.0--ha8f3691_0.img_meta.json"
-                }
-            ],
+            "applicationCategory": "https://www.wikidata.org/wiki/Q51294208",
+            "hasPart": {
+                "@id": "containers/quay.io-biocontainers-thermorawfileparser-1.4.0--ha8f3691_0.img_meta.json"
+            },
             "operatingSystem": "linux",
             "processorRequirements": "amd64",
             "softwareRequirements": {
@@ -1373,6 +1390,9 @@
         {
             "@id": "containers/veitveit-peptide-shaker-2.2.23--hdfd78af_0.img_meta.json",
             "@type": "File",
+            "about": {
+                "@id": "docker://veitveit/peptide-shaker:2.2.23--hdfd78af_0"
+            },
             "contentSize": "1183",
             "encodingFormat": "application/json",
             "sha256": "e650d378a555879ba2ab9028df42f6da8e0ca125f091d1839d4deff892bc17f3"
@@ -1380,11 +1400,10 @@
         {
             "@id": "docker://veitveit/peptide-shaker:2.2.23--hdfd78af_0",
             "@type": "SoftwareApplication",
-            "hasPart": [
-                {
-                    "@id": "containers/veitveit-peptide-shaker-2.2.23--hdfd78af_0.img_meta.json"
-                }
-            ],
+            "applicationCategory": "https://www.wikidata.org/wiki/Q51294208",
+            "hasPart": {
+                "@id": "containers/veitveit-peptide-shaker-2.2.23--hdfd78af_0.img_meta.json"
+            },
             "operatingSystem": "linux",
             "processorRequirements": "amd64",
             "softwareRequirements": {
@@ -1395,6 +1414,9 @@
         {
             "@id": "containers/quay.io-biocontainers-peptide-shaker-2.2.23--hdfd78af_0.img_meta.json",
             "@type": "File",
+            "about": {
+                "@id": "docker://quay.io/biocontainers/peptide-shaker:2.2.23--hdfd78af_0"
+            },
             "contentSize": "1004",
             "encodingFormat": "application/json",
             "sha256": "0c32fed0ec64ff41c91503adc0767ad939b34f49d9aaf3f857b3b87075cbb4fa"
@@ -1402,11 +1424,10 @@
         {
             "@id": "docker://quay.io/biocontainers/peptide-shaker:2.2.23--hdfd78af_0",
             "@type": "SoftwareApplication",
-            "hasPart": [
-                {
-                    "@id": "containers/quay.io-biocontainers-peptide-shaker-2.2.23--hdfd78af_0.img_meta.json"
-                }
-            ],
+            "applicationCategory": "https://www.wikidata.org/wiki/Q51294208",
+            "hasPart": {
+                "@id": "containers/quay.io-biocontainers-peptide-shaker-2.2.23--hdfd78af_0.img_meta.json"
+            },
             "operatingSystem": "linux",
             "processorRequirements": "amd64",
             "softwareRequirements": {
@@ -1417,6 +1438,9 @@
         {
             "@id": "containers/quay.io-biocontainers-flashlfq-1.2.4--hdfd78af_0.img_meta.json",
             "@type": "File",
+            "about": {
+                "@id": "docker://quay.io/biocontainers/flashlfq:1.2.4--hdfd78af_0"
+            },
             "contentSize": "996",
             "encodingFormat": "application/json",
             "sha256": "0e54e09c8359a13a24e94374f0cf296f4e89c70c25b2698ae48c320788a3585a"
@@ -1424,11 +1448,10 @@
         {
             "@id": "docker://quay.io/biocontainers/flashlfq:1.2.4--hdfd78af_0",
             "@type": "SoftwareApplication",
-            "hasPart": [
-                {
-                    "@id": "containers/quay.io-biocontainers-flashlfq-1.2.4--hdfd78af_0.img_meta.json"
-                }
-            ],
+            "applicationCategory": "https://www.wikidata.org/wiki/Q51294208",
+            "hasPart": {
+                "@id": "containers/quay.io-biocontainers-flashlfq-1.2.4--hdfd78af_0.img_meta.json"
+            },
             "operatingSystem": "linux",
             "processorRequirements": "amd64",
             "softwareRequirements": {
@@ -1439,6 +1462,9 @@
         {
             "@id": "containers/quay.io-biocontainers-r-msqrob-0.7.7--r41hdfd78af_1.img_meta.json",
             "@type": "File",
+            "about": {
+                "@id": "docker://quay.io/biocontainers/r-msqrob:0.7.7--r41hdfd78af_1"
+            },
             "contentSize": "178",
             "encodingFormat": "application/json",
             "sha256": "f4ad029c77e00e8ba122ae58d9ec19e2cacf5adb30d79ccefc237066ac7e8b59"
@@ -1446,11 +1472,10 @@
         {
             "@id": "docker://quay.io/biocontainers/r-msqrob:0.7.7--r41hdfd78af_1",
             "@type": "SoftwareApplication",
-            "hasPart": [
-                {
-                    "@id": "containers/quay.io-biocontainers-r-msqrob-0.7.7--r41hdfd78af_1.img_meta.json"
-                }
-            ],
+            "applicationCategory": "https://www.wikidata.org/wiki/Q51294208",
+            "hasPart": {
+                "@id": "containers/quay.io-biocontainers-r-msqrob-0.7.7--r41hdfd78af_1.img_meta.json"
+            },
             "operatingSystem": "linux",
             "processorRequirements": "amd64",
             "softwareRequirements": {
@@ -1461,6 +1486,9 @@
         {
             "@id": "containers/quay.io-biocontainers-comet-ms-2021010--h87f3376_1.img_meta.json",
             "@type": "File",
+            "about": {
+                "@id": "docker://quay.io/biocontainers/comet-ms:2021010--h87f3376_1"
+            },
             "contentSize": "177",
             "encodingFormat": "application/json",
             "sha256": "4d1af888bbd9439b3ae91c1dd55615ad30cb614bf7efe44cae15685375cfe4bf"
@@ -1468,11 +1496,10 @@
         {
             "@id": "docker://quay.io/biocontainers/comet-ms:2021010--h87f3376_1",
             "@type": "SoftwareApplication",
-            "hasPart": [
-                {
-                    "@id": "containers/quay.io-biocontainers-comet-ms-2021010--h87f3376_1.img_meta.json"
-                }
-            ],
+            "applicationCategory": "https://www.wikidata.org/wiki/Q51294208",
+            "hasPart": {
+                "@id": "containers/quay.io-biocontainers-comet-ms-2021010--h87f3376_1.img_meta.json"
+            },
             "operatingSystem": "linux",
             "processorRequirements": "amd64",
             "softwareRequirements": {
@@ -1483,6 +1510,9 @@
         {
             "@id": "containers/spctools-tpp-version6.1.img_meta.json",
             "@type": "File",
+            "about": {
+                "@id": "docker://spctools/tpp:version6.1"
+            },
             "contentSize": "171",
             "encodingFormat": "application/json",
             "sha256": "022de86427560f457f99161209d9979e46592ccea83eca66d4adcc0233acd532"
@@ -1490,11 +1520,10 @@
         {
             "@id": "docker://spctools/tpp:version6.1",
             "@type": "SoftwareApplication",
-            "hasPart": [
-                {
-                    "@id": "containers/spctools-tpp-version6.1.img_meta.json"
-                }
-            ],
+            "applicationCategory": "https://www.wikidata.org/wiki/Q51294208",
+            "hasPart": {
+                "@id": "containers/spctools-tpp-version6.1.img_meta.json"
+            },
             "operatingSystem": "linux",
             "processorRequirements": "amd64",
             "softwareRequirements": {
@@ -1505,6 +1534,9 @@
         {
             "@id": "containers/wombatp-transproteomic-pipeline-0.24.img_meta.json",
             "@type": "File",
+            "about": {
+                "@id": "docker://wombatp/transproteomic-pipeline:0.24"
+            },
             "contentSize": "184",
             "encodingFormat": "application/json",
             "sha256": "7da4b1ecfc4d6021d537139cde31d8175090ced6311983ac46e0471cf2a4f352"
@@ -1512,11 +1544,10 @@
         {
             "@id": "docker://wombatp/transproteomic-pipeline:0.24",
             "@type": "SoftwareApplication",
-            "hasPart": [
-                {
-                    "@id": "containers/wombatp-transproteomic-pipeline-0.24.img_meta.json"
-                }
-            ],
+            "applicationCategory": "https://www.wikidata.org/wiki/Q51294208",
+            "hasPart": {
+                "@id": "containers/wombatp-transproteomic-pipeline-0.24.img_meta.json"
+            },
             "operatingSystem": "linux",
             "processorRequirements": "amd64",
             "softwareRequirements": {
@@ -1527,6 +1558,9 @@
         {
             "@id": "containers/rocker-tidyverse-4.2.1.img_meta.json",
             "@type": "File",
+            "about": {
+                "@id": "docker://rocker/tidyverse:4.2.1"
+            },
             "contentSize": "908",
             "encodingFormat": "application/json",
             "sha256": "8a09396b4b6db76df521d6bc7352bc581604f2069815737c6c9d6281a62eadd3"
@@ -1534,11 +1568,10 @@
         {
             "@id": "docker://rocker/tidyverse:4.2.1",
             "@type": "SoftwareApplication",
-            "hasPart": [
-                {
-                    "@id": "containers/rocker-tidyverse-4.2.1.img_meta.json"
-                }
-            ],
+            "applicationCategory": "https://www.wikidata.org/wiki/Q51294208",
+            "hasPart": {
+                "@id": "containers/rocker-tidyverse-4.2.1.img_meta.json"
+            },
             "operatingSystem": "linux",
             "processorRequirements": "amd64",
             "softwareRequirements": {
@@ -2015,18 +2048,14 @@
             "sha256": "c9b6fc6e4dfa51fc382121663c515d0717b026848459585c169a390560b000e8"
         },
         {
-            "@id": "#89a0762b-5208-4949-b41c-0e4ee699250f",
+            "@id": "#5bea4cc1-fb2e-4a31-a733-aa35a6c16c85",
             "@type": "CreateAction",
-            "actionStatus": [
-                {
-                    "@id": "http://schema.org/CompletedActionStatus"
-                }
-            ],
-            "agent": [
-                {
-                    "@id": "https://orcid.org/0000-0002-4806-5140"
-                }
-            ],
+            "actionStatus": {
+                "@id": "http://schema.org/CompletedActionStatus"
+            },
+            "agent": {
+                "@id": "https://orcid.org/0000-0002-4806-5140"
+            },
             "endTime": "2023-08-31T11:41:04.420914+00:00",
             "instrument": [
                 {
@@ -2102,7 +2131,7 @@
             "name": "Run outputs/_1693481083 of workflow/main.nf",
             "object": [
                 {
-                    "@id": "#4ab042e8-675d-49b8-853d-5827e7129cd9"
+                    "@id": "#e783c15d-5aa6-4aae-9ef2-a598e5bf7d2f"
                 },
                 {
                     "@id": "https://raw.githubusercontent.com/wombat-p/WOMBAT-Pipelines/51d0be8aa1b22142b1ba09edb5ee4465618e8e05/test_data/exp_design.txt"
@@ -2111,73 +2140,73 @@
                     "@id": "https://raw.githubusercontent.com/wombat-p/WOMBAT-Pipelines/51d0be8aa1b22142b1ba09edb5ee4465618e8e05/test_data/test_params.yml"
                 },
                 {
-                    "@id": "#8f4af490-bc0f-4e44-88a5-87f2c3f0d3fb"
+                    "@id": "#ad8cbb8a-3c83-45d9-a77b-1f5868aa8305"
                 },
                 {
-                    "@id": "#dd780d36-2b3d-495f-913e-2726077f683e"
+                    "@id": "#91bffbeb-46d0-4ac0-8d06-31c3e43f5da8"
                 },
                 {
-                    "@id": "#ccc9dc92-47f6-455e-8d1b-679aeeb24413"
+                    "@id": "#332324e7-ceec-4bdf-af60-21d3b61b4c40"
                 },
                 {
-                    "@id": "#974780b3-15c1-44b3-9a66-cf40b5a7c637"
+                    "@id": "#1f846154-b970-4b64-ad82-e1de2b118f9c"
                 },
                 {
-                    "@id": "#99133242-4fc1-4d6e-a17c-df35b98e3f58"
+                    "@id": "#29a74495-198e-40f5-a363-c286fb72f516"
                 },
                 {
-                    "@id": "#361e8992-7a99-4968-922c-a3db29b26521"
+                    "@id": "#573022c8-8216-49d0-a059-60ab832a638f"
                 },
                 {
-                    "@id": "#0a481e1f-7039-4c40-a442-1bd22780bd55"
+                    "@id": "#07df76cc-3b09-41ad-8bb8-30c0ebebe48d"
                 },
                 {
-                    "@id": "#a55786c9-18cf-4ca3-b5ef-4134b65afb1f"
+                    "@id": "#dd5f3a8e-310a-45a9-88b2-791fd288abee"
                 },
                 {
-                    "@id": "#27a8b6c5-0e57-4a97-9121-5ccdd4bc8bb1"
+                    "@id": "#c482b292-cec0-47c8-bc1d-46fc4427c5ad"
                 },
                 {
-                    "@id": "#20dfa184-d155-4b60-8e22-7661fe214299"
+                    "@id": "#3e16ae3a-d2af-41b2-a879-034add262ba9"
                 },
                 {
-                    "@id": "#5572d4d2-d106-4078-b407-9a218cdeb31a"
+                    "@id": "#d9d08b82-f5bc-413a-a532-d5606affd5c3"
                 },
                 {
-                    "@id": "#73f23091-fa9c-46d1-87ab-47f999381dae"
+                    "@id": "#6d50ef05-5d3d-4825-9572-c9d7ab3f2da8"
                 },
                 {
-                    "@id": "#25094d02-1dca-4a14-accc-5736e72fef1f"
+                    "@id": "#471fac54-80f9-4cde-84ec-cee83a2058db"
                 },
                 {
-                    "@id": "#8248b84e-2ad0-429d-8da1-83c0e504813a"
+                    "@id": "#517f071c-7c79-47c5-b73f-de47e08c1173"
                 },
                 {
-                    "@id": "#fd6945fc-4ee4-4745-881d-691ee557c353"
+                    "@id": "#662ed01c-718a-46aa-9330-f8a83b4f246a"
                 },
                 {
-                    "@id": "#5d0144e2-fdad-4f46-b2ce-6bd78d2b2257"
+                    "@id": "#a8d9f2e8-a13e-4759-8a18-797429a0e543"
                 },
                 {
-                    "@id": "#b57275bb-26ed-4592-9657-7a5459c51f86"
+                    "@id": "#6bad9bff-e600-4d43-877d-f9ff1ae6ce25"
                 },
                 {
-                    "@id": "#61a70d62-0152-4756-9d49-5b3669e589b9"
+                    "@id": "#2d63b72c-44fa-45d9-8a68-65e746ae3ff5"
                 },
                 {
-                    "@id": "#3aef54ab-2f44-4608-a8a8-ee009997bf59"
+                    "@id": "#97fa8921-9dad-489e-80fe-6747722d5a1b"
                 },
                 {
-                    "@id": "#fcb67c1e-04ad-4f94-b250-22551e64964a"
+                    "@id": "#e60f7da2-6160-4ebd-bd02-f9bc637712c5"
                 },
                 {
-                    "@id": "#6c819042-d615-4308-9046-638596474ebe"
+                    "@id": "#3728f17c-31dc-491d-ba3e-4561ae66c350"
                 },
                 {
-                    "@id": "#4acf178f-3fe7-4c2f-9617-345f37ac5ebb"
+                    "@id": "#2f7c4ece-7b8b-435c-a41e-4e0ee22014e9"
                 },
                 {
-                    "@id": "#ad763c18-17e6-4975-9dfb-bc8bd2f8d934"
+                    "@id": "#d97a35f7-34c7-4696-aab1-4db03fe05f30"
                 },
                 {
                     "@id": "https://raw.githubusercontent.com/wombat-p/WOMBAT-Pipelines/51d0be8aa1b22142b1ba09edb5ee4465618e8e05/test_data/ABRF_iPRG_2012_target.fasta"
@@ -2300,20 +2329,16 @@
             "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
             "name": "raws",
             "valueRequired": "True",
-            "workExample": [
-                {
-                    "@id": "#4ab042e8-675d-49b8-853d-5827e7129cd9"
-                }
-            ]
+            "workExample": {
+                "@id": "#e783c15d-5aa6-4aae-9ef2-a598e5bf7d2f"
+            }
         },
         {
-            "@id": "#4ab042e8-675d-49b8-853d-5827e7129cd9",
+            "@id": "#e783c15d-5aa6-4aae-9ef2-a598e5bf7d2f",
             "@type": "Collection",
-            "exampleOfWork": [
-                {
-                    "@id": "workflow/main.nf#param:raws"
-                }
-            ],
+            "exampleOfWork": {
+                "@id": "workflow/main.nf#param:raws"
+            },
             "hasPart": [
                 {
                     "@id": "https://raw.githubusercontent.com/wombat-p/WOMBAT-Pipelines/51d0be8aa1b22142b1ba09edb5ee4465618e8e05/test_data/OVEMB150205_12.raw"
@@ -2344,22 +2369,18 @@
             "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
             "name": "exp_design",
             "valueRequired": "True",
-            "workExample": [
-                {
-                    "@id": "https://raw.githubusercontent.com/wombat-p/WOMBAT-Pipelines/51d0be8aa1b22142b1ba09edb5ee4465618e8e05/test_data/exp_design.txt"
-                }
-            ]
+            "workExample": {
+                "@id": "https://raw.githubusercontent.com/wombat-p/WOMBAT-Pipelines/51d0be8aa1b22142b1ba09edb5ee4465618e8e05/test_data/exp_design.txt"
+            }
         },
         {
             "@id": "https://raw.githubusercontent.com/wombat-p/WOMBAT-Pipelines/51d0be8aa1b22142b1ba09edb5ee4465618e8e05/test_data/exp_design.txt",
             "@type": "File",
             "contentSize": "101",
             "encodingFormat": "text/plain",
-            "exampleOfWork": [
-                {
-                    "@id": "workflow/main.nf#param:exp_design"
-                }
-            ],
+            "exampleOfWork": {
+                "@id": "workflow/main.nf#param:exp_design"
+            },
             "sha256": "f6c66ab878726d83bc210f8921617e5719981811e986d040fb2849265654ade8"
         },
         {
@@ -2376,22 +2397,18 @@
             "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
             "name": "parameters",
             "valueRequired": "True",
-            "workExample": [
-                {
-                    "@id": "https://raw.githubusercontent.com/wombat-p/WOMBAT-Pipelines/51d0be8aa1b22142b1ba09edb5ee4465618e8e05/test_data/test_params.yml"
-                }
-            ]
+            "workExample": {
+                "@id": "https://raw.githubusercontent.com/wombat-p/WOMBAT-Pipelines/51d0be8aa1b22142b1ba09edb5ee4465618e8e05/test_data/test_params.yml"
+            }
         },
         {
             "@id": "https://raw.githubusercontent.com/wombat-p/WOMBAT-Pipelines/51d0be8aa1b22142b1ba09edb5ee4465618e8e05/test_data/test_params.yml",
             "@type": "File",
             "contentSize": "819",
             "encodingFormat": "text/plain",
-            "exampleOfWork": [
-                {
-                    "@id": "workflow/main.nf#param:parameters"
-                }
-            ],
+            "exampleOfWork": {
+                "@id": "workflow/main.nf#param:parameters"
+            },
             "sha256": "ce8bfa5e0908ae59b1b98fed775997b404a7fdedea526c8596d5726965964116"
         },
         {
@@ -2401,20 +2418,16 @@
             "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
             "name": "run_statistics",
             "valueRequired": "True",
-            "workExample": [
-                {
-                    "@id": "#8f4af490-bc0f-4e44-88a5-87f2c3f0d3fb"
-                }
-            ]
+            "workExample": {
+                "@id": "#ad8cbb8a-3c83-45d9-a77b-1f5868aa8305"
+            }
         },
         {
-            "@id": "#8f4af490-bc0f-4e44-88a5-87f2c3f0d3fb",
+            "@id": "#ad8cbb8a-3c83-45d9-a77b-1f5868aa8305",
             "@type": "PropertyValue",
-            "exampleOfWork": [
-                {
-                    "@id": "workflow/main.nf#param:run_statistics"
-                }
-            ],
+            "exampleOfWork": {
+                "@id": "workflow/main.nf#param:run_statistics"
+            },
             "name": "run_statistics",
             "value": "True"
         },
@@ -2425,20 +2438,16 @@
             "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
             "name": "add_decoys",
             "valueRequired": "True",
-            "workExample": [
-                {
-                    "@id": "#dd780d36-2b3d-495f-913e-2726077f683e"
-                }
-            ]
+            "workExample": {
+                "@id": "#91bffbeb-46d0-4ac0-8d06-31c3e43f5da8"
+            }
         },
         {
-            "@id": "#dd780d36-2b3d-495f-913e-2726077f683e",
+            "@id": "#91bffbeb-46d0-4ac0-8d06-31c3e43f5da8",
             "@type": "PropertyValue",
-            "exampleOfWork": [
-                {
-                    "@id": "workflow/main.nf#param:add_decoys"
-                }
-            ],
+            "exampleOfWork": {
+                "@id": "workflow/main.nf#param:add_decoys"
+            },
             "name": "add_decoys",
             "value": "True"
         },
@@ -2456,20 +2465,16 @@
             "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
             "name": "comps",
             "valueRequired": "True",
-            "workExample": [
-                {
-                    "@id": "#ccc9dc92-47f6-455e-8d1b-679aeeb24413"
-                }
-            ]
+            "workExample": {
+                "@id": "#332324e7-ceec-4bdf-af60-21d3b61b4c40"
+            }
         },
         {
-            "@id": "#ccc9dc92-47f6-455e-8d1b-679aeeb24413",
+            "@id": "#332324e7-ceec-4bdf-af60-21d3b61b4c40",
             "@type": "PropertyValue",
-            "exampleOfWork": [
-                {
-                    "@id": "workflow/main.nf#param:comps"
-                }
-            ],
+            "exampleOfWork": {
+                "@id": "workflow/main.nf#param:comps"
+            },
             "name": "comps",
             "value": ""
         },
@@ -2480,20 +2485,16 @@
             "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
             "name": "proline_engine",
             "valueRequired": "True",
-            "workExample": [
-                {
-                    "@id": "#974780b3-15c1-44b3-9a66-cf40b5a7c637"
-                }
-            ]
+            "workExample": {
+                "@id": "#1f846154-b970-4b64-ad82-e1de2b118f9c"
+            }
         },
         {
-            "@id": "#974780b3-15c1-44b3-9a66-cf40b5a7c637",
+            "@id": "#1f846154-b970-4b64-ad82-e1de2b118f9c",
             "@type": "PropertyValue",
-            "exampleOfWork": [
-                {
-                    "@id": "workflow/main.nf#param:proline_engine"
-                }
-            ],
+            "exampleOfWork": {
+                "@id": "workflow/main.nf#param:proline_engine"
+            },
             "name": "proline_engine",
             "value": "xtandem"
         },
@@ -2504,20 +2505,16 @@
             "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
             "name": "workflow",
             "valueRequired": "True",
-            "workExample": [
-                {
-                    "@id": "#99133242-4fc1-4d6e-a17c-df35b98e3f58"
-                }
-            ]
+            "workExample": {
+                "@id": "#29a74495-198e-40f5-a363-c286fb72f516"
+            }
         },
         {
-            "@id": "#99133242-4fc1-4d6e-a17c-df35b98e3f58",
+            "@id": "#29a74495-198e-40f5-a363-c286fb72f516",
             "@type": "PropertyValue",
-            "exampleOfWork": [
-                {
-                    "@id": "workflow/main.nf#param:workflow"
-                }
-            ],
+            "exampleOfWork": {
+                "@id": "workflow/main.nf#param:workflow"
+            },
             "name": "workflow",
             "value": "all"
         },
@@ -2542,20 +2539,16 @@
             "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
             "name": "max_multiqc_email_size",
             "valueRequired": "True",
-            "workExample": [
-                {
-                    "@id": "#361e8992-7a99-4968-922c-a3db29b26521"
-                }
-            ]
+            "workExample": {
+                "@id": "#573022c8-8216-49d0-a059-60ab832a638f"
+            }
         },
         {
-            "@id": "#361e8992-7a99-4968-922c-a3db29b26521",
+            "@id": "#573022c8-8216-49d0-a059-60ab832a638f",
             "@type": "PropertyValue",
-            "exampleOfWork": [
-                {
-                    "@id": "workflow/main.nf#param:max_multiqc_email_size"
-                }
-            ],
+            "exampleOfWork": {
+                "@id": "workflow/main.nf#param:max_multiqc_email_size"
+            },
             "name": "max_multiqc_email_size",
             "value": "25.MB"
         },
@@ -2566,20 +2559,16 @@
             "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
             "name": "outdir",
             "valueRequired": "True",
-            "workExample": [
-                {
-                    "@id": "#0a481e1f-7039-4c40-a442-1bd22780bd55"
-                }
-            ]
+            "workExample": {
+                "@id": "#07df76cc-3b09-41ad-8bb8-30c0ebebe48d"
+            }
         },
         {
-            "@id": "#0a481e1f-7039-4c40-a442-1bd22780bd55",
+            "@id": "#07df76cc-3b09-41ad-8bb8-30c0ebebe48d",
             "@type": "PropertyValue",
-            "exampleOfWork": [
-                {
-                    "@id": "workflow/main.nf#param:outdir"
-                }
-            ],
+            "exampleOfWork": {
+                "@id": "workflow/main.nf#param:outdir"
+            },
             "name": "outdir",
             "value": "outputs/_1693481083"
         },
@@ -2590,20 +2579,16 @@
             "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
             "name": "tracedir",
             "valueRequired": "True",
-            "workExample": [
-                {
-                    "@id": "#a55786c9-18cf-4ca3-b5ef-4134b65afb1f"
-                }
-            ]
+            "workExample": {
+                "@id": "#dd5f3a8e-310a-45a9-88b2-791fd288abee"
+            }
         },
         {
-            "@id": "#a55786c9-18cf-4ca3-b5ef-4134b65afb1f",
+            "@id": "#dd5f3a8e-310a-45a9-88b2-791fd288abee",
             "@type": "PropertyValue",
-            "exampleOfWork": [
-                {
-                    "@id": "workflow/main.nf#param:tracedir"
-                }
-            ],
+            "exampleOfWork": {
+                "@id": "workflow/main.nf#param:tracedir"
+            },
             "name": "tracedir",
             "value": "results/pipeline_info"
         },
@@ -2614,20 +2599,16 @@
             "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
             "name": "publish_dir_mode",
             "valueRequired": "True",
-            "workExample": [
-                {
-                    "@id": "#27a8b6c5-0e57-4a97-9121-5ccdd4bc8bb1"
-                }
-            ]
+            "workExample": {
+                "@id": "#c482b292-cec0-47c8-bc1d-46fc4427c5ad"
+            }
         },
         {
-            "@id": "#27a8b6c5-0e57-4a97-9121-5ccdd4bc8bb1",
+            "@id": "#c482b292-cec0-47c8-bc1d-46fc4427c5ad",
             "@type": "PropertyValue",
-            "exampleOfWork": [
-                {
-                    "@id": "workflow/main.nf#param:publish_dir_mode"
-                }
-            ],
+            "exampleOfWork": {
+                "@id": "workflow/main.nf#param:publish_dir_mode"
+            },
             "name": "publish_dir_mode",
             "value": "copy"
         },
@@ -2652,20 +2633,16 @@
             "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
             "name": "plaintext_email",
             "valueRequired": "True",
-            "workExample": [
-                {
-                    "@id": "#20dfa184-d155-4b60-8e22-7661fe214299"
-                }
-            ]
+            "workExample": {
+                "@id": "#3e16ae3a-d2af-41b2-a879-034add262ba9"
+            }
         },
         {
-            "@id": "#20dfa184-d155-4b60-8e22-7661fe214299",
+            "@id": "#3e16ae3a-d2af-41b2-a879-034add262ba9",
             "@type": "PropertyValue",
-            "exampleOfWork": [
-                {
-                    "@id": "workflow/main.nf#param:plaintext_email"
-                }
-            ],
+            "exampleOfWork": {
+                "@id": "workflow/main.nf#param:plaintext_email"
+            },
             "name": "plaintext_email",
             "value": "False"
         },
@@ -2676,20 +2653,16 @@
             "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
             "name": "monochrome_logs",
             "valueRequired": "True",
-            "workExample": [
-                {
-                    "@id": "#5572d4d2-d106-4078-b407-9a218cdeb31a"
-                }
-            ]
+            "workExample": {
+                "@id": "#d9d08b82-f5bc-413a-a532-d5606affd5c3"
+            }
         },
         {
-            "@id": "#5572d4d2-d106-4078-b407-9a218cdeb31a",
+            "@id": "#d9d08b82-f5bc-413a-a532-d5606affd5c3",
             "@type": "PropertyValue",
-            "exampleOfWork": [
-                {
-                    "@id": "workflow/main.nf#param:monochrome_logs"
-                }
-            ],
+            "exampleOfWork": {
+                "@id": "workflow/main.nf#param:monochrome_logs"
+            },
             "name": "monochrome_logs",
             "value": "False"
         },
@@ -2700,20 +2673,16 @@
             "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
             "name": "help",
             "valueRequired": "True",
-            "workExample": [
-                {
-                    "@id": "#73f23091-fa9c-46d1-87ab-47f999381dae"
-                }
-            ]
+            "workExample": {
+                "@id": "#6d50ef05-5d3d-4825-9572-c9d7ab3f2da8"
+            }
         },
         {
-            "@id": "#73f23091-fa9c-46d1-87ab-47f999381dae",
+            "@id": "#6d50ef05-5d3d-4825-9572-c9d7ab3f2da8",
             "@type": "PropertyValue",
-            "exampleOfWork": [
-                {
-                    "@id": "workflow/main.nf#param:help"
-                }
-            ],
+            "exampleOfWork": {
+                "@id": "workflow/main.nf#param:help"
+            },
             "name": "help",
             "value": "False"
         },
@@ -2724,20 +2693,16 @@
             "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
             "name": "validate_params",
             "valueRequired": "True",
-            "workExample": [
-                {
-                    "@id": "#25094d02-1dca-4a14-accc-5736e72fef1f"
-                }
-            ]
+            "workExample": {
+                "@id": "#471fac54-80f9-4cde-84ec-cee83a2058db"
+            }
         },
         {
-            "@id": "#25094d02-1dca-4a14-accc-5736e72fef1f",
+            "@id": "#471fac54-80f9-4cde-84ec-cee83a2058db",
             "@type": "PropertyValue",
-            "exampleOfWork": [
-                {
-                    "@id": "workflow/main.nf#param:validate_params"
-                }
-            ],
+            "exampleOfWork": {
+                "@id": "workflow/main.nf#param:validate_params"
+            },
             "name": "validate_params",
             "value": "True"
         },
@@ -2748,20 +2713,16 @@
             "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
             "name": "show_hidden_params",
             "valueRequired": "True",
-            "workExample": [
-                {
-                    "@id": "#8248b84e-2ad0-429d-8da1-83c0e504813a"
-                }
-            ]
+            "workExample": {
+                "@id": "#517f071c-7c79-47c5-b73f-de47e08c1173"
+            }
         },
         {
-            "@id": "#8248b84e-2ad0-429d-8da1-83c0e504813a",
+            "@id": "#517f071c-7c79-47c5-b73f-de47e08c1173",
             "@type": "PropertyValue",
-            "exampleOfWork": [
-                {
-                    "@id": "workflow/main.nf#param:show_hidden_params"
-                }
-            ],
+            "exampleOfWork": {
+                "@id": "workflow/main.nf#param:show_hidden_params"
+            },
             "name": "show_hidden_params",
             "value": "False"
         },
@@ -2772,20 +2733,16 @@
             "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
             "name": "enable_conda",
             "valueRequired": "True",
-            "workExample": [
-                {
-                    "@id": "#fd6945fc-4ee4-4745-881d-691ee557c353"
-                }
-            ]
+            "workExample": {
+                "@id": "#662ed01c-718a-46aa-9330-f8a83b4f246a"
+            }
         },
         {
-            "@id": "#fd6945fc-4ee4-4745-881d-691ee557c353",
+            "@id": "#662ed01c-718a-46aa-9330-f8a83b4f246a",
             "@type": "PropertyValue",
-            "exampleOfWork": [
-                {
-                    "@id": "workflow/main.nf#param:enable_conda"
-                }
-            ],
+            "exampleOfWork": {
+                "@id": "workflow/main.nf#param:enable_conda"
+            },
             "name": "enable_conda",
             "value": "False"
         },
@@ -2796,20 +2753,16 @@
             "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
             "name": "schema_ignore_params",
             "valueRequired": "True",
-            "workExample": [
-                {
-                    "@id": "#5d0144e2-fdad-4f46-b2ce-6bd78d2b2257"
-                }
-            ]
+            "workExample": {
+                "@id": "#a8d9f2e8-a13e-4759-8a18-797429a0e543"
+            }
         },
         {
-            "@id": "#5d0144e2-fdad-4f46-b2ce-6bd78d2b2257",
+            "@id": "#a8d9f2e8-a13e-4759-8a18-797429a0e543",
             "@type": "PropertyValue",
-            "exampleOfWork": [
-                {
-                    "@id": "workflow/main.nf#param:schema_ignore_params"
-                }
-            ],
+            "exampleOfWork": {
+                "@id": "workflow/main.nf#param:schema_ignore_params"
+            },
             "name": "schema_ignore_params",
             "value": "fasta,genomes,multiqc_title,workflow,proline_engine,comps,add_decoys,run_statistics,parameters,sdrf,exp_design,raws,mzmls"
         },
@@ -2827,20 +2780,16 @@
             "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
             "name": "custom_config_version",
             "valueRequired": "True",
-            "workExample": [
-                {
-                    "@id": "#b57275bb-26ed-4592-9657-7a5459c51f86"
-                }
-            ]
+            "workExample": {
+                "@id": "#6bad9bff-e600-4d43-877d-f9ff1ae6ce25"
+            }
         },
         {
-            "@id": "#b57275bb-26ed-4592-9657-7a5459c51f86",
+            "@id": "#6bad9bff-e600-4d43-877d-f9ff1ae6ce25",
             "@type": "PropertyValue",
-            "exampleOfWork": [
-                {
-                    "@id": "workflow/main.nf#param:custom_config_version"
-                }
-            ],
+            "exampleOfWork": {
+                "@id": "workflow/main.nf#param:custom_config_version"
+            },
             "name": "custom_config_version",
             "value": "master"
         },
@@ -2851,20 +2800,16 @@
             "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
             "name": "custom_config_base",
             "valueRequired": "True",
-            "workExample": [
-                {
-                    "@id": "#61a70d62-0152-4756-9d49-5b3669e589b9"
-                }
-            ]
+            "workExample": {
+                "@id": "#2d63b72c-44fa-45d9-8a68-65e746ae3ff5"
+            }
         },
         {
-            "@id": "#61a70d62-0152-4756-9d49-5b3669e589b9",
+            "@id": "#2d63b72c-44fa-45d9-8a68-65e746ae3ff5",
             "@type": "PropertyValue",
-            "exampleOfWork": [
-                {
-                    "@id": "workflow/main.nf#param:custom_config_base"
-                }
-            ],
+            "exampleOfWork": {
+                "@id": "workflow/main.nf#param:custom_config_base"
+            },
             "name": "custom_config_base",
             "value": "https://raw.githubusercontent.com/nf-core/configs/master"
         },
@@ -2875,20 +2820,16 @@
             "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
             "name": "config_profile_description",
             "valueRequired": "True",
-            "workExample": [
-                {
-                    "@id": "#3aef54ab-2f44-4608-a8a8-ee009997bf59"
-                }
-            ]
+            "workExample": {
+                "@id": "#97fa8921-9dad-489e-80fe-6747722d5a1b"
+            }
         },
         {
-            "@id": "#3aef54ab-2f44-4608-a8a8-ee009997bf59",
+            "@id": "#97fa8921-9dad-489e-80fe-6747722d5a1b",
             "@type": "PropertyValue",
-            "exampleOfWork": [
-                {
-                    "@id": "workflow/main.nf#param:config_profile_description"
-                }
-            ],
+            "exampleOfWork": {
+                "@id": "workflow/main.nf#param:config_profile_description"
+            },
             "name": "config_profile_description",
             "value": "Minimal test dataset to check pipeline function"
         },
@@ -2913,20 +2854,16 @@
             "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
             "name": "config_profile_name",
             "valueRequired": "True",
-            "workExample": [
-                {
-                    "@id": "#fcb67c1e-04ad-4f94-b250-22551e64964a"
-                }
-            ]
+            "workExample": {
+                "@id": "#e60f7da2-6160-4ebd-bd02-f9bc637712c5"
+            }
         },
         {
-            "@id": "#fcb67c1e-04ad-4f94-b250-22551e64964a",
+            "@id": "#e60f7da2-6160-4ebd-bd02-f9bc637712c5",
             "@type": "PropertyValue",
-            "exampleOfWork": [
-                {
-                    "@id": "workflow/main.nf#param:config_profile_name"
-                }
-            ],
+            "exampleOfWork": {
+                "@id": "workflow/main.nf#param:config_profile_name"
+            },
             "name": "config_profile_name",
             "value": "Test profile"
         },
@@ -2937,20 +2874,16 @@
             "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
             "name": "max_memory",
             "valueRequired": "True",
-            "workExample": [
-                {
-                    "@id": "#6c819042-d615-4308-9046-638596474ebe"
-                }
-            ]
+            "workExample": {
+                "@id": "#3728f17c-31dc-491d-ba3e-4561ae66c350"
+            }
         },
         {
-            "@id": "#6c819042-d615-4308-9046-638596474ebe",
+            "@id": "#3728f17c-31dc-491d-ba3e-4561ae66c350",
             "@type": "PropertyValue",
-            "exampleOfWork": [
-                {
-                    "@id": "workflow/main.nf#param:max_memory"
-                }
-            ],
+            "exampleOfWork": {
+                "@id": "workflow/main.nf#param:max_memory"
+            },
             "name": "max_memory",
             "value": "6.GB"
         },
@@ -2961,20 +2894,16 @@
             "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
             "name": "max_cpus",
             "valueRequired": "True",
-            "workExample": [
-                {
-                    "@id": "#4acf178f-3fe7-4c2f-9617-345f37ac5ebb"
-                }
-            ]
+            "workExample": {
+                "@id": "#2f7c4ece-7b8b-435c-a41e-4e0ee22014e9"
+            }
         },
         {
-            "@id": "#4acf178f-3fe7-4c2f-9617-345f37ac5ebb",
+            "@id": "#2f7c4ece-7b8b-435c-a41e-4e0ee22014e9",
             "@type": "PropertyValue",
-            "exampleOfWork": [
-                {
-                    "@id": "workflow/main.nf#param:max_cpus"
-                }
-            ],
+            "exampleOfWork": {
+                "@id": "workflow/main.nf#param:max_cpus"
+            },
             "name": "max_cpus",
             "value": "2"
         },
@@ -2985,20 +2914,16 @@
             "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
             "name": "max_time",
             "valueRequired": "True",
-            "workExample": [
-                {
-                    "@id": "#ad763c18-17e6-4975-9dfb-bc8bd2f8d934"
-                }
-            ]
+            "workExample": {
+                "@id": "#d97a35f7-34c7-4696-aab1-4db03fe05f30"
+            }
         },
         {
-            "@id": "#ad763c18-17e6-4975-9dfb-bc8bd2f8d934",
+            "@id": "#d97a35f7-34c7-4696-aab1-4db03fe05f30",
             "@type": "PropertyValue",
-            "exampleOfWork": [
-                {
-                    "@id": "workflow/main.nf#param:max_time"
-                }
-            ],
+            "exampleOfWork": {
+                "@id": "workflow/main.nf#param:max_time"
+            },
             "name": "max_time",
             "value": "6.h"
         },
@@ -3009,22 +2934,18 @@
             "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
             "name": "fasta",
             "valueRequired": "True",
-            "workExample": [
-                {
-                    "@id": "https://raw.githubusercontent.com/wombat-p/WOMBAT-Pipelines/51d0be8aa1b22142b1ba09edb5ee4465618e8e05/test_data/ABRF_iPRG_2012_target.fasta"
-                }
-            ]
+            "workExample": {
+                "@id": "https://raw.githubusercontent.com/wombat-p/WOMBAT-Pipelines/51d0be8aa1b22142b1ba09edb5ee4465618e8e05/test_data/ABRF_iPRG_2012_target.fasta"
+            }
         },
         {
             "@id": "https://raw.githubusercontent.com/wombat-p/WOMBAT-Pipelines/51d0be8aa1b22142b1ba09edb5ee4465618e8e05/test_data/ABRF_iPRG_2012_target.fasta",
             "@type": "File",
             "contentSize": "28588796",
             "encodingFormat": "text/plain",
-            "exampleOfWork": [
-                {
-                    "@id": "workflow/main.nf#param:fasta"
-                }
-            ],
+            "exampleOfWork": {
+                "@id": "workflow/main.nf#param:fasta"
+            },
             "sha256": "a091763faa9156de56aeeb37bb82c0f0f8ab5b939659bf0d9b44854cc1995e28"
         },
         {
@@ -3034,22 +2955,18 @@
             "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
             "name": "sdrfmapping",
             "valueRequired": "True",
-            "workExample": [
-                {
-                    "@id": "https://raw.githubusercontent.com/bigbio/proteomics-metadata-standard/34ad4ed605b100ef72ec8fe31adc8af33f207717/sdrf-proteomics/assets/param2sdrf.yml"
-                }
-            ]
+            "workExample": {
+                "@id": "https://raw.githubusercontent.com/bigbio/proteomics-metadata-standard/34ad4ed605b100ef72ec8fe31adc8af33f207717/sdrf-proteomics/assets/param2sdrf.yml"
+            }
         },
         {
             "@id": "https://raw.githubusercontent.com/bigbio/proteomics-metadata-standard/34ad4ed605b100ef72ec8fe31adc8af33f207717/sdrf-proteomics/assets/param2sdrf.yml",
             "@type": "File",
             "contentSize": "4376",
             "encodingFormat": "text/plain",
-            "exampleOfWork": [
-                {
-                    "@id": "workflow/main.nf#param:sdrfmapping"
-                }
-            ],
+            "exampleOfWork": {
+                "@id": "workflow/main.nf#param:sdrfmapping"
+            },
             "sha256": "aa3a6b763be0c458c1c55143bb06d5164179ac9f5c94c3d752b5c90d3b059b02"
         },
         {
@@ -3058,21 +2975,17 @@
             "additionalType": "Dataset",
             "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
             "name": "unnamed_output_0",
-            "workExample": [
-                {
-                    "@id": "outputs/_1693481083/mgf/"
-                }
-            ]
+            "workExample": {
+                "@id": "outputs/_1693481083/mgf/"
+            }
         },
         {
             "@id": "outputs/_1693481083/mgf/",
             "@type": "Dataset",
             "alternateName": "mgf/",
-            "exampleOfWork": [
-                {
-                    "@id": "workflow/main.nf#output:unnamed_output_0"
-                }
-            ],
+            "exampleOfWork": {
+                "@id": "workflow/main.nf#output:unnamed_output_0"
+            },
             "hasPart": [
                 {
                     "@id": "outputs/_1693481083/mgf/OVEMB150205_12.mgf"
@@ -3104,21 +3017,17 @@
             "additionalType": "Dataset",
             "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
             "name": "unnamed_output_1",
-            "workExample": [
-                {
-                    "@id": "outputs/_1693481083/sdrf_merge/"
-                }
-            ]
+            "workExample": {
+                "@id": "outputs/_1693481083/sdrf_merge/"
+            }
         },
         {
             "@id": "outputs/_1693481083/sdrf_merge/",
             "@type": "Dataset",
             "alternateName": "sdrf_merge/",
-            "exampleOfWork": [
-                {
-                    "@id": "workflow/main.nf#output:unnamed_output_1"
-                }
-            ],
+            "exampleOfWork": {
+                "@id": "workflow/main.nf#output:unnamed_output_1"
+            },
             "hasPart": [
                 {
                     "@id": "outputs/_1693481083/sdrf_merge/params_out.yml"
@@ -3161,11 +3070,9 @@
             "additionalType": "File",
             "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
             "name": "unnamed_output_2",
-            "workExample": [
-                {
-                    "@id": "outputs/_1693481083/stand_prot_quant_mergedtpp.csv"
-                }
-            ]
+            "workExample": {
+                "@id": "outputs/_1693481083/stand_prot_quant_mergedtpp.csv"
+            }
         },
         {
             "@id": "outputs/_1693481083/stand_prot_quant_mergedtpp.csv",
@@ -3173,11 +3080,9 @@
             "alternateName": "stand_prot_quant_mergedtpp.csv",
             "contentSize": "1502",
             "encodingFormat": "text/csv",
-            "exampleOfWork": [
-                {
-                    "@id": "workflow/main.nf#output:unnamed_output_2"
-                }
-            ],
+            "exampleOfWork": {
+                "@id": "workflow/main.nf#output:unnamed_output_2"
+            },
             "sha256": "74b5d8cb97206a0c87d809cb1fb0fad55a95442331d533036f401b024196a888"
         },
         {
@@ -3186,21 +3091,17 @@
             "additionalType": "Dataset",
             "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
             "name": "unnamed_output_3",
-            "workExample": [
-                {
-                    "@id": "outputs/_1693481083/prepare_files/"
-                }
-            ]
+            "workExample": {
+                "@id": "outputs/_1693481083/prepare_files/"
+            }
         },
         {
             "@id": "outputs/_1693481083/prepare_files/",
             "@type": "Dataset",
             "alternateName": "prepare_files/",
-            "exampleOfWork": [
-                {
-                    "@id": "workflow/main.nf#output:unnamed_output_3"
-                }
-            ],
+            "exampleOfWork": {
+                "@id": "workflow/main.nf#output:unnamed_output_3"
+            },
             "hasPart": [
                 {
                     "@id": "outputs/_1693481083/prepare_files/sdrf_temp.tsv"
@@ -3276,11 +3177,9 @@
             "additionalType": "File",
             "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
             "name": "unnamed_output_4",
-            "workExample": [
-                {
-                    "@id": "outputs/_1693481083/stand_pep_quant_mergedproline.csv"
-                }
-            ]
+            "workExample": {
+                "@id": "outputs/_1693481083/stand_pep_quant_mergedproline.csv"
+            }
         },
         {
             "@id": "outputs/_1693481083/stand_pep_quant_mergedproline.csv",
@@ -3288,11 +3187,9 @@
             "alternateName": "stand_pep_quant_mergedproline.csv",
             "contentSize": "8584",
             "encodingFormat": "text/csv",
-            "exampleOfWork": [
-                {
-                    "@id": "workflow/main.nf#output:unnamed_output_4"
-                }
-            ],
+            "exampleOfWork": {
+                "@id": "workflow/main.nf#output:unnamed_output_4"
+            },
             "sha256": "b51d9163ba6527d783b8ac3d6af24295284dc7c3078c4b65b155de960472cde6"
         },
         {
@@ -3301,21 +3198,17 @@
             "additionalType": "Dataset",
             "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
             "name": "unnamed_output_5",
-            "workExample": [
-                {
-                    "@id": "outputs/_1693481083/maxquant/"
-                }
-            ]
+            "workExample": {
+                "@id": "outputs/_1693481083/maxquant/"
+            }
         },
         {
             "@id": "outputs/_1693481083/maxquant/",
             "@type": "Dataset",
             "alternateName": "maxquant/",
-            "exampleOfWork": [
-                {
-                    "@id": "workflow/main.nf#output:unnamed_output_5"
-                }
-            ],
+            "exampleOfWork": {
+                "@id": "workflow/main.nf#output:unnamed_output_5"
+            },
             "hasPart": [
                 {
                     "@id": "outputs/_1693481083/maxquant/msScans.txt"
@@ -3490,21 +3383,17 @@
             "additionalType": "Dataset",
             "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
             "name": "unnamed_output_6",
-            "workExample": [
-                {
-                    "@id": "outputs/_1693481083/comet/"
-                }
-            ]
+            "workExample": {
+                "@id": "outputs/_1693481083/comet/"
+            }
         },
         {
             "@id": "outputs/_1693481083/comet/",
             "@type": "Dataset",
             "alternateName": "comet/",
-            "exampleOfWork": [
-                {
-                    "@id": "workflow/main.nf#output:unnamed_output_6"
-                }
-            ],
+            "exampleOfWork": {
+                "@id": "workflow/main.nf#output:unnamed_output_6"
+            },
             "hasPart": [
                 {
                     "@id": "outputs/_1693481083/comet/comet.params"
@@ -3547,11 +3436,9 @@
             "additionalType": "File",
             "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
             "name": "unnamed_output_7",
-            "workExample": [
-                {
-                    "@id": "outputs/_1693481083/benchmarks_maxquant.json"
-                }
-            ]
+            "workExample": {
+                "@id": "outputs/_1693481083/benchmarks_maxquant.json"
+            }
         },
         {
             "@id": "outputs/_1693481083/benchmarks_maxquant.json",
@@ -3559,11 +3446,9 @@
             "alternateName": "benchmarks_maxquant.json",
             "contentSize": "1330",
             "encodingFormat": "application/json",
-            "exampleOfWork": [
-                {
-                    "@id": "workflow/main.nf#output:unnamed_output_7"
-                }
-            ],
+            "exampleOfWork": {
+                "@id": "workflow/main.nf#output:unnamed_output_7"
+            },
             "sha256": "8be4af4db2225fcd161dee539ee9f6a9f09f5b81a4961c357c92d2c12719d659"
         },
         {
@@ -3572,21 +3457,17 @@
             "additionalType": "Dataset",
             "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
             "name": "unnamed_output_8",
-            "workExample": [
-                {
-                    "@id": "outputs/_1693481083/polystest/"
-                }
-            ]
+            "workExample": {
+                "@id": "outputs/_1693481083/polystest/"
+            }
         },
         {
             "@id": "outputs/_1693481083/polystest/",
             "@type": "Dataset",
             "alternateName": "polystest/",
-            "exampleOfWork": [
-                {
-                    "@id": "workflow/main.nf#output:unnamed_output_8"
-                }
-            ],
+            "exampleOfWork": {
+                "@id": "workflow/main.nf#output:unnamed_output_8"
+            },
             "hasPart": [
                 {
                     "@id": "outputs/_1693481083/polystest/polystest_pep_res.csv"
@@ -3651,11 +3532,9 @@
             "additionalType": "File",
             "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
             "name": "unnamed_output_9",
-            "workExample": [
-                {
-                    "@id": "outputs/_1693481083/stand_pep_quant_mergedtpp.csv"
-                }
-            ]
+            "workExample": {
+                "@id": "outputs/_1693481083/stand_pep_quant_mergedtpp.csv"
+            }
         },
         {
             "@id": "outputs/_1693481083/stand_pep_quant_mergedtpp.csv",
@@ -3663,11 +3542,9 @@
             "alternateName": "stand_pep_quant_mergedtpp.csv",
             "contentSize": "1972",
             "encodingFormat": "text/csv",
-            "exampleOfWork": [
-                {
-                    "@id": "workflow/main.nf#output:unnamed_output_9"
-                }
-            ],
+            "exampleOfWork": {
+                "@id": "workflow/main.nf#output:unnamed_output_9"
+            },
             "sha256": "1f052a7dbd4150d96d96f7fd5ee8854088f765361950ac3340466a1df5167e80"
         },
         {
@@ -3676,11 +3553,9 @@
             "additionalType": "File",
             "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
             "name": "unnamed_output_10",
-            "workExample": [
-                {
-                    "@id": "outputs/_1693481083/benchmarks_tpp.json"
-                }
-            ]
+            "workExample": {
+                "@id": "outputs/_1693481083/benchmarks_tpp.json"
+            }
         },
         {
             "@id": "outputs/_1693481083/benchmarks_tpp.json",
@@ -3688,11 +3563,9 @@
             "alternateName": "benchmarks_tpp.json",
             "contentSize": "1385",
             "encodingFormat": "application/json",
-            "exampleOfWork": [
-                {
-                    "@id": "workflow/main.nf#output:unnamed_output_10"
-                }
-            ],
+            "exampleOfWork": {
+                "@id": "workflow/main.nf#output:unnamed_output_10"
+            },
             "sha256": "36dc79c88dd4aedad13b724b47142b57b52e9ce93f73a26caada431337b2c8af"
         },
         {
@@ -3701,11 +3574,9 @@
             "additionalType": "File",
             "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
             "name": "unnamed_output_11",
-            "workExample": [
-                {
-                    "@id": "outputs/_1693481083/benchmarks_proline.json"
-                }
-            ]
+            "workExample": {
+                "@id": "outputs/_1693481083/benchmarks_proline.json"
+            }
         },
         {
             "@id": "outputs/_1693481083/benchmarks_proline.json",
@@ -3713,11 +3584,9 @@
             "alternateName": "benchmarks_proline.json",
             "contentSize": "1469",
             "encodingFormat": "application/json",
-            "exampleOfWork": [
-                {
-                    "@id": "workflow/main.nf#output:unnamed_output_11"
-                }
-            ],
+            "exampleOfWork": {
+                "@id": "workflow/main.nf#output:unnamed_output_11"
+            },
             "sha256": "743118ebe7c4f6dde8f00b9125627a8e11455934cd5128cc6991b92d5981ea6b"
         },
         {
@@ -3726,11 +3595,9 @@
             "additionalType": "File",
             "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
             "name": "unnamed_output_12",
-            "workExample": [
-                {
-                    "@id": "outputs/_1693481083/stand_pep_quant_mergedmaxquant.csv"
-                }
-            ]
+            "workExample": {
+                "@id": "outputs/_1693481083/stand_pep_quant_mergedmaxquant.csv"
+            }
         },
         {
             "@id": "outputs/_1693481083/stand_pep_quant_mergedmaxquant.csv",
@@ -3738,11 +3605,9 @@
             "alternateName": "stand_pep_quant_mergedmaxquant.csv",
             "contentSize": "9723",
             "encodingFormat": "text/csv",
-            "exampleOfWork": [
-                {
-                    "@id": "workflow/main.nf#output:unnamed_output_12"
-                }
-            ],
+            "exampleOfWork": {
+                "@id": "workflow/main.nf#output:unnamed_output_12"
+            },
             "sha256": "4c857c5fc66fdbbb1989f1a23986879a1a7b859c93bef4ca12c148eebb3c83a5"
         },
         {
@@ -3751,21 +3616,17 @@
             "additionalType": "Dataset",
             "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
             "name": "unnamed_output_13",
-            "workExample": [
-                {
-                    "@id": "outputs/_1693481083/prepare_maxquant/"
-                }
-            ]
+            "workExample": {
+                "@id": "outputs/_1693481083/prepare_maxquant/"
+            }
         },
         {
             "@id": "outputs/_1693481083/prepare_maxquant/",
             "@type": "Dataset",
             "alternateName": "prepare_maxquant/",
-            "exampleOfWork": [
-                {
-                    "@id": "workflow/main.nf#output:unnamed_output_13"
-                }
-            ],
+            "exampleOfWork": {
+                "@id": "workflow/main.nf#output:unnamed_output_13"
+            },
             "hasPart": [
                 {
                     "@id": "outputs/_1693481083/prepare_maxquant/mqpar.xml"
@@ -3819,21 +3680,17 @@
             "additionalType": "Dataset",
             "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
             "name": "unnamed_output_14",
-            "workExample": [
-                {
-                    "@id": "outputs/_1693481083/peptideshaker/"
-                }
-            ]
+            "workExample": {
+                "@id": "outputs/_1693481083/peptideshaker/"
+            }
         },
         {
             "@id": "outputs/_1693481083/peptideshaker/",
             "@type": "Dataset",
             "alternateName": "peptideshaker/",
-            "exampleOfWork": [
-                {
-                    "@id": "workflow/main.nf#output:unnamed_output_14"
-                }
-            ],
+            "exampleOfWork": {
+                "@id": "workflow/main.nf#output:unnamed_output_14"
+            },
             "hasPart": [
                 {
                     "@id": "outputs/_1693481083/peptideshaker/OVEMB150205_14.txt"
@@ -3953,21 +3810,17 @@
             "additionalType": "Dataset",
             "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
             "name": "unnamed_output_15",
-            "workExample": [
-                {
-                    "@id": "outputs/_1693481083/proline/"
-                }
-            ]
+            "workExample": {
+                "@id": "outputs/_1693481083/proline/"
+            }
         },
         {
             "@id": "outputs/_1693481083/proline/",
             "@type": "Dataset",
             "alternateName": "proline/",
-            "exampleOfWork": [
-                {
-                    "@id": "workflow/main.nf#output:unnamed_output_15"
-                }
-            ],
+            "exampleOfWork": {
+                "@id": "workflow/main.nf#output:unnamed_output_15"
+            },
             "hasPart": [
                 {
                     "@id": "outputs/_1693481083/proline/quant_exp_design.txt"
@@ -4028,11 +3881,9 @@
             "@id": "outputs/_1693481083/proline/proline_results/",
             "@type": "Dataset",
             "alternateName": "proline/proline_results/",
-            "hasPart": [
-                {
-                    "@id": "outputs/_1693481083/proline/proline_results/proline_results_17174637-1a97-4fa6-8066-dcbb9174a4ca.xlsx"
-                }
-            ]
+            "hasPart": {
+                "@id": "outputs/_1693481083/proline/proline_results/proline_results_17174637-1a97-4fa6-8066-dcbb9174a4ca.xlsx"
+            }
         },
         {
             "@id": "outputs/_1693481083/proline/proline_results/proline_results_17174637-1a97-4fa6-8066-dcbb9174a4ca.xlsx",
@@ -4056,21 +3907,17 @@
             "additionalType": "Dataset",
             "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
             "name": "unnamed_output_16",
-            "workExample": [
-                {
-                    "@id": "outputs/_1693481083/mzdb/"
-                }
-            ]
+            "workExample": {
+                "@id": "outputs/_1693481083/mzdb/"
+            }
         },
         {
             "@id": "outputs/_1693481083/mzdb/",
             "@type": "Dataset",
             "alternateName": "mzdb/",
-            "exampleOfWork": [
-                {
-                    "@id": "workflow/main.nf#output:unnamed_output_16"
-                }
-            ],
+            "exampleOfWork": {
+                "@id": "workflow/main.nf#output:unnamed_output_16"
+            },
             "hasPart": [
                 {
                     "@id": "outputs/_1693481083/mzdb/OVEMB150205_14.mzDB"
@@ -4102,21 +3949,17 @@
             "additionalType": "Dataset",
             "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
             "name": "unnamed_output_17",
-            "workExample": [
-                {
-                    "@id": "outputs/_1693481083/searchgui/"
-                }
-            ]
+            "workExample": {
+                "@id": "outputs/_1693481083/searchgui/"
+            }
         },
         {
             "@id": "outputs/_1693481083/searchgui/",
             "@type": "Dataset",
             "alternateName": "searchgui/",
-            "exampleOfWork": [
-                {
-                    "@id": "workflow/main.nf#output:unnamed_output_17"
-                }
-            ],
+            "exampleOfWork": {
+                "@id": "workflow/main.nf#output:unnamed_output_17"
+            },
             "hasPart": [
                 {
                     "@id": "outputs/_1693481083/searchgui/OVEMB150205_12.zip"
@@ -4148,11 +3991,9 @@
             "additionalType": "File",
             "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
             "name": "unnamed_output_18",
-            "workExample": [
-                {
-                    "@id": "outputs/_1693481083/stand_prot_quant_mergedcompomics.csv"
-                }
-            ]
+            "workExample": {
+                "@id": "outputs/_1693481083/stand_prot_quant_mergedcompomics.csv"
+            }
         },
         {
             "@id": "outputs/_1693481083/stand_prot_quant_mergedcompomics.csv",
@@ -4160,11 +4001,9 @@
             "alternateName": "stand_prot_quant_mergedcompomics.csv",
             "contentSize": "3763",
             "encodingFormat": "text/csv",
-            "exampleOfWork": [
-                {
-                    "@id": "workflow/main.nf#output:unnamed_output_18"
-                }
-            ],
+            "exampleOfWork": {
+                "@id": "workflow/main.nf#output:unnamed_output_18"
+            },
             "sha256": "157b3691be3720823c9f55626b7554881336ef73f649141c4a23d931a6b4136c"
         },
         {
@@ -4173,21 +4012,17 @@
             "additionalType": "Dataset",
             "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
             "name": "unnamed_output_19",
-            "workExample": [
-                {
-                    "@id": "outputs/_1693481083/msqrob/"
-                }
-            ]
+            "workExample": {
+                "@id": "outputs/_1693481083/msqrob/"
+            }
         },
         {
             "@id": "outputs/_1693481083/msqrob/",
             "@type": "Dataset",
             "alternateName": "msqrob/",
-            "exampleOfWork": [
-                {
-                    "@id": "workflow/main.nf#output:unnamed_output_19"
-                }
-            ],
+            "exampleOfWork": {
+                "@id": "workflow/main.nf#output:unnamed_output_19"
+            },
             "hasPart": [
                 {
                     "@id": "outputs/_1693481083/msqrob/stand_prot_quant_merged.csv"
@@ -4241,21 +4076,17 @@
             "additionalType": "Dataset",
             "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
             "name": "unnamed_output_20",
-            "workExample": [
-                {
-                    "@id": "outputs/_1693481083/flashlfq/"
-                }
-            ]
+            "workExample": {
+                "@id": "outputs/_1693481083/flashlfq/"
+            }
         },
         {
             "@id": "outputs/_1693481083/flashlfq/",
             "@type": "Dataset",
             "alternateName": "flashlfq/",
-            "exampleOfWork": [
-                {
-                    "@id": "workflow/main.nf#output:unnamed_output_20"
-                }
-            ],
+            "exampleOfWork": {
+                "@id": "workflow/main.nf#output:unnamed_output_20"
+            },
             "hasPart": [
                 {
                     "@id": "outputs/_1693481083/flashlfq/QuantifiedProteins.tsv"
@@ -4298,11 +4129,9 @@
             "additionalType": "File",
             "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
             "name": "unnamed_output_21",
-            "workExample": [
-                {
-                    "@id": "outputs/_1693481083/stand_prot_quant_mergedproline.csv"
-                }
-            ]
+            "workExample": {
+                "@id": "outputs/_1693481083/stand_prot_quant_mergedproline.csv"
+            }
         },
         {
             "@id": "outputs/_1693481083/stand_prot_quant_mergedproline.csv",
@@ -4310,11 +4139,9 @@
             "alternateName": "stand_prot_quant_mergedproline.csv",
             "contentSize": "2004",
             "encodingFormat": "text/csv",
-            "exampleOfWork": [
-                {
-                    "@id": "workflow/main.nf#output:unnamed_output_21"
-                }
-            ],
+            "exampleOfWork": {
+                "@id": "workflow/main.nf#output:unnamed_output_21"
+            },
             "sha256": "d0eff8c283e98481896532f029e7e8f635ad30339d987e5ed4cb3cd00c40d42b"
         },
         {
@@ -4323,21 +4150,17 @@
             "additionalType": "Dataset",
             "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
             "name": "unnamed_output_22",
-            "workExample": [
-                {
-                    "@id": "outputs/_1693481083/normalyzerde/"
-                }
-            ]
+            "workExample": {
+                "@id": "outputs/_1693481083/normalyzerde/"
+            }
         },
         {
             "@id": "outputs/_1693481083/normalyzerde/",
             "@type": "Dataset",
             "alternateName": "normalyzerde/",
-            "exampleOfWork": [
-                {
-                    "@id": "workflow/main.nf#output:unnamed_output_22"
-                }
-            ],
+            "exampleOfWork": {
+                "@id": "workflow/main.nf#output:unnamed_output_22"
+            },
             "hasPart": [
                 {
                     "@id": "outputs/_1693481083/normalyzerde/stand_prot_quant_merged.csv"
@@ -4677,21 +4500,17 @@
             "additionalType": "Dataset",
             "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
             "name": "unnamed_output_23",
-            "workExample": [
-                {
-                    "@id": "outputs/_1693481083/.nextflow/"
-                }
-            ]
+            "workExample": {
+                "@id": "outputs/_1693481083/.nextflow/"
+            }
         },
         {
             "@id": "outputs/_1693481083/.nextflow/",
             "@type": "Dataset",
             "alternateName": ".nextflow/",
-            "exampleOfWork": [
-                {
-                    "@id": "workflow/main.nf#output:unnamed_output_23"
-                }
-            ],
+            "exampleOfWork": {
+                "@id": "workflow/main.nf#output:unnamed_output_23"
+            },
             "hasPart": [
                 {
                     "@id": "outputs/_1693481083/.nextflow/history"
@@ -4847,21 +4666,17 @@
             "additionalType": "Dataset",
             "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
             "name": "unnamed_output_24",
-            "workExample": [
-                {
-                    "@id": "outputs/_1693481083/mzml/"
-                }
-            ]
+            "workExample": {
+                "@id": "outputs/_1693481083/mzml/"
+            }
         },
         {
             "@id": "outputs/_1693481083/mzml/",
             "@type": "Dataset",
             "alternateName": "mzml/",
-            "exampleOfWork": [
-                {
-                    "@id": "workflow/main.nf#output:unnamed_output_24"
-                }
-            ],
+            "exampleOfWork": {
+                "@id": "workflow/main.nf#output:unnamed_output_24"
+            },
             "hasPart": [
                 {
                     "@id": "outputs/_1693481083/mzml/OVEMB150205_12.mzML"
@@ -4893,21 +4708,17 @@
             "additionalType": "Dataset",
             "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
             "name": "unnamed_output_25",
-            "workExample": [
-                {
-                    "@id": "outputs/_1693481083/tpp/"
-                }
-            ]
+            "workExample": {
+                "@id": "outputs/_1693481083/tpp/"
+            }
         },
         {
             "@id": "outputs/_1693481083/tpp/",
             "@type": "Dataset",
             "alternateName": "tpp/",
-            "exampleOfWork": [
-                {
-                    "@id": "workflow/main.nf#output:unnamed_output_25"
-                }
-            ],
+            "exampleOfWork": {
+                "@id": "workflow/main.nf#output:unnamed_output_25"
+            },
             "hasPart": [
                 {
                     "@id": "outputs/_1693481083/tpp/all_prot_quant_merged.csv"
@@ -5082,11 +4893,9 @@
             "additionalType": "File",
             "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
             "name": "unnamed_output_26",
-            "workExample": [
-                {
-                    "@id": "outputs/_1693481083/benchmarks_compomics.json"
-                }
-            ]
+            "workExample": {
+                "@id": "outputs/_1693481083/benchmarks_compomics.json"
+            }
         },
         {
             "@id": "outputs/_1693481083/benchmarks_compomics.json",
@@ -5094,11 +4903,9 @@
             "alternateName": "benchmarks_compomics.json",
             "contentSize": "1377",
             "encodingFormat": "application/json",
-            "exampleOfWork": [
-                {
-                    "@id": "workflow/main.nf#output:unnamed_output_26"
-                }
-            ],
+            "exampleOfWork": {
+                "@id": "workflow/main.nf#output:unnamed_output_26"
+            },
             "sha256": "8e109cbe2cc57d36a88cb4e132b32a492299202f3fba97d15aaf092dc4a9d1b8"
         },
         {
@@ -5107,11 +4914,9 @@
             "additionalType": "File",
             "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
             "name": "unnamed_output_27",
-            "workExample": [
-                {
-                    "@id": "outputs/_1693481083/stand_prot_quant_mergedmaxquant.csv"
-                }
-            ]
+            "workExample": {
+                "@id": "outputs/_1693481083/stand_prot_quant_mergedmaxquant.csv"
+            }
         },
         {
             "@id": "outputs/_1693481083/stand_prot_quant_mergedmaxquant.csv",
@@ -5119,11 +4924,9 @@
             "alternateName": "stand_prot_quant_mergedmaxquant.csv",
             "contentSize": "2869",
             "encodingFormat": "text/csv",
-            "exampleOfWork": [
-                {
-                    "@id": "workflow/main.nf#output:unnamed_output_27"
-                }
-            ],
+            "exampleOfWork": {
+                "@id": "workflow/main.nf#output:unnamed_output_27"
+            },
             "sha256": "414704643a039bed2814e95506f4b16a381a533324c035b49a78b34b3b309bf3"
         },
         {
@@ -5132,21 +4935,17 @@
             "additionalType": "Dataset",
             "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
             "name": "unnamed_output_28",
-            "workExample": [
-                {
-                    "@id": "outputs/_1693481083/rots/"
-                }
-            ]
+            "workExample": {
+                "@id": "outputs/_1693481083/rots/"
+            }
         },
         {
             "@id": "outputs/_1693481083/rots/",
             "@type": "Dataset",
             "alternateName": "rots/",
-            "exampleOfWork": [
-                {
-                    "@id": "workflow/main.nf#output:unnamed_output_28"
-                }
-            ],
+            "exampleOfWork": {
+                "@id": "workflow/main.nf#output:unnamed_output_28"
+            },
             "hasPart": [
                 {
                     "@id": "outputs/_1693481083/rots/stand_prot_quant_merged.csv"
@@ -5178,26 +4977,20 @@
             "additionalType": "Dataset",
             "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
             "name": "unnamed_output_29",
-            "workExample": [
-                {
-                    "@id": "outputs/_1693481083/searchgui_params/"
-                }
-            ]
+            "workExample": {
+                "@id": "outputs/_1693481083/searchgui_params/"
+            }
         },
         {
             "@id": "outputs/_1693481083/searchgui_params/",
             "@type": "Dataset",
             "alternateName": "searchgui_params/",
-            "exampleOfWork": [
-                {
-                    "@id": "workflow/main.nf#output:unnamed_output_29"
-                }
-            ],
-            "hasPart": [
-                {
-                    "@id": "outputs/_1693481083/searchgui_params/searchgui.par"
-                }
-            ]
+            "exampleOfWork": {
+                "@id": "workflow/main.nf#output:unnamed_output_29"
+            },
+            "hasPart": {
+                "@id": "outputs/_1693481083/searchgui_params/searchgui.par"
+            }
         },
         {
             "@id": "outputs/_1693481083/searchgui_params/searchgui.par",
@@ -5213,26 +5006,20 @@
             "additionalType": "Dataset",
             "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
             "name": "unnamed_output_30",
-            "workExample": [
-                {
-                    "@id": "outputs/_1693481083/decoy_database/"
-                }
-            ]
+            "workExample": {
+                "@id": "outputs/_1693481083/decoy_database/"
+            }
         },
         {
             "@id": "outputs/_1693481083/decoy_database/",
             "@type": "Dataset",
             "alternateName": "decoy_database/",
-            "exampleOfWork": [
-                {
-                    "@id": "workflow/main.nf#output:unnamed_output_30"
-                }
-            ],
-            "hasPart": [
-                {
-                    "@id": "outputs/_1693481083/decoy_database/ABRF_iPRG_2012_target_concatenated_target_decoy.fasta"
-                }
-            ]
+            "exampleOfWork": {
+                "@id": "workflow/main.nf#output:unnamed_output_30"
+            },
+            "hasPart": {
+                "@id": "outputs/_1693481083/decoy_database/ABRF_iPRG_2012_target_concatenated_target_decoy.fasta"
+            }
         },
         {
             "@id": "outputs/_1693481083/decoy_database/ABRF_iPRG_2012_target_concatenated_target_decoy.fasta",
@@ -5248,11 +5035,9 @@
             "additionalType": "File",
             "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
             "name": "unnamed_output_31",
-            "workExample": [
-                {
-                    "@id": "outputs/_1693481083/stand_pep_quant_mergedcompomics.csv"
-                }
-            ]
+            "workExample": {
+                "@id": "outputs/_1693481083/stand_pep_quant_mergedcompomics.csv"
+            }
         },
         {
             "@id": "outputs/_1693481083/stand_pep_quant_mergedcompomics.csv",
@@ -5260,11 +5045,9 @@
             "alternateName": "stand_pep_quant_mergedcompomics.csv",
             "contentSize": "7250",
             "encodingFormat": "text/csv",
-            "exampleOfWork": [
-                {
-                    "@id": "workflow/main.nf#output:unnamed_output_31"
-                }
-            ],
+            "exampleOfWork": {
+                "@id": "workflow/main.nf#output:unnamed_output_31"
+            },
             "sha256": "b500dfef0856515b090bcb7cbcfc894904a7ff3c4c8c77e2326c658baa104130"
         }
     ]

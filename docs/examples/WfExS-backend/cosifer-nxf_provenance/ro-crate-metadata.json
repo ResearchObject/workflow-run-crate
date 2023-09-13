@@ -20,7 +20,7 @@
                     "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
                 }
             ],
-            "datePublished": "2023-09-12T17:30:24+00:00",
+            "datePublished": "2023-09-13T18:43:17+00:00",
             "description": "RO-Crate from staged WfExS working directory 597708f2-952e-47c7-9b86-dbe3a9e5f651 (paraphalangeal hind teat)",
             "hasPart": [
                 {
@@ -74,10 +74,10 @@
             },
             "mentions": [
                 {
-                    "@id": "#2497bbc3-7359-4671-b569-423df622aefd"
+                    "@id": "#e44a8388-202d-4fed-8ce8-f2dda6085220"
                 },
                 {
-                    "@id": "#0be460a7-9df5-4cf6-871b-e4265495661d"
+                    "@id": "#1406583c-8ecf-46c0-8d5f-3f7271185ade"
                 }
             ]
         },
@@ -165,7 +165,7 @@
             "@id": "https://github.com/inab/WfExS-backend",
             "@type": "SoftwareApplication",
             "name": "WfExS-backend",
-            "softwareVersion": "0.9.3-147-g0ca0c1a (0ca0c1a07d6d0d993c4af092671b03a435b9a73f)",
+            "softwareVersion": "0.9.3-148-g2371d27 (2371d27cdc5d46d60f28f91ac12fd8262cec10b4)",
             "url": "https://github.com/inab/WfExS-backend"
         },
         {
@@ -183,19 +183,15 @@
             ],
             "alternateName": "nextflow.nf",
             "codeRepository": "https://github.com/inab/ipc_workflows",
-            "conformsTo": [
-                {
-                    "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE"
-                }
-            ],
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE"
+            },
             "contentSize": "1362",
             "description": "Workflow Entrypoint",
             "encodingFormat": "text/plain",
-            "hasPart": [
-                {
-                    "@id": "workflow/cosifer/nextflow/nextflow.config"
-                }
-            ],
+            "hasPart": {
+                "@id": "workflow/cosifer/nextflow/nextflow.config"
+            },
             "identifier": "trs://workflowhub.eu/119/1",
             "input": [
                 {
@@ -218,33 +214,33 @@
                 }
             ],
             "name": "workflow/cosifer/nextflow/nextflow",
-            "output": [
-                {
-                    "@id": "workflow/cosifer/nextflow/nextflow.nf#output:resdir"
-                }
-            ],
+            "output": {
+                "@id": "workflow/cosifer/nextflow/nextflow.nf#output:resdir"
+            },
             "programmingLanguage": {
                 "@id": "https://w3id.org/workflowhub/workflow-ro-crate#nextflow"
             },
             "runtimePlatform": "nextflow version 19.10.0.5169",
             "sha256": "09ad218c0bd8e829976f4d43c7540707aa7109bf1a6f13083b41ef65592554c9",
-            "softwareRequirements": [
-                {
-                    "@id": "https://www.nextflow.io/"
-                }
-            ],
+            "softwareRequirements": {
+                "@id": "https://www.nextflow.io/"
+            },
             "url": "https://github.com/inab/ipc_workflowstree/main/cosifer/nextflow",
             "version": "3bc3283a7e62f646703bcca2cd5a32955f2f5a31"
         },
         {
             "@id": "https://apptainer.org/",
             "@type": "SoftwareApplication",
+            "applicationCategory": "https://www.wikidata.org/wiki/Q7935198",
             "name": "singularity",
             "softwareVersion": "apptainer version 1.2.2"
         },
         {
             "@id": "containers/tsenit-cosifer-b4d5af45d2fc54b6bff2a9153a8e9054e560302e.img_meta.json",
             "@type": "File",
+            "about": {
+                "@id": "docker://tsenit/cosifer:b4d5af45d2fc54b6bff2a9153a8e9054e560302e"
+            },
             "contentSize": "3064",
             "encodingFormat": "application/json",
             "sha256": "c10f17f9479e4a56071958064f40504847c412604cee5412cb85b0751f847d20"
@@ -252,11 +248,10 @@
         {
             "@id": "docker://tsenit/cosifer:b4d5af45d2fc54b6bff2a9153a8e9054e560302e",
             "@type": "SoftwareApplication",
-            "hasPart": [
-                {
-                    "@id": "containers/tsenit-cosifer-b4d5af45d2fc54b6bff2a9153a8e9054e560302e.img_meta.json"
-                }
-            ],
+            "applicationCategory": "https://www.wikidata.org/wiki/Q51294208",
+            "hasPart": {
+                "@id": "containers/tsenit-cosifer-b4d5af45d2fc54b6bff2a9153a8e9054e560302e.img_meta.json"
+            },
             "operatingSystem": "linux",
             "processorRequirements": "amd64",
             "softwareRequirements": {
@@ -277,13 +272,11 @@
             "sha256": "4802bc8e5744d2dfc9544f7fe3bc3d681ce165b76d47564389b8d1ddd6fe24fe"
         },
         {
-            "@id": "#2497bbc3-7359-4671-b569-423df622aefd",
+            "@id": "#e44a8388-202d-4fed-8ce8-f2dda6085220",
             "@type": "CreateAction",
-            "actionStatus": [
-                {
-                    "@id": "http://schema.org/CompletedActionStatus"
-                }
-            ],
+            "actionStatus": {
+                "@id": "http://schema.org/CompletedActionStatus"
+            },
             "agent": [
                 {
                     "@id": "https://orcid.org/0000-0002-4806-5140"
@@ -316,19 +309,19 @@
                     "@id": "inputs/data_matrix.csv"
                 },
                 {
-                    "@id": "#93f1763a-4a2b-4105-a83c-23b5f75242a3"
+                    "@id": "#52b707a2-4b4d-48be-b36c-c9a30fe83cd5"
                 },
                 {
-                    "@id": "#26da5e34-8db3-4773-a2a6-86f4c111ab05"
+                    "@id": "#bc67bdd7-7630-42f4-99ff-59f1b5241715"
                 },
                 {
-                    "@id": "#08898006-f2e0-4110-94ca-f701258905ab"
+                    "@id": "#966c251e-f5e5-4e5b-9efb-29ab30816590"
                 },
                 {
-                    "@id": "#d69fa71f-18e4-47cd-be6e-b38e98bd4979"
+                    "@id": "#9d60cd9e-5e38-4bdd-bda7-ccd4da1cdc57"
                 },
                 {
-                    "@id": "#07cb5a36-56c6-4da3-bedc-2a798223a07c"
+                    "@id": "#63eeb9d6-ac8c-4460-9f9a-4842b4b794f1"
                 }
             ],
             "result": [
@@ -348,6 +341,9 @@
             "workExample": [
                 {
                     "@id": "inputs/data_matrix.csv"
+                },
+                {
+                    "@id": "inputs/data_matrix.csv"
                 }
             ]
         },
@@ -358,6 +354,9 @@
             "contentUrl": "https://raw.githubusercontent.com/PhosphorylatedRabbits/cosifer/f2e2a259d218b9a56a01d84bc9d6a7cd7c8d9bf1/examples/interactive/data_matrix.csv",
             "encodingFormat": "text/csv",
             "exampleOfWork": [
+                {
+                    "@id": "workflow/cosifer/nextflow/nextflow.nf#param:data_matrix"
+                },
                 {
                     "@id": "workflow/cosifer/nextflow/nextflow.nf#param:data_matrix"
                 }
@@ -373,21 +372,19 @@
             "valueRequired": "True",
             "workExample": [
                 {
-                    "@id": "#93f1763a-4a2b-4105-a83c-23b5f75242a3"
+                    "@id": "#52b707a2-4b4d-48be-b36c-c9a30fe83cd5"
                 },
                 {
-                    "@id": "#557d1176-0adb-4f55-bf77-0a09d3d9a131"
+                    "@id": "#4d642b92-d3ee-4b72-aa23-fa32759727ca"
                 }
             ]
         },
         {
-            "@id": "#93f1763a-4a2b-4105-a83c-23b5f75242a3",
+            "@id": "#52b707a2-4b4d-48be-b36c-c9a30fe83cd5",
             "@type": "PropertyValue",
-            "exampleOfWork": [
-                {
-                    "@id": "workflow/cosifer/nextflow/nextflow.nf#param:outputsDir"
-                }
-            ],
+            "exampleOfWork": {
+                "@id": "workflow/cosifer/nextflow/nextflow.nf#param:outputsDir"
+            },
             "name": "outputsDir",
             "value": "meta/outputs/_1693448929/nxf_trojan/test/results"
         },
@@ -400,14 +397,20 @@
             "valueRequired": "True",
             "workExample": [
                 {
-                    "@id": "#26da5e34-8db3-4773-a2a6-86f4c111ab05"
+                    "@id": "#bc67bdd7-7630-42f4-99ff-59f1b5241715"
+                },
+                {
+                    "@id": "#bc67bdd7-7630-42f4-99ff-59f1b5241715"
                 }
             ]
         },
         {
-            "@id": "#26da5e34-8db3-4773-a2a6-86f4c111ab05",
+            "@id": "#bc67bdd7-7630-42f4-99ff-59f1b5241715",
             "@type": "PropertyValue",
             "exampleOfWork": [
+                {
+                    "@id": "workflow/cosifer/nextflow/nextflow.nf#param:index_col"
+                },
                 {
                     "@id": "workflow/cosifer/nextflow/nextflow.nf#param:index_col"
                 }
@@ -424,14 +427,20 @@
             "valueRequired": "True",
             "workExample": [
                 {
-                    "@id": "#08898006-f2e0-4110-94ca-f701258905ab"
+                    "@id": "#966c251e-f5e5-4e5b-9efb-29ab30816590"
+                },
+                {
+                    "@id": "#966c251e-f5e5-4e5b-9efb-29ab30816590"
                 }
             ]
         },
         {
-            "@id": "#08898006-f2e0-4110-94ca-f701258905ab",
+            "@id": "#966c251e-f5e5-4e5b-9efb-29ab30816590",
             "@type": "PropertyValue",
             "exampleOfWork": [
+                {
+                    "@id": "workflow/cosifer/nextflow/nextflow.nf#param:hallmark_gene_sets_file"
+                },
                 {
                     "@id": "workflow/cosifer/nextflow/nextflow.nf#param:hallmark_gene_sets_file"
                 }
@@ -448,14 +457,20 @@
             "valueRequired": "True",
             "workExample": [
                 {
-                    "@id": "#d69fa71f-18e4-47cd-be6e-b38e98bd4979"
+                    "@id": "#9d60cd9e-5e38-4bdd-bda7-ccd4da1cdc57"
+                },
+                {
+                    "@id": "#9d60cd9e-5e38-4bdd-bda7-ccd4da1cdc57"
                 }
             ]
         },
         {
-            "@id": "#d69fa71f-18e4-47cd-be6e-b38e98bd4979",
+            "@id": "#9d60cd9e-5e38-4bdd-bda7-ccd4da1cdc57",
             "@type": "PropertyValue",
             "exampleOfWork": [
+                {
+                    "@id": "workflow/cosifer/nextflow/nextflow.nf#param:sep"
+                },
                 {
                     "@id": "workflow/cosifer/nextflow/nextflow.nf#param:sep"
                 }
@@ -472,14 +487,20 @@
             "valueRequired": "True",
             "workExample": [
                 {
-                    "@id": "#07cb5a36-56c6-4da3-bedc-2a798223a07c"
+                    "@id": "#63eeb9d6-ac8c-4460-9f9a-4842b4b794f1"
+                },
+                {
+                    "@id": "#63eeb9d6-ac8c-4460-9f9a-4842b4b794f1"
                 }
             ]
         },
         {
-            "@id": "#07cb5a36-56c6-4da3-bedc-2a798223a07c",
+            "@id": "#63eeb9d6-ac8c-4460-9f9a-4842b4b794f1",
             "@type": "PropertyValue",
             "exampleOfWork": [
+                {
+                    "@id": "workflow/cosifer/nextflow/nextflow.nf#param:samples_on_rows"
+                },
                 {
                     "@id": "workflow/cosifer/nextflow/nextflow.nf#param:samples_on_rows"
                 }
@@ -506,11 +527,9 @@
             "@id": "outputs/_1693448929/outputsDir/",
             "@type": "Dataset",
             "alternateName": "outputsDir/",
-            "exampleOfWork": [
-                {
-                    "@id": "workflow/cosifer/nextflow/nextflow.nf#output:resdir"
-                }
-            ],
+            "exampleOfWork": {
+                "@id": "workflow/cosifer/nextflow/nextflow.nf#output:resdir"
+            },
             "hasPart": [
                 {
                     "@id": "outputs/_1693448929/outputsDir/aracne.csv.gz"
@@ -559,13 +578,11 @@
             "sha256": "7bd905121bec73e3d3735ea0eec417b4eeb5d4c4d0e3867080bf4c3d2045129a"
         },
         {
-            "@id": "#0be460a7-9df5-4cf6-871b-e4265495661d",
+            "@id": "#1406583c-8ecf-46c0-8d5f-3f7271185ade",
             "@type": "CreateAction",
-            "actionStatus": [
-                {
-                    "@id": "http://schema.org/CompletedActionStatus"
-                }
-            ],
+            "actionStatus": {
+                "@id": "http://schema.org/CompletedActionStatus"
+            },
             "agent": [
                 {
                     "@id": "https://orcid.org/0000-0002-4806-5140"
@@ -598,19 +615,19 @@
                     "@id": "inputs/data_matrix.csv"
                 },
                 {
-                    "@id": "#557d1176-0adb-4f55-bf77-0a09d3d9a131"
+                    "@id": "#4d642b92-d3ee-4b72-aa23-fa32759727ca"
                 },
                 {
-                    "@id": "#26da5e34-8db3-4773-a2a6-86f4c111ab05"
+                    "@id": "#bc67bdd7-7630-42f4-99ff-59f1b5241715"
                 },
                 {
-                    "@id": "#08898006-f2e0-4110-94ca-f701258905ab"
+                    "@id": "#966c251e-f5e5-4e5b-9efb-29ab30816590"
                 },
                 {
-                    "@id": "#d69fa71f-18e4-47cd-be6e-b38e98bd4979"
+                    "@id": "#9d60cd9e-5e38-4bdd-bda7-ccd4da1cdc57"
                 },
                 {
-                    "@id": "#07cb5a36-56c6-4da3-bedc-2a798223a07c"
+                    "@id": "#63eeb9d6-ac8c-4460-9f9a-4842b4b794f1"
                 }
             ],
             "result": [
@@ -621,13 +638,11 @@
             "startTime": "2023-08-31T02:29:02.041398+00:00"
         },
         {
-            "@id": "#557d1176-0adb-4f55-bf77-0a09d3d9a131",
+            "@id": "#4d642b92-d3ee-4b72-aa23-fa32759727ca",
             "@type": "PropertyValue",
-            "exampleOfWork": [
-                {
-                    "@id": "workflow/cosifer/nextflow/nextflow.nf#param:outputsDir"
-                }
-            ],
+            "exampleOfWork": {
+                "@id": "workflow/cosifer/nextflow/nextflow.nf#param:outputsDir"
+            },
             "name": "outputsDir",
             "value": "meta/outputs/_1693448942/nxf_trojan/test/results"
         },
@@ -635,11 +650,9 @@
             "@id": "outputs/_1693448942/outputsDir/",
             "@type": "Dataset",
             "alternateName": "outputsDir/",
-            "exampleOfWork": [
-                {
-                    "@id": "workflow/cosifer/nextflow/nextflow.nf#output:resdir"
-                }
-            ],
+            "exampleOfWork": {
+                "@id": "workflow/cosifer/nextflow/nextflow.nf#output:resdir"
+            },
             "hasPart": [
                 {
                     "@id": "outputs/_1693448942/outputsDir/aracne.csv.gz"

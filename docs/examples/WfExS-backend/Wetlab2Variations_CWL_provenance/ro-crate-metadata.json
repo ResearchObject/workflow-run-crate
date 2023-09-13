@@ -20,7 +20,7 @@
                     "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
                 }
             ],
-            "datePublished": "2023-09-12T18:05:50+00:00",
+            "datePublished": "2023-09-13T18:14:42+00:00",
             "description": "RO-Crate from staged WfExS working directory a37fee9e-4288-4a9e-b493-993a867207d0 (meer oxometalate)",
             "hasPart": [
                 {
@@ -123,11 +123,9 @@
             "mainEntity": {
                 "@id": "consolidated-workflow/a37fee9e-4288-4a9e-b493-993a867207d0_workflow.cwl"
             },
-            "mentions": [
-                {
-                    "@id": "#853bea2e-80d4-49b5-96e0-b336b30cb5f1"
-                }
-            ]
+            "mentions": {
+                "@id": "#e99069d8-1bcd-4464-be9f-66377178195c"
+            }
         },
         {
             "@id": "ro-crate-metadata.json",
@@ -184,7 +182,7 @@
             "@id": "https://github.com/inab/WfExS-backend",
             "@type": "SoftwareApplication",
             "name": "WfExS-backend",
-            "softwareVersion": "0.9.3-147-g0ca0c1a (0ca0c1a07d6d0d993c4af092671b03a435b9a73f)",
+            "softwareVersion": "0.9.3-148-g2371d27 (2371d27cdc5d46d60f28f91ac12fd8262cec10b4)",
             "url": "https://github.com/inab/WfExS-backend"
         },
         {
@@ -202,11 +200,9 @@
             ],
             "alternateName": "workflow/cwl-workflows/workflows/workflow.cwl",
             "codeRepository": "https://github.com/inab/Wetlab2Variations",
-            "conformsTo": [
-                {
-                    "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE"
-                }
-            ],
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE"
+            },
             "contentSize": "7205",
             "description": "Unconsolidated Workflow Entrypoint",
             "encodingFormat": "text/plain",
@@ -266,23 +262,25 @@
             },
             "runtimePlatform": "cwltool 3.1.20230906142556",
             "sha256": "eac2f18a81bd1a1bd174cac9f93b39898cbbe7ac50e3337be18ab0f157da2b85",
-            "softwareRequirements": [
-                {
-                    "@id": "https://pypi.org/project/cwltool/"
-                }
-            ],
+            "softwareRequirements": {
+                "@id": "https://pypi.org/project/cwltool/"
+            },
             "url": "https://github.com/inab/Wetlab2Variationstree/eosc-life",
             "version": "31348ed533961f84cf348bf1af660ad9de6f870c"
         },
         {
             "@id": "https://www.docker.com/",
             "@type": "SoftwareApplication",
+            "applicationCategory": "https://www.wikidata.org/wiki/Q7935198",
             "name": "docker",
             "softwareVersion": "Docker version 20.10.22, build 3a2c30b63a"
         },
         {
             "@id": "containers/quay.io_biocontainers_cutadapt:1.18--py36h14c3975_1.img_meta.json",
             "@type": "File",
+            "about": {
+                "@id": "#quay.io/biocontainers/cutadapt:1.18--py36h14c3975_1"
+            },
             "contentSize": "3709",
             "encodingFormat": "application/json",
             "sha256": "5843b2bad81019552d5b3df6bacfa355f2ae3c6601e0075e0b6775182e284371"
@@ -290,11 +288,10 @@
         {
             "@id": "#quay.io/biocontainers/cutadapt:1.18--py36h14c3975_1",
             "@type": "SoftwareApplication",
-            "hasPart": [
-                {
-                    "@id": "containers/quay.io_biocontainers_cutadapt:1.18--py36h14c3975_1.img_meta.json"
-                }
-            ],
+            "applicationCategory": "https://www.wikidata.org/wiki/Q15206305",
+            "hasPart": {
+                "@id": "containers/quay.io_biocontainers_cutadapt:1.18--py36h14c3975_1.img_meta.json"
+            },
             "operatingSystem": "linux",
             "processorRequirements": "amd64",
             "softwareRequirements": {
@@ -305,6 +302,9 @@
         {
             "@id": "containers/quay.io_biocontainers_samtools:1.3.1--5.img_meta.json",
             "@type": "File",
+            "about": {
+                "@id": "#quay.io/biocontainers/samtools:1.3.1--5"
+            },
             "contentSize": "3691",
             "encodingFormat": "application/json",
             "sha256": "8dbe1534b855f9a90f6574de7ff954341bbac443b238b7b0dce26e9d11200c14"
@@ -312,11 +312,10 @@
         {
             "@id": "#quay.io/biocontainers/samtools:1.3.1--5",
             "@type": "SoftwareApplication",
-            "hasPart": [
-                {
-                    "@id": "containers/quay.io_biocontainers_samtools:1.3.1--5.img_meta.json"
-                }
-            ],
+            "applicationCategory": "https://www.wikidata.org/wiki/Q15206305",
+            "hasPart": {
+                "@id": "containers/quay.io_biocontainers_samtools:1.3.1--5.img_meta.json"
+            },
             "operatingSystem": "linux",
             "processorRequirements": "amd64",
             "softwareRequirements": {
@@ -327,6 +326,9 @@
         {
             "@id": "containers/jlaitinen_lftpalpine.img_meta.json",
             "@type": "File",
+            "about": {
+                "@id": "#jlaitinen/lftpalpine"
+            },
             "contentSize": "2848",
             "encodingFormat": "application/json",
             "sha256": "e93b893f65125c3704d5981a7eea4e7da8e6205eb057a752ad46d12940298785"
@@ -334,11 +336,10 @@
         {
             "@id": "#jlaitinen/lftpalpine",
             "@type": "SoftwareApplication",
-            "hasPart": [
-                {
-                    "@id": "containers/jlaitinen_lftpalpine.img_meta.json"
-                }
-            ],
+            "applicationCategory": "https://www.wikidata.org/wiki/Q15206305",
+            "hasPart": {
+                "@id": "containers/jlaitinen_lftpalpine.img_meta.json"
+            },
             "operatingSystem": "linux",
             "processorRequirements": "amd64",
             "softwareRequirements": {
@@ -349,6 +350,9 @@
         {
             "@id": "containers/quay.io_biocontainers_picard:2.18.25--0.img_meta.json",
             "@type": "File",
+            "about": {
+                "@id": "#quay.io/biocontainers/picard:2.18.25--0"
+            },
             "contentSize": "3695",
             "encodingFormat": "application/json",
             "sha256": "daff37b573aec9e01d00321c57ed4a8405e5790ad466c819ec25465307bdb17e"
@@ -356,11 +360,10 @@
         {
             "@id": "#quay.io/biocontainers/picard:2.18.25--0",
             "@type": "SoftwareApplication",
-            "hasPart": [
-                {
-                    "@id": "containers/quay.io_biocontainers_picard:2.18.25--0.img_meta.json"
-                }
-            ],
+            "applicationCategory": "https://www.wikidata.org/wiki/Q15206305",
+            "hasPart": {
+                "@id": "containers/quay.io_biocontainers_picard:2.18.25--0.img_meta.json"
+            },
             "operatingSystem": "linux",
             "processorRequirements": "amd64",
             "softwareRequirements": {
@@ -371,6 +374,9 @@
         {
             "@id": "containers/broadinstitute_gatk3:3.6-0.img_meta.json",
             "@type": "File",
+            "about": {
+                "@id": "#broadinstitute/gatk3:3.6-0"
+            },
             "contentSize": "5139",
             "encodingFormat": "application/json",
             "sha256": "0a2e26c252b7c33c245f14c017200240e900dc7192029164b0732daaa10cbab2"
@@ -378,11 +384,10 @@
         {
             "@id": "#broadinstitute/gatk3:3.6-0",
             "@type": "SoftwareApplication",
-            "hasPart": [
-                {
-                    "@id": "containers/broadinstitute_gatk3:3.6-0.img_meta.json"
-                }
-            ],
+            "applicationCategory": "https://www.wikidata.org/wiki/Q15206305",
+            "hasPart": {
+                "@id": "containers/broadinstitute_gatk3:3.6-0.img_meta.json"
+            },
             "operatingSystem": "linux",
             "processorRequirements": "amd64",
             "softwareRequirements": {
@@ -393,6 +398,9 @@
         {
             "@id": "containers/quay.io_biocontainers_bwa:0.7.17--h84994c4_5.img_meta.json",
             "@type": "File",
+            "about": {
+                "@id": "#quay.io/biocontainers/bwa:0.7.17--h84994c4_5"
+            },
             "contentSize": "3697",
             "encodingFormat": "application/json",
             "sha256": "3230be7bf5fb779e03b8766823ddd5b44697210f6fa65a63205398e16bdde3bb"
@@ -400,11 +408,10 @@
         {
             "@id": "#quay.io/biocontainers/bwa:0.7.17--h84994c4_5",
             "@type": "SoftwareApplication",
-            "hasPart": [
-                {
-                    "@id": "containers/quay.io_biocontainers_bwa:0.7.17--h84994c4_5.img_meta.json"
-                }
-            ],
+            "applicationCategory": "https://www.wikidata.org/wiki/Q15206305",
+            "hasPart": {
+                "@id": "containers/quay.io_biocontainers_bwa:0.7.17--h84994c4_5.img_meta.json"
+            },
             "operatingSystem": "linux",
             "processorRequirements": "amd64",
             "softwareRequirements": {
@@ -415,6 +422,9 @@
         {
             "@id": "containers/docker.io_node:slim.img_meta.json",
             "@type": "File",
+            "about": {
+                "@id": "#docker.io/node:slim"
+            },
             "contentSize": "3073",
             "encodingFormat": "application/json",
             "sha256": "03a57c74e0243eda05b5368992cb6a88b1c21fbb68ff33bfabcf321f901deb0b"
@@ -422,11 +432,10 @@
         {
             "@id": "#docker.io/node:slim",
             "@type": "SoftwareApplication",
-            "hasPart": [
-                {
-                    "@id": "containers/docker.io_node:slim.img_meta.json"
-                }
-            ],
+            "applicationCategory": "https://www.wikidata.org/wiki/Q15206305",
+            "hasPart": {
+                "@id": "containers/docker.io_node:slim.img_meta.json"
+            },
             "operatingSystem": "linux",
             "processorRequirements": "amd64",
             "softwareRequirements": {
@@ -605,11 +614,9 @@
                 "SoftwareApplication"
             ],
             "alternateName": "a37fee9e-4288-4a9e-b493-993a867207d0_workflow.cwl",
-            "conformsTo": [
-                {
-                    "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE"
-                }
-            ],
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE"
+            },
             "contentSize": "63161",
             "description": "Consolidated Workflow Entrypoint",
             "encodingFormat": "application/json",
@@ -653,26 +660,20 @@
             },
             "runtimePlatform": "cwltool 3.1.20230906142556",
             "sha256": "256392e6892e634de62850afe4de2802124be5e962a9bad9d55c57d72b64b139",
-            "softwareRequirements": [
-                {
-                    "@id": "https://pypi.org/project/cwltool/"
-                }
-            ],
+            "softwareRequirements": {
+                "@id": "https://pypi.org/project/cwltool/"
+            },
             "version": "31348ed533961f84cf348bf1af660ad9de6f870c"
         },
         {
-            "@id": "#4ae89991-f92c-4757-a493-78df2eb008f6",
+            "@id": "#7796a2c6-fbc9-493e-be5c-8e6e4d39acb8",
             "@type": "CreateAction",
-            "actionStatus": [
-                {
-                    "@id": "http://schema.org/CompletedActionStatus"
-                }
-            ],
-            "agent": [
-                {
-                    "@id": "https://orcid.org/0000-0002-4806-5140"
-                }
-            ],
+            "actionStatus": {
+                "@id": "http://schema.org/CompletedActionStatus"
+            },
+            "agent": {
+                "@id": "https://orcid.org/0000-0002-4806-5140"
+            },
             "instrument": [
                 {
                     "@id": "https://github.com/inab/WfExS-backend"
@@ -696,18 +697,14 @@
             }
         },
         {
-            "@id": "#853bea2e-80d4-49b5-96e0-b336b30cb5f1",
+            "@id": "#e99069d8-1bcd-4464-be9f-66377178195c",
             "@type": "CreateAction",
-            "actionStatus": [
-                {
-                    "@id": "http://schema.org/CompletedActionStatus"
-                }
-            ],
-            "agent": [
-                {
-                    "@id": "https://orcid.org/0000-0002-4806-5140"
-                }
-            ],
+            "actionStatus": {
+                "@id": "http://schema.org/CompletedActionStatus"
+            },
+            "agent": {
+                "@id": "https://orcid.org/0000-0002-4806-5140"
+            },
             "endTime": "2023-08-29T20:40:48.384424+00:00",
             "instrument": [
                 {
@@ -747,7 +744,7 @@
             "name": "Run outputs/_1693335046 of consolidated-workflow/a37fee9e-4288-4a9e-b493-993a867207d0_workflow.cwl",
             "object": [
                 {
-                    "@id": "#37e8c843-87ce-43ee-9972-16d547255611"
+                    "@id": "#a2c08209-a571-4469-83c6-84b8cb1c86d8"
                 },
                 {
                     "@id": "ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/technical/reference/phase2_reference_assembly_sequence/hs37d5.fa.gz"
@@ -759,18 +756,18 @@
                     "@id": "ftp://ftp.broadinstitute.org/bundle/b37/dbsnp_138.b37.vcf.gz"
                 },
                 {
-                    "@id": "#2ea3ab10-9fc1-4fb4-96c2-0dbc9f804df9"
+                    "@id": "#7c17f05e-1186-473e-b0ec-a3b76971568a"
                 },
                 {
-                    "@id": "#0ad2a0bb-d593-450e-91bf-ef4859b8dec6"
+                    "@id": "#0f3f0d44-aca2-4394-b702-ec0f7c6a27fe"
                 },
                 {
-                    "@id": "#63a17f50-fe0f-4839-9556-dd19b0f39ccd"
+                    "@id": "#11a58ba4-b70e-4b0e-bdd4-9841c7d97223"
                 }
             ],
             "result": [
                 {
-                    "@id": "#46d2311e-13bc-43a4-9304-c165ee88b913"
+                    "@id": "#91f19adf-8e8c-4295-a064-2d041ab01196"
                 },
                 {
                     "@id": "outputs/_1693335046/abc2.sorted.metrics.txt"
@@ -785,20 +782,16 @@
             "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
             "name": "fastq_files",
             "valueRequired": "True",
-            "workExample": [
-                {
-                    "@id": "#37e8c843-87ce-43ee-9972-16d547255611"
-                }
-            ]
+            "workExample": {
+                "@id": "#a2c08209-a571-4469-83c6-84b8cb1c86d8"
+            }
         },
         {
-            "@id": "#37e8c843-87ce-43ee-9972-16d547255611",
+            "@id": "#a2c08209-a571-4469-83c6-84b8cb1c86d8",
             "@type": "Collection",
-            "exampleOfWork": [
-                {
-                    "@id": "consolidated-workflow/a37fee9e-4288-4a9e-b493-993a867207d0_workflow.cwl#param:fastq_files"
-                }
-            ],
+            "exampleOfWork": {
+                "@id": "consolidated-workflow/a37fee9e-4288-4a9e-b493-993a867207d0_workflow.cwl#param:fastq_files"
+            },
             "hasPart": [
                 {
                     "@id": "ftp://ftp-trace.ncbi.nih.gov/giab/ftp/data/NA12878/NIST_NA12878_HG001_HiSeq_300x/140407_D00360_0017_BH947YADXX/Project_RM8398/Sample_U5c/U5c_CCGTCC_L001_R1_001.fastq.gz"
@@ -829,22 +822,18 @@
             "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
             "name": "reference_genome",
             "valueRequired": "True",
-            "workExample": [
-                {
-                    "@id": "ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/technical/reference/phase2_reference_assembly_sequence/hs37d5.fa.gz"
-                }
-            ]
+            "workExample": {
+                "@id": "ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/technical/reference/phase2_reference_assembly_sequence/hs37d5.fa.gz"
+            }
         },
         {
             "@id": "ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/technical/reference/phase2_reference_assembly_sequence/hs37d5.fa.gz",
             "@type": "File",
             "contentSize": "892326179",
             "encodingFormat": "application/x-gzip",
-            "exampleOfWork": [
-                {
-                    "@id": "consolidated-workflow/a37fee9e-4288-4a9e-b493-993a867207d0_workflow.cwl#param:reference_genome"
-                }
-            ],
+            "exampleOfWork": {
+                "@id": "consolidated-workflow/a37fee9e-4288-4a9e-b493-993a867207d0_workflow.cwl#param:reference_genome"
+            },
             "sha256": "e9157e19a95e01dfc47080b5b6aa559c861de90b9934c2ea7c49cd5ec49e0285"
         },
         {
@@ -854,22 +843,18 @@
             "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
             "name": "known_indels_file",
             "valueRequired": "True",
-            "workExample": [
-                {
-                    "@id": "ftp://ftp.broadinstitute.org/bundle/b37/Mills_and_1000G_gold_standard.indels.b37.vcf.gz"
-                }
-            ]
+            "workExample": {
+                "@id": "ftp://ftp.broadinstitute.org/bundle/b37/Mills_and_1000G_gold_standard.indels.b37.vcf.gz"
+            }
         },
         {
             "@id": "ftp://ftp.broadinstitute.org/bundle/b37/Mills_and_1000G_gold_standard.indels.b37.vcf.gz",
             "@type": "File",
             "contentSize": "19868212",
             "encodingFormat": "application/gzip",
-            "exampleOfWork": [
-                {
-                    "@id": "consolidated-workflow/a37fee9e-4288-4a9e-b493-993a867207d0_workflow.cwl#param:known_indels_file"
-                }
-            ],
+            "exampleOfWork": {
+                "@id": "consolidated-workflow/a37fee9e-4288-4a9e-b493-993a867207d0_workflow.cwl#param:known_indels_file"
+            },
             "sha256": "34b096066761009ef9e619fc7e3b587ed68b84c731ba0a26ec37650799712bd9"
         },
         {
@@ -879,22 +864,18 @@
             "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
             "name": "known_sites_file",
             "valueRequired": "True",
-            "workExample": [
-                {
-                    "@id": "ftp://ftp.broadinstitute.org/bundle/b37/dbsnp_138.b37.vcf.gz"
-                }
-            ]
+            "workExample": {
+                "@id": "ftp://ftp.broadinstitute.org/bundle/b37/dbsnp_138.b37.vcf.gz"
+            }
         },
         {
             "@id": "ftp://ftp.broadinstitute.org/bundle/b37/dbsnp_138.b37.vcf.gz",
             "@type": "File",
             "contentSize": "1472953420",
             "encodingFormat": "application/gzip",
-            "exampleOfWork": [
-                {
-                    "@id": "consolidated-workflow/a37fee9e-4288-4a9e-b493-993a867207d0_workflow.cwl#param:known_sites_file"
-                }
-            ],
+            "exampleOfWork": {
+                "@id": "consolidated-workflow/a37fee9e-4288-4a9e-b493-993a867207d0_workflow.cwl#param:known_sites_file"
+            },
             "sha256": "b6f49f8e393bc6e65de366505cc579d24db250cad208142d869019693836f130"
         },
         {
@@ -904,20 +885,16 @@
             "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
             "name": "readgroup_str",
             "valueRequired": "True",
-            "workExample": [
-                {
-                    "@id": "#2ea3ab10-9fc1-4fb4-96c2-0dbc9f804df9"
-                }
-            ]
+            "workExample": {
+                "@id": "#7c17f05e-1186-473e-b0ec-a3b76971568a"
+            }
         },
         {
-            "@id": "#2ea3ab10-9fc1-4fb4-96c2-0dbc9f804df9",
+            "@id": "#7c17f05e-1186-473e-b0ec-a3b76971568a",
             "@type": "PropertyValue",
-            "exampleOfWork": [
-                {
-                    "@id": "consolidated-workflow/a37fee9e-4288-4a9e-b493-993a867207d0_workflow.cwl#param:readgroup_str"
-                }
-            ],
+            "exampleOfWork": {
+                "@id": "consolidated-workflow/a37fee9e-4288-4a9e-b493-993a867207d0_workflow.cwl#param:readgroup_str"
+            },
             "name": "readgroup_str",
             "value": "@RG\\tID:H947YADXX\\tSM:NA12878\\tPL:ILLUMINA"
         },
@@ -928,20 +905,16 @@
             "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
             "name": "chromosome",
             "valueRequired": "True",
-            "workExample": [
-                {
-                    "@id": "#0ad2a0bb-d593-450e-91bf-ef4859b8dec6"
-                }
-            ]
+            "workExample": {
+                "@id": "#0f3f0d44-aca2-4394-b702-ec0f7c6a27fe"
+            }
         },
         {
-            "@id": "#0ad2a0bb-d593-450e-91bf-ef4859b8dec6",
+            "@id": "#0f3f0d44-aca2-4394-b702-ec0f7c6a27fe",
             "@type": "PropertyValue",
-            "exampleOfWork": [
-                {
-                    "@id": "consolidated-workflow/a37fee9e-4288-4a9e-b493-993a867207d0_workflow.cwl#param:chromosome"
-                }
-            ],
+            "exampleOfWork": {
+                "@id": "consolidated-workflow/a37fee9e-4288-4a9e-b493-993a867207d0_workflow.cwl#param:chromosome"
+            },
             "name": "chromosome",
             "value": "1"
         },
@@ -952,20 +925,16 @@
             "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
             "name": "sample_name",
             "valueRequired": "True",
-            "workExample": [
-                {
-                    "@id": "#63a17f50-fe0f-4839-9556-dd19b0f39ccd"
-                }
-            ]
+            "workExample": {
+                "@id": "#11a58ba4-b70e-4b0e-bdd4-9841c7d97223"
+            }
         },
         {
-            "@id": "#63a17f50-fe0f-4839-9556-dd19b0f39ccd",
+            "@id": "#11a58ba4-b70e-4b0e-bdd4-9841c7d97223",
             "@type": "PropertyValue",
-            "exampleOfWork": [
-                {
-                    "@id": "consolidated-workflow/a37fee9e-4288-4a9e-b493-993a867207d0_workflow.cwl#param:sample_name"
-                }
-            ],
+            "exampleOfWork": {
+                "@id": "consolidated-workflow/a37fee9e-4288-4a9e-b493-993a867207d0_workflow.cwl#param:sample_name"
+            },
             "name": "sample_name",
             "value": "abc2"
         },
@@ -975,11 +944,9 @@
             "additionalType": "Collection",
             "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
             "name": "gvcf",
-            "workExample": [
-                {
-                    "@id": "#46d2311e-13bc-43a4-9304-c165ee88b913"
-                }
-            ]
+            "workExample": {
+                "@id": "#91f19adf-8e8c-4295-a064-2d041ab01196"
+            }
         },
         {
             "@id": "outputs/_1693335046/abc2.sorted.md.realigned.bqsr.vcf.gz",
@@ -990,18 +957,14 @@
             "sha256": "79c41a5eac5d7ebf46d91f3b802b8a79f2c92d946b46bef02828719b992c61c2"
         },
         {
-            "@id": "#46d2311e-13bc-43a4-9304-c165ee88b913",
+            "@id": "#91f19adf-8e8c-4295-a064-2d041ab01196",
             "@type": "Collection",
-            "exampleOfWork": [
-                {
-                    "@id": "consolidated-workflow/a37fee9e-4288-4a9e-b493-993a867207d0_workflow.cwl#output:gvcf"
-                }
-            ],
-            "hasPart": [
-                {
-                    "@id": "outputs/_1693335046/abc2.sorted.md.realigned.bqsr.vcf.gz.tbi"
-                }
-            ],
+            "exampleOfWork": {
+                "@id": "consolidated-workflow/a37fee9e-4288-4a9e-b493-993a867207d0_workflow.cwl#output:gvcf"
+            },
+            "hasPart": {
+                "@id": "outputs/_1693335046/abc2.sorted.md.realigned.bqsr.vcf.gz.tbi"
+            },
             "mainEntity": {
                 "@id": "outputs/_1693335046/abc2.sorted.md.realigned.bqsr.vcf.gz"
             }
@@ -1020,11 +983,9 @@
             "additionalType": "File",
             "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
             "name": "metrics",
-            "workExample": [
-                {
-                    "@id": "outputs/_1693335046/abc2.sorted.metrics.txt"
-                }
-            ]
+            "workExample": {
+                "@id": "outputs/_1693335046/abc2.sorted.metrics.txt"
+            }
         },
         {
             "@id": "outputs/_1693335046/abc2.sorted.metrics.txt",
@@ -1032,11 +993,9 @@
             "alternateName": "abc2.sorted.metrics.txt",
             "contentSize": "3629",
             "encodingFormat": "text/plain",
-            "exampleOfWork": [
-                {
-                    "@id": "consolidated-workflow/a37fee9e-4288-4a9e-b493-993a867207d0_workflow.cwl#output:metrics"
-                }
-            ],
+            "exampleOfWork": {
+                "@id": "consolidated-workflow/a37fee9e-4288-4a9e-b493-993a867207d0_workflow.cwl#output:metrics"
+            },
             "sha256": "783d5ef09115a3c132c28b3d5fa45e8b45888c08c4d976ae906d0c38ee6bbb0a"
         }
     ]
