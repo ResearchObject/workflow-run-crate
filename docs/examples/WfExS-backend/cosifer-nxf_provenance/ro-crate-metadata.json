@@ -9,6 +9,9 @@
         {
             "@id": "./",
             "@type": "Dataset",
+            "about": {
+                "@id": "README.md"
+            },
             "conformsTo": [
                 {
                     "@id": "https://w3id.org/ro/wfrun/process/0.2"
@@ -20,9 +23,12 @@
                     "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
                 }
             ],
-            "datePublished": "2023-09-13T18:43:17+00:00",
+            "datePublished": "2023-09-19T01:46:48+00:00",
             "description": "RO-Crate from staged WfExS working directory 597708f2-952e-47c7-9b86-dbe3a9e5f651 (paraphalangeal hind teat)",
             "hasPart": [
+                {
+                    "@id": "README.md"
+                },
                 {
                     "@id": "workflow/cosifer/nextflow/nextflow.nf"
                 },
@@ -51,6 +57,18 @@
                     "@id": "outputs/_1693448929/outputsDir/summa.csv.gz"
                 },
                 {
+                    "@id": "meta/outputs/_1693448929/stats/dag.dot"
+                },
+                {
+                    "@id": "meta/outputs/_1693448929/stats/dag.dot.png"
+                },
+                {
+                    "@id": "meta/outputs/_1693448929/stdout.txt"
+                },
+                {
+                    "@id": "meta/outputs/_1693448929/stderr.txt"
+                },
+                {
                     "@id": "outputs/_1693448942/outputsDir/"
                 },
                 {
@@ -64,6 +82,18 @@
                 },
                 {
                     "@id": "outputs/_1693448942/outputsDir/summa.csv.gz"
+                },
+                {
+                    "@id": "meta/outputs/_1693448942/stats/dag.dot"
+                },
+                {
+                    "@id": "meta/outputs/_1693448942/stats/dag.dot.png"
+                },
+                {
+                    "@id": "meta/outputs/_1693448942/stdout.txt"
+                },
+                {
+                    "@id": "meta/outputs/_1693448942/stderr.txt"
                 }
             ],
             "license": [
@@ -74,10 +104,10 @@
             },
             "mentions": [
                 {
-                    "@id": "#e44a8388-202d-4fed-8ce8-f2dda6085220"
+                    "@id": "#61064a71-c517-4c41-a543-c91479df29d1"
                 },
                 {
-                    "@id": "#1406583c-8ecf-46c0-8d5f-3f7271185ade"
+                    "@id": "#33b9988f-3a00-41a6-859d-eb824b6aaf76"
                 }
             ]
         },
@@ -165,8 +195,15 @@
             "@id": "https://github.com/inab/WfExS-backend",
             "@type": "SoftwareApplication",
             "name": "WfExS-backend",
-            "softwareVersion": "0.9.3-148-g2371d27 (2371d27cdc5d46d60f28f91ac12fd8262cec10b4)",
+            "softwareVersion": "0.9.3-152-g0f47f60 (0f47f60ca97afb7e3134d808e62dd85be498d3f8)",
             "url": "https://github.com/inab/WfExS-backend"
+        },
+        {
+            "@id": "README.md",
+            "@type": "File",
+            "contentSize": "4716",
+            "encodingFormat": "text/plain",
+            "sha256": "d48cfd46546fa23d294885cebad3822be04bc518a4a879f24be39fe1a4f6944b"
         },
         {
             "@id": "https://www.nextflow.io/",
@@ -193,6 +230,14 @@
                 "@id": "workflow/cosifer/nextflow/nextflow.config"
             },
             "identifier": "trs://workflowhub.eu/119/1",
+            "image": [
+                {
+                    "@id": "meta/outputs/_1693448929/stats/dag.dot.png"
+                },
+                {
+                    "@id": "meta/outputs/_1693448942/stats/dag.dot.png"
+                }
+            ],
             "input": [
                 {
                     "@id": "workflow/cosifer/nextflow/nextflow.nf#param:data_matrix"
@@ -272,7 +317,7 @@
             "sha256": "4802bc8e5744d2dfc9544f7fe3bc3d681ce165b76d47564389b8d1ddd6fe24fe"
         },
         {
-            "@id": "#e44a8388-202d-4fed-8ce8-f2dda6085220",
+            "@id": "#61064a71-c517-4c41-a543-c91479df29d1",
             "@type": "CreateAction",
             "actionStatus": {
                 "@id": "http://schema.org/CompletedActionStatus"
@@ -309,24 +354,33 @@
                     "@id": "inputs/data_matrix.csv"
                 },
                 {
-                    "@id": "#52b707a2-4b4d-48be-b36c-c9a30fe83cd5"
+                    "@id": "#d43f1173-cb0b-407a-ab79-4d5892702c7b"
                 },
                 {
-                    "@id": "#bc67bdd7-7630-42f4-99ff-59f1b5241715"
+                    "@id": "#75f2911a-00ef-4b07-a5ed-aa8db4ff5b11"
                 },
                 {
-                    "@id": "#966c251e-f5e5-4e5b-9efb-29ab30816590"
+                    "@id": "#b8d36e68-f239-49d3-82a4-5ce00f7b1aa3"
                 },
                 {
-                    "@id": "#9d60cd9e-5e38-4bdd-bda7-ccd4da1cdc57"
+                    "@id": "#30fc2e1f-e329-4d7a-9598-2f178995d10b"
                 },
                 {
-                    "@id": "#63eeb9d6-ac8c-4460-9f9a-4842b4b794f1"
+                    "@id": "#bcb7792b-ba65-4721-9e59-93e512f593ea"
                 }
             ],
             "result": [
                 {
                     "@id": "outputs/_1693448929/outputsDir/"
+                },
+                {
+                    "@id": "meta/outputs/_1693448929/stats/dag.dot"
+                },
+                {
+                    "@id": "meta/outputs/_1693448929/stats/dag.dot.png"
+                },
+                {
+                    "@id": "#ea03be28-d365-4fd7-97da-1c7200b58172"
                 }
             ],
             "startTime": "2023-08-31T02:28:49.576875+00:00"
@@ -372,15 +426,15 @@
             "valueRequired": "True",
             "workExample": [
                 {
-                    "@id": "#52b707a2-4b4d-48be-b36c-c9a30fe83cd5"
+                    "@id": "#d43f1173-cb0b-407a-ab79-4d5892702c7b"
                 },
                 {
-                    "@id": "#4d642b92-d3ee-4b72-aa23-fa32759727ca"
+                    "@id": "#267a7087-3712-4657-a45e-d72387ce5421"
                 }
             ]
         },
         {
-            "@id": "#52b707a2-4b4d-48be-b36c-c9a30fe83cd5",
+            "@id": "#d43f1173-cb0b-407a-ab79-4d5892702c7b",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "workflow/cosifer/nextflow/nextflow.nf#param:outputsDir"
@@ -397,15 +451,15 @@
             "valueRequired": "True",
             "workExample": [
                 {
-                    "@id": "#bc67bdd7-7630-42f4-99ff-59f1b5241715"
+                    "@id": "#75f2911a-00ef-4b07-a5ed-aa8db4ff5b11"
                 },
                 {
-                    "@id": "#bc67bdd7-7630-42f4-99ff-59f1b5241715"
+                    "@id": "#75f2911a-00ef-4b07-a5ed-aa8db4ff5b11"
                 }
             ]
         },
         {
-            "@id": "#bc67bdd7-7630-42f4-99ff-59f1b5241715",
+            "@id": "#75f2911a-00ef-4b07-a5ed-aa8db4ff5b11",
             "@type": "PropertyValue",
             "exampleOfWork": [
                 {
@@ -427,15 +481,15 @@
             "valueRequired": "True",
             "workExample": [
                 {
-                    "@id": "#966c251e-f5e5-4e5b-9efb-29ab30816590"
+                    "@id": "#b8d36e68-f239-49d3-82a4-5ce00f7b1aa3"
                 },
                 {
-                    "@id": "#966c251e-f5e5-4e5b-9efb-29ab30816590"
+                    "@id": "#b8d36e68-f239-49d3-82a4-5ce00f7b1aa3"
                 }
             ]
         },
         {
-            "@id": "#966c251e-f5e5-4e5b-9efb-29ab30816590",
+            "@id": "#b8d36e68-f239-49d3-82a4-5ce00f7b1aa3",
             "@type": "PropertyValue",
             "exampleOfWork": [
                 {
@@ -457,15 +511,15 @@
             "valueRequired": "True",
             "workExample": [
                 {
-                    "@id": "#9d60cd9e-5e38-4bdd-bda7-ccd4da1cdc57"
+                    "@id": "#30fc2e1f-e329-4d7a-9598-2f178995d10b"
                 },
                 {
-                    "@id": "#9d60cd9e-5e38-4bdd-bda7-ccd4da1cdc57"
+                    "@id": "#30fc2e1f-e329-4d7a-9598-2f178995d10b"
                 }
             ]
         },
         {
-            "@id": "#9d60cd9e-5e38-4bdd-bda7-ccd4da1cdc57",
+            "@id": "#30fc2e1f-e329-4d7a-9598-2f178995d10b",
             "@type": "PropertyValue",
             "exampleOfWork": [
                 {
@@ -487,15 +541,15 @@
             "valueRequired": "True",
             "workExample": [
                 {
-                    "@id": "#63eeb9d6-ac8c-4460-9f9a-4842b4b794f1"
+                    "@id": "#bcb7792b-ba65-4721-9e59-93e512f593ea"
                 },
                 {
-                    "@id": "#63eeb9d6-ac8c-4460-9f9a-4842b4b794f1"
+                    "@id": "#bcb7792b-ba65-4721-9e59-93e512f593ea"
                 }
             ]
         },
         {
-            "@id": "#63eeb9d6-ac8c-4460-9f9a-4842b4b794f1",
+            "@id": "#bcb7792b-ba65-4721-9e59-93e512f593ea",
             "@type": "PropertyValue",
             "exampleOfWork": [
                 {
@@ -578,7 +632,85 @@
             "sha256": "7bd905121bec73e3d3735ea0eec417b4eeb5d4c4d0e3867080bf4c3d2045129a"
         },
         {
-            "@id": "#1406583c-8ecf-46c0-8d5f-3f7271185ade",
+            "@id": "meta/outputs/_1693448929/stats/dag.dot",
+            "@type": [
+                "File",
+                "ImageObject"
+            ],
+            "contentSize": "706",
+            "encodingFormat": "text/plain",
+            "isBasedOn": {
+                "@id": "workflow/cosifer/nextflow/nextflow.nf"
+            },
+            "sha256": "606f9bc31f8532af0deab53d02aa5ab9c5bac99d42f1c9c39f7e9b971307b5e5"
+        },
+        {
+            "@id": "meta/outputs/_1693448929/stats/dag.dot.png",
+            "@type": [
+                "File",
+                "ImageObject"
+            ],
+            "contentSize": "27224",
+            "encodingFormat": "image/png",
+            "isBasedOn": {
+                "@id": "meta/outputs/_1693448929/stats/dag.dot"
+            },
+            "sha256": "de20aa1b36163898e5ad24bc8ba7373833802b97eb2aa3e6fca692e353f90a3e"
+        },
+        {
+            "@id": "#90bd522b-31f7-43f6-8585-1beaaa6c9249",
+            "@type": "CreateAction",
+            "actionStatus": {
+                "@id": "http://schema.org/CompletedActionStatus"
+            },
+            "agent": [
+                {
+                    "@id": "https://orcid.org/0000-0002-4806-5140"
+                },
+                {
+                    "@id": "https://orcid.org/0000-0003-4929-1219"
+                }
+            ],
+            "description": "dot -Tpng -ometa/outputs/_1693448929/stats/dag.dot.png meta/outputs/_1693448929/stats/dag.dot",
+            "instrument": {
+                "@id": "https://github.com/inab/WfExS-backend"
+            },
+            "name": "Generate diagram PNG image from DOT",
+            "object": {
+                "@id": "meta/outputs/_1693448929/stats/dag.dot"
+            },
+            "result": {
+                "@id": "meta/outputs/_1693448929/stats/dag.dot.png"
+            }
+        },
+        {
+            "@id": "#ea03be28-d365-4fd7-97da-1c7200b58172",
+            "@type": "Collection",
+            "hasPart": [
+                {
+                    "@id": "meta/outputs/_1693448929/stdout.txt"
+                },
+                {
+                    "@id": "meta/outputs/_1693448929/stderr.txt"
+                }
+            ]
+        },
+        {
+            "@id": "meta/outputs/_1693448929/stdout.txt",
+            "@type": "File",
+            "contentSize": "690",
+            "encodingFormat": "text/plain",
+            "sha256": "8fad448676a253926cde149703d0d46c1d5f51a14f82fc7526989dab5a1de0e8"
+        },
+        {
+            "@id": "meta/outputs/_1693448929/stderr.txt",
+            "@type": "File",
+            "contentSize": "0",
+            "encodingFormat": "inode/x-empty",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+            "@id": "#33b9988f-3a00-41a6-859d-eb824b6aaf76",
             "@type": "CreateAction",
             "actionStatus": {
                 "@id": "http://schema.org/CompletedActionStatus"
@@ -615,30 +747,39 @@
                     "@id": "inputs/data_matrix.csv"
                 },
                 {
-                    "@id": "#4d642b92-d3ee-4b72-aa23-fa32759727ca"
+                    "@id": "#267a7087-3712-4657-a45e-d72387ce5421"
                 },
                 {
-                    "@id": "#bc67bdd7-7630-42f4-99ff-59f1b5241715"
+                    "@id": "#75f2911a-00ef-4b07-a5ed-aa8db4ff5b11"
                 },
                 {
-                    "@id": "#966c251e-f5e5-4e5b-9efb-29ab30816590"
+                    "@id": "#b8d36e68-f239-49d3-82a4-5ce00f7b1aa3"
                 },
                 {
-                    "@id": "#9d60cd9e-5e38-4bdd-bda7-ccd4da1cdc57"
+                    "@id": "#30fc2e1f-e329-4d7a-9598-2f178995d10b"
                 },
                 {
-                    "@id": "#63eeb9d6-ac8c-4460-9f9a-4842b4b794f1"
+                    "@id": "#bcb7792b-ba65-4721-9e59-93e512f593ea"
                 }
             ],
             "result": [
                 {
                     "@id": "outputs/_1693448942/outputsDir/"
+                },
+                {
+                    "@id": "meta/outputs/_1693448942/stats/dag.dot"
+                },
+                {
+                    "@id": "meta/outputs/_1693448942/stats/dag.dot.png"
+                },
+                {
+                    "@id": "#9ebb3b50-3519-40f7-b1af-33ae88453091"
                 }
             ],
             "startTime": "2023-08-31T02:29:02.041398+00:00"
         },
         {
-            "@id": "#4d642b92-d3ee-4b72-aa23-fa32759727ca",
+            "@id": "#267a7087-3712-4657-a45e-d72387ce5421",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "workflow/cosifer/nextflow/nextflow.nf#param:outputsDir"
@@ -699,6 +840,84 @@
             "contentSize": "69014",
             "encodingFormat": "application/gzip",
             "sha256": "3e17f1b15b3a47e5a504e8281b4703c6ea17a0280a19fbe2721a55de3fb709c8"
+        },
+        {
+            "@id": "meta/outputs/_1693448942/stats/dag.dot",
+            "@type": [
+                "File",
+                "ImageObject"
+            ],
+            "contentSize": "706",
+            "encodingFormat": "text/plain",
+            "isBasedOn": {
+                "@id": "workflow/cosifer/nextflow/nextflow.nf"
+            },
+            "sha256": "606f9bc31f8532af0deab53d02aa5ab9c5bac99d42f1c9c39f7e9b971307b5e5"
+        },
+        {
+            "@id": "meta/outputs/_1693448942/stats/dag.dot.png",
+            "@type": [
+                "File",
+                "ImageObject"
+            ],
+            "contentSize": "27224",
+            "encodingFormat": "image/png",
+            "isBasedOn": {
+                "@id": "meta/outputs/_1693448942/stats/dag.dot"
+            },
+            "sha256": "de20aa1b36163898e5ad24bc8ba7373833802b97eb2aa3e6fca692e353f90a3e"
+        },
+        {
+            "@id": "#f42caefe-3319-4b3d-9761-76f43caf24ec",
+            "@type": "CreateAction",
+            "actionStatus": {
+                "@id": "http://schema.org/CompletedActionStatus"
+            },
+            "agent": [
+                {
+                    "@id": "https://orcid.org/0000-0002-4806-5140"
+                },
+                {
+                    "@id": "https://orcid.org/0000-0003-4929-1219"
+                }
+            ],
+            "description": "dot -Tpng -ometa/outputs/_1693448942/stats/dag.dot.png meta/outputs/_1693448942/stats/dag.dot",
+            "instrument": {
+                "@id": "https://github.com/inab/WfExS-backend"
+            },
+            "name": "Generate diagram PNG image from DOT",
+            "object": {
+                "@id": "meta/outputs/_1693448942/stats/dag.dot"
+            },
+            "result": {
+                "@id": "meta/outputs/_1693448942/stats/dag.dot.png"
+            }
+        },
+        {
+            "@id": "#9ebb3b50-3519-40f7-b1af-33ae88453091",
+            "@type": "Collection",
+            "hasPart": [
+                {
+                    "@id": "meta/outputs/_1693448942/stdout.txt"
+                },
+                {
+                    "@id": "meta/outputs/_1693448942/stderr.txt"
+                }
+            ]
+        },
+        {
+            "@id": "meta/outputs/_1693448942/stdout.txt",
+            "@type": "File",
+            "contentSize": "690",
+            "encodingFormat": "text/plain",
+            "sha256": "f7125016897ba599a80e587dff7e59b59e9bb99537bf11af6db713f5eaf80a0e"
+        },
+        {
+            "@id": "meta/outputs/_1693448942/stderr.txt",
+            "@type": "File",
+            "contentSize": "0",
+            "encodingFormat": "inode/x-empty",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
         }
     ]
 }

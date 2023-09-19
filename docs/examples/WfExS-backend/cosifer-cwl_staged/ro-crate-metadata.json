@@ -9,6 +9,9 @@
         {
             "@id": "./",
             "@type": "Dataset",
+            "about": {
+                "@id": "README.md"
+            },
             "conformsTo": [
                 {
                     "@id": "https://w3id.org/ro/wfrun/process/0.2"
@@ -20,9 +23,12 @@
                     "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
                 }
             ],
-            "datePublished": "2023-09-13T18:42:59+00:00",
+            "datePublished": "2023-09-19T01:54:21+00:00",
             "description": "RO-Crate from staged WfExS working directory 2400c32e-f875-4cd4-9d41-be6da8224c67 (preferencial buquinolate)",
             "hasPart": [
+                {
+                    "@id": "README.md"
+                },
                 {
                     "@id": "workflow/cosifer/cwl/cosifer-workflow.cwl"
                 },
@@ -133,8 +139,15 @@
             "@id": "https://github.com/inab/WfExS-backend",
             "@type": "SoftwareApplication",
             "name": "WfExS-backend",
-            "softwareVersion": "0.9.3-148-g2371d27 (2371d27cdc5d46d60f28f91ac12fd8262cec10b4)",
+            "softwareVersion": "0.9.3-153-gc44f972 (c44f972d8987d149df2525533571f496e88b437d)",
             "url": "https://github.com/inab/WfExS-backend"
+        },
+        {
+            "@id": "README.md",
+            "@type": "File",
+            "contentSize": "4716",
+            "encodingFormat": "text/plain",
+            "sha256": "d65a2428a880ed0f1574533f1abe9ea93518046a1e814c3dfef77ee2a5745cb4"
         },
         {
             "@id": "https://pypi.org/project/cwltool/",
@@ -284,7 +297,7 @@
             "version": "b6ff7c65652408f905d0e2b8340c2e65f0253fd2"
         },
         {
-            "@id": "#6ac8547b-0794-464f-b873-381114e7b35b",
+            "@id": "#6db6afd3-f738-4f45-be81-06beb68bbb0e",
             "@type": "CreateAction",
             "actionStatus": {
                 "@id": "http://schema.org/CompletedActionStatus"
@@ -349,11 +362,11 @@
             "name": "separator",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#7c109f21-a6bb-4c99-b682-d55bc5be5928"
+                "@id": "#5bf013f0-3bd2-4018-a626-71e7adec3061"
             }
         },
         {
-            "@id": "#7c109f21-a6bb-4c99-b682-d55bc5be5928",
+            "@id": "#5bf013f0-3bd2-4018-a626-71e7adec3061",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "consolidated-workflow/2400c32e-f875-4cd4-9d41-be6da8224c67_workflow.cwl#param:separator"
@@ -369,11 +382,11 @@
             "name": "outdir",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#4ac10a5c-a176-4705-859d-b5c0a342ef82"
+                "@id": "#7ecba654-027c-42cc-a7b4-27c7d2f17b53"
             }
         },
         {
-            "@id": "#4ac10a5c-a176-4705-859d-b5c0a342ef82",
+            "@id": "#7ecba654-027c-42cc-a7b4-27c7d2f17b53",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "consolidated-workflow/2400c32e-f875-4cd4-9d41-be6da8224c67_workflow.cwl#param:outdir"

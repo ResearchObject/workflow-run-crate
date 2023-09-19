@@ -1,0 +1,26 @@
+digraph "dag" {
+p0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+p5 [label="cosifer"];
+p0 -> p5 [label="cosifer_input"];
+
+p1 [shape=point,label="",fixedsize=true,width=0.1];
+p5 [label="cosifer"];
+p1 -> p5 [label="gmt_filepath"];
+
+p2 [shape=point,label="",fixedsize=true,width=0.1];
+p5 [label="cosifer"];
+p2 -> p5 [label="separator"];
+
+p3 [shape=point,label="",fixedsize=true,width=0.1];
+p5 [label="cosifer"];
+p3 -> p5 [label="index_col"];
+
+p4 [shape=point,label="",fixedsize=true,width=0.1];
+p5 [label="cosifer"];
+p4 -> p5 [label="samples_on_rows"];
+
+p5 [label="cosifer"];
+p6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="subscribe"];
+p5 -> p6 [label="cosifer_output"];
+
+}

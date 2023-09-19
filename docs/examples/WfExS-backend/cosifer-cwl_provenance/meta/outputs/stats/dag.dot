@@ -1,0 +1,33 @@
+digraph G {
+bgcolor="#eeeeee";
+clusterrank=local;
+labeljust=right;
+labelloc=bottom;
+subgraph cluster_inputs {
+label="Workflow Inputs";
+rank=same;
+style=dashed;
+"main/data_matrix" [fillcolor="#94DDF4", label="main/data_matrix", shape=record, style=filled];
+"main/gmt_filepath" [fillcolor="#94DDF4", label="main/gmt_filepath", shape=record, style=filled];
+"main/index_col" [fillcolor="#94DDF4", label="main/index_col", shape=record, style=filled];
+"main/outdir" [fillcolor="#94DDF4", label="main/outdir", shape=record, style=filled];
+"main/samples_on_rows" [fillcolor="#94DDF4", label="main/samples_on_rows", shape=record, style=filled];
+"main/separator" [fillcolor="#94DDF4", label="main/separator", shape=record, style=filled];
+}
+
+"main/data_matrix" -> "main/cosifer";
+"main/gmt_filepath" -> "main/cosifer";
+"main/index_col" -> "main/cosifer";
+"main/outdir" -> "main/cosifer";
+"main/samples_on_rows" -> "main/cosifer";
+"main/separator" -> "main/cosifer";
+subgraph cluster_outputs {
+label="Workflow Outputs";
+labelloc=b;
+rank=same;
+style=dashed;
+"main/resdir" [fillcolor="#94DDF4", label="main/resdir", shape=record, style=filled];
+}
+
+"main/cosifer" -> "main/resdir";
+}

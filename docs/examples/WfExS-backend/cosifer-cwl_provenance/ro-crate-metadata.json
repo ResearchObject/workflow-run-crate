@@ -9,6 +9,9 @@
         {
             "@id": "./",
             "@type": "Dataset",
+            "about": {
+                "@id": "README.md"
+            },
             "conformsTo": [
                 {
                     "@id": "https://w3id.org/ro/wfrun/process/0.2"
@@ -20,9 +23,12 @@
                     "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
                 }
             ],
-            "datePublished": "2023-09-13T18:43:24+00:00",
+            "datePublished": "2023-09-19T01:46:43+00:00",
             "description": "RO-Crate from staged WfExS working directory 2400c32e-f875-4cd4-9d41-be6da8224c67 (preferencial buquinolate)",
             "hasPart": [
+                {
+                    "@id": "README.md"
+                },
                 {
                     "@id": "workflow/cosifer/cwl/cosifer-workflow.cwl"
                 },
@@ -55,6 +61,18 @@
                 },
                 {
                     "@id": "outputs/_1693447347/output/summa.csv.gz"
+                },
+                {
+                    "@id": "meta/outputs/stats/dag.dot"
+                },
+                {
+                    "@id": "meta/outputs/stats/dag.dot.png"
+                },
+                {
+                    "@id": "meta/outputs/_1693447347/stdout.txt"
+                },
+                {
+                    "@id": "meta/outputs/_1693447347/stderr.txt"
                 }
             ],
             "license": [
@@ -64,7 +82,7 @@
                 "@id": "consolidated-workflow/2400c32e-f875-4cd4-9d41-be6da8224c67_workflow.cwl"
             },
             "mentions": {
-                "@id": "#280a2988-bbd0-49df-8ea1-41b9ca5fddd2"
+                "@id": "#6a6e98bd-53dc-4d4c-807f-9fdd8365417c"
             }
         },
         {
@@ -151,8 +169,15 @@
             "@id": "https://github.com/inab/WfExS-backend",
             "@type": "SoftwareApplication",
             "name": "WfExS-backend",
-            "softwareVersion": "0.9.3-148-g2371d27 (2371d27cdc5d46d60f28f91ac12fd8262cec10b4)",
+            "softwareVersion": "0.9.3-152-g0f47f60 (0f47f60ca97afb7e3134d808e62dd85be498d3f8)",
             "url": "https://github.com/inab/WfExS-backend"
+        },
+        {
+            "@id": "README.md",
+            "@type": "File",
+            "contentSize": "4716",
+            "encodingFormat": "text/plain",
+            "sha256": "0ef565445c986c3be354e7adb16452bca47e69f08961df6eef5b77170714d9ef"
         },
         {
             "@id": "https://pypi.org/project/cwltool/",
@@ -273,6 +298,9 @@
             "contentSize": "5655",
             "description": "Consolidated Workflow Entrypoint",
             "encodingFormat": "application/json",
+            "image": {
+                "@id": "meta/outputs/stats/dag.dot.png"
+            },
             "input": [
                 {
                     "@id": "consolidated-workflow/2400c32e-f875-4cd4-9d41-be6da8224c67_workflow.cwl#param:data_matrix"
@@ -302,7 +330,7 @@
             "version": "b6ff7c65652408f905d0e2b8340c2e65f0253fd2"
         },
         {
-            "@id": "#8b74ff22-bf85-4a8c-ab73-497aab33e326",
+            "@id": "#89211da6-dca3-4c74-b06f-54ef1d99cb58",
             "@type": "CreateAction",
             "actionStatus": {
                 "@id": "http://schema.org/CompletedActionStatus"
@@ -338,7 +366,7 @@
             }
         },
         {
-            "@id": "#280a2988-bbd0-49df-8ea1-41b9ca5fddd2",
+            "@id": "#6a6e98bd-53dc-4d4c-807f-9fdd8365417c",
             "@type": "CreateAction",
             "actionStatus": {
                 "@id": "http://schema.org/CompletedActionStatus"
@@ -378,15 +406,24 @@
                     "@id": "inputs/data_matrix.csv"
                 },
                 {
-                    "@id": "#183fcebc-98f8-4e72-9082-bfa1abd09d18"
+                    "@id": "#e5315478-735c-409a-8c6e-0f63ca599150"
                 },
                 {
-                    "@id": "#860e1f99-6352-4f48-a9f7-77b4f0d133d3"
+                    "@id": "#3a5ea34d-9b16-4aa7-b998-d733d442ca4c"
                 }
             ],
             "result": [
                 {
                     "@id": "outputs/_1693447347/output/"
+                },
+                {
+                    "@id": "meta/outputs/stats/dag.dot"
+                },
+                {
+                    "@id": "meta/outputs/stats/dag.dot.png"
+                },
+                {
+                    "@id": "#f44d2286-3bcb-497a-8cbd-2f5ae7348f64"
                 }
             ],
             "startTime": "2023-08-31T02:02:27.822343+00:00"
@@ -421,11 +458,11 @@
             "name": "separator",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#183fcebc-98f8-4e72-9082-bfa1abd09d18"
+                "@id": "#e5315478-735c-409a-8c6e-0f63ca599150"
             }
         },
         {
-            "@id": "#183fcebc-98f8-4e72-9082-bfa1abd09d18",
+            "@id": "#e5315478-735c-409a-8c6e-0f63ca599150",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "consolidated-workflow/2400c32e-f875-4cd4-9d41-be6da8224c67_workflow.cwl#param:separator"
@@ -441,11 +478,11 @@
             "name": "outdir",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#860e1f99-6352-4f48-a9f7-77b4f0d133d3"
+                "@id": "#3a5ea34d-9b16-4aa7-b998-d733d442ca4c"
             }
         },
         {
-            "@id": "#860e1f99-6352-4f48-a9f7-77b4f0d133d3",
+            "@id": "#3a5ea34d-9b16-4aa7-b998-d733d442ca4c",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "consolidated-workflow/2400c32e-f875-4cd4-9d41-be6da8224c67_workflow.cwl#param:outdir"
@@ -516,6 +553,84 @@
             "contentSize": "69014",
             "encodingFormat": "application/gzip",
             "sha256": "576672a12500106a5638f63e27775840b7487028eae97f418a9ed3dd55f36490"
+        },
+        {
+            "@id": "meta/outputs/stats/dag.dot",
+            "@type": [
+                "File",
+                "ImageObject"
+            ],
+            "contentSize": "1169",
+            "encodingFormat": "text/plain",
+            "isBasedOn": {
+                "@id": "consolidated-workflow/2400c32e-f875-4cd4-9d41-be6da8224c67_workflow.cwl"
+            },
+            "sha256": "7e25cb68823e82b91713096b11fca4f50e25d057d5a2f8bf0a516c720a9e7eff"
+        },
+        {
+            "@id": "meta/outputs/stats/dag.dot.png",
+            "@type": [
+                "File",
+                "ImageObject"
+            ],
+            "contentSize": "40126",
+            "encodingFormat": "image/png",
+            "isBasedOn": {
+                "@id": "meta/outputs/stats/dag.dot"
+            },
+            "sha256": "abc3f29286010685ef67a9a5c6476a654576de5bfcfe9d80b153226976897bb3"
+        },
+        {
+            "@id": "#07ce46af-a2b3-49a7-9e27-6092eeeaf3d8",
+            "@type": "CreateAction",
+            "actionStatus": {
+                "@id": "http://schema.org/CompletedActionStatus"
+            },
+            "agent": [
+                {
+                    "@id": "https://orcid.org/0000-0002-4806-5140"
+                },
+                {
+                    "@id": "https://orcid.org/0000-0003-4929-1219"
+                }
+            ],
+            "description": "dot -Tpng -ometa/outputs/stats/dag.dot.png meta/outputs/stats/dag.dot",
+            "instrument": {
+                "@id": "https://github.com/inab/WfExS-backend"
+            },
+            "name": "Generate diagram PNG image from DOT",
+            "object": {
+                "@id": "meta/outputs/stats/dag.dot"
+            },
+            "result": {
+                "@id": "meta/outputs/stats/dag.dot.png"
+            }
+        },
+        {
+            "@id": "#f44d2286-3bcb-497a-8cbd-2f5ae7348f64",
+            "@type": "Collection",
+            "hasPart": [
+                {
+                    "@id": "meta/outputs/_1693447347/stdout.txt"
+                },
+                {
+                    "@id": "meta/outputs/_1693447347/stderr.txt"
+                }
+            ]
+        },
+        {
+            "@id": "meta/outputs/_1693447347/stdout.txt",
+            "@type": "File",
+            "contentSize": "2697",
+            "encodingFormat": "application/json",
+            "sha256": "b695c9399e2d64d761a5a21e824f35a073afea4b07b363e15503cf2bdd58b63d"
+        },
+        {
+            "@id": "meta/outputs/_1693447347/stderr.txt",
+            "@type": "File",
+            "contentSize": "5053",
+            "encodingFormat": "text/plain",
+            "sha256": "9b97e6d7d1ba1d18c789853f123d78e1abdb9b93bc6a84885b17aea93693c303"
         }
     ]
 }

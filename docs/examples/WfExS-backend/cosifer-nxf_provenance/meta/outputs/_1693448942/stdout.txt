@@ -1,0 +1,13 @@
+N E X T F L O W  ~  version 19.10.0
+Launching `/home/jmfernandez/projects/WfExS-backend/wfexs-backend-test_WorkDir/597708f2-952e-47c7-9b86-dbe3a9e5f651/meta/outputs/_1693448942/nxf_trojan/nextflow.nf` [WfExS-run_20230831T042902] - revision: 94cc073117
+Created directory /home/jmfernandez/projects/WfExS-backend/wfexs-backend-test_WorkDir/597708f2-952e-47c7-9b86-dbe3a9e5f651/outputs/_1693448942/outputsDir
+executor >  local (1)
+[07/da5962] process > cosifer (1) [  0%] 0 of 1
+Output:[aracne.csv.gz, clr.csv.gz, mrnet.csv.gz, summa.csv.gz]
+
+executor >  local (1)
+[07/da5962] process > cosifer (1) [100%] 1 of 1 ✔
+
+executor >  local (1)
+[07/da5962] process > cosifer (1) [100%] 1 of 1 ✔
+
