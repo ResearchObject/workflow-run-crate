@@ -23,7 +23,7 @@
                     "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
                 }
             ],
-            "datePublished": "2023-09-19T01:54:15+00:00",
+            "datePublished": "2023-09-19T13:10:45+00:00",
             "description": "RO-Crate from staged WfExS working directory 597708f2-952e-47c7-9b86-dbe3a9e5f651 (paraphalangeal hind teat)",
             "hasPart": [
                 {
@@ -133,7 +133,7 @@
             "@id": "https://github.com/inab/WfExS-backend",
             "@type": "SoftwareApplication",
             "name": "WfExS-backend",
-            "softwareVersion": "0.9.3-153-gc44f972 (c44f972d8987d149df2525533571f496e88b437d)",
+            "softwareVersion": "0.9.3-160-g6516382 (65163824b1ca3273605b9b8b7cddb5fe52586421)",
             "url": "https://github.com/inab/WfExS-backend"
         },
         {
@@ -141,7 +141,7 @@
             "@type": "File",
             "contentSize": "4716",
             "encodingFormat": "text/plain",
-            "sha256": "28b7da73884cd92033abf0752b8fba354d05b63be1c357e4d98cfbf97b6ca4be"
+            "sha256": "74aa3e91f27e3a619a6976e3fc99fc4b3a74620b7d2d50c28d14554e91a7cc2e"
         },
         {
             "@id": "https://www.nextflow.io/",
@@ -241,7 +241,9 @@
             "@id": "workflow/cosifer/nextflow/nextflow.nf#param:data_matrix",
             "@type": "FormalParameter",
             "additionalType": "File",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
             "name": "data_matrix",
             "valueRequired": "True",
             "workExample": {
@@ -263,15 +265,17 @@
             "@id": "workflow/cosifer/nextflow/nextflow.nf#param:sep",
             "@type": "FormalParameter",
             "additionalType": "Text",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
             "name": "sep",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#49f29db3-d29c-4757-a15b-1f2dbb4ea29b"
+                "@id": "#8d07aa14-8aae-4d26-920a-3d97f879be86"
             }
         },
         {
-            "@id": "#49f29db3-d29c-4757-a15b-1f2dbb4ea29b",
+            "@id": "#8d07aa14-8aae-4d26-920a-3d97f879be86",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "workflow/cosifer/nextflow/nextflow.nf#param:sep"
@@ -283,15 +287,17 @@
             "@id": "workflow/cosifer/nextflow/nextflow.nf#param:outputsDir",
             "@type": "FormalParameter",
             "additionalType": "Text",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
             "name": "outputsDir",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#0e021dbc-984f-48cb-b526-c537892983de"
+                "@id": "#1227f17c-f83c-471b-957c-417f573137ea"
             }
         },
         {
-            "@id": "#0e021dbc-984f-48cb-b526-c537892983de",
+            "@id": "#1227f17c-f83c-471b-957c-417f573137ea",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "workflow/cosifer/nextflow/nextflow.nf#param:outputsDir"
@@ -303,7 +309,9 @@
             "@id": "workflow/cosifer/nextflow/nextflow.nf#output:resdir",
             "@type": "FormalParameter",
             "additionalType": "Dataset",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
             "name": "resdir"
         }
     ]

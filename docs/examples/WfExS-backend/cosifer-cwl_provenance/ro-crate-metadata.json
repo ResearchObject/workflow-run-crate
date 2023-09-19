@@ -23,7 +23,7 @@
                     "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
                 }
             ],
-            "datePublished": "2023-09-19T01:46:43+00:00",
+            "datePublished": "2023-09-19T13:10:50+00:00",
             "description": "RO-Crate from staged WfExS working directory 2400c32e-f875-4cd4-9d41-be6da8224c67 (preferencial buquinolate)",
             "hasPart": [
                 {
@@ -82,7 +82,7 @@
                 "@id": "consolidated-workflow/2400c32e-f875-4cd4-9d41-be6da8224c67_workflow.cwl"
             },
             "mentions": {
-                "@id": "#6a6e98bd-53dc-4d4c-807f-9fdd8365417c"
+                "@id": "#824e5655-5812-44c0-8327-9b66b4469b93"
             }
         },
         {
@@ -169,7 +169,7 @@
             "@id": "https://github.com/inab/WfExS-backend",
             "@type": "SoftwareApplication",
             "name": "WfExS-backend",
-            "softwareVersion": "0.9.3-152-g0f47f60 (0f47f60ca97afb7e3134d808e62dd85be498d3f8)",
+            "softwareVersion": "0.9.3-160-g6516382 (65163824b1ca3273605b9b8b7cddb5fe52586421)",
             "url": "https://github.com/inab/WfExS-backend"
         },
         {
@@ -177,7 +177,7 @@
             "@type": "File",
             "contentSize": "4716",
             "encodingFormat": "text/plain",
-            "sha256": "0ef565445c986c3be354e7adb16452bca47e69f08961df6eef5b77170714d9ef"
+            "sha256": "2695e3895dde1761e04c9b6a40c96e860a9e6b0f029ceab607c299404469bef9"
         },
         {
             "@id": "https://pypi.org/project/cwltool/",
@@ -330,7 +330,7 @@
             "version": "b6ff7c65652408f905d0e2b8340c2e65f0253fd2"
         },
         {
-            "@id": "#89211da6-dca3-4c74-b06f-54ef1d99cb58",
+            "@id": "#9777f353-d94f-4c8d-beae-77b1a78549d8",
             "@type": "CreateAction",
             "actionStatus": {
                 "@id": "http://schema.org/CompletedActionStatus"
@@ -366,7 +366,7 @@
             }
         },
         {
-            "@id": "#6a6e98bd-53dc-4d4c-807f-9fdd8365417c",
+            "@id": "#824e5655-5812-44c0-8327-9b66b4469b93",
             "@type": "CreateAction",
             "actionStatus": {
                 "@id": "http://schema.org/CompletedActionStatus"
@@ -406,10 +406,10 @@
                     "@id": "inputs/data_matrix.csv"
                 },
                 {
-                    "@id": "#e5315478-735c-409a-8c6e-0f63ca599150"
+                    "@id": "#1e52dc86-3829-4dd6-afce-9be04f4364e0"
                 },
                 {
-                    "@id": "#3a5ea34d-9b16-4aa7-b998-d733d442ca4c"
+                    "@id": "#29876f93-917b-41ad-82b5-d4e3ae5d9740"
                 }
             ],
             "result": [
@@ -423,7 +423,7 @@
                     "@id": "meta/outputs/stats/dag.dot.png"
                 },
                 {
-                    "@id": "#f44d2286-3bcb-497a-8cbd-2f5ae7348f64"
+                    "@id": "#6e592442-4871-4b0c-ae1c-be39354a4bdb"
                 }
             ],
             "startTime": "2023-08-31T02:02:27.822343+00:00"
@@ -432,7 +432,9 @@
             "@id": "consolidated-workflow/2400c32e-f875-4cd4-9d41-be6da8224c67_workflow.cwl#param:data_matrix",
             "@type": "FormalParameter",
             "additionalType": "File",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
             "name": "data_matrix",
             "valueRequired": "True",
             "workExample": {
@@ -454,15 +456,17 @@
             "@id": "consolidated-workflow/2400c32e-f875-4cd4-9d41-be6da8224c67_workflow.cwl#param:separator",
             "@type": "FormalParameter",
             "additionalType": "Text",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
             "name": "separator",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#e5315478-735c-409a-8c6e-0f63ca599150"
+                "@id": "#1e52dc86-3829-4dd6-afce-9be04f4364e0"
             }
         },
         {
-            "@id": "#e5315478-735c-409a-8c6e-0f63ca599150",
+            "@id": "#1e52dc86-3829-4dd6-afce-9be04f4364e0",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "consolidated-workflow/2400c32e-f875-4cd4-9d41-be6da8224c67_workflow.cwl#param:separator"
@@ -474,15 +478,17 @@
             "@id": "consolidated-workflow/2400c32e-f875-4cd4-9d41-be6da8224c67_workflow.cwl#param:outdir",
             "@type": "FormalParameter",
             "additionalType": "Text",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
             "name": "outdir",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#3a5ea34d-9b16-4aa7-b998-d733d442ca4c"
+                "@id": "#29876f93-917b-41ad-82b5-d4e3ae5d9740"
             }
         },
         {
-            "@id": "#3a5ea34d-9b16-4aa7-b998-d733d442ca4c",
+            "@id": "#29876f93-917b-41ad-82b5-d4e3ae5d9740",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "consolidated-workflow/2400c32e-f875-4cd4-9d41-be6da8224c67_workflow.cwl#param:outdir"
@@ -494,7 +500,9 @@
             "@id": "consolidated-workflow/2400c32e-f875-4cd4-9d41-be6da8224c67_workflow.cwl#output:resdir",
             "@type": "FormalParameter",
             "additionalType": "Dataset",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
             "name": "resdir",
             "workExample": {
                 "@id": "outputs/_1693447347/output/"
@@ -581,7 +589,7 @@
             "sha256": "abc3f29286010685ef67a9a5c6476a654576de5bfcfe9d80b153226976897bb3"
         },
         {
-            "@id": "#07ce46af-a2b3-49a7-9e27-6092eeeaf3d8",
+            "@id": "#17eeeabf-0799-4e0b-b759-261f55fd3540",
             "@type": "CreateAction",
             "actionStatus": {
                 "@id": "http://schema.org/CompletedActionStatus"
@@ -607,7 +615,7 @@
             }
         },
         {
-            "@id": "#f44d2286-3bcb-497a-8cbd-2f5ae7348f64",
+            "@id": "#6e592442-4871-4b0c-ae1c-be39354a4bdb",
             "@type": "Collection",
             "hasPart": [
                 {

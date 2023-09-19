@@ -23,7 +23,7 @@
                     "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
                 }
             ],
-            "datePublished": "2023-09-19T09:00:57+00:00",
+            "datePublished": "2023-09-19T13:51:36+00:00",
             "description": "RO-Crate from staged WfExS working directory 047b6dfc-3547-4e09-92f8-df7143038ff4 (overbridging templon)",
             "hasPart": [
                 {
@@ -706,7 +706,7 @@
                 "@id": "workflow/main.nf"
             },
             "mentions": {
-                "@id": "#22e94fe6-0ed9-478d-b58f-018df54a7495"
+                "@id": "#9d55fd26-a27b-4d8e-94f7-aa17d99550c7"
             }
         },
         {
@@ -764,7 +764,7 @@
             "@id": "https://github.com/inab/WfExS-backend",
             "@type": "SoftwareApplication",
             "name": "WfExS-backend",
-            "softwareVersion": "0.9.3-157-g9246216 (9246216214a0a72ac485bd2e892466c14547dc89)",
+            "softwareVersion": "0.9.3-160-g6516382 (65163824b1ca3273605b9b8b7cddb5fe52586421)",
             "url": "https://github.com/inab/WfExS-backend"
         },
         {
@@ -772,7 +772,7 @@
             "@type": "File",
             "contentSize": "4712",
             "encodingFormat": "text/plain",
-            "sha256": "d7f7ff2ab85f00ddd98a7ecbd72ddd63b47ceb696b6320bb3b1b873b314ac595"
+            "sha256": "53d1fd47c617401a60706dc92899d2c6e2076ab7787e11e9d3e67d512226ff88"
         },
         {
             "@id": "https://www.nextflow.io/",
@@ -2076,7 +2076,7 @@
             "sha256": "c9b6fc6e4dfa51fc382121663c515d0717b026848459585c169a390560b000e8"
         },
         {
-            "@id": "#22e94fe6-0ed9-478d-b58f-018df54a7495",
+            "@id": "#9d55fd26-a27b-4d8e-94f7-aa17d99550c7",
             "@type": "CreateAction",
             "actionStatus": {
                 "@id": "http://schema.org/CompletedActionStatus"
@@ -2159,7 +2159,7 @@
             "name": "Run outputs/_1693481083 of workflow/main.nf",
             "object": [
                 {
-                    "@id": "#7766b0c1-f4cd-4b89-b19e-4d353c440049"
+                    "@id": "#b72b1769-4f21-4fdb-853d-d59421aa6377"
                 },
                 {
                     "@id": "https://raw.githubusercontent.com/wombat-p/WOMBAT-Pipelines/51d0be8aa1b22142b1ba09edb5ee4465618e8e05/test_data/exp_design.txt"
@@ -2168,73 +2168,73 @@
                     "@id": "https://raw.githubusercontent.com/wombat-p/WOMBAT-Pipelines/51d0be8aa1b22142b1ba09edb5ee4465618e8e05/test_data/test_params.yml"
                 },
                 {
-                    "@id": "#e046f4e2-a8b3-4907-9115-0233c6d2879d"
+                    "@id": "#a8bc4461-21b8-4978-be99-5a9650ba2828"
                 },
                 {
-                    "@id": "#326246e6-e842-4a0c-80e1-65327b19d442"
+                    "@id": "#d749ebc0-f40d-4b32-a1f4-66213acf5c12"
                 },
                 {
-                    "@id": "#f9dc00b1-1a51-4541-8cb1-ae9161db80fc"
+                    "@id": "#95e26f50-2624-4d47-a89a-480ad8f829cf"
                 },
                 {
-                    "@id": "#6d441bae-48cf-4f91-9b36-3c39aea34f64"
+                    "@id": "#d5e60740-07a0-45dc-9966-e1217f3d956d"
                 },
                 {
-                    "@id": "#fe95fc3b-2352-4c07-abfe-569e16402fe7"
+                    "@id": "#79219377-ca2d-461f-bf73-b67b39afaefd"
                 },
                 {
-                    "@id": "#94678e10-a524-465b-a6d3-aff7da3df4cf"
+                    "@id": "#8c5b273d-c7ce-4208-aeb9-b22f1b102483"
                 },
                 {
-                    "@id": "#58a94651-3118-4d21-b7d6-5e840b80a1c0"
+                    "@id": "#1f8c0fda-f759-4e71-a2a8-bb9892a8f53d"
                 },
                 {
-                    "@id": "#176f4351-efa5-4be3-8aa0-06b0a2da752c"
+                    "@id": "#93878cd0-aaed-408b-82e3-124280d14b03"
                 },
                 {
-                    "@id": "#82b1217e-c023-4ca4-bb26-179066f95f1c"
+                    "@id": "#d63cb9f0-f2c4-41c7-b7ce-3ac4b486d643"
                 },
                 {
-                    "@id": "#0d8a21f8-7254-4c7e-8e1a-74145e582678"
+                    "@id": "#f5036b43-af99-4ce2-9ec3-b212fc96d583"
                 },
                 {
-                    "@id": "#71c4f5f9-acf7-4761-9312-9d119dda42dc"
+                    "@id": "#88a8c8da-1243-46cc-8491-13a92ca8a7d9"
                 },
                 {
-                    "@id": "#6ff24cd6-7966-42d9-8883-0dada6d54394"
+                    "@id": "#03b414fe-024b-4ea2-90f5-002d13f2d18d"
                 },
                 {
-                    "@id": "#449e53db-78d3-4c75-8375-c13900468755"
+                    "@id": "#7dcb979c-0ac1-43a6-b802-2bba5b59818d"
                 },
                 {
-                    "@id": "#713d0a38-1be5-4905-b45a-6b6a2b8c8687"
+                    "@id": "#507a1632-078f-4bdd-8a33-a951fb83e887"
                 },
                 {
-                    "@id": "#28aa149d-04cb-41e5-aeb9-2068cffcd1f3"
+                    "@id": "#4b53191d-c37f-4efd-9ea2-d907be40adda"
                 },
                 {
-                    "@id": "#a8544821-820c-4ca7-a793-c6ccc9f4ea36"
+                    "@id": "#58964bf4-8dcb-48ee-bc85-a23db0318e18"
                 },
                 {
-                    "@id": "#ae3f5dfa-1bd7-418f-9c04-039c468ada77"
+                    "@id": "#2c3449e1-fc30-47a6-8b2c-8b92b1f5d6de"
                 },
                 {
-                    "@id": "#e9c27630-ca5e-49b6-870d-7d0aaca0aea7"
+                    "@id": "#11857768-1e5f-4956-841f-980876df045b"
                 },
                 {
-                    "@id": "#42531bd9-6bf3-4be2-b8c3-b821a4fa10d6"
+                    "@id": "#73239240-8a64-4ac1-bc59-a6d687b5fee5"
                 },
                 {
-                    "@id": "#26ff1395-c26a-401f-886a-3bb08c676d28"
+                    "@id": "#c852436e-b4e8-4b32-a1b9-fd67ef7843d0"
                 },
                 {
-                    "@id": "#1d6d2913-041f-43e8-8979-4ca33d3085c1"
+                    "@id": "#b3d8b11c-9b68-4aef-b4a0-b619845f650c"
                 },
                 {
-                    "@id": "#45c6f694-f4ea-4bd7-9a2a-4e8b7cbc2c73"
+                    "@id": "#2c5f4aa9-cdf2-4f26-93b9-7b8f7053398d"
                 },
                 {
-                    "@id": "#d4d67882-9d50-44ee-a06f-d718e976f55d"
+                    "@id": "#2f246c3c-7d92-45c1-8925-b1a265d5939a"
                 },
                 {
                     "@id": "https://raw.githubusercontent.com/wombat-p/WOMBAT-Pipelines/51d0be8aa1b22142b1ba09edb5ee4465618e8e05/test_data/ABRF_iPRG_2012_target.fasta"
@@ -2347,7 +2347,7 @@
                     "@id": "meta/outputs/_1693481083/stats/dag.dot.png"
                 },
                 {
-                    "@id": "#42ea721d-18bb-4961-9ecf-22cfd1ba53fc"
+                    "@id": "#6ab45627-5216-41b5-9d6d-7099a86f921a"
                 }
             ],
             "startTime": "2023-08-31T11:24:43.254962+00:00"
@@ -2355,7 +2355,9 @@
         {
             "@id": "workflow/main.nf#param:mzmls",
             "@type": "FormalParameter",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
             "name": "mzmls",
             "valueRequired": "True"
         },
@@ -2363,15 +2365,17 @@
             "@id": "workflow/main.nf#param:raws",
             "@type": "FormalParameter",
             "additionalType": "Collection",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
             "name": "raws",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#7766b0c1-f4cd-4b89-b19e-4d353c440049"
+                "@id": "#b72b1769-4f21-4fdb-853d-d59421aa6377"
             }
         },
         {
-            "@id": "#7766b0c1-f4cd-4b89-b19e-4d353c440049",
+            "@id": "#b72b1769-4f21-4fdb-853d-d59421aa6377",
             "@type": "Collection",
             "exampleOfWork": {
                 "@id": "workflow/main.nf#param:raws"
@@ -2403,7 +2407,9 @@
             "@id": "workflow/main.nf#param:exp_design",
             "@type": "FormalParameter",
             "additionalType": "File",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
             "name": "exp_design",
             "valueRequired": "True",
             "workExample": {
@@ -2423,7 +2429,9 @@
         {
             "@id": "workflow/main.nf#param:sdrf",
             "@type": "FormalParameter",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
             "name": "sdrf",
             "valueRequired": "True"
         },
@@ -2431,7 +2439,9 @@
             "@id": "workflow/main.nf#param:parameters",
             "@type": "FormalParameter",
             "additionalType": "File",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
             "name": "parameters",
             "valueRequired": "True",
             "workExample": {
@@ -2452,15 +2462,17 @@
             "@id": "workflow/main.nf#param:run_statistics",
             "@type": "FormalParameter",
             "additionalType": "Integer",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
             "name": "run_statistics",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#e046f4e2-a8b3-4907-9115-0233c6d2879d"
+                "@id": "#a8bc4461-21b8-4978-be99-5a9650ba2828"
             }
         },
         {
-            "@id": "#e046f4e2-a8b3-4907-9115-0233c6d2879d",
+            "@id": "#a8bc4461-21b8-4978-be99-5a9650ba2828",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "workflow/main.nf#param:run_statistics"
@@ -2472,15 +2484,17 @@
             "@id": "workflow/main.nf#param:add_decoys",
             "@type": "FormalParameter",
             "additionalType": "Integer",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
             "name": "add_decoys",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#326246e6-e842-4a0c-80e1-65327b19d442"
+                "@id": "#d749ebc0-f40d-4b32-a1f4-66213acf5c12"
             }
         },
         {
-            "@id": "#326246e6-e842-4a0c-80e1-65327b19d442",
+            "@id": "#d749ebc0-f40d-4b32-a1f4-66213acf5c12",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "workflow/main.nf#param:add_decoys"
@@ -2491,7 +2505,9 @@
         {
             "@id": "workflow/main.nf#param:sdrf_mapping",
             "@type": "FormalParameter",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
             "name": "sdrf_mapping",
             "valueRequired": "True"
         },
@@ -2499,15 +2515,17 @@
             "@id": "workflow/main.nf#param:comps",
             "@type": "FormalParameter",
             "additionalType": "Text",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
             "name": "comps",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#f9dc00b1-1a51-4541-8cb1-ae9161db80fc"
+                "@id": "#95e26f50-2624-4d47-a89a-480ad8f829cf"
             }
         },
         {
-            "@id": "#f9dc00b1-1a51-4541-8cb1-ae9161db80fc",
+            "@id": "#95e26f50-2624-4d47-a89a-480ad8f829cf",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "workflow/main.nf#param:comps"
@@ -2519,15 +2537,17 @@
             "@id": "workflow/main.nf#param:proline_engine",
             "@type": "FormalParameter",
             "additionalType": "Text",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
             "name": "proline_engine",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#6d441bae-48cf-4f91-9b36-3c39aea34f64"
+                "@id": "#d5e60740-07a0-45dc-9966-e1217f3d956d"
             }
         },
         {
-            "@id": "#6d441bae-48cf-4f91-9b36-3c39aea34f64",
+            "@id": "#d5e60740-07a0-45dc-9966-e1217f3d956d",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "workflow/main.nf#param:proline_engine"
@@ -2539,15 +2559,17 @@
             "@id": "workflow/main.nf#param:workflow",
             "@type": "FormalParameter",
             "additionalType": "Text",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
             "name": "workflow",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#fe95fc3b-2352-4c07-abfe-569e16402fe7"
+                "@id": "#79219377-ca2d-461f-bf73-b67b39afaefd"
             }
         },
         {
-            "@id": "#fe95fc3b-2352-4c07-abfe-569e16402fe7",
+            "@id": "#79219377-ca2d-461f-bf73-b67b39afaefd",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "workflow/main.nf#param:workflow"
@@ -2558,14 +2580,18 @@
         {
             "@id": "workflow/main.nf#param:multiqc_config",
             "@type": "FormalParameter",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
             "name": "multiqc_config",
             "valueRequired": "True"
         },
         {
             "@id": "workflow/main.nf#param:multiqc_title",
             "@type": "FormalParameter",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
             "name": "multiqc_title",
             "valueRequired": "True"
         },
@@ -2573,15 +2599,17 @@
             "@id": "workflow/main.nf#param:max_multiqc_email_size",
             "@type": "FormalParameter",
             "additionalType": "Text",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
             "name": "max_multiqc_email_size",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#94678e10-a524-465b-a6d3-aff7da3df4cf"
+                "@id": "#8c5b273d-c7ce-4208-aeb9-b22f1b102483"
             }
         },
         {
-            "@id": "#94678e10-a524-465b-a6d3-aff7da3df4cf",
+            "@id": "#8c5b273d-c7ce-4208-aeb9-b22f1b102483",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "workflow/main.nf#param:max_multiqc_email_size"
@@ -2593,15 +2621,17 @@
             "@id": "workflow/main.nf#param:outdir",
             "@type": "FormalParameter",
             "additionalType": "Text",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
             "name": "outdir",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#58a94651-3118-4d21-b7d6-5e840b80a1c0"
+                "@id": "#1f8c0fda-f759-4e71-a2a8-bb9892a8f53d"
             }
         },
         {
-            "@id": "#58a94651-3118-4d21-b7d6-5e840b80a1c0",
+            "@id": "#1f8c0fda-f759-4e71-a2a8-bb9892a8f53d",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "workflow/main.nf#param:outdir"
@@ -2613,15 +2643,17 @@
             "@id": "workflow/main.nf#param:tracedir",
             "@type": "FormalParameter",
             "additionalType": "Text",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
             "name": "tracedir",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#176f4351-efa5-4be3-8aa0-06b0a2da752c"
+                "@id": "#93878cd0-aaed-408b-82e3-124280d14b03"
             }
         },
         {
-            "@id": "#176f4351-efa5-4be3-8aa0-06b0a2da752c",
+            "@id": "#93878cd0-aaed-408b-82e3-124280d14b03",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "workflow/main.nf#param:tracedir"
@@ -2633,15 +2665,17 @@
             "@id": "workflow/main.nf#param:publish_dir_mode",
             "@type": "FormalParameter",
             "additionalType": "Text",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
             "name": "publish_dir_mode",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#82b1217e-c023-4ca4-bb26-179066f95f1c"
+                "@id": "#d63cb9f0-f2c4-41c7-b7ce-3ac4b486d643"
             }
         },
         {
-            "@id": "#82b1217e-c023-4ca4-bb26-179066f95f1c",
+            "@id": "#d63cb9f0-f2c4-41c7-b7ce-3ac4b486d643",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "workflow/main.nf#param:publish_dir_mode"
@@ -2652,14 +2686,18 @@
         {
             "@id": "workflow/main.nf#param:email",
             "@type": "FormalParameter",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
             "name": "email",
             "valueRequired": "True"
         },
         {
             "@id": "workflow/main.nf#param:email_on_fail",
             "@type": "FormalParameter",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
             "name": "email_on_fail",
             "valueRequired": "True"
         },
@@ -2667,15 +2705,17 @@
             "@id": "workflow/main.nf#param:plaintext_email",
             "@type": "FormalParameter",
             "additionalType": "Integer",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
             "name": "plaintext_email",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#0d8a21f8-7254-4c7e-8e1a-74145e582678"
+                "@id": "#f5036b43-af99-4ce2-9ec3-b212fc96d583"
             }
         },
         {
-            "@id": "#0d8a21f8-7254-4c7e-8e1a-74145e582678",
+            "@id": "#f5036b43-af99-4ce2-9ec3-b212fc96d583",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "workflow/main.nf#param:plaintext_email"
@@ -2687,15 +2727,17 @@
             "@id": "workflow/main.nf#param:monochrome_logs",
             "@type": "FormalParameter",
             "additionalType": "Integer",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
             "name": "monochrome_logs",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#71c4f5f9-acf7-4761-9312-9d119dda42dc"
+                "@id": "#88a8c8da-1243-46cc-8491-13a92ca8a7d9"
             }
         },
         {
-            "@id": "#71c4f5f9-acf7-4761-9312-9d119dda42dc",
+            "@id": "#88a8c8da-1243-46cc-8491-13a92ca8a7d9",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "workflow/main.nf#param:monochrome_logs"
@@ -2707,15 +2749,17 @@
             "@id": "workflow/main.nf#param:help",
             "@type": "FormalParameter",
             "additionalType": "Integer",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
             "name": "help",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#6ff24cd6-7966-42d9-8883-0dada6d54394"
+                "@id": "#03b414fe-024b-4ea2-90f5-002d13f2d18d"
             }
         },
         {
-            "@id": "#6ff24cd6-7966-42d9-8883-0dada6d54394",
+            "@id": "#03b414fe-024b-4ea2-90f5-002d13f2d18d",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "workflow/main.nf#param:help"
@@ -2727,15 +2771,17 @@
             "@id": "workflow/main.nf#param:validate_params",
             "@type": "FormalParameter",
             "additionalType": "Integer",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
             "name": "validate_params",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#449e53db-78d3-4c75-8375-c13900468755"
+                "@id": "#7dcb979c-0ac1-43a6-b802-2bba5b59818d"
             }
         },
         {
-            "@id": "#449e53db-78d3-4c75-8375-c13900468755",
+            "@id": "#7dcb979c-0ac1-43a6-b802-2bba5b59818d",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "workflow/main.nf#param:validate_params"
@@ -2747,15 +2793,17 @@
             "@id": "workflow/main.nf#param:show_hidden_params",
             "@type": "FormalParameter",
             "additionalType": "Integer",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
             "name": "show_hidden_params",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#713d0a38-1be5-4905-b45a-6b6a2b8c8687"
+                "@id": "#507a1632-078f-4bdd-8a33-a951fb83e887"
             }
         },
         {
-            "@id": "#713d0a38-1be5-4905-b45a-6b6a2b8c8687",
+            "@id": "#507a1632-078f-4bdd-8a33-a951fb83e887",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "workflow/main.nf#param:show_hidden_params"
@@ -2767,15 +2815,17 @@
             "@id": "workflow/main.nf#param:enable_conda",
             "@type": "FormalParameter",
             "additionalType": "Integer",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
             "name": "enable_conda",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#28aa149d-04cb-41e5-aeb9-2068cffcd1f3"
+                "@id": "#4b53191d-c37f-4efd-9ea2-d907be40adda"
             }
         },
         {
-            "@id": "#28aa149d-04cb-41e5-aeb9-2068cffcd1f3",
+            "@id": "#4b53191d-c37f-4efd-9ea2-d907be40adda",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "workflow/main.nf#param:enable_conda"
@@ -2787,15 +2837,17 @@
             "@id": "workflow/main.nf#param:schema_ignore_params",
             "@type": "FormalParameter",
             "additionalType": "Text",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
             "name": "schema_ignore_params",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#a8544821-820c-4ca7-a793-c6ccc9f4ea36"
+                "@id": "#58964bf4-8dcb-48ee-bc85-a23db0318e18"
             }
         },
         {
-            "@id": "#a8544821-820c-4ca7-a793-c6ccc9f4ea36",
+            "@id": "#58964bf4-8dcb-48ee-bc85-a23db0318e18",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "workflow/main.nf#param:schema_ignore_params"
@@ -2806,7 +2858,9 @@
         {
             "@id": "workflow/main.nf#param:genomes",
             "@type": "FormalParameter",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
             "name": "genomes",
             "valueRequired": "True"
         },
@@ -2814,15 +2868,17 @@
             "@id": "workflow/main.nf#param:custom_config_version",
             "@type": "FormalParameter",
             "additionalType": "Text",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
             "name": "custom_config_version",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#ae3f5dfa-1bd7-418f-9c04-039c468ada77"
+                "@id": "#2c3449e1-fc30-47a6-8b2c-8b92b1f5d6de"
             }
         },
         {
-            "@id": "#ae3f5dfa-1bd7-418f-9c04-039c468ada77",
+            "@id": "#2c3449e1-fc30-47a6-8b2c-8b92b1f5d6de",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "workflow/main.nf#param:custom_config_version"
@@ -2834,15 +2890,17 @@
             "@id": "workflow/main.nf#param:custom_config_base",
             "@type": "FormalParameter",
             "additionalType": "Text",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
             "name": "custom_config_base",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#e9c27630-ca5e-49b6-870d-7d0aaca0aea7"
+                "@id": "#11857768-1e5f-4956-841f-980876df045b"
             }
         },
         {
-            "@id": "#e9c27630-ca5e-49b6-870d-7d0aaca0aea7",
+            "@id": "#11857768-1e5f-4956-841f-980876df045b",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "workflow/main.nf#param:custom_config_base"
@@ -2854,15 +2912,17 @@
             "@id": "workflow/main.nf#param:config_profile_description",
             "@type": "FormalParameter",
             "additionalType": "Text",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
             "name": "config_profile_description",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#42531bd9-6bf3-4be2-b8c3-b821a4fa10d6"
+                "@id": "#73239240-8a64-4ac1-bc59-a6d687b5fee5"
             }
         },
         {
-            "@id": "#42531bd9-6bf3-4be2-b8c3-b821a4fa10d6",
+            "@id": "#73239240-8a64-4ac1-bc59-a6d687b5fee5",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "workflow/main.nf#param:config_profile_description"
@@ -2873,14 +2933,18 @@
         {
             "@id": "workflow/main.nf#param:config_profile_contact",
             "@type": "FormalParameter",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
             "name": "config_profile_contact",
             "valueRequired": "True"
         },
         {
             "@id": "workflow/main.nf#param:config_profile_url",
             "@type": "FormalParameter",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
             "name": "config_profile_url",
             "valueRequired": "True"
         },
@@ -2888,15 +2952,17 @@
             "@id": "workflow/main.nf#param:config_profile_name",
             "@type": "FormalParameter",
             "additionalType": "Text",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
             "name": "config_profile_name",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#26ff1395-c26a-401f-886a-3bb08c676d28"
+                "@id": "#c852436e-b4e8-4b32-a1b9-fd67ef7843d0"
             }
         },
         {
-            "@id": "#26ff1395-c26a-401f-886a-3bb08c676d28",
+            "@id": "#c852436e-b4e8-4b32-a1b9-fd67ef7843d0",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "workflow/main.nf#param:config_profile_name"
@@ -2908,15 +2974,17 @@
             "@id": "workflow/main.nf#param:max_memory",
             "@type": "FormalParameter",
             "additionalType": "Text",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
             "name": "max_memory",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#1d6d2913-041f-43e8-8979-4ca33d3085c1"
+                "@id": "#b3d8b11c-9b68-4aef-b4a0-b619845f650c"
             }
         },
         {
-            "@id": "#1d6d2913-041f-43e8-8979-4ca33d3085c1",
+            "@id": "#b3d8b11c-9b68-4aef-b4a0-b619845f650c",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "workflow/main.nf#param:max_memory"
@@ -2928,15 +2996,17 @@
             "@id": "workflow/main.nf#param:max_cpus",
             "@type": "FormalParameter",
             "additionalType": "Integer",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
             "name": "max_cpus",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#45c6f694-f4ea-4bd7-9a2a-4e8b7cbc2c73"
+                "@id": "#2c5f4aa9-cdf2-4f26-93b9-7b8f7053398d"
             }
         },
         {
-            "@id": "#45c6f694-f4ea-4bd7-9a2a-4e8b7cbc2c73",
+            "@id": "#2c5f4aa9-cdf2-4f26-93b9-7b8f7053398d",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "workflow/main.nf#param:max_cpus"
@@ -2948,15 +3018,17 @@
             "@id": "workflow/main.nf#param:max_time",
             "@type": "FormalParameter",
             "additionalType": "Text",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
             "name": "max_time",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#d4d67882-9d50-44ee-a06f-d718e976f55d"
+                "@id": "#2f246c3c-7d92-45c1-8925-b1a265d5939a"
             }
         },
         {
-            "@id": "#d4d67882-9d50-44ee-a06f-d718e976f55d",
+            "@id": "#2f246c3c-7d92-45c1-8925-b1a265d5939a",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "workflow/main.nf#param:max_time"
@@ -2968,7 +3040,9 @@
             "@id": "workflow/main.nf#param:fasta",
             "@type": "FormalParameter",
             "additionalType": "File",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
             "name": "fasta",
             "valueRequired": "True",
             "workExample": {
@@ -2989,7 +3063,9 @@
             "@id": "workflow/main.nf#param:sdrfmapping",
             "@type": "FormalParameter",
             "additionalType": "File",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
             "name": "sdrfmapping",
             "valueRequired": "True",
             "workExample": {
@@ -3010,7 +3086,9 @@
             "@id": "workflow/main.nf#output:unnamed_output_0",
             "@type": "FormalParameter",
             "additionalType": "Dataset",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
             "name": "unnamed_output_0",
             "workExample": {
                 "@id": "outputs/_1693481083/mgf/"
@@ -3052,7 +3130,9 @@
             "@id": "workflow/main.nf#output:unnamed_output_1",
             "@type": "FormalParameter",
             "additionalType": "Dataset",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
             "name": "unnamed_output_1",
             "workExample": {
                 "@id": "outputs/_1693481083/sdrf_merge/"
@@ -3105,7 +3185,9 @@
             "@id": "workflow/main.nf#output:unnamed_output_2",
             "@type": "FormalParameter",
             "additionalType": "File",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
             "name": "unnamed_output_2",
             "workExample": {
                 "@id": "outputs/_1693481083/stand_prot_quant_mergedtpp.csv"
@@ -3126,7 +3208,9 @@
             "@id": "workflow/main.nf#output:unnamed_output_3",
             "@type": "FormalParameter",
             "additionalType": "Dataset",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
             "name": "unnamed_output_3",
             "workExample": {
                 "@id": "outputs/_1693481083/prepare_files/"
@@ -3212,7 +3296,9 @@
             "@id": "workflow/main.nf#output:unnamed_output_4",
             "@type": "FormalParameter",
             "additionalType": "File",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
             "name": "unnamed_output_4",
             "workExample": {
                 "@id": "outputs/_1693481083/stand_pep_quant_mergedproline.csv"
@@ -3233,7 +3319,9 @@
             "@id": "workflow/main.nf#output:unnamed_output_5",
             "@type": "FormalParameter",
             "additionalType": "Dataset",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
             "name": "unnamed_output_5",
             "workExample": {
                 "@id": "outputs/_1693481083/maxquant/"
@@ -3418,7 +3506,9 @@
             "@id": "workflow/main.nf#output:unnamed_output_6",
             "@type": "FormalParameter",
             "additionalType": "Dataset",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
             "name": "unnamed_output_6",
             "workExample": {
                 "@id": "outputs/_1693481083/comet/"
@@ -3471,7 +3561,9 @@
             "@id": "workflow/main.nf#output:unnamed_output_7",
             "@type": "FormalParameter",
             "additionalType": "File",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
             "name": "unnamed_output_7",
             "workExample": {
                 "@id": "outputs/_1693481083/benchmarks_maxquant.json"
@@ -3492,7 +3584,9 @@
             "@id": "workflow/main.nf#output:unnamed_output_8",
             "@type": "FormalParameter",
             "additionalType": "Dataset",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
             "name": "unnamed_output_8",
             "workExample": {
                 "@id": "outputs/_1693481083/polystest/"
@@ -3567,7 +3661,9 @@
             "@id": "workflow/main.nf#output:unnamed_output_9",
             "@type": "FormalParameter",
             "additionalType": "File",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
             "name": "unnamed_output_9",
             "workExample": {
                 "@id": "outputs/_1693481083/stand_pep_quant_mergedtpp.csv"
@@ -3588,7 +3684,9 @@
             "@id": "workflow/main.nf#output:unnamed_output_10",
             "@type": "FormalParameter",
             "additionalType": "File",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
             "name": "unnamed_output_10",
             "workExample": {
                 "@id": "outputs/_1693481083/benchmarks_tpp.json"
@@ -3609,7 +3707,9 @@
             "@id": "workflow/main.nf#output:unnamed_output_11",
             "@type": "FormalParameter",
             "additionalType": "File",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
             "name": "unnamed_output_11",
             "workExample": {
                 "@id": "outputs/_1693481083/benchmarks_proline.json"
@@ -3630,7 +3730,9 @@
             "@id": "workflow/main.nf#output:unnamed_output_12",
             "@type": "FormalParameter",
             "additionalType": "File",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
             "name": "unnamed_output_12",
             "workExample": {
                 "@id": "outputs/_1693481083/stand_pep_quant_mergedmaxquant.csv"
@@ -3651,7 +3753,9 @@
             "@id": "workflow/main.nf#output:unnamed_output_13",
             "@type": "FormalParameter",
             "additionalType": "Dataset",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
             "name": "unnamed_output_13",
             "workExample": {
                 "@id": "outputs/_1693481083/prepare_maxquant/"
@@ -3715,7 +3819,9 @@
             "@id": "workflow/main.nf#output:unnamed_output_14",
             "@type": "FormalParameter",
             "additionalType": "Dataset",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
             "name": "unnamed_output_14",
             "workExample": {
                 "@id": "outputs/_1693481083/peptideshaker/"
@@ -3845,7 +3951,9 @@
             "@id": "workflow/main.nf#output:unnamed_output_15",
             "@type": "FormalParameter",
             "additionalType": "Dataset",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
             "name": "unnamed_output_15",
             "workExample": {
                 "@id": "outputs/_1693481083/proline/"
@@ -3942,7 +4050,9 @@
             "@id": "workflow/main.nf#output:unnamed_output_16",
             "@type": "FormalParameter",
             "additionalType": "Dataset",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
             "name": "unnamed_output_16",
             "workExample": {
                 "@id": "outputs/_1693481083/mzdb/"
@@ -3984,7 +4094,9 @@
             "@id": "workflow/main.nf#output:unnamed_output_17",
             "@type": "FormalParameter",
             "additionalType": "Dataset",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
             "name": "unnamed_output_17",
             "workExample": {
                 "@id": "outputs/_1693481083/searchgui/"
@@ -4026,7 +4138,9 @@
             "@id": "workflow/main.nf#output:unnamed_output_18",
             "@type": "FormalParameter",
             "additionalType": "File",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
             "name": "unnamed_output_18",
             "workExample": {
                 "@id": "outputs/_1693481083/stand_prot_quant_mergedcompomics.csv"
@@ -4047,7 +4161,9 @@
             "@id": "workflow/main.nf#output:unnamed_output_19",
             "@type": "FormalParameter",
             "additionalType": "Dataset",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
             "name": "unnamed_output_19",
             "workExample": {
                 "@id": "outputs/_1693481083/msqrob/"
@@ -4111,7 +4227,9 @@
             "@id": "workflow/main.nf#output:unnamed_output_20",
             "@type": "FormalParameter",
             "additionalType": "Dataset",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
             "name": "unnamed_output_20",
             "workExample": {
                 "@id": "outputs/_1693481083/flashlfq/"
@@ -4164,7 +4282,9 @@
             "@id": "workflow/main.nf#output:unnamed_output_21",
             "@type": "FormalParameter",
             "additionalType": "File",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
             "name": "unnamed_output_21",
             "workExample": {
                 "@id": "outputs/_1693481083/stand_prot_quant_mergedproline.csv"
@@ -4185,7 +4305,9 @@
             "@id": "workflow/main.nf#output:unnamed_output_22",
             "@type": "FormalParameter",
             "additionalType": "Dataset",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
             "name": "unnamed_output_22",
             "workExample": {
                 "@id": "outputs/_1693481083/normalyzerde/"
@@ -4535,7 +4657,9 @@
             "@id": "workflow/main.nf#output:unnamed_output_23",
             "@type": "FormalParameter",
             "additionalType": "Dataset",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
             "name": "unnamed_output_23",
             "workExample": {
                 "@id": "outputs/_1693481083/.nextflow/"
@@ -4701,7 +4825,9 @@
             "@id": "workflow/main.nf#output:unnamed_output_24",
             "@type": "FormalParameter",
             "additionalType": "Dataset",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
             "name": "unnamed_output_24",
             "workExample": {
                 "@id": "outputs/_1693481083/mzml/"
@@ -4743,7 +4869,9 @@
             "@id": "workflow/main.nf#output:unnamed_output_25",
             "@type": "FormalParameter",
             "additionalType": "Dataset",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
             "name": "unnamed_output_25",
             "workExample": {
                 "@id": "outputs/_1693481083/tpp/"
@@ -4928,7 +5056,9 @@
             "@id": "workflow/main.nf#output:unnamed_output_26",
             "@type": "FormalParameter",
             "additionalType": "File",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
             "name": "unnamed_output_26",
             "workExample": {
                 "@id": "outputs/_1693481083/benchmarks_compomics.json"
@@ -4949,7 +5079,9 @@
             "@id": "workflow/main.nf#output:unnamed_output_27",
             "@type": "FormalParameter",
             "additionalType": "File",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
             "name": "unnamed_output_27",
             "workExample": {
                 "@id": "outputs/_1693481083/stand_prot_quant_mergedmaxquant.csv"
@@ -4970,7 +5102,9 @@
             "@id": "workflow/main.nf#output:unnamed_output_28",
             "@type": "FormalParameter",
             "additionalType": "Dataset",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
             "name": "unnamed_output_28",
             "workExample": {
                 "@id": "outputs/_1693481083/rots/"
@@ -5012,7 +5146,9 @@
             "@id": "workflow/main.nf#output:unnamed_output_29",
             "@type": "FormalParameter",
             "additionalType": "Dataset",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
             "name": "unnamed_output_29",
             "workExample": {
                 "@id": "outputs/_1693481083/searchgui_params/"
@@ -5041,7 +5177,9 @@
             "@id": "workflow/main.nf#output:unnamed_output_30",
             "@type": "FormalParameter",
             "additionalType": "Dataset",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
             "name": "unnamed_output_30",
             "workExample": {
                 "@id": "outputs/_1693481083/decoy_database/"
@@ -5070,7 +5208,9 @@
             "@id": "workflow/main.nf#output:unnamed_output_31",
             "@type": "FormalParameter",
             "additionalType": "File",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
             "name": "unnamed_output_31",
             "workExample": {
                 "@id": "outputs/_1693481083/stand_pep_quant_mergedcompomics.csv"
@@ -5114,7 +5254,7 @@
             "sha256": "a8130a85b82b376a9f24133be682f4f209176f651e97391dea44f6d80429f79b"
         },
         {
-            "@id": "#d8b924d4-97dd-41e9-89dd-fee2778ffd44",
+            "@id": "#46ca9f44-1328-49b5-b106-965a22b90d26",
             "@type": "CreateAction",
             "actionStatus": {
                 "@id": "http://schema.org/CompletedActionStatus"
@@ -5135,7 +5275,7 @@
             }
         },
         {
-            "@id": "#42ea721d-18bb-4961-9ecf-22cfd1ba53fc",
+            "@id": "#6ab45627-5216-41b5-9d6d-7099a86f921a",
             "@type": "Collection",
             "hasPart": [
                 {

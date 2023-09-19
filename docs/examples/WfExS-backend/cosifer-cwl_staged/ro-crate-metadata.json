@@ -23,7 +23,7 @@
                     "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
                 }
             ],
-            "datePublished": "2023-09-19T01:54:21+00:00",
+            "datePublished": "2023-09-19T13:10:39+00:00",
             "description": "RO-Crate from staged WfExS working directory 2400c32e-f875-4cd4-9d41-be6da8224c67 (preferencial buquinolate)",
             "hasPart": [
                 {
@@ -139,7 +139,7 @@
             "@id": "https://github.com/inab/WfExS-backend",
             "@type": "SoftwareApplication",
             "name": "WfExS-backend",
-            "softwareVersion": "0.9.3-153-gc44f972 (c44f972d8987d149df2525533571f496e88b437d)",
+            "softwareVersion": "0.9.3-160-g6516382 (65163824b1ca3273605b9b8b7cddb5fe52586421)",
             "url": "https://github.com/inab/WfExS-backend"
         },
         {
@@ -147,7 +147,7 @@
             "@type": "File",
             "contentSize": "4716",
             "encodingFormat": "text/plain",
-            "sha256": "d65a2428a880ed0f1574533f1abe9ea93518046a1e814c3dfef77ee2a5745cb4"
+            "sha256": "2695e3895dde1761e04c9b6a40c96e860a9e6b0f029ceab607c299404469bef9"
         },
         {
             "@id": "https://pypi.org/project/cwltool/",
@@ -297,7 +297,7 @@
             "version": "b6ff7c65652408f905d0e2b8340c2e65f0253fd2"
         },
         {
-            "@id": "#6db6afd3-f738-4f45-be81-06beb68bbb0e",
+            "@id": "#9926fa31-c478-4867-a470-a397aedaa511",
             "@type": "CreateAction",
             "actionStatus": {
                 "@id": "http://schema.org/CompletedActionStatus"
@@ -336,7 +336,9 @@
             "@id": "consolidated-workflow/2400c32e-f875-4cd4-9d41-be6da8224c67_workflow.cwl#param:data_matrix",
             "@type": "FormalParameter",
             "additionalType": "File",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
             "name": "data_matrix",
             "valueRequired": "True",
             "workExample": {
@@ -358,15 +360,17 @@
             "@id": "consolidated-workflow/2400c32e-f875-4cd4-9d41-be6da8224c67_workflow.cwl#param:separator",
             "@type": "FormalParameter",
             "additionalType": "Text",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
             "name": "separator",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#5bf013f0-3bd2-4018-a626-71e7adec3061"
+                "@id": "#9ff3e645-b60f-4b24-b2ff-f8d9c1ad016e"
             }
         },
         {
-            "@id": "#5bf013f0-3bd2-4018-a626-71e7adec3061",
+            "@id": "#9ff3e645-b60f-4b24-b2ff-f8d9c1ad016e",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "consolidated-workflow/2400c32e-f875-4cd4-9d41-be6da8224c67_workflow.cwl#param:separator"
@@ -378,15 +382,17 @@
             "@id": "consolidated-workflow/2400c32e-f875-4cd4-9d41-be6da8224c67_workflow.cwl#param:outdir",
             "@type": "FormalParameter",
             "additionalType": "Text",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
             "name": "outdir",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#7ecba654-027c-42cc-a7b4-27c7d2f17b53"
+                "@id": "#b67122a2-0720-47b0-a974-9637f51935ca"
             }
         },
         {
-            "@id": "#7ecba654-027c-42cc-a7b4-27c7d2f17b53",
+            "@id": "#b67122a2-0720-47b0-a974-9637f51935ca",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "consolidated-workflow/2400c32e-f875-4cd4-9d41-be6da8224c67_workflow.cwl#param:outdir"
@@ -398,7 +404,9 @@
             "@id": "consolidated-workflow/2400c32e-f875-4cd4-9d41-be6da8224c67_workflow.cwl#output:resdir",
             "@type": "FormalParameter",
             "additionalType": "Dataset",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
             "name": "resdir"
         }
     ]

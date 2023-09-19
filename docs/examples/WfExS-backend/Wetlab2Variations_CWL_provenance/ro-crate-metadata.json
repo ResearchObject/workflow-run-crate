@@ -23,7 +23,7 @@
                     "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
                 }
             ],
-            "datePublished": "2023-09-19T09:00:21+00:00",
+            "datePublished": "2023-09-19T13:51:22+00:00",
             "description": "RO-Crate from staged WfExS working directory a37fee9e-4288-4a9e-b493-993a867207d0 (meer oxometalate)",
             "hasPart": [
                 {
@@ -142,7 +142,7 @@
                 "@id": "consolidated-workflow/a37fee9e-4288-4a9e-b493-993a867207d0_workflow.cwl"
             },
             "mentions": {
-                "@id": "#ce6018bf-a717-422c-bf93-97b9b79b5f41"
+                "@id": "#3016a604-c64a-4081-8d02-99b2fefaebd8"
             }
         },
         {
@@ -200,7 +200,7 @@
             "@id": "https://github.com/inab/WfExS-backend",
             "@type": "SoftwareApplication",
             "name": "WfExS-backend",
-            "softwareVersion": "0.9.3-157-g9246216 (9246216214a0a72ac485bd2e892466c14547dc89)",
+            "softwareVersion": "0.9.3-160-g6516382 (65163824b1ca3273605b9b8b7cddb5fe52586421)",
             "url": "https://github.com/inab/WfExS-backend"
         },
         {
@@ -208,7 +208,7 @@
             "@type": "File",
             "contentSize": "4708",
             "encodingFormat": "text/plain",
-            "sha256": "9130a374dbfbbf57f793bfda22075d296940a34fe55ce4cedbfe05005c8e25f5"
+            "sha256": "0a679e08be904c4bf258de8071985524f11c7bbcb09f228cce5f1f62afa31faa"
         },
         {
             "@id": "https://pypi.org/project/cwltool/",
@@ -694,7 +694,7 @@
             "version": "31348ed533961f84cf348bf1af660ad9de6f870c"
         },
         {
-            "@id": "#72be8c25-e451-4d58-abb9-c6e51e3013aa",
+            "@id": "#16de2539-2166-4f86-b010-50bd44644a74",
             "@type": "CreateAction",
             "actionStatus": {
                 "@id": "http://schema.org/CompletedActionStatus"
@@ -725,7 +725,7 @@
             }
         },
         {
-            "@id": "#ce6018bf-a717-422c-bf93-97b9b79b5f41",
+            "@id": "#3016a604-c64a-4081-8d02-99b2fefaebd8",
             "@type": "CreateAction",
             "actionStatus": {
                 "@id": "http://schema.org/CompletedActionStatus"
@@ -772,7 +772,7 @@
             "name": "Run outputs/_1693335046 of consolidated-workflow/a37fee9e-4288-4a9e-b493-993a867207d0_workflow.cwl",
             "object": [
                 {
-                    "@id": "#331e9cf7-ffb5-4ca5-8df7-5dddb089f3a3"
+                    "@id": "#188d2f52-ebd0-425d-bfc5-08e58d313acc"
                 },
                 {
                     "@id": "ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/technical/reference/phase2_reference_assembly_sequence/hs37d5.fa.gz"
@@ -784,18 +784,18 @@
                     "@id": "ftp://ftp.broadinstitute.org/bundle/b37/dbsnp_138.b37.vcf.gz"
                 },
                 {
-                    "@id": "#6e91350a-6913-45cf-b4a0-d2f93c4c216a"
+                    "@id": "#e1c83ad6-e5ab-4927-b465-26a80a6bf748"
                 },
                 {
-                    "@id": "#6d2e1d4f-22f9-40b4-9ef0-6c0bc9f145e7"
+                    "@id": "#4351a2cd-efe9-46f2-b640-6e358c187e55"
                 },
                 {
-                    "@id": "#1119e23e-a3a1-454b-9848-ea79f2e3053b"
+                    "@id": "#9ddf36ba-54ca-4595-98ab-f07ef84c6845"
                 }
             ],
             "result": [
                 {
-                    "@id": "#d66399a8-fe03-43c6-84b0-168eff9756cd"
+                    "@id": "#6edad755-43a0-4c55-80c0-ffe5cffb02fe"
                 },
                 {
                     "@id": "outputs/_1693335046/abc2.sorted.metrics.txt"
@@ -807,7 +807,7 @@
                     "@id": "meta/outputs/stats/dag.dot.png"
                 },
                 {
-                    "@id": "#f0c85692-d955-4c15-9b1e-1d4909238218"
+                    "@id": "#6ad2b4f2-7c77-43c6-ad23-5e3208f0d827"
                 }
             ],
             "startTime": "2023-08-29T18:50:46.906382+00:00"
@@ -816,15 +816,17 @@
             "@id": "consolidated-workflow/a37fee9e-4288-4a9e-b493-993a867207d0_workflow.cwl#param:fastq_files",
             "@type": "FormalParameter",
             "additionalType": "Collection",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
             "name": "fastq_files",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#331e9cf7-ffb5-4ca5-8df7-5dddb089f3a3"
+                "@id": "#188d2f52-ebd0-425d-bfc5-08e58d313acc"
             }
         },
         {
-            "@id": "#331e9cf7-ffb5-4ca5-8df7-5dddb089f3a3",
+            "@id": "#188d2f52-ebd0-425d-bfc5-08e58d313acc",
             "@type": "Collection",
             "exampleOfWork": {
                 "@id": "consolidated-workflow/a37fee9e-4288-4a9e-b493-993a867207d0_workflow.cwl#param:fastq_files"
@@ -856,7 +858,9 @@
             "@id": "consolidated-workflow/a37fee9e-4288-4a9e-b493-993a867207d0_workflow.cwl#param:reference_genome",
             "@type": "FormalParameter",
             "additionalType": "File",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
             "name": "reference_genome",
             "valueRequired": "True",
             "workExample": {
@@ -877,7 +881,9 @@
             "@id": "consolidated-workflow/a37fee9e-4288-4a9e-b493-993a867207d0_workflow.cwl#param:known_indels_file",
             "@type": "FormalParameter",
             "additionalType": "File",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
             "name": "known_indels_file",
             "valueRequired": "True",
             "workExample": {
@@ -898,7 +904,9 @@
             "@id": "consolidated-workflow/a37fee9e-4288-4a9e-b493-993a867207d0_workflow.cwl#param:known_sites_file",
             "@type": "FormalParameter",
             "additionalType": "File",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
             "name": "known_sites_file",
             "valueRequired": "True",
             "workExample": {
@@ -919,15 +927,17 @@
             "@id": "consolidated-workflow/a37fee9e-4288-4a9e-b493-993a867207d0_workflow.cwl#param:readgroup_str",
             "@type": "FormalParameter",
             "additionalType": "Text",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
             "name": "readgroup_str",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#6e91350a-6913-45cf-b4a0-d2f93c4c216a"
+                "@id": "#e1c83ad6-e5ab-4927-b465-26a80a6bf748"
             }
         },
         {
-            "@id": "#6e91350a-6913-45cf-b4a0-d2f93c4c216a",
+            "@id": "#e1c83ad6-e5ab-4927-b465-26a80a6bf748",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "consolidated-workflow/a37fee9e-4288-4a9e-b493-993a867207d0_workflow.cwl#param:readgroup_str"
@@ -939,15 +949,17 @@
             "@id": "consolidated-workflow/a37fee9e-4288-4a9e-b493-993a867207d0_workflow.cwl#param:chromosome",
             "@type": "FormalParameter",
             "additionalType": "Text",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
             "name": "chromosome",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#6d2e1d4f-22f9-40b4-9ef0-6c0bc9f145e7"
+                "@id": "#4351a2cd-efe9-46f2-b640-6e358c187e55"
             }
         },
         {
-            "@id": "#6d2e1d4f-22f9-40b4-9ef0-6c0bc9f145e7",
+            "@id": "#4351a2cd-efe9-46f2-b640-6e358c187e55",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "consolidated-workflow/a37fee9e-4288-4a9e-b493-993a867207d0_workflow.cwl#param:chromosome"
@@ -959,15 +971,17 @@
             "@id": "consolidated-workflow/a37fee9e-4288-4a9e-b493-993a867207d0_workflow.cwl#param:sample_name",
             "@type": "FormalParameter",
             "additionalType": "Text",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
             "name": "sample_name",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#1119e23e-a3a1-454b-9848-ea79f2e3053b"
+                "@id": "#9ddf36ba-54ca-4595-98ab-f07ef84c6845"
             }
         },
         {
-            "@id": "#1119e23e-a3a1-454b-9848-ea79f2e3053b",
+            "@id": "#9ddf36ba-54ca-4595-98ab-f07ef84c6845",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "consolidated-workflow/a37fee9e-4288-4a9e-b493-993a867207d0_workflow.cwl#param:sample_name"
@@ -979,10 +993,12 @@
             "@id": "consolidated-workflow/a37fee9e-4288-4a9e-b493-993a867207d0_workflow.cwl#output:gvcf",
             "@type": "FormalParameter",
             "additionalType": "Collection",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
             "name": "gvcf",
             "workExample": {
-                "@id": "#d66399a8-fe03-43c6-84b0-168eff9756cd"
+                "@id": "#6edad755-43a0-4c55-80c0-ffe5cffb02fe"
             }
         },
         {
@@ -994,7 +1010,7 @@
             "sha256": "79c41a5eac5d7ebf46d91f3b802b8a79f2c92d946b46bef02828719b992c61c2"
         },
         {
-            "@id": "#d66399a8-fe03-43c6-84b0-168eff9756cd",
+            "@id": "#6edad755-43a0-4c55-80c0-ffe5cffb02fe",
             "@type": "Collection",
             "exampleOfWork": {
                 "@id": "consolidated-workflow/a37fee9e-4288-4a9e-b493-993a867207d0_workflow.cwl#output:gvcf"
@@ -1018,7 +1034,9 @@
             "@id": "consolidated-workflow/a37fee9e-4288-4a9e-b493-993a867207d0_workflow.cwl#output:metrics",
             "@type": "FormalParameter",
             "additionalType": "File",
-            "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
             "name": "metrics",
             "workExample": {
                 "@id": "outputs/_1693335046/abc2.sorted.metrics.txt"
@@ -1062,7 +1080,7 @@
             "sha256": "b02db24c91dc3839102b916b0ad6e6ea6bdbfca63ef13b7e008098fcd9dc86d0"
         },
         {
-            "@id": "#ec44e2f9-f58a-4151-b60a-d3cfebc62709",
+            "@id": "#e0b091c4-2a96-48b5-b8dc-594b1e1a7117",
             "@type": "CreateAction",
             "actionStatus": {
                 "@id": "http://schema.org/CompletedActionStatus"
@@ -1083,7 +1101,7 @@
             }
         },
         {
-            "@id": "#f0c85692-d955-4c15-9b1e-1d4909238218",
+            "@id": "#6ad2b4f2-7c77-43c6-ad23-5e3208f0d827",
             "@type": "Collection",
             "hasPart": [
                 {
