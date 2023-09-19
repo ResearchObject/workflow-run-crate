@@ -9,6 +9,9 @@
         {
             "@id": "./",
             "@type": "Dataset",
+            "about": {
+                "@id": "README.md"
+            },
             "conformsTo": [
                 {
                     "@id": "https://w3id.org/ro/wfrun/process/0.2"
@@ -20,9 +23,12 @@
                     "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
                 }
             ],
-            "datePublished": "2023-09-13T18:14:42+00:00",
+            "datePublished": "2023-09-19T09:00:21+00:00",
             "description": "RO-Crate from staged WfExS working directory a37fee9e-4288-4a9e-b493-993a867207d0 (meer oxometalate)",
             "hasPart": [
+                {
+                    "@id": "README.md"
+                },
                 {
                     "@id": "trs://workflowhub.eu/107/1"
                 },
@@ -115,6 +121,18 @@
                 },
                 {
                     "@id": "outputs/_1693335046/abc2.sorted.metrics.txt"
+                },
+                {
+                    "@id": "meta/outputs/stats/dag.dot"
+                },
+                {
+                    "@id": "meta/outputs/stats/dag.dot.png"
+                },
+                {
+                    "@id": "meta/outputs/_1693335046/stdout.txt"
+                },
+                {
+                    "@id": "meta/outputs/_1693335046/stderr.txt"
                 }
             ],
             "license": [
@@ -124,7 +142,7 @@
                 "@id": "consolidated-workflow/a37fee9e-4288-4a9e-b493-993a867207d0_workflow.cwl"
             },
             "mentions": {
-                "@id": "#e99069d8-1bcd-4464-be9f-66377178195c"
+                "@id": "#ce6018bf-a717-422c-bf93-97b9b79b5f41"
             }
         },
         {
@@ -182,8 +200,15 @@
             "@id": "https://github.com/inab/WfExS-backend",
             "@type": "SoftwareApplication",
             "name": "WfExS-backend",
-            "softwareVersion": "0.9.3-148-g2371d27 (2371d27cdc5d46d60f28f91ac12fd8262cec10b4)",
+            "softwareVersion": "0.9.3-157-g9246216 (9246216214a0a72ac485bd2e892466c14547dc89)",
             "url": "https://github.com/inab/WfExS-backend"
+        },
+        {
+            "@id": "README.md",
+            "@type": "File",
+            "contentSize": "4708",
+            "encodingFormat": "text/plain",
+            "sha256": "9130a374dbfbbf57f793bfda22075d296940a34fe55ce4cedbfe05005c8e25f5"
         },
         {
             "@id": "https://pypi.org/project/cwltool/",
@@ -620,6 +645,9 @@
             "contentSize": "63161",
             "description": "Consolidated Workflow Entrypoint",
             "encodingFormat": "application/json",
+            "image": {
+                "@id": "meta/outputs/stats/dag.dot.png"
+            },
             "input": [
                 {
                     "@id": "consolidated-workflow/a37fee9e-4288-4a9e-b493-993a867207d0_workflow.cwl#param:fastq_files"
@@ -666,7 +694,7 @@
             "version": "31348ed533961f84cf348bf1af660ad9de6f870c"
         },
         {
-            "@id": "#7796a2c6-fbc9-493e-be5c-8e6e4d39acb8",
+            "@id": "#72be8c25-e451-4d58-abb9-c6e51e3013aa",
             "@type": "CreateAction",
             "actionStatus": {
                 "@id": "http://schema.org/CompletedActionStatus"
@@ -697,7 +725,7 @@
             }
         },
         {
-            "@id": "#e99069d8-1bcd-4464-be9f-66377178195c",
+            "@id": "#ce6018bf-a717-422c-bf93-97b9b79b5f41",
             "@type": "CreateAction",
             "actionStatus": {
                 "@id": "http://schema.org/CompletedActionStatus"
@@ -744,7 +772,7 @@
             "name": "Run outputs/_1693335046 of consolidated-workflow/a37fee9e-4288-4a9e-b493-993a867207d0_workflow.cwl",
             "object": [
                 {
-                    "@id": "#a2c08209-a571-4469-83c6-84b8cb1c86d8"
+                    "@id": "#331e9cf7-ffb5-4ca5-8df7-5dddb089f3a3"
                 },
                 {
                     "@id": "ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/technical/reference/phase2_reference_assembly_sequence/hs37d5.fa.gz"
@@ -756,21 +784,30 @@
                     "@id": "ftp://ftp.broadinstitute.org/bundle/b37/dbsnp_138.b37.vcf.gz"
                 },
                 {
-                    "@id": "#7c17f05e-1186-473e-b0ec-a3b76971568a"
+                    "@id": "#6e91350a-6913-45cf-b4a0-d2f93c4c216a"
                 },
                 {
-                    "@id": "#0f3f0d44-aca2-4394-b702-ec0f7c6a27fe"
+                    "@id": "#6d2e1d4f-22f9-40b4-9ef0-6c0bc9f145e7"
                 },
                 {
-                    "@id": "#11a58ba4-b70e-4b0e-bdd4-9841c7d97223"
+                    "@id": "#1119e23e-a3a1-454b-9848-ea79f2e3053b"
                 }
             ],
             "result": [
                 {
-                    "@id": "#91f19adf-8e8c-4295-a064-2d041ab01196"
+                    "@id": "#d66399a8-fe03-43c6-84b0-168eff9756cd"
                 },
                 {
                     "@id": "outputs/_1693335046/abc2.sorted.metrics.txt"
+                },
+                {
+                    "@id": "meta/outputs/stats/dag.dot"
+                },
+                {
+                    "@id": "meta/outputs/stats/dag.dot.png"
+                },
+                {
+                    "@id": "#f0c85692-d955-4c15-9b1e-1d4909238218"
                 }
             ],
             "startTime": "2023-08-29T18:50:46.906382+00:00"
@@ -783,11 +820,11 @@
             "name": "fastq_files",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#a2c08209-a571-4469-83c6-84b8cb1c86d8"
+                "@id": "#331e9cf7-ffb5-4ca5-8df7-5dddb089f3a3"
             }
         },
         {
-            "@id": "#a2c08209-a571-4469-83c6-84b8cb1c86d8",
+            "@id": "#331e9cf7-ffb5-4ca5-8df7-5dddb089f3a3",
             "@type": "Collection",
             "exampleOfWork": {
                 "@id": "consolidated-workflow/a37fee9e-4288-4a9e-b493-993a867207d0_workflow.cwl#param:fastq_files"
@@ -886,11 +923,11 @@
             "name": "readgroup_str",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#7c17f05e-1186-473e-b0ec-a3b76971568a"
+                "@id": "#6e91350a-6913-45cf-b4a0-d2f93c4c216a"
             }
         },
         {
-            "@id": "#7c17f05e-1186-473e-b0ec-a3b76971568a",
+            "@id": "#6e91350a-6913-45cf-b4a0-d2f93c4c216a",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "consolidated-workflow/a37fee9e-4288-4a9e-b493-993a867207d0_workflow.cwl#param:readgroup_str"
@@ -906,11 +943,11 @@
             "name": "chromosome",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#0f3f0d44-aca2-4394-b702-ec0f7c6a27fe"
+                "@id": "#6d2e1d4f-22f9-40b4-9ef0-6c0bc9f145e7"
             }
         },
         {
-            "@id": "#0f3f0d44-aca2-4394-b702-ec0f7c6a27fe",
+            "@id": "#6d2e1d4f-22f9-40b4-9ef0-6c0bc9f145e7",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "consolidated-workflow/a37fee9e-4288-4a9e-b493-993a867207d0_workflow.cwl#param:chromosome"
@@ -926,11 +963,11 @@
             "name": "sample_name",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#11a58ba4-b70e-4b0e-bdd4-9841c7d97223"
+                "@id": "#1119e23e-a3a1-454b-9848-ea79f2e3053b"
             }
         },
         {
-            "@id": "#11a58ba4-b70e-4b0e-bdd4-9841c7d97223",
+            "@id": "#1119e23e-a3a1-454b-9848-ea79f2e3053b",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "consolidated-workflow/a37fee9e-4288-4a9e-b493-993a867207d0_workflow.cwl#param:sample_name"
@@ -945,7 +982,7 @@
             "conformsTo": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/",
             "name": "gvcf",
             "workExample": {
-                "@id": "#91f19adf-8e8c-4295-a064-2d041ab01196"
+                "@id": "#d66399a8-fe03-43c6-84b0-168eff9756cd"
             }
         },
         {
@@ -957,7 +994,7 @@
             "sha256": "79c41a5eac5d7ebf46d91f3b802b8a79f2c92d946b46bef02828719b992c61c2"
         },
         {
-            "@id": "#91f19adf-8e8c-4295-a064-2d041ab01196",
+            "@id": "#d66399a8-fe03-43c6-84b0-168eff9756cd",
             "@type": "Collection",
             "exampleOfWork": {
                 "@id": "consolidated-workflow/a37fee9e-4288-4a9e-b493-993a867207d0_workflow.cwl#output:gvcf"
@@ -997,6 +1034,79 @@
                 "@id": "consolidated-workflow/a37fee9e-4288-4a9e-b493-993a867207d0_workflow.cwl#output:metrics"
             },
             "sha256": "783d5ef09115a3c132c28b3d5fa45e8b45888c08c4d976ae906d0c38ee6bbb0a"
+        },
+        {
+            "@id": "meta/outputs/stats/dag.dot",
+            "@type": [
+                "File",
+                "ImageObject"
+            ],
+            "contentSize": "9112",
+            "encodingFormat": "text/plain",
+            "isBasedOn": {
+                "@id": "consolidated-workflow/a37fee9e-4288-4a9e-b493-993a867207d0_workflow.cwl"
+            },
+            "sha256": "a0ada20e6486ad19e339be2459a1f8e80432f35130358eed3816ff6bea88c35b"
+        },
+        {
+            "@id": "meta/outputs/stats/dag.dot.png",
+            "@type": [
+                "File",
+                "ImageObject"
+            ],
+            "contentSize": "158627",
+            "encodingFormat": "image/png",
+            "isBasedOn": {
+                "@id": "meta/outputs/stats/dag.dot"
+            },
+            "sha256": "b02db24c91dc3839102b916b0ad6e6ea6bdbfca63ef13b7e008098fcd9dc86d0"
+        },
+        {
+            "@id": "#ec44e2f9-f58a-4151-b60a-d3cfebc62709",
+            "@type": "CreateAction",
+            "actionStatus": {
+                "@id": "http://schema.org/CompletedActionStatus"
+            },
+            "agent": {
+                "@id": "https://orcid.org/0000-0002-4806-5140"
+            },
+            "description": "dot -Tpng -ometa/outputs/stats/dag.dot.png meta/outputs/stats/dag.dot",
+            "instrument": {
+                "@id": "https://github.com/inab/WfExS-backend"
+            },
+            "name": "Generate diagram PNG image from DOT",
+            "object": {
+                "@id": "meta/outputs/stats/dag.dot"
+            },
+            "result": {
+                "@id": "meta/outputs/stats/dag.dot.png"
+            }
+        },
+        {
+            "@id": "#f0c85692-d955-4c15-9b1e-1d4909238218",
+            "@type": "Collection",
+            "hasPart": [
+                {
+                    "@id": "meta/outputs/_1693335046/stdout.txt"
+                },
+                {
+                    "@id": "meta/outputs/_1693335046/stderr.txt"
+                }
+            ]
+        },
+        {
+            "@id": "meta/outputs/_1693335046/stdout.txt",
+            "@type": "File",
+            "contentSize": "1692",
+            "encodingFormat": "application/json",
+            "sha256": "9dfd09c464854a63e5f8bff25c89f8c06be28d45f8fa108ebaedba99775468de"
+        },
+        {
+            "@id": "meta/outputs/_1693335046/stderr.txt",
+            "@type": "File",
+            "contentSize": "135996",
+            "encodingFormat": "text/plain",
+            "sha256": "8cce932a62a54134b6a903f003bb7de7bc8ed62a3b600a05afb4299c8f8c00e9"
         }
     ]
 }

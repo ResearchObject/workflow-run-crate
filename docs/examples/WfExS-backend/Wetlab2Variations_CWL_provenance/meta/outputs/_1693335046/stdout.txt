@@ -1,0 +1,28 @@
+{
+    "gvcf": {
+        "location": "file:///scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/outputs/_1693335046/abc2.sorted.md.realigned.bqsr.vcf.gz",
+        "basename": "abc2.sorted.md.realigned.bqsr.vcf.gz",
+        "class": "File",
+        "checksum": "sha1$297b1dcd38a5537a7c87de1564dbcdb5ae8d04c8",
+        "size": 307317,
+        "secondaryFiles": [
+            {
+                "basename": "abc2.sorted.md.realigned.bqsr.vcf.gz.tbi",
+                "location": "file:///scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/outputs/_1693335046/abc2.sorted.md.realigned.bqsr.vcf.gz.tbi",
+                "class": "File",
+                "checksum": "sha1$b9bca46c53cc7e31ddc8adb6a11a19a9e172bcce",
+                "size": 70588,
+                "path": "/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/outputs/_1693335046/abc2.sorted.md.realigned.bqsr.vcf.gz.tbi"
+            }
+        ],
+        "path": "/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/outputs/_1693335046/abc2.sorted.md.realigned.bqsr.vcf.gz"
+    },
+    "metrics": {
+        "location": "file:///scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/outputs/_1693335046/abc2.sorted.metrics.txt",
+        "basename": "abc2.sorted.metrics.txt",
+        "class": "File",
+        "checksum": "sha1$a70374a00adce73c8da60939e22cce30c49c45bb",
+        "size": 3629,
+        "path": "/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/outputs/_1693335046/abc2.sorted.metrics.txt"
+    }
+}

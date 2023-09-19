@@ -9,6 +9,9 @@
         {
             "@id": "./",
             "@type": "Dataset",
+            "about": {
+                "@id": "README.md"
+            },
             "conformsTo": [
                 {
                     "@id": "https://w3id.org/ro/wfrun/process/0.2"
@@ -20,9 +23,12 @@
                     "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
                 }
             ],
-            "datePublished": "2023-09-13T18:17:17+00:00",
+            "datePublished": "2023-09-19T09:00:57+00:00",
             "description": "RO-Crate from staged WfExS working directory 047b6dfc-3547-4e09-92f8-df7143038ff4 (overbridging templon)",
             "hasPart": [
+                {
+                    "@id": "README.md"
+                },
                 {
                     "@id": "workflow/main.nf"
                 },
@@ -679,6 +685,18 @@
                 },
                 {
                     "@id": "outputs/_1693481083/stand_pep_quant_mergedcompomics.csv"
+                },
+                {
+                    "@id": "meta/outputs/_1693481083/stats/dag.dot"
+                },
+                {
+                    "@id": "meta/outputs/_1693481083/stats/dag.dot.png"
+                },
+                {
+                    "@id": "meta/outputs/_1693481083/stdout.txt"
+                },
+                {
+                    "@id": "meta/outputs/_1693481083/stderr.txt"
                 }
             ],
             "license": [
@@ -688,7 +706,7 @@
                 "@id": "workflow/main.nf"
             },
             "mentions": {
-                "@id": "#5bea4cc1-fb2e-4a31-a733-aa35a6c16c85"
+                "@id": "#22e94fe6-0ed9-478d-b58f-018df54a7495"
             }
         },
         {
@@ -746,8 +764,15 @@
             "@id": "https://github.com/inab/WfExS-backend",
             "@type": "SoftwareApplication",
             "name": "WfExS-backend",
-            "softwareVersion": "0.9.3-148-g2371d27 (2371d27cdc5d46d60f28f91ac12fd8262cec10b4)",
+            "softwareVersion": "0.9.3-157-g9246216 (9246216214a0a72ac485bd2e892466c14547dc89)",
             "url": "https://github.com/inab/WfExS-backend"
+        },
+        {
+            "@id": "README.md",
+            "@type": "File",
+            "contentSize": "4712",
+            "encodingFormat": "text/plain",
+            "sha256": "d7f7ff2ab85f00ddd98a7ecbd72ddd63b47ceb696b6320bb3b1b873b314ac595"
         },
         {
             "@id": "https://www.nextflow.io/",
@@ -890,6 +915,9 @@
                 }
             ],
             "identifier": "git+https://github.com/wombat-p/WOMBAT-Pipelines.git@51d0be8aa1b22142b1ba09edb5ee4465618e8e05",
+            "image": {
+                "@id": "meta/outputs/_1693481083/stats/dag.dot.png"
+            },
             "input": [
                 {
                     "@id": "workflow/main.nf#param:mzmls"
@@ -2048,7 +2076,7 @@
             "sha256": "c9b6fc6e4dfa51fc382121663c515d0717b026848459585c169a390560b000e8"
         },
         {
-            "@id": "#5bea4cc1-fb2e-4a31-a733-aa35a6c16c85",
+            "@id": "#22e94fe6-0ed9-478d-b58f-018df54a7495",
             "@type": "CreateAction",
             "actionStatus": {
                 "@id": "http://schema.org/CompletedActionStatus"
@@ -2131,7 +2159,7 @@
             "name": "Run outputs/_1693481083 of workflow/main.nf",
             "object": [
                 {
-                    "@id": "#e783c15d-5aa6-4aae-9ef2-a598e5bf7d2f"
+                    "@id": "#7766b0c1-f4cd-4b89-b19e-4d353c440049"
                 },
                 {
                     "@id": "https://raw.githubusercontent.com/wombat-p/WOMBAT-Pipelines/51d0be8aa1b22142b1ba09edb5ee4465618e8e05/test_data/exp_design.txt"
@@ -2140,73 +2168,73 @@
                     "@id": "https://raw.githubusercontent.com/wombat-p/WOMBAT-Pipelines/51d0be8aa1b22142b1ba09edb5ee4465618e8e05/test_data/test_params.yml"
                 },
                 {
-                    "@id": "#ad8cbb8a-3c83-45d9-a77b-1f5868aa8305"
+                    "@id": "#e046f4e2-a8b3-4907-9115-0233c6d2879d"
                 },
                 {
-                    "@id": "#91bffbeb-46d0-4ac0-8d06-31c3e43f5da8"
+                    "@id": "#326246e6-e842-4a0c-80e1-65327b19d442"
                 },
                 {
-                    "@id": "#332324e7-ceec-4bdf-af60-21d3b61b4c40"
+                    "@id": "#f9dc00b1-1a51-4541-8cb1-ae9161db80fc"
                 },
                 {
-                    "@id": "#1f846154-b970-4b64-ad82-e1de2b118f9c"
+                    "@id": "#6d441bae-48cf-4f91-9b36-3c39aea34f64"
                 },
                 {
-                    "@id": "#29a74495-198e-40f5-a363-c286fb72f516"
+                    "@id": "#fe95fc3b-2352-4c07-abfe-569e16402fe7"
                 },
                 {
-                    "@id": "#573022c8-8216-49d0-a059-60ab832a638f"
+                    "@id": "#94678e10-a524-465b-a6d3-aff7da3df4cf"
                 },
                 {
-                    "@id": "#07df76cc-3b09-41ad-8bb8-30c0ebebe48d"
+                    "@id": "#58a94651-3118-4d21-b7d6-5e840b80a1c0"
                 },
                 {
-                    "@id": "#dd5f3a8e-310a-45a9-88b2-791fd288abee"
+                    "@id": "#176f4351-efa5-4be3-8aa0-06b0a2da752c"
                 },
                 {
-                    "@id": "#c482b292-cec0-47c8-bc1d-46fc4427c5ad"
+                    "@id": "#82b1217e-c023-4ca4-bb26-179066f95f1c"
                 },
                 {
-                    "@id": "#3e16ae3a-d2af-41b2-a879-034add262ba9"
+                    "@id": "#0d8a21f8-7254-4c7e-8e1a-74145e582678"
                 },
                 {
-                    "@id": "#d9d08b82-f5bc-413a-a532-d5606affd5c3"
+                    "@id": "#71c4f5f9-acf7-4761-9312-9d119dda42dc"
                 },
                 {
-                    "@id": "#6d50ef05-5d3d-4825-9572-c9d7ab3f2da8"
+                    "@id": "#6ff24cd6-7966-42d9-8883-0dada6d54394"
                 },
                 {
-                    "@id": "#471fac54-80f9-4cde-84ec-cee83a2058db"
+                    "@id": "#449e53db-78d3-4c75-8375-c13900468755"
                 },
                 {
-                    "@id": "#517f071c-7c79-47c5-b73f-de47e08c1173"
+                    "@id": "#713d0a38-1be5-4905-b45a-6b6a2b8c8687"
                 },
                 {
-                    "@id": "#662ed01c-718a-46aa-9330-f8a83b4f246a"
+                    "@id": "#28aa149d-04cb-41e5-aeb9-2068cffcd1f3"
                 },
                 {
-                    "@id": "#a8d9f2e8-a13e-4759-8a18-797429a0e543"
+                    "@id": "#a8544821-820c-4ca7-a793-c6ccc9f4ea36"
                 },
                 {
-                    "@id": "#6bad9bff-e600-4d43-877d-f9ff1ae6ce25"
+                    "@id": "#ae3f5dfa-1bd7-418f-9c04-039c468ada77"
                 },
                 {
-                    "@id": "#2d63b72c-44fa-45d9-8a68-65e746ae3ff5"
+                    "@id": "#e9c27630-ca5e-49b6-870d-7d0aaca0aea7"
                 },
                 {
-                    "@id": "#97fa8921-9dad-489e-80fe-6747722d5a1b"
+                    "@id": "#42531bd9-6bf3-4be2-b8c3-b821a4fa10d6"
                 },
                 {
-                    "@id": "#e60f7da2-6160-4ebd-bd02-f9bc637712c5"
+                    "@id": "#26ff1395-c26a-401f-886a-3bb08c676d28"
                 },
                 {
-                    "@id": "#3728f17c-31dc-491d-ba3e-4561ae66c350"
+                    "@id": "#1d6d2913-041f-43e8-8979-4ca33d3085c1"
                 },
                 {
-                    "@id": "#2f7c4ece-7b8b-435c-a41e-4e0ee22014e9"
+                    "@id": "#45c6f694-f4ea-4bd7-9a2a-4e8b7cbc2c73"
                 },
                 {
-                    "@id": "#d97a35f7-34c7-4696-aab1-4db03fe05f30"
+                    "@id": "#d4d67882-9d50-44ee-a06f-d718e976f55d"
                 },
                 {
                     "@id": "https://raw.githubusercontent.com/wombat-p/WOMBAT-Pipelines/51d0be8aa1b22142b1ba09edb5ee4465618e8e05/test_data/ABRF_iPRG_2012_target.fasta"
@@ -2311,6 +2339,15 @@
                 },
                 {
                     "@id": "outputs/_1693481083/stand_pep_quant_mergedcompomics.csv"
+                },
+                {
+                    "@id": "meta/outputs/_1693481083/stats/dag.dot"
+                },
+                {
+                    "@id": "meta/outputs/_1693481083/stats/dag.dot.png"
+                },
+                {
+                    "@id": "#42ea721d-18bb-4961-9ecf-22cfd1ba53fc"
                 }
             ],
             "startTime": "2023-08-31T11:24:43.254962+00:00"
@@ -2330,11 +2367,11 @@
             "name": "raws",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#e783c15d-5aa6-4aae-9ef2-a598e5bf7d2f"
+                "@id": "#7766b0c1-f4cd-4b89-b19e-4d353c440049"
             }
         },
         {
-            "@id": "#e783c15d-5aa6-4aae-9ef2-a598e5bf7d2f",
+            "@id": "#7766b0c1-f4cd-4b89-b19e-4d353c440049",
             "@type": "Collection",
             "exampleOfWork": {
                 "@id": "workflow/main.nf#param:raws"
@@ -2419,11 +2456,11 @@
             "name": "run_statistics",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#ad8cbb8a-3c83-45d9-a77b-1f5868aa8305"
+                "@id": "#e046f4e2-a8b3-4907-9115-0233c6d2879d"
             }
         },
         {
-            "@id": "#ad8cbb8a-3c83-45d9-a77b-1f5868aa8305",
+            "@id": "#e046f4e2-a8b3-4907-9115-0233c6d2879d",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "workflow/main.nf#param:run_statistics"
@@ -2439,11 +2476,11 @@
             "name": "add_decoys",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#91bffbeb-46d0-4ac0-8d06-31c3e43f5da8"
+                "@id": "#326246e6-e842-4a0c-80e1-65327b19d442"
             }
         },
         {
-            "@id": "#91bffbeb-46d0-4ac0-8d06-31c3e43f5da8",
+            "@id": "#326246e6-e842-4a0c-80e1-65327b19d442",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "workflow/main.nf#param:add_decoys"
@@ -2466,11 +2503,11 @@
             "name": "comps",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#332324e7-ceec-4bdf-af60-21d3b61b4c40"
+                "@id": "#f9dc00b1-1a51-4541-8cb1-ae9161db80fc"
             }
         },
         {
-            "@id": "#332324e7-ceec-4bdf-af60-21d3b61b4c40",
+            "@id": "#f9dc00b1-1a51-4541-8cb1-ae9161db80fc",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "workflow/main.nf#param:comps"
@@ -2486,11 +2523,11 @@
             "name": "proline_engine",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#1f846154-b970-4b64-ad82-e1de2b118f9c"
+                "@id": "#6d441bae-48cf-4f91-9b36-3c39aea34f64"
             }
         },
         {
-            "@id": "#1f846154-b970-4b64-ad82-e1de2b118f9c",
+            "@id": "#6d441bae-48cf-4f91-9b36-3c39aea34f64",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "workflow/main.nf#param:proline_engine"
@@ -2506,11 +2543,11 @@
             "name": "workflow",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#29a74495-198e-40f5-a363-c286fb72f516"
+                "@id": "#fe95fc3b-2352-4c07-abfe-569e16402fe7"
             }
         },
         {
-            "@id": "#29a74495-198e-40f5-a363-c286fb72f516",
+            "@id": "#fe95fc3b-2352-4c07-abfe-569e16402fe7",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "workflow/main.nf#param:workflow"
@@ -2540,11 +2577,11 @@
             "name": "max_multiqc_email_size",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#573022c8-8216-49d0-a059-60ab832a638f"
+                "@id": "#94678e10-a524-465b-a6d3-aff7da3df4cf"
             }
         },
         {
-            "@id": "#573022c8-8216-49d0-a059-60ab832a638f",
+            "@id": "#94678e10-a524-465b-a6d3-aff7da3df4cf",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "workflow/main.nf#param:max_multiqc_email_size"
@@ -2560,11 +2597,11 @@
             "name": "outdir",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#07df76cc-3b09-41ad-8bb8-30c0ebebe48d"
+                "@id": "#58a94651-3118-4d21-b7d6-5e840b80a1c0"
             }
         },
         {
-            "@id": "#07df76cc-3b09-41ad-8bb8-30c0ebebe48d",
+            "@id": "#58a94651-3118-4d21-b7d6-5e840b80a1c0",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "workflow/main.nf#param:outdir"
@@ -2580,11 +2617,11 @@
             "name": "tracedir",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#dd5f3a8e-310a-45a9-88b2-791fd288abee"
+                "@id": "#176f4351-efa5-4be3-8aa0-06b0a2da752c"
             }
         },
         {
-            "@id": "#dd5f3a8e-310a-45a9-88b2-791fd288abee",
+            "@id": "#176f4351-efa5-4be3-8aa0-06b0a2da752c",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "workflow/main.nf#param:tracedir"
@@ -2600,11 +2637,11 @@
             "name": "publish_dir_mode",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#c482b292-cec0-47c8-bc1d-46fc4427c5ad"
+                "@id": "#82b1217e-c023-4ca4-bb26-179066f95f1c"
             }
         },
         {
-            "@id": "#c482b292-cec0-47c8-bc1d-46fc4427c5ad",
+            "@id": "#82b1217e-c023-4ca4-bb26-179066f95f1c",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "workflow/main.nf#param:publish_dir_mode"
@@ -2634,11 +2671,11 @@
             "name": "plaintext_email",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#3e16ae3a-d2af-41b2-a879-034add262ba9"
+                "@id": "#0d8a21f8-7254-4c7e-8e1a-74145e582678"
             }
         },
         {
-            "@id": "#3e16ae3a-d2af-41b2-a879-034add262ba9",
+            "@id": "#0d8a21f8-7254-4c7e-8e1a-74145e582678",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "workflow/main.nf#param:plaintext_email"
@@ -2654,11 +2691,11 @@
             "name": "monochrome_logs",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#d9d08b82-f5bc-413a-a532-d5606affd5c3"
+                "@id": "#71c4f5f9-acf7-4761-9312-9d119dda42dc"
             }
         },
         {
-            "@id": "#d9d08b82-f5bc-413a-a532-d5606affd5c3",
+            "@id": "#71c4f5f9-acf7-4761-9312-9d119dda42dc",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "workflow/main.nf#param:monochrome_logs"
@@ -2674,11 +2711,11 @@
             "name": "help",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#6d50ef05-5d3d-4825-9572-c9d7ab3f2da8"
+                "@id": "#6ff24cd6-7966-42d9-8883-0dada6d54394"
             }
         },
         {
-            "@id": "#6d50ef05-5d3d-4825-9572-c9d7ab3f2da8",
+            "@id": "#6ff24cd6-7966-42d9-8883-0dada6d54394",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "workflow/main.nf#param:help"
@@ -2694,11 +2731,11 @@
             "name": "validate_params",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#471fac54-80f9-4cde-84ec-cee83a2058db"
+                "@id": "#449e53db-78d3-4c75-8375-c13900468755"
             }
         },
         {
-            "@id": "#471fac54-80f9-4cde-84ec-cee83a2058db",
+            "@id": "#449e53db-78d3-4c75-8375-c13900468755",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "workflow/main.nf#param:validate_params"
@@ -2714,11 +2751,11 @@
             "name": "show_hidden_params",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#517f071c-7c79-47c5-b73f-de47e08c1173"
+                "@id": "#713d0a38-1be5-4905-b45a-6b6a2b8c8687"
             }
         },
         {
-            "@id": "#517f071c-7c79-47c5-b73f-de47e08c1173",
+            "@id": "#713d0a38-1be5-4905-b45a-6b6a2b8c8687",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "workflow/main.nf#param:show_hidden_params"
@@ -2734,11 +2771,11 @@
             "name": "enable_conda",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#662ed01c-718a-46aa-9330-f8a83b4f246a"
+                "@id": "#28aa149d-04cb-41e5-aeb9-2068cffcd1f3"
             }
         },
         {
-            "@id": "#662ed01c-718a-46aa-9330-f8a83b4f246a",
+            "@id": "#28aa149d-04cb-41e5-aeb9-2068cffcd1f3",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "workflow/main.nf#param:enable_conda"
@@ -2754,11 +2791,11 @@
             "name": "schema_ignore_params",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#a8d9f2e8-a13e-4759-8a18-797429a0e543"
+                "@id": "#a8544821-820c-4ca7-a793-c6ccc9f4ea36"
             }
         },
         {
-            "@id": "#a8d9f2e8-a13e-4759-8a18-797429a0e543",
+            "@id": "#a8544821-820c-4ca7-a793-c6ccc9f4ea36",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "workflow/main.nf#param:schema_ignore_params"
@@ -2781,11 +2818,11 @@
             "name": "custom_config_version",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#6bad9bff-e600-4d43-877d-f9ff1ae6ce25"
+                "@id": "#ae3f5dfa-1bd7-418f-9c04-039c468ada77"
             }
         },
         {
-            "@id": "#6bad9bff-e600-4d43-877d-f9ff1ae6ce25",
+            "@id": "#ae3f5dfa-1bd7-418f-9c04-039c468ada77",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "workflow/main.nf#param:custom_config_version"
@@ -2801,11 +2838,11 @@
             "name": "custom_config_base",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#2d63b72c-44fa-45d9-8a68-65e746ae3ff5"
+                "@id": "#e9c27630-ca5e-49b6-870d-7d0aaca0aea7"
             }
         },
         {
-            "@id": "#2d63b72c-44fa-45d9-8a68-65e746ae3ff5",
+            "@id": "#e9c27630-ca5e-49b6-870d-7d0aaca0aea7",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "workflow/main.nf#param:custom_config_base"
@@ -2821,11 +2858,11 @@
             "name": "config_profile_description",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#97fa8921-9dad-489e-80fe-6747722d5a1b"
+                "@id": "#42531bd9-6bf3-4be2-b8c3-b821a4fa10d6"
             }
         },
         {
-            "@id": "#97fa8921-9dad-489e-80fe-6747722d5a1b",
+            "@id": "#42531bd9-6bf3-4be2-b8c3-b821a4fa10d6",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "workflow/main.nf#param:config_profile_description"
@@ -2855,11 +2892,11 @@
             "name": "config_profile_name",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#e60f7da2-6160-4ebd-bd02-f9bc637712c5"
+                "@id": "#26ff1395-c26a-401f-886a-3bb08c676d28"
             }
         },
         {
-            "@id": "#e60f7da2-6160-4ebd-bd02-f9bc637712c5",
+            "@id": "#26ff1395-c26a-401f-886a-3bb08c676d28",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "workflow/main.nf#param:config_profile_name"
@@ -2875,11 +2912,11 @@
             "name": "max_memory",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#3728f17c-31dc-491d-ba3e-4561ae66c350"
+                "@id": "#1d6d2913-041f-43e8-8979-4ca33d3085c1"
             }
         },
         {
-            "@id": "#3728f17c-31dc-491d-ba3e-4561ae66c350",
+            "@id": "#1d6d2913-041f-43e8-8979-4ca33d3085c1",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "workflow/main.nf#param:max_memory"
@@ -2895,11 +2932,11 @@
             "name": "max_cpus",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#2f7c4ece-7b8b-435c-a41e-4e0ee22014e9"
+                "@id": "#45c6f694-f4ea-4bd7-9a2a-4e8b7cbc2c73"
             }
         },
         {
-            "@id": "#2f7c4ece-7b8b-435c-a41e-4e0ee22014e9",
+            "@id": "#45c6f694-f4ea-4bd7-9a2a-4e8b7cbc2c73",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "workflow/main.nf#param:max_cpus"
@@ -2915,11 +2952,11 @@
             "name": "max_time",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#d97a35f7-34c7-4696-aab1-4db03fe05f30"
+                "@id": "#d4d67882-9d50-44ee-a06f-d718e976f55d"
             }
         },
         {
-            "@id": "#d97a35f7-34c7-4696-aab1-4db03fe05f30",
+            "@id": "#d4d67882-9d50-44ee-a06f-d718e976f55d",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "workflow/main.nf#param:max_time"
@@ -5049,6 +5086,79 @@
                 "@id": "workflow/main.nf#output:unnamed_output_31"
             },
             "sha256": "b500dfef0856515b090bcb7cbcfc894904a7ff3c4c8c77e2326c658baa104130"
+        },
+        {
+            "@id": "meta/outputs/_1693481083/stats/dag.dot",
+            "@type": [
+                "File",
+                "ImageObject"
+            ],
+            "contentSize": "22518",
+            "encodingFormat": "text/plain",
+            "isBasedOn": {
+                "@id": "workflow/main.nf"
+            },
+            "sha256": "4ca240e43646bc91a35f45f8dbcf45be18d89a64d762286d58873e539613e7bb"
+        },
+        {
+            "@id": "meta/outputs/_1693481083/stats/dag.dot.png",
+            "@type": [
+                "File",
+                "ImageObject"
+            ],
+            "contentSize": "940723",
+            "encodingFormat": "image/png",
+            "isBasedOn": {
+                "@id": "meta/outputs/_1693481083/stats/dag.dot"
+            },
+            "sha256": "a8130a85b82b376a9f24133be682f4f209176f651e97391dea44f6d80429f79b"
+        },
+        {
+            "@id": "#d8b924d4-97dd-41e9-89dd-fee2778ffd44",
+            "@type": "CreateAction",
+            "actionStatus": {
+                "@id": "http://schema.org/CompletedActionStatus"
+            },
+            "agent": {
+                "@id": "https://orcid.org/0000-0002-4806-5140"
+            },
+            "description": "dot -Tpng -ometa/outputs/_1693481083/stats/dag.dot.png meta/outputs/_1693481083/stats/dag.dot",
+            "instrument": {
+                "@id": "https://github.com/inab/WfExS-backend"
+            },
+            "name": "Generate diagram PNG image from DOT",
+            "object": {
+                "@id": "meta/outputs/_1693481083/stats/dag.dot"
+            },
+            "result": {
+                "@id": "meta/outputs/_1693481083/stats/dag.dot.png"
+            }
+        },
+        {
+            "@id": "#42ea721d-18bb-4961-9ecf-22cfd1ba53fc",
+            "@type": "Collection",
+            "hasPart": [
+                {
+                    "@id": "meta/outputs/_1693481083/stdout.txt"
+                },
+                {
+                    "@id": "meta/outputs/_1693481083/stderr.txt"
+                }
+            ]
+        },
+        {
+            "@id": "meta/outputs/_1693481083/stdout.txt",
+            "@type": "File",
+            "contentSize": "200610",
+            "encodingFormat": "text/plain",
+            "sha256": "f2397f7bb566b48b053adfa5694f4515f55618d5f9a22fd2ba92ed1ccd655226"
+        },
+        {
+            "@id": "meta/outputs/_1693481083/stderr.txt",
+            "@type": "File",
+            "contentSize": "0",
+            "encodingFormat": "inode/x-empty",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
         }
     ]
 }

@@ -1,0 +1,1788 @@
+[1;30mINFO[0m /scratch/jmfernandez/TEMP/wfexs-backend-test/CWLWorkflowEngine/191841853da642f2446b7298bc814db81e7149a7/bin/cwltool 3.1
+[1;30mINFO[0m Resolved '/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/consolidated-workflow/a37fee9e-4288-4a9e-b493-993a867207d0_workflow.cwl' to 'file:///scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/consolidated-workflow/a37fee9e-4288-4a9e-b493-993a867207d0_workflow.cwl'
+[1;30mINFO[0m [workflow ] start
+[1;30mINFO[0m [workflow ] starting step unzipped_known_sites
+[1;30mINFO[0m [step unzipped_known_sites] start
+[1;30mWARNING[0m [33m[job unzipped_known_sites] Skipping Docker software container '--memory' limit despite presence of ResourceRequirement with ramMin and/or ramMax setting. Consider running with --strict-memory-limit for increased portability assurance.[0m
+[1;30mWARNING[0m [33m[job unzipped_known_sites] Skipping Docker software container '--cpus' limit despite presence of ResourceRequirement with coresMin and/or coresMax setting. Consider running with --strict-cpu-limit for increased portability assurance.[0m
+[1;30mINFO[0m [job unzipped_known_sites] /scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/_9hk7559$ docker \
+    run \
+    -i \
+    --mount=type=bind,source=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/_9hk7559,target=/tbezBP \
+    --mount=type=bind,source=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/71ynla7w,target=/tmp \
+    --mount=type=bind,source=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/inputs/dbsnp_138.b37.vcf.gz,target=/var/lib/cwl/stgbe3b0adf-88eb-43e8-8da9-1e546ac36359/dbsnp_138.b37.vcf.gz,readonly \
+    --workdir=/tbezBP \
+    --read-only=true \
+    --log-driver=none \
+    --user=1001:100 \
+    --rm \
+    --cidfile=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/qltusfb8/20230829205106-475915.cid \
+    --env=TMPDIR=/tmp \
+    --env=HOME=/tbezBP \
+    jlaitinen/lftpalpine \
+    gunzip \
+    -c \
+    /var/lib/cwl/stgbe3b0adf-88eb-43e8-8da9-1e546ac36359/dbsnp_138.b37.vcf.gz > /scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/_9hk7559/dbsnp_138.b37.vcf
+[1;30mINFO[0m [job unzipped_known_sites] Max memory used: 0MiB
+[1;30mINFO[0m [job unzipped_known_sites] completed success
+[1;30mINFO[0m [step unzipped_known_sites] completed success
+[1;30mINFO[0m [workflow ] starting step unzipped_known_indels
+[1;30mINFO[0m [step unzipped_known_indels] start
+[1;30mWARNING[0m [33m[job unzipped_known_indels] Skipping Docker software container '--memory' limit despite presence of ResourceRequirement with ramMin and/or ramMax setting. Consider running with --strict-memory-limit for increased portability assurance.[0m
+[1;30mWARNING[0m [33m[job unzipped_known_indels] Skipping Docker software container '--cpus' limit despite presence of ResourceRequirement with coresMin and/or coresMax setting. Consider running with --strict-cpu-limit for increased portability assurance.[0m
+[1;30mINFO[0m [job unzipped_known_indels] /scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/kjdprpf_$ docker \
+    run \
+    -i \
+    --mount=type=bind,source=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/kjdprpf_,target=/tbezBP \
+    --mount=type=bind,source=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/ix_t7f19,target=/tmp \
+    --mount=type=bind,source=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/inputs/Mills_and_1000G_gold_standard.indels.b37.vcf.gz,target=/var/lib/cwl/stgadb8268d-9690-4a97-bf66-11b9234eb4ea/Mills_and_1000G_gold_standard.indels.b37.vcf.gz,readonly \
+    --workdir=/tbezBP \
+    --read-only=true \
+    --log-driver=none \
+    --user=1001:100 \
+    --rm \
+    --cidfile=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/krturhe6/20230829205330-704438.cid \
+    --env=TMPDIR=/tmp \
+    --env=HOME=/tbezBP \
+    jlaitinen/lftpalpine \
+    gunzip \
+    -c \
+    /var/lib/cwl/stgadb8268d-9690-4a97-bf66-11b9234eb4ea/Mills_and_1000G_gold_standard.indels.b37.vcf.gz > /scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/kjdprpf_/Mills_and_1000G_gold_standard.indels.b37.vcf
+[1;30mINFO[0m [job unzipped_known_indels] Max memory used: 0MiB
+[1;30mINFO[0m [job unzipped_known_indels] completed success
+[1;30mINFO[0m [step unzipped_known_indels] completed success
+[1;30mINFO[0m [workflow ] starting step gunzip
+[1;30mINFO[0m [step gunzip] start
+[1;30mINFO[0m [job gunzip] /scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/v4u2m9bn$ docker \
+    run \
+    -i \
+    --mount=type=bind,source=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/v4u2m9bn,target=/tbezBP \
+    --mount=type=bind,source=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/55xoxfee,target=/tmp \
+    --mount=type=bind,source=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/inputs/hs37d5.fa.gz,target=/var/lib/cwl/stg3d1fc219-c533-4fe2-84aa-5d0feceff63e/hs37d5.fa.gz,readonly \
+    --workdir=/tbezBP \
+    --read-only=true \
+    --log-driver=none \
+    --user=1001:100 \
+    --rm \
+    --cidfile=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/1imtxnwm/20230829205334-127330.cid \
+    --env=TMPDIR=/tmp \
+    --env=HOME=/tbezBP \
+    jlaitinen/lftpalpine \
+    gunzip \
+    -c \
+    -v \
+    /var/lib/cwl/stg3d1fc219-c533-4fe2-84aa-5d0feceff63e/hs37d5.fa.gz > /scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/v4u2m9bn/hs37d5.fa
+[1;30mINFO[0m [job gunzip] Max memory used: 0MiB
+[1;30mINFO[0m [job gunzip] completed success
+[1;30mINFO[0m [step gunzip] completed success
+[1;30mINFO[0m [workflow ] starting step cutadapt2
+[1;30mINFO[0m [step cutadapt2] start
+[1;30mINFO[0m [job cutadapt2] /scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/m99_uy0q$ docker \
+    run \
+    -i \
+    --mount=type=bind,source=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/m99_uy0q,target=/tbezBP \
+    --mount=type=bind,source=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/t7dbatf8,target=/tmp \
+    --mount=type=bind,source=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/inputs/U5c_CCGTCC_L001_R1_001.fastq.gz,target=/var/lib/cwl/stg949f2169-1b01-40f9-b71e-530a3703bcc3/U5c_CCGTCC_L001_R1_001.fastq.gz,readonly \
+    --mount=type=bind,source=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/inputs/U5c_CCGTCC_L001_R2_001.fastq.gz,target=/var/lib/cwl/stg3499905f-5959-42d6-82f3-48ffe6b68fa8/U5c_CCGTCC_L001_R2_001.fastq.gz,readonly \
+    --workdir=/tbezBP \
+    --read-only=true \
+    --user=1001:100 \
+    --rm \
+    --cidfile=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/v28luzm0/20230829205437-905746.cid \
+    --env=TMPDIR=/tmp \
+    --env=HOME=/tbezBP \
+    quay.io/biocontainers/cutadapt:1.18--py36h14c3975_1 \
+    cutadapt \
+    --interleaved \
+    -j \
+    0 \
+    --error-rate \
+    0.2 \
+    --overlap \
+    6 \
+    -o \
+    U5c_CCGTCC_L001_R1_001.fastq.gz.trimmed.fastq.gz \
+    /var/lib/cwl/stg949f2169-1b01-40f9-b71e-530a3703bcc3/U5c_CCGTCC_L001_R1_001.fastq.gz \
+    /var/lib/cwl/stg3499905f-5959-42d6-82f3-48ffe6b68fa8/U5c_CCGTCC_L001_R2_001.fastq.gz
+This is cutadapt 1.18 with Python 3.6.7
+Command line parameters: --interleaved -j 0 --error-rate 0.2 --overlap 6 -o U5c_CCGTCC_L001_R1_001.fastq.gz.trimmed.fastq.gz /var/lib/cwl/stg949f2169-1b01-40f9-b71e-530a3703bcc3/U5c_CCGTCC_L001_R1_001.fastq.gz /var/lib/cwl/stg3499905f-5959-42d6-82f3-48ffe6b68fa8/U5c_CCGTCC_L001_R2_001.fastq.gz
+Processing reads on 8 cores in paired-end mode ...
+Finished in 71.86 s (18 us/read; 3.34 M reads/minute).
+
+=== Summary ===
+
+Total read pairs processed:          4,000,000
+  Read 1 with adapter:                       0 (0.0%)
+  Read 2 with adapter:                       0 (0.0%)
+Pairs written (passing filters):     4,000,000 (100.0%)
+
+Total basepairs processed: 1,184,000,000 bp
+  Read 1:   592,000,000 bp
+  Read 2:   592,000,000 bp
+Total written (filtered):  1,184,000,000 bp (100.0%)
+  Read 1:   592,000,000 bp
+  Read 2:   592,000,000 bp
+
+[1;30mINFO[0m [job cutadapt2] Max memory used: 0MiB
+[1;30mINFO[0m [job cutadapt2] completed success
+[1;30mINFO[0m [step cutadapt2] completed success
+[1;30mINFO[0m [workflow ] starting step bwa_index
+[1;30mINFO[0m [step bwa_index] start
+[1;30mINFO[0m [job bwa_index] /scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/ghy1xmhx$ docker \
+    run \
+    -i \
+    --mount=type=bind,source=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/ghy1xmhx,target=/tbezBP \
+    --mount=type=bind,source=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/u_ms9d8h,target=/tmp \
+    --mount=type=bind,source=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/v4u2m9bn/hs37d5.fa,target=/tbezBP/hs37d5.fa,readonly \
+    --workdir=/tbezBP \
+    --read-only=true \
+    --user=1001:100 \
+    --rm \
+    --cidfile=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/78ro16xu/20230829205555-486318.cid \
+    --env=TMPDIR=/tmp \
+    --env=HOME=/tbezBP \
+    quay.io/biocontainers/bwa:0.7.17--h84994c4_5 \
+    bwa \
+    index \
+    /tbezBP/hs37d5.fa
+[bwa_index] Pack FASTA... 15.77 sec
+[bwa_index] Construct BWT for the packed sequence...
+[BWTIncCreate] textLength=6274909010, availableWord=453525580
+[BWTIncConstructFromPacked] 10 iterations done. 99999986 characters processed.
+[BWTIncConstructFromPacked] 20 iterations done. 199999986 characters processed.
+[BWTIncConstructFromPacked] 30 iterations done. 299999986 characters processed.
+[BWTIncConstructFromPacked] 40 iterations done. 399999986 characters processed.
+[BWTIncConstructFromPacked] 50 iterations done. 499999986 characters processed.
+[BWTIncConstructFromPacked] 60 iterations done. 599999986 characters processed.
+[BWTIncConstructFromPacked] 70 iterations done. 699999986 characters processed.
+[BWTIncConstructFromPacked] 80 iterations done. 799999986 characters processed.
+[BWTIncConstructFromPacked] 90 iterations done. 899999986 characters processed.
+[BWTIncConstructFromPacked] 100 iterations done. 999999986 characters processed.
+[BWTIncConstructFromPacked] 110 iterations done. 1099999986 characters processed.
+[BWTIncConstructFromPacked] 120 iterations done. 1199999986 characters processed.
+[BWTIncConstructFromPacked] 130 iterations done. 1299999986 characters processed.
+[BWTIncConstructFromPacked] 140 iterations done. 1399999986 characters processed.
+[BWTIncConstructFromPacked] 150 iterations done. 1499999986 characters processed.
+[BWTIncConstructFromPacked] 160 iterations done. 1599999986 characters processed.
+[BWTIncConstructFromPacked] 170 iterations done. 1699999986 characters processed.
+[BWTIncConstructFromPacked] 180 iterations done. 1799999986 characters processed.
+[BWTIncConstructFromPacked] 190 iterations done. 1899999986 characters processed.
+[BWTIncConstructFromPacked] 200 iterations done. 1999999986 characters processed.
+[BWTIncConstructFromPacked] 210 iterations done. 2099999986 characters processed.
+[BWTIncConstructFromPacked] 220 iterations done. 2199999986 characters processed.
+[BWTIncConstructFromPacked] 230 iterations done. 2299999986 characters processed.
+[BWTIncConstructFromPacked] 240 iterations done. 2399999986 characters processed.
+[BWTIncConstructFromPacked] 250 iterations done. 2499999986 characters processed.
+[BWTIncConstructFromPacked] 260 iterations done. 2599999986 characters processed.
+[BWTIncConstructFromPacked] 270 iterations done. 2699999986 characters processed.
+[BWTIncConstructFromPacked] 280 iterations done. 2799999986 characters processed.
+[BWTIncConstructFromPacked] 290 iterations done. 2899999986 characters processed.
+[BWTIncConstructFromPacked] 300 iterations done. 2999999986 characters processed.
+[BWTIncConstructFromPacked] 310 iterations done. 3099999986 characters processed.
+[BWTIncConstructFromPacked] 320 iterations done. 3199999986 characters processed.
+[BWTIncConstructFromPacked] 330 iterations done. 3299999986 characters processed.
+[BWTIncConstructFromPacked] 340 iterations done. 3399999986 characters processed.
+[BWTIncConstructFromPacked] 350 iterations done. 3499999986 characters processed.
+[BWTIncConstructFromPacked] 360 iterations done. 3599999986 characters processed.
+[BWTIncConstructFromPacked] 370 iterations done. 3699999986 characters processed.
+[BWTIncConstructFromPacked] 380 iterations done. 3799999986 characters processed.
+[BWTIncConstructFromPacked] 390 iterations done. 3899999986 characters processed.
+[BWTIncConstructFromPacked] 400 iterations done. 3999999986 characters processed.
+[BWTIncConstructFromPacked] 410 iterations done. 4099999986 characters processed.
+[BWTIncConstructFromPacked] 420 iterations done. 4199999986 characters processed.
+[BWTIncConstructFromPacked] 430 iterations done. 4299999986 characters processed.
+[BWTIncConstructFromPacked] 440 iterations done. 4399999986 characters processed.
+[BWTIncConstructFromPacked] 450 iterations done. 4499999986 characters processed.
+[BWTIncConstructFromPacked] 460 iterations done. 4599999986 characters processed.
+[BWTIncConstructFromPacked] 470 iterations done. 4699999986 characters processed.
+[BWTIncConstructFromPacked] 480 iterations done. 4799999986 characters processed.
+[BWTIncConstructFromPacked] 490 iterations done. 4899999986 characters processed.
+[BWTIncConstructFromPacked] 500 iterations done. 4999999986 characters processed.
+[BWTIncConstructFromPacked] 510 iterations done. 5099999986 characters processed.
+[BWTIncConstructFromPacked] 520 iterations done. 5199999986 characters processed.
+[BWTIncConstructFromPacked] 530 iterations done. 5299999986 characters processed.
+[BWTIncConstructFromPacked] 540 iterations done. 5399999986 characters processed.
+[BWTIncConstructFromPacked] 550 iterations done. 5499999986 characters processed.
+[BWTIncConstructFromPacked] 560 iterations done. 5599999986 characters processed.
+[BWTIncConstructFromPacked] 570 iterations done. 5694304802 characters processed.
+[BWTIncConstructFromPacked] 580 iterations done. 5778119186 characters processed.
+[BWTIncConstructFromPacked] 590 iterations done. 5852609618 characters processed.
+[BWTIncConstructFromPacked] 600 iterations done. 5918812898 characters processed.
+[BWTIncConstructFromPacked] 610 iterations done. 5977650514 characters processed.
+[BWTIncConstructFromPacked] 620 iterations done. 6029941522 characters processed.
+[BWTIncConstructFromPacked] 630 iterations done. 6076413890 characters processed.
+[BWTIncConstructFromPacked] 640 iterations done. 6117714626 characters processed.
+[BWTIncConstructFromPacked] 650 iterations done. 6154418802 characters processed.
+[BWTIncConstructFromPacked] 660 iterations done. 6187037554 characters processed.
+[BWTIncConstructFromPacked] 670 iterations done. 6216025154 characters processed.
+[BWTIncConstructFromPacked] 680 iterations done. 6241785362 characters processed.
+[BWTIncConstructFromPacked] 690 iterations done. 6264677074 characters processed.
+[bwt_gen] Finished constructing BWT in 695 iterations.
+[bwa_index] 1684.65 seconds elapse.
+[bwa_index] Update BWT... 13.06 sec
+[bwa_index] Pack forward-only FASTA... 10.13 sec
+[bwa_index] Construct SA from BWT and Occ... 594.98 sec
+[main] Version: 0.7.17-r1188
+[main] CMD: bwa index /tbezBP/hs37d5.fa
+[main] Real time: 2380.881 sec; CPU: 2318.669 sec
+[1;30mINFO[0m [job bwa_index] Max memory used: 4657MiB
+[1;30mINFO[0m [job bwa_index] completed success
+[1;30mINFO[0m [step bwa_index] completed success
+[1;30mINFO[0m [workflow ] starting step samtools_index
+[1;30mINFO[0m [step samtools_index] start
+[1;30mINFO[0m [job samtools_index] /scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/84gkqhvu$ docker \
+    run \
+    -i \
+    --mount=type=bind,source=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/84gkqhvu,target=/tbezBP \
+    --mount=type=bind,source=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/wtingju3,target=/tmp \
+    --mount=type=bind,source=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/v4u2m9bn/hs37d5.fa,target=/tbezBP/hs37d5.fa,readonly \
+    --workdir=/tbezBP \
+    --read-only=true \
+    --user=1001:100 \
+    --rm \
+    --cidfile=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/0w5kuwk4/20230829213546-331838.cid \
+    --env=TMPDIR=/tmp \
+    --env=HOME=/tbezBP \
+    quay.io/biocontainers/samtools:1.3.1--5 \
+    samtools \
+    faidx \
+    /tbezBP/hs37d5.fa
+[1;30mINFO[0m [job samtools_index] Max memory used: 0MiB
+[1;30mINFO[0m [job samtools_index] completed success
+[1;30mINFO[0m [step samtools_index] completed success
+[1;30mINFO[0m [workflow ] starting step bwa_mem
+[1;30mINFO[0m [step bwa_mem] start
+[1;30mINFO[0m [job bwa_mem] /scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/z7lo87k_$ docker \
+    run \
+    -i \
+    --mount=type=bind,source=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/z7lo87k_,target=/tbezBP \
+    --mount=type=bind,source=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/ccphwbue,target=/tmp \
+    --mount=type=bind,source=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/m99_uy0q/U5c_CCGTCC_L001_R1_001.fastq.gz.trimmed.fastq.gz,target=/var/lib/cwl/stge7b73f7c-e880-4cba-8c06-84a8e5002e60/U5c_CCGTCC_L001_R1_001.fastq.gz.trimmed.fastq.gz,readonly \
+    --mount=type=bind,source=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/v4u2m9bn/hs37d5.fa,target=/var/lib/cwl/stgb7d9b0bb-f39d-46b1-90e9-8e6ffdaf51d0/hs37d5.fa,readonly \
+    --mount=type=bind,source=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/ghy1xmhx/hs37d5.fa.amb,target=/var/lib/cwl/stgb7d9b0bb-f39d-46b1-90e9-8e6ffdaf51d0/hs37d5.fa.amb,readonly \
+    --mount=type=bind,source=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/ghy1xmhx/hs37d5.fa.ann,target=/var/lib/cwl/stgb7d9b0bb-f39d-46b1-90e9-8e6ffdaf51d0/hs37d5.fa.ann,readonly \
+    --mount=type=bind,source=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/ghy1xmhx/hs37d5.fa.bwt,target=/var/lib/cwl/stgb7d9b0bb-f39d-46b1-90e9-8e6ffdaf51d0/hs37d5.fa.bwt,readonly \
+    --mount=type=bind,source=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/ghy1xmhx/hs37d5.fa.pac,target=/var/lib/cwl/stgb7d9b0bb-f39d-46b1-90e9-8e6ffdaf51d0/hs37d5.fa.pac,readonly \
+    --mount=type=bind,source=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/ghy1xmhx/hs37d5.fa.sa,target=/var/lib/cwl/stgb7d9b0bb-f39d-46b1-90e9-8e6ffdaf51d0/hs37d5.fa.sa,readonly \
+    --workdir=/tbezBP \
+    --read-only=true \
+    --log-driver=none \
+    --user=1001:100 \
+    --rm \
+    --cidfile=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/3ltv7ece/20230829213609-055266.cid \
+    --env=TMPDIR=/tmp \
+    --env=HOME=/tbezBP \
+    quay.io/biocontainers/bwa:0.7.17--h84994c4_5 \
+    bwa \
+    mem \
+    -M \
+    -p \
+    -t \
+    2 \
+    -R \
+    '@RG\tID:H947YADXX\tSM:NA12878\tPL:ILLUMINA' \
+    /var/lib/cwl/stgb7d9b0bb-f39d-46b1-90e9-8e6ffdaf51d0/hs37d5.fa \
+    /var/lib/cwl/stge7b73f7c-e880-4cba-8c06-84a8e5002e60/U5c_CCGTCC_L001_R1_001.fastq.gz.trimmed.fastq.gz > /scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/z7lo87k_/abc2.sam
+[M::bwa_idx_load_from_disk] read 0 ALT contigs
+[M::process] read 135136 sequences (20000128 bp)...
+[M::process] 0 single-end sequences; 135136 paired-end sequences
+[M::process] read 135136 sequences (20000128 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (10, 56611, 0, 1)
+[M::mem_pestat] analyzing insert size distribution for orientation FF...
+[M::mem_pestat] (25, 50, 75) percentile: (77, 233, 389)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 1013)
+[M::mem_pestat] mean and std.dev: (252.00, 163.93)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1325)
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (478, 567, 663)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (108, 1033)
+[M::mem_pestat] mean and std.dev: (571.20, 145.76)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1218)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_pestat] skip orientation FF
+[M::mem_process_seqs] Processed 135136 reads in 31.552 CPU sec, 15.654 real sec
+[M::process] 0 single-end sequences; 135136 paired-end sequences
+[M::process] read 135136 sequences (20000128 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (13, 56502, 2, 0)
+[M::mem_pestat] analyzing insert size distribution for orientation FF...
+[M::mem_pestat] (25, 50, 75) percentile: (473, 621, 962)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 1940)
+[M::mem_pestat] mean and std.dev: (742.23, 462.38)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 2592)
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (478, 567, 663)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (108, 1033)
+[M::mem_pestat] mean and std.dev: (571.39, 145.79)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1218)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_pestat] skip orientation FF
+[M::mem_process_seqs] Processed 135136 reads in 31.465 CPU sec, 15.586 real sec
+[M::process] 0 single-end sequences; 135136 paired-end sequences
+[M::process] read 135136 sequences (20000128 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (10, 56632, 2, 1)
+[M::mem_pestat] analyzing insert size distribution for orientation FF...
+[M::mem_pestat] (25, 50, 75) percentile: (164, 370, 477)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 1103)
+[M::mem_pestat] mean and std.dev: (315.40, 164.59)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1416)
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (476, 563, 659)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (110, 1025)
+[M::mem_pestat] mean and std.dev: (568.50, 144.52)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1208)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_pestat] skip orientation FF
+[M::mem_process_seqs] Processed 135136 reads in 31.802 CPU sec, 15.754 real sec
+[M::process] 0 single-end sequences; 135136 paired-end sequences
+[M::process] read 135136 sequences (20000128 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (8, 56403, 3, 2)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (479, 567, 662)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (113, 1028)
+[M::mem_pestat] mean and std.dev: (571.10, 144.62)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1211)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_process_seqs] Processed 135136 reads in 31.674 CPU sec, 15.693 real sec
+[M::process] 0 single-end sequences; 135136 paired-end sequences
+[M::process] read 135136 sequences (20000128 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (12, 56613, 2, 0)
+[M::mem_pestat] analyzing insert size distribution for orientation FF...
+[M::mem_pestat] (25, 50, 75) percentile: (205, 437, 745)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 1825)
+[M::mem_pestat] mean and std.dev: (462.08, 298.71)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 2365)
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (476, 565, 659)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (110, 1025)
+[M::mem_pestat] mean and std.dev: (568.20, 145.14)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1208)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_pestat] skip orientation FF
+[M::mem_process_seqs] Processed 135136 reads in 31.604 CPU sec, 15.649 real sec
+[M::process] 0 single-end sequences; 135136 paired-end sequences
+[M::process] read 135136 sequences (20000128 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (8, 56381, 1, 3)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (472, 562, 655)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (106, 1021)
+[M::mem_pestat] mean and std.dev: (564.95, 144.10)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1204)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_process_seqs] Processed 135136 reads in 31.964 CPU sec, 15.835 real sec
+[M::process] 0 single-end sequences; 135136 paired-end sequences
+[M::process] read 135136 sequences (20000128 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (11, 56242, 1, 2)
+[M::mem_pestat] analyzing insert size distribution for orientation FF...
+[M::mem_pestat] (25, 50, 75) percentile: (226, 274, 474)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 970)
+[M::mem_pestat] mean and std.dev: (322.91, 133.37)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1218)
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (474, 562, 657)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (108, 1023)
+[M::mem_pestat] mean and std.dev: (566.96, 144.20)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1206)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_pestat] skip orientation FF
+[M::mem_process_seqs] Processed 135136 reads in 32.475 CPU sec, 16.091 real sec
+[M::process] 0 single-end sequences; 135136 paired-end sequences
+[M::process] read 135136 sequences (20000128 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (7, 56654, 4, 2)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (475, 564, 660)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (105, 1030)
+[M::mem_pestat] mean and std.dev: (568.55, 145.19)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1215)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_process_seqs] Processed 135136 reads in 31.444 CPU sec, 15.574 real sec
+[M::process] 0 single-end sequences; 135136 paired-end sequences
+[M::process] read 135136 sequences (20000128 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (5, 56660, 5, 1)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (475, 564, 661)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (103, 1033)
+[M::mem_pestat] mean and std.dev: (568.66, 146.32)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1219)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_process_seqs] Processed 135136 reads in 31.061 CPU sec, 15.381 real sec
+[M::process] 0 single-end sequences; 135136 paired-end sequences
+[M::process] read 135136 sequences (20000128 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (4, 56593, 6, 1)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (475, 564, 657)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (111, 1021)
+[M::mem_pestat] mean and std.dev: (567.12, 144.80)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1203)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_process_seqs] Processed 135136 reads in 31.468 CPU sec, 15.594 real sec
+[M::process] 0 single-end sequences; 135136 paired-end sequences
+[M::process] read 135136 sequences (20000128 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (9, 56629, 3, 0)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (475, 565, 660)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (105, 1030)
+[M::mem_pestat] mean and std.dev: (568.32, 145.40)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1215)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_process_seqs] Processed 135136 reads in 31.205 CPU sec, 15.455 real sec
+[M::process] 0 single-end sequences; 135136 paired-end sequences
+[M::process] read 135136 sequences (20000128 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (4, 56510, 4, 0)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (475, 563, 658)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (109, 1024)
+[M::mem_pestat] mean and std.dev: (567.03, 144.27)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1207)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_process_seqs] Processed 135136 reads in 31.373 CPU sec, 15.546 real sec
+[M::process] 0 single-end sequences; 135136 paired-end sequences
+[M::process] read 135136 sequences (20000128 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (9, 56437, 1, 5)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (474, 564, 657)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (108, 1023)
+[M::mem_pestat] mean and std.dev: (566.89, 144.38)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1206)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_process_seqs] Processed 135136 reads in 31.800 CPU sec, 15.752 real sec
+[M::process] 0 single-end sequences; 135136 paired-end sequences
+[M::process] read 135136 sequences (20000128 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (9, 56623, 2, 0)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (473, 563, 658)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (103, 1028)
+[M::mem_pestat] mean and std.dev: (566.61, 145.54)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1213)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_process_seqs] Processed 135136 reads in 31.577 CPU sec, 15.646 real sec
+[M::process] 0 single-end sequences; 135136 paired-end sequences
+[M::process] read 135136 sequences (20000128 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (14, 56406, 5, 1)
+[M::mem_pestat] analyzing insert size distribution for orientation FF...
+[M::mem_pestat] (25, 50, 75) percentile: (160, 464, 640)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 1600)
+[M::mem_pestat] mean and std.dev: (362.15, 238.94)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 2080)
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (473, 563, 658)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (103, 1028)
+[M::mem_pestat] mean and std.dev: (567.04, 145.99)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1213)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_pestat] skip orientation FF
+[M::mem_process_seqs] Processed 135136 reads in 31.906 CPU sec, 15.793 real sec
+[M::process] 0 single-end sequences; 135136 paired-end sequences
+[M::process] read 135136 sequences (20000128 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (9, 56599, 7, 3)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (473, 563, 657)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (105, 1025)
+[M::mem_pestat] mean and std.dev: (566.15, 144.97)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1209)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_process_seqs] Processed 135136 reads in 31.528 CPU sec, 15.619 real sec
+[M::process] 0 single-end sequences; 135136 paired-end sequences
+[M::process] read 135136 sequences (20000128 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (7, 56556, 1, 1)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (473, 562, 657)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (105, 1025)
+[M::mem_pestat] mean and std.dev: (565.78, 144.63)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1209)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_process_seqs] Processed 135136 reads in 31.657 CPU sec, 15.682 real sec
+[M::process] 0 single-end sequences; 135136 paired-end sequences
+[M::process] read 135136 sequences (20000128 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (5, 56755, 4, 1)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (473, 563, 659)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (101, 1031)
+[M::mem_pestat] mean and std.dev: (566.88, 145.79)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1217)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_process_seqs] Processed 135136 reads in 31.293 CPU sec, 15.504 real sec
+[M::process] 0 single-end sequences; 135136 paired-end sequences
+[M::process] read 135136 sequences (20000128 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (12, 56520, 5, 1)
+[M::mem_pestat] analyzing insert size distribution for orientation FF...
+[M::mem_pestat] (25, 50, 75) percentile: (341, 477, 635)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 1223)
+[M::mem_pestat] mean and std.dev: (448.64, 235.96)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1517)
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (474, 563, 658)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (106, 1026)
+[M::mem_pestat] mean and std.dev: (566.84, 145.11)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1210)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_pestat] skip orientation FF
+[M::mem_process_seqs] Processed 135136 reads in 31.187 CPU sec, 15.443 real sec
+[M::process] 0 single-end sequences; 135136 paired-end sequences
+[M::process] read 135136 sequences (20000128 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (8, 56451, 3, 3)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (472, 559, 654)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (108, 1018)
+[M::mem_pestat] mean and std.dev: (563.26, 143.66)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1200)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_process_seqs] Processed 135136 reads in 31.615 CPU sec, 15.667 real sec
+[M::process] 0 single-end sequences; 135136 paired-end sequences
+[M::process] read 135136 sequences (20000128 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (11, 56618, 3, 1)
+[M::mem_pestat] analyzing insert size distribution for orientation FF...
+[M::mem_pestat] (25, 50, 75) percentile: (315, 373, 1100)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 2670)
+[M::mem_pestat] mean and std.dev: (540.60, 457.18)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 3455)
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (472, 561, 654)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (108, 1018)
+[M::mem_pestat] mean and std.dev: (564.30, 144.04)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1200)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_pestat] skip orientation FF
+[M::mem_process_seqs] Processed 135136 reads in 31.255 CPU sec, 15.478 real sec
+[M::process] 0 single-end sequences; 135136 paired-end sequences
+[M::process] read 135136 sequences (20000128 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (9, 56605, 5, 0)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (473, 562, 657)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (105, 1025)
+[M::mem_pestat] mean and std.dev: (566.07, 145.71)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1209)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_process_seqs] Processed 135136 reads in 31.442 CPU sec, 15.578 real sec
+[M::process] 0 single-end sequences; 135136 paired-end sequences
+[M::process] read 135136 sequences (20000128 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (11, 56654, 2, 2)
+[M::mem_pestat] analyzing insert size distribution for orientation FF...
+[M::mem_pestat] (25, 50, 75) percentile: (235, 308, 503)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 1039)
+[M::mem_pestat] mean and std.dev: (326.00, 132.44)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1307)
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (473, 561, 655)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (109, 1019)
+[M::mem_pestat] mean and std.dev: (564.86, 144.87)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1201)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_pestat] skip orientation FF
+[M::mem_process_seqs] Processed 135136 reads in 31.332 CPU sec, 15.514 real sec
+[M::process] 0 single-end sequences; 135136 paired-end sequences
+[M::process] read 135136 sequences (20000128 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (11, 56557, 2, 1)
+[M::mem_pestat] analyzing insert size distribution for orientation FF...
+[M::mem_pestat] (25, 50, 75) percentile: (207, 402, 466)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 984)
+[M::mem_pestat] mean and std.dev: (339.45, 164.99)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1243)
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (471, 560, 654)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (105, 1020)
+[M::mem_pestat] mean and std.dev: (563.67, 144.38)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1203)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_pestat] skip orientation FF
+[M::mem_process_seqs] Processed 135136 reads in 31.468 CPU sec, 15.593 real sec
+[M::process] 0 single-end sequences; 135136 paired-end sequences
+[M::process] read 135136 sequences (20000128 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (10, 56628, 6, 1)
+[M::mem_pestat] analyzing insert size distribution for orientation FF...
+[M::mem_pestat] (25, 50, 75) percentile: (245, 409, 1022)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 2576)
+[M::mem_pestat] mean and std.dev: (609.30, 540.21)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 3353)
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (472, 561, 656)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (104, 1024)
+[M::mem_pestat] mean and std.dev: (564.60, 144.81)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1208)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_pestat] skip orientation FF
+[M::mem_process_seqs] Processed 135136 reads in 31.631 CPU sec, 15.664 real sec
+[M::process] 0 single-end sequences; 135136 paired-end sequences
+[M::process] read 135136 sequences (20000128 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (6, 56344, 2, 1)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (471, 559, 653)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (107, 1017)
+[M::mem_pestat] mean and std.dev: (563.56, 144.24)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1199)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_process_seqs] Processed 135136 reads in 32.021 CPU sec, 15.866 real sec
+[M::process] 0 single-end sequences; 135136 paired-end sequences
+[M::process] read 135136 sequences (20000128 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (10, 56477, 2, 0)
+[M::mem_pestat] analyzing insert size distribution for orientation FF...
+[M::mem_pestat] (25, 50, 75) percentile: (419, 556, 620)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (17, 1022)
+[M::mem_pestat] mean and std.dev: (536.30, 169.78)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1223)
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (471, 559, 654)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (105, 1020)
+[M::mem_pestat] mean and std.dev: (562.84, 145.06)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1203)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_pestat] skip orientation FF
+[M::mem_process_seqs] Processed 135136 reads in 31.735 CPU sec, 15.715 real sec
+[M::process] 0 single-end sequences; 135136 paired-end sequences
+[M::process] read 135136 sequences (20000128 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (4, 56596, 1, 4)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (469, 558, 651)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (105, 1015)
+[M::mem_pestat] mean and std.dev: (560.63, 143.54)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1197)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_process_seqs] Processed 135136 reads in 31.532 CPU sec, 15.622 real sec
+[M::process] 0 single-end sequences; 135136 paired-end sequences
+[M::process] read 135136 sequences (20000128 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (6, 56412, 0, 2)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (469, 558, 651)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (105, 1015)
+[M::mem_pestat] mean and std.dev: (560.59, 144.60)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1197)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_process_seqs] Processed 135136 reads in 31.699 CPU sec, 15.699 real sec
+[M::process] 0 single-end sequences; 135136 paired-end sequences
+[M::process] read 135136 sequences (20000128 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (5, 56545, 2, 0)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (468, 558, 651)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (102, 1017)
+[M::mem_pestat] mean and std.dev: (560.95, 143.71)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1200)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_process_seqs] Processed 135136 reads in 31.528 CPU sec, 15.622 real sec
+[M::process] 0 single-end sequences; 135136 paired-end sequences
+[M::process] read 135136 sequences (20000128 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (4, 56641, 4, 1)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (468, 558, 651)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (102, 1017)
+[M::mem_pestat] mean and std.dev: (560.72, 144.48)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1200)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_process_seqs] Processed 135136 reads in 31.357 CPU sec, 15.527 real sec
+[M::process] 0 single-end sequences; 135136 paired-end sequences
+[M::process] read 135136 sequences (20000128 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (12, 56412, 4, 2)
+[M::mem_pestat] analyzing insert size distribution for orientation FF...
+[M::mem_pestat] (25, 50, 75) percentile: (239, 335, 377)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 653)
+[M::mem_pestat] mean and std.dev: (308.25, 95.63)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 791)
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (469, 558, 652)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (103, 1018)
+[M::mem_pestat] mean and std.dev: (561.69, 144.17)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1201)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_pestat] skip orientation FF
+[M::mem_process_seqs] Processed 135136 reads in 31.717 CPU sec, 15.719 real sec
+[M::process] 0 single-end sequences; 135136 paired-end sequences
+[M::process] read 135136 sequences (20000128 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (6, 56577, 0, 2)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (470, 559, 652)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (106, 1016)
+[M::mem_pestat] mean and std.dev: (562.09, 144.60)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1198)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_process_seqs] Processed 135136 reads in 31.708 CPU sec, 15.702 real sec
+[M::process] 0 single-end sequences; 135136 paired-end sequences
+[M::process] read 135136 sequences (20000128 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (13, 56417, 2, 3)
+[M::mem_pestat] analyzing insert size distribution for orientation FF...
+[M::mem_pestat] (25, 50, 75) percentile: (204, 307, 538)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 1206)
+[M::mem_pestat] mean and std.dev: (316.50, 145.84)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1540)
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (468, 558, 652)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (100, 1020)
+[M::mem_pestat] mean and std.dev: (560.98, 144.27)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1204)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_pestat] skip orientation FF
+[M::mem_process_seqs] Processed 135136 reads in 31.844 CPU sec, 15.780 real sec
+[M::process] 0 single-end sequences; 135136 paired-end sequences
+[M::process] read 135136 sequences (20000128 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (10, 56686, 2, 0)
+[M::mem_pestat] analyzing insert size distribution for orientation FF...
+[M::mem_pestat] (25, 50, 75) percentile: (207, 268, 340)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 606)
+[M::mem_pestat] mean and std.dev: (291.20, 119.65)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 770)
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (467, 558, 651)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (99, 1019)
+[M::mem_pestat] mean and std.dev: (560.59, 143.84)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1203)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_pestat] skip orientation FF
+[M::mem_process_seqs] Processed 135136 reads in 31.135 CPU sec, 15.417 real sec
+[M::process] 0 single-end sequences; 135136 paired-end sequences
+[M::process] read 135136 sequences (20000128 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (7, 56240, 2, 3)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (469, 558, 652)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (103, 1018)
+[M::mem_pestat] mean and std.dev: (561.22, 144.31)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1201)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_process_seqs] Processed 135136 reads in 31.957 CPU sec, 15.840 real sec
+[M::process] 0 single-end sequences; 135136 paired-end sequences
+[M::process] read 135136 sequences (20000128 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (5, 56554, 2, 3)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (467, 556, 649)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (103, 1013)
+[M::mem_pestat] mean and std.dev: (559.17, 144.46)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1195)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_process_seqs] Processed 135136 reads in 31.539 CPU sec, 15.613 real sec
+[M::process] 0 single-end sequences; 135136 paired-end sequences
+[M::process] read 135136 sequences (20000128 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (15, 56472, 1, 2)
+[M::mem_pestat] analyzing insert size distribution for orientation FF...
+[M::mem_pestat] (25, 50, 75) percentile: (83, 200, 620)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 1694)
+[M::mem_pestat] mean and std.dev: (339.47, 292.81)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 2231)
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (467, 557, 651)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (99, 1019)
+[M::mem_pestat] mean and std.dev: (559.93, 144.47)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1203)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_pestat] skip orientation FF
+[M::mem_process_seqs] Processed 135136 reads in 31.680 CPU sec, 15.697 real sec
+[M::process] 0 single-end sequences; 135136 paired-end sequences
+[M::process] read 135136 sequences (20000128 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (13, 56583, 4, 1)
+[M::mem_pestat] analyzing insert size distribution for orientation FF...
+[M::mem_pestat] (25, 50, 75) percentile: (198, 359, 685)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 1659)
+[M::mem_pestat] mean and std.dev: (335.45, 190.73)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 2146)
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (467, 556, 650)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (101, 1016)
+[M::mem_pestat] mean and std.dev: (559.18, 143.50)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1199)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_pestat] skip orientation FF
+[M::mem_process_seqs] Processed 135136 reads in 31.460 CPU sec, 15.583 real sec
+[M::process] 0 single-end sequences; 135136 paired-end sequences
+[M::process] read 135136 sequences (20000128 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (11, 56556, 2, 1)
+[M::mem_pestat] analyzing insert size distribution for orientation FF...
+[M::mem_pestat] (25, 50, 75) percentile: (244, 480, 630)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 1402)
+[M::mem_pestat] mean and std.dev: (399.90, 212.61)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1788)
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (468, 557, 650)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (104, 1014)
+[M::mem_pestat] mean and std.dev: (559.60, 144.40)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1196)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_pestat] skip orientation FF
+[M::mem_process_seqs] Processed 135136 reads in 31.887 CPU sec, 15.795 real sec
+[M::process] 0 single-end sequences; 135136 paired-end sequences
+[M::process] read 135136 sequences (20000128 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (8, 56616, 2, 0)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (470, 558, 652)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (106, 1016)
+[M::mem_pestat] mean and std.dev: (561.10, 144.05)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1198)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_process_seqs] Processed 135136 reads in 31.301 CPU sec, 15.498 real sec
+[M::process] 0 single-end sequences; 135136 paired-end sequences
+[M::process] read 135136 sequences (20000128 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (3, 56675, 3, 2)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (468, 557, 651)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (102, 1017)
+[M::mem_pestat] mean and std.dev: (560.03, 143.77)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1200)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_process_seqs] Processed 135136 reads in 31.490 CPU sec, 15.607 real sec
+[M::process] 0 single-end sequences; 135136 paired-end sequences
+[M::process] read 135136 sequences (20000128 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (8, 56593, 4, 3)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (468, 557, 651)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (102, 1017)
+[M::mem_pestat] mean and std.dev: (559.81, 143.93)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1200)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_process_seqs] Processed 135136 reads in 31.604 CPU sec, 15.645 real sec
+[M::process] 0 single-end sequences; 135136 paired-end sequences
+[M::process] read 135136 sequences (20000128 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (2, 56473, 1, 1)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (468, 556, 650)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (104, 1014)
+[M::mem_pestat] mean and std.dev: (559.40, 143.95)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1196)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_process_seqs] Processed 135136 reads in 31.973 CPU sec, 15.847 real sec
+[M::process] 0 single-end sequences; 135136 paired-end sequences
+[M::process] read 135136 sequences (20000128 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (4, 56389, 2, 1)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (467, 557, 651)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (99, 1019)
+[M::mem_pestat] mean and std.dev: (559.25, 144.67)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1203)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_process_seqs] Processed 135136 reads in 31.422 CPU sec, 15.562 real sec
+[M::process] 0 single-end sequences; 135136 paired-end sequences
+[M::process] read 135136 sequences (20000128 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (6, 56599, 1, 1)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (467, 555, 648)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (105, 1010)
+[M::mem_pestat] mean and std.dev: (558.00, 143.20)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1191)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_process_seqs] Processed 135136 reads in 31.283 CPU sec, 15.497 real sec
+[M::process] 0 single-end sequences; 135136 paired-end sequences
+[M::process] read 135136 sequences (20000128 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (8, 56524, 4, 2)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (465, 555, 646)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (103, 1008)
+[M::mem_pestat] mean and std.dev: (556.69, 142.18)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1189)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_process_seqs] Processed 135136 reads in 31.247 CPU sec, 15.472 real sec
+[M::process] 0 single-end sequences; 135136 paired-end sequences
+[M::process] read 135136 sequences (20000128 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (10, 56606, 0, 1)
+[M::mem_pestat] analyzing insert size distribution for orientation FF...
+[M::mem_pestat] (25, 50, 75) percentile: (363, 438, 598)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 1068)
+[M::mem_pestat] mean and std.dev: (457.10, 139.39)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1303)
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (466, 554, 648)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (102, 1012)
+[M::mem_pestat] mean and std.dev: (557.73, 144.08)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1194)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_pestat] skip orientation FF
+[M::mem_process_seqs] Processed 135136 reads in 31.561 CPU sec, 15.635 real sec
+[M::process] 0 single-end sequences; 135136 paired-end sequences
+[M::process] read 135136 sequences (20000128 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (9, 56371, 1, 1)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (464, 553, 644)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (104, 1004)
+[M::mem_pestat] mean and std.dev: (554.67, 142.26)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1184)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_process_seqs] Processed 135136 reads in 31.927 CPU sec, 15.815 real sec
+[M::process] 0 single-end sequences; 135136 paired-end sequences
+[M::process] read 135136 sequences (20000128 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (10, 56542, 2, 2)
+[M::mem_pestat] analyzing insert size distribution for orientation FF...
+[M::mem_pestat] (25, 50, 75) percentile: (319, 452, 765)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 1657)
+[M::mem_pestat] mean and std.dev: (512.78, 344.07)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 2103)
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (463, 551, 644)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (101, 1006)
+[M::mem_pestat] mean and std.dev: (553.99, 142.96)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1187)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_pestat] skip orientation FF
+[M::mem_process_seqs] Processed 135136 reads in 31.895 CPU sec, 15.800 real sec
+[M::process] 0 single-end sequences; 135136 paired-end sequences
+[M::process] read 135136 sequences (20000128 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (7, 56366, 4, 3)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (465, 554, 646)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (103, 1008)
+[M::mem_pestat] mean and std.dev: (556.01, 143.21)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1189)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_process_seqs] Processed 135136 reads in 31.842 CPU sec, 15.764 real sec
+[M::process] 0 single-end sequences; 135136 paired-end sequences
+[M::process] read 135136 sequences (20000128 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (7, 56558, 3, 3)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (465, 554, 647)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (101, 1011)
+[M::mem_pestat] mean and std.dev: (555.69, 142.86)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1193)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_process_seqs] Processed 135136 reads in 31.696 CPU sec, 15.702 real sec
+[M::process] 0 single-end sequences; 135136 paired-end sequences
+[M::process] read 135136 sequences (20000128 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (10, 56298, 1, 2)
+[M::mem_pestat] analyzing insert size distribution for orientation FF...
+[M::mem_pestat] (25, 50, 75) percentile: (133, 297, 452)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 1090)
+[M::mem_pestat] mean and std.dev: (301.70, 154.31)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1409)
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (462, 552, 645)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (96, 1011)
+[M::mem_pestat] mean and std.dev: (554.67, 143.98)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1194)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_pestat] skip orientation FF
+[M::mem_process_seqs] Processed 135136 reads in 32.166 CPU sec, 15.920 real sec
+[M::process] 0 single-end sequences; 135136 paired-end sequences
+[M::process] read 135136 sequences (20000128 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (6, 56496, 4, 2)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (464, 553, 647)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (98, 1013)
+[M::mem_pestat] mean and std.dev: (555.74, 144.23)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1196)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_process_seqs] Processed 135136 reads in 31.677 CPU sec, 15.697 real sec
+[M::process] 0 single-end sequences; 135136 paired-end sequences
+[M::process] read 135136 sequences (20000128 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (8, 56525, 8, 2)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (463, 553, 646)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (97, 1012)
+[M::mem_pestat] mean and std.dev: (554.35, 144.38)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1195)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_process_seqs] Processed 135136 reads in 31.428 CPU sec, 15.564 real sec
+[M::process] 0 single-end sequences; 135136 paired-end sequences
+[M::process] read 135136 sequences (20000128 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (6, 56555, 0, 1)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (463, 553, 645)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (99, 1009)
+[M::mem_pestat] mean and std.dev: (554.71, 143.73)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1191)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_process_seqs] Processed 135136 reads in 31.679 CPU sec, 15.701 real sec
+[M::process] 0 single-end sequences; 135136 paired-end sequences
+[M::process] read 135136 sequences (20000128 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (6, 56480, 5, 1)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (462, 553, 645)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (96, 1011)
+[M::mem_pestat] mean and std.dev: (554.30, 143.76)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1194)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_process_seqs] Processed 135136 reads in 31.935 CPU sec, 15.819 real sec
+[M::process] 0 single-end sequences; 135136 paired-end sequences
+[M::process] read 135136 sequences (20000128 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (8, 56644, 4, 1)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (462, 551, 642)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (102, 1002)
+[M::mem_pestat] mean and std.dev: (552.89, 143.27)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1182)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_process_seqs] Processed 135136 reads in 31.883 CPU sec, 15.803 real sec
+[M::process] 0 single-end sequences; 135136 paired-end sequences
+[M::process] read 26976 sequences (3992448 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (6, 56533, 9, 1)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (463, 552, 644)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (101, 1006)
+[M::mem_pestat] mean and std.dev: (553.96, 143.52)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1187)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_process_seqs] Processed 135136 reads in 31.237 CPU sec, 15.566 real sec
+[M::process] 0 single-end sequences; 26976 paired-end sequences
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (2, 11235, 0, 0)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (460, 548, 641)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (98, 1003)
+[M::mem_pestat] mean and std.dev: (549.81, 143.07)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1184)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_process_seqs] Processed 26976 reads in 6.327 CPU sec, 3.130 real sec
+[main] Version: 0.7.17-r1188
+[main] CMD: bwa mem -M -p -t 2 -R @RG\tID:H947YADXX\tSM:NA12878\tPL:ILLUMINA /var/lib/cwl/stgb7d9b0bb-f39d-46b1-90e9-8e6ffdaf51d0/hs37d5.fa /var/lib/cwl/stge7b73f7c-e880-4cba-8c06-84a8e5002e60/U5c_CCGTCC_L001_R1_001.fastq.gz.trimmed.fastq.gz
+[main] Real time: 928.929 sec; CPU: 1873.806 sec
+[1;30mINFO[0m [job bwa_mem] Max memory used: 0MiB
+[1;30mINFO[0m [job bwa_mem] completed success
+[1;30mINFO[0m [step bwa_mem] completed success
+[1;30mINFO[0m [workflow ] starting step picard_dictionary
+[1;30mINFO[0m [step picard_dictionary] start
+[1;30mINFO[0m [job picard_dictionary] /scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/t9hptkto$ docker \
+    run \
+    -i \
+    --mount=type=bind,source=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/t9hptkto,target=/tbezBP \
+    --mount=type=bind,source=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/3ch865mi,target=/tmp \
+    --mount=type=bind,source=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/v4u2m9bn/hs37d5.fa,target=/var/lib/cwl/stg6c219fbf-7d7b-4fd5-aa6b-7c8c239753e4/hs37d5.fa,readonly \
+    --workdir=/tbezBP \
+    --read-only=true \
+    --user=1001:100 \
+    --rm \
+    --cidfile=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/bz678ad5/20230829215144-190370.cid \
+    --env=TMPDIR=/tmp \
+    --env=HOME=/tbezBP \
+    quay.io/biocontainers/picard:2.18.25--0 \
+    picard \
+    CreateSequenceDictionary \
+    R=/var/lib/cwl/stg6c219fbf-7d7b-4fd5-aa6b-7c8c239753e4/hs37d5.fa \
+    O=hs37d5.dict
+/usr/local/bin/picard: line 5: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory
+INFO	2023-08-29 19:51:46	CreateSequenceDictionary	
+
+********** NOTE: Picard's command line syntax is changing.
+**********
+********** For more information, please see:
+********** https://github.com/broadinstitute/picard/wiki/Command-Line-Syntax-Transition-For-Users-(Pre-Transition)
+**********
+********** The command line looks like this in the new syntax:
+**********
+**********    CreateSequenceDictionary -R /var/lib/cwl/stg6c219fbf-7d7b-4fd5-aa6b-7c8c239753e4/hs37d5.fa -O hs37d5.dict
+**********
+
+
+19:51:46.868 INFO  NativeLibraryLoader - Loading libgkl_compression.so from jar:file:/usr/local/share/picard-2.18.25-0/picard.jar!/com/intel/gkl/native/libgkl_compression.so
+[Tue Aug 29 19:51:46 GMT 2023] CreateSequenceDictionary OUTPUT=hs37d5.dict REFERENCE=/var/lib/cwl/stg6c219fbf-7d7b-4fd5-aa6b-7c8c239753e4/hs37d5.fa    TRUNCATE_NAMES_AT_WHITESPACE=true NUM_SEQUENCES=2147483647 VERBOSITY=INFO QUIET=false VALIDATION_STRINGENCY=STRICT COMPRESSION_LEVEL=5 MAX_RECORDS_IN_RAM=500000 CREATE_INDEX=false CREATE_MD5_FILE=false GA4GH_CLIENT_SECRETS=client_secrets.json USE_JDK_DEFLATER=false USE_JDK_INFLATER=false
+[Tue Aug 29 19:51:46 GMT 2023] Executing as ?@e826cd2d9703 on Linux 6.1.8-gentoo amd64; OpenJDK 64-Bit Server VM 11.0.1+13-LTS; Deflater: Intel; Inflater: Intel; Provider GCS is not available; Picard version: 2.18.25-SNAPSHOT
+[Tue Aug 29 19:52:01 GMT 2023] picard.sam.CreateSequenceDictionary done. Elapsed time: 0.25 minutes.
+Runtime.totalMemory()=1073741824
+[1;30mINFO[0m [job picard_dictionary] Max memory used: 0MiB
+[1;30mINFO[0m [job picard_dictionary] completed success
+[1;30mINFO[0m [step picard_dictionary] completed success
+[1;30mINFO[0m [workflow ] starting step samtools_sort
+[1;30mINFO[0m [step samtools_sort] start
+[1;30mINFO[0m [job samtools_sort] /scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/p4vx3v99$ docker \
+    run \
+    -i \
+    --mount=type=bind,source=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/p4vx3v99,target=/tbezBP \
+    --mount=type=bind,source=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/szw378i1,target=/tmp \
+    --mount=type=bind,source=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/z7lo87k_/abc2.sam,target=/var/lib/cwl/stge599fc6c-9c64-48e0-aa0f-aa6a197ae412/abc2.sam,readonly \
+    --workdir=/tbezBP \
+    --read-only=true \
+    --user=1001:100 \
+    --rm \
+    --cidfile=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/icvmsxu7/20230829215203-396703.cid \
+    --env=TMPDIR=/tmp \
+    --env=HOME=/tbezBP \
+    quay.io/biocontainers/samtools:1.3.1--5 \
+    samtools \
+    sort \
+    --threads \
+    8 \
+    -o \
+    abc2.sorted.bam \
+    /var/lib/cwl/stge599fc6c-9c64-48e0-aa0f-aa6a197ae412/abc2.sam
+[1;30mINFO[0m [job samtools_sort] Max memory used: 4766MiB
+[1;30mINFO[0m [job samtools_sort] completed success
+[1;30mINFO[0m [step samtools_sort] completed success
+[1;30mINFO[0m [workflow ] starting step picard_markduplicates
+[1;30mINFO[0m [step picard_markduplicates] start
+[1;30mINFO[0m [job picard_markduplicates] /scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/bkbfjb1e$ docker \
+    run \
+    -i \
+    --mount=type=bind,source=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/bkbfjb1e,target=/tbezBP \
+    --mount=type=bind,source=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/5r444sa4,target=/tmp \
+    --mount=type=bind,source=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/p4vx3v99/abc2.sorted.bam,target=/var/lib/cwl/stg3e98b207-92d9-474e-a49a-183405b9036a/abc2.sorted.bam,readonly \
+    --workdir=/tbezBP \
+    --read-only=true \
+    --user=1001:100 \
+    --rm \
+    --cidfile=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/8em_7ts7/20230829215305-969061.cid \
+    --env=TMPDIR=/tmp \
+    --env=HOME=/tbezBP \
+    quay.io/biocontainers/picard:2.18.25--0 \
+    picard \
+    MarkDuplicates \
+    OPTICAL_DUPLICATE_PIXEL_DISTANCE=100 \
+    TAGGING_POLICY=All \
+    CREATE_INDEX=true \
+    REMOVE_DUPLICATES=true \
+    TAG_DUPLICATE_SET_MEMBERS=true \
+    ASSUME_SORT_ORDER=coordinate \
+    METRICS_FILE=abc2.sorted.metrics.txt \
+    INPUT=/var/lib/cwl/stg3e98b207-92d9-474e-a49a-183405b9036a/abc2.sorted.bam \
+    OUTPUT=abc2.sorted.md.bam
+/usr/local/bin/picard: line 5: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory
+INFO	2023-08-29 19:53:07	MarkDuplicates	
+
+********** NOTE: Picard's command line syntax is changing.
+**********
+********** For more information, please see:
+********** https://github.com/broadinstitute/picard/wiki/Command-Line-Syntax-Transition-For-Users-(Pre-Transition)
+**********
+********** The command line looks like this in the new syntax:
+**********
+**********    MarkDuplicates -OPTICAL_DUPLICATE_PIXEL_DISTANCE 100 -TAGGING_POLICY All -CREATE_INDEX true -REMOVE_DUPLICATES true -TAG_DUPLICATE_SET_MEMBERS true -ASSUME_SORT_ORDER coordinate -METRICS_FILE abc2.sorted.metrics.txt -INPUT /var/lib/cwl/stg3e98b207-92d9-474e-a49a-183405b9036a/abc2.sorted.bam -OUTPUT abc2.sorted.md.bam
+**********
+
+
+19:53:07.809 INFO  NativeLibraryLoader - Loading libgkl_compression.so from jar:file:/usr/local/share/picard-2.18.25-0/picard.jar!/com/intel/gkl/native/libgkl_compression.so
+[Tue Aug 29 19:53:07 GMT 2023] MarkDuplicates TAG_DUPLICATE_SET_MEMBERS=true TAGGING_POLICY=All INPUT=[/var/lib/cwl/stg3e98b207-92d9-474e-a49a-183405b9036a/abc2.sorted.bam] OUTPUT=abc2.sorted.md.bam METRICS_FILE=abc2.sorted.metrics.txt REMOVE_DUPLICATES=true ASSUME_SORT_ORDER=coordinate OPTICAL_DUPLICATE_PIXEL_DISTANCE=100 CREATE_INDEX=true    MAX_SEQUENCES_FOR_DISK_READ_ENDS_MAP=50000 MAX_FILE_HANDLES_FOR_READ_ENDS_MAP=8000 SORTING_COLLECTION_SIZE_RATIO=0.25 REMOVE_SEQUENCING_DUPLICATES=false CLEAR_DT=true DUPLEX_UMI=false ADD_PG_TAG_TO_READS=true ASSUME_SORTED=false DUPLICATE_SCORING_STRATEGY=SUM_OF_BASE_QUALITIES PROGRAM_RECORD_ID=MarkDuplicates PROGRAM_GROUP_NAME=MarkDuplicates READ_NAME_REGEX=<optimized capture of last three ':' separated fields as numeric values> MAX_OPTICAL_DUPLICATE_SET_SIZE=300000 VERBOSITY=INFO QUIET=false VALIDATION_STRINGENCY=STRICT COMPRESSION_LEVEL=5 MAX_RECORDS_IN_RAM=500000 CREATE_MD5_FILE=false GA4GH_CLIENT_SECRETS=client_secrets.json USE_JDK_DEFLATER=false USE_JDK_INFLATER=false
+[Tue Aug 29 19:53:07 GMT 2023] Executing as ?@353d5f972f4e on Linux 6.1.8-gentoo amd64; OpenJDK 64-Bit Server VM 11.0.1+13-LTS; Deflater: Intel; Inflater: Intel; Provider GCS is not available; Picard version: 2.18.25-SNAPSHOT
+INFO	2023-08-29 19:53:07	MarkDuplicates	Start of doWork freeMemory: 530849296; totalMemory: 536870912; maxMemory: 1073741824
+INFO	2023-08-29 19:53:07	MarkDuplicates	Reading input file and constructing read end information.
+INFO	2023-08-29 19:53:07	MarkDuplicates	Will retain up to 3890368 data points before spilling to disk.
+INFO	2023-08-29 19:53:10	MarkDuplicates	Read     1,000,000 records.  Elapsed time: 00:00:02s.  Time for last 1,000,000:    2s.  Last read position: 2:156,412,008
+INFO	2023-08-29 19:53:10	MarkDuplicates	Tracking 9524 as yet unmatched pairs. 267 records in RAM.
+INFO	2023-08-29 19:53:13	MarkDuplicates	Read     2,000,000 records.  Elapsed time: 00:00:05s.  Time for last 1,000,000:    2s.  Last read position: 4:97,592,616
+INFO	2023-08-29 19:53:13	MarkDuplicates	Tracking 14550 as yet unmatched pairs. 480 records in RAM.
+INFO	2023-08-29 19:53:16	MarkDuplicates	Read     3,000,000 records.  Elapsed time: 00:00:08s.  Time for last 1,000,000:    2s.  Last read position: 6:104,780,506
+INFO	2023-08-29 19:53:16	MarkDuplicates	Tracking 17691 as yet unmatched pairs. 533 records in RAM.
+INFO	2023-08-29 19:53:21	MarkDuplicates	Read     4,000,000 records.  Elapsed time: 00:00:13s.  Time for last 1,000,000:    5s.  Last read position: 9:11,294,087
+INFO	2023-08-29 19:53:21	MarkDuplicates	Tracking 19032 as yet unmatched pairs. 1256 records in RAM.
+INFO	2023-08-29 19:53:24	MarkDuplicates	Read     5,000,000 records.  Elapsed time: 00:00:16s.  Time for last 1,000,000:    2s.  Last read position: 12:11,577,376
+INFO	2023-08-29 19:53:24	MarkDuplicates	Tracking 18420 as yet unmatched pairs. 2031 records in RAM.
+INFO	2023-08-29 19:53:26	MarkDuplicates	Read     6,000,000 records.  Elapsed time: 00:00:19s.  Time for last 1,000,000:    2s.  Last read position: 15:97,725,362
+INFO	2023-08-29 19:53:26	MarkDuplicates	Tracking 15136 as yet unmatched pairs. 87 records in RAM.
+INFO	2023-08-29 19:53:31	MarkDuplicates	Read     7,000,000 records.  Elapsed time: 00:00:23s.  Time for last 1,000,000:    4s.  Last read position: 21:39,057,985
+INFO	2023-08-29 19:53:31	MarkDuplicates	Tracking 9648 as yet unmatched pairs. 180 records in RAM.
+INFO	2023-08-29 19:53:39	MarkDuplicates	Read     8,000,000 records.  Elapsed time: 00:00:31s.  Time for last 1,000,000:    8s.  Last read position: hs37d5:29,917,060
+INFO	2023-08-29 19:53:39	MarkDuplicates	Tracking 4383 as yet unmatched pairs. 4383 records in RAM.
+INFO	2023-08-29 19:53:39	MarkDuplicates	Read 8031503 records. 0 pairs never matched.
+INFO	2023-08-29 19:53:39	MarkDuplicates	After buildSortedReadEndLists freeMemory: 529955520; totalMemory: 536870912; maxMemory: 1073741824
+INFO	2023-08-29 19:53:39	MarkDuplicates	Will retain up to 16777216 duplicate indices before spilling to disk.
+INFO	2023-08-29 19:53:39	MarkDuplicates	Traversing read pair information and detecting duplicates.
+INFO	2023-08-29 19:53:39	SortingCollection	Creating merging iterator from 2 files
+INFO	2023-08-29 19:53:40	MarkDuplicates	Traversing fragment information and detecting duplicates.
+INFO	2023-08-29 19:53:40	SortingCollection	Creating merging iterator from 3 files
+INFO	2023-08-29 19:53:42	MarkDuplicates	Sorting list of duplicate records.
+INFO	2023-08-29 19:53:42	MarkDuplicates	After generateDuplicateIndexes freeMemory: 236477088; totalMemory: 581959680; maxMemory: 1073741824
+INFO	2023-08-29 19:53:42	MarkDuplicates	Marking 3029 records as duplicates.
+INFO	2023-08-29 19:53:42	MarkDuplicates	Found 778 optical duplicate clusters.
+INFO	2023-08-29 19:53:42	MarkDuplicates	Reads are assumed to be ordered by: coordinate
+INFO	2023-08-29 19:55:39	MarkDuplicates	Before output close freeMemory: 370766992; totalMemory: 581959680; maxMemory: 1073741824
+INFO	2023-08-29 19:55:39	MarkDuplicates	After output close freeMemory: 370766992; totalMemory: 581959680; maxMemory: 1073741824
+[Tue Aug 29 19:55:39 GMT 2023] picard.sam.markduplicates.MarkDuplicates done. Elapsed time: 2.54 minutes.
+Runtime.totalMemory()=581959680
+[1;30mINFO[0m [job picard_markduplicates] Max memory used: 828MiB
+[1;30mINFO[0m [job picard_markduplicates] completed success
+[1;30mINFO[0m [step picard_markduplicates] completed success
+[1;30mINFO[0m [workflow ] starting step gatk3-rtc
+[1;30mINFO[0m [step gatk3-rtc] start
+[1;30mINFO[0m [job gatk3-rtc] /scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/sqnvx671$ docker \
+    run \
+    -i \
+    --mount=type=bind,source=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/sqnvx671,target=/tbezBP \
+    --mount=type=bind,source=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/6_m6r9hk,target=/tmp \
+    --mount=type=bind,source=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/bkbfjb1e/abc2.sorted.md.bam,target=/var/lib/cwl/stg46e5e9b7-9e5b-423c-b7cf-f4f2e089a8e5/abc2.sorted.md.bam,readonly \
+    --mount=type=bind,source=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/bkbfjb1e/abc2.sorted.md.bai,target=/var/lib/cwl/stg46e5e9b7-9e5b-423c-b7cf-f4f2e089a8e5/abc2.sorted.md.bai,readonly \
+    --mount=type=bind,source=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/v4u2m9bn/hs37d5.fa,target=/tbezBP/hs37d5.fa,readonly \
+    --mount=type=bind,source=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/84gkqhvu/hs37d5.fa.fai,target=/tbezBP/hs37d5.fa.fai,readonly \
+    --mount=type=bind,source=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/t9hptkto/hs37d5.dict,target=/tbezBP/hs37d5.dict,readonly \
+    --mount=type=bind,source=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/kjdprpf_/Mills_and_1000G_gold_standard.indels.b37.vcf,target=/tbezBP/Mills_and_1000G_gold_standard.indels.b37.vcf,readonly \
+    --workdir=/tbezBP \
+    --read-only=true \
+    --user=1001:100 \
+    --rm \
+    --cidfile=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/jrfoezft/20230829215544-918699.cid \
+    --env=TMPDIR=/tmp \
+    --env=HOME=/tbezBP \
+    broadinstitute/gatk3:3.6-0 \
+    java \
+    -jar \
+    /usr/GenomeAnalysisTK.jar \
+    -T \
+    RealignerTargetCreator \
+    -R \
+    /tbezBP/hs37d5.fa \
+    -I \
+    /var/lib/cwl/stg46e5e9b7-9e5b-423c-b7cf-f4f2e089a8e5/abc2.sorted.md.bam \
+    -o \
+    rtc_intervals.list \
+    --known \
+    /tbezBP/Mills_and_1000G_gold_standard.indels.b37.vcf \
+    -dt \
+    NONE
+INFO  19:55:47,290 HelpFormatter - -------------------------------------------------------------------------------- 
+INFO  19:55:47,291 HelpFormatter - The Genome Analysis Toolkit (GATK) v3.6-0-g89b7209, Compiled 2016/06/01 22:27:29 
+INFO  19:55:47,291 HelpFormatter - Copyright (c) 2010-2016 The Broad Institute 
+INFO  19:55:47,291 HelpFormatter - For support and documentation go to https://www.broadinstitute.org/gatk 
+INFO  19:55:47,291 HelpFormatter - [Tue Aug 29 19:55:47 UTC 2023] Executing on Linux 6.1.8-gentoo amd64 
+INFO  19:55:47,292 HelpFormatter - OpenJDK 64-Bit Server VM 1.8.0_102-8u102-b14.1-1~bpo8+1-b14 JdkDeflater 
+INFO  19:55:47,294 HelpFormatter - Program Args: -T RealignerTargetCreator -R /tbezBP/hs37d5.fa -I /var/lib/cwl/stg46e5e9b7-9e5b-423c-b7cf-f4f2e089a8e5/abc2.sorted.md.bam -o rtc_intervals.list --known /tbezBP/Mills_and_1000G_gold_standard.indels.b37.vcf -dt NONE 
+INFO  19:55:47,322 HelpFormatter - Executing as ?@113d960d440b on Linux 6.1.8-gentoo amd64; OpenJDK 64-Bit Server VM 1.8.0_102-8u102-b14.1-1~bpo8+1-b14. 
+INFO  19:55:47,322 HelpFormatter - Date/Time: 2023/08/29 19:55:47 
+INFO  19:55:47,323 HelpFormatter - -------------------------------------------------------------------------------- 
+INFO  19:55:47,323 HelpFormatter - -------------------------------------------------------------------------------- 
+INFO  19:55:47,333 GenomeAnalysisEngine - Strictness is SILENT 
+INFO  19:55:47,403 GenomeAnalysisEngine - Downsampling Settings: No downsampling 
+INFO  19:55:47,406 SAMDataSource$SAMReaders - Initializing SAMRecords in serial 
+INFO  19:55:47,418 SAMDataSource$SAMReaders - Done initializing BAM readers: total time 0.01 
+INFO  19:55:49,534 RMDTrackBuilder - Writing Tribble index to disk for file /tbezBP/Mills_and_1000G_gold_standard.indels.b37.vcf.idx 
+INFO  19:55:52,173 GenomeAnalysisEngine - Preparing for traversal over 1 BAM files 
+INFO  19:55:52,272 GenomeAnalysisEngine - Done preparing for traversal 
+INFO  19:55:52,272 ProgressMeter - [INITIALIZATION COMPLETE; STARTING PROCESSING] 
+INFO  19:55:52,272 ProgressMeter -                 | processed |    time |    per 1M |           |   total | remaining 
+INFO  19:55:52,273 ProgressMeter -        Location |     sites | elapsed |     sites | completed | runtime |   runtime 
+INFO  19:56:22,274 ProgressMeter -      1:94400125   9.4388224E7    30.0 s       0.0 s        3.0%    16.6 m      16.1 m 
+INFO  19:56:52,275 ProgressMeter -     1:202690465   2.02686464E8    60.0 s       0.0 s        6.5%    15.5 m      14.5 m 
+INFO  19:57:32,276 ProgressMeter -      2:85525881   3.34775101E8   100.0 s       0.0 s       10.7%    15.6 m      14.0 m 
+INFO  19:58:12,276 ProgressMeter -     2:218601229   4.67845949E8     2.3 m       0.0 s       14.9%    15.6 m      13.3 m 
+INFO  19:58:42,277 ProgressMeter -      3:73309217   5.6575201E8     2.8 m       0.0 s       18.0%    15.7 m      12.9 m 
+INFO  19:59:22,277 ProgressMeter -       4:6149701   6.96616424E8     3.5 m       0.0 s       22.2%    15.8 m      12.3 m 
+INFO  19:59:52,278 ProgressMeter -     4:105478409   7.95936232E8     4.0 m       0.0 s       25.4%    15.8 m      11.8 m 
+INFO  20:00:32,278 ProgressMeter -      5:43770065   9.25388364E8     4.7 m       0.0 s       29.5%    15.8 m      11.2 m 
+INFO  20:01:02,279 ProgressMeter -     5:142325741   1.02392174E9     5.2 m       0.0 s       32.6%    15.8 m      10.7 m 
+INFO  20:01:32,280 ProgressMeter -      6:58228653   1.120754312E9     5.7 m       0.0 s       35.7%    15.9 m      10.2 m 
+INFO  20:02:12,281 ProgressMeter -      7:17225585   1.250876611E9     6.3 m       0.0 s       39.9%    15.9 m       9.6 m 
+INFO  20:02:42,281 ProgressMeter -     7:116864989   1.350507715E9     6.8 m       0.0 s       43.0%    15.9 m       9.0 m 
+INFO  20:03:22,282 ProgressMeter -      8:88362713   1.481154602E9     7.5 m       0.0 s       47.2%    15.9 m       8.4 m 
+INFO  20:03:52,282 ProgressMeter -      9:40760909   1.57990672E9     8.0 m       0.0 s       50.4%    15.9 m       7.9 m 
+INFO  20:04:22,283 ProgressMeter -      10:7487989   1.687860631E9     8.5 m       0.0 s       53.8%    15.8 m       7.3 m 
+INFO  20:05:02,284 ProgressMeter -      11:4748877   1.820642866E9     9.2 m       0.0 s       58.0%    15.8 m       6.6 m 
+INFO  20:05:42,284 ProgressMeter -      12:2068485   1.95297879E9     9.8 m       0.0 s       62.2%    15.8 m       6.0 m 
+INFO  20:06:12,285 ProgressMeter -    12:100005653   2.050905958E9    10.3 m       0.0 s       65.4%    15.8 m       5.5 m 
+INFO  20:06:52,286 ProgressMeter -    13:103770321   2.188477021E9    11.0 m       0.0 s       69.8%    15.8 m       4.8 m 
+INFO  20:07:22,287 ProgressMeter -     14:93479521   2.293406899E9    11.5 m       0.0 s       73.1%    15.7 m       4.2 m 
+INFO  20:07:52,288 ProgressMeter -     15:94478877   2.401723095E9    12.0 m       0.0 s       76.6%    15.7 m       3.7 m 
+INFO  20:08:32,289 ProgressMeter -     17:42851961   2.543016024E9    12.7 m       0.0 s       81.1%    15.6 m       3.0 m 
+INFO  20:09:02,289 ProgressMeter -     18:62747037   2.64410141E9    13.2 m       0.0 s       84.3%    15.6 m       2.5 m 
+INFO  20:09:32,290 ProgressMeter -     20:25837485   2.744394489E9    13.7 m       0.0 s       87.5%    15.6 m     117.0 s 
+INFO  20:10:12,290 ProgressMeter -      X:11136853   2.892141638E9    14.3 m       0.0 s       92.2%    15.5 m      72.0 s 
+INFO  20:10:42,291 ProgressMeter -     X:115305909   2.996327494E9    14.8 m       0.0 s       95.5%    15.5 m      41.0 s 
+INFO  20:11:20,231 ProgressMeter -            done   3.137454505E9    15.5 m       0.0 s      100.0%    15.5 m       0.0 s 
+INFO  20:11:20,231 ProgressMeter - Total runtime 927.96 secs, 15.47 min, 0.26 hours 
+INFO  20:11:20,232 MicroScheduler - 401415 reads were filtered out during the traversal out of approximately 8081483 total reads (4.97%) 
+INFO  20:11:20,233 MicroScheduler -   -> 0 reads (0.00% of total) failing BadCigarFilter 
+INFO  20:11:20,233 MicroScheduler -   -> 65769 reads (0.81% of total) failing BadMateFilter 
+INFO  20:11:20,233 MicroScheduler -   -> 0 reads (0.00% of total) failing DuplicateReadFilter 
+INFO  20:11:20,233 MicroScheduler -   -> 0 reads (0.00% of total) failing FailsVendorQualityCheckFilter 
+INFO  20:11:20,233 MicroScheduler -   -> 0 reads (0.00% of total) failing MalformedReadFilter 
+INFO  20:11:20,233 MicroScheduler -   -> 0 reads (0.00% of total) failing MappingQualityUnavailableFilter 
+INFO  20:11:20,233 MicroScheduler -   -> 330415 reads (4.09% of total) failing MappingQualityZeroFilter 
+INFO  20:11:20,234 MicroScheduler -   -> 5231 reads (0.06% of total) failing NotPrimaryAlignmentFilter 
+INFO  20:11:20,234 MicroScheduler -   -> 0 reads (0.00% of total) failing Platform454Filter 
+INFO  20:11:20,234 MicroScheduler -   -> 0 reads (0.00% of total) failing UnmappedReadFilter 
+------------------------------------------------------------------------------------------
+Done. There were no warn messages.
+------------------------------------------------------------------------------------------
+[1;30mINFO[0m [job gatk3-rtc] Max memory used: 5395MiB
+[1;30mINFO[0m [job gatk3-rtc] completed success
+[1;30mINFO[0m [step gatk3-rtc] completed success
+[1;30mINFO[0m [workflow ] starting step gatk-ir
+[1;30mINFO[0m [step gatk-ir] start
+[1;30mINFO[0m [job gatk-ir] /scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/4w75a1z2$ docker \
+    run \
+    -i \
+    --mount=type=bind,source=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/4w75a1z2,target=/tbezBP \
+    --mount=type=bind,source=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/_k0n9lyl,target=/tmp \
+    --mount=type=bind,source=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/bkbfjb1e/abc2.sorted.md.bam,target=/var/lib/cwl/stg061c7f53-28fa-4a77-abba-24b7c9480760/abc2.sorted.md.bam,readonly \
+    --mount=type=bind,source=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/bkbfjb1e/abc2.sorted.md.bai,target=/var/lib/cwl/stg061c7f53-28fa-4a77-abba-24b7c9480760/abc2.sorted.md.bai,readonly \
+    --mount=type=bind,source=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/sqnvx671/rtc_intervals.list,target=/var/lib/cwl/stgd0b89319-79cf-40f2-aa4b-6587a743344a/rtc_intervals.list,readonly \
+    --mount=type=bind,source=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/v4u2m9bn/hs37d5.fa,target=/tbezBP/hs37d5.fa,readonly \
+    --mount=type=bind,source=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/84gkqhvu/hs37d5.fa.fai,target=/tbezBP/hs37d5.fa.fai,readonly \
+    --mount=type=bind,source=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/t9hptkto/hs37d5.dict,target=/tbezBP/hs37d5.dict,readonly \
+    --workdir=/tbezBP \
+    --read-only=true \
+    --user=1001:100 \
+    --rm \
+    --cidfile=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/1yaobwu7/20230829221121-296495.cid \
+    --env=TMPDIR=/tmp \
+    --env=HOME=/tbezBP \
+    broadinstitute/gatk3:3.6-0 \
+    java \
+    -jar \
+    /usr/GenomeAnalysisTK.jar \
+    -T \
+    IndelRealigner \
+    -R \
+    /tbezBP/hs37d5.fa \
+    -I \
+    /var/lib/cwl/stg061c7f53-28fa-4a77-abba-24b7c9480760/abc2.sorted.md.bam \
+    -targetIntervals \
+    /var/lib/cwl/stgd0b89319-79cf-40f2-aa4b-6587a743344a/rtc_intervals.list \
+    -dt \
+    NONE \
+    --maxReadsForRealignment \
+    200000 \
+    -o \
+    abc2.sorted.md.realigned.bam
+INFO  20:11:23,502 HelpFormatter - -------------------------------------------------------------------------------- 
+INFO  20:11:23,503 HelpFormatter - The Genome Analysis Toolkit (GATK) v3.6-0-g89b7209, Compiled 2016/06/01 22:27:29 
+INFO  20:11:23,503 HelpFormatter - Copyright (c) 2010-2016 The Broad Institute 
+INFO  20:11:23,504 HelpFormatter - For support and documentation go to https://www.broadinstitute.org/gatk 
+INFO  20:11:23,504 HelpFormatter - [Tue Aug 29 20:11:23 UTC 2023] Executing on Linux 6.1.8-gentoo amd64 
+INFO  20:11:23,504 HelpFormatter - OpenJDK 64-Bit Server VM 1.8.0_102-8u102-b14.1-1~bpo8+1-b14 JdkDeflater 
+INFO  20:11:23,506 HelpFormatter - Program Args: -T IndelRealigner -R /tbezBP/hs37d5.fa -I /var/lib/cwl/stg061c7f53-28fa-4a77-abba-24b7c9480760/abc2.sorted.md.bam -targetIntervals /var/lib/cwl/stgd0b89319-79cf-40f2-aa4b-6587a743344a/rtc_intervals.list -dt NONE --maxReadsForRealignment 200000 -o abc2.sorted.md.realigned.bam 
+INFO  20:11:23,509 HelpFormatter - Executing as ?@5bcd03a08df9 on Linux 6.1.8-gentoo amd64; OpenJDK 64-Bit Server VM 1.8.0_102-8u102-b14.1-1~bpo8+1-b14. 
+INFO  20:11:23,510 HelpFormatter - Date/Time: 2023/08/29 20:11:23 
+INFO  20:11:23,510 HelpFormatter - -------------------------------------------------------------------------------- 
+INFO  20:11:23,510 HelpFormatter - -------------------------------------------------------------------------------- 
+INFO  20:11:23,536 GenomeAnalysisEngine - Strictness is SILENT 
+INFO  20:11:23,569 GenomeAnalysisEngine - Downsampling Settings: No downsampling 
+INFO  20:11:23,572 SAMDataSource$SAMReaders - Initializing SAMRecords in serial 
+INFO  20:11:23,584 SAMDataSource$SAMReaders - Done initializing BAM readers: total time 0.01 
+INFO  20:11:23,624 GenomeAnalysisEngine - Preparing for traversal over 1 BAM files 
+INFO  20:11:23,626 GenomeAnalysisEngine - Done preparing for traversal 
+INFO  20:11:23,627 ProgressMeter - [INITIALIZATION COMPLETE; STARTING PROCESSING] 
+INFO  20:11:23,627 ProgressMeter -                 | processed |    time |    per 1M |           |   total | remaining 
+INFO  20:11:23,627 ProgressMeter -        Location |     reads | elapsed |     reads | completed | runtime |   runtime 
+INFO  20:11:24,007 ReadShardBalancer$1 - Loading BAM index data 
+INFO  20:11:24,008 ReadShardBalancer$1 - Done loading BAM index data 
+DEBUG	2023-08-29 20:11:24	BlockCompressedOutputStream	Using deflater: Deflater
+INFO  20:11:53,628 ProgressMeter -     3:120893899   1531045.0    30.0 s      19.0 s       19.5%     2.6 m       2.1 m 
+INFO  20:12:23,629 ProgressMeter -     7:109007044   3374999.0    60.0 s      17.0 s       42.8%     2.3 m      80.0 s 
+INFO  20:13:03,630 ProgressMeter -     15:98358197   5899798.0   100.0 s      16.0 s       76.7%     2.2 m      30.0 s 
+INFO  20:13:43,630 ProgressMeter - hs37d5:19615212   7708368.0     2.3 m      18.0 s       99.5%     2.3 m       0.0 s 
+INFO  20:14:13,631 ProgressMeter - hs37d5:30631377   8008372.0     2.8 m      21.0 s       99.8%     2.8 m       0.0 s 
+INFO  20:14:13,896 ProgressMeter -            done   8028884.0     2.8 m      21.0 s      100.0%     2.8 m       0.0 s 
+INFO  20:14:13,896 ProgressMeter - Total runtime 170.27 secs, 2.84 min, 0.05 hours 
+INFO  20:14:13,898 MicroScheduler - 0 reads were filtered out during the traversal out of approximately 8028884 total reads (0.00%) 
+INFO  20:14:13,898 MicroScheduler -   -> 0 reads (0.00% of total) failing BadCigarFilter 
+INFO  20:14:13,898 MicroScheduler -   -> 0 reads (0.00% of total) failing MalformedReadFilter 
+------------------------------------------------------------------------------------------
+Done. There were no warn messages.
+------------------------------------------------------------------------------------------
+[1;30mINFO[0m [job gatk-ir] Max memory used: 4258MiB
+[1;30mINFO[0m [job gatk-ir] completed success
+[1;30mINFO[0m [step gatk-ir] completed success
+[1;30mINFO[0m [workflow ] starting step gatk-base_recalibration
+[1;30mINFO[0m [step gatk-base_recalibration] start
+[1;30mINFO[0m [job gatk-base_recalibration] /scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/c5b1_q9w$ docker \
+    run \
+    -i \
+    --mount=type=bind,source=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/c5b1_q9w,target=/tbezBP \
+    --mount=type=bind,source=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/w8_3q0sz,target=/tmp \
+    --mount=type=bind,source=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/_9hk7559/dbsnp_138.b37.vcf,target=/var/lib/cwl/stgf9464dd7-8a86-4f45-bb32-f974cf951161/dbsnp_138.b37.vcf,readonly \
+    --mount=type=bind,source=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/4w75a1z2/abc2.sorted.md.realigned.bam,target=/var/lib/cwl/stg7b020c67-750f-4cc0-8bd1-661423cbe79d/abc2.sorted.md.realigned.bam,readonly \
+    --mount=type=bind,source=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/4w75a1z2/abc2.sorted.md.realigned.bai,target=/var/lib/cwl/stg7b020c67-750f-4cc0-8bd1-661423cbe79d/abc2.sorted.md.realigned.bai,readonly \
+    --mount=type=bind,source=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/kjdprpf_/Mills_and_1000G_gold_standard.indels.b37.vcf,target=/var/lib/cwl/stgaead38ed-7849-4e46-92c1-1e1037fc6bfc/Mills_and_1000G_gold_standard.indels.b37.vcf,readonly \
+    --mount=type=bind,source=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/v4u2m9bn/hs37d5.fa,target=/tbezBP/hs37d5.fa,readonly \
+    --mount=type=bind,source=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/84gkqhvu/hs37d5.fa.fai,target=/tbezBP/hs37d5.fa.fai,readonly \
+    --mount=type=bind,source=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/t9hptkto/hs37d5.dict,target=/tbezBP/hs37d5.dict,readonly \
+    --workdir=/tbezBP \
+    --read-only=true \
+    --user=1001:100 \
+    --rm \
+    --cidfile=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/u1_jm7ae/20230829221415-529822.cid \
+    --env=TMPDIR=/tmp \
+    --env=HOME=/tbezBP \
+    broadinstitute/gatk3:3.6-0 \
+    java \
+    -jar \
+    /usr/GenomeAnalysisTK.jar \
+    -T \
+    BaseRecalibrator \
+    -dt \
+    NONE \
+    --knownSites \
+    /var/lib/cwl/stgaead38ed-7849-4e46-92c1-1e1037fc6bfc/Mills_and_1000G_gold_standard.indels.b37.vcf \
+    --knownSites \
+    /var/lib/cwl/stgf9464dd7-8a86-4f45-bb32-f974cf951161/dbsnp_138.b37.vcf \
+    -R \
+    /tbezBP/hs37d5.fa \
+    -I \
+    /var/lib/cwl/stg7b020c67-750f-4cc0-8bd1-661423cbe79d/abc2.sorted.md.realigned.bam \
+    -o \
+    abc2.sorted.md.realigned.recalibrated.grp
+INFO  20:14:17,818 HelpFormatter - -------------------------------------------------------------------------------- 
+INFO  20:14:17,820 HelpFormatter - The Genome Analysis Toolkit (GATK) v3.6-0-g89b7209, Compiled 2016/06/01 22:27:29 
+INFO  20:14:17,820 HelpFormatter - Copyright (c) 2010-2016 The Broad Institute 
+INFO  20:14:17,820 HelpFormatter - For support and documentation go to https://www.broadinstitute.org/gatk 
+INFO  20:14:17,820 HelpFormatter - [Tue Aug 29 20:14:17 UTC 2023] Executing on Linux 6.1.8-gentoo amd64 
+INFO  20:14:17,820 HelpFormatter - OpenJDK 64-Bit Server VM 1.8.0_102-8u102-b14.1-1~bpo8+1-b14 JdkDeflater 
+INFO  20:14:17,823 HelpFormatter - Program Args: -T BaseRecalibrator -dt NONE --knownSites /var/lib/cwl/stgaead38ed-7849-4e46-92c1-1e1037fc6bfc/Mills_and_1000G_gold_standard.indels.b37.vcf --knownSites /var/lib/cwl/stgf9464dd7-8a86-4f45-bb32-f974cf951161/dbsnp_138.b37.vcf -R /tbezBP/hs37d5.fa -I /var/lib/cwl/stg7b020c67-750f-4cc0-8bd1-661423cbe79d/abc2.sorted.md.realigned.bam -o abc2.sorted.md.realigned.recalibrated.grp 
+INFO  20:14:17,848 HelpFormatter - Executing as ?@399f98f13ee5 on Linux 6.1.8-gentoo amd64; OpenJDK 64-Bit Server VM 1.8.0_102-8u102-b14.1-1~bpo8+1-b14. 
+INFO  20:14:17,848 HelpFormatter - Date/Time: 2023/08/29 20:14:17 
+INFO  20:14:17,848 HelpFormatter - -------------------------------------------------------------------------------- 
+INFO  20:14:17,848 HelpFormatter - -------------------------------------------------------------------------------- 
+INFO  20:14:17,853 GenomeAnalysisEngine - Strictness is SILENT 
+INFO  20:14:17,933 GenomeAnalysisEngine - Downsampling Settings: No downsampling 
+INFO  20:14:17,936 SAMDataSource$SAMReaders - Initializing SAMRecords in serial 
+INFO  20:14:17,948 SAMDataSource$SAMReaders - Done initializing BAM readers: total time 0.01 
+WARN  20:14:20,059 FSLockWithShared$LockAcquisitionTask - WARNING: Unable to lock file /var/lib/cwl/stgaead38ed-7849-4e46-92c1-1e1037fc6bfc/Mills_and_1000G_gold_standard.indels.b37.vcf.idx because we could not open a file channel 
+WARN  20:14:20,060 RMDTrackBuilder - Unable to write to /var/lib/cwl/stgaead38ed-7849-4e46-92c1-1e1037fc6bfc/Mills_and_1000G_gold_standard.indels.b37.vcf.idx for the index file, creating index in memory only 
+WARN  20:17:00,826 FSLockWithShared$LockAcquisitionTask - WARNING: Unable to lock file /var/lib/cwl/stgf9464dd7-8a86-4f45-bb32-f974cf951161/dbsnp_138.b37.vcf.idx because we could not open a file channel 
+WARN  20:17:00,827 RMDTrackBuilder - Unable to write to /var/lib/cwl/stgf9464dd7-8a86-4f45-bb32-f974cf951161/dbsnp_138.b37.vcf.idx for the index file, creating index in memory only 
+INFO  20:17:00,863 GenomeAnalysisEngine - Preparing for traversal over 1 BAM files 
+INFO  20:17:00,866 GenomeAnalysisEngine - Done preparing for traversal 
+INFO  20:17:00,866 ProgressMeter - [INITIALIZATION COMPLETE; STARTING PROCESSING] 
+INFO  20:17:00,866 ProgressMeter -                 | processed |    time |    per 1M |           |   total | remaining 
+INFO  20:17:00,866 ProgressMeter -        Location |     reads | elapsed |     reads | completed | runtime |   runtime 
+INFO  20:17:00,877 BaseRecalibrator - The covariates being used here:  
+INFO  20:17:00,877 BaseRecalibrator - 	ReadGroupCovariate 
+INFO  20:17:00,878 BaseRecalibrator - 	QualityScoreCovariate 
+INFO  20:17:00,878 BaseRecalibrator - 	ContextCovariate 
+INFO  20:17:00,878 ContextCovariate - 		Context sizes: base substitution model 2, indel substitution model 3 
+INFO  20:17:00,878 BaseRecalibrator - 	CycleCovariate 
+INFO  20:17:00,892 ReadShardBalancer$1 - Loading BAM index data 
+INFO  20:17:00,892 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  20:17:31,016 ProgressMeter -     1:145449717    300003.0    30.0 s     100.0 s        4.6%    10.8 m      10.3 m 
+INFO  20:18:01,214 ProgressMeter -      2:38904816    579518.0    60.0 s     104.0 s        9.2%    10.9 m       9.9 m 
+INFO  20:18:31,258 ProgressMeter -     2:200062986   1079523.0    90.0 s      83.0 s       14.3%    10.5 m       9.0 m 
+INFO  20:19:01,259 ProgressMeter -     3:117715239   1398433.0   120.0 s      86.0 s       19.4%    10.3 m       8.3 m 
+INFO  20:19:31,434 ProgressMeter -      4:68841852   1811105.0     2.5 m      83.0 s       24.2%    10.3 m       7.8 m 
+INFO  20:20:01,435 ProgressMeter -      5:30054693   2209156.0     3.0 m      81.0 s       29.1%    10.3 m       7.3 m 
+INFO  20:20:31,436 ProgressMeter -     5:180901644   2609160.0     3.5 m      80.0 s       33.9%    10.3 m       6.8 m 
+INFO  20:21:01,437 ProgressMeter -     6:164039940   3073487.0     4.0 m      78.0 s       39.1%    10.2 m       6.2 m 
+INFO  20:21:41,438 ProgressMeter -      8:39327526   3513738.0     4.7 m      79.0 s       45.6%    10.2 m       5.6 m 
+INFO  20:22:11,438 ProgressMeter -      9:37139192   3887002.0     5.2 m      79.0 s       50.2%    10.3 m       5.1 m 
+INFO  20:22:41,618 ProgressMeter -     10:83138644   4286897.0     5.7 m      79.0 s       56.2%    10.1 m       4.4 m 
+INFO  20:23:11,618 ProgressMeter -    11:105835534   4719665.0     6.2 m      78.0 s       61.3%    10.1 m       3.9 m 
+INFO  20:23:41,619 ProgressMeter -    12:124229620   5157003.0     6.7 m      77.0 s       66.1%    10.1 m       3.4 m 
+INFO  20:24:11,620 ProgressMeter -     14:56588916   5447986.0     7.2 m      79.0 s       71.9%    10.0 m       2.8 m 
+INFO  20:24:51,621 ProgressMeter -     16:82882821   5981600.0     7.8 m      78.0 s       79.4%     9.9 m       2.0 m 
+INFO  20:25:21,692 ProgressMeter -     18:65713505   6391674.0     8.3 m      78.0 s       84.4%     9.9 m      92.0 s 
+INFO  20:25:51,693 ProgressMeter -     21:31818209   6767107.0     8.8 m      78.0 s       89.7%     9.9 m      61.0 s 
+INFO  20:26:31,694 ProgressMeter - hs37d5:10827537   7394456.0     9.5 m      77.0 s       99.2%     9.6 m       4.0 s 
+INFO  20:26:52,344 BaseRecalibrator - Calculating quantized quality scores... 
+INFO  20:26:52,354 BaseRecalibrator - Writing recalibration report... 
+INFO  20:26:53,064 BaseRecalibrator - ...done! 
+INFO  20:26:53,064 BaseRecalibrator - BaseRecalibrator was able to recalibrate 7688720 reads 
+INFO  20:26:53,064 ProgressMeter -            done   7688732.0     9.9 m      77.0 s      100.0%     9.9 m       0.0 s 
+INFO  20:26:53,065 ProgressMeter - Total runtime 592.20 secs, 9.87 min, 0.16 hours 
+INFO  20:26:53,065 MicroScheduler - 340152 reads were filtered out during the traversal out of approximately 8028884 total reads (4.24%) 
+INFO  20:26:53,065 MicroScheduler -   -> 0 reads (0.00% of total) failing BadCigarFilter 
+INFO  20:26:53,065 MicroScheduler -   -> 0 reads (0.00% of total) failing DuplicateReadFilter 
+INFO  20:26:53,065 MicroScheduler -   -> 0 reads (0.00% of total) failing FailsVendorQualityCheckFilter 
+INFO  20:26:53,065 MicroScheduler -   -> 0 reads (0.00% of total) failing MalformedReadFilter 
+INFO  20:26:53,066 MicroScheduler -   -> 0 reads (0.00% of total) failing MappingQualityUnavailableFilter 
+INFO  20:26:53,066 MicroScheduler -   -> 328609 reads (4.09% of total) failing MappingQualityZeroFilter 
+INFO  20:26:53,066 MicroScheduler -   -> 11543 reads (0.14% of total) failing NotPrimaryAlignmentFilter 
+INFO  20:26:53,066 MicroScheduler -   -> 0 reads (0.00% of total) failing UnmappedReadFilter 
+------------------------------------------------------------------------------------------
+Done. There were 4 WARN messages, the first 4 are repeated below.
+WARN  20:14:20,059 FSLockWithShared$LockAcquisitionTask - WARNING: Unable to lock file /var/lib/cwl/stgaead38ed-7849-4e46-92c1-1e1037fc6bfc/Mills_and_1000G_gold_standard.indels.b37.vcf.idx because we could not open a file channel 
+WARN  20:14:20,060 RMDTrackBuilder - Unable to write to /var/lib/cwl/stgaead38ed-7849-4e46-92c1-1e1037fc6bfc/Mills_and_1000G_gold_standard.indels.b37.vcf.idx for the index file, creating index in memory only 
+WARN  20:17:00,826 FSLockWithShared$LockAcquisitionTask - WARNING: Unable to lock file /var/lib/cwl/stgf9464dd7-8a86-4f45-bb32-f974cf951161/dbsnp_138.b37.vcf.idx because we could not open a file channel 
+WARN  20:17:00,827 RMDTrackBuilder - Unable to write to /var/lib/cwl/stgf9464dd7-8a86-4f45-bb32-f974cf951161/dbsnp_138.b37.vcf.idx for the index file, creating index in memory only 
+------------------------------------------------------------------------------------------
+[1;30mINFO[0m [job gatk-base_recalibration] Max memory used: 7888MiB
+[1;30mINFO[0m [job gatk-base_recalibration] completed success
+[1;30mINFO[0m [step gatk-base_recalibration] completed success
+[1;30mINFO[0m [workflow ] starting step gatk-base_recalibration_print_reads
+[1;30mINFO[0m [step gatk-base_recalibration_print_reads] start
+[1;30mINFO[0m [job gatk-base_recalibration_print_reads] /scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/9v26hh75$ docker \
+    run \
+    -i \
+    --mount=type=bind,source=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/9v26hh75,target=/tbezBP \
+    --mount=type=bind,source=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/olq_tg7l,target=/tmp \
+    --mount=type=bind,source=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/4w75a1z2/abc2.sorted.md.realigned.bam,target=/var/lib/cwl/stgf5502e4b-a40b-489c-ac06-c51664e892ef/abc2.sorted.md.realigned.bam,readonly \
+    --mount=type=bind,source=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/4w75a1z2/abc2.sorted.md.realigned.bai,target=/var/lib/cwl/stgf5502e4b-a40b-489c-ac06-c51664e892ef/abc2.sorted.md.realigned.bai,readonly \
+    --mount=type=bind,source=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/v4u2m9bn/hs37d5.fa,target=/tbezBP/hs37d5.fa,readonly \
+    --mount=type=bind,source=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/84gkqhvu/hs37d5.fa.fai,target=/tbezBP/hs37d5.fa.fai,readonly \
+    --mount=type=bind,source=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/t9hptkto/hs37d5.dict,target=/tbezBP/hs37d5.dict,readonly \
+    --mount=type=bind,source=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/c5b1_q9w/abc2.sorted.md.realigned.recalibrated.grp,target=/tbezBP/abc2.sorted.md.realigned.recalibrated.grp,readonly \
+    --workdir=/tbezBP \
+    --read-only=true \
+    --user=1001:100 \
+    --rm \
+    --cidfile=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/qto0wib8/20230829222653-764036.cid \
+    --env=TMPDIR=/tmp \
+    --env=HOME=/tbezBP \
+    broadinstitute/gatk3:3.6-0 \
+    java \
+    -jar \
+    /usr/GenomeAnalysisTK.jar \
+    -T \
+    PrintReads \
+    -dt \
+    NONE \
+    -R \
+    /tbezBP/hs37d5.fa \
+    -I \
+    /var/lib/cwl/stgf5502e4b-a40b-489c-ac06-c51664e892ef/abc2.sorted.md.realigned.bam \
+    -o \
+    abc2.sorted.md.realigned.bqsr.bam \
+    -BQSR \
+    /tbezBP/abc2.sorted.md.realigned.recalibrated.grp
+INFO  20:26:56,149 HelpFormatter - -------------------------------------------------------------------------------- 
+INFO  20:26:56,150 HelpFormatter - The Genome Analysis Toolkit (GATK) v3.6-0-g89b7209, Compiled 2016/06/01 22:27:29 
+INFO  20:26:56,150 HelpFormatter - Copyright (c) 2010-2016 The Broad Institute 
+INFO  20:26:56,150 HelpFormatter - For support and documentation go to https://www.broadinstitute.org/gatk 
+INFO  20:26:56,151 HelpFormatter - [Tue Aug 29 20:26:56 UTC 2023] Executing on Linux 6.1.8-gentoo amd64 
+INFO  20:26:56,151 HelpFormatter - OpenJDK 64-Bit Server VM 1.8.0_102-8u102-b14.1-1~bpo8+1-b14 JdkDeflater 
+INFO  20:26:56,153 HelpFormatter - Program Args: -T PrintReads -dt NONE -R /tbezBP/hs37d5.fa -I /var/lib/cwl/stgf5502e4b-a40b-489c-ac06-c51664e892ef/abc2.sorted.md.realigned.bam -o abc2.sorted.md.realigned.bqsr.bam -BQSR /tbezBP/abc2.sorted.md.realigned.recalibrated.grp 
+INFO  20:26:56,156 HelpFormatter - Executing as ?@a9067f2750d3 on Linux 6.1.8-gentoo amd64; OpenJDK 64-Bit Server VM 1.8.0_102-8u102-b14.1-1~bpo8+1-b14. 
+INFO  20:26:56,156 HelpFormatter - Date/Time: 2023/08/29 20:26:56 
+INFO  20:26:56,156 HelpFormatter - -------------------------------------------------------------------------------- 
+INFO  20:26:56,157 HelpFormatter - -------------------------------------------------------------------------------- 
+INFO  20:26:56,181 GenomeAnalysisEngine - Strictness is SILENT 
+INFO  20:26:56,505 ContextCovariate - 		Context sizes: base substitution model 2, indel substitution model 3 
+INFO  20:26:56,524 GenomeAnalysisEngine - Downsampling Settings: No downsampling 
+INFO  20:26:56,527 SAMDataSource$SAMReaders - Initializing SAMRecords in serial 
+INFO  20:26:56,556 SAMDataSource$SAMReaders - Done initializing BAM readers: total time 0.03 
+INFO  20:26:56,670 GenomeAnalysisEngine - Preparing for traversal over 1 BAM files 
+INFO  20:26:56,673 GenomeAnalysisEngine - Done preparing for traversal 
+INFO  20:26:56,673 ProgressMeter - [INITIALIZATION COMPLETE; STARTING PROCESSING] 
+INFO  20:26:56,674 ProgressMeter -                 | processed |    time |    per 1M |           |   total | remaining 
+INFO  20:26:56,674 ProgressMeter -        Location |     reads | elapsed |     reads | completed | runtime |   runtime 
+INFO  20:26:56,679 ReadShardBalancer$1 - Loading BAM index data 
+INFO  20:26:56,680 ReadShardBalancer$1 - Done loading BAM index data 
+DEBUG	2023-08-29 20:26:57	BlockCompressedOutputStream	Using deflater: Deflater
+INFO  20:27:26,675 ProgressMeter -     1:144898827    300003.0    30.0 s     100.0 s        4.6%    10.8 m      10.3 m 
+INFO  20:27:56,719 ProgressMeter -      2:33141567    596309.0    60.0 s     100.0 s        9.0%    11.1 m      10.1 m 
+INFO  20:28:26,719 ProgressMeter -     2:182341017    996313.0    90.0 s      90.0 s       13.8%    10.9 m       9.4 m 
+INFO  20:28:56,720 ProgressMeter -      3:78058710   1431044.0   120.0 s      83.0 s       18.2%    11.0 m       9.0 m 
+INFO  20:29:36,720 ProgressMeter -      4:73008180   1848683.0     2.7 m      86.0 s       24.3%    11.0 m       8.3 m 
+INFO  20:30:06,721 ProgressMeter -      5:26961312   2252752.0     3.2 m      84.0 s       29.0%    10.9 m       7.8 m 
+INFO  20:30:36,722 ProgressMeter -     5:166137557   2652756.0     3.7 m      82.0 s       33.4%    11.0 m       7.3 m 
+INFO  20:31:16,722 ProgressMeter -      7:10555596   3174997.0     4.3 m      81.0 s       39.7%    10.9 m       6.6 m 
+INFO  20:31:46,723 ProgressMeter -       8:1978756   3584005.0     4.8 m      80.0 s       44.5%    10.9 m       6.0 m 
+INFO  20:32:16,785 ProgressMeter -       9:4385357   3967493.0     5.3 m      80.0 s       49.2%    10.8 m       5.5 m 
+INFO  20:32:46,786 ProgressMeter -     10:30624747   4288016.0     5.8 m      81.0 s       54.5%    10.7 m       4.9 m 
+INFO  20:33:26,786 ProgressMeter -    11:101845946   4827352.0     6.5 m      80.0 s       61.1%    10.6 m       4.1 m 
+INFO  20:33:56,787 ProgressMeter -    12:112594681   5169057.0     7.0 m      81.0 s       65.8%    10.6 m       3.6 m 
+INFO  20:34:36,787 ProgressMeter -     14:97859277   5766306.0     7.7 m      79.0 s       73.2%    10.5 m       2.8 m 
+INFO  20:35:06,788 ProgressMeter -     16:53955752   6110814.0     8.2 m      80.0 s       78.5%    10.4 m       2.2 m 
+INFO  20:35:36,789 ProgressMeter -     18:36765084   6440025.0     8.7 m      80.0 s       83.4%    10.4 m     103.0 s 
+INFO  20:36:16,789 ProgressMeter -     22:24975143   7019972.0     9.3 m      79.0 s       91.0%    10.3 m      55.0 s 
+INFO  20:36:46,790 ProgressMeter -     X:121042984   7405480.0     9.8 m      79.0 s       95.7%    10.3 m      26.0 s 
+INFO  20:37:26,791 ProgressMeter - hs37d5:28633483   7908371.0    10.5 m      79.0 s       99.8%    10.5 m       1.0 s 
+INFO  20:37:31,157 Walker - [REDUCE RESULT] Traversal result is: org.broadinstitute.gatk.engine.io.stubs.SAMFileWriterStub@3395c2a7 
+INFO  20:37:31,175 ProgressMeter -            done   8028884.0    10.6 m      79.0 s      100.0%    10.6 m       0.0 s 
+INFO  20:37:31,175 ProgressMeter - Total runtime 634.50 secs, 10.58 min, 0.18 hours 
+INFO  20:37:31,175 MicroScheduler - 0 reads were filtered out during the traversal out of approximately 8028884 total reads (0.00%) 
+INFO  20:37:31,175 MicroScheduler -   -> 0 reads (0.00% of total) failing BadCigarFilter 
+INFO  20:37:31,175 MicroScheduler -   -> 0 reads (0.00% of total) failing MalformedReadFilter 
+------------------------------------------------------------------------------------------
+Done. There were no warn messages.
+------------------------------------------------------------------------------------------
+[1;30mINFO[0m [job gatk-base_recalibration_print_reads] Max memory used: 6282MiB
+[1;30mINFO[0m [job gatk-base_recalibration_print_reads] completed success
+[1;30mINFO[0m [step gatk-base_recalibration_print_reads] completed success
+[1;30mINFO[0m [workflow ] starting step gatk_haplotype_caller
+[1;30mINFO[0m [step gatk_haplotype_caller] start
+[1;30mINFO[0m [job gatk_haplotype_caller] /scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/305d28ad$ docker \
+    run \
+    -i \
+    --mount=type=bind,source=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/305d28ad,target=/tbezBP \
+    --mount=type=bind,source=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/09h3vs4o,target=/tmp \
+    --mount=type=bind,source=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/9v26hh75/abc2.sorted.md.realigned.bqsr.bam,target=/var/lib/cwl/stgcf9884b8-3244-4e95-84f4-a6d07c193e21/abc2.sorted.md.realigned.bqsr.bam,readonly \
+    --mount=type=bind,source=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/9v26hh75/abc2.sorted.md.realigned.bqsr.bai,target=/var/lib/cwl/stgcf9884b8-3244-4e95-84f4-a6d07c193e21/abc2.sorted.md.realigned.bqsr.bai,readonly \
+    --mount=type=bind,source=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/v4u2m9bn/hs37d5.fa,target=/tbezBP/hs37d5.fa,readonly \
+    --mount=type=bind,source=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/84gkqhvu/hs37d5.fa.fai,target=/tbezBP/hs37d5.fa.fai,readonly \
+    --mount=type=bind,source=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/t9hptkto/hs37d5.dict,target=/tbezBP/hs37d5.dict,readonly \
+    --workdir=/tbezBP \
+    --read-only=true \
+    --user=1001:100 \
+    --rm \
+    --cidfile=/scratch/jmfernandez/TEMP/wfexs-backend-test_WorkDir/a37fee9e-4288-4a9e-b493-993a867207d0/intermediate/2zia6s3q/20230829223736-158275.cid \
+    --env=TMPDIR=/tmp \
+    --env=HOME=/tbezBP \
+    broadinstitute/gatk3:3.6-0 \
+    java \
+    -jar \
+    /usr/GenomeAnalysisTK.jar \
+    -T \
+    HaplotypeCaller \
+    --never_trim_vcf_format_field \
+    --num_cpu_threads_per_data_thread \
+    2 \
+    -dt \
+    NONE \
+    -rf \
+    BadCigar \
+    -ERC \
+    GVCF \
+    -variant_index_type \
+    LINEAR \
+    -variant_index_parameter \
+    128000 \
+    -o \
+    abc2.sorted.md.realigned.bqsr.vcf.gz \
+    -R \
+    /tbezBP/hs37d5.fa \
+    -I \
+    /var/lib/cwl/stgcf9884b8-3244-4e95-84f4-a6d07c193e21/abc2.sorted.md.realigned.bqsr.bam \
+    -L \
+    1 \
+    --GVCFGQBands \
+    20 \
+    --GVCFGQBands \
+    25 \
+    --GVCFGQBands \
+    30 \
+    --GVCFGQBands \
+    35 \
+    --GVCFGQBands \
+    40 \
+    --GVCFGQBands \
+    45 \
+    --GVCFGQBands \
+    50 \
+    --GVCFGQBands \
+    70 \
+    --GVCFGQBands \
+    90 \
+    --GVCFGQBands \
+    99
+INFO  20:37:38,446 HelpFormatter - -------------------------------------------------------------------------------- 
+INFO  20:37:38,448 HelpFormatter - The Genome Analysis Toolkit (GATK) v3.6-0-g89b7209, Compiled 2016/06/01 22:27:29 
+INFO  20:37:38,448 HelpFormatter - Copyright (c) 2010-2016 The Broad Institute 
+INFO  20:37:38,448 HelpFormatter - For support and documentation go to https://www.broadinstitute.org/gatk 
+INFO  20:37:38,448 HelpFormatter - [Tue Aug 29 20:37:38 UTC 2023] Executing on Linux 6.1.8-gentoo amd64 
+INFO  20:37:38,448 HelpFormatter - OpenJDK 64-Bit Server VM 1.8.0_102-8u102-b14.1-1~bpo8+1-b14 JdkDeflater 
+INFO  20:37:38,450 HelpFormatter - Program Args: -T HaplotypeCaller --never_trim_vcf_format_field --num_cpu_threads_per_data_thread 2 -dt NONE -rf BadCigar -ERC GVCF -variant_index_type LINEAR -variant_index_parameter 128000 -o abc2.sorted.md.realigned.bqsr.vcf.gz -R /tbezBP/hs37d5.fa -I /var/lib/cwl/stgcf9884b8-3244-4e95-84f4-a6d07c193e21/abc2.sorted.md.realigned.bqsr.bam -L 1 --GVCFGQBands 20 --GVCFGQBands 25 --GVCFGQBands 30 --GVCFGQBands 35 --GVCFGQBands 40 --GVCFGQBands 45 --GVCFGQBands 50 --GVCFGQBands 70 --GVCFGQBands 90 --GVCFGQBands 99 
+INFO  20:37:38,474 HelpFormatter - Executing as ?@e064f2326e30 on Linux 6.1.8-gentoo amd64; OpenJDK 64-Bit Server VM 1.8.0_102-8u102-b14.1-1~bpo8+1-b14. 
+INFO  20:37:38,475 HelpFormatter - Date/Time: 2023/08/29 20:37:38 
+INFO  20:37:38,476 HelpFormatter - -------------------------------------------------------------------------------- 
+INFO  20:37:38,476 HelpFormatter - -------------------------------------------------------------------------------- 
+WARN  20:37:38,484 GATKVCFUtils - Naming your output file using the .g.vcf extension will automatically set the appropriate values  for --variant_index_type and --variant_index_parameter 
+WARN  20:37:38,487 GATKVCFUtils - Creating Tabix index for abc2.sorted.md.realigned.bqsr.vcf.gz, ignoring user-specified index type and parameter 
+INFO  20:37:38,505 GenomeAnalysisEngine - Strictness is SILENT 
+INFO  20:37:38,627 GenomeAnalysisEngine - Downsampling Settings: No downsampling 
+INFO  20:37:38,630 SAMDataSource$SAMReaders - Initializing SAMRecords in serial 
+INFO  20:37:38,648 SAMDataSource$SAMReaders - Done initializing BAM readers: total time 0.02 
+INFO  20:37:38,656 HCMappingQualityFilter - Filtering out reads with MAPQ < 20 
+INFO  20:37:38,660 IntervalUtils - Processing 249250621 bp from intervals 
+INFO  20:37:38,665 MicroScheduler - Running the GATK in parallel mode with 2 total threads, 2 CPU thread(s) for each of 1 data thread(s), of 8 processors available on this machine 
+INFO  20:37:38,694 GenomeAnalysisEngine - Preparing for traversal over 1 BAM files 
+INFO  20:37:38,812 GenomeAnalysisEngine - Done preparing for traversal 
+INFO  20:37:38,812 ProgressMeter - [INITIALIZATION COMPLETE; STARTING PROCESSING] 
+INFO  20:37:38,812 ProgressMeter -                 |      processed |    time |         per 1M |           |   total | remaining 
+INFO  20:37:38,812 ProgressMeter -        Location | active regions | elapsed | active regions | completed | runtime |   runtime 
+INFO  20:37:38,812 HaplotypeCaller - Standard Emitting and Calling confidence set to 0.0 for reference-model confidence output 
+INFO  20:37:38,813 HaplotypeCaller - All sites annotated with PLs forced to true for reference-model confidence output 
+WARN  20:37:38,837 InbreedingCoeff - Annotation will not be calculated. InbreedingCoeff requires at least 10 unrelated samples. 
+DEBUG	2023-08-29 20:37:38	BlockCompressedOutputStream	Using deflater: Deflater
+INFO  20:37:38,887 HaplotypeCaller - Using global mismapping rate of 45 => -4.5 in log10 likelihood units 
+INFO  20:37:38,887 PairHMM - Performance profiling for PairHMM is disabled because the program is being run with multiple threads (-nct>1) option
+Profiling is enabled only when running in single thread mode
+ 
+Using AVX accelerated implementation of PairHMM
+INFO  20:37:39,970 VectorLoglessPairHMM - libVectorLoglessPairHMM unpacked successfully from GATK jar file 
+INFO  20:37:39,971 VectorLoglessPairHMM - Using vectorized implementation of PairHMM 
+WARN  20:37:40,050 HaplotypeScore - Annotation will not be calculated, must be called from UnifiedGenotyper 
+WARN  20:37:42,032 AnnotationUtils - Annotation will not be calculated, genotype is not called 
+WARN  20:37:42,032 AnnotationUtils - Annotation will not be calculated, genotype is not called 
+INFO  20:38:08,814 ProgressMeter -      1:36267446              0.0    30.0 s           49.6 w       14.6%     3.4 m       2.9 m 
+INFO  20:38:38,814 ProgressMeter -      1:76022600              0.0    60.0 s           99.2 w       30.5%     3.3 m       2.3 m 
+INFO  20:39:08,815 ProgressMeter -     1:113363731              0.0    90.0 s          148.8 w       45.5%     3.3 m     107.0 s 
+INFO  20:39:48,815 ProgressMeter -     1:177597228              0.0     2.2 m          215.0 w       71.3%     3.0 m      52.0 s 
+INFO  20:40:18,816 ProgressMeter -     1:216655207              0.0     2.7 m          264.6 w       86.9%     3.1 m      24.0 s 
+INFO  20:40:44,556 HaplotypeCaller - Ran local assembly on 919808 active regions 
+DEBUG	2023-08-29 20:40:44	BlockCompressedOutputStream	Using deflater: Deflater
+INFO  20:40:44,572 ProgressMeter -            done     2.49250621E8     3.1 m            0.0 s      100.0%     3.1 m       0.0 s 
+INFO  20:40:44,572 ProgressMeter - Total runtime 185.76 secs, 3.10 min, 0.05 hours 
+INFO  20:40:44,573 MicroScheduler - 19923 reads were filtered out during the traversal out of approximately 596309 total reads (3.34%) 
+INFO  20:40:44,573 MicroScheduler -   -> 0 reads (0.00% of total) failing BadCigarFilter 
+INFO  20:40:44,573 MicroScheduler -   -> 0 reads (0.00% of total) failing DuplicateReadFilter 
+INFO  20:40:44,573 MicroScheduler -   -> 0 reads (0.00% of total) failing FailsVendorQualityCheckFilter 
+INFO  20:40:44,573 MicroScheduler -   -> 19466 reads (3.26% of total) failing HCMappingQualityFilter 
+INFO  20:40:44,573 MicroScheduler -   -> 0 reads (0.00% of total) failing MalformedReadFilter 
+INFO  20:40:44,573 MicroScheduler -   -> 0 reads (0.00% of total) failing MappingQualityUnavailableFilter 
+INFO  20:40:44,573 MicroScheduler -   -> 457 reads (0.08% of total) failing NotPrimaryAlignmentFilter 
+INFO  20:40:44,574 MicroScheduler -   -> 0 reads (0.00% of total) failing UnmappedReadFilter 
+------------------------------------------------------------------------------------------
+Done. There were 6 WARN messages, the first 6 are repeated below.
+WARN  20:37:38,484 GATKVCFUtils - Naming your output file using the .g.vcf extension will automatically set the appropriate values  for --variant_index_type and --variant_index_parameter 
+WARN  20:37:38,487 GATKVCFUtils - Creating Tabix index for abc2.sorted.md.realigned.bqsr.vcf.gz, ignoring user-specified index type and parameter 
+WARN  20:37:38,837 InbreedingCoeff - Annotation will not be calculated. InbreedingCoeff requires at least 10 unrelated samples. 
+WARN  20:37:40,050 HaplotypeScore - Annotation will not be calculated, must be called from UnifiedGenotyper 
+WARN  20:37:42,032 AnnotationUtils - Annotation will not be calculated, genotype is not called 
+WARN  20:37:42,032 AnnotationUtils - Annotation will not be calculated, genotype is not called 
+------------------------------------------------------------------------------------------
+[1;30mINFO[0m [job gatk_haplotype_caller] Max memory used: 6179MiB
+[1;30mINFO[0m [job gatk_haplotype_caller] completed success
+[1;30mINFO[0m [step gatk_haplotype_caller] completed success
+[1;30mINFO[0m [workflow ] completed success
+[1;30mINFO[0m Final process status is success

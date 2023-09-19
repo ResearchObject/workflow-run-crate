@@ -1,0 +1,674 @@
+digraph "dag" {
+p0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+p12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p0 -> p12 [label="ch_raws"];
+
+p1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+p2 [shape=point];
+p1 -> p2 [label="ch_multiqc_custom_config"];
+
+p3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+p4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+p3 -> p4;
+
+p4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+p5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p4 -> p5;
+
+p5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p5 -> p48 [label="ptm_mapping"];
+
+p6 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+p7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+p6 -> p7;
+
+p7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+p8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p7 -> p8;
+
+p8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p97 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p8 -> p97 [label="ch_ptm_mapping2"];
+
+p9 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+p53 [label="NFCORE_WOMBAT:WOMBAT:PROLINE:CONFIG_PROLINE"];
+p9 -> p53 [label="ch_proline_parameters"];
+
+p10 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+p11 [shape=point];
+p10 -> p11 [label="ch_versions"];
+
+p12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p18 [label="NFCORE_WOMBAT:WOMBAT:PREPARE_FILES"];
+p12 -> p18;
+
+p13 [shape=point,label="",fixedsize=true,width=0.1];
+p18 [label="NFCORE_WOMBAT:WOMBAT:PREPARE_FILES"];
+p13 -> p18 [label="sdrf"];
+
+p14 [shape=point,label="",fixedsize=true,width=0.1];
+p18 [label="NFCORE_WOMBAT:WOMBAT:PREPARE_FILES"];
+p14 -> p18 [label="parameters"];
+
+p15 [shape=point,label="",fixedsize=true,width=0.1];
+p18 [label="NFCORE_WOMBAT:WOMBAT:PREPARE_FILES"];
+p15 -> p18 [label="exp_design"];
+
+p16 [shape=point,label="",fixedsize=true,width=0.1];
+p18 [label="NFCORE_WOMBAT:WOMBAT:PREPARE_FILES"];
+p16 -> p18 [label="mzmls"];
+
+p17 [shape=point,label="",fixedsize=true,width=0.1];
+p18 [label="NFCORE_WOMBAT:WOMBAT:PREPARE_FILES"];
+p17 -> p18 [label="map"];
+
+p18 [label="NFCORE_WOMBAT:WOMBAT:PREPARE_FILES"];
+p22 [label="NFCORE_WOMBAT:WOMBAT:SDRFMERGE"];
+p18 -> p22;
+
+p18 [label="NFCORE_WOMBAT:WOMBAT:PREPARE_FILES"];
+p55 [label="NFCORE_WOMBAT:WOMBAT:PROLINE:EXP_DESIGN_PROLINE"];
+p18 -> p55 [label="exp_design"];
+
+p18 [label="NFCORE_WOMBAT:WOMBAT:PREPARE_FILES"];
+p22 [label="NFCORE_WOMBAT:WOMBAT:SDRFMERGE"];
+p18 -> p22;
+
+p18 [label="NFCORE_WOMBAT:WOMBAT:PREPARE_FILES"];
+p20 [shape=point];
+p18 -> p20;
+
+p18 [label="NFCORE_WOMBAT:WOMBAT:PREPARE_FILES"];
+p29 [label="NFCORE_WOMBAT:WOMBAT:MAXQUANT:MAXQUANT_LFQ"];
+p18 -> p29 [label="raws"];
+
+p18 [label="NFCORE_WOMBAT:WOMBAT:PREPARE_FILES"];
+p19 [shape=point];
+p18 -> p19;
+
+p21 [shape=point,label="",fixedsize=true,width=0.1];
+p22 [label="NFCORE_WOMBAT:WOMBAT:SDRFMERGE"];
+p21 -> p22 [label="map"];
+
+p22 [label="NFCORE_WOMBAT:WOMBAT:SDRFMERGE"];
+p26 [label="NFCORE_WOMBAT:WOMBAT:MAXQUANT:CONVERT_MAXQUANT"];
+p22 -> p26 [label="sdrf_local"];
+
+p22 [label="NFCORE_WOMBAT:WOMBAT:SDRFMERGE"];
+p24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p22 -> p24;
+
+p22 [label="NFCORE_WOMBAT:WOMBAT:SDRFMERGE"];
+p23 [shape=point];
+p22 -> p23;
+
+p24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p31 [label="NFCORE_WOMBAT:WOMBAT:MAXQUANT:NORMALYZERDE"];
+p24 -> p31 [label="parameters"];
+
+p25 [shape=point,label="",fixedsize=true,width=0.1];
+p26 [label="NFCORE_WOMBAT:WOMBAT:MAXQUANT:CONVERT_MAXQUANT"];
+p25 -> p26 [label="fasta"];
+
+p26 [label="NFCORE_WOMBAT:WOMBAT:MAXQUANT:CONVERT_MAXQUANT"];
+p29 [label="NFCORE_WOMBAT:WOMBAT:MAXQUANT:MAXQUANT_LFQ"];
+p26 -> p29;
+
+p26 [label="NFCORE_WOMBAT:WOMBAT:MAXQUANT:CONVERT_MAXQUANT"];
+p31 [label="NFCORE_WOMBAT:WOMBAT:MAXQUANT:NORMALYZERDE"];
+p26 -> p31;
+
+p26 [label="NFCORE_WOMBAT:WOMBAT:MAXQUANT:CONVERT_MAXQUANT"];
+p31 [label="NFCORE_WOMBAT:WOMBAT:MAXQUANT:NORMALYZERDE"];
+p26 -> p31;
+
+p26 [label="NFCORE_WOMBAT:WOMBAT:MAXQUANT:CONVERT_MAXQUANT"];
+p27 [shape=point];
+p26 -> p27;
+
+p28 [shape=point,label="",fixedsize=true,width=0.1];
+p29 [label="NFCORE_WOMBAT:WOMBAT:MAXQUANT:MAXQUANT_LFQ"];
+p28 -> p29 [label="fasta"];
+
+p29 [label="NFCORE_WOMBAT:WOMBAT:MAXQUANT:MAXQUANT_LFQ"];
+p31 [label="NFCORE_WOMBAT:WOMBAT:MAXQUANT:NORMALYZERDE"];
+p29 -> p31;
+
+p29 [label="NFCORE_WOMBAT:WOMBAT:MAXQUANT:MAXQUANT_LFQ"];
+p30 [shape=point];
+p29 -> p30;
+
+p31 [label="NFCORE_WOMBAT:WOMBAT:MAXQUANT:NORMALYZERDE"];
+p34 [shape=point];
+p31 -> p34;
+
+p31 [label="NFCORE_WOMBAT:WOMBAT:MAXQUANT:NORMALYZERDE"];
+p33 [shape=point];
+p31 -> p33;
+
+p31 [label="NFCORE_WOMBAT:WOMBAT:MAXQUANT:NORMALYZERDE"];
+p32 [shape=point];
+p31 -> p32;
+
+p31 [label="NFCORE_WOMBAT:WOMBAT:MAXQUANT:NORMALYZERDE"];
+p38 [label="NFCORE_WOMBAT:WOMBAT:CALCBENCHMARKS_MQ"];
+p31 -> p38 [label="$out1"];
+
+p31 [label="NFCORE_WOMBAT:WOMBAT:MAXQUANT:NORMALYZERDE"];
+p38 [label="NFCORE_WOMBAT:WOMBAT:CALCBENCHMARKS_MQ"];
+p31 -> p38 [label="$out2"];
+
+p31 [label="NFCORE_WOMBAT:WOMBAT:MAXQUANT:NORMALYZERDE"];
+p38 [label="NFCORE_WOMBAT:WOMBAT:CALCBENCHMARKS_MQ"];
+p31 -> p38 [label="$out0"];
+
+p35 [shape=point,label="",fixedsize=true,width=0.1];
+p38 [label="NFCORE_WOMBAT:WOMBAT:CALCBENCHMARKS_MQ"];
+p35 -> p38 [label="foo"];
+
+p36 [shape=point,label="",fixedsize=true,width=0.1];
+p38 [label="NFCORE_WOMBAT:WOMBAT:CALCBENCHMARKS_MQ"];
+p36 -> p38 [label="fasta_file"];
+
+p37 [shape=point,label="",fixedsize=true,width=0.1];
+p38 [label="NFCORE_WOMBAT:WOMBAT:CALCBENCHMARKS_MQ"];
+p37 -> p38 [label="workflow"];
+
+p38 [label="NFCORE_WOMBAT:WOMBAT:CALCBENCHMARKS_MQ"];
+p41 [shape=point];
+p38 -> p41;
+
+p38 [label="NFCORE_WOMBAT:WOMBAT:CALCBENCHMARKS_MQ"];
+p40 [shape=point];
+p38 -> p40;
+
+p38 [label="NFCORE_WOMBAT:WOMBAT:CALCBENCHMARKS_MQ"];
+p39 [shape=point];
+p38 -> p39;
+
+p18 [label="NFCORE_WOMBAT:WOMBAT:PREPARE_FILES"];
+p42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+p18 -> p42 [label="raws"];
+
+p42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+p43 [label="NFCORE_WOMBAT:WOMBAT:PROLINE:RAW2MZDB"];
+p42 -> p43 [label="raws"];
+
+p43 [label="NFCORE_WOMBAT:WOMBAT:PROLINE:RAW2MZDB"];
+p44 [label="NFCORE_WOMBAT:WOMBAT:PROLINE:MZDB2MGF"];
+p43 -> p44;
+
+p44 [label="NFCORE_WOMBAT:WOMBAT:PROLINE:MZDB2MGF"];
+p51 [label="NFCORE_WOMBAT:WOMBAT:PROLINE:RUN_SEARCHGUI"];
+p44 -> p51;
+
+p45 [shape=point,label="",fixedsize=true,width=0.1];
+p47 [label="NFCORE_WOMBAT:WOMBAT:PROLINE:CREATE_DECOY_DATABASE"];
+p45 -> p47 [label="fasta"];
+
+p46 [shape=point,label="",fixedsize=true,width=0.1];
+p47 [label="NFCORE_WOMBAT:WOMBAT:PROLINE:CREATE_DECOY_DATABASE"];
+p46 -> p47 [label="run"];
+
+p47 [label="NFCORE_WOMBAT:WOMBAT:PROLINE:CREATE_DECOY_DATABASE"];
+p50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p47 -> p50;
+
+p48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p49 [label="NFCORE_WOMBAT:WOMBAT:PROLINE:PREPARE_SEARCHGUI"];
+p48 -> p49;
+
+p24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p49 [label="NFCORE_WOMBAT:WOMBAT:PROLINE:PREPARE_SEARCHGUI"];
+p24 -> p49 [label="parameters"];
+
+p49 [label="NFCORE_WOMBAT:WOMBAT:PROLINE:PREPARE_SEARCHGUI"];
+p51 [label="NFCORE_WOMBAT:WOMBAT:PROLINE:RUN_SEARCHGUI"];
+p49 -> p51;
+
+p50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p51 [label="NFCORE_WOMBAT:WOMBAT:PROLINE:RUN_SEARCHGUI"];
+p50 -> p51;
+
+p51 [label="NFCORE_WOMBAT:WOMBAT:PROLINE:RUN_SEARCHGUI"];
+p52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p51 -> p52;
+
+p52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p53 [label="NFCORE_WOMBAT:WOMBAT:PROLINE:CONFIG_PROLINE"];
+p52 -> p53;
+
+p24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p53 [label="NFCORE_WOMBAT:WOMBAT:PROLINE:CONFIG_PROLINE"];
+p24 -> p53 [label="parameters"];
+
+p53 [label="NFCORE_WOMBAT:WOMBAT:PROLINE:CONFIG_PROLINE"];
+p57 [label="NFCORE_WOMBAT:WOMBAT:PROLINE:RUN_PROLINE"];
+p53 -> p57;
+
+p53 [label="NFCORE_WOMBAT:WOMBAT:PROLINE:CONFIG_PROLINE"];
+p57 [label="NFCORE_WOMBAT:WOMBAT:PROLINE:RUN_PROLINE"];
+p53 -> p57;
+
+p53 [label="NFCORE_WOMBAT:WOMBAT:PROLINE:CONFIG_PROLINE"];
+p57 [label="NFCORE_WOMBAT:WOMBAT:PROLINE:RUN_PROLINE"];
+p53 -> p57;
+
+p43 [label="NFCORE_WOMBAT:WOMBAT:PROLINE:RAW2MZDB"];
+p54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p43 -> p54;
+
+p54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p55 [label="NFCORE_WOMBAT:WOMBAT:PROLINE:EXP_DESIGN_PROLINE"];
+p54 -> p55;
+
+p55 [label="NFCORE_WOMBAT:WOMBAT:PROLINE:EXP_DESIGN_PROLINE"];
+p57 [label="NFCORE_WOMBAT:WOMBAT:PROLINE:RUN_PROLINE"];
+p55 -> p57;
+
+p43 [label="NFCORE_WOMBAT:WOMBAT:PROLINE:RAW2MZDB"];
+p56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p43 -> p56;
+
+p56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p57 [label="NFCORE_WOMBAT:WOMBAT:PROLINE:RUN_PROLINE"];
+p56 -> p57;
+
+p57 [label="NFCORE_WOMBAT:WOMBAT:PROLINE:RUN_PROLINE"];
+p58 [label="NFCORE_WOMBAT:WOMBAT:PROLINE:POLYSTEST"];
+p57 -> p58;
+
+p55 [label="NFCORE_WOMBAT:WOMBAT:PROLINE:EXP_DESIGN_PROLINE"];
+p58 [label="NFCORE_WOMBAT:WOMBAT:PROLINE:POLYSTEST"];
+p55 -> p58 [label="exp_design"];
+
+p24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p58 [label="NFCORE_WOMBAT:WOMBAT:PROLINE:POLYSTEST"];
+p24 -> p58 [label="parameters"];
+
+p58 [label="NFCORE_WOMBAT:WOMBAT:PROLINE:POLYSTEST"];
+p59 [label="NFCORE_WOMBAT:WOMBAT:PROLINE:CONVERT_POLYSTEST"];
+p58 -> p59 [label="$out3"];
+
+p58 [label="NFCORE_WOMBAT:WOMBAT:PROLINE:POLYSTEST"];
+p59 [label="NFCORE_WOMBAT:WOMBAT:PROLINE:CONVERT_POLYSTEST"];
+p58 -> p59 [label="$out4"];
+
+p55 [label="NFCORE_WOMBAT:WOMBAT:PROLINE:EXP_DESIGN_PROLINE"];
+p59 [label="NFCORE_WOMBAT:WOMBAT:PROLINE:CONVERT_POLYSTEST"];
+p55 -> p59 [label="exp_design"];
+
+p59 [label="NFCORE_WOMBAT:WOMBAT:PROLINE:CONVERT_POLYSTEST"];
+p63 [label="NFCORE_WOMBAT:WOMBAT:CALCBENCHMARKS_PROLINE"];
+p59 -> p63 [label="$out2"];
+
+p59 [label="NFCORE_WOMBAT:WOMBAT:PROLINE:CONVERT_POLYSTEST"];
+p63 [label="NFCORE_WOMBAT:WOMBAT:CALCBENCHMARKS_PROLINE"];
+p59 -> p63 [label="$out1"];
+
+p59 [label="NFCORE_WOMBAT:WOMBAT:PROLINE:CONVERT_POLYSTEST"];
+p63 [label="NFCORE_WOMBAT:WOMBAT:CALCBENCHMARKS_PROLINE"];
+p59 -> p63 [label="$out0"];
+
+p60 [shape=point,label="",fixedsize=true,width=0.1];
+p63 [label="NFCORE_WOMBAT:WOMBAT:CALCBENCHMARKS_PROLINE"];
+p60 -> p63 [label="foo"];
+
+p61 [shape=point,label="",fixedsize=true,width=0.1];
+p63 [label="NFCORE_WOMBAT:WOMBAT:CALCBENCHMARKS_PROLINE"];
+p61 -> p63 [label="fasta_file"];
+
+p62 [shape=point,label="",fixedsize=true,width=0.1];
+p63 [label="NFCORE_WOMBAT:WOMBAT:CALCBENCHMARKS_PROLINE"];
+p62 -> p63 [label="workflow"];
+
+p63 [label="NFCORE_WOMBAT:WOMBAT:CALCBENCHMARKS_PROLINE"];
+p66 [shape=point];
+p63 -> p66;
+
+p63 [label="NFCORE_WOMBAT:WOMBAT:CALCBENCHMARKS_PROLINE"];
+p65 [shape=point];
+p63 -> p65;
+
+p63 [label="NFCORE_WOMBAT:WOMBAT:CALCBENCHMARKS_PROLINE"];
+p64 [shape=point];
+p63 -> p64;
+
+p18 [label="NFCORE_WOMBAT:WOMBAT:PREPARE_FILES"];
+p67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+p18 -> p67 [label="raws"];
+
+p67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+p68 [label="NFCORE_WOMBAT:WOMBAT:COMPOMICS:RAW2MZML"];
+p67 -> p68 [label="raws"];
+
+p68 [label="NFCORE_WOMBAT:WOMBAT:COMPOMICS:RAW2MZML"];
+p75 [label="NFCORE_WOMBAT:WOMBAT:COMPOMICS:RUN_SEARCHGUI"];
+p68 -> p75;
+
+p69 [shape=point,label="",fixedsize=true,width=0.1];
+p71 [label="NFCORE_WOMBAT:WOMBAT:COMPOMICS:CREATE_DECOY_DATABASE"];
+p69 -> p71 [label="fasta"];
+
+p70 [shape=point,label="",fixedsize=true,width=0.1];
+p71 [label="NFCORE_WOMBAT:WOMBAT:COMPOMICS:CREATE_DECOY_DATABASE"];
+p70 -> p71 [label="run"];
+
+p71 [label="NFCORE_WOMBAT:WOMBAT:COMPOMICS:CREATE_DECOY_DATABASE"];
+p74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p71 -> p74;
+
+p5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p5 -> p72 [label="ptm_mapping"];
+
+p72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p73 [label="NFCORE_WOMBAT:WOMBAT:COMPOMICS:PREPARE_SEARCHGUI"];
+p72 -> p73;
+
+p24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p73 [label="NFCORE_WOMBAT:WOMBAT:COMPOMICS:PREPARE_SEARCHGUI"];
+p24 -> p73 [label="parameters"];
+
+p73 [label="NFCORE_WOMBAT:WOMBAT:COMPOMICS:PREPARE_SEARCHGUI"];
+p75 [label="NFCORE_WOMBAT:WOMBAT:COMPOMICS:RUN_SEARCHGUI"];
+p73 -> p75;
+
+p74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p75 [label="NFCORE_WOMBAT:WOMBAT:COMPOMICS:RUN_SEARCHGUI"];
+p74 -> p75;
+
+p75 [label="NFCORE_WOMBAT:WOMBAT:COMPOMICS:RUN_SEARCHGUI"];
+p77 [label="NFCORE_WOMBAT:WOMBAT:COMPOMICS:RUN_PEPTIDESHAKER"];
+p75 -> p77;
+
+p71 [label="NFCORE_WOMBAT:WOMBAT:COMPOMICS:CREATE_DECOY_DATABASE"];
+p76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p71 -> p76;
+
+p76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p77 [label="NFCORE_WOMBAT:WOMBAT:COMPOMICS:RUN_PEPTIDESHAKER"];
+p76 -> p77;
+
+p77 [label="NFCORE_WOMBAT:WOMBAT:COMPOMICS:RUN_PEPTIDESHAKER"];
+p78 [label="NFCORE_WOMBAT:WOMBAT:COMPOMICS:PEPTIDESHAKER_REPORT"];
+p77 -> p78;
+
+p78 [label="NFCORE_WOMBAT:WOMBAT:COMPOMICS:PEPTIDESHAKER_REPORT"];
+p79 [shape=point];
+p78 -> p79;
+
+p78 [label="NFCORE_WOMBAT:WOMBAT:COMPOMICS:PEPTIDESHAKER_REPORT"];
+p85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p78 -> p85;
+
+p78 [label="NFCORE_WOMBAT:WOMBAT:COMPOMICS:PEPTIDESHAKER_REPORT"];
+p86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p78 -> p86;
+
+p78 [label="NFCORE_WOMBAT:WOMBAT:COMPOMICS:PEPTIDESHAKER_REPORT"];
+p80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p78 -> p80;
+
+p80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p82 [label="NFCORE_WOMBAT:WOMBAT:COMPOMICS:FLASHLFQ"];
+p80 -> p82;
+
+p68 [label="NFCORE_WOMBAT:WOMBAT:COMPOMICS:RAW2MZML"];
+p81 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p68 -> p81;
+
+p81 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p82 [label="NFCORE_WOMBAT:WOMBAT:COMPOMICS:FLASHLFQ"];
+p81 -> p82;
+
+p24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p82 [label="NFCORE_WOMBAT:WOMBAT:COMPOMICS:FLASHLFQ"];
+p24 -> p82 [label="parameters"];
+
+p18 [label="NFCORE_WOMBAT:WOMBAT:PREPARE_FILES"];
+p82 [label="NFCORE_WOMBAT:WOMBAT:COMPOMICS:FLASHLFQ"];
+p18 -> p82 [label="exp_design"];
+
+p82 [label="NFCORE_WOMBAT:WOMBAT:COMPOMICS:FLASHLFQ"];
+p83 [shape=point];
+p82 -> p83;
+
+p82 [label="NFCORE_WOMBAT:WOMBAT:COMPOMICS:FLASHLFQ"];
+p87 [label="NFCORE_WOMBAT:WOMBAT:COMPOMICS:MSQROB"];
+p82 -> p87;
+
+p82 [label="NFCORE_WOMBAT:WOMBAT:COMPOMICS:FLASHLFQ"];
+p87 [label="NFCORE_WOMBAT:WOMBAT:COMPOMICS:MSQROB"];
+p82 -> p87;
+
+p67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+p84 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p67 -> p84 [label="raws"];
+
+p84 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p87 [label="NFCORE_WOMBAT:WOMBAT:COMPOMICS:MSQROB"];
+p84 -> p87;
+
+p85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p87 [label="NFCORE_WOMBAT:WOMBAT:COMPOMICS:MSQROB"];
+p85 -> p87;
+
+p86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p87 [label="NFCORE_WOMBAT:WOMBAT:COMPOMICS:MSQROB"];
+p86 -> p87;
+
+p18 [label="NFCORE_WOMBAT:WOMBAT:PREPARE_FILES"];
+p87 [label="NFCORE_WOMBAT:WOMBAT:COMPOMICS:MSQROB"];
+p18 -> p87 [label="exp_design"];
+
+p24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p87 [label="NFCORE_WOMBAT:WOMBAT:COMPOMICS:MSQROB"];
+p24 -> p87 [label="parameters"];
+
+p87 [label="NFCORE_WOMBAT:WOMBAT:COMPOMICS:MSQROB"];
+p88 [shape=point];
+p87 -> p88 [label="$out3"];
+
+p87 [label="NFCORE_WOMBAT:WOMBAT:COMPOMICS:MSQROB"];
+p92 [label="NFCORE_WOMBAT:WOMBAT:CALCBENCHMARKS_COMPOMICS"];
+p87 -> p92 [label="$out2"];
+
+p87 [label="NFCORE_WOMBAT:WOMBAT:COMPOMICS:MSQROB"];
+p92 [label="NFCORE_WOMBAT:WOMBAT:CALCBENCHMARKS_COMPOMICS"];
+p87 -> p92 [label="$out1"];
+
+p87 [label="NFCORE_WOMBAT:WOMBAT:COMPOMICS:MSQROB"];
+p92 [label="NFCORE_WOMBAT:WOMBAT:CALCBENCHMARKS_COMPOMICS"];
+p87 -> p92 [label="$out0"];
+
+p89 [shape=point,label="",fixedsize=true,width=0.1];
+p92 [label="NFCORE_WOMBAT:WOMBAT:CALCBENCHMARKS_COMPOMICS"];
+p89 -> p92 [label="foo"];
+
+p90 [shape=point,label="",fixedsize=true,width=0.1];
+p92 [label="NFCORE_WOMBAT:WOMBAT:CALCBENCHMARKS_COMPOMICS"];
+p90 -> p92 [label="fasta_file"];
+
+p91 [shape=point,label="",fixedsize=true,width=0.1];
+p92 [label="NFCORE_WOMBAT:WOMBAT:CALCBENCHMARKS_COMPOMICS"];
+p91 -> p92 [label="workflow"];
+
+p92 [label="NFCORE_WOMBAT:WOMBAT:CALCBENCHMARKS_COMPOMICS"];
+p95 [shape=point];
+p92 -> p95;
+
+p92 [label="NFCORE_WOMBAT:WOMBAT:CALCBENCHMARKS_COMPOMICS"];
+p94 [shape=point];
+p92 -> p94;
+
+p92 [label="NFCORE_WOMBAT:WOMBAT:CALCBENCHMARKS_COMPOMICS"];
+p93 [shape=point];
+p92 -> p93;
+
+p18 [label="NFCORE_WOMBAT:WOMBAT:PREPARE_FILES"];
+p96 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+p18 -> p96 [label="raws"];
+
+p96 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+p98 [label="NFCORE_WOMBAT:WOMBAT:TPP:RAW2MZML"];
+p96 -> p98 [label="raws"];
+
+p97 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p99 [label="NFCORE_WOMBAT:WOMBAT:TPP:WRITE_CONFIG"];
+p97 -> p99 [label="ptm_mapping"];
+
+p98 [label="NFCORE_WOMBAT:WOMBAT:TPP:RAW2MZML"];
+p101 [label="NFCORE_WOMBAT:WOMBAT:TPP:RUN_COMET"];
+p98 -> p101;
+
+p24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p99 [label="NFCORE_WOMBAT:WOMBAT:TPP:WRITE_CONFIG"];
+p24 -> p99 [label="parameters"];
+
+p99 [label="NFCORE_WOMBAT:WOMBAT:TPP:WRITE_CONFIG"];
+p101 [label="NFCORE_WOMBAT:WOMBAT:TPP:RUN_COMET"];
+p99 -> p101;
+
+p100 [shape=point,label="",fixedsize=true,width=0.1];
+p101 [label="NFCORE_WOMBAT:WOMBAT:TPP:RUN_COMET"];
+p100 -> p101 [label="fasta"];
+
+p101 [label="NFCORE_WOMBAT:WOMBAT:TPP:RUN_COMET"];
+p104 [label="NFCORE_WOMBAT:WOMBAT:TPP:PEPTIDEPROPHET"];
+p101 -> p104;
+
+p98 [label="NFCORE_WOMBAT:WOMBAT:TPP:RAW2MZML"];
+p102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p98 -> p102;
+
+p102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p104 [label="NFCORE_WOMBAT:WOMBAT:TPP:PEPTIDEPROPHET"];
+p102 -> p104;
+
+p103 [shape=point,label="",fixedsize=true,width=0.1];
+p104 [label="NFCORE_WOMBAT:WOMBAT:TPP:PEPTIDEPROPHET"];
+p103 -> p104 [label="fasta"];
+
+p24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p104 [label="NFCORE_WOMBAT:WOMBAT:TPP:PEPTIDEPROPHET"];
+p24 -> p104 [label="parameters"];
+
+p104 [label="NFCORE_WOMBAT:WOMBAT:TPP:PEPTIDEPROPHET"];
+p105 [label="NFCORE_WOMBAT:WOMBAT:TPP:PROTEINPROPHET"];
+p104 -> p105;
+
+p24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p105 [label="NFCORE_WOMBAT:WOMBAT:TPP:PROTEINPROPHET"];
+p24 -> p105 [label="parameters"];
+
+p105 [label="NFCORE_WOMBAT:WOMBAT:TPP:PROTEINPROPHET"];
+p109 [label="NFCORE_WOMBAT:WOMBAT:TPP:STPETER"];
+p105 -> p109;
+
+p105 [label="NFCORE_WOMBAT:WOMBAT:TPP:PROTEINPROPHET"];
+p106 [shape=point];
+p105 -> p106;
+
+p98 [label="NFCORE_WOMBAT:WOMBAT:TPP:RAW2MZML"];
+p107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p98 -> p107;
+
+p107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p109 [label="NFCORE_WOMBAT:WOMBAT:TPP:STPETER"];
+p107 -> p109;
+
+p108 [shape=point,label="",fixedsize=true,width=0.1];
+p109 [label="NFCORE_WOMBAT:WOMBAT:TPP:STPETER"];
+p108 -> p109 [label="fasta"];
+
+p24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p109 [label="NFCORE_WOMBAT:WOMBAT:TPP:STPETER"];
+p24 -> p109 [label="parameters"];
+
+p109 [label="NFCORE_WOMBAT:WOMBAT:TPP:STPETER"];
+p110 [label="NFCORE_WOMBAT:WOMBAT:TPP:PROTXML2CSV"];
+p109 -> p110;
+
+p24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p110 [label="NFCORE_WOMBAT:WOMBAT:TPP:PROTXML2CSV"];
+p24 -> p110 [label="parameters"];
+
+p110 [label="NFCORE_WOMBAT:WOMBAT:TPP:PROTXML2CSV"];
+p111 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p110 -> p111;
+
+p111 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p113 [label="NFCORE_WOMBAT:WOMBAT:TPP:MERGEOUTPUT"];
+p111 -> p113;
+
+p96 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+p112 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p96 -> p112 [label="raws"];
+
+p112 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p113 [label="NFCORE_WOMBAT:WOMBAT:TPP:MERGEOUTPUT"];
+p112 -> p113;
+
+p18 [label="NFCORE_WOMBAT:WOMBAT:PREPARE_FILES"];
+p113 [label="NFCORE_WOMBAT:WOMBAT:TPP:MERGEOUTPUT"];
+p18 -> p113 [label="exp_design"];
+
+p113 [label="NFCORE_WOMBAT:WOMBAT:TPP:MERGEOUTPUT"];
+p115 [shape=point];
+p113 -> p115;
+
+p113 [label="NFCORE_WOMBAT:WOMBAT:TPP:MERGEOUTPUT"];
+p114 [shape=point];
+p113 -> p114;
+
+p113 [label="NFCORE_WOMBAT:WOMBAT:TPP:MERGEOUTPUT"];
+p116 [label="NFCORE_WOMBAT:WOMBAT:TPP:ROTS"];
+p113 -> p116;
+
+p113 [label="NFCORE_WOMBAT:WOMBAT:TPP:MERGEOUTPUT"];
+p116 [label="NFCORE_WOMBAT:WOMBAT:TPP:ROTS"];
+p113 -> p116;
+
+p113 [label="NFCORE_WOMBAT:WOMBAT:TPP:MERGEOUTPUT"];
+p120 [label="NFCORE_WOMBAT:WOMBAT:CALCBENCHMARKS_TPP"];
+p113 -> p120 [label="$out0"];
+
+p24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p116 [label="NFCORE_WOMBAT:WOMBAT:TPP:ROTS"];
+p24 -> p116 [label="parameters"];
+
+p116 [label="NFCORE_WOMBAT:WOMBAT:TPP:ROTS"];
+p120 [label="NFCORE_WOMBAT:WOMBAT:CALCBENCHMARKS_TPP"];
+p116 -> p120 [label="$out1"];
+
+p116 [label="NFCORE_WOMBAT:WOMBAT:TPP:ROTS"];
+p120 [label="NFCORE_WOMBAT:WOMBAT:CALCBENCHMARKS_TPP"];
+p116 -> p120 [label="$out2"];
+
+p117 [shape=point,label="",fixedsize=true,width=0.1];
+p120 [label="NFCORE_WOMBAT:WOMBAT:CALCBENCHMARKS_TPP"];
+p117 -> p120 [label="foo"];
+
+p118 [shape=point,label="",fixedsize=true,width=0.1];
+p120 [label="NFCORE_WOMBAT:WOMBAT:CALCBENCHMARKS_TPP"];
+p118 -> p120 [label="fasta_file"];
+
+p119 [shape=point,label="",fixedsize=true,width=0.1];
+p120 [label="NFCORE_WOMBAT:WOMBAT:CALCBENCHMARKS_TPP"];
+p119 -> p120 [label="workflow"];
+
+p120 [label="NFCORE_WOMBAT:WOMBAT:CALCBENCHMARKS_TPP"];
+p123 [shape=point];
+p120 -> p123;
+
+p120 [label="NFCORE_WOMBAT:WOMBAT:CALCBENCHMARKS_TPP"];
+p122 [shape=point];
+p120 -> p122;
+
+p120 [label="NFCORE_WOMBAT:WOMBAT:CALCBENCHMARKS_TPP"];
+p121 [shape=point];
+p120 -> p121;
+
+}
