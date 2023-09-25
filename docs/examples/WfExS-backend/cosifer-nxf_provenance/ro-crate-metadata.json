@@ -9,9 +9,6 @@
         {
             "@id": "./",
             "@type": "Dataset",
-            "about": {
-                "@id": "README.md"
-            },
             "conformsTo": [
                 {
                     "@id": "https://w3id.org/ro/wfrun/process/0.2"
@@ -23,7 +20,7 @@
                     "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
                 }
             ],
-            "datePublished": "2023-09-19T13:11:11+00:00",
+            "datePublished": "2023-09-22T17:48:14+00:00",
             "description": "RO-Crate from staged WfExS working directory 597708f2-952e-47c7-9b86-dbe3a9e5f651 (paraphalangeal hind teat)",
             "hasPart": [
                 {
@@ -104,10 +101,10 @@
             },
             "mentions": [
                 {
-                    "@id": "#4e23aeec-dcc1-4645-987a-6f899e874fa0"
+                    "@id": "#20812e59-0a3a-488d-854e-56eeee3f9ddc"
                 },
                 {
-                    "@id": "#0ae5add6-782b-4212-87a2-90ca67e2ad27"
+                    "@id": "#ef9a25b6-1476-4dde-ac6b-fc516451e2ed"
                 }
             ]
         },
@@ -195,15 +192,19 @@
             "@id": "https://github.com/inab/WfExS-backend",
             "@type": "SoftwareApplication",
             "name": "WfExS-backend",
-            "softwareVersion": "0.9.3-160-g6516382 (65163824b1ca3273605b9b8b7cddb5fe52586421)",
+            "softwareVersion": "0.9.3-169-g7c1a24f (7c1a24f7baa8a57f1fa14cddd9960105e96af456)",
             "url": "https://github.com/inab/WfExS-backend"
         },
         {
             "@id": "README.md",
             "@type": "File",
-            "contentSize": "4716",
-            "encodingFormat": "text/plain",
-            "sha256": "74aa3e91f27e3a619a6976e3fc99fc4b3a74620b7d2d50c28d14554e91a7cc2e"
+            "about": {
+                "@id": "./"
+            },
+            "contentSize": "5531",
+            "encodingFormat": "text/markdown",
+            "license": "https://spdx.org/licenses/CC-BY-4.0.html",
+            "sha256": "be7c68936209a1df070cf79e8c9cf9f885645f5cd0fde9f2024097f84d86024b"
         },
         {
             "@id": "https://www.nextflow.io/",
@@ -267,6 +268,14 @@
             },
             "runtimePlatform": "nextflow version 19.10.0.5169",
             "sha256": "09ad218c0bd8e829976f4d43c7540707aa7109bf1a6f13083b41ef65592554c9",
+            "softwareAddOn": [
+                {
+                    "@id": "https://apptainer.org/"
+                },
+                {
+                    "@id": "docker://tsenit/cosifer:b4d5af45d2fc54b6bff2a9153a8e9054e560302e"
+                }
+            ],
             "softwareRequirements": {
                 "@id": "https://www.nextflow.io/"
             },
@@ -317,7 +326,7 @@
             "sha256": "4802bc8e5744d2dfc9544f7fe3bc3d681ce165b76d47564389b8d1ddd6fe24fe"
         },
         {
-            "@id": "#4e23aeec-dcc1-4645-987a-6f899e874fa0",
+            "@id": "#20812e59-0a3a-488d-854e-56eeee3f9ddc",
             "@type": "CreateAction",
             "actionStatus": {
                 "@id": "http://schema.org/CompletedActionStatus"
@@ -331,42 +340,28 @@
                 }
             ],
             "endTime": "2023-08-31T02:28:57.862641+00:00",
-            "instrument": [
-                {
-                    "@id": "https://github.com/inab/WfExS-backend"
-                },
-                {
-                    "@id": "workflow/cosifer/nextflow/nextflow.nf"
-                },
-                {
-                    "@id": "https://www.nextflow.io/"
-                },
-                {
-                    "@id": "https://apptainer.org/"
-                },
-                {
-                    "@id": "docker://tsenit/cosifer:b4d5af45d2fc54b6bff2a9153a8e9054e560302e"
-                }
-            ],
+            "instrument": {
+                "@id": "workflow/cosifer/nextflow/nextflow.nf"
+            },
             "name": "Run outputs/_1693448929 of workflow/cosifer/nextflow/nextflow.nf",
             "object": [
                 {
                     "@id": "inputs/data_matrix.csv"
                 },
                 {
-                    "@id": "#9b138ee0-6407-4878-9a53-e0658dedb9f7"
+                    "@id": "#301ae615-2e78-498a-b9e1-31d5165de5ff"
                 },
                 {
-                    "@id": "#7f08c1c0-8ba4-418f-9ca7-3f46ae727672"
+                    "@id": "#ed4dc0b0-fe54-4636-ba83-8582b8ede567"
                 },
                 {
-                    "@id": "#82013a98-4d88-429e-aad9-942fe29bf13b"
+                    "@id": "#3a25f243-01f2-4599-9d86-828412cfd569"
                 },
                 {
-                    "@id": "#38827e95-37dd-4b64-8f24-650ebeb897f4"
+                    "@id": "#ce5d5800-ae5a-4f7c-a358-57df86de8c03"
                 },
                 {
-                    "@id": "#ecb1572e-82dd-4e6c-a167-bff57f5aa1e7"
+                    "@id": "#8b8b476e-efd8-41aa-8269-6e7ae28e68b0"
                 }
             ],
             "result": [
@@ -380,7 +375,7 @@
                     "@id": "meta/outputs/_1693448929/stats/dag.dot.png"
                 },
                 {
-                    "@id": "#84838f35-c383-441f-9854-2d7299b39286"
+                    "@id": "#58137d16-2bc9-4eb7-98c0-afb72ead326f"
                 }
             ],
             "startTime": "2023-08-31T02:28:49.576875+00:00"
@@ -394,14 +389,9 @@
             },
             "name": "data_matrix",
             "valueRequired": "True",
-            "workExample": [
-                {
-                    "@id": "inputs/data_matrix.csv"
-                },
-                {
-                    "@id": "inputs/data_matrix.csv"
-                }
-            ]
+            "workExample": {
+                "@id": "inputs/data_matrix.csv"
+            }
         },
         {
             "@id": "inputs/data_matrix.csv",
@@ -409,14 +399,10 @@
             "contentSize": "98392",
             "contentUrl": "https://raw.githubusercontent.com/PhosphorylatedRabbits/cosifer/f2e2a259d218b9a56a01d84bc9d6a7cd7c8d9bf1/examples/interactive/data_matrix.csv",
             "encodingFormat": "text/csv",
-            "exampleOfWork": [
-                {
-                    "@id": "workflow/cosifer/nextflow/nextflow.nf#param:data_matrix"
-                },
-                {
-                    "@id": "workflow/cosifer/nextflow/nextflow.nf#param:data_matrix"
-                }
-            ],
+            "exampleOfWork": {
+                "@id": "workflow/cosifer/nextflow/nextflow.nf#param:data_matrix"
+            },
+            "license": "notspecified",
             "sha256": "f839fa092cc34be8513c5a5805b39c9bec4cb9df1451e7db6a29db31d183f3c0"
         },
         {
@@ -430,15 +416,15 @@
             "valueRequired": "True",
             "workExample": [
                 {
-                    "@id": "#9b138ee0-6407-4878-9a53-e0658dedb9f7"
+                    "@id": "#301ae615-2e78-498a-b9e1-31d5165de5ff"
                 },
                 {
-                    "@id": "#dee049df-d3ed-4e4d-93e3-62081ddba89f"
+                    "@id": "#c4ffa613-aa47-4a2a-8760-fd79173fdf4d"
                 }
             ]
         },
         {
-            "@id": "#9b138ee0-6407-4878-9a53-e0658dedb9f7",
+            "@id": "#301ae615-2e78-498a-b9e1-31d5165de5ff",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "workflow/cosifer/nextflow/nextflow.nf#param:outputsDir"
@@ -455,26 +441,16 @@
             },
             "name": "index_col",
             "valueRequired": "True",
-            "workExample": [
-                {
-                    "@id": "#7f08c1c0-8ba4-418f-9ca7-3f46ae727672"
-                },
-                {
-                    "@id": "#7f08c1c0-8ba4-418f-9ca7-3f46ae727672"
-                }
-            ]
+            "workExample": {
+                "@id": "#ed4dc0b0-fe54-4636-ba83-8582b8ede567"
+            }
         },
         {
-            "@id": "#7f08c1c0-8ba4-418f-9ca7-3f46ae727672",
+            "@id": "#ed4dc0b0-fe54-4636-ba83-8582b8ede567",
             "@type": "PropertyValue",
-            "exampleOfWork": [
-                {
-                    "@id": "workflow/cosifer/nextflow/nextflow.nf#param:index_col"
-                },
-                {
-                    "@id": "workflow/cosifer/nextflow/nextflow.nf#param:index_col"
-                }
-            ],
+            "exampleOfWork": {
+                "@id": "workflow/cosifer/nextflow/nextflow.nf#param:index_col"
+            },
             "name": "index_col",
             "value": ""
         },
@@ -487,26 +463,16 @@
             },
             "name": "hallmark_gene_sets_file",
             "valueRequired": "True",
-            "workExample": [
-                {
-                    "@id": "#82013a98-4d88-429e-aad9-942fe29bf13b"
-                },
-                {
-                    "@id": "#82013a98-4d88-429e-aad9-942fe29bf13b"
-                }
-            ]
+            "workExample": {
+                "@id": "#3a25f243-01f2-4599-9d86-828412cfd569"
+            }
         },
         {
-            "@id": "#82013a98-4d88-429e-aad9-942fe29bf13b",
+            "@id": "#3a25f243-01f2-4599-9d86-828412cfd569",
             "@type": "PropertyValue",
-            "exampleOfWork": [
-                {
-                    "@id": "workflow/cosifer/nextflow/nextflow.nf#param:hallmark_gene_sets_file"
-                },
-                {
-                    "@id": "workflow/cosifer/nextflow/nextflow.nf#param:hallmark_gene_sets_file"
-                }
-            ],
+            "exampleOfWork": {
+                "@id": "workflow/cosifer/nextflow/nextflow.nf#param:hallmark_gene_sets_file"
+            },
             "name": "hallmark_gene_sets_file",
             "value": ""
         },
@@ -519,26 +485,16 @@
             },
             "name": "sep",
             "valueRequired": "True",
-            "workExample": [
-                {
-                    "@id": "#38827e95-37dd-4b64-8f24-650ebeb897f4"
-                },
-                {
-                    "@id": "#38827e95-37dd-4b64-8f24-650ebeb897f4"
-                }
-            ]
+            "workExample": {
+                "@id": "#ce5d5800-ae5a-4f7c-a358-57df86de8c03"
+            }
         },
         {
-            "@id": "#38827e95-37dd-4b64-8f24-650ebeb897f4",
+            "@id": "#ce5d5800-ae5a-4f7c-a358-57df86de8c03",
             "@type": "PropertyValue",
-            "exampleOfWork": [
-                {
-                    "@id": "workflow/cosifer/nextflow/nextflow.nf#param:sep"
-                },
-                {
-                    "@id": "workflow/cosifer/nextflow/nextflow.nf#param:sep"
-                }
-            ],
+            "exampleOfWork": {
+                "@id": "workflow/cosifer/nextflow/nextflow.nf#param:sep"
+            },
             "name": "sep",
             "value": ","
         },
@@ -551,26 +507,16 @@
             },
             "name": "samples_on_rows",
             "valueRequired": "True",
-            "workExample": [
-                {
-                    "@id": "#ecb1572e-82dd-4e6c-a167-bff57f5aa1e7"
-                },
-                {
-                    "@id": "#ecb1572e-82dd-4e6c-a167-bff57f5aa1e7"
-                }
-            ]
+            "workExample": {
+                "@id": "#8b8b476e-efd8-41aa-8269-6e7ae28e68b0"
+            }
         },
         {
-            "@id": "#ecb1572e-82dd-4e6c-a167-bff57f5aa1e7",
+            "@id": "#8b8b476e-efd8-41aa-8269-6e7ae28e68b0",
             "@type": "PropertyValue",
-            "exampleOfWork": [
-                {
-                    "@id": "workflow/cosifer/nextflow/nextflow.nf#param:samples_on_rows"
-                },
-                {
-                    "@id": "workflow/cosifer/nextflow/nextflow.nf#param:samples_on_rows"
-                }
-            ],
+            "exampleOfWork": {
+                "@id": "workflow/cosifer/nextflow/nextflow.nf#param:samples_on_rows"
+            },
             "name": "samples_on_rows",
             "value": ""
         },
@@ -672,7 +618,7 @@
             "sha256": "de20aa1b36163898e5ad24bc8ba7373833802b97eb2aa3e6fca692e353f90a3e"
         },
         {
-            "@id": "#9867315d-31cd-480f-a70b-901b8f323313",
+            "@id": "#de2edc98-e745-455a-b166-97f3037bb8c7",
             "@type": "CreateAction",
             "actionStatus": {
                 "@id": "http://schema.org/CompletedActionStatus"
@@ -698,7 +644,7 @@
             }
         },
         {
-            "@id": "#84838f35-c383-441f-9854-2d7299b39286",
+            "@id": "#58137d16-2bc9-4eb7-98c0-afb72ead326f",
             "@type": "Collection",
             "hasPart": [
                 {
@@ -724,7 +670,7 @@
             "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
         },
         {
-            "@id": "#0ae5add6-782b-4212-87a2-90ca67e2ad27",
+            "@id": "#ef9a25b6-1476-4dde-ac6b-fc516451e2ed",
             "@type": "CreateAction",
             "actionStatus": {
                 "@id": "http://schema.org/CompletedActionStatus"
@@ -738,42 +684,28 @@
                 }
             ],
             "endTime": "2023-08-31T02:29:10.026287+00:00",
-            "instrument": [
-                {
-                    "@id": "https://github.com/inab/WfExS-backend"
-                },
-                {
-                    "@id": "workflow/cosifer/nextflow/nextflow.nf"
-                },
-                {
-                    "@id": "https://www.nextflow.io/"
-                },
-                {
-                    "@id": "https://apptainer.org/"
-                },
-                {
-                    "@id": "docker://tsenit/cosifer:b4d5af45d2fc54b6bff2a9153a8e9054e560302e"
-                }
-            ],
+            "instrument": {
+                "@id": "workflow/cosifer/nextflow/nextflow.nf"
+            },
             "name": "Run outputs/_1693448942 of workflow/cosifer/nextflow/nextflow.nf",
             "object": [
                 {
                     "@id": "inputs/data_matrix.csv"
                 },
                 {
-                    "@id": "#dee049df-d3ed-4e4d-93e3-62081ddba89f"
+                    "@id": "#c4ffa613-aa47-4a2a-8760-fd79173fdf4d"
                 },
                 {
-                    "@id": "#7f08c1c0-8ba4-418f-9ca7-3f46ae727672"
+                    "@id": "#ed4dc0b0-fe54-4636-ba83-8582b8ede567"
                 },
                 {
-                    "@id": "#82013a98-4d88-429e-aad9-942fe29bf13b"
+                    "@id": "#3a25f243-01f2-4599-9d86-828412cfd569"
                 },
                 {
-                    "@id": "#38827e95-37dd-4b64-8f24-650ebeb897f4"
+                    "@id": "#ce5d5800-ae5a-4f7c-a358-57df86de8c03"
                 },
                 {
-                    "@id": "#ecb1572e-82dd-4e6c-a167-bff57f5aa1e7"
+                    "@id": "#8b8b476e-efd8-41aa-8269-6e7ae28e68b0"
                 }
             ],
             "result": [
@@ -787,13 +719,13 @@
                     "@id": "meta/outputs/_1693448942/stats/dag.dot.png"
                 },
                 {
-                    "@id": "#de7e9a3d-0c36-45db-8de7-267d321c7cfb"
+                    "@id": "#c41df8c8-4bff-4072-a37c-65e866786d39"
                 }
             ],
             "startTime": "2023-08-31T02:29:02.041398+00:00"
         },
         {
-            "@id": "#dee049df-d3ed-4e4d-93e3-62081ddba89f",
+            "@id": "#c4ffa613-aa47-4a2a-8760-fd79173fdf4d",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "workflow/cosifer/nextflow/nextflow.nf#param:outputsDir"
@@ -882,7 +814,7 @@
             "sha256": "de20aa1b36163898e5ad24bc8ba7373833802b97eb2aa3e6fca692e353f90a3e"
         },
         {
-            "@id": "#3123849b-b31e-4e68-b745-724ea6c35503",
+            "@id": "#875e3077-dc27-40bb-8991-ecd150551041",
             "@type": "CreateAction",
             "actionStatus": {
                 "@id": "http://schema.org/CompletedActionStatus"
@@ -908,7 +840,7 @@
             }
         },
         {
-            "@id": "#de7e9a3d-0c36-45db-8de7-267d321c7cfb",
+            "@id": "#c41df8c8-4bff-4072-a37c-65e866786d39",
             "@type": "Collection",
             "hasPart": [
                 {

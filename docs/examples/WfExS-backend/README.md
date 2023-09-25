@@ -13,6 +13,11 @@ executions are represented inside the generated RO-Crates as several
 RO-Crates contain an additional CreateAction explaining the pack process from
 the original workflow to the packed one.
 
+Workflow execution error messages are also included. Also, a graphical representation
+of the executed workflow is included. Due the nature of the different workflow
+engines, this representation could be pre-computed before the execution
+or after it. So, it is provided a copy of the representation for each execution.
+
 
 ## WOMBAT-Pipelines
 

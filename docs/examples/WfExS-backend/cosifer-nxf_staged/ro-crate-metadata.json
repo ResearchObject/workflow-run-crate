@@ -9,9 +9,6 @@
         {
             "@id": "./",
             "@type": "Dataset",
-            "about": {
-                "@id": "README.md"
-            },
             "conformsTo": [
                 {
                     "@id": "https://w3id.org/ro/wfrun/process/0.2"
@@ -23,7 +20,7 @@
                     "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
                 }
             ],
-            "datePublished": "2023-09-19T13:10:45+00:00",
+            "datePublished": "2023-09-22T17:48:19+00:00",
             "description": "RO-Crate from staged WfExS working directory 597708f2-952e-47c7-9b86-dbe3a9e5f651 (paraphalangeal hind teat)",
             "hasPart": [
                 {
@@ -133,15 +130,19 @@
             "@id": "https://github.com/inab/WfExS-backend",
             "@type": "SoftwareApplication",
             "name": "WfExS-backend",
-            "softwareVersion": "0.9.3-160-g6516382 (65163824b1ca3273605b9b8b7cddb5fe52586421)",
+            "softwareVersion": "0.9.3-169-g7c1a24f (7c1a24f7baa8a57f1fa14cddd9960105e96af456)",
             "url": "https://github.com/inab/WfExS-backend"
         },
         {
             "@id": "README.md",
             "@type": "File",
-            "contentSize": "4716",
-            "encodingFormat": "text/plain",
-            "sha256": "74aa3e91f27e3a619a6976e3fc99fc4b3a74620b7d2d50c28d14554e91a7cc2e"
+            "about": {
+                "@id": "./"
+            },
+            "contentSize": "5531",
+            "encodingFormat": "text/markdown",
+            "license": "https://spdx.org/licenses/CC-BY-4.0.html",
+            "sha256": "be7c68936209a1df070cf79e8c9cf9f885645f5cd0fde9f2024097f84d86024b"
         },
         {
             "@id": "https://www.nextflow.io/",
@@ -188,6 +189,14 @@
             },
             "runtimePlatform": "nextflow version 19.10.0.5169",
             "sha256": "09ad218c0bd8e829976f4d43c7540707aa7109bf1a6f13083b41ef65592554c9",
+            "softwareAddOn": [
+                {
+                    "@id": "https://apptainer.org/"
+                },
+                {
+                    "@id": "docker://tsenit/cosifer:b4d5af45d2fc54b6bff2a9153a8e9054e560302e"
+                }
+            ],
             "softwareRequirements": {
                 "@id": "https://www.nextflow.io/"
             },
@@ -259,6 +268,7 @@
             "exampleOfWork": {
                 "@id": "workflow/cosifer/nextflow/nextflow.nf#param:data_matrix"
             },
+            "license": "notspecified",
             "sha256": "f839fa092cc34be8513c5a5805b39c9bec4cb9df1451e7db6a29db31d183f3c0"
         },
         {
@@ -271,11 +281,11 @@
             "name": "sep",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#8d07aa14-8aae-4d26-920a-3d97f879be86"
+                "@id": "#1d8a876d-78ce-4e0a-9f1c-4488ad754951"
             }
         },
         {
-            "@id": "#8d07aa14-8aae-4d26-920a-3d97f879be86",
+            "@id": "#1d8a876d-78ce-4e0a-9f1c-4488ad754951",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "workflow/cosifer/nextflow/nextflow.nf#param:sep"
@@ -293,11 +303,11 @@
             "name": "outputsDir",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#1227f17c-f83c-471b-957c-417f573137ea"
+                "@id": "#b3e04089-85ae-4f55-a639-44db61688f9a"
             }
         },
         {
-            "@id": "#1227f17c-f83c-471b-957c-417f573137ea",
+            "@id": "#b3e04089-85ae-4f55-a639-44db61688f9a",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "workflow/cosifer/nextflow/nextflow.nf#param:outputsDir"
