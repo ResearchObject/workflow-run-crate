@@ -16,7 +16,7 @@ This profile uses terminology from the [RO-Crate 1.1 specification](https://w3id
 
 This profile extends [Workflow Run Crate](workflow_run_crate) with specifications to describe internal details of the workflow run, such as step executions and intermediate outputs.
 
-A Provenance Run Crate MUST record the details of *tool* executions orchestrated by the workflow through additional [CreateAction](http://schema.org/CreateAction) entities, each of which MUST refer to an entity representing the tool itself via [instrument](http://schema.org/instrument) as specified in [Process Run Crate](process_run_crate). Entities representing the tools MAY reference formal parameter definitions via `input` and `output` as specified in [Workflow Run Crate](workflow_run_crate). The workflow MUST refer to the orchestrated tools via [hasPart](http://schema.org/hasPart) (the usage of `hasPart` for this purpose follows the Bioschemas [ComputationalWorkflow profile](http://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE)).
+A Provenance Run Crate MUST record the details of *tool* executions orchestrated by the workflow through additional [CreateAction](http://schema.org/CreateAction) entities, each of which MUST refer to an entity representing the tool itself via [instrument](http://schema.org/instrument) as specified in [Process Run Crate](process_run_crate). Entities representing the tools MAY reference formal parameter definitions via `input` and `output` (and `environment`, in the case of [environment variables](workflow_run_crate#environment-variables-as-formal-parameters)) as specified in [Workflow Run Crate](workflow_run_crate). The workflow MUST refer to the orchestrated tools via [hasPart](http://schema.org/hasPart) (the usage of `hasPart` for this purpose follows the Bioschemas [ComputationalWorkflow profile](http://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE)).
 
 The crate SHOULD also record *step* executions via [ControlAction](http://schema.org/ControlAction) instances, each of which MUST reference: a [HowToStep](http://schema.org/HowToStep) instance representing the step via `instrument`; the `CreateAction` representing the corresponding tool run via `object`. The workflow MUST reference any `HowToStep` instances that represent its steps via [step](http://schema.org/step). Each `HowToStep` instance MUST reference the entity that represents its corresponding tool via [workExample](http://schema.org/workExample), and MAY indicate its position in the execution order via [position](http://schema.org/position). In addition to `File`, `SoftwareSourceCode` and `ComputationalWorkflow`, a workflow that points to step metadata via `step` MUST have a type of [HowTo](http://schema.org/HowTo).
 
@@ -424,44 +424,6 @@ A workflow engine may support configuration through a configuration file. In thi
 ```
 
 See also the [section on referencing configuration files of executed tools](process_run_crate#referencing-configuration-files).
-
-
-## Environment variables as formal parameters
-
-The Process Run Crate profile specifies how to [represent environment variable settings](process_run_crate#representing-environment-variable-settings) that affected the execution of a particular action via `environment`. Applications, in turn, MAY indicate that they are affected by a certain environment variable by using the same `environment` property and having it point to a `FormalParameter` whose `name` is equal to the variable's name. If an action corresponding to an execution of that application sets that variable, the `PropertyValue` SHOULD point to the `FormalParameter` via `exampleOfWork`:
-
-```json
-{
-    "@id": "run_blast.cwl",
-    "@type": "SoftwareApplication",
-    ...
-    "environment": [
-        {"@id": "run_blast.cwl#batch_size"}
-    ]
-},
-{
-    "@id": "run_blast.cwl#batch_size",
-    "@type": "FormalParameter",
-    "additionalType": "Integer",
-    "name": "BATCH_SIZE",
-},
-{
-    "@id": "#cb04c897-eb92-4c53-8a38-bcc1a16fd650",
-    "@type": "CreateAction",
-    "instrument": {"@id": "run_blast.cwl"},
-    ...
-    "environment": [
-        {"@id": "#batch_size-pv"}
-    ]
-},
-{
-    "@id": "#batch_size-pv",
-    "@type": "PropertyValue",
-    "exampleOfWork": {"@id": "run_blast.cwl#batch_size"},
-    "name": "BATCH_SIZE",
-    "value": "100"
-}
-```
 
 
 ## Requirements

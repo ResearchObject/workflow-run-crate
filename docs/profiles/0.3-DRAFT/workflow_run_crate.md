@@ -238,6 +238,44 @@ Some engines are able to generate contextual information about workflow runs in 
 ```
 
 
+## Environment variables as formal parameters
+
+The Process Run Crate profile specifies how to [represent environment variable settings](process_run_crate#representing-environment-variable-settings) that affected the execution of a particular action via `environment`. A workflow, in turn, MAY indicate that it is affected by a certain environment variable by using the same `environment` property and having it point to a `FormalParameter` whose `name` is equal to the variable's name. If an action corresponding to an execution of the workflow sets that variable, the `PropertyValue` SHOULD point to the `FormalParameter` via `exampleOfWork`:
+
+```json
+{
+    "@id": "run_blast.cwl",
+    "@type": ["File", "SoftwareSourceCode", "ComputationalWorkflow"],
+    ...
+    "environment": [
+        {"@id": "run_blast.cwl#batch_size"}
+    ]
+},
+{
+    "@id": "run_blast.cwl#batch_size",
+    "@type": "FormalParameter",
+    "additionalType": "Integer",
+    "name": "BATCH_SIZE",
+},
+{
+    "@id": "#cb04c897-eb92-4c53-8a38-bcc1a16fd650",
+    "@type": "CreateAction",
+    "instrument": {"@id": "run_blast.cwl"},
+    ...
+    "environment": [
+        {"@id": "#batch_size-pv"}
+    ]
+},
+{
+    "@id": "#batch_size-pv",
+    "@type": "PropertyValue",
+    "exampleOfWork": {"@id": "run_blast.cwl#batch_size"},
+    "name": "BATCH_SIZE",
+    "value": "100"
+}
+```
+
+
 ## Requirements
 
 This profile inherits the requirements of [Process Run Crate](process_run_crate) and [Workflow RO-Crate](https://w3id.org/workflowhub/workflow-ro-crate/). Additional specifications are listed below.
