@@ -295,7 +295,7 @@ An application that reads [this format](https://openslide.org/formats/mirax/) ne
     ],
     "mentions": [
         {"@id": "https://openslide.cs.cmu.edu/download/openslide-testdata/Mirax/Mirax2-Fluorescence-2.zip"},
-		{"@id": "#conversion_1"}
+        {"@id": "#conversion_1"}
     ]
 },
 {
@@ -384,3 +384,47 @@ The use case shown here is an example of a situation where it's important to ref
 },
 ...
 ```
+
+
+## Representing environment variable settings
+
+The behavior of some applications may be modified by setting appropriate environment variables. These are different from ordinary application inputs in that they are part of the environment in which the process runs, rather than parameters supplied through a command line or a graphical interface. To represent the fact that an environment variable was set to a certain value during the execution of an action, use the `environment` property from the [workflow-run](https://github.com/ResearchObject/ro-terms/tree/master/workflow-run) ro-terms namespace, making it point to a `PropertyValue` that describes the setting:
+
+```json
+{
+    "@context": [
+        "https://w3id.org/ro/crate/1.1/context",
+        "https://w3id.org/ro/terms/workflow-run"
+    ],
+    "@graph": [
+        ...
+        {
+            "@id": "#SepiaConversion_1",
+            "@type": "CreateAction",
+            "instrument": {"@id": "https://www.imagemagick.org/"},
+            "object": {"@id": "pics/2017-06-11%2012.56.14.jpg"},
+            "result": {"@id": "pics/sepia_fence.jpg"},
+            "environment": [
+                {"@id": "#height-limit-pv"},
+                {"@id": "#width-limit-pv"}
+            ]
+        },
+        {
+            "@id": "#width-limit-pv",
+            "@type": "PropertyValue",
+            "name": "MAGICK_WIDTH_LIMIT",
+            "value": "4096"
+        },
+        {
+            "@id": "#height-limit-pv",
+            "@type": "PropertyValue",
+            "name": "MAGICK_HEIGHT_LIMIT",
+            "value": "3072"
+        }
+    ]
+}
+```
+
+Note that we added the `workflow-run` context to the `@context` entry in order to bring in the definition of `environment`.
+
+Environment variable settings SHOULD be listed if they are different from the default ones (usually unset) and affected the results of the action.
