@@ -2,7 +2,13 @@
     "@context": [
         "https://w3id.org/ro/crate/1.1/context",
         {
-            "sha256": "https://w3id.org/ro/terms/workflow-run#sha256"
+            "ContainerImage": "https://w3id.org/ro/terms/workflow-run#ContainerImage",
+            "DockerImage": "https://w3id.org/ro/terms/workflow-run#DockerImage",
+            "SIFImage": "https://w3id.org/ro/terms/workflow-run#SIFImage",
+            "containerImage": "https://w3id.org/ro/terms/workflow-run#containerImage",
+            "registry": "https://w3id.org/ro/terms/workflow-run#registry",
+            "sha256": "https://w3id.org/ro/terms/workflow-run#sha256",
+            "tag": "https://w3id.org/ro/terms/workflow-run#tag"
         }
     ],
     "@graph": [
@@ -20,7 +26,7 @@
                     "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
                 }
             ],
-            "datePublished": "2023-09-25T02:45:28+00:00",
+            "datePublished": "2023-10-09T23:28:25+00:00",
             "description": "RO-Crate from staged WfExS working directory 047b6dfc-3547-4e09-92f8-df7143038ff4 (overbridging templon)",
             "hasPart": [
                 {
@@ -703,7 +709,7 @@
                 "@id": "workflow/main.nf"
             },
             "mentions": {
-                "@id": "#0859a1a2-bcde-47d9-859f-5035d95bccd4"
+                "@id": "#6fcd2bc5-12fe-4084-a8f7-d4ad676a03b2"
             }
         },
         {
@@ -761,7 +767,7 @@
             "@id": "https://github.com/inab/WfExS-backend",
             "@type": "SoftwareApplication",
             "name": "WfExS-backend",
-            "softwareVersion": "0.9.3-172-g19d40b7 (19d40b76864074d03a7c6a9e08e7cfe2da2f3f41)",
+            "softwareVersion": "0.9.3-192-g93901ff (93901ff9f5e88903b917d62cd0302454ae52364c, branch main)",
             "url": "https://github.com/inab/WfExS-backend"
         },
         {
@@ -770,10 +776,10 @@
             "about": {
                 "@id": "./"
             },
-            "contentSize": "5527",
+            "contentSize": "5540",
             "encodingFormat": "text/markdown",
             "license": "https://spdx.org/licenses/CC-BY-4.0.html",
-            "sha256": "05fd65a7ecb6c3aa4de49154332d1a8b1f500df87d387b1e31d6c8e94ffcdcde"
+            "sha256": "4612440ffa61d8e1b9305f8845db5f5c2e5996620c3111eff3bfd602b3271852"
         },
         {
             "@id": "https://www.nextflow.io/",
@@ -1254,6 +1260,12 @@
             "softwareVersion": "apptainer version 1.1.7"
         },
         {
+            "@id": "https://www.docker.com/",
+            "@type": "SoftwareApplication",
+            "applicationCategory": "https://www.wikidata.org/wiki/Q7935198",
+            "name": "docker"
+        },
+        {
             "@id": "containers/wombatp-maxquant-pipeline-dev.img_meta.json",
             "@type": "File",
             "about": {
@@ -1265,17 +1277,21 @@
         },
         {
             "@id": "docker://wombatp/maxquant-pipeline:dev",
-            "@type": "SoftwareApplication",
+            "@type": [
+                "ContainerImage",
+                "SoftwareApplication"
+            ],
+            "additionalType": "DockerImage",
             "applicationCategory": "https://www.wikidata.org/wiki/Q51294208",
-            "hasPart": {
-                "@id": "containers/wombatp-maxquant-pipeline-dev.img_meta.json"
-            },
+            "name": "wombatp/maxquant-pipeline",
             "operatingSystem": "linux",
             "processorRequirements": "amd64",
+            "registry": "docker.io",
             "softwareRequirements": {
                 "@id": "https://apptainer.org/"
             },
-            "softwareVersion": "wombatp/maxquant-pipeline@sha256:02141cdca45d4a92982a0671a7dde7ac5e4a760bf29eae1fb82975f8484d26f0"
+            "softwareVersion": "wombatp/maxquant-pipeline@sha256:02141cdca45d4a92982a0671a7dde7ac5e4a760bf29eae1fb82975f8484d26f0",
+            "tag": "dev"
         },
         {
             "@id": "containers/wombatp-maxquant-pipeline-v0.2.img_meta.json",
@@ -1289,17 +1305,21 @@
         },
         {
             "@id": "docker://wombatp/maxquant-pipeline:v0.2",
-            "@type": "SoftwareApplication",
+            "@type": [
+                "ContainerImage",
+                "SoftwareApplication"
+            ],
+            "additionalType": "DockerImage",
             "applicationCategory": "https://www.wikidata.org/wiki/Q51294208",
-            "hasPart": {
-                "@id": "containers/wombatp-maxquant-pipeline-v0.2.img_meta.json"
-            },
+            "name": "wombatp/maxquant-pipeline",
             "operatingSystem": "linux",
             "processorRequirements": "amd64",
+            "registry": "docker.io",
             "softwareRequirements": {
                 "@id": "https://apptainer.org/"
             },
-            "softwareVersion": "wombatp/maxquant-pipeline@sha256:02141cdca45d4a92982a0671a7dde7ac5e4a760bf29eae1fb82975f8484d26f0"
+            "softwareVersion": "wombatp/maxquant-pipeline@sha256:02141cdca45d4a92982a0671a7dde7ac5e4a760bf29eae1fb82975f8484d26f0",
+            "tag": "v0.2"
         },
         {
             "@id": "containers/wombatp-proline-pipeline-v0.20.img_meta.json",
@@ -1313,17 +1333,21 @@
         },
         {
             "@id": "docker://wombatp/proline-pipeline:v0.20",
-            "@type": "SoftwareApplication",
+            "@type": [
+                "ContainerImage",
+                "SoftwareApplication"
+            ],
+            "additionalType": "DockerImage",
             "applicationCategory": "https://www.wikidata.org/wiki/Q51294208",
-            "hasPart": {
-                "@id": "containers/wombatp-proline-pipeline-v0.20.img_meta.json"
-            },
+            "name": "wombatp/proline-pipeline",
             "operatingSystem": "linux",
             "processorRequirements": "amd64",
+            "registry": "docker.io",
             "softwareRequirements": {
                 "@id": "https://apptainer.org/"
             },
-            "softwareVersion": "wombatp/proline-pipeline@sha256:5d94150829d98e333303cda81e1871b7bece67096cb31482c2f07a8ae6c0b81b"
+            "softwareVersion": "wombatp/proline-pipeline@sha256:5d94150829d98e333303cda81e1871b7bece67096cb31482c2f07a8ae6c0b81b",
+            "tag": "v0.20"
         },
         {
             "@id": "containers/wombatp-proline-pipeline-v0.18.img_meta.json",
@@ -1337,17 +1361,21 @@
         },
         {
             "@id": "docker://wombatp/proline-pipeline:v0.18",
-            "@type": "SoftwareApplication",
+            "@type": [
+                "ContainerImage",
+                "SoftwareApplication"
+            ],
+            "additionalType": "DockerImage",
             "applicationCategory": "https://www.wikidata.org/wiki/Q51294208",
-            "hasPart": {
-                "@id": "containers/wombatp-proline-pipeline-v0.18.img_meta.json"
-            },
+            "name": "wombatp/proline-pipeline",
             "operatingSystem": "linux",
             "processorRequirements": "amd64",
+            "registry": "docker.io",
             "softwareRequirements": {
                 "@id": "https://apptainer.org/"
             },
-            "softwareVersion": "wombatp/proline-pipeline@sha256:77fcdd44749d1c4a354d33221c106de2ec68fd9c72f467ee99761eb72d8db172"
+            "softwareVersion": "wombatp/proline-pipeline@sha256:77fcdd44749d1c4a354d33221c106de2ec68fd9c72f467ee99761eb72d8db172",
+            "tag": "v0.18"
         },
         {
             "@id": "containers/veitveit-searchgui-4.2.9--hdfd78af_0.img_meta.json",
@@ -1361,17 +1389,21 @@
         },
         {
             "@id": "docker://veitveit/searchgui:4.2.9--hdfd78af_0",
-            "@type": "SoftwareApplication",
+            "@type": [
+                "ContainerImage",
+                "SoftwareApplication"
+            ],
+            "additionalType": "DockerImage",
             "applicationCategory": "https://www.wikidata.org/wiki/Q51294208",
-            "hasPart": {
-                "@id": "containers/veitveit-searchgui-4.2.9--hdfd78af_0.img_meta.json"
-            },
+            "name": "veitveit/searchgui",
             "operatingSystem": "linux",
             "processorRequirements": "amd64",
+            "registry": "docker.io",
             "softwareRequirements": {
                 "@id": "https://apptainer.org/"
             },
-            "softwareVersion": "veitveit/searchgui@sha256:744379255b7fd27c89a3d04e267c635519a399c33b64db81e9520a5886d5555a"
+            "softwareVersion": "veitveit/searchgui@sha256:744379255b7fd27c89a3d04e267c635519a399c33b64db81e9520a5886d5555a",
+            "tag": "4.2.9--hdfd78af_0"
         },
         {
             "@id": "containers/quay.io-biocontainers-searchgui-4.2.9--hdfd78af_0.img_meta.json",
@@ -1385,17 +1417,21 @@
         },
         {
             "@id": "docker://quay.io/biocontainers/searchgui:4.2.9--hdfd78af_0",
-            "@type": "SoftwareApplication",
+            "@type": [
+                "ContainerImage",
+                "SoftwareApplication"
+            ],
+            "additionalType": "DockerImage",
             "applicationCategory": "https://www.wikidata.org/wiki/Q51294208",
-            "hasPart": {
-                "@id": "containers/quay.io-biocontainers-searchgui-4.2.9--hdfd78af_0.img_meta.json"
-            },
+            "name": "biocontainers/searchgui",
             "operatingSystem": "linux",
             "processorRequirements": "amd64",
+            "registry": "quay.io",
             "softwareRequirements": {
                 "@id": "https://apptainer.org/"
             },
-            "softwareVersion": "biocontainers/searchgui@sha256:94c44408a1f3a1be3b8eb754b25a908505f460b34c4a1a08b8db77eaee41d7aa"
+            "softwareVersion": "biocontainers/searchgui@sha256:94c44408a1f3a1be3b8eb754b25a908505f460b34c4a1a08b8db77eaee41d7aa",
+            "tag": "4.2.9--hdfd78af_0"
         },
         {
             "@id": "containers/quay.io-biocontainers-polystest-1.3.4--hdfd78af_0.img_meta.json",
@@ -1409,17 +1445,21 @@
         },
         {
             "@id": "docker://quay.io/biocontainers/polystest:1.3.4--hdfd78af_0",
-            "@type": "SoftwareApplication",
+            "@type": [
+                "ContainerImage",
+                "SoftwareApplication"
+            ],
+            "additionalType": "DockerImage",
             "applicationCategory": "https://www.wikidata.org/wiki/Q51294208",
-            "hasPart": {
-                "@id": "containers/quay.io-biocontainers-polystest-1.3.4--hdfd78af_0.img_meta.json"
-            },
+            "name": "biocontainers/polystest",
             "operatingSystem": "linux",
             "processorRequirements": "amd64",
+            "registry": "quay.io",
             "softwareRequirements": {
                 "@id": "https://apptainer.org/"
             },
-            "softwareVersion": "biocontainers/polystest@sha256:7df22edd0d62e320fbc09c8ebc4e6683765314a99c2b1d4e41fb15af9762f638"
+            "softwareVersion": "biocontainers/polystest@sha256:7df22edd0d62e320fbc09c8ebc4e6683765314a99c2b1d4e41fb15af9762f638",
+            "tag": "1.3.4--hdfd78af_0"
         },
         {
             "@id": "containers/depot.galaxyproject.org-singularity-maxquant-2.0.3.0--py310hdfd78af_1.img_meta.json",
@@ -1433,11 +1473,13 @@
         },
         {
             "@id": "https://depot.galaxyproject.org/singularity/maxquant:2.0.3.0--py310hdfd78af_1",
-            "@type": "SoftwareApplication",
+            "@type": [
+                "ContainerImage",
+                "SoftwareApplication"
+            ],
+            "additionalType": "SIFImage",
             "applicationCategory": "https://www.wikidata.org/wiki/Q51294208",
-            "hasPart": {
-                "@id": "containers/depot.galaxyproject.org-singularity-maxquant-2.0.3.0--py310hdfd78af_1.img_meta.json"
-            },
+            "name": "https://depot.galaxyproject.org/singularity/maxquant:2.0.3.0--py310hdfd78af_1",
             "operatingSystem": "linux",
             "processorRequirements": "amd64",
             "softwareRequirements": {
@@ -1457,17 +1499,21 @@
         },
         {
             "@id": "docker://quay.io/biocontainers/maxquant:2.0.3.0--py310hdfd78af_1",
-            "@type": "SoftwareApplication",
+            "@type": [
+                "ContainerImage",
+                "SoftwareApplication"
+            ],
+            "additionalType": "DockerImage",
             "applicationCategory": "https://www.wikidata.org/wiki/Q51294208",
-            "hasPart": {
-                "@id": "containers/quay.io-biocontainers-maxquant-2.0.3.0--py310hdfd78af_1.img_meta.json"
-            },
+            "name": "biocontainers/maxquant",
             "operatingSystem": "linux",
             "processorRequirements": "amd64",
+            "registry": "quay.io",
             "softwareRequirements": {
                 "@id": "https://apptainer.org/"
             },
-            "softwareVersion": "biocontainers/maxquant@sha256:3fddb6ffc8888e58537d07991d923f80252015463879b8719d98324ec317f7fe"
+            "softwareVersion": "biocontainers/maxquant@sha256:3fddb6ffc8888e58537d07991d923f80252015463879b8719d98324ec317f7fe",
+            "tag": "2.0.3.0--py310hdfd78af_1"
         },
         {
             "@id": "containers/computationalproteomics-normalyzerde-1.14.0.img_meta.json",
@@ -1481,17 +1527,21 @@
         },
         {
             "@id": "docker://computationalproteomics/normalyzerde:1.14.0",
-            "@type": "SoftwareApplication",
+            "@type": [
+                "ContainerImage",
+                "SoftwareApplication"
+            ],
+            "additionalType": "DockerImage",
             "applicationCategory": "https://www.wikidata.org/wiki/Q51294208",
-            "hasPart": {
-                "@id": "containers/computationalproteomics-normalyzerde-1.14.0.img_meta.json"
-            },
+            "name": "computationalproteomics/normalyzerde",
             "operatingSystem": "linux",
             "processorRequirements": "amd64",
+            "registry": "docker.io",
             "softwareRequirements": {
                 "@id": "https://apptainer.org/"
             },
-            "softwareVersion": "computationalproteomics/normalyzerde@sha256:da242fc2e7f4781fc5e248a5df42568bdc7c4f8a4857543c19d5407e30a0558e"
+            "softwareVersion": "computationalproteomics/normalyzerde@sha256:da242fc2e7f4781fc5e248a5df42568bdc7c4f8a4857543c19d5407e30a0558e",
+            "tag": "1.14.0"
         },
         {
             "@id": "containers/quay.io-biocontainers-thermorawfileparser-1.4.0--ha8f3691_0.img_meta.json",
@@ -1505,17 +1555,21 @@
         },
         {
             "@id": "docker://quay.io/biocontainers/thermorawfileparser:1.4.0--ha8f3691_0",
-            "@type": "SoftwareApplication",
+            "@type": [
+                "ContainerImage",
+                "SoftwareApplication"
+            ],
+            "additionalType": "DockerImage",
             "applicationCategory": "https://www.wikidata.org/wiki/Q51294208",
-            "hasPart": {
-                "@id": "containers/quay.io-biocontainers-thermorawfileparser-1.4.0--ha8f3691_0.img_meta.json"
-            },
+            "name": "biocontainers/thermorawfileparser",
             "operatingSystem": "linux",
             "processorRequirements": "amd64",
+            "registry": "quay.io",
             "softwareRequirements": {
                 "@id": "https://apptainer.org/"
             },
-            "softwareVersion": "biocontainers/thermorawfileparser@sha256:76c17e3124b723f271bc3d5cf0555650288676bb1a827bd1bae9bb684444a404"
+            "softwareVersion": "biocontainers/thermorawfileparser@sha256:76c17e3124b723f271bc3d5cf0555650288676bb1a827bd1bae9bb684444a404",
+            "tag": "1.4.0--ha8f3691_0"
         },
         {
             "@id": "containers/veitveit-peptide-shaker-2.2.23--hdfd78af_0.img_meta.json",
@@ -1529,17 +1583,21 @@
         },
         {
             "@id": "docker://veitveit/peptide-shaker:2.2.23--hdfd78af_0",
-            "@type": "SoftwareApplication",
+            "@type": [
+                "ContainerImage",
+                "SoftwareApplication"
+            ],
+            "additionalType": "DockerImage",
             "applicationCategory": "https://www.wikidata.org/wiki/Q51294208",
-            "hasPart": {
-                "@id": "containers/veitveit-peptide-shaker-2.2.23--hdfd78af_0.img_meta.json"
-            },
+            "name": "veitveit/peptide-shaker",
             "operatingSystem": "linux",
             "processorRequirements": "amd64",
+            "registry": "docker.io",
             "softwareRequirements": {
                 "@id": "https://apptainer.org/"
             },
-            "softwareVersion": "veitveit/peptide-shaker@sha256:c4ec9fdb396b4bc4881132c0dc78f9b6cd76abbda7a5087e960fd06e5e1102cd"
+            "softwareVersion": "veitveit/peptide-shaker@sha256:c4ec9fdb396b4bc4881132c0dc78f9b6cd76abbda7a5087e960fd06e5e1102cd",
+            "tag": "2.2.23--hdfd78af_0"
         },
         {
             "@id": "containers/quay.io-biocontainers-peptide-shaker-2.2.23--hdfd78af_0.img_meta.json",
@@ -1553,17 +1611,21 @@
         },
         {
             "@id": "docker://quay.io/biocontainers/peptide-shaker:2.2.23--hdfd78af_0",
-            "@type": "SoftwareApplication",
+            "@type": [
+                "ContainerImage",
+                "SoftwareApplication"
+            ],
+            "additionalType": "DockerImage",
             "applicationCategory": "https://www.wikidata.org/wiki/Q51294208",
-            "hasPart": {
-                "@id": "containers/quay.io-biocontainers-peptide-shaker-2.2.23--hdfd78af_0.img_meta.json"
-            },
+            "name": "biocontainers/peptide-shaker",
             "operatingSystem": "linux",
             "processorRequirements": "amd64",
+            "registry": "quay.io",
             "softwareRequirements": {
                 "@id": "https://apptainer.org/"
             },
-            "softwareVersion": "biocontainers/peptide-shaker@sha256:51dbe1485efb713eec9d8a0e6a4e5e834818de21ed4601feed7b891718c5c911"
+            "softwareVersion": "biocontainers/peptide-shaker@sha256:51dbe1485efb713eec9d8a0e6a4e5e834818de21ed4601feed7b891718c5c911",
+            "tag": "2.2.23--hdfd78af_0"
         },
         {
             "@id": "containers/quay.io-biocontainers-flashlfq-1.2.4--hdfd78af_0.img_meta.json",
@@ -1577,17 +1639,21 @@
         },
         {
             "@id": "docker://quay.io/biocontainers/flashlfq:1.2.4--hdfd78af_0",
-            "@type": "SoftwareApplication",
+            "@type": [
+                "ContainerImage",
+                "SoftwareApplication"
+            ],
+            "additionalType": "DockerImage",
             "applicationCategory": "https://www.wikidata.org/wiki/Q51294208",
-            "hasPart": {
-                "@id": "containers/quay.io-biocontainers-flashlfq-1.2.4--hdfd78af_0.img_meta.json"
-            },
+            "name": "biocontainers/flashlfq",
             "operatingSystem": "linux",
             "processorRequirements": "amd64",
+            "registry": "quay.io",
             "softwareRequirements": {
                 "@id": "https://apptainer.org/"
             },
-            "softwareVersion": "biocontainers/flashlfq@sha256:d1654b13f30566096da690a28eae8e8e4f36394bb4b3cca4578c49adc4bad714"
+            "softwareVersion": "biocontainers/flashlfq@sha256:d1654b13f30566096da690a28eae8e8e4f36394bb4b3cca4578c49adc4bad714",
+            "tag": "1.2.4--hdfd78af_0"
         },
         {
             "@id": "containers/quay.io-biocontainers-r-msqrob-0.7.7--r41hdfd78af_1.img_meta.json",
@@ -1601,17 +1667,21 @@
         },
         {
             "@id": "docker://quay.io/biocontainers/r-msqrob:0.7.7--r41hdfd78af_1",
-            "@type": "SoftwareApplication",
+            "@type": [
+                "ContainerImage",
+                "SoftwareApplication"
+            ],
+            "additionalType": "DockerImage",
             "applicationCategory": "https://www.wikidata.org/wiki/Q51294208",
-            "hasPart": {
-                "@id": "containers/quay.io-biocontainers-r-msqrob-0.7.7--r41hdfd78af_1.img_meta.json"
-            },
+            "name": "biocontainers/r-msqrob",
             "operatingSystem": "linux",
             "processorRequirements": "amd64",
+            "registry": "quay.io",
             "softwareRequirements": {
                 "@id": "https://apptainer.org/"
             },
-            "softwareVersion": "biocontainers/r-msqrob@sha256:6c74888fad76eda9219757914712d86e2e32f4c751f6e0a8f00be7d19c5c6dd6"
+            "softwareVersion": "biocontainers/r-msqrob@sha256:6c74888fad76eda9219757914712d86e2e32f4c751f6e0a8f00be7d19c5c6dd6",
+            "tag": "0.7.7--r41hdfd78af_1"
         },
         {
             "@id": "containers/quay.io-biocontainers-comet-ms-2021010--h87f3376_1.img_meta.json",
@@ -1625,17 +1695,21 @@
         },
         {
             "@id": "docker://quay.io/biocontainers/comet-ms:2021010--h87f3376_1",
-            "@type": "SoftwareApplication",
+            "@type": [
+                "ContainerImage",
+                "SoftwareApplication"
+            ],
+            "additionalType": "DockerImage",
             "applicationCategory": "https://www.wikidata.org/wiki/Q51294208",
-            "hasPart": {
-                "@id": "containers/quay.io-biocontainers-comet-ms-2021010--h87f3376_1.img_meta.json"
-            },
+            "name": "biocontainers/comet-ms",
             "operatingSystem": "linux",
             "processorRequirements": "amd64",
+            "registry": "quay.io",
             "softwareRequirements": {
                 "@id": "https://apptainer.org/"
             },
-            "softwareVersion": "biocontainers/comet-ms@sha256:d143f6cf56752be58858965b6626e7ab66c1e2b87505e6f6f663112f30fc92a0"
+            "softwareVersion": "biocontainers/comet-ms@sha256:d143f6cf56752be58858965b6626e7ab66c1e2b87505e6f6f663112f30fc92a0",
+            "tag": "2021010--h87f3376_1"
         },
         {
             "@id": "containers/spctools-tpp-version6.1.img_meta.json",
@@ -1649,17 +1723,21 @@
         },
         {
             "@id": "docker://spctools/tpp:version6.1",
-            "@type": "SoftwareApplication",
+            "@type": [
+                "ContainerImage",
+                "SoftwareApplication"
+            ],
+            "additionalType": "DockerImage",
             "applicationCategory": "https://www.wikidata.org/wiki/Q51294208",
-            "hasPart": {
-                "@id": "containers/spctools-tpp-version6.1.img_meta.json"
-            },
+            "name": "spctools/tpp",
             "operatingSystem": "linux",
             "processorRequirements": "amd64",
+            "registry": "docker.io",
             "softwareRequirements": {
                 "@id": "https://apptainer.org/"
             },
-            "softwareVersion": "spctools/tpp@sha256:0a1026177c691ff7188b80b83e9fe926c7d00ab1da7cbd3c13319945fccc57a6"
+            "softwareVersion": "spctools/tpp@sha256:0a1026177c691ff7188b80b83e9fe926c7d00ab1da7cbd3c13319945fccc57a6",
+            "tag": "version6.1"
         },
         {
             "@id": "containers/wombatp-transproteomic-pipeline-0.24.img_meta.json",
@@ -1673,17 +1751,21 @@
         },
         {
             "@id": "docker://wombatp/transproteomic-pipeline:0.24",
-            "@type": "SoftwareApplication",
+            "@type": [
+                "ContainerImage",
+                "SoftwareApplication"
+            ],
+            "additionalType": "DockerImage",
             "applicationCategory": "https://www.wikidata.org/wiki/Q51294208",
-            "hasPart": {
-                "@id": "containers/wombatp-transproteomic-pipeline-0.24.img_meta.json"
-            },
+            "name": "wombatp/transproteomic-pipeline",
             "operatingSystem": "linux",
             "processorRequirements": "amd64",
+            "registry": "docker.io",
             "softwareRequirements": {
                 "@id": "https://apptainer.org/"
             },
-            "softwareVersion": "wombatp/transproteomic-pipeline@sha256:406538cd3f5666a6ef9ddde57a9eb9b0795d96775ae8350244571cd3ae6f5277"
+            "softwareVersion": "wombatp/transproteomic-pipeline@sha256:406538cd3f5666a6ef9ddde57a9eb9b0795d96775ae8350244571cd3ae6f5277",
+            "tag": "0.24"
         },
         {
             "@id": "containers/rocker-tidyverse-4.2.1.img_meta.json",
@@ -1697,17 +1779,21 @@
         },
         {
             "@id": "docker://rocker/tidyverse:4.2.1",
-            "@type": "SoftwareApplication",
+            "@type": [
+                "ContainerImage",
+                "SoftwareApplication"
+            ],
+            "additionalType": "DockerImage",
             "applicationCategory": "https://www.wikidata.org/wiki/Q51294208",
-            "hasPart": {
-                "@id": "containers/rocker-tidyverse-4.2.1.img_meta.json"
-            },
+            "name": "rocker/tidyverse",
             "operatingSystem": "linux",
             "processorRequirements": "amd64",
+            "registry": "docker.io",
             "softwareRequirements": {
                 "@id": "https://apptainer.org/"
             },
-            "softwareVersion": "rocker/tidyverse@sha256:2276cf3f1fa29057a057cb8feb85ebd14310c18aff781696db6656ffa170f302"
+            "softwareVersion": "rocker/tidyverse@sha256:2276cf3f1fa29057a057cb8feb85ebd14310c18aff781696db6656ffa170f302",
+            "tag": "4.2.1"
         },
         {
             "@id": "workflow/nextflow.config",
@@ -2178,7 +2264,7 @@
             "sha256": "c9b6fc6e4dfa51fc382121663c515d0717b026848459585c169a390560b000e8"
         },
         {
-            "@id": "#0859a1a2-bcde-47d9-859f-5035d95bccd4",
+            "@id": "#6fcd2bc5-12fe-4084-a8f7-d4ad676a03b2",
             "@type": "CreateAction",
             "actionStatus": {
                 "@id": "http://schema.org/CompletedActionStatus"
@@ -2186,6 +2272,65 @@
             "agent": {
                 "@id": "https://orcid.org/0000-0002-4806-5140"
             },
+            "containerImage": [
+                {
+                    "@id": "docker://wombatp/maxquant-pipeline:dev"
+                },
+                {
+                    "@id": "docker://wombatp/maxquant-pipeline:v0.2"
+                },
+                {
+                    "@id": "docker://wombatp/proline-pipeline:v0.20"
+                },
+                {
+                    "@id": "docker://wombatp/proline-pipeline:v0.18"
+                },
+                {
+                    "@id": "docker://veitveit/searchgui:4.2.9--hdfd78af_0"
+                },
+                {
+                    "@id": "docker://quay.io/biocontainers/searchgui:4.2.9--hdfd78af_0"
+                },
+                {
+                    "@id": "docker://quay.io/biocontainers/polystest:1.3.4--hdfd78af_0"
+                },
+                {
+                    "@id": "https://depot.galaxyproject.org/singularity/maxquant:2.0.3.0--py310hdfd78af_1"
+                },
+                {
+                    "@id": "docker://quay.io/biocontainers/maxquant:2.0.3.0--py310hdfd78af_1"
+                },
+                {
+                    "@id": "docker://computationalproteomics/normalyzerde:1.14.0"
+                },
+                {
+                    "@id": "docker://quay.io/biocontainers/thermorawfileparser:1.4.0--ha8f3691_0"
+                },
+                {
+                    "@id": "docker://veitveit/peptide-shaker:2.2.23--hdfd78af_0"
+                },
+                {
+                    "@id": "docker://quay.io/biocontainers/peptide-shaker:2.2.23--hdfd78af_0"
+                },
+                {
+                    "@id": "docker://quay.io/biocontainers/flashlfq:1.2.4--hdfd78af_0"
+                },
+                {
+                    "@id": "docker://quay.io/biocontainers/r-msqrob:0.7.7--r41hdfd78af_1"
+                },
+                {
+                    "@id": "docker://quay.io/biocontainers/comet-ms:2021010--h87f3376_1"
+                },
+                {
+                    "@id": "docker://spctools/tpp:version6.1"
+                },
+                {
+                    "@id": "docker://wombatp/transproteomic-pipeline:0.24"
+                },
+                {
+                    "@id": "docker://rocker/tidyverse:4.2.1"
+                }
+            ],
             "endTime": "2023-08-31T11:41:04.420914+00:00",
             "instrument": {
                 "@id": "workflow/main.nf"
@@ -2193,7 +2338,7 @@
             "name": "Run outputs/_1693481083 of workflow/main.nf",
             "object": [
                 {
-                    "@id": "#fd139276-d884-462b-92b0-286e3d82e273"
+                    "@id": "#5e73fb64-963f-4adc-a2f4-0405198d934d"
                 },
                 {
                     "@id": "https://raw.githubusercontent.com/wombat-p/WOMBAT-Pipelines/51d0be8aa1b22142b1ba09edb5ee4465618e8e05/test_data/exp_design.txt"
@@ -2202,73 +2347,73 @@
                     "@id": "https://raw.githubusercontent.com/wombat-p/WOMBAT-Pipelines/51d0be8aa1b22142b1ba09edb5ee4465618e8e05/test_data/test_params.yml"
                 },
                 {
-                    "@id": "#dc0ee446-a2ae-4634-809d-dd8a45ab7bcd"
+                    "@id": "#aa0005c9-71df-447d-81d7-8506938c3914"
                 },
                 {
-                    "@id": "#6e87bf4d-c447-4ce4-9aef-240629e276e4"
+                    "@id": "#75101fd2-6afe-457b-b498-cece068d0533"
                 },
                 {
-                    "@id": "#e7185a79-519b-49ed-9114-e7f19e7760db"
+                    "@id": "#6375ad33-61d6-4a52-8e4d-839ca142431c"
                 },
                 {
-                    "@id": "#6b629504-ba36-4429-9cb0-35de7ab97b34"
+                    "@id": "#b069f7d6-1109-4029-9f45-85d99ebb2dac"
                 },
                 {
-                    "@id": "#e12e760a-5a2a-4b43-96f0-289b6e434690"
+                    "@id": "#3bf65e64-ccc7-438c-99ca-68fc32b45b8a"
                 },
                 {
-                    "@id": "#feaa407f-f722-464e-81a2-03335fd4580c"
+                    "@id": "#4144d997-e923-4413-8fa1-5da07b15af43"
                 },
                 {
-                    "@id": "#5f29781e-df3d-41d1-b564-afd49f686b1f"
+                    "@id": "#5138d830-b57f-47b4-9f82-5a3afde2320f"
                 },
                 {
-                    "@id": "#d828ce61-7700-4333-b74c-c0c43e1aaa79"
+                    "@id": "#546a124e-c05f-40ac-b729-f19a3bbcaa44"
                 },
                 {
-                    "@id": "#8a9da67d-d97d-4a62-9705-31e68b2754d9"
+                    "@id": "#2fc0e90c-267c-43c3-a24a-8ffdea73e475"
                 },
                 {
-                    "@id": "#8bd0ec15-e460-4b05-91d9-118d07676b67"
+                    "@id": "#96767573-e382-4c67-8b83-b3be854a0ba5"
                 },
                 {
-                    "@id": "#b49ee2db-2829-4887-83c4-b33fad727f4b"
+                    "@id": "#0b00d1cb-908f-4e3a-87ba-dbe183c6f6af"
                 },
                 {
-                    "@id": "#d59e9072-b0c7-41a1-a8a0-ff2bb017e938"
+                    "@id": "#57d5e336-e602-4eda-9d1c-9347e32c4c77"
                 },
                 {
-                    "@id": "#618b87da-3139-4086-941c-25262b1891cc"
+                    "@id": "#ecdb5073-a59d-41b2-9e2b-8203c5829d0b"
                 },
                 {
-                    "@id": "#7e3cd855-9194-462f-8eec-49e1f5b37584"
+                    "@id": "#97339b93-2ab1-428a-a43a-0c2a2fea6bfb"
                 },
                 {
-                    "@id": "#cf71b41f-a3cb-4d5c-ad4e-d74b34274db2"
+                    "@id": "#4e904821-c41e-43f2-a996-5d6899f5715f"
                 },
                 {
-                    "@id": "#ba7a5fe1-e8b4-45fb-ada3-bad878b4f04c"
+                    "@id": "#c0492779-f368-4afe-a03e-eca0cf3a78c7"
                 },
                 {
-                    "@id": "#36b02dea-484a-4182-9885-d8ed9ed6cab2"
+                    "@id": "#335b6090-eee7-4a70-af73-44f19fe8c25e"
                 },
                 {
-                    "@id": "#2fdfd4c4-4c54-491a-8fa0-be3be0f02546"
+                    "@id": "#9c638824-3371-49c9-bf58-528ad0739c8f"
                 },
                 {
-                    "@id": "#74ede3aa-5b77-4ad6-b96f-bbc7bfbb8b7d"
+                    "@id": "#63df7ee6-fffd-476d-bbd0-7d7335503aee"
                 },
                 {
-                    "@id": "#45750620-5a2d-4154-99ab-96f31ecbf9c9"
+                    "@id": "#80695a11-2d49-4463-948d-10fea57e0b2b"
                 },
                 {
-                    "@id": "#3c94decc-0396-432e-bc45-f272dc00129a"
+                    "@id": "#b1b10c9c-29cc-42d6-8a6d-a99866cc2a16"
                 },
                 {
-                    "@id": "#6f6c9f10-5406-4d8e-b698-941c1b8e8ddf"
+                    "@id": "#5490283b-b4cb-4b5a-83f8-193c092e28bf"
                 },
                 {
-                    "@id": "#447e547f-771f-4b27-8b11-6ef5ce280619"
+                    "@id": "#1ce118a9-e97e-44bf-b150-ac698cb897f2"
                 },
                 {
                     "@id": "https://raw.githubusercontent.com/wombat-p/WOMBAT-Pipelines/51d0be8aa1b22142b1ba09edb5ee4465618e8e05/test_data/ABRF_iPRG_2012_target.fasta"
@@ -2381,7 +2526,7 @@
                     "@id": "meta/outputs/_1693481083/stats/dag.dot.png"
                 },
                 {
-                    "@id": "#c7229564-05f7-4092-a53a-2c57b1a066fb"
+                    "@id": "#9f81b5a7-6ba5-4d75-938d-fa2cb4d3470d"
                 }
             ],
             "startTime": "2023-08-31T11:24:43.254962+00:00"
@@ -2405,11 +2550,11 @@
             "name": "raws",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#fd139276-d884-462b-92b0-286e3d82e273"
+                "@id": "#5e73fb64-963f-4adc-a2f4-0405198d934d"
             }
         },
         {
-            "@id": "#fd139276-d884-462b-92b0-286e3d82e273",
+            "@id": "#5e73fb64-963f-4adc-a2f4-0405198d934d",
             "@type": "Collection",
             "exampleOfWork": {
                 "@id": "workflow/main.nf#param:raws"
@@ -2506,11 +2651,11 @@
             "name": "run_statistics",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#dc0ee446-a2ae-4634-809d-dd8a45ab7bcd"
+                "@id": "#aa0005c9-71df-447d-81d7-8506938c3914"
             }
         },
         {
-            "@id": "#dc0ee446-a2ae-4634-809d-dd8a45ab7bcd",
+            "@id": "#aa0005c9-71df-447d-81d7-8506938c3914",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "workflow/main.nf#param:run_statistics"
@@ -2528,11 +2673,11 @@
             "name": "add_decoys",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#6e87bf4d-c447-4ce4-9aef-240629e276e4"
+                "@id": "#75101fd2-6afe-457b-b498-cece068d0533"
             }
         },
         {
-            "@id": "#6e87bf4d-c447-4ce4-9aef-240629e276e4",
+            "@id": "#75101fd2-6afe-457b-b498-cece068d0533",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "workflow/main.nf#param:add_decoys"
@@ -2559,11 +2704,11 @@
             "name": "comps",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#e7185a79-519b-49ed-9114-e7f19e7760db"
+                "@id": "#6375ad33-61d6-4a52-8e4d-839ca142431c"
             }
         },
         {
-            "@id": "#e7185a79-519b-49ed-9114-e7f19e7760db",
+            "@id": "#6375ad33-61d6-4a52-8e4d-839ca142431c",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "workflow/main.nf#param:comps"
@@ -2581,11 +2726,11 @@
             "name": "proline_engine",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#6b629504-ba36-4429-9cb0-35de7ab97b34"
+                "@id": "#b069f7d6-1109-4029-9f45-85d99ebb2dac"
             }
         },
         {
-            "@id": "#6b629504-ba36-4429-9cb0-35de7ab97b34",
+            "@id": "#b069f7d6-1109-4029-9f45-85d99ebb2dac",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "workflow/main.nf#param:proline_engine"
@@ -2603,11 +2748,11 @@
             "name": "workflow",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#e12e760a-5a2a-4b43-96f0-289b6e434690"
+                "@id": "#3bf65e64-ccc7-438c-99ca-68fc32b45b8a"
             }
         },
         {
-            "@id": "#e12e760a-5a2a-4b43-96f0-289b6e434690",
+            "@id": "#3bf65e64-ccc7-438c-99ca-68fc32b45b8a",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "workflow/main.nf#param:workflow"
@@ -2643,11 +2788,11 @@
             "name": "max_multiqc_email_size",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#feaa407f-f722-464e-81a2-03335fd4580c"
+                "@id": "#4144d997-e923-4413-8fa1-5da07b15af43"
             }
         },
         {
-            "@id": "#feaa407f-f722-464e-81a2-03335fd4580c",
+            "@id": "#4144d997-e923-4413-8fa1-5da07b15af43",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "workflow/main.nf#param:max_multiqc_email_size"
@@ -2665,11 +2810,11 @@
             "name": "outdir",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#5f29781e-df3d-41d1-b564-afd49f686b1f"
+                "@id": "#5138d830-b57f-47b4-9f82-5a3afde2320f"
             }
         },
         {
-            "@id": "#5f29781e-df3d-41d1-b564-afd49f686b1f",
+            "@id": "#5138d830-b57f-47b4-9f82-5a3afde2320f",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "workflow/main.nf#param:outdir"
@@ -2687,11 +2832,11 @@
             "name": "tracedir",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#d828ce61-7700-4333-b74c-c0c43e1aaa79"
+                "@id": "#546a124e-c05f-40ac-b729-f19a3bbcaa44"
             }
         },
         {
-            "@id": "#d828ce61-7700-4333-b74c-c0c43e1aaa79",
+            "@id": "#546a124e-c05f-40ac-b729-f19a3bbcaa44",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "workflow/main.nf#param:tracedir"
@@ -2709,11 +2854,11 @@
             "name": "publish_dir_mode",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#8a9da67d-d97d-4a62-9705-31e68b2754d9"
+                "@id": "#2fc0e90c-267c-43c3-a24a-8ffdea73e475"
             }
         },
         {
-            "@id": "#8a9da67d-d97d-4a62-9705-31e68b2754d9",
+            "@id": "#2fc0e90c-267c-43c3-a24a-8ffdea73e475",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "workflow/main.nf#param:publish_dir_mode"
@@ -2749,11 +2894,11 @@
             "name": "plaintext_email",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#8bd0ec15-e460-4b05-91d9-118d07676b67"
+                "@id": "#96767573-e382-4c67-8b83-b3be854a0ba5"
             }
         },
         {
-            "@id": "#8bd0ec15-e460-4b05-91d9-118d07676b67",
+            "@id": "#96767573-e382-4c67-8b83-b3be854a0ba5",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "workflow/main.nf#param:plaintext_email"
@@ -2771,11 +2916,11 @@
             "name": "monochrome_logs",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#b49ee2db-2829-4887-83c4-b33fad727f4b"
+                "@id": "#0b00d1cb-908f-4e3a-87ba-dbe183c6f6af"
             }
         },
         {
-            "@id": "#b49ee2db-2829-4887-83c4-b33fad727f4b",
+            "@id": "#0b00d1cb-908f-4e3a-87ba-dbe183c6f6af",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "workflow/main.nf#param:monochrome_logs"
@@ -2793,11 +2938,11 @@
             "name": "help",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#d59e9072-b0c7-41a1-a8a0-ff2bb017e938"
+                "@id": "#57d5e336-e602-4eda-9d1c-9347e32c4c77"
             }
         },
         {
-            "@id": "#d59e9072-b0c7-41a1-a8a0-ff2bb017e938",
+            "@id": "#57d5e336-e602-4eda-9d1c-9347e32c4c77",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "workflow/main.nf#param:help"
@@ -2815,11 +2960,11 @@
             "name": "validate_params",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#618b87da-3139-4086-941c-25262b1891cc"
+                "@id": "#ecdb5073-a59d-41b2-9e2b-8203c5829d0b"
             }
         },
         {
-            "@id": "#618b87da-3139-4086-941c-25262b1891cc",
+            "@id": "#ecdb5073-a59d-41b2-9e2b-8203c5829d0b",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "workflow/main.nf#param:validate_params"
@@ -2837,11 +2982,11 @@
             "name": "show_hidden_params",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#7e3cd855-9194-462f-8eec-49e1f5b37584"
+                "@id": "#97339b93-2ab1-428a-a43a-0c2a2fea6bfb"
             }
         },
         {
-            "@id": "#7e3cd855-9194-462f-8eec-49e1f5b37584",
+            "@id": "#97339b93-2ab1-428a-a43a-0c2a2fea6bfb",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "workflow/main.nf#param:show_hidden_params"
@@ -2859,11 +3004,11 @@
             "name": "enable_conda",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#cf71b41f-a3cb-4d5c-ad4e-d74b34274db2"
+                "@id": "#4e904821-c41e-43f2-a996-5d6899f5715f"
             }
         },
         {
-            "@id": "#cf71b41f-a3cb-4d5c-ad4e-d74b34274db2",
+            "@id": "#4e904821-c41e-43f2-a996-5d6899f5715f",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "workflow/main.nf#param:enable_conda"
@@ -2881,11 +3026,11 @@
             "name": "schema_ignore_params",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#ba7a5fe1-e8b4-45fb-ada3-bad878b4f04c"
+                "@id": "#c0492779-f368-4afe-a03e-eca0cf3a78c7"
             }
         },
         {
-            "@id": "#ba7a5fe1-e8b4-45fb-ada3-bad878b4f04c",
+            "@id": "#c0492779-f368-4afe-a03e-eca0cf3a78c7",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "workflow/main.nf#param:schema_ignore_params"
@@ -2912,11 +3057,11 @@
             "name": "custom_config_version",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#36b02dea-484a-4182-9885-d8ed9ed6cab2"
+                "@id": "#335b6090-eee7-4a70-af73-44f19fe8c25e"
             }
         },
         {
-            "@id": "#36b02dea-484a-4182-9885-d8ed9ed6cab2",
+            "@id": "#335b6090-eee7-4a70-af73-44f19fe8c25e",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "workflow/main.nf#param:custom_config_version"
@@ -2934,11 +3079,11 @@
             "name": "custom_config_base",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#2fdfd4c4-4c54-491a-8fa0-be3be0f02546"
+                "@id": "#9c638824-3371-49c9-bf58-528ad0739c8f"
             }
         },
         {
-            "@id": "#2fdfd4c4-4c54-491a-8fa0-be3be0f02546",
+            "@id": "#9c638824-3371-49c9-bf58-528ad0739c8f",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "workflow/main.nf#param:custom_config_base"
@@ -2956,11 +3101,11 @@
             "name": "config_profile_description",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#74ede3aa-5b77-4ad6-b96f-bbc7bfbb8b7d"
+                "@id": "#63df7ee6-fffd-476d-bbd0-7d7335503aee"
             }
         },
         {
-            "@id": "#74ede3aa-5b77-4ad6-b96f-bbc7bfbb8b7d",
+            "@id": "#63df7ee6-fffd-476d-bbd0-7d7335503aee",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "workflow/main.nf#param:config_profile_description"
@@ -2996,11 +3141,11 @@
             "name": "config_profile_name",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#45750620-5a2d-4154-99ab-96f31ecbf9c9"
+                "@id": "#80695a11-2d49-4463-948d-10fea57e0b2b"
             }
         },
         {
-            "@id": "#45750620-5a2d-4154-99ab-96f31ecbf9c9",
+            "@id": "#80695a11-2d49-4463-948d-10fea57e0b2b",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "workflow/main.nf#param:config_profile_name"
@@ -3018,11 +3163,11 @@
             "name": "max_memory",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#3c94decc-0396-432e-bc45-f272dc00129a"
+                "@id": "#b1b10c9c-29cc-42d6-8a6d-a99866cc2a16"
             }
         },
         {
-            "@id": "#3c94decc-0396-432e-bc45-f272dc00129a",
+            "@id": "#b1b10c9c-29cc-42d6-8a6d-a99866cc2a16",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "workflow/main.nf#param:max_memory"
@@ -3040,11 +3185,11 @@
             "name": "max_cpus",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#6f6c9f10-5406-4d8e-b698-941c1b8e8ddf"
+                "@id": "#5490283b-b4cb-4b5a-83f8-193c092e28bf"
             }
         },
         {
-            "@id": "#6f6c9f10-5406-4d8e-b698-941c1b8e8ddf",
+            "@id": "#5490283b-b4cb-4b5a-83f8-193c092e28bf",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "workflow/main.nf#param:max_cpus"
@@ -3062,11 +3207,11 @@
             "name": "max_time",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#447e547f-771f-4b27-8b11-6ef5ce280619"
+                "@id": "#1ce118a9-e97e-44bf-b150-ac698cb897f2"
             }
         },
         {
-            "@id": "#447e547f-771f-4b27-8b11-6ef5ce280619",
+            "@id": "#1ce118a9-e97e-44bf-b150-ac698cb897f2",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "workflow/main.nf#param:max_time"
@@ -5294,7 +5439,7 @@
             "sha256": "d1cdb9dfb412f4a48231a1adcd63470684425d3983781c2c9f3522e75cfb366b"
         },
         {
-            "@id": "#99f1cebe-a345-4b7a-b49d-934ac8509df5",
+            "@id": "#b52d0c32-cb1b-4f42-b63d-f75909d06edd",
             "@type": "CreateAction",
             "actionStatus": {
                 "@id": "http://schema.org/CompletedActionStatus"
@@ -5315,7 +5460,7 @@
             }
         },
         {
-            "@id": "#c7229564-05f7-4092-a53a-2c57b1a066fb",
+            "@id": "#9f81b5a7-6ba5-4d75-938d-fa2cb4d3470d",
             "@type": "Collection",
             "hasPart": [
                 {
