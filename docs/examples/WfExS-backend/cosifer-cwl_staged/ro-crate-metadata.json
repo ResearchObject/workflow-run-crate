@@ -2,7 +2,13 @@
     "@context": [
         "https://w3id.org/ro/crate/1.1/context",
         {
-            "sha256": "https://w3id.org/ro/terms/workflow-run#sha256"
+            "ContainerImage": "https://w3id.org/ro/terms/workflow-run#ContainerImage",
+            "DockerImage": "https://w3id.org/ro/terms/workflow-run#DockerImage",
+            "SIFImage": "https://w3id.org/ro/terms/workflow-run#SIFImage",
+            "containerImage": "https://w3id.org/ro/terms/workflow-run#containerImage",
+            "registry": "https://w3id.org/ro/terms/workflow-run#registry",
+            "sha256": "https://w3id.org/ro/terms/workflow-run#sha256",
+            "tag": "https://w3id.org/ro/terms/workflow-run#tag"
         }
     ],
     "@graph": [
@@ -20,7 +26,7 @@
                     "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
                 }
             ],
-            "datePublished": "2023-09-22T17:48:16+00:00",
+            "datePublished": "2023-10-09T23:46:40+00:00",
             "description": "RO-Crate from staged WfExS working directory 2400c32e-f875-4cd4-9d41-be6da8224c67 (preferencial buquinolate)",
             "hasPart": [
                 {
@@ -136,7 +142,7 @@
             "@id": "https://github.com/inab/WfExS-backend",
             "@type": "SoftwareApplication",
             "name": "WfExS-backend",
-            "softwareVersion": "0.9.3-169-g7c1a24f (7c1a24f7baa8a57f1fa14cddd9960105e96af456)",
+            "softwareVersion": "0.9.3-192-g93901ff (93901ff9f5e88903b917d62cd0302454ae52364c, branch main)",
             "url": "https://github.com/inab/WfExS-backend"
         },
         {
@@ -145,10 +151,10 @@
             "about": {
                 "@id": "./"
             },
-            "contentSize": "5531",
+            "contentSize": "5544",
             "encodingFormat": "text/markdown",
             "license": "https://spdx.org/licenses/CC-BY-4.0.html",
-            "sha256": "4ec2df88a55daf724ea3d9f43f07ebd7c369fcf420f9971d03a566903bdee31f"
+            "sha256": "83fc4b452a3596eb607e6bd4aefbc8dcdcacc1d1167e7f5274c4072e50090171"
         },
         {
             "@id": "https://pypi.org/project/cwltool/",
@@ -166,6 +172,12 @@
             "softwareVersion": "apptainer version 1.2.2"
         },
         {
+            "@id": "https://www.docker.com/",
+            "@type": "SoftwareApplication",
+            "applicationCategory": "https://www.wikidata.org/wiki/Q7935198",
+            "name": "docker"
+        },
+        {
             "@id": "containers/docker.io_node:slim.img_meta.json",
             "@type": "File",
             "about": {
@@ -177,17 +189,21 @@
         },
         {
             "@id": "docker://docker.io/node:slim",
-            "@type": "SoftwareApplication",
+            "@type": [
+                "ContainerImage",
+                "SoftwareApplication"
+            ],
+            "additionalType": "DockerImage",
             "applicationCategory": "https://www.wikidata.org/wiki/Q51294208",
-            "hasPart": {
-                "@id": "containers/docker.io_node:slim.img_meta.json"
-            },
+            "name": "docker.io/node",
             "operatingSystem": "linux",
             "processorRequirements": "amd64",
+            "registry": "docker.io",
             "softwareRequirements": {
                 "@id": "https://apptainer.org/"
             },
-            "softwareVersion": "library/node@sha256:dc1906714d1993d291e1e7b5f236291236b0a0b6dfacdb164e4a9ea44d09c52e"
+            "softwareVersion": "library/node@sha256:dc1906714d1993d291e1e7b5f236291236b0a0b6dfacdb164e4a9ea44d09c52e",
+            "tag": "slim"
         },
         {
             "@id": "workflow/cosifer/cwl/cosifer-workflow.cwl",
@@ -233,17 +249,21 @@
         },
         {
             "@id": "docker://tsenit/cosifer:b4d5af45d2fc54b6bff2a9153a8e9054e560302e",
-            "@type": "SoftwareApplication",
+            "@type": [
+                "ContainerImage",
+                "SoftwareApplication"
+            ],
+            "additionalType": "DockerImage",
             "applicationCategory": "https://www.wikidata.org/wiki/Q51294208",
-            "hasPart": {
-                "@id": "containers/tsenit_cosifer:b4d5af45d2fc54b6bff2a9153a8e9054e560302e.img_meta.json"
-            },
+            "name": "tsenit/cosifer",
             "operatingSystem": "linux",
             "processorRequirements": "amd64",
+            "registry": "docker.io",
             "softwareRequirements": {
                 "@id": "https://apptainer.org/"
             },
-            "softwareVersion": "tsenit/cosifer@sha256:61e445ec73d54f9b389688eb3d9671a62b1d5e7b5cd5b7497a7683cc13a9e187"
+            "softwareVersion": "tsenit/cosifer@sha256:61e445ec73d54f9b389688eb3d9671a62b1d5e7b5cd5b7497a7683cc13a9e187",
+            "tag": "b4d5af45d2fc54b6bff2a9153a8e9054e560302e"
         },
         {
             "@id": "workflow/cosifer/cwl/cosifer.cwl",
@@ -309,7 +329,7 @@
             "version": "b6ff7c65652408f905d0e2b8340c2e65f0253fd2"
         },
         {
-            "@id": "#2f7ac91c-66cc-4690-9e60-7948f967bf98",
+            "@id": "#0037c2f1-cb0b-4be3-b886-d45bbf79826a",
             "@type": "CreateAction",
             "actionStatus": {
                 "@id": "http://schema.org/CompletedActionStatus"
@@ -368,11 +388,11 @@
             "name": "separator",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#4dc52d59-5aa6-4bb8-a1a0-aed3b94f4faa"
+                "@id": "#a142d381-df17-471d-a0a8-7d56a9314bf5"
             }
         },
         {
-            "@id": "#4dc52d59-5aa6-4bb8-a1a0-aed3b94f4faa",
+            "@id": "#a142d381-df17-471d-a0a8-7d56a9314bf5",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "consolidated-workflow/2400c32e-f875-4cd4-9d41-be6da8224c67_workflow.cwl#param:separator"
@@ -390,11 +410,11 @@
             "name": "outdir",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#ef68c667-c311-4910-ae8a-2a1c8336970d"
+                "@id": "#7e8bdb68-cdd3-4ff1-bc66-dfe1f5ed21ca"
             }
         },
         {
-            "@id": "#ef68c667-c311-4910-ae8a-2a1c8336970d",
+            "@id": "#7e8bdb68-cdd3-4ff1-bc66-dfe1f5ed21ca",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "consolidated-workflow/2400c32e-f875-4cd4-9d41-be6da8224c67_workflow.cwl#param:outdir"
