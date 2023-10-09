@@ -2,7 +2,13 @@
     "@context": [
         "https://w3id.org/ro/crate/1.1/context",
         {
-            "sha256": "https://w3id.org/ro/terms/workflow-run#sha256"
+            "ContainerImage": "https://w3id.org/ro/terms/workflow-run#ContainerImage",
+            "DockerImage": "https://w3id.org/ro/terms/workflow-run#DockerImage",
+            "SIFImage": "https://w3id.org/ro/terms/workflow-run#SIFImage",
+            "containerImage": "https://w3id.org/ro/terms/workflow-run#containerImage",
+            "registry": "https://w3id.org/ro/terms/workflow-run#registry",
+            "sha256": "https://w3id.org/ro/terms/workflow-run#sha256",
+            "tag": "https://w3id.org/ro/terms/workflow-run#tag"
         }
     ],
     "@graph": [
@@ -20,7 +26,7 @@
                     "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
                 }
             ],
-            "datePublished": "2023-09-25T02:44:13+00:00",
+            "datePublished": "2023-10-09T23:27:45+00:00",
             "description": "RO-Crate from staged WfExS working directory a37fee9e-4288-4a9e-b493-993a867207d0 (meer oxometalate)",
             "hasPart": [
                 {
@@ -139,7 +145,7 @@
                 "@id": "consolidated-workflow/a37fee9e-4288-4a9e-b493-993a867207d0_workflow.cwl"
             },
             "mentions": {
-                "@id": "#61653a69-6dae-4682-8409-119f7130b27f"
+                "@id": "#2f5723c2-6d4f-4425-8bf7-47e240585fe9"
             }
         },
         {
@@ -197,7 +203,7 @@
             "@id": "https://github.com/inab/WfExS-backend",
             "@type": "SoftwareApplication",
             "name": "WfExS-backend",
-            "softwareVersion": "0.9.3-172-g19d40b7 (19d40b76864074d03a7c6a9e08e7cfe2da2f3f41)",
+            "softwareVersion": "0.9.3-192-g93901ff (93901ff9f5e88903b917d62cd0302454ae52364c, branch main)",
             "url": "https://github.com/inab/WfExS-backend"
         },
         {
@@ -206,16 +212,16 @@
             "about": {
                 "@id": "./"
             },
-            "contentSize": "5523",
+            "contentSize": "5536",
             "encodingFormat": "text/markdown",
             "license": "https://spdx.org/licenses/CC-BY-4.0.html",
-            "sha256": "f5126d87c231b6f354b52da253fdf30ff7f3967da6c041ae241ed1e41e531ab3"
+            "sha256": "6911aad5f1cc4d5d4ea5b2afe405ca0064b021c1864504a757b4135cfc91a70d"
         },
         {
             "@id": "https://pypi.org/project/cwltool/",
             "@type": "SoftwareApplication",
             "softwareRequirements": {
-                "@id": "#docker.io/node:slim"
+                "@id": "docker.io/node:slim"
             },
             "softwareVersion": "cwltool 3.1.20230906142556"
         },
@@ -230,25 +236,29 @@
             "@id": "containers/docker.io_node:slim.img_meta.json",
             "@type": "File",
             "about": {
-                "@id": "#docker.io/node:slim"
+                "@id": "docker.io/node:slim"
             },
             "contentSize": "3073",
             "encodingFormat": "application/json",
             "sha256": "03a57c74e0243eda05b5368992cb6a88b1c21fbb68ff33bfabcf321f901deb0b"
         },
         {
-            "@id": "#docker.io/node:slim",
-            "@type": "SoftwareApplication",
+            "@id": "docker.io/node:slim",
+            "@type": [
+                "ContainerImage",
+                "SoftwareApplication"
+            ],
+            "additionalType": "DockerImage",
             "applicationCategory": "https://www.wikidata.org/wiki/Q15206305",
-            "hasPart": {
-                "@id": "containers/docker.io_node:slim.img_meta.json"
-            },
+            "name": "docker.io/node",
             "operatingSystem": "linux",
             "processorRequirements": "amd64",
+            "registry": "docker.io",
             "softwareRequirements": {
                 "@id": "https://www.docker.com/"
             },
-            "softwareVersion": "node@sha256:75404fc5825f24222276501c09944a5bee8ed04517dede5a9934f1654ca84caf"
+            "softwareVersion": "node@sha256:75404fc5825f24222276501c09944a5bee8ed04517dede5a9934f1654ca84caf",
+            "tag": "slim"
         },
         {
             "@id": "trs://workflowhub.eu/107/1",
@@ -332,145 +342,169 @@
             "@id": "containers/quay.io_biocontainers_cutadapt:1.18--py36h14c3975_1.img_meta.json",
             "@type": "File",
             "about": {
-                "@id": "#quay.io/biocontainers/cutadapt:1.18--py36h14c3975_1"
+                "@id": "quay.io/biocontainers/cutadapt:1.18--py36h14c3975_1"
             },
             "contentSize": "3709",
             "encodingFormat": "application/json",
             "sha256": "5843b2bad81019552d5b3df6bacfa355f2ae3c6601e0075e0b6775182e284371"
         },
         {
-            "@id": "#quay.io/biocontainers/cutadapt:1.18--py36h14c3975_1",
-            "@type": "SoftwareApplication",
+            "@id": "quay.io/biocontainers/cutadapt:1.18--py36h14c3975_1",
+            "@type": [
+                "ContainerImage",
+                "SoftwareApplication"
+            ],
+            "additionalType": "DockerImage",
             "applicationCategory": "https://www.wikidata.org/wiki/Q15206305",
-            "hasPart": {
-                "@id": "containers/quay.io_biocontainers_cutadapt:1.18--py36h14c3975_1.img_meta.json"
-            },
+            "name": "biocontainers/cutadapt",
             "operatingSystem": "linux",
             "processorRequirements": "amd64",
+            "registry": "quay.io",
             "softwareRequirements": {
                 "@id": "https://www.docker.com/"
             },
-            "softwareVersion": "quay.io/biocontainers/cutadapt@sha256:dcd3f0371741b164e3df68cac9555f29e786a13ccd98d0de30ac54696f99d40c"
+            "softwareVersion": "quay.io/biocontainers/cutadapt@sha256:dcd3f0371741b164e3df68cac9555f29e786a13ccd98d0de30ac54696f99d40c",
+            "tag": "1.18--py36h14c3975_1"
         },
         {
             "@id": "containers/quay.io_biocontainers_samtools:1.3.1--5.img_meta.json",
             "@type": "File",
             "about": {
-                "@id": "#quay.io/biocontainers/samtools:1.3.1--5"
+                "@id": "quay.io/biocontainers/samtools:1.3.1--5"
             },
             "contentSize": "3691",
             "encodingFormat": "application/json",
             "sha256": "8dbe1534b855f9a90f6574de7ff954341bbac443b238b7b0dce26e9d11200c14"
         },
         {
-            "@id": "#quay.io/biocontainers/samtools:1.3.1--5",
-            "@type": "SoftwareApplication",
+            "@id": "quay.io/biocontainers/samtools:1.3.1--5",
+            "@type": [
+                "ContainerImage",
+                "SoftwareApplication"
+            ],
+            "additionalType": "DockerImage",
             "applicationCategory": "https://www.wikidata.org/wiki/Q15206305",
-            "hasPart": {
-                "@id": "containers/quay.io_biocontainers_samtools:1.3.1--5.img_meta.json"
-            },
+            "name": "biocontainers/samtools",
             "operatingSystem": "linux",
             "processorRequirements": "amd64",
+            "registry": "quay.io",
             "softwareRequirements": {
                 "@id": "https://www.docker.com/"
             },
-            "softwareVersion": "quay.io/biocontainers/samtools@sha256:a88091c50a5dc0301513b8a554da1287f2a591fabba082b371ddcd536e9d613c"
+            "softwareVersion": "quay.io/biocontainers/samtools@sha256:a88091c50a5dc0301513b8a554da1287f2a591fabba082b371ddcd536e9d613c",
+            "tag": "1.3.1--5"
         },
         {
             "@id": "containers/jlaitinen_lftpalpine.img_meta.json",
             "@type": "File",
             "about": {
-                "@id": "#jlaitinen/lftpalpine"
+                "@id": "jlaitinen/lftpalpine"
             },
             "contentSize": "2848",
             "encodingFormat": "application/json",
             "sha256": "e93b893f65125c3704d5981a7eea4e7da8e6205eb057a752ad46d12940298785"
         },
         {
-            "@id": "#jlaitinen/lftpalpine",
-            "@type": "SoftwareApplication",
+            "@id": "jlaitinen/lftpalpine",
+            "@type": [
+                "ContainerImage",
+                "SoftwareApplication"
+            ],
+            "additionalType": "DockerImage",
             "applicationCategory": "https://www.wikidata.org/wiki/Q15206305",
-            "hasPart": {
-                "@id": "containers/jlaitinen_lftpalpine.img_meta.json"
-            },
+            "name": "jlaitinen/lftpalpine",
             "operatingSystem": "linux",
             "processorRequirements": "amd64",
+            "registry": "docker.io",
             "softwareRequirements": {
                 "@id": "https://www.docker.com/"
             },
-            "softwareVersion": "jlaitinen/lftpalpine@sha256:223971ceaedad240ac07286bc848aef1b5e87e0c3069190904e2922353e7c777"
+            "softwareVersion": "jlaitinen/lftpalpine@sha256:223971ceaedad240ac07286bc848aef1b5e87e0c3069190904e2922353e7c777",
+            "tag": "latest"
         },
         {
             "@id": "containers/quay.io_biocontainers_picard:2.18.25--0.img_meta.json",
             "@type": "File",
             "about": {
-                "@id": "#quay.io/biocontainers/picard:2.18.25--0"
+                "@id": "quay.io/biocontainers/picard:2.18.25--0"
             },
             "contentSize": "3695",
             "encodingFormat": "application/json",
             "sha256": "daff37b573aec9e01d00321c57ed4a8405e5790ad466c819ec25465307bdb17e"
         },
         {
-            "@id": "#quay.io/biocontainers/picard:2.18.25--0",
-            "@type": "SoftwareApplication",
+            "@id": "quay.io/biocontainers/picard:2.18.25--0",
+            "@type": [
+                "ContainerImage",
+                "SoftwareApplication"
+            ],
+            "additionalType": "DockerImage",
             "applicationCategory": "https://www.wikidata.org/wiki/Q15206305",
-            "hasPart": {
-                "@id": "containers/quay.io_biocontainers_picard:2.18.25--0.img_meta.json"
-            },
+            "name": "biocontainers/picard",
             "operatingSystem": "linux",
             "processorRequirements": "amd64",
+            "registry": "quay.io",
             "softwareRequirements": {
                 "@id": "https://www.docker.com/"
             },
-            "softwareVersion": "quay.io/biocontainers/picard@sha256:fae6808f225e7ef3e3f883cb87915bd5c340a8ba5bd283c69365138e5f471f80"
+            "softwareVersion": "quay.io/biocontainers/picard@sha256:fae6808f225e7ef3e3f883cb87915bd5c340a8ba5bd283c69365138e5f471f80",
+            "tag": "2.18.25--0"
         },
         {
             "@id": "containers/broadinstitute_gatk3:3.6-0.img_meta.json",
             "@type": "File",
             "about": {
-                "@id": "#broadinstitute/gatk3:3.6-0"
+                "@id": "broadinstitute/gatk3:3.6-0"
             },
             "contentSize": "5139",
             "encodingFormat": "application/json",
             "sha256": "0a2e26c252b7c33c245f14c017200240e900dc7192029164b0732daaa10cbab2"
         },
         {
-            "@id": "#broadinstitute/gatk3:3.6-0",
-            "@type": "SoftwareApplication",
+            "@id": "broadinstitute/gatk3:3.6-0",
+            "@type": [
+                "ContainerImage",
+                "SoftwareApplication"
+            ],
+            "additionalType": "DockerImage",
             "applicationCategory": "https://www.wikidata.org/wiki/Q15206305",
-            "hasPart": {
-                "@id": "containers/broadinstitute_gatk3:3.6-0.img_meta.json"
-            },
+            "name": "broadinstitute/gatk3",
             "operatingSystem": "linux",
             "processorRequirements": "amd64",
+            "registry": "docker.io",
             "softwareRequirements": {
                 "@id": "https://www.docker.com/"
             },
-            "softwareVersion": "broadinstitute/gatk3@sha256:83ae1845f9df383ca6c27ac228413e4022787305c9716caca7ab11a7bf411842"
+            "softwareVersion": "broadinstitute/gatk3@sha256:83ae1845f9df383ca6c27ac228413e4022787305c9716caca7ab11a7bf411842",
+            "tag": "3.6-0"
         },
         {
             "@id": "containers/quay.io_biocontainers_bwa:0.7.17--h84994c4_5.img_meta.json",
             "@type": "File",
             "about": {
-                "@id": "#quay.io/biocontainers/bwa:0.7.17--h84994c4_5"
+                "@id": "quay.io/biocontainers/bwa:0.7.17--h84994c4_5"
             },
             "contentSize": "3697",
             "encodingFormat": "application/json",
             "sha256": "3230be7bf5fb779e03b8766823ddd5b44697210f6fa65a63205398e16bdde3bb"
         },
         {
-            "@id": "#quay.io/biocontainers/bwa:0.7.17--h84994c4_5",
-            "@type": "SoftwareApplication",
+            "@id": "quay.io/biocontainers/bwa:0.7.17--h84994c4_5",
+            "@type": [
+                "ContainerImage",
+                "SoftwareApplication"
+            ],
+            "additionalType": "DockerImage",
             "applicationCategory": "https://www.wikidata.org/wiki/Q15206305",
-            "hasPart": {
-                "@id": "containers/quay.io_biocontainers_bwa:0.7.17--h84994c4_5.img_meta.json"
-            },
+            "name": "biocontainers/bwa",
             "operatingSystem": "linux",
             "processorRequirements": "amd64",
+            "registry": "quay.io",
             "softwareRequirements": {
                 "@id": "https://www.docker.com/"
             },
-            "softwareVersion": "quay.io/biocontainers/bwa@sha256:516c0f9c1082e5b2ba658643fa9ade2d6f9f0a608584a2fbac3806d62700454e"
+            "softwareVersion": "quay.io/biocontainers/bwa@sha256:516c0f9c1082e5b2ba658643fa9ade2d6f9f0a608584a2fbac3806d62700454e",
+            "tag": "0.7.17--h84994c4_5"
         },
         {
             "@id": "https://schema.org/version/latest/schemaorg-current-https.rdf",
@@ -697,22 +731,22 @@
                     "@id": "https://www.docker.com/"
                 },
                 {
-                    "@id": "#quay.io/biocontainers/cutadapt:1.18--py36h14c3975_1"
+                    "@id": "quay.io/biocontainers/cutadapt:1.18--py36h14c3975_1"
                 },
                 {
-                    "@id": "#quay.io/biocontainers/samtools:1.3.1--5"
+                    "@id": "quay.io/biocontainers/samtools:1.3.1--5"
                 },
                 {
-                    "@id": "#jlaitinen/lftpalpine"
+                    "@id": "jlaitinen/lftpalpine"
                 },
                 {
-                    "@id": "#quay.io/biocontainers/picard:2.18.25--0"
+                    "@id": "quay.io/biocontainers/picard:2.18.25--0"
                 },
                 {
-                    "@id": "#broadinstitute/gatk3:3.6-0"
+                    "@id": "broadinstitute/gatk3:3.6-0"
                 },
                 {
-                    "@id": "#quay.io/biocontainers/bwa:0.7.17--h84994c4_5"
+                    "@id": "quay.io/biocontainers/bwa:0.7.17--h84994c4_5"
                 }
             ],
             "softwareRequirements": {
@@ -721,7 +755,7 @@
             "version": "31348ed533961f84cf348bf1af660ad9de6f870c"
         },
         {
-            "@id": "#8c0c3fd7-be2b-463f-90f3-fdbe52a8ce87",
+            "@id": "#d3f37d6b-3acd-442e-a761-8615ffd611fe",
             "@type": "CreateAction",
             "actionStatus": {
                 "@id": "http://schema.org/CompletedActionStatus"
@@ -741,7 +775,7 @@
             }
         },
         {
-            "@id": "#61653a69-6dae-4682-8409-119f7130b27f",
+            "@id": "#2f5723c2-6d4f-4425-8bf7-47e240585fe9",
             "@type": "CreateAction",
             "actionStatus": {
                 "@id": "http://schema.org/CompletedActionStatus"
@@ -749,6 +783,26 @@
             "agent": {
                 "@id": "https://orcid.org/0000-0002-4806-5140"
             },
+            "containerImage": [
+                {
+                    "@id": "quay.io/biocontainers/cutadapt:1.18--py36h14c3975_1"
+                },
+                {
+                    "@id": "quay.io/biocontainers/samtools:1.3.1--5"
+                },
+                {
+                    "@id": "jlaitinen/lftpalpine"
+                },
+                {
+                    "@id": "quay.io/biocontainers/picard:2.18.25--0"
+                },
+                {
+                    "@id": "broadinstitute/gatk3:3.6-0"
+                },
+                {
+                    "@id": "quay.io/biocontainers/bwa:0.7.17--h84994c4_5"
+                }
+            ],
             "endTime": "2023-08-29T20:40:48.384424+00:00",
             "instrument": {
                 "@id": "consolidated-workflow/a37fee9e-4288-4a9e-b493-993a867207d0_workflow.cwl"
@@ -756,7 +810,7 @@
             "name": "Run outputs/_1693335046 of consolidated-workflow/a37fee9e-4288-4a9e-b493-993a867207d0_workflow.cwl",
             "object": [
                 {
-                    "@id": "#f0c641a8-b1b7-451f-9515-876bf421a0ab"
+                    "@id": "#5c519991-d5c8-4fc0-9607-17674b093903"
                 },
                 {
                     "@id": "ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/technical/reference/phase2_reference_assembly_sequence/hs37d5.fa.gz"
@@ -768,18 +822,18 @@
                     "@id": "ftp://ftp.broadinstitute.org/bundle/b37/dbsnp_138.b37.vcf.gz"
                 },
                 {
-                    "@id": "#08ee660c-47af-4dab-adea-6d36e9182ea9"
+                    "@id": "#ba1b438b-ab9e-4e33-92ff-25122d63ef77"
                 },
                 {
-                    "@id": "#15ff7786-7ce5-440d-b74a-85e9967a02d3"
+                    "@id": "#18aa3d39-5f07-48ee-a433-d056cf8dc12a"
                 },
                 {
-                    "@id": "#4bb89a01-b3ee-4ee6-a2c1-8590a56e31f7"
+                    "@id": "#906f21f0-26e8-4818-8f3f-162cbf47c0d8"
                 }
             ],
             "result": [
                 {
-                    "@id": "#e81e68d4-c0f9-4b49-a105-aa2f76c6144c"
+                    "@id": "#dfc4c9ad-5f64-44b5-98d9-00f520838896"
                 },
                 {
                     "@id": "outputs/_1693335046/abc2.sorted.metrics.txt"
@@ -791,7 +845,7 @@
                     "@id": "meta/outputs/stats/dag.dot.png"
                 },
                 {
-                    "@id": "#b9d40913-d210-4837-9d19-9a88bf30efd6"
+                    "@id": "#a1004a11-af0c-406c-8d90-d4f3c7fac594"
                 }
             ],
             "startTime": "2023-08-29T18:50:46.906382+00:00"
@@ -806,11 +860,11 @@
             "name": "fastq_files",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#f0c641a8-b1b7-451f-9515-876bf421a0ab"
+                "@id": "#5c519991-d5c8-4fc0-9607-17674b093903"
             }
         },
         {
-            "@id": "#f0c641a8-b1b7-451f-9515-876bf421a0ab",
+            "@id": "#5c519991-d5c8-4fc0-9607-17674b093903",
             "@type": "Collection",
             "exampleOfWork": {
                 "@id": "consolidated-workflow/a37fee9e-4288-4a9e-b493-993a867207d0_workflow.cwl#param:fastq_files"
@@ -922,11 +976,11 @@
             "name": "readgroup_str",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#08ee660c-47af-4dab-adea-6d36e9182ea9"
+                "@id": "#ba1b438b-ab9e-4e33-92ff-25122d63ef77"
             }
         },
         {
-            "@id": "#08ee660c-47af-4dab-adea-6d36e9182ea9",
+            "@id": "#ba1b438b-ab9e-4e33-92ff-25122d63ef77",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "consolidated-workflow/a37fee9e-4288-4a9e-b493-993a867207d0_workflow.cwl#param:readgroup_str"
@@ -944,11 +998,11 @@
             "name": "chromosome",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#15ff7786-7ce5-440d-b74a-85e9967a02d3"
+                "@id": "#18aa3d39-5f07-48ee-a433-d056cf8dc12a"
             }
         },
         {
-            "@id": "#15ff7786-7ce5-440d-b74a-85e9967a02d3",
+            "@id": "#18aa3d39-5f07-48ee-a433-d056cf8dc12a",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "consolidated-workflow/a37fee9e-4288-4a9e-b493-993a867207d0_workflow.cwl#param:chromosome"
@@ -966,11 +1020,11 @@
             "name": "sample_name",
             "valueRequired": "True",
             "workExample": {
-                "@id": "#4bb89a01-b3ee-4ee6-a2c1-8590a56e31f7"
+                "@id": "#906f21f0-26e8-4818-8f3f-162cbf47c0d8"
             }
         },
         {
-            "@id": "#4bb89a01-b3ee-4ee6-a2c1-8590a56e31f7",
+            "@id": "#906f21f0-26e8-4818-8f3f-162cbf47c0d8",
             "@type": "PropertyValue",
             "exampleOfWork": {
                 "@id": "consolidated-workflow/a37fee9e-4288-4a9e-b493-993a867207d0_workflow.cwl#param:sample_name"
@@ -987,7 +1041,7 @@
             },
             "name": "gvcf",
             "workExample": {
-                "@id": "#e81e68d4-c0f9-4b49-a105-aa2f76c6144c"
+                "@id": "#dfc4c9ad-5f64-44b5-98d9-00f520838896"
             }
         },
         {
@@ -999,7 +1053,7 @@
             "sha256": "79c41a5eac5d7ebf46d91f3b802b8a79f2c92d946b46bef02828719b992c61c2"
         },
         {
-            "@id": "#e81e68d4-c0f9-4b49-a105-aa2f76c6144c",
+            "@id": "#dfc4c9ad-5f64-44b5-98d9-00f520838896",
             "@type": "Collection",
             "exampleOfWork": {
                 "@id": "consolidated-workflow/a37fee9e-4288-4a9e-b493-993a867207d0_workflow.cwl#output:gvcf"
@@ -1069,7 +1123,7 @@
             "sha256": "be64f6f04e5c72f99b1de818277122ad476023509623056cd71753d77fdf3d5e"
         },
         {
-            "@id": "#5b2d0a6d-e528-4b99-813d-3eede165d515",
+            "@id": "#8f604ed3-13b9-4512-8e53-6bb32dbe83bc",
             "@type": "CreateAction",
             "actionStatus": {
                 "@id": "http://schema.org/CompletedActionStatus"
@@ -1090,7 +1144,7 @@
             }
         },
         {
-            "@id": "#b9d40913-d210-4837-9d19-9a88bf30efd6",
+            "@id": "#a1004a11-af0c-406c-8d90-d4f3c7fac594",
             "@type": "Collection",
             "hasPart": [
                 {
