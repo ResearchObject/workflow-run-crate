@@ -9,7 +9,7 @@ title: Process Run Crate
 * Permalink: <https://w3id.org/ro/wfrun/process/0.3-DRAFT>
 * Authors: Workflow Run RO-Crate working group
 
-This profile uses terminology from the [RO-Crate 1.1 specification](https://w3id.org/ro/crate/1.1).
+This profile uses terminology from the [RO-Crate 1.1 specification](https://w3id.org/ro/crate/1.1), and [extends it](https://www.researchobject.org/ro-crate/1.1/appendix/jsonld.html#extending-ro-crate) with additional terms from the [workflow-run](https://github.com/ResearchObject/ro-terms/tree/master/workflow-run) ro-terms namespace.
 
 
 ## Overview
@@ -428,3 +428,41 @@ The behavior of some applications may be modified by setting appropriate environ
 Note that we added the `workflow-run` context to the `@context` entry in order to bring in the definition of `environment`.
 
 Environment variable settings SHOULD be listed if they are different from the default ones (usually unset) and affected the results of the action.
+
+
+## Representing container images
+
+An application may use one or more container images (e.g. [Docker](https://www.docker.com) container images) to perform its duty. An action MAY indicate that a container image was used during the execution via the `containerImage` property, defined in the [workflow-run](https://github.com/ResearchObject/ro-terms/tree/master/workflow-run) ro-terms namespace.
+
+```json
+{
+    "@id": "#cb04c897-eb92-4c53-8a38-bcc1a16fd650",
+    "@type": "CreateAction",
+    "instrument": {"@id": "bam2fastq.cwl"},
+    ...
+    "containerImage": {"@id": "#samtools-image"}
+},
+{
+    "@id": "#samtools-image",
+    "@type": "ContainerImage",
+    "additionalType": {"@id": "https://w3id.org/ro/terms/workflow-run#DockerImage"},
+    "registry": "docker.io",
+    "name": "biocontainers/samtools",
+    "tag": "v1.9-4-deb_cv1",
+    "sha256": "da61624fda230e94867c9429ca1112e1e77c24e500b52dfc84eaf2f5820b4a2a"
+}
+```
+
+The `ContainerImage` type (note the leading lowercase "C") and most of the properties shown above are also defined in the workflow-run namespace. The `additionalType` describes the specific image type (e.g., `DockerImage`, `SIFImage`); the registry is the service that hosts the image (e.g., "docker.io", "quay.io"); the `name` is the identifier of the image within the registry; `tag` describes the image tag and `sha256` its sha256 checksum. A `ContainerImage` entity SHOULD list at least the `additionalType`, `registry` and `name` properties.
+
+Alternatively, the `containerImage` could point to a `URL`. For instance:
+
+```json
+{
+    "@id": "#cb04c897-eb92-4c53-8a38-bcc1a16fd650",
+    "@type": "CreateAction",
+    "instrument": {"@id": "bam2fastq.cwl"},
+    ...
+    "containerImage": "https://example.com/samtools.sif"
+}
+```
