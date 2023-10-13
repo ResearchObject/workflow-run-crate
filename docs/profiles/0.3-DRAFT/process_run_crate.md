@@ -445,7 +445,7 @@ An application may use one or more container images (e.g. [Docker](https://www.d
 {
     "@id": "#samtools-image",
     "@type": "ContainerImage",
-    "additionalType": "DockerImage",
+    "additionalType": {"@id": "https://w3id.org/ro/terms/workflow-run#DockerImage"},
     "registry": "docker.io",
     "name": "biocontainers/samtools",
     "tag": "v1.9-4-deb_cv1",
