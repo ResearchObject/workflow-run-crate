@@ -15,7 +15,8 @@
 """\
 Perform a sample query on a Workflow Run RO-Crate.
 
-The query returns all actions together with their instruments.
+The query returns all actions together with their instruments, start and end
+times.
 """
 
 from pathlib import Path
@@ -25,10 +26,12 @@ import rdflib
 
 query = """\
 PREFIX schema: <http://schema.org/>
-SELECT ?action ?instrument
+SELECT ?action ?instrument ?start ?end
 WHERE {
   ?action a schema:CreateAction .
-  ?action schema:instrument ?instrument
+  ?action schema:instrument ?instrument .
+  OPTIONAL { ?action schema:startTime ?start } .
+  OPTIONAL { ?action schema:endTime ?end }
 }
 """
 
@@ -41,6 +44,10 @@ def main(args):
     for row in qres:
         print(f"action: {row.action}")
         print(f"instrument: {row.instrument}")
+        if row.start:
+            print(f"start: {row.start}")
+        if row.end:
+            print(f"end: {row.end}")
         print()
 
 
