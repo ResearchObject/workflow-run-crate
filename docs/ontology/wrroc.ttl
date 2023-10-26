@@ -1,6 +1,7 @@
 @prefix : <https://w3id.org/ro/wfrun/ontology#> .
 @prefix s: <http://schema.org/> .
 @prefix wf: <https://w3id.org/workflowhub/workflow-ro-crate#> .
+@prefix dct: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
@@ -9,7 +10,6 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix wrroc: <https://w3id.org/ro/terms/workflow-run#> .
-@prefix dct:  <http://purl.org/dc/terms/> .
 @prefix bioschemas: <https://bioschemas.org/> .
 @base <https://w3id.org/ro/wfrun/ontology#> .
 
@@ -74,7 +74,7 @@ s:ImageObject rdf:type rdfs:Datatype .
 
 ###  http://purl.org/dc/terms/conformsTo
 dct:conformsTo rdf:type owl:ObjectProperty ;
-                                      rdfs:label "dcterms:conformsTo"@en-gb .
+               rdfs:label "dcterms:conformsTo"@en-gb .
 
 
 ###  http://schema.org/about
@@ -718,10 +718,6 @@ s:UpdateAction rdf:type owl:Class ;
                rdfs:label "s:UpdateAction"@en-gb .
 
 
-###  http://www.w3.org/2002/07/owl#UnionClass
-owl:UnionClass rdf:type owl:Class .
-
-
 ###  http://www.w3.org/ns/dx/prof/Profile
 prof:Profile rdf:type owl:Class ;
              rdfs:label "prof:Profile"@en-gb .
@@ -793,56 +789,10 @@ bioschemas:FormalParameter rdf:type owl:Class ;
                            rdfs:label "bioschemas:FormalParameter"@en-gb .
 
 
-###  https://w3id.org/ro/terms/workflow-run#BioschemasProfile
-:BioschemasProfile rdf:type owl:Class ;
-                        rdfs:subClassOf prof:Profile ;
-                        rdfs:label "Bioschemas Profile"@en-gb .
-
-
-###  https://w3id.org/ro/terms/workflow-run#ComputationalWorkflowProfile
-:ComputationalWorkflowProfile rdf:type owl:Class ;
-                                   rdfs:subClassOf :BioschemasProfile ,
-                                                   [ rdf:type owl:Restriction ;
-                                                     owl:onProperty [ owl:inverseOf dct:conformsTo
-                                                                    ] ;
-                                                     owl:someValuesFrom bioschemas:ComputationalWorkflow
-                                                   ] ;
-                                   rdfs:label "ComputationalWorkflow profile"@en-gb .
-
-
 ###  https://w3id.org/ro/terms/workflow-run#ContainerImage
 wrroc:ContainerImage rdf:type owl:Class ;
                      rdfs:subClassOf s:CreativeWork ;
                      rdfs:label "wrroc:ContainerImage"@en-gb .
-
-
-###  https://w3id.org/ro/terms/workflow-run#CrateMetadataDescriptor
-:CrateMetadataDescriptor rdf:type owl:Class ;
-                              rdfs:subClassOf s:CreativeWork ,
-                                              [ rdf:type owl:Restriction ;
-                                                owl:onProperty s:about ;
-                                                owl:someValuesFrom :RootCrate
-                                              ] ;
-                              rdfs:label "CrateMetadataDescriptor"@en-gb .
-
-
-###  https://w3id.org/ro/terms/workflow-run#CreateMetadataDescriptor1_1
-:CreateMetadataDescriptor1_1 rdf:type owl:Class ;
-                                  owl:equivalentClass [ owl:intersectionOf ( s:CreativeWork
-                                                                             [ rdf:type owl:Restriction ;
-                                                                               owl:onProperty dct:conformsTo ;
-                                                                               owl:hasValue <https://w3id.org/ro/crate/1.1>
-                                                                             ]
-                                                                           ) ;
-                                                        rdf:type owl:Class
-                                                      ] ;
-                                  rdfs:subClassOf :CrateMetadataDescriptor ;
-                                  rdfs:label "CreateMetadataDescriptor1_1"@en-gb .
-
-
-###  https://w3id.org/ro/terms/workflow-run#DataEntity
-:DataEntity rdf:type owl:Class ;
-                 rdfs:label "DataEntity"@en-gb .
 
 
 ###  https://w3id.org/ro/terms/workflow-run#DockerImage
@@ -851,81 +801,10 @@ wrroc:DockerImage rdf:type owl:Class ;
                   rdfs:label "wrroc:DockerImage"@en-gb .
 
 
-###  https://w3id.org/ro/terms/workflow-run#FormalParameterProfile
-:FormalParameterProfile rdf:type owl:Class ;
-                             rdfs:subClassOf :BioschemasProfile ,
-                                             [ rdf:type owl:Restriction ;
-                                               owl:onProperty [ owl:inverseOf dct:conformsTo
-                                                              ] ;
-                                               owl:someValuesFrom bioschemas:FormalParameter
-                                             ] ;
-                             rdfs:label "FormalParameter profile"@en-gb .
-
-
 ###  https://w3id.org/ro/terms/workflow-run#ParameterConnection
 wrroc:ParameterConnection rdf:type owl:Class ;
                           rdfs:subClassOf s:Intangible ;
                           rdfs:label "wrroc:ParameterConnection"@en-gb .
-
-
-###  https://w3id.org/ro/terms/workflow-run#ProcessRunAction
-:ProcessRunAction rdf:type owl:Class ;
-                       owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Class ;
-                                                                    owl:unionOf ( s:ActivateAction
-                                                                                  s:CreateAction
-                                                                                  s:UpdateAction
-                                                                                )
-                                                                  ]
-                                                                  [ rdf:type owl:Restriction ;
-                                                                    owl:onProperty s:instrument ;
-                                                                    owl:someValuesFrom [ rdf:type owl:Class ;
-                                                                                         owl:unionOf ( s:SoftwareApplication
-                                                                                                       s:SoftwareSourceCode
-                                                                                                     )
-                                                                                       ]
-                                                                  ]
-                                                                ) ;
-                                             rdf:type owl:Class
-                                           ] ;
-                       rdfs:subClassOf s:Action ;
-                       rdfs:label "ProcessRunAction"@en-gb .
-
-
-###  https://w3id.org/ro/terms/workflow-run#ProcessRunCrateProfile
-:ProcessRunCrateProfile rdf:type owl:Class ;
-                             rdfs:subClassOf :ROCrateProfile ,
-                                             [ rdf:type owl:Restriction ;
-                                               owl:onProperty [ owl:inverseOf dct:conformsTo
-                                                              ] ;
-                                               owl:allValuesFrom [ rdf:type owl:Restriction ;
-                                                                   owl:onProperty s:mentions ;
-                                                                   owl:someValuesFrom :ProcessRunAction
-                                                                 ]
-                                             ] ;
-                             rdfs:label "Process Run Crate profile"@en-gb .
-
-
-###  https://w3id.org/ro/terms/workflow-run#ProvenanceRunCrateProfile
-:ProvenanceRunCrateProfile rdf:type owl:Class ;
-                                rdfs:subClassOf :WorkflowRunCrateProfile ;
-                                rdfs:label "Provenance Run Crate profile"@en-gb .
-
-
-###  https://w3id.org/ro/terms/workflow-run#ROCrateProfile
-:ROCrateProfile rdf:type owl:Class ;
-                      rdfs:subClassOf prof:Profile ,
-                                      [ rdf:type owl:Restriction ;
-                                        owl:onProperty [ owl:inverseOf dct:conformsTo
-                                                       ] ;
-                                        owl:allValuesFrom :RootCrate
-                                      ] ;
-                      rdfs:label "RO-Crate profile"@en-gb .
-
-
-###  https://w3id.org/ro/terms/workflow-run#RootCrate
-:RootCrate rdf:type owl:Class ;
-                rdfs:subClassOf s:Dataset ;
-                rdfs:label "RootCrate"@en-gb .
 
 
 ###  https://w3id.org/ro/terms/workflow-run#SIFImage
@@ -934,48 +813,166 @@ wrroc:SIFImage rdf:type owl:Class ;
                rdfs:label "wrroc:SIFImage"@en-gb .
 
 
-###  https://w3id.org/ro/terms/workflow-run#WorkflowROCrateProfile
-:WorkflowROCrateProfile rdf:type owl:Class ;
-                              rdfs:subClassOf :ROCrateProfile ,
-                                              [ rdf:type owl:Restriction ;
-                                                owl:onProperty s:mainEntity ;
-                                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                owl:onClass bioschemas:ComputationalWorkflow
-                                              ] ;
-                              rdfs:label "Workflow RO-Crate profile"@en-gb .
+###  https://w3id.org/ro/wfrun/ontology#BioschemasProfile
+:BioschemasProfile rdf:type owl:Class ;
+                   rdfs:subClassOf prof:Profile ;
+                   rdfs:label "Bioschemas Profile"@en-gb .
 
 
-###  https://w3id.org/ro/terms/workflow-run#WorkflowRunAction
-:WorkflowRunAction rdf:type owl:Class ;
-                        owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Class ;
-                                                                     owl:unionOf ( s:ActivateAction
-                                                                                   s:CreateAction
-                                                                                   s:UpdateAction
-                                                                                 )
-                                                                   ]
-                                                                   [ rdf:type owl:Restriction ;
-                                                                     owl:onProperty s:instrument ;
-                                                                     owl:someValuesFrom bioschemas:ComputationalWorkflow
-                                                                   ]
-                                                                 ) ;
-                                              rdf:type owl:Class
-                                            ] ;
-                        rdfs:subClassOf :ProcessRunAction .
-
-
-###  https://w3id.org/ro/terms/workflow-run#WorkflowRunCrateProfile
-:WorkflowRunCrateProfile rdf:type owl:Class ;
-                              rdfs:subClassOf :ProcessRunCrateProfile ,
-                                              :WorkflowROCrateProfile ,
+###  https://w3id.org/ro/wfrun/ontology#ComputationalWorkflowProfile
+:ComputationalWorkflowProfile rdf:type owl:Class ;
+                              rdfs:subClassOf :BioschemasProfile ,
                                               [ rdf:type owl:Restriction ;
                                                 owl:onProperty [ owl:inverseOf dct:conformsTo
                                                                ] ;
-                                                owl:allValuesFrom [ rdf:type owl:Restriction ;
-                                                                    owl:onProperty s:mentions ;
-                                                                    owl:someValuesFrom :WorkflowRunAction
-                                                                  ]
+                                                owl:someValuesFrom bioschemas:ComputationalWorkflow
                                               ] ;
-                              rdfs:label "Workflow Run Crate profile"@en-gb .
+                              rdfs:label "ComputationalWorkflow profile"@en-gb .
+
+
+###  https://w3id.org/ro/wfrun/ontology#CrateMetadataDescriptor
+:CrateMetadataDescriptor rdf:type owl:Class ;
+                         rdfs:subClassOf s:CreativeWork ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty s:about ;
+                                           owl:someValuesFrom :RootCrate
+                                         ] ;
+                         rdfs:label "CrateMetadataDescriptor"@en-gb .
+
+
+###  https://w3id.org/ro/wfrun/ontology#CreateMetadataDescriptor1_1
+:CreateMetadataDescriptor1_1 rdf:type owl:Class ;
+                             owl:equivalentClass [ owl:intersectionOf ( s:CreativeWork
+                                                                        [ rdf:type owl:Restriction ;
+                                                                          owl:onProperty dct:conformsTo ;
+                                                                          owl:hasValue <https://w3id.org/ro/crate/1.1>
+                                                                        ]
+                                                                      ) ;
+                                                   rdf:type owl:Class
+                                                 ] ;
+                             rdfs:subClassOf :CrateMetadataDescriptor ;
+                             rdfs:label "CreateMetadataDescriptor1_1"@en-gb .
+
+
+###  https://w3id.org/ro/wfrun/ontology#DataEntity
+:DataEntity rdf:type owl:Class ;
+            rdfs:subClassOf prov:Entity ;
+            rdfs:label "DataEntity"@en-gb .
+
+
+###  https://w3id.org/ro/wfrun/ontology#FormalParameterProfile
+:FormalParameterProfile rdf:type owl:Class ;
+                        rdfs:subClassOf :BioschemasProfile ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty [ owl:inverseOf dct:conformsTo
+                                                         ] ;
+                                          owl:someValuesFrom bioschemas:FormalParameter
+                                        ] ;
+                        rdfs:label "FormalParameter profile"@en-gb .
+
+
+###  https://w3id.org/ro/wfrun/ontology#ProcessRunAction
+:ProcessRunAction rdf:type owl:Class ;
+                  owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Class ;
+                                                               owl:unionOf ( s:ActivateAction
+                                                                             s:CreateAction
+                                                                             s:UpdateAction
+                                                                           )
+                                                             ]
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty s:instrument ;
+                                                               owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                                    owl:unionOf ( s:SoftwareApplication
+                                                                                                  s:SoftwareSourceCode
+                                                                                                )
+                                                                                  ]
+                                                             ]
+                                                           ) ;
+                                        rdf:type owl:Class
+                                      ] ;
+                  rdfs:subClassOf s:Action ;
+                  rdfs:label "ProcessRunAction"@en-gb .
+
+
+###  https://w3id.org/ro/wfrun/ontology#ProcessRunCrateProfile
+:ProcessRunCrateProfile rdf:type owl:Class ;
+                        rdfs:subClassOf :ROCrateProfile ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty [ owl:inverseOf dct:conformsTo
+                                                         ] ;
+                                          owl:allValuesFrom [ rdf:type owl:Restriction ;
+                                                              owl:onProperty s:mentions ;
+                                                              owl:someValuesFrom :ProcessRunAction
+                                                            ]
+                                        ] ;
+                        rdfs:label "Process Run Crate profile"@en-gb .
+
+
+###  https://w3id.org/ro/wfrun/ontology#ProvenanceRunCrateProfile
+:ProvenanceRunCrateProfile rdf:type owl:Class ;
+                           rdfs:subClassOf :WorkflowRunCrateProfile ;
+                           rdfs:label "Provenance Run Crate profile"@en-gb .
+
+
+###  https://w3id.org/ro/wfrun/ontology#ROCrateProfile
+:ROCrateProfile rdf:type owl:Class ;
+                rdfs:subClassOf prof:Profile ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty [ owl:inverseOf dct:conformsTo
+                                                 ] ;
+                                  owl:allValuesFrom :RootCrate
+                                ] ;
+                rdfs:label "RO-Crate profile"@en-gb .
+
+
+###  https://w3id.org/ro/wfrun/ontology#RootCrate
+:RootCrate rdf:type owl:Class ;
+           rdfs:subClassOf s:Dataset ;
+           rdfs:label "RootCrate"@en-gb .
+
+
+###  https://w3id.org/ro/wfrun/ontology#WorkflowROCrateProfile
+:WorkflowROCrateProfile rdf:type owl:Class ;
+                        rdfs:subClassOf :ROCrateProfile ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty s:mainEntity ;
+                                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                          owl:onClass bioschemas:ComputationalWorkflow
+                                        ] ;
+                        rdfs:label "Workflow RO-Crate profile"@en-gb .
+
+
+###  https://w3id.org/ro/wfrun/ontology#WorkflowRunAction
+:WorkflowRunAction rdf:type owl:Class ;
+                   owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Class ;
+                                                                owl:unionOf ( s:ActivateAction
+                                                                              s:CreateAction
+                                                                              s:UpdateAction
+                                                                            )
+                                                              ]
+                                                              [ rdf:type owl:Restriction ;
+                                                                owl:onProperty s:instrument ;
+                                                                owl:someValuesFrom bioschemas:ComputationalWorkflow
+                                                              ]
+                                                            ) ;
+                                         rdf:type owl:Class
+                                       ] ;
+                   rdfs:subClassOf :ProcessRunAction .
+
+
+###  https://w3id.org/ro/wfrun/ontology#WorkflowRunCrateProfile
+:WorkflowRunCrateProfile rdf:type owl:Class ;
+                         rdfs:subClassOf :ProcessRunCrateProfile ,
+                                         :WorkflowROCrateProfile ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty [ owl:inverseOf dct:conformsTo
+                                                          ] ;
+                                           owl:allValuesFrom [ rdf:type owl:Restriction ;
+                                                               owl:onProperty s:mentions ;
+                                                               owl:someValuesFrom :WorkflowRunAction
+                                                             ]
+                                         ] ;
+                         rdfs:label "Workflow Run Crate profile"@en-gb .
 
 
 #################################################################
@@ -1018,11 +1015,11 @@ s:PotentialActionStatus rdf:type owl:NamedIndividual ,
                                 rdfs:label "RO-Crate 1.1"@en-gb .
 
 
-###  https://w3id.org/ro/terms/workflow-run#BioschemasComputationalWorkflowProfile1.0-RELEASE
+###  https://w3id.org/ro/wfrun/ontology#BioschemasComputationalWorkflowProfile1.0-RELEASE
 :BioschemasComputationalWorkflowProfile1.0-RELEASE rdf:type owl:NamedIndividual ,
-                                                                 :ComputationalWorkflowProfile ;
-                                                        rdfs:isDefinedBy <https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE> ;
-                                                        rdfs:label "Bioschemas ComputationalWorkflow profile 1.0-RELEASE"@en-gb .
+                                                            :ComputationalWorkflowProfile ;
+                                                   rdfs:isDefinedBy <https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE> ;
+                                                   rdfs:label "Bioschemas ComputationalWorkflow profile 1.0-RELEASE"@en-gb .
 
 
 ###  https://w3id.org/ro/wfrun/process/0.3
@@ -1095,13 +1092,12 @@ wf:snakemake rdf:type owl:NamedIndividual ,
                                                      rdfs:label "Workflow RO-Crate profile 1.0"@en-gb .
 
 
-
 #################################################################
 #    Annotations
 #################################################################
 
 s:ImageObject rdfs:label "s:ImageObject"@en-gb ;
-               rdfs:isDefinedBy <https://schema.org/version/latest/schemaorg-current-http.ttl> .
+              rdfs:isDefinedBy <https://schema.org/version/latest/schemaorg-current-http.ttl> .
 
 
 s:alternateName rdfs:label "s:alternateName"@en-gb ;
