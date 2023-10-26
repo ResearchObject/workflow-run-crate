@@ -1,0 +1,42 @@
+{
+    "resdir": {
+        "location": "file:///home/jmfernandez/projects/WfExS-backend/wfexs-backend-test_WorkDir/2400c32e-f875-4cd4-9d41-be6da8224c67/outputs/_1693447347/output",
+        "basename": "output",
+        "class": "Directory",
+        "listing": [
+            {
+                "class": "File",
+                "location": "file:///home/jmfernandez/projects/WfExS-backend/wfexs-backend-test_WorkDir/2400c32e-f875-4cd4-9d41-be6da8224c67/outputs/_1693447347/output/aracne.csv.gz",
+                "basename": "aracne.csv.gz",
+                "checksum": "sha1$098b05ca77a300b138d9f5b7d931c0cb413f15b6",
+                "size": 64996,
+                "path": "/home/jmfernandez/projects/WfExS-backend/wfexs-backend-test_WorkDir/2400c32e-f875-4cd4-9d41-be6da8224c67/outputs/_1693447347/output/aracne.csv.gz"
+            },
+            {
+                "class": "File",
+                "location": "file:///home/jmfernandez/projects/WfExS-backend/wfexs-backend-test_WorkDir/2400c32e-f875-4cd4-9d41-be6da8224c67/outputs/_1693447347/output/mrnet.csv.gz",
+                "basename": "mrnet.csv.gz",
+                "checksum": "sha1$a4b3d0fbfaf9486faf6ea419d684c35143e9ba5b",
+                "size": 26622,
+                "path": "/home/jmfernandez/projects/WfExS-backend/wfexs-backend-test_WorkDir/2400c32e-f875-4cd4-9d41-be6da8224c67/outputs/_1693447347/output/mrnet.csv.gz"
+            },
+            {
+                "class": "File",
+                "location": "file:///home/jmfernandez/projects/WfExS-backend/wfexs-backend-test_WorkDir/2400c32e-f875-4cd4-9d41-be6da8224c67/outputs/_1693447347/output/clr.csv.gz",
+                "basename": "clr.csv.gz",
+                "checksum": "sha1$5b121aca3fd0eae7c34fa15c342aad594880be27",
+                "size": 25423,
+                "path": "/home/jmfernandez/projects/WfExS-backend/wfexs-backend-test_WorkDir/2400c32e-f875-4cd4-9d41-be6da8224c67/outputs/_1693447347/output/clr.csv.gz"
+            },
+            {
+                "class": "File",
+                "location": "file:///home/jmfernandez/projects/WfExS-backend/wfexs-backend-test_WorkDir/2400c32e-f875-4cd4-9d41-be6da8224c67/outputs/_1693447347/output/summa.csv.gz",
+                "basename": "summa.csv.gz",
+                "checksum": "sha1$575d1d2c0d25112275931b43d3d80194f628830c",
+                "size": 69014,
+                "path": "/home/jmfernandez/projects/WfExS-backend/wfexs-backend-test_WorkDir/2400c32e-f875-4cd4-9d41-be6da8224c67/outputs/_1693447347/output/summa.csv.gz"
+            }
+        ],
+        "path": "/home/jmfernandez/projects/WfExS-backend/wfexs-backend-test_WorkDir/2400c32e-f875-4cd4-9d41-be6da8224c67/outputs/_1693447347/output"
+    }
+}

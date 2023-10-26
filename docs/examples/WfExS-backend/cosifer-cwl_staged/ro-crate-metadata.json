@@ -1,0 +1,435 @@
+{
+    "@context": [
+        "https://w3id.org/ro/crate/1.1/context",
+        {
+            "ContainerImage": "https://w3id.org/ro/terms/workflow-run#ContainerImage",
+            "DockerImage": "https://w3id.org/ro/terms/workflow-run#DockerImage",
+            "SIFImage": "https://w3id.org/ro/terms/workflow-run#SIFImage",
+            "containerImage": "https://w3id.org/ro/terms/workflow-run#containerImage",
+            "registry": "https://w3id.org/ro/terms/workflow-run#registry",
+            "sha256": "https://w3id.org/ro/terms/workflow-run#sha256",
+            "tag": "https://w3id.org/ro/terms/workflow-run#tag"
+        }
+    ],
+    "@graph": [
+        {
+            "@id": "./",
+            "@type": "Dataset",
+            "conformsTo": [
+                {
+                    "@id": "https://w3id.org/ro/wfrun/process/0.2"
+                },
+                {
+                    "@id": "https://w3id.org/ro/wfrun/workflow/0.2"
+                },
+                {
+                    "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+                }
+            ],
+            "datePublished": "2023-10-09T23:46:40+00:00",
+            "description": "RO-Crate from staged WfExS working directory 2400c32e-f875-4cd4-9d41-be6da8224c67 (preferencial buquinolate)",
+            "hasPart": [
+                {
+                    "@id": "README.md"
+                },
+                {
+                    "@id": "containers/docker.io_node:slim.img_meta.json"
+                },
+                {
+                    "@id": "workflow/cosifer/cwl/cosifer-workflow.cwl"
+                },
+                {
+                    "@id": "containers/tsenit_cosifer:b4d5af45d2fc54b6bff2a9153a8e9054e560302e.img_meta.json"
+                },
+                {
+                    "@id": "workflow/cosifer/cwl/cosifer.cwl"
+                },
+                {
+                    "@id": "consolidated-workflow/2400c32e-f875-4cd4-9d41-be6da8224c67_workflow.cwl"
+                },
+                {
+                    "@id": "inputs/data_matrix.csv"
+                }
+            ],
+            "license": [
+                "https://spdx.org/licenses/CC-BY-4.0.html"
+            ],
+            "mainEntity": {
+                "@id": "consolidated-workflow/2400c32e-f875-4cd4-9d41-be6da8224c67_workflow.cwl"
+            }
+        },
+        {
+            "@id": "ro-crate-metadata.json",
+            "@type": "CreativeWork",
+            "about": {
+                "@id": "./"
+            },
+            "conformsTo": [
+                {
+                    "@id": "https://w3id.org/ro/crate/1.1"
+                },
+                {
+                    "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+                }
+            ]
+        },
+        {
+            "@id": "https://w3id.org/workflowhub/workflow-ro-crate#cwl",
+            "@type": "ComputerLanguage",
+            "alternateName": "CWL",
+            "identifier": {
+                "@id": "https://w3id.org/cwl/v1.0/"
+            },
+            "name": "Common Workflow Language",
+            "url": {
+                "@id": "https://www.commonwl.org/"
+            },
+            "version": "v1.0"
+        },
+        {
+            "@id": "https://orcid.org/0000-0002-4806-5140",
+            "@type": "Person",
+            "name": "Jos\u00e9 Mar\u00eda Fern\u00e1ndez Gonz\u00e1lez"
+        },
+        {
+            "@id": "mailto:lrodrigueznava@uoc.edu",
+            "@type": "ContactPoint",
+            "contactType": "Author",
+            "email": "lrodrigueznava@uoc.edu",
+            "identifier": "lrodrigueznava@uoc.edu",
+            "url": "https://orcid.org/0000-0003-4929-1219"
+        },
+        {
+            "@id": "mailto:lrodrin@gmail.com",
+            "@type": "ContactPoint",
+            "contactType": "Author",
+            "email": "lrodrin@gmail.com",
+            "identifier": "lrodrin@gmail.com",
+            "url": "https://orcid.org/0000-0003-4929-1219"
+        },
+        {
+            "@id": "https://orcid.org/0000-0003-4929-1219",
+            "@type": "Person",
+            "contactPoint": [
+                {
+                    "@id": "mailto:lrodrigueznava@uoc.edu"
+                },
+                {
+                    "@id": "mailto:lrodrin@gmail.com"
+                }
+            ],
+            "name": "Laura Rodr\u00edguez-Navas"
+        },
+        {
+            "@id": "https://w3id.org/ro/wfrun/process/0.2",
+            "@type": "CreativeWork",
+            "name": "ProcessRun Crate",
+            "version": "0.2"
+        },
+        {
+            "@id": "https://w3id.org/ro/wfrun/workflow/0.2",
+            "@type": "CreativeWork",
+            "name": "Workflow Run Crate",
+            "version": "0.2"
+        },
+        {
+            "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0",
+            "@type": "CreativeWork",
+            "name": "Workflow RO-Crate",
+            "version": "1.0"
+        },
+        {
+            "@id": "https://github.com/inab/WfExS-backend",
+            "@type": "SoftwareApplication",
+            "name": "WfExS-backend",
+            "softwareVersion": "0.9.3-192-g93901ff (93901ff9f5e88903b917d62cd0302454ae52364c, branch main)",
+            "url": "https://github.com/inab/WfExS-backend"
+        },
+        {
+            "@id": "README.md",
+            "@type": "File",
+            "about": {
+                "@id": "./"
+            },
+            "contentSize": "5544",
+            "encodingFormat": "text/markdown",
+            "license": "https://spdx.org/licenses/CC-BY-4.0.html",
+            "sha256": "83fc4b452a3596eb607e6bd4aefbc8dcdcacc1d1167e7f5274c4072e50090171"
+        },
+        {
+            "@id": "https://pypi.org/project/cwltool/",
+            "@type": "SoftwareApplication",
+            "softwareRequirements": {
+                "@id": "docker://docker.io/node:slim"
+            },
+            "softwareVersion": "cwltool 3.1.20230906142556"
+        },
+        {
+            "@id": "https://apptainer.org/",
+            "@type": "SoftwareApplication",
+            "applicationCategory": "https://www.wikidata.org/wiki/Q7935198",
+            "name": "singularity",
+            "softwareVersion": "apptainer version 1.2.2"
+        },
+        {
+            "@id": "https://www.docker.com/",
+            "@type": "SoftwareApplication",
+            "applicationCategory": "https://www.wikidata.org/wiki/Q7935198",
+            "name": "docker"
+        },
+        {
+            "@id": "containers/docker.io_node:slim.img_meta.json",
+            "@type": "File",
+            "about": {
+                "@id": "docker://docker.io/node:slim"
+            },
+            "contentSize": "1468",
+            "encodingFormat": "application/json",
+            "sha256": "2314bd7c4df992967b6e09466dee679a2ae071e1be995e7844091156c9379bfd"
+        },
+        {
+            "@id": "docker://docker.io/node:slim",
+            "@type": [
+                "ContainerImage",
+                "SoftwareApplication"
+            ],
+            "additionalType": "DockerImage",
+            "applicationCategory": "https://www.wikidata.org/wiki/Q51294208",
+            "name": "docker.io/node",
+            "operatingSystem": "linux",
+            "processorRequirements": "amd64",
+            "registry": "docker.io",
+            "softwareRequirements": {
+                "@id": "https://apptainer.org/"
+            },
+            "softwareVersion": "library/node@sha256:dc1906714d1993d291e1e7b5f236291236b0a0b6dfacdb164e4a9ea44d09c52e",
+            "tag": "slim"
+        },
+        {
+            "@id": "workflow/cosifer/cwl/cosifer-workflow.cwl",
+            "@type": [
+                "File",
+                "SoftwareSourceCode",
+                "ComputationalWorkflow",
+                "SoftwareApplication"
+            ],
+            "alternateName": "cosifer/cwl/cosifer-workflow.cwl",
+            "codeRepository": "https://github.com/inab/ipc_workflows.git",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE"
+            },
+            "contentSize": "583",
+            "contentUrl": "https://raw.githubusercontent.com/inab/ipc_workflows/cosifer-20210322/cosifer/cwl/cosifer-workflow.cwl",
+            "description": "Unconsolidated Workflow Entrypoint",
+            "encodingFormat": "text/plain",
+            "hasPart": {
+                "@id": "workflow/cosifer/cwl/cosifer.cwl"
+            },
+            "name": "workflow/cosifer/cwl/cosifer-workflow",
+            "programmingLanguage": {
+                "@id": "https://w3id.org/workflowhub/workflow-ro-crate#cwl"
+            },
+            "runtimePlatform": "cwltool 3.1.20230906142556",
+            "sha256": "652a8a76f52dca54e24663e1dd97c74cf5656761194694cb0af3cc86dec93b91",
+            "softwareRequirements": {
+                "@id": "https://pypi.org/project/cwltool/"
+            },
+            "url": "https://github.com/inab/ipc_workflows/tree/cosifer-20210322",
+            "version": "b6ff7c65652408f905d0e2b8340c2e65f0253fd2"
+        },
+        {
+            "@id": "containers/tsenit_cosifer:b4d5af45d2fc54b6bff2a9153a8e9054e560302e.img_meta.json",
+            "@type": "File",
+            "about": {
+                "@id": "docker://tsenit/cosifer:b4d5af45d2fc54b6bff2a9153a8e9054e560302e"
+            },
+            "contentSize": "3064",
+            "encodingFormat": "application/json",
+            "sha256": "c10f17f9479e4a56071958064f40504847c412604cee5412cb85b0751f847d20"
+        },
+        {
+            "@id": "docker://tsenit/cosifer:b4d5af45d2fc54b6bff2a9153a8e9054e560302e",
+            "@type": [
+                "ContainerImage",
+                "SoftwareApplication"
+            ],
+            "additionalType": "DockerImage",
+            "applicationCategory": "https://www.wikidata.org/wiki/Q51294208",
+            "name": "tsenit/cosifer",
+            "operatingSystem": "linux",
+            "processorRequirements": "amd64",
+            "registry": "docker.io",
+            "softwareRequirements": {
+                "@id": "https://apptainer.org/"
+            },
+            "softwareVersion": "tsenit/cosifer@sha256:61e445ec73d54f9b389688eb3d9671a62b1d5e7b5cd5b7497a7683cc13a9e187",
+            "tag": "b4d5af45d2fc54b6bff2a9153a8e9054e560302e"
+        },
+        {
+            "@id": "workflow/cosifer/cwl/cosifer.cwl",
+            "@type": [
+                "File",
+                "SoftwareSourceCode"
+            ],
+            "alternateName": "cosifer/cwl/cosifer.cwl",
+            "contentSize": "860",
+            "contentUrl": "https://raw.githubusercontent.com/inab/ipc_workflows/cosifer-20210322/cosifer/cwl/cosifer-workflow.cwl/cosifer/cwl/cosifer.cwl",
+            "encodingFormat": "text/plain",
+            "sha256": "9a60cb61535f661f13125b1c137319f71afdcdbefb2b8ba4814498812439f3c4"
+        },
+        {
+            "@id": "consolidated-workflow/2400c32e-f875-4cd4-9d41-be6da8224c67_workflow.cwl",
+            "@type": [
+                "File",
+                "SoftwareSourceCode",
+                "ComputationalWorkflow",
+                "SoftwareApplication"
+            ],
+            "alternateName": "2400c32e-f875-4cd4-9d41-be6da8224c67_workflow.cwl",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE"
+            },
+            "contentSize": "5655",
+            "description": "Consolidated Workflow Entrypoint",
+            "encodingFormat": "application/json",
+            "input": [
+                {
+                    "@id": "consolidated-workflow/2400c32e-f875-4cd4-9d41-be6da8224c67_workflow.cwl#param:data_matrix"
+                },
+                {
+                    "@id": "consolidated-workflow/2400c32e-f875-4cd4-9d41-be6da8224c67_workflow.cwl#param:separator"
+                },
+                {
+                    "@id": "consolidated-workflow/2400c32e-f875-4cd4-9d41-be6da8224c67_workflow.cwl#param:outdir"
+                }
+            ],
+            "isBasedOn": {
+                "@id": "workflow/cosifer/cwl/cosifer-workflow.cwl"
+            },
+            "name": "consolidated-workflow/2400c32e-f875-4cd4-9d41-be6da8224c67_workflow",
+            "output": {
+                "@id": "consolidated-workflow/2400c32e-f875-4cd4-9d41-be6da8224c67_workflow.cwl#output:resdir"
+            },
+            "programmingLanguage": {
+                "@id": "https://w3id.org/workflowhub/workflow-ro-crate#cwl"
+            },
+            "runtimePlatform": "cwltool 3.1.20230906142556",
+            "sha256": "3dc9d2ff094deb781e3f15a92c7c828f04c7ad2876beb803f74ce41a6368b4ac",
+            "softwareAddOn": [
+                {
+                    "@id": "https://apptainer.org/"
+                },
+                {
+                    "@id": "docker://tsenit/cosifer:b4d5af45d2fc54b6bff2a9153a8e9054e560302e"
+                }
+            ],
+            "softwareRequirements": {
+                "@id": "https://pypi.org/project/cwltool/"
+            },
+            "version": "b6ff7c65652408f905d0e2b8340c2e65f0253fd2"
+        },
+        {
+            "@id": "#0037c2f1-cb0b-4be3-b886-d45bbf79826a",
+            "@type": "CreateAction",
+            "actionStatus": {
+                "@id": "http://schema.org/CompletedActionStatus"
+            },
+            "agent": [
+                {
+                    "@id": "https://orcid.org/0000-0002-4806-5140"
+                },
+                {
+                    "@id": "https://orcid.org/0000-0003-4929-1219"
+                }
+            ],
+            "instrument": {
+                "@id": "https://github.com/inab/WfExS-backend"
+            },
+            "name": "Workflow consolidation",
+            "object": {
+                "@id": "workflow/cosifer/cwl/cosifer-workflow.cwl"
+            },
+            "result": {
+                "@id": "consolidated-workflow/2400c32e-f875-4cd4-9d41-be6da8224c67_workflow.cwl"
+            }
+        },
+        {
+            "@id": "consolidated-workflow/2400c32e-f875-4cd4-9d41-be6da8224c67_workflow.cwl#param:data_matrix",
+            "@type": "FormalParameter",
+            "additionalType": "File",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
+            "name": "data_matrix",
+            "valueRequired": "True",
+            "workExample": {
+                "@id": "inputs/data_matrix.csv"
+            }
+        },
+        {
+            "@id": "inputs/data_matrix.csv",
+            "@type": "File",
+            "contentSize": "98392",
+            "contentUrl": "https://raw.githubusercontent.com/PhosphorylatedRabbits/cosifer/f2e2a259d218b9a56a01d84bc9d6a7cd7c8d9bf1/examples/interactive/data_matrix.csv",
+            "encodingFormat": "text/csv",
+            "exampleOfWork": {
+                "@id": "consolidated-workflow/2400c32e-f875-4cd4-9d41-be6da8224c67_workflow.cwl#param:data_matrix"
+            },
+            "license": "notspecified",
+            "sha256": "f839fa092cc34be8513c5a5805b39c9bec4cb9df1451e7db6a29db31d183f3c0"
+        },
+        {
+            "@id": "consolidated-workflow/2400c32e-f875-4cd4-9d41-be6da8224c67_workflow.cwl#param:separator",
+            "@type": "FormalParameter",
+            "additionalType": "Text",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
+            "name": "separator",
+            "valueRequired": "True",
+            "workExample": {
+                "@id": "#a142d381-df17-471d-a0a8-7d56a9314bf5"
+            }
+        },
+        {
+            "@id": "#a142d381-df17-471d-a0a8-7d56a9314bf5",
+            "@type": "PropertyValue",
+            "exampleOfWork": {
+                "@id": "consolidated-workflow/2400c32e-f875-4cd4-9d41-be6da8224c67_workflow.cwl#param:separator"
+            },
+            "name": "separator",
+            "value": ","
+        },
+        {
+            "@id": "consolidated-workflow/2400c32e-f875-4cd4-9d41-be6da8224c67_workflow.cwl#param:outdir",
+            "@type": "FormalParameter",
+            "additionalType": "Text",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
+            "name": "outdir",
+            "valueRequired": "True",
+            "workExample": {
+                "@id": "#7e8bdb68-cdd3-4ff1-bc66-dfe1f5ed21ca"
+            }
+        },
+        {
+            "@id": "#7e8bdb68-cdd3-4ff1-bc66-dfe1f5ed21ca",
+            "@type": "PropertyValue",
+            "exampleOfWork": {
+                "@id": "consolidated-workflow/2400c32e-f875-4cd4-9d41-be6da8224c67_workflow.cwl#param:outdir"
+            },
+            "name": "outdir",
+            "value": "output"
+        },
+        {
+            "@id": "consolidated-workflow/2400c32e-f875-4cd4-9d41-be6da8224c67_workflow.cwl#output:resdir",
+            "@type": "FormalParameter",
+            "additionalType": "Dataset",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
+            "name": "resdir"
+        }
+    ]
+}

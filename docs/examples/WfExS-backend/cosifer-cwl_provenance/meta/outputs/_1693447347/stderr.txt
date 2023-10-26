@@ -1,0 +1,83 @@
+[1;30mINFO[0m /home/jmfernandez/projects/WfExS-backend/wfexs-backend-test/CWLWorkflowEngine/509ffb9d6802c837ec2a818b799ef4c332c34d04/bin/cwltool 3.1
+[1;30mINFO[0m Resolved '/home/jmfernandez/projects/WfExS-backend/wfexs-backend-test_WorkDir/2400c32e-f875-4cd4-9d41-be6da8224c67/consolidated-workflow/2400c32e-f875-4cd4-9d41-be6da8224c67_workflow.cwl' to 'file:///home/jmfernandez/projects/WfExS-backend/wfexs-backend-test_WorkDir/2400c32e-f875-4cd4-9d41-be6da8224c67/consolidated-workflow/2400c32e-f875-4cd4-9d41-be6da8224c67_workflow.cwl'
+[1;30mINFO[0m [workflow ] start
+[1;30mINFO[0m [workflow ] starting step cosifer
+[1;30mINFO[0m [step cosifer] start
+[1;30mINFO[0m Using local copy of Singularity image found in /home/jmfernandez/projects/WfExS-backend/wfexs-backend-test_WorkDir/2400c32e-f875-4cd4-9d41-be6da8224c67/containers
+[1;30mINFO[0m Using local copy of Singularity image found in /home/jmfernandez/projects/WfExS-backend/wfexs-backend-test_WorkDir/2400c32e-f875-4cd4-9d41-be6da8224c67/containers
+[1;30mINFO[0m [job cosifer] /home/jmfernandez/projects/WfExS-backend/wfexs-backend-test_WorkDir/2400c32e-f875-4cd4-9d41-be6da8224c67/intermediate/ezz048b9$ singularity \
+    --quiet \
+    exec \
+    --contain \
+    --ipc \
+    --cleanenv \
+    --userns \
+    --home \
+    /home/jmfernandez/projects/WfExS-backend/wfexs-backend-test_WorkDir/2400c32e-f875-4cd4-9d41-be6da8224c67/intermediate/ezz048b9:/tiWFpo \
+    --bind \
+    /home/jmfernandez/projects/WfExS-backend/wfexs-backend-test_WorkDir/2400c32e-f875-4cd4-9d41-be6da8224c67/intermediate/5z3cfuww:/tmp \
+    --bind \
+    /home/jmfernandez/projects/WfExS-backend/wfexs-backend-test_WorkDir/2400c32e-f875-4cd4-9d41-be6da8224c67/inputs/data_matrix.csv:/var/lib/cwl/stgca87023a-e322-44bc-93a6-62ed09fac003/data_matrix.csv:ro \
+    --pwd \
+    /tiWFpo \
+    /home/jmfernandez/projects/WfExS-backend/wfexs-backend-test_WorkDir/2400c32e-f875-4cd4-9d41-be6da8224c67/containers/tsenit_cosifer:b4d5af45d2fc54b6bff2a9153a8e9054e560302e.img \
+    cosifer \
+    -i \
+    /var/lib/cwl/stgca87023a-e322-44bc-93a6-62ed09fac003/data_matrix.csv \
+    --sep=, \
+    -o \
+    output
+INFO:pipeline_cli:reading data from /var/lib/cwl/stgca87023a-e322-44bc-93a6-62ed09fac003/data_matrix.csv
+INFO:pipeline_cli:start inference with method pearson
+INFO:network_handler:pearson try to load inferred network from file
+INFO:network_handler:pearson no existing file found
+INFO:network_inferencer:pearson not trained yet. infer.
+INFO:network_handler:pearson dump to file
+WARNING:network_handler:pearson no interactions, cannot dump
+INFO:pipeline_cli:start inference with method spearman
+INFO:network_handler:spearman try to load inferred network from file
+INFO:network_handler:spearman no existing file found
+INFO:network_inferencer:spearman not trained yet. infer.
+INFO:network_handler:spearman dump to file
+WARNING:network_handler:spearman no interactions, cannot dump
+INFO:pipeline_cli:start inference with method aracne
+INFO:network_handler:aracne try to load inferred network from file
+INFO:network_handler:aracne no existing file found
+INFO:network_inferencer:aracne not trained yet. infer.
+INFO:network_handler:aracne dump to file
+INFO:network_handler:aracne dumped
+INFO:pipeline_cli:start inference with method mrnet
+INFO:network_handler:mrnet try to load inferred network from file
+INFO:network_handler:mrnet no existing file found
+INFO:network_inferencer:mrnet not trained yet. infer.
+INFO:network_handler:mrnet dump to file
+INFO:network_handler:mrnet dumped
+INFO:pipeline_cli:start inference with method clr
+INFO:network_handler:clr try to load inferred network from file
+INFO:network_handler:clr no existing file found
+INFO:network_inferencer:clr not trained yet. infer.
+INFO:network_handler:clr dump to file
+INFO:network_handler:clr dumped
+INFO:pipeline_cli:start inference with method funchisq
+INFO:network_handler:funchisq try to load inferred network from file
+INFO:network_handler:funchisq no existing file found
+INFO:network_inferencer:funchisq not trained yet. infer.
+INFO:network_handler:funchisq dump to file
+WARNING:network_handler:funchisq no interactions, cannot dump
+INFO:pipeline_cli:combine interaction tables
+INFO:pipeline_cli:start combination with method summa
+INFO:network_handler:summa try to load inferred network from file
+INFO:network_handler:summa no existing file found
+INFO:network_combiner:summa not trained yet. combine.
+INFO:network_handler:summa dump to file
+INFO:network_handler:summa dumped
+/usr/local/lib/python3.7/dist-packages/pySUMMA/decomposition/rank_one_tensor.py:52: UserWarning: 3 Base Classifiers may result in unreliable
+estimation of the positive class sample
+prevalence and the magnitude of each base
+classifiers performance.  The inferred weights used for
+computing the sample scores is unaffected.
+  warn("3 Base Classifiers may result in unreliable\n"
+[1;30mINFO[0m [job cosifer] completed success
+[1;30mINFO[0m [step cosifer] completed success
+[1;30mINFO[0m [workflow ] completed success
+[1;30mINFO[0m Final process status is success

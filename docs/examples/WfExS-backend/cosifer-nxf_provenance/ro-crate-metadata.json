@@ -1,0 +1,891 @@
+{
+    "@context": [
+        "https://w3id.org/ro/crate/1.1/context",
+        {
+            "ContainerImage": "https://w3id.org/ro/terms/workflow-run#ContainerImage",
+            "DockerImage": "https://w3id.org/ro/terms/workflow-run#DockerImage",
+            "SIFImage": "https://w3id.org/ro/terms/workflow-run#SIFImage",
+            "containerImage": "https://w3id.org/ro/terms/workflow-run#containerImage",
+            "registry": "https://w3id.org/ro/terms/workflow-run#registry",
+            "sha256": "https://w3id.org/ro/terms/workflow-run#sha256",
+            "tag": "https://w3id.org/ro/terms/workflow-run#tag"
+        }
+    ],
+    "@graph": [
+        {
+            "@id": "./",
+            "@type": "Dataset",
+            "conformsTo": [
+                {
+                    "@id": "https://w3id.org/ro/wfrun/process/0.2"
+                },
+                {
+                    "@id": "https://w3id.org/ro/wfrun/workflow/0.2"
+                },
+                {
+                    "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+                }
+            ],
+            "datePublished": "2023-10-09T23:47:30+00:00",
+            "description": "RO-Crate from staged WfExS working directory 597708f2-952e-47c7-9b86-dbe3a9e5f651 (paraphalangeal hind teat)",
+            "hasPart": [
+                {
+                    "@id": "README.md"
+                },
+                {
+                    "@id": "workflow/cosifer/nextflow/nextflow.nf"
+                },
+                {
+                    "@id": "containers/tsenit-cosifer-b4d5af45d2fc54b6bff2a9153a8e9054e560302e.img_meta.json"
+                },
+                {
+                    "@id": "workflow/cosifer/nextflow/nextflow.config"
+                },
+                {
+                    "@id": "inputs/data_matrix.csv"
+                },
+                {
+                    "@id": "outputs/_1693448929/outputsDir/"
+                },
+                {
+                    "@id": "outputs/_1693448929/outputsDir/aracne.csv.gz"
+                },
+                {
+                    "@id": "outputs/_1693448929/outputsDir/clr.csv.gz"
+                },
+                {
+                    "@id": "outputs/_1693448929/outputsDir/mrnet.csv.gz"
+                },
+                {
+                    "@id": "outputs/_1693448929/outputsDir/summa.csv.gz"
+                },
+                {
+                    "@id": "meta/outputs/_1693448929/stats/dag.dot"
+                },
+                {
+                    "@id": "meta/outputs/_1693448929/stats/dag.dot.png"
+                },
+                {
+                    "@id": "meta/outputs/_1693448929/stdout.txt"
+                },
+                {
+                    "@id": "meta/outputs/_1693448929/stderr.txt"
+                },
+                {
+                    "@id": "outputs/_1693448942/outputsDir/"
+                },
+                {
+                    "@id": "outputs/_1693448942/outputsDir/aracne.csv.gz"
+                },
+                {
+                    "@id": "outputs/_1693448942/outputsDir/clr.csv.gz"
+                },
+                {
+                    "@id": "outputs/_1693448942/outputsDir/mrnet.csv.gz"
+                },
+                {
+                    "@id": "outputs/_1693448942/outputsDir/summa.csv.gz"
+                },
+                {
+                    "@id": "meta/outputs/_1693448942/stats/dag.dot"
+                },
+                {
+                    "@id": "meta/outputs/_1693448942/stats/dag.dot.png"
+                },
+                {
+                    "@id": "meta/outputs/_1693448942/stdout.txt"
+                },
+                {
+                    "@id": "meta/outputs/_1693448942/stderr.txt"
+                }
+            ],
+            "license": [
+                "https://spdx.org/licenses/CC-BY-4.0.html"
+            ],
+            "mainEntity": {
+                "@id": "workflow/cosifer/nextflow/nextflow.nf"
+            },
+            "mentions": [
+                {
+                    "@id": "#fe9906cc-fdd9-4270-a841-fb57de8ade23"
+                },
+                {
+                    "@id": "#9125bf5c-0922-4439-90ac-ca405f928457"
+                }
+            ]
+        },
+        {
+            "@id": "ro-crate-metadata.json",
+            "@type": "CreativeWork",
+            "about": {
+                "@id": "./"
+            },
+            "conformsTo": [
+                {
+                    "@id": "https://w3id.org/ro/crate/1.1"
+                },
+                {
+                    "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+                }
+            ]
+        },
+        {
+            "@id": "https://w3id.org/workflowhub/workflow-ro-crate#nextflow",
+            "@type": "ComputerLanguage",
+            "alternateName": "NFL",
+            "identifier": {
+                "@id": "https://www.nextflow.io/"
+            },
+            "name": "Nextflow",
+            "url": {
+                "@id": "https://www.nextflow.io/"
+            },
+            "version": "19.10.0"
+        },
+        {
+            "@id": "https://orcid.org/0000-0002-4806-5140",
+            "@type": "Person",
+            "name": "Jos\u00e9 Mar\u00eda Fern\u00e1ndez Gonz\u00e1lez"
+        },
+        {
+            "@id": "mailto:lrodrigueznava@uoc.edu",
+            "@type": "ContactPoint",
+            "contactType": "Author",
+            "email": "lrodrigueznava@uoc.edu",
+            "identifier": "lrodrigueznava@uoc.edu",
+            "url": "https://orcid.org/0000-0003-4929-1219"
+        },
+        {
+            "@id": "mailto:lrodrin@gmail.com",
+            "@type": "ContactPoint",
+            "contactType": "Author",
+            "email": "lrodrin@gmail.com",
+            "identifier": "lrodrin@gmail.com",
+            "url": "https://orcid.org/0000-0003-4929-1219"
+        },
+        {
+            "@id": "https://orcid.org/0000-0003-4929-1219",
+            "@type": "Person",
+            "contactPoint": [
+                {
+                    "@id": "mailto:lrodrigueznava@uoc.edu"
+                },
+                {
+                    "@id": "mailto:lrodrin@gmail.com"
+                }
+            ],
+            "name": "Laura Rodr\u00edguez-Navas"
+        },
+        {
+            "@id": "https://w3id.org/ro/wfrun/process/0.2",
+            "@type": "CreativeWork",
+            "name": "ProcessRun Crate",
+            "version": "0.2"
+        },
+        {
+            "@id": "https://w3id.org/ro/wfrun/workflow/0.2",
+            "@type": "CreativeWork",
+            "name": "Workflow Run Crate",
+            "version": "0.2"
+        },
+        {
+            "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0",
+            "@type": "CreativeWork",
+            "name": "Workflow RO-Crate",
+            "version": "1.0"
+        },
+        {
+            "@id": "https://github.com/inab/WfExS-backend",
+            "@type": "SoftwareApplication",
+            "name": "WfExS-backend",
+            "softwareVersion": "0.9.3-192-g93901ff (93901ff9f5e88903b917d62cd0302454ae52364c, branch main)",
+            "url": "https://github.com/inab/WfExS-backend"
+        },
+        {
+            "@id": "README.md",
+            "@type": "File",
+            "about": {
+                "@id": "./"
+            },
+            "contentSize": "5544",
+            "encodingFormat": "text/markdown",
+            "license": "https://spdx.org/licenses/CC-BY-4.0.html",
+            "sha256": "4c66df4a09eb325afee2091150568f9f7dbefc6062be6043396227317ea7824f"
+        },
+        {
+            "@id": "https://www.nextflow.io/",
+            "@type": "SoftwareApplication",
+            "softwareVersion": "nextflow version 19.10.0.5169"
+        },
+        {
+            "@id": "workflow/cosifer/nextflow/nextflow.nf",
+            "@type": [
+                "File",
+                "SoftwareSourceCode",
+                "ComputationalWorkflow",
+                "SoftwareApplication"
+            ],
+            "alternateName": "nextflow.nf",
+            "codeRepository": "https://github.com/inab/ipc_workflows",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE"
+            },
+            "contentSize": "1362",
+            "description": "Workflow Entrypoint",
+            "encodingFormat": "text/plain",
+            "hasPart": {
+                "@id": "workflow/cosifer/nextflow/nextflow.config"
+            },
+            "identifier": "trs://workflowhub.eu/119/1",
+            "image": [
+                {
+                    "@id": "meta/outputs/_1693448929/stats/dag.dot.png"
+                },
+                {
+                    "@id": "meta/outputs/_1693448942/stats/dag.dot.png"
+                }
+            ],
+            "input": [
+                {
+                    "@id": "workflow/cosifer/nextflow/nextflow.nf#param:data_matrix"
+                },
+                {
+                    "@id": "workflow/cosifer/nextflow/nextflow.nf#param:outputsDir"
+                },
+                {
+                    "@id": "workflow/cosifer/nextflow/nextflow.nf#param:index_col"
+                },
+                {
+                    "@id": "workflow/cosifer/nextflow/nextflow.nf#param:hallmark_gene_sets_file"
+                },
+                {
+                    "@id": "workflow/cosifer/nextflow/nextflow.nf#param:sep"
+                },
+                {
+                    "@id": "workflow/cosifer/nextflow/nextflow.nf#param:samples_on_rows"
+                }
+            ],
+            "name": "workflow/cosifer/nextflow/nextflow",
+            "output": {
+                "@id": "workflow/cosifer/nextflow/nextflow.nf#output:resdir"
+            },
+            "programmingLanguage": {
+                "@id": "https://w3id.org/workflowhub/workflow-ro-crate#nextflow"
+            },
+            "runtimePlatform": "nextflow version 19.10.0.5169",
+            "sha256": "09ad218c0bd8e829976f4d43c7540707aa7109bf1a6f13083b41ef65592554c9",
+            "softwareAddOn": [
+                {
+                    "@id": "https://apptainer.org/"
+                },
+                {
+                    "@id": "docker://tsenit/cosifer:b4d5af45d2fc54b6bff2a9153a8e9054e560302e"
+                }
+            ],
+            "softwareRequirements": {
+                "@id": "https://www.nextflow.io/"
+            },
+            "url": "https://github.com/inab/ipc_workflowstree/main/cosifer/nextflow",
+            "version": "3bc3283a7e62f646703bcca2cd5a32955f2f5a31"
+        },
+        {
+            "@id": "https://apptainer.org/",
+            "@type": "SoftwareApplication",
+            "applicationCategory": "https://www.wikidata.org/wiki/Q7935198",
+            "name": "singularity",
+            "softwareVersion": "apptainer version 1.2.2"
+        },
+        {
+            "@id": "https://www.docker.com/",
+            "@type": "SoftwareApplication",
+            "applicationCategory": "https://www.wikidata.org/wiki/Q7935198",
+            "name": "docker"
+        },
+        {
+            "@id": "containers/tsenit-cosifer-b4d5af45d2fc54b6bff2a9153a8e9054e560302e.img_meta.json",
+            "@type": "File",
+            "about": {
+                "@id": "docker://tsenit/cosifer:b4d5af45d2fc54b6bff2a9153a8e9054e560302e"
+            },
+            "contentSize": "3064",
+            "encodingFormat": "application/json",
+            "sha256": "c10f17f9479e4a56071958064f40504847c412604cee5412cb85b0751f847d20"
+        },
+        {
+            "@id": "docker://tsenit/cosifer:b4d5af45d2fc54b6bff2a9153a8e9054e560302e",
+            "@type": [
+                "ContainerImage",
+                "SoftwareApplication"
+            ],
+            "additionalType": "DockerImage",
+            "applicationCategory": "https://www.wikidata.org/wiki/Q51294208",
+            "name": "tsenit/cosifer",
+            "operatingSystem": "linux",
+            "processorRequirements": "amd64",
+            "registry": "docker.io",
+            "softwareRequirements": {
+                "@id": "https://apptainer.org/"
+            },
+            "softwareVersion": "tsenit/cosifer@sha256:61e445ec73d54f9b389688eb3d9671a62b1d5e7b5cd5b7497a7683cc13a9e187",
+            "tag": "b4d5af45d2fc54b6bff2a9153a8e9054e560302e"
+        },
+        {
+            "@id": "workflow/cosifer/nextflow/nextflow.config",
+            "@type": [
+                "File",
+                "SoftwareSourceCode"
+            ],
+            "alternateName": "nextflow.config",
+            "contentSize": "511",
+            "encodingFormat": "text/plain",
+            "identifier": "trs://workflowhub.eu/119/1/nextflow.config",
+            "sha256": "4802bc8e5744d2dfc9544f7fe3bc3d681ce165b76d47564389b8d1ddd6fe24fe"
+        },
+        {
+            "@id": "#fe9906cc-fdd9-4270-a841-fb57de8ade23",
+            "@type": "CreateAction",
+            "actionStatus": {
+                "@id": "http://schema.org/CompletedActionStatus"
+            },
+            "agent": [
+                {
+                    "@id": "https://orcid.org/0000-0002-4806-5140"
+                },
+                {
+                    "@id": "https://orcid.org/0000-0003-4929-1219"
+                }
+            ],
+            "containerImage": {
+                "@id": "docker://tsenit/cosifer:b4d5af45d2fc54b6bff2a9153a8e9054e560302e"
+            },
+            "endTime": "2023-08-31T02:28:57.862641+00:00",
+            "instrument": {
+                "@id": "workflow/cosifer/nextflow/nextflow.nf"
+            },
+            "name": "Run outputs/_1693448929 of workflow/cosifer/nextflow/nextflow.nf",
+            "object": [
+                {
+                    "@id": "inputs/data_matrix.csv"
+                },
+                {
+                    "@id": "#d6a909cc-744c-470f-83fc-ec3c35b0f537"
+                },
+                {
+                    "@id": "#e7374378-9d4a-46dd-8c76-7434954ef3bc"
+                },
+                {
+                    "@id": "#ba496516-fcd3-4e4d-8502-72b65b9fe960"
+                },
+                {
+                    "@id": "#27fe97b6-f0dc-4887-a0ef-364c35bcbbfb"
+                },
+                {
+                    "@id": "#7bf0f718-9f35-4463-b366-99d639d163a7"
+                }
+            ],
+            "result": [
+                {
+                    "@id": "outputs/_1693448929/outputsDir/"
+                },
+                {
+                    "@id": "meta/outputs/_1693448929/stats/dag.dot"
+                },
+                {
+                    "@id": "meta/outputs/_1693448929/stats/dag.dot.png"
+                },
+                {
+                    "@id": "#fd4e5880-128e-4347-99d4-e07e92b98197"
+                }
+            ],
+            "startTime": "2023-08-31T02:28:49.576875+00:00"
+        },
+        {
+            "@id": "workflow/cosifer/nextflow/nextflow.nf#param:data_matrix",
+            "@type": "FormalParameter",
+            "additionalType": "File",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
+            "name": "data_matrix",
+            "valueRequired": "True",
+            "workExample": {
+                "@id": "inputs/data_matrix.csv"
+            }
+        },
+        {
+            "@id": "inputs/data_matrix.csv",
+            "@type": "File",
+            "contentSize": "98392",
+            "contentUrl": "https://raw.githubusercontent.com/PhosphorylatedRabbits/cosifer/f2e2a259d218b9a56a01d84bc9d6a7cd7c8d9bf1/examples/interactive/data_matrix.csv",
+            "encodingFormat": "text/csv",
+            "exampleOfWork": {
+                "@id": "workflow/cosifer/nextflow/nextflow.nf#param:data_matrix"
+            },
+            "license": "notspecified",
+            "sha256": "f839fa092cc34be8513c5a5805b39c9bec4cb9df1451e7db6a29db31d183f3c0"
+        },
+        {
+            "@id": "workflow/cosifer/nextflow/nextflow.nf#param:outputsDir",
+            "@type": "FormalParameter",
+            "additionalType": "Text",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
+            "name": "outputsDir",
+            "valueRequired": "True",
+            "workExample": [
+                {
+                    "@id": "#d6a909cc-744c-470f-83fc-ec3c35b0f537"
+                },
+                {
+                    "@id": "#d3302512-2af2-405c-9d11-78be2c3a1ed9"
+                }
+            ]
+        },
+        {
+            "@id": "#d6a909cc-744c-470f-83fc-ec3c35b0f537",
+            "@type": "PropertyValue",
+            "exampleOfWork": {
+                "@id": "workflow/cosifer/nextflow/nextflow.nf#param:outputsDir"
+            },
+            "name": "outputsDir",
+            "value": "meta/outputs/_1693448929/nxf_trojan/test/results"
+        },
+        {
+            "@id": "workflow/cosifer/nextflow/nextflow.nf#param:index_col",
+            "@type": "FormalParameter",
+            "additionalType": "Text",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
+            "name": "index_col",
+            "valueRequired": "True",
+            "workExample": {
+                "@id": "#e7374378-9d4a-46dd-8c76-7434954ef3bc"
+            }
+        },
+        {
+            "@id": "#e7374378-9d4a-46dd-8c76-7434954ef3bc",
+            "@type": "PropertyValue",
+            "exampleOfWork": {
+                "@id": "workflow/cosifer/nextflow/nextflow.nf#param:index_col"
+            },
+            "name": "index_col",
+            "value": ""
+        },
+        {
+            "@id": "workflow/cosifer/nextflow/nextflow.nf#param:hallmark_gene_sets_file",
+            "@type": "FormalParameter",
+            "additionalType": "Text",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
+            "name": "hallmark_gene_sets_file",
+            "valueRequired": "True",
+            "workExample": {
+                "@id": "#ba496516-fcd3-4e4d-8502-72b65b9fe960"
+            }
+        },
+        {
+            "@id": "#ba496516-fcd3-4e4d-8502-72b65b9fe960",
+            "@type": "PropertyValue",
+            "exampleOfWork": {
+                "@id": "workflow/cosifer/nextflow/nextflow.nf#param:hallmark_gene_sets_file"
+            },
+            "name": "hallmark_gene_sets_file",
+            "value": ""
+        },
+        {
+            "@id": "workflow/cosifer/nextflow/nextflow.nf#param:sep",
+            "@type": "FormalParameter",
+            "additionalType": "Text",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
+            "name": "sep",
+            "valueRequired": "True",
+            "workExample": {
+                "@id": "#27fe97b6-f0dc-4887-a0ef-364c35bcbbfb"
+            }
+        },
+        {
+            "@id": "#27fe97b6-f0dc-4887-a0ef-364c35bcbbfb",
+            "@type": "PropertyValue",
+            "exampleOfWork": {
+                "@id": "workflow/cosifer/nextflow/nextflow.nf#param:sep"
+            },
+            "name": "sep",
+            "value": ","
+        },
+        {
+            "@id": "workflow/cosifer/nextflow/nextflow.nf#param:samples_on_rows",
+            "@type": "FormalParameter",
+            "additionalType": "Text",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
+            "name": "samples_on_rows",
+            "valueRequired": "True",
+            "workExample": {
+                "@id": "#7bf0f718-9f35-4463-b366-99d639d163a7"
+            }
+        },
+        {
+            "@id": "#7bf0f718-9f35-4463-b366-99d639d163a7",
+            "@type": "PropertyValue",
+            "exampleOfWork": {
+                "@id": "workflow/cosifer/nextflow/nextflow.nf#param:samples_on_rows"
+            },
+            "name": "samples_on_rows",
+            "value": ""
+        },
+        {
+            "@id": "workflow/cosifer/nextflow/nextflow.nf#output:resdir",
+            "@type": "FormalParameter",
+            "additionalType": "Dataset",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+            },
+            "name": "resdir",
+            "workExample": [
+                {
+                    "@id": "outputs/_1693448929/outputsDir/"
+                },
+                {
+                    "@id": "outputs/_1693448942/outputsDir/"
+                }
+            ]
+        },
+        {
+            "@id": "outputs/_1693448929/outputsDir/",
+            "@type": "Dataset",
+            "alternateName": "outputsDir/",
+            "exampleOfWork": {
+                "@id": "workflow/cosifer/nextflow/nextflow.nf#output:resdir"
+            },
+            "hasPart": [
+                {
+                    "@id": "outputs/_1693448929/outputsDir/aracne.csv.gz"
+                },
+                {
+                    "@id": "outputs/_1693448929/outputsDir/clr.csv.gz"
+                },
+                {
+                    "@id": "outputs/_1693448929/outputsDir/mrnet.csv.gz"
+                },
+                {
+                    "@id": "outputs/_1693448929/outputsDir/summa.csv.gz"
+                }
+            ]
+        },
+        {
+            "@id": "outputs/_1693448929/outputsDir/aracne.csv.gz",
+            "@type": "File",
+            "alternateName": "outputsDir/aracne.csv.gz",
+            "contentSize": "64996",
+            "encodingFormat": "application/gzip",
+            "sha256": "49d41087cd1e190e7d3f998db02a0a1f1043ea3eacc0a319614be54ee5211a90"
+        },
+        {
+            "@id": "outputs/_1693448929/outputsDir/clr.csv.gz",
+            "@type": "File",
+            "alternateName": "outputsDir/clr.csv.gz",
+            "contentSize": "25423",
+            "encodingFormat": "application/gzip",
+            "sha256": "ccb4989fc636723d8fcb9b9d9bafd8a048b6d40eb315d831ba61104e073a9966"
+        },
+        {
+            "@id": "outputs/_1693448929/outputsDir/mrnet.csv.gz",
+            "@type": "File",
+            "alternateName": "outputsDir/mrnet.csv.gz",
+            "contentSize": "26622",
+            "encodingFormat": "application/gzip",
+            "sha256": "11478d4339eee5bbe001fddea0e9ddd0683c4638633201661f9064e5503f257f"
+        },
+        {
+            "@id": "outputs/_1693448929/outputsDir/summa.csv.gz",
+            "@type": "File",
+            "alternateName": "outputsDir/summa.csv.gz",
+            "contentSize": "69014",
+            "encodingFormat": "application/gzip",
+            "sha256": "7bd905121bec73e3d3735ea0eec417b4eeb5d4c4d0e3867080bf4c3d2045129a"
+        },
+        {
+            "@id": "meta/outputs/_1693448929/stats/dag.dot",
+            "@type": [
+                "File",
+                "ImageObject"
+            ],
+            "contentSize": "706",
+            "encodingFormat": "text/plain",
+            "isBasedOn": {
+                "@id": "workflow/cosifer/nextflow/nextflow.nf"
+            },
+            "sha256": "606f9bc31f8532af0deab53d02aa5ab9c5bac99d42f1c9c39f7e9b971307b5e5"
+        },
+        {
+            "@id": "meta/outputs/_1693448929/stats/dag.dot.png",
+            "@type": [
+                "File",
+                "ImageObject"
+            ],
+            "contentSize": "27224",
+            "encodingFormat": "image/png",
+            "isBasedOn": {
+                "@id": "meta/outputs/_1693448929/stats/dag.dot"
+            },
+            "sha256": "de20aa1b36163898e5ad24bc8ba7373833802b97eb2aa3e6fca692e353f90a3e"
+        },
+        {
+            "@id": "#17791d88-80e8-4a63-a369-9861bffd712b",
+            "@type": "CreateAction",
+            "actionStatus": {
+                "@id": "http://schema.org/CompletedActionStatus"
+            },
+            "agent": [
+                {
+                    "@id": "https://orcid.org/0000-0002-4806-5140"
+                },
+                {
+                    "@id": "https://orcid.org/0000-0003-4929-1219"
+                }
+            ],
+            "description": "dot -Tpng -ometa/outputs/_1693448929/stats/dag.dot.png meta/outputs/_1693448929/stats/dag.dot",
+            "instrument": {
+                "@id": "https://github.com/inab/WfExS-backend"
+            },
+            "name": "Generate diagram PNG image from DOT",
+            "object": {
+                "@id": "meta/outputs/_1693448929/stats/dag.dot"
+            },
+            "result": {
+                "@id": "meta/outputs/_1693448929/stats/dag.dot.png"
+            }
+        },
+        {
+            "@id": "#fd4e5880-128e-4347-99d4-e07e92b98197",
+            "@type": "Collection",
+            "hasPart": [
+                {
+                    "@id": "meta/outputs/_1693448929/stdout.txt"
+                },
+                {
+                    "@id": "meta/outputs/_1693448929/stderr.txt"
+                }
+            ]
+        },
+        {
+            "@id": "meta/outputs/_1693448929/stdout.txt",
+            "@type": "File",
+            "contentSize": "690",
+            "encodingFormat": "text/plain",
+            "sha256": "8fad448676a253926cde149703d0d46c1d5f51a14f82fc7526989dab5a1de0e8"
+        },
+        {
+            "@id": "meta/outputs/_1693448929/stderr.txt",
+            "@type": "File",
+            "contentSize": "0",
+            "encodingFormat": "inode/x-empty",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+            "@id": "#9125bf5c-0922-4439-90ac-ca405f928457",
+            "@type": "CreateAction",
+            "actionStatus": {
+                "@id": "http://schema.org/CompletedActionStatus"
+            },
+            "agent": [
+                {
+                    "@id": "https://orcid.org/0000-0002-4806-5140"
+                },
+                {
+                    "@id": "https://orcid.org/0000-0003-4929-1219"
+                }
+            ],
+            "containerImage": {
+                "@id": "docker://tsenit/cosifer:b4d5af45d2fc54b6bff2a9153a8e9054e560302e"
+            },
+            "endTime": "2023-08-31T02:29:10.026287+00:00",
+            "instrument": {
+                "@id": "workflow/cosifer/nextflow/nextflow.nf"
+            },
+            "name": "Run outputs/_1693448942 of workflow/cosifer/nextflow/nextflow.nf",
+            "object": [
+                {
+                    "@id": "inputs/data_matrix.csv"
+                },
+                {
+                    "@id": "#d3302512-2af2-405c-9d11-78be2c3a1ed9"
+                },
+                {
+                    "@id": "#e7374378-9d4a-46dd-8c76-7434954ef3bc"
+                },
+                {
+                    "@id": "#ba496516-fcd3-4e4d-8502-72b65b9fe960"
+                },
+                {
+                    "@id": "#27fe97b6-f0dc-4887-a0ef-364c35bcbbfb"
+                },
+                {
+                    "@id": "#7bf0f718-9f35-4463-b366-99d639d163a7"
+                }
+            ],
+            "result": [
+                {
+                    "@id": "outputs/_1693448942/outputsDir/"
+                },
+                {
+                    "@id": "meta/outputs/_1693448942/stats/dag.dot"
+                },
+                {
+                    "@id": "meta/outputs/_1693448942/stats/dag.dot.png"
+                },
+                {
+                    "@id": "#e822d248-4ebd-4a8d-a271-ac42eacd0884"
+                }
+            ],
+            "startTime": "2023-08-31T02:29:02.041398+00:00"
+        },
+        {
+            "@id": "#d3302512-2af2-405c-9d11-78be2c3a1ed9",
+            "@type": "PropertyValue",
+            "exampleOfWork": {
+                "@id": "workflow/cosifer/nextflow/nextflow.nf#param:outputsDir"
+            },
+            "name": "outputsDir",
+            "value": "meta/outputs/_1693448942/nxf_trojan/test/results"
+        },
+        {
+            "@id": "outputs/_1693448942/outputsDir/",
+            "@type": "Dataset",
+            "alternateName": "outputsDir/",
+            "exampleOfWork": {
+                "@id": "workflow/cosifer/nextflow/nextflow.nf#output:resdir"
+            },
+            "hasPart": [
+                {
+                    "@id": "outputs/_1693448942/outputsDir/aracne.csv.gz"
+                },
+                {
+                    "@id": "outputs/_1693448942/outputsDir/clr.csv.gz"
+                },
+                {
+                    "@id": "outputs/_1693448942/outputsDir/mrnet.csv.gz"
+                },
+                {
+                    "@id": "outputs/_1693448942/outputsDir/summa.csv.gz"
+                }
+            ]
+        },
+        {
+            "@id": "outputs/_1693448942/outputsDir/aracne.csv.gz",
+            "@type": "File",
+            "alternateName": "outputsDir/aracne.csv.gz",
+            "contentSize": "64996",
+            "encodingFormat": "application/gzip",
+            "sha256": "c2fb666a3a1aa109f327aab6c7ecd707787bf019a8949d1b27d71f134d63b200"
+        },
+        {
+            "@id": "outputs/_1693448942/outputsDir/clr.csv.gz",
+            "@type": "File",
+            "alternateName": "outputsDir/clr.csv.gz",
+            "contentSize": "25423",
+            "encodingFormat": "application/gzip",
+            "sha256": "2f6794384316a1151766603d4ed25c77ff025ba54d976abf0a0a067b92778686"
+        },
+        {
+            "@id": "outputs/_1693448942/outputsDir/mrnet.csv.gz",
+            "@type": "File",
+            "alternateName": "outputsDir/mrnet.csv.gz",
+            "contentSize": "26622",
+            "encodingFormat": "application/gzip",
+            "sha256": "28aedf243a348dd98b595f0790ba837358dbfe8703d9a2763e65ea97ac638690"
+        },
+        {
+            "@id": "outputs/_1693448942/outputsDir/summa.csv.gz",
+            "@type": "File",
+            "alternateName": "outputsDir/summa.csv.gz",
+            "contentSize": "69014",
+            "encodingFormat": "application/gzip",
+            "sha256": "3e17f1b15b3a47e5a504e8281b4703c6ea17a0280a19fbe2721a55de3fb709c8"
+        },
+        {
+            "@id": "meta/outputs/_1693448942/stats/dag.dot",
+            "@type": [
+                "File",
+                "ImageObject"
+            ],
+            "contentSize": "706",
+            "encodingFormat": "text/plain",
+            "isBasedOn": {
+                "@id": "workflow/cosifer/nextflow/nextflow.nf"
+            },
+            "sha256": "606f9bc31f8532af0deab53d02aa5ab9c5bac99d42f1c9c39f7e9b971307b5e5"
+        },
+        {
+            "@id": "meta/outputs/_1693448942/stats/dag.dot.png",
+            "@type": [
+                "File",
+                "ImageObject"
+            ],
+            "contentSize": "27224",
+            "encodingFormat": "image/png",
+            "isBasedOn": {
+                "@id": "meta/outputs/_1693448942/stats/dag.dot"
+            },
+            "sha256": "de20aa1b36163898e5ad24bc8ba7373833802b97eb2aa3e6fca692e353f90a3e"
+        },
+        {
+            "@id": "#c2a89fb5-7bea-4395-9555-52d91f5236b6",
+            "@type": "CreateAction",
+            "actionStatus": {
+                "@id": "http://schema.org/CompletedActionStatus"
+            },
+            "agent": [
+                {
+                    "@id": "https://orcid.org/0000-0002-4806-5140"
+                },
+                {
+                    "@id": "https://orcid.org/0000-0003-4929-1219"
+                }
+            ],
+            "description": "dot -Tpng -ometa/outputs/_1693448942/stats/dag.dot.png meta/outputs/_1693448942/stats/dag.dot",
+            "instrument": {
+                "@id": "https://github.com/inab/WfExS-backend"
+            },
+            "name": "Generate diagram PNG image from DOT",
+            "object": {
+                "@id": "meta/outputs/_1693448942/stats/dag.dot"
+            },
+            "result": {
+                "@id": "meta/outputs/_1693448942/stats/dag.dot.png"
+            }
+        },
+        {
+            "@id": "#e822d248-4ebd-4a8d-a271-ac42eacd0884",
+            "@type": "Collection",
+            "hasPart": [
+                {
+                    "@id": "meta/outputs/_1693448942/stdout.txt"
+                },
+                {
+                    "@id": "meta/outputs/_1693448942/stderr.txt"
+                }
+            ]
+        },
+        {
+            "@id": "meta/outputs/_1693448942/stdout.txt",
+            "@type": "File",
+            "contentSize": "690",
+            "encodingFormat": "text/plain",
+            "sha256": "f7125016897ba599a80e587dff7e59b59e9bb99537bf11af6db713f5eaf80a0e"
+        },
+        {
+            "@id": "meta/outputs/_1693448942/stderr.txt",
+            "@type": "File",
+            "contentSize": "0",
+            "encodingFormat": "inode/x-empty",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+    ]
+}
