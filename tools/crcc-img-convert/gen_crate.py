@@ -8,12 +8,10 @@ from pathlib import Path
 from rocrate.model import ContextEntity
 from rocrate.rocrate import ROCrate
 
+THIS_DIR = Path(__file__).absolute().parent
 PROFILES_BASE = "https://w3id.org/ro/wfrun"
-PROFILES_VERSION = "0.1"
-PROCESS_PROFILE_BASE = f"{PROFILES_BASE}/process"
-WORKFLOW_PROFILE_BASE = f"{PROFILES_BASE}/workflow"
-PROCESS_PROFILE = f"{PROCESS_PROFILE_BASE}/{PROFILES_VERSION}"
-WORKFLOW_PROFILE = f"{WORKFLOW_PROFILE_BASE}/{PROFILES_VERSION}"
+PROFILES_VERSION = "0.3"
+WROC_PROFILE_VERSION = "1.0"
 TERMS_NAMESPACE = "https://w3id.org/ro/terms/workflow-run"
 CRATE_LICENSE = "https://creativecommons.org/licenses/by/4.0/"
 
@@ -42,10 +40,29 @@ def add_outputs(crate, action, input_dir):
     action["result"] = result
 
 
+def add_profiles(crate):
+    profiles = []
+    for p in "process", "workflow":
+        id_ = f"{PROFILES_BASE}/{p}/{PROFILES_VERSION}"
+        profiles.append(crate.add(ContextEntity(crate, id_, properties={
+            "@type": "CreativeWork",
+            "name": f"{p.title()} Run Crate",
+            "version": PROFILES_VERSION,
+        })))
+    wroc_profile_id = f"https://w3id.org/workflowhub/workflow-ro-crate/{WROC_PROFILE_VERSION}"
+    profiles.append(crate.add(ContextEntity(crate, wroc_profile_id, properties={
+        "@type": "CreativeWork",
+        "name": "Workflow RO-Crate",
+        "version": WROC_PROFILE_VERSION,
+    })))
+    crate.root_dataset["conformsTo"] = profiles
+
+
 def main(args):
     args.input = Path(args.input)
     wf_dir = args.input / "fair-crcc-img-convert" / "workflow"
     crate = ROCrate()
+    add_profiles(crate)
     crate.metadata.extra_contexts.append(TERMS_NAMESPACE)
     crate.root_dataset["license"] = CRATE_LICENSE
     workflow = crate.add_workflow(
@@ -64,6 +81,8 @@ def main(args):
     add_inputs(crate, action, args.input)
     add_outputs(crate, action, args.input)
     crate.root_dataset.append_to("mentions", action)
+    readme = crate.add_file(THIS_DIR / "README.md.crate", "README.md")
+    readme["about"] = crate.root_dataset
     crate.write(args.output)
 
 
