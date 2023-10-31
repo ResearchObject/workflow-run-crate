@@ -1,0 +1,19 @@
+# Example workflow configuration
+repository:
+  path: "/mnt/rbd/data/sftp/fair-crcc/"
+
+sources:
+  items:
+  - some/directory/to/glob
+  - another/individual/file.mrxs
+
+keypair:
+  private: bbmri-key
+  public: bbmri-key.pub
+
+output:
+  format: ome-tiff
+  compression: "jpeg"
+  quality: 90
+  tile_size: 512
+  thumbnail_width: 1024

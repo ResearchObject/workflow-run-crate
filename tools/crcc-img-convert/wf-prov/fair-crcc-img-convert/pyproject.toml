@@ -1,0 +1,10 @@
+[tool.snakefmt]
+line_length = 100
+
+[tool.black]
+skip_string_normalization = true
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+log_cli = true
+log_cli_level = "DEBUG"
