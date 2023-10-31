@@ -14,6 +14,7 @@ PROFILES_VERSION = "0.3"
 WROC_PROFILE_VERSION = "1.0"
 TERMS_NAMESPACE = "https://w3id.org/ro/terms/workflow-run"
 CRATE_LICENSE = "https://creativecommons.org/licenses/by/4.0/"
+CMD = "snakemake --snakefile ../fair-crcc-img-convert/workflow/Snakefile --configfile config.yml --use-singularity --cores"
 
 
 def add_inputs(crate, action, input_dir):
@@ -76,6 +77,7 @@ def main(args):
     action = crate.add(ContextEntity(crate, properties={
         "@type": "CreateAction",
         "name": "execution of fair-crcc-img-convert workflow",
+        "description": CMD
     }))
     action["instrument"] = workflow
     add_inputs(crate, action, args.input)
