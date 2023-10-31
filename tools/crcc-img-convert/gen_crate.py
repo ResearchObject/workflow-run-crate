@@ -3,6 +3,7 @@ Generate RO-Crate for the crcc convert run.
 """
 
 import argparse
+import os
 from pathlib import Path
 from rocrate.model import ContextEntity
 from rocrate.rocrate import ROCrate
@@ -15,6 +16,30 @@ PROCESS_PROFILE = f"{PROCESS_PROFILE_BASE}/{PROFILES_VERSION}"
 WORKFLOW_PROFILE = f"{WORKFLOW_PROFILE_BASE}/{PROFILES_VERSION}"
 TERMS_NAMESPACE = "https://w3id.org/ro/terms/workflow-run"
 CRATE_LICENSE = "https://creativecommons.org/licenses/by/4.0/"
+
+
+def add_inputs(crate, action, input_dir):
+    action["object"] = [
+        crate.add_file(
+            input_dir / "Biobank_CMB-PCA_v1/CMB-PCA/MSB-02917-01-02.svs",
+            "CMB-PCA/MSB-02917-01-02.svs"
+        ),
+        crate.add_file(input_dir / "workspace/config.yml", "config.yml"),
+        crate.add_file(input_dir / "workspace/user.pub", "user.pub"),
+        crate.add_file(input_dir / "workspace/user.sec", "user.sec")
+    ]
+
+
+def add_outputs(crate, action, input_dir):
+    result = []
+    source_dir = input_dir / "workspace" / "c4gh" / "CMB-PCA"
+    dest_dir = "c4gh/CMB-PCA"
+    for e in os.scandir(source_dir):
+        assert e.is_file()
+        source = source_dir / e.name
+        dest = f"{dest_dir}/{e.name}"
+        result.append(crate.add_file(source, dest))
+    action["result"] = result
 
 
 def main(args):
@@ -36,6 +61,8 @@ def main(args):
         "name": "execution of fair-crcc-img-convert workflow",
     }))
     action["instrument"] = workflow
+    add_inputs(crate, action, args.input)
+    add_outputs(crate, action, args.input)
     crate.root_dataset.append_to("mentions", action)
     crate.write(args.output)
 
