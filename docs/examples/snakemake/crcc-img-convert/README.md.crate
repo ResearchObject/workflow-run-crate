@@ -2,7 +2,7 @@ This RO-Crate contains an image from the [Cancer Moonshot Biobank - Prostate Can
 
 Slide ID: `MSB-02917-01-02`
 
-License: CC BY 4.0
+License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 
 ## Data Citation
 
