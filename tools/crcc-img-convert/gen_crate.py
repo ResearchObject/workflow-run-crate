@@ -4,6 +4,7 @@ Generate RO-Crate for the crcc convert run.
 
 import argparse
 import os
+from datetime import datetime
 from pathlib import Path
 from rocrate.model import ContextEntity
 from rocrate.rocrate import ROCrate
@@ -39,6 +40,24 @@ def add_outputs(crate, action, input_dir):
         dest = f"{dest_dir}/{e.name}"
         result.append(crate.add_file(source, dest))
     action["result"] = result
+
+
+def add_start_end(action, input_dir):
+    log_files = list(os.scandir(input_dir / "workspace" / ".snakemake" / "log"))
+    assert len(log_files) == 1
+    log = log_files[0]
+    dtimes = []
+    with open(log.path) as f:
+        for line in f:
+            if line.startswith("["):
+                line = line.strip()
+                if line.endswith("]"):
+                    line = line.strip("[]")
+                    dt = datetime.strptime(line, "%a %b %d %H:%M:%S %Y")
+                    dtimes.append(dt)
+    assert len(dtimes) >= 2
+    action["startTime"] = dtimes[0].isoformat()
+    action["endTime"] = dtimes[-1].isoformat()
 
 
 def add_profiles(crate):
@@ -82,6 +101,7 @@ def main(args):
     action["instrument"] = workflow
     add_inputs(crate, action, args.input)
     add_outputs(crate, action, args.input)
+    add_start_end(action, args.input)
     crate.root_dataset.append_to("mentions", action)
     readme = crate.add_file(THIS_DIR / "README.md.crate", "README.md")
     readme["about"] = crate.root_dataset

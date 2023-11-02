@@ -18,7 +18,7 @@
                     "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
                 }
             ],
-            "datePublished": "2023-10-31T14:45:51+00:00",
+            "datePublished": "2023-11-02T10:09:39+00:00",
             "hasPart": [
                 {
                     "@id": "workflow/Snakefile"
@@ -63,7 +63,7 @@
             },
             "mentions": [
                 {
-                    "@id": "#8cd79c05-589e-4c68-9b46-5389396da3cd"
+                    "@id": "#43152414-87c2-4bc6-8e17-7836c7aa690f"
                 }
             ]
         },
@@ -133,9 +133,10 @@
             "@type": "Dataset"
         },
         {
-            "@id": "#8cd79c05-589e-4c68-9b46-5389396da3cd",
+            "@id": "#43152414-87c2-4bc6-8e17-7836c7aa690f",
             "@type": "CreateAction",
             "description": "snakemake --snakefile ../fair-crcc-img-convert/workflow/Snakefile --configfile config.yml --use-singularity --cores",
+            "endTime": "2023-10-27T16:10:38",
             "instrument": {
                 "@id": "workflow/Snakefile"
             },
@@ -167,7 +168,8 @@
                 {
                     "@id": "c4gh/CMB-PCA/MSB-02917-01-02.ome.tiff.c4gh.sha"
                 }
-            ]
+            ],
+            "startTime": "2023-10-27T16:08:25"
         },
         {
             "@id": "CMB-PCA/MSB-02917-01-02.svs",
