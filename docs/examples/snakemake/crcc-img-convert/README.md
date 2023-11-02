@@ -10,3 +10,5 @@ python gen_crate.py wf-prov -o fair-crcc-img-convert-run
 See `README.md.crate` for additional information.
 
 Note that the license for the RO-Crate is [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) except for the workflow, which is licensed under the [GPL-3.0](https://www.gnu.org/licenses/gpl-3.0.en.html).
+
+Some files have been truncated to zero length to avoid bloating the repo. For instance, `MSB-02917-01-02.svs`.
