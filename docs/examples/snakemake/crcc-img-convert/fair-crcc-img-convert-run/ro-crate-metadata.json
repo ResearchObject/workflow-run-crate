@@ -1,0 +1,214 @@
+{
+    "@context": [
+        "https://w3id.org/ro/crate/1.1/context",
+        "https://w3id.org/ro/terms/workflow-run"
+    ],
+    "@graph": [
+        {
+            "@id": "./",
+            "@type": "Dataset",
+            "conformsTo": [
+                {
+                    "@id": "https://w3id.org/ro/wfrun/process/0.3"
+                },
+                {
+                    "@id": "https://w3id.org/ro/wfrun/workflow/0.3"
+                },
+                {
+                    "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+                }
+            ],
+            "datePublished": "2023-11-16T09:47:59+00:00",
+            "hasPart": [
+                {
+                    "@id": "workflow/Snakefile"
+                },
+                {
+                    "@id": "workflow/rules/"
+                },
+                {
+                    "@id": "workflow/schemas/"
+                },
+                {
+                    "@id": "CMB-PCA/MSB-02917-01-02.svs"
+                },
+                {
+                    "@id": "config.yml"
+                },
+                {
+                    "@id": "user.pub"
+                },
+                {
+                    "@id": "user.sec"
+                },
+                {
+                    "@id": "c4gh/CMB-PCA/MSB-02917-01-02.ome.tiff.c4gh.sha"
+                },
+                {
+                    "@id": "c4gh/CMB-PCA/MSB-02917-01-02.ome.tiff.c4gh"
+                },
+                {
+                    "@id": "c4gh/CMB-PCA/MSB-02917-01-02_thumb.jpg.c4gh.sha"
+                },
+                {
+                    "@id": "c4gh/CMB-PCA/MSB-02917-01-02_thumb.jpg.c4gh"
+                },
+                {
+                    "@id": "README.md"
+                }
+            ],
+            "license": "https://creativecommons.org/licenses/by/4.0/",
+            "mainEntity": {
+                "@id": "workflow/Snakefile"
+            },
+            "mentions": [
+                {
+                    "@id": "#1d1733a3-5105-4bac-8499-1a6c1a3e59fb"
+                }
+            ]
+        },
+        {
+            "@id": "ro-crate-metadata.json",
+            "@type": "CreativeWork",
+            "about": {
+                "@id": "./"
+            },
+            "conformsTo": [
+                {
+                    "@id": "https://w3id.org/ro/crate/1.1"
+                },
+                {
+                    "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+                }
+            ]
+        },
+        {
+            "@id": "https://w3id.org/ro/wfrun/process/0.3",
+            "@type": "CreativeWork",
+            "name": "Process Run Crate",
+            "version": "0.3"
+        },
+        {
+            "@id": "https://w3id.org/ro/wfrun/workflow/0.3",
+            "@type": "CreativeWork",
+            "name": "Workflow Run Crate",
+            "version": "0.3"
+        },
+        {
+            "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0",
+            "@type": "CreativeWork",
+            "name": "Workflow RO-Crate",
+            "version": "1.0"
+        },
+        {
+            "@id": "workflow/Snakefile",
+            "@type": [
+                "File",
+                "SoftwareSourceCode",
+                "ComputationalWorkflow"
+            ],
+            "license": "GPL-3.0",
+            "name": "workflow/Snakefile",
+            "programmingLanguage": {
+                "@id": "https://w3id.org/workflowhub/workflow-ro-crate#snakemake"
+            }
+        },
+        {
+            "@id": "https://w3id.org/workflowhub/workflow-ro-crate#snakemake",
+            "@type": "ComputerLanguage",
+            "identifier": {
+                "@id": "https://doi.org/10.1093/bioinformatics/bts480"
+            },
+            "name": "Snakemake",
+            "url": {
+                "@id": "https://snakemake.readthedocs.io"
+            }
+        },
+        {
+            "@id": "workflow/rules/",
+            "@type": "Dataset"
+        },
+        {
+            "@id": "workflow/schemas/",
+            "@type": "Dataset"
+        },
+        {
+            "@id": "#1d1733a3-5105-4bac-8499-1a6c1a3e59fb",
+            "@type": "CreateAction",
+            "description": "snakemake --snakefile ../fair-crcc-img-convert/workflow/Snakefile --configfile config.yml --use-singularity --cores",
+            "endTime": "2023-10-27T16:10:38",
+            "instrument": {
+                "@id": "workflow/Snakefile"
+            },
+            "name": "execution of fair-crcc-img-convert workflow",
+            "object": [
+                {
+                    "@id": "CMB-PCA/MSB-02917-01-02.svs"
+                },
+                {
+                    "@id": "config.yml"
+                },
+                {
+                    "@id": "user.pub"
+                },
+                {
+                    "@id": "user.sec"
+                }
+            ],
+            "result": [
+                {
+                    "@id": "c4gh/CMB-PCA/MSB-02917-01-02.ome.tiff.c4gh.sha"
+                },
+                {
+                    "@id": "c4gh/CMB-PCA/MSB-02917-01-02.ome.tiff.c4gh"
+                },
+                {
+                    "@id": "c4gh/CMB-PCA/MSB-02917-01-02_thumb.jpg.c4gh.sha"
+                },
+                {
+                    "@id": "c4gh/CMB-PCA/MSB-02917-01-02_thumb.jpg.c4gh"
+                }
+            ],
+            "startTime": "2023-10-27T16:08:25"
+        },
+        {
+            "@id": "CMB-PCA/MSB-02917-01-02.svs",
+            "@type": "File"
+        },
+        {
+            "@id": "config.yml",
+            "@type": "File"
+        },
+        {
+            "@id": "user.pub",
+            "@type": "File"
+        },
+        {
+            "@id": "user.sec",
+            "@type": "File"
+        },
+        {
+            "@id": "c4gh/CMB-PCA/MSB-02917-01-02.ome.tiff.c4gh.sha",
+            "@type": "File"
+        },
+        {
+            "@id": "c4gh/CMB-PCA/MSB-02917-01-02.ome.tiff.c4gh",
+            "@type": "File"
+        },
+        {
+            "@id": "c4gh/CMB-PCA/MSB-02917-01-02_thumb.jpg.c4gh.sha",
+            "@type": "File"
+        },
+        {
+            "@id": "c4gh/CMB-PCA/MSB-02917-01-02_thumb.jpg.c4gh",
+            "@type": "File"
+        },
+        {
+            "@id": "README.md",
+            "@type": "File",
+            "about": {
+                "@id": "./"
+            }
+        }
+    ]
+}

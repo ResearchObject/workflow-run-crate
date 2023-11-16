@@ -1,0 +1,78 @@
+
+# Main entrypoint of the workflow. 
+
+import os
+from pathlib import Path
+
+from snakemake.utils import min_version
+
+
+##### set minimum snakemake version #####
+min_version("6.5.0")
+
+
+# Run as:
+# snakemake --snakefile ./Snakefile --profile ./profile --configfile zenbanc_config.yml --use-singularity --cores
+#
+
+
+# Default container for rules
+container: "docker://ilveroluca/crypt4gh:1.5"
+
+
+
+##### Load rules #####
+
+
+include: "rules/common.smk"
+include: "rules/img_conversion.smk"
+include: "rules/checksumming.smk"
+include: "rules/encryption.smk"
+
+
+###### Workflow start ######
+
+
+configure_environment()
+
+
+##### Glob input ####
+
+source_slides = glob_source_paths()
+log(len(source_slides), "source slides are: ", [ str(s) for s in source_slides ])
+
+
+
+###### Main target rules ##########
+
+rule all_encrypted_tiffs:
+    input:
+        encrypted_tiffs = \
+            [ Path("c4gh") / s.with_suffix('.ome.tiff' + new_suffix)
+                for s in source_slides for new_suffix in ('.c4gh', '.c4gh.sha') ],
+        encrypted_thumbnails = \
+            [ Path("c4gh") / f"{s.with_suffix('')}_thumb.jpg.c4gh"
+                for s in source_slides ],
+        checksums = "tiffs/tiff_checksums",
+
+
+rule all_tiffs:
+    input:
+        tiffs = [ Path("tiffs") / s.with_suffix('.ome.tiff') for s in source_slides ],
+        thumbnails = [ Path("tiffs") / f"{s.with_suffix('')}_thumb.jpg" for s in source_slides ],
+        checksums = "tiffs/tiff_checksums",
+
+
+rule all_tiff_checksums:
+    input:
+        tiffs = [ t + '.sha' for t in rules.all_tiffs.input.tiffs ],
+    output:
+        "tiffs/tiff_checksums"
+    log:
+        "logs/tiff_checksums.log"
+    resources:
+        mem_mb = 512
+    shell:
+        """
+        cat {input:q} | sort > {output:q} 2> {log:q}
+        """

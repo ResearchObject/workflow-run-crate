@@ -1,0 +1,18 @@
+# Example workflow configuration
+repository:
+  path: "/home/ubuntu/wf-prov/Biobank_CMB-PCA_v1"
+
+sources:
+  items:
+  - CMB-PCA/MSB-02917-01-02.svs
+
+keypair:
+  private: user.sec
+  public: user.pub
+
+output:
+  format: ome-tiff
+  compression: "jpeg"
+  quality: 90
+  tile_size: 512
+  thumbnail_width: 1024

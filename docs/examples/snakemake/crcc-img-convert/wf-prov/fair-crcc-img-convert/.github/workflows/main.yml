@@ -1,0 +1,52 @@
+name: Tests
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  Testing:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        snakemake-version: ["7.15.2", "6.15.5"]
+        python-version: ["3.10"]
+        singularity-version: ["3.10.3"]
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Install singularity
+      run: |
+        curl --output /tmp/singularity-ce.deb --location \
+            "https://github.com/sylabs/singularity/releases/download/v${{ matrix.singularity-version }}/singularity-ce_${{ matrix.singularity-version }}-focal_amd64.deb" && \
+        sudo apt update -y && \
+        sudo apt install -y /tmp/singularity-ce.deb
+
+    - name: Setup Miniconda
+      uses: conda-incubator/setup-miniconda@v2.1.1
+      with:
+        python-version: ${{ matrix.python-version }}
+        mamba-version: "*"
+        channels: bioconda,conda-forge,defaults
+        channel-priority: true
+        miniforge-variant: "Mambaforge"
+        miniforge-version: "4.14.0-0"
+        use-mamba: true
+
+    - name: mamba install dependencies
+      shell: bash -l {0}
+      # LP: as of 2022-10-27 we have to pin the tabulate package to a version < 0.9
+      # to work around a snakemake issue #1892.
+      run: |
+        mamba install \
+          'tabulate<0.9' \
+          snakemake-minimal==${{ matrix.snakemake-version }} \
+          pytest
+
+    - name: Run tests
+      shell: bash -l {0}
+      run: |
+        pytest -vs -o log_cli=true .tests/

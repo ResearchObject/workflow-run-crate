@@ -1,0 +1,94 @@
+$schema: "https://json-schema.org/draft/2020-12/schema"
+description: Configuration schema for image conversion workflow.
+properties:
+  repository:
+    type: object
+    properties:
+      path:
+        type: string
+        description: Absolute path to original image repository.
+    required:
+    - path
+  sources:
+    description: Slides from the repository to be selected for conversion.
+    type: object
+    properties:
+      items:
+        type: array
+        items:
+          type: string
+          description: >
+            Path to source files or directory. Directories will be globbed
+            for files ending with any of the supported Extensions.
+            Paths must be relative to repository path.
+    required:
+    - items
+
+  keypair:
+    description: Crypt4GH key pair to use for encryption.
+    type: object
+    properties:
+      private:
+        type: string
+        description: path to private key (must be relative to work directory)
+      public:
+        type: string
+        description: path to public key (must be relative to work directory)
+    required:
+    - private
+    - public
+
+  output:
+    type: object
+    properties:
+      format:
+        type: string
+        description: "Output format.  Only ome-tiff is supported at the moment"
+        enum:
+        - ome-tiff
+      compression:
+        type: string
+        description: compression format to be applied by raw2ometiff
+        enum:
+        - none
+        - ccittfax4
+        - deflate
+        - jp2k
+        - jpeg
+        - lzw
+        - packbits
+        - webp
+        - zstd
+      quality:
+        type: number
+        description: Quality parameter for raw2ometiff.
+      tile_size:
+        type: integer
+        minimum: 1
+        default: 256
+      thumbnail_width:
+        type: integer
+        minimum: 1
+        default: 1024
+    required:
+    - format
+    - compression
+    - quality
+
+  log_level:
+    type: string
+    description: Log level for raw2ometiff and bioformats2raw
+    default: WARN
+    enum:
+    - OFF
+    - ERROR
+    - WARN
+    - INFO
+    - DEBUG
+    - TRACE
+    - ALL
+required:
+- repository
+- sources
+- keypair
+- output
