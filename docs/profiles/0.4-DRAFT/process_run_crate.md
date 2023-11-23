@@ -470,7 +470,7 @@ Alternatively, the `containerImage` could point to a `URL`. For instance:
 
 ## Specifying software dependencies
 
-Software dependencies MAY be specified using `softwareRequirements` from the [workflow-run](https://github.com/ResearchObject/ro-terms/tree/master/workflow-run) ro-terms namespace, which overrides https://schema.org/softwareRequirements by extending both its domain (`SoftwareApplication`, `SoftwareSourceCode`, `ComputationalWorkflow`) and target (`Text`, `URL`, `SoftwareApplication`).
+Software dependencies MAY be specified using `softwareRequirements` to a `SoftwareApplication`:
 
 ```json
 {
