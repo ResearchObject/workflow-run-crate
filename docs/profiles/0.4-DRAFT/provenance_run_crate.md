@@ -438,7 +438,7 @@ In some workflow systems (e.g., CWL, Galaxy), tools are typically wrappers for a
         {"@id": "scripts/data_analysis_script.py"},
         {"@id": "https://pypi.org/project/numpy/1.26.2/"}
     ],
-    mainEntity: {"@id": "scripts/data_analysis_script.py"}
+    "mainEntity": {"@id": "scripts/data_analysis_script.py"}
 },
 {
     "@id": "scripts/data_analysis_script.py",
