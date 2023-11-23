@@ -466,3 +466,24 @@ Alternatively, the `containerImage` could point to a `URL`. For instance:
     "containerImage": "https://example.com/samtools.sif"
 }
 ```
+
+
+## Specifying software dependencies
+
+Software dependencies MAY be specified using `softwareRequirements` from the [workflow-run](https://github.com/ResearchObject/ro-terms/tree/master/workflow-run) ro-terms namespace, which overrides https://schema.org/softwareRequirements by extending both its domain (`SoftwareApplication`, `SoftwareSourceCode`, `ComputationalWorkflow`) and target (`Text`, `URL`, `SoftwareApplication`).
+
+```json
+{
+    "@id": "script.py",
+    "@type": "SoftwareApplication",
+    "name": "Analysis Script",
+    "version": "0.1",
+	"softwareRequirements": {"@id": "https://pypi.org/project/numpy/1.26.2/"}
+},
+{
+    "@id": "https://pypi.org/project/numpy/1.26.2/",
+    "@type": "SoftwareApplication",
+    "name": "NumPy",
+    "version": "1.26.2"
+}
+```

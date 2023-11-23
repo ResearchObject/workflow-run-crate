@@ -426,6 +426,34 @@ A workflow engine may support configuration through a configuration file. In thi
 See also the [section on referencing configuration files of executed tools](process_run_crate#referencing-configuration-files).
 
 
+## Tool wrapper dependencies
+
+In some workflow systems (e.g., CWL, Galaxy), tools are typically wrappers for an executable written in a scripting programming language. This MAY be represented by listing the wrapped tool and its dependencies as described in [Specifying software dependencies](process_run_crate#specifying-software-dependencies). The wrapped tool can be highlighted by using `mainEntity`:
+
+```json
+{
+    "@id": "data_analysis_tool.cwl",
+    "@type": "SoftwareApplication",
+    "softwareRequirements": [
+        {"@id": "scripts/data_analysis_script.py"},
+        {"@id": "https://pypi.org/project/numpy/1.26.2/"}
+    ],
+    mainEntity: {"@id": "scripts/data_analysis_script.py"}
+},
+{
+    "@id": "scripts/data_analysis_script.py",
+    "@type": "SoftwareApplication",
+    "version": "0.1"
+},
+{
+    "@id": "https://pypi.org/project/numpy/1.26.2/",
+    "@type": "SoftwareApplication",
+    "name": "NumPy",
+    "version": "1.26.2"
+}
+```
+
+
 ## Requirements
 
 The requirements of this profile are those of [Workflow Run Crate](workflow_run_crate) plus the ones listed below.
