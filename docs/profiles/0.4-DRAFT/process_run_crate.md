@@ -478,7 +478,7 @@ Software dependencies MAY be specified using `softwareRequirements` to a `Softwa
     "@type": "SoftwareApplication",
     "name": "Analysis Script",
     "version": "0.1",
-	"softwareRequirements": {"@id": "https://pypi.org/project/numpy/1.26.2/"}
+    "softwareRequirements": {"@id": "https://pypi.org/project/numpy/1.26.2/"}
 },
 {
     "@id": "https://pypi.org/project/numpy/1.26.2/",
