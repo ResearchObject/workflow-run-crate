@@ -5,8 +5,8 @@ title: Provenance Run Crate
 
 # Provenance Run Crate
 
-* Version: 0.4-DRAFT
-* Permalink: <https://w3id.org/ro/wfrun/provenance/0.4-DRAFT>
+* Version: 0.5-DRAFT
+* Permalink: <https://w3id.org/ro/wfrun/provenance/0.5-DRAFT>
 * Authors: Workflow Run RO-Crate working group
 
 This profile uses terminology from the [RO-Crate 1.1 specification](https://w3id.org/ro/crate/1.1), and [extends it](https://www.researchobject.org/ro-crate/1.1/appendix/jsonld.html#extending-ro-crate) with additional terms from the [workflow-run](https://github.com/ResearchObject/ro-terms/tree/master/workflow-run) ro-terms namespace.
