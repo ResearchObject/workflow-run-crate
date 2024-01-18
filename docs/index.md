@@ -69,19 +69,23 @@ Post [here](https://github.com/ResearchObject/workflow-run-crate/issues/1) to jo
 
 ## Implementations & examples
 
-Several workflow engines have implemented WRROC
+Several workflow engines have implemented the [WRROC profiles](https://www.researchobject.org/workflow-run-crate/profiles/) or are planning to do so:
 
 **Implementation**  | **Profile** | **Version URL/DOI**    | **Example**             |
 ------------| ----------- | ---------------------- | ----------------------- |
 [runcrate](http://www.researchobject.org/runcrate/)   | Provenance  | [runcrate 0.5.0](https://github.com/ResearchObject/runcrate/releases/tag/0.5.0) or later  |  [10.5281/zenodo.7774351](https://doi.org/10.5281/zenodo.7774351)  |
-Galaxy      | Workflow    | [Galaxy 23.1.1](https://github.com/galaxyproject/galaxy/releases/tag/v23.1.1) or later   |  \[[De Geest 2023b]\]   |
-COMPSs      | Workflow    | \[[Ejarque 2023]\]     |  \[[Poiata 2023]\]      |
-Streamflow  | Provenance  | \[[Colonnelli 2023b]\] |  \[[Colonnelli 2023a]\] |
-WfExS       | Workflow    | \[[Fernández 2023a]\]  |  \[[Fernández 2023b]\]  |
-Sapporo     | Workflow    | \[[Suetake 2023b]\]    |  \[[Ohta 2023]\]        |
-Autosubmit  | Workflow    | \[[Beltrán 2023]\]     |  \[[Kinoshita 2023]\]   |
-Nextflow  | Provenance    | ([in development](https://github.com/nextflow-io/nf-prov/pull/19))   |  [example](https://github.com/nextflow-io/nf-prov/files/13070992/ro-crate-metadata.json)   |
+[Galaxy](https://galaxyproject.org/)      | Workflow    | [Galaxy 23.1.1](https://github.com/galaxyproject/galaxy/releases/tag/v23.1.1) or later   |  [10.5281/zenodo.7785861](https://doi.org/10.5281/zenodo.7785861)  |
+[COMPSs](https://www.bsc.es/research-and-development/software-and-apps/software-list/comp-superscalar)     | Workflow    | [compss 3.2 or later](https://github.com/bsc-wdc/compss/releases/tag/v3.2)    |  [10.5281/zenodo.7788030](https://doi.org/10.5281/zenodo.7788030)      |
+[StreamFlow](https://streamflow.di.unito.it/)  | Provenance  | [Streamflow 0.2.0.dev10](https://github.com/alpha-unito/streamflow/releases/tag/0.2.0.dev10) |  [10.5281/zenodo.7911906](https://doi.org/10.5281/zenodo.7911906) |
+[WfExS](https://wfexs-backend.readthedocs.io/)       | Workflow    | [WfExS 0.10.1](https://github.com/inab/WfExS-backend/releases/tag/0.10.1) or later  |  [10.5281/zenodo.10091550](https://doi.org/10.5281/zenodo.10091550) |
+[Sapporo](https://github.com/sapporo-wes/sapporo)     | Workflow    | [sapporo-service 1.5.1](https://github.com/sapporo-wes/sapporo-service/releases/tag/1.5.1)  or later  |  [10.5281/zenodo.10134581](https://doi.org/10.5281/zenodo.10134581)  |
+[Autosubmit](https://autosubmit.readthedocs.io/)  | Workflow    | [Autosubmit v4.0.100](https://pypi.org/project/autosubmit/4.0.100/) or later    |  [10.5281/zenodo.8144612](https://doi.org/10.5281/zenodo.8144612)   |
+[Nextflow](https://nextflow.io/)  | Provenance    | (nf-prov [in development](https://github.com/nextflow-io/nf-prov/pull/19))   |  [example](https://github.com/nextflow-io/nf-prov/files/13070992/ro-crate-metadata.json)   |
+Snakemake | 
 
+The Process Crate profile can also be implemented outside workflow systems, see for example [BY-COVID WP5 T5.2 Baseline Use Case](https://w3id.org/ro/doi/10.5281/zenodo.6913045).
+
+In addition, some computational workflow approaches have RO-Crate support predating the WRROC profiles: [LivePublication](https://livepublication.github.io/LP_Pub_LID/)
 
 ## Other resources
 
