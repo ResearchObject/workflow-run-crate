@@ -81,7 +81,7 @@ Several workflow engines have implemented the [WRROC profiles](https://www.resea
 [Sapporo](https://github.com/sapporo-wes/sapporo)     | Workflow    | [sapporo-service 1.5.1](https://github.com/sapporo-wes/sapporo-service/releases/tag/1.5.1)  or later  |  [10.5281/zenodo.10134581](https://doi.org/10.5281/zenodo.10134581)  |
 [Autosubmit](https://autosubmit.readthedocs.io/)  | Workflow    | [Autosubmit v4.0.100](https://pypi.org/project/autosubmit/4.0.100/) or later    |  [10.5281/zenodo.8144612](https://doi.org/10.5281/zenodo.8144612)   |
 [Nextflow](https://nextflow.io/)  | Provenance    | (nf-prov [in development](https://github.com/nextflow-io/nf-prov/pull/19))   |  [example](https://github.com/nextflow-io/nf-prov/files/13070992/ro-crate-metadata.json)   |
-Snakemake | 
+
 
 The Process Crate profile can also be implemented outside workflow systems, see for example [BY-COVID WP5 T5.2 Baseline Use Case](https://w3id.org/ro/doi/10.5281/zenodo.6913045).
 
