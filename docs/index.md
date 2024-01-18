@@ -5,9 +5,11 @@ title: Workflow Run RO-Crate
 Workflow Run RO-Crate is a working group for defining [RO-Crate](https://w3id.org/ro/crate) profiles for capturing the provenance of an execution of a computational workflow.
 
 
-## Profiles
+## WRROC Profiles
 
 The [Workflow Run RO-Crate (WRROC) profile collection](profiles) is the main outcome of the group's activities.
+
+Workflow Run RO-Crate is an extension of [RO-Crate](https://w3id.org/ro/crate) (Research Object Crate) and Schema.org to capture the provenance of the execution of computational workflows at different levels of granularity and bundle together all their associated products (inputs, outputs, code, etc.).
 
 ## Cite as
 
