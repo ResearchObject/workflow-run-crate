@@ -7,8 +7,14 @@ Workflow Run RO-Crate is a working group for defining [RO-Crate](https://w3id.or
 
 ## Profiles
 
-The [Workflow Run RO-Crate profile collection](profiles) is the main outcome of the group's activities.
+The [Workflow Run RO-Crate (WRROC) profile collection](profiles) is the main outcome of the group's activities.
 
+## Cite as
+
+Simone Leo, Michael R. Crusoe, Laura Rodríguez-Navas, Raül Sirvent, Alexander Kanitz, Paul De Geest, Rudolf Wittner, Luca Pireddu, Daniel Garijo, José M. Fernández, Iacopo Colonnelli, Matej Gallo, Tazro Ohta, Hirotaka Suetake, Salvador Capella-Gutierrez, Renske de Wit, Bruno de Paula Kinoshita, Stian Soiland-Reyes (2023):  
+[**Recording provenance of workflow runs with RO-Crate**](https://arxiv.org/pdf/2312.07852.pdf).  
+_arXiv_:2312.07852  
+<https://doi.org/10.48550/arXiv.2312.07852>
 
 ## Community
 
@@ -61,15 +67,20 @@ Post [here](https://github.com/ResearchObject/workflow-run-crate/issues/1) to jo
 - Samuel Grayson <https://orcid.org/0000-0001-5411-356X>
 - ... [you](https://github.com/ResearchObject/workflow-run-crate/issues/1)?
 
+## Implementations & examples
 
-## Examples
+Several workflow engines have implemented WRROC
 
-These RO-Crates are being co-developed as examples of using the [Workflow Run profiles](profiles):
-
-- [Provenance Run Crate Example](examples/draft/revsort-run-1-crate/), converted from the [CWLProv example](https://github.com/common-workflow-language/cwlprov/tree/ce3f469745f4c8a2c029f872d522a4c57fba947b/examples/revsort-run-1)
-- [Baseline Use Case: COVID-19 vaccine effectiveness assessment](https://by-covid.github.io/baseline-use-case-synthetic-crate/) -- a [process run crate](profiles/process_run_crate) from the BY-COVID project showing how synthetic dataset generation using Jupyter Notebook can be tracked
-- [Workflow Run RO-Crate for a ML prediction pipeline run](examples/draft/ml-predict-pipeline/) ([pipeline repo](https://github.com/crs4/deephealth-pipelines) -- part of the DeepHealth digital pathology platform)
-- [Machine learning pipeline example](examples/draft/ml-pipeline/) (conceptual draft from EOSC-Life WP6)
+**Implementation**  | **Profile** | **Version URL/DOI**    | **Example**             |
+------------| ----------- | ---------------------- | ----------------------- |
+[runcrate](http://www.researchobject.org/runcrate/)   | Provenance  | [runcrate 0.5.0](https://github.com/ResearchObject/runcrate/releases/tag/0.5.0) or later  |  [10.5281/zenodo.7774351](https://doi.org/10.5281/zenodo.7774351)  |
+Galaxy      | Workflow    | [Galaxy 23.1.1](https://github.com/galaxyproject/galaxy/releases/tag/v23.1.1) or later   |  \[[De Geest 2023b]\]   |
+COMPSs      | Workflow    | \[[Ejarque 2023]\]     |  \[[Poiata 2023]\]      |
+Streamflow  | Provenance  | \[[Colonnelli 2023b]\] |  \[[Colonnelli 2023a]\] |
+WfExS       | Workflow    | \[[Fernández 2023a]\]  |  \[[Fernández 2023b]\]  |
+Sapporo     | Workflow    | \[[Suetake 2023b]\]    |  \[[Ohta 2023]\]        |
+Autosubmit  | Workflow    | \[[Beltrán 2023]\]     |  \[[Kinoshita 2023]\]   |
+Nextflow  | Provenance    | ([in development](https://github.com/nextflow-io/nf-prov/pull/19))   |  [example](https://github.com/nextflow-io/nf-prov/files/13070992/ro-crate-metadata.json)   |
 
 
 ## Other resources
