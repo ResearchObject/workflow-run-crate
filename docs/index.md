@@ -2,6 +2,8 @@
 title: Workflow Run RO-Crate
 ---
 
+![Workflow Run RO-Crate](img/ro-crate-workflow-run.svg)
+
 Workflow Run RO-Crate is a working group for defining [RO-Crate](https://w3id.org/ro/crate) profiles for capturing the provenance of an execution of a computational workflow.
 
 
