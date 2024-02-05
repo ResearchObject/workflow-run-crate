@@ -94,6 +94,13 @@ The Workflow Crate profiles have themselves been extended by the [Five Safes RO-
 
 In addition, some computational workflow approaches have RO-Crate support which predate the WRROC profiles: [LivePublication](https://livepublication.github.io/LP_Pub_LID/) ([example](https://livepublication.github.io/LP_Pub_OrchestrationCrate/), [paper](https://doi.org/10.1109/e-Science58273.2023.10254857)), [RECUP](https://sites.google.com/view/recup-reproducibility/) ([paper](https://doi.org/10.1109/e-science58273.2023.10254808)), [FAIRSCAPE](https://fairscape.github.io/) ([paper](https://doi.org/10.1007/978-3-030-80960-7_3))
 
+## Training material
+
+- [Workflow Run RO-Crate Introduction](https://training.galaxyproject.org/training-material/topics/fair/tutorials/ro-crate-workflow-run-ro-crate/tutorial.html)
+- [RO-Crate tutorial](https://www.researchobject.org/ro-crate/tutorials.html)
+- [Slides](https://slides.com/soilandreyes/2023-11-23-ro-crate-erga) -- _RO-Crate Use cases in biodiversity_
+
+
 ## Other resources
 
 - [Requirements for the Workflow Run RO-Crate profiles](requirements)
