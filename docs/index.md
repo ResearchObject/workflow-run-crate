@@ -13,12 +13,15 @@ The [Workflow Run RO-Crate (WRROC) profile collection](profiles) is the main out
 
 Workflow Run RO-Crate is an extension of [RO-Crate](https://w3id.org/ro/crate) (Research Object Crate) and Schema.org to capture the provenance of the execution of computational workflows at different levels of granularity and bundle together all their associated products (inputs, outputs, code, etc.).
 
-## Cite as
+## Citation and publications
 
 Simone Leo, Michael R. Crusoe, Laura Rodríguez-Navas, Raül Sirvent, Alexander Kanitz, Paul De Geest, Rudolf Wittner, Luca Pireddu, Daniel Garijo, José M. Fernández, Iacopo Colonnelli, Matej Gallo, Tazro Ohta, Hirotaka Suetake, Salvador Capella-Gutierrez, Renske de Wit, Bruno de Paula Kinoshita, Stian Soiland-Reyes (2023):  
 [**Recording provenance of workflow runs with RO-Crate**](https://arxiv.org/pdf/2312.07852.pdf).  
 _arXiv_:2312.07852  
 <https://doi.org/10.48550/arXiv.2312.07852>
+
+See [Outreach](outreach) for other citations, publications and presentations on Workflow Run RO-Crate
+
 
 ## Community
 
