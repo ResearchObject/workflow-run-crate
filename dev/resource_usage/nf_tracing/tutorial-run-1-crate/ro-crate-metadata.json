@@ -1,0 +1,379 @@
+{
+    "@context": [
+        "https://w3id.org/ro/crate/1.1/context",
+        {
+            "resourceUsage": "https://w3id.org/ro/terms/workflow-run#resourceUsage"
+        }
+    ],
+    "@graph": [
+        {
+            "@id": "./",
+            "@type": "Dataset",
+            "conformsTo": [
+                {
+                    "@id": "https://w3id.org/ro/wfrun/process/0.1"
+                },
+                {
+                    "@id": "https://w3id.org/ro/wfrun/workflow/0.1"
+                },
+                {
+                    "@id": "https://w3id.org/ro/wfrun/provenance/0.1"
+                },
+                {
+                    "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+                }
+            ],
+            "datePublished": "2023-05-22T14:09:33+00:00",
+            "hasPart": [
+                {
+                    "@id": "tutorial.nf"
+                },
+                {
+                    "@id": "nextflow.config"
+                },
+                {
+                    "@id": "README.md"
+                }
+            ],
+            "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "mainEntity": {
+                "@id": "tutorial.nf"
+            },
+            "mentions": [
+                {
+                    "@id": "#132aa81f-ed90-4185-b618-50c855225b13"
+                }
+            ]
+        },
+        {
+            "@id": "ro-crate-metadata.json",
+            "@type": "CreativeWork",
+            "about": {
+                "@id": "./"
+            },
+            "conformsTo": [
+                {
+                    "@id": "https://w3id.org/ro/crate/1.1"
+                },
+                {
+                    "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+                }
+            ]
+        },
+        {
+            "@id": "https://w3id.org/ro/wfrun/process/0.1",
+            "@type": "CreativeWork",
+            "name": "Process Run Crate",
+            "version": "0.1"
+        },
+        {
+            "@id": "https://w3id.org/ro/wfrun/workflow/0.1",
+            "@type": "CreativeWork",
+            "name": "Workflow Run Crate",
+            "version": "0.1"
+        },
+        {
+            "@id": "https://w3id.org/ro/wfrun/provenance/0.1",
+            "@type": "CreativeWork",
+            "name": "Provenance Run Crate",
+            "version": "0.1"
+        },
+        {
+            "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0",
+            "@type": "CreativeWork",
+            "name": "Workflow RO-Crate",
+            "version": "1.0"
+        },
+        {
+            "@id": "tutorial.nf",
+            "@type": [
+                "File",
+                "SoftwareSourceCode",
+                "ComputationalWorkflow",
+                "HowTo"
+            ],
+            "hasPart": [
+                {
+                    "@id": "tutorial.nf#splitLetters"
+                },
+                {
+                    "@id": "tutorial.nf#convertToUpper"
+                }
+            ],
+            "name": "tutorial",
+            "programmingLanguage": {
+                "@id": "https://w3id.org/workflowhub/workflow-ro-crate#nextflow"
+            }
+        },
+        {
+            "@id": "https://w3id.org/workflowhub/workflow-ro-crate#nextflow",
+            "@type": "ComputerLanguage",
+            "identifier": {
+                "@id": "https://www.nextflow.io/"
+            },
+            "name": "Nextflow",
+            "url": {
+                "@id": "https://www.nextflow.io/"
+            },
+            "version": "21.10"
+        },
+        {
+            "@id": "nextflow.config",
+            "@type": "File",
+            "description": "Nextflow configuration file"
+        },
+        {
+            "@id": "README.md",
+            "@type": "File"
+        },
+        {
+            "@id": "tutorial.nf#splitLetters",
+            "@type": "SoftwareApplication",
+            "name": "splitLetters"
+        },
+        {
+            "@id": "#cd/ca5a2f",
+            "@type": "CreateAction",
+            "endTime": "2023-05-17T16:33:34.468000",
+            "instrument": {
+                "@id": "tutorial.nf#splitLetters"
+            },
+            "name": "splitLetters",
+            "resourceUsage": [
+                {
+                    "@id": "#cd/ca5a2f-realTime"
+                },
+                {
+                    "@id": "#cd/ca5a2f-percentCPU"
+                },
+                {
+                    "@id": "#cd/ca5a2f-peakRSS"
+                },
+                {
+                    "@id": "#cd/ca5a2f-peakVMEM"
+                },
+                {
+                    "@id": "#cd/ca5a2f-rChar"
+                },
+                {
+                    "@id": "#cd/ca5a2f-wChar"
+                }
+            ],
+            "startTime": "2023-05-17T16:33:34.290000"
+        },
+        {
+            "@id": "#cd/ca5a2f-realTime",
+            "@type": "PropertyValue",
+            "name": "realTime",
+            "propertyID": "https://w3id.org/ro/terms/nf-trace#realTime",
+            "unitCode": "https://qudt.org/vocab/unit/MilliSEC",
+            "value": "5"
+        },
+        {
+            "@id": "#cd/ca5a2f-percentCPU",
+            "@type": "PropertyValue",
+            "name": "percentCPU",
+            "propertyID": "https://w3id.org/ro/terms/nf-trace#percentCPU",
+            "value": "66.7"
+        },
+        {
+            "@id": "#cd/ca5a2f-peakRSS",
+            "@type": "PropertyValue",
+            "name": "peakRSS",
+            "propertyID": "https://w3id.org/ro/terms/nf-trace#peakRSS",
+            "unitCode": "https://qudt.org/vocab/unit/BYTE",
+            "value": "0"
+        },
+        {
+            "@id": "#cd/ca5a2f-peakVMEM",
+            "@type": "PropertyValue",
+            "name": "peakVMEM",
+            "propertyID": "https://w3id.org/ro/terms/nf-trace#peakVMEM",
+            "unitCode": "https://qudt.org/vocab/unit/BYTE",
+            "value": "0"
+        },
+        {
+            "@id": "#cd/ca5a2f-rChar",
+            "@type": "PropertyValue",
+            "name": "rChar",
+            "propertyID": "https://w3id.org/ro/terms/nf-trace#rChar",
+            "unitCode": "https://qudt.org/vocab/unit/BYTE",
+            "value": "145813"
+        },
+        {
+            "@id": "#cd/ca5a2f-wChar",
+            "@type": "PropertyValue",
+            "name": "wChar",
+            "propertyID": "https://w3id.org/ro/terms/nf-trace#wChar",
+            "unitCode": "https://qudt.org/vocab/unit/BYTE",
+            "value": "223"
+        },
+        {
+            "@id": "tutorial.nf#convertToUpper",
+            "@type": "SoftwareApplication",
+            "name": "convertToUpper"
+        },
+        {
+            "@id": "#28/7f2737",
+            "@type": "CreateAction",
+            "endTime": "2023-05-17T16:33:34.720000",
+            "instrument": {
+                "@id": "tutorial.nf#convertToUpper"
+            },
+            "name": "convertToUpper (2)",
+            "resourceUsage": [
+                {
+                    "@id": "#28/7f2737-realTime"
+                },
+                {
+                    "@id": "#28/7f2737-percentCPU"
+                },
+                {
+                    "@id": "#28/7f2737-peakRSS"
+                },
+                {
+                    "@id": "#28/7f2737-peakVMEM"
+                },
+                {
+                    "@id": "#28/7f2737-rChar"
+                },
+                {
+                    "@id": "#28/7f2737-wChar"
+                }
+            ],
+            "startTime": "2023-05-17T16:33:34.534000"
+        },
+        {
+            "@id": "#28/7f2737-realTime",
+            "@type": "PropertyValue",
+            "name": "realTime",
+            "propertyID": "https://w3id.org/ro/terms/nf-trace#realTime",
+            "unitCode": "https://qudt.org/vocab/unit/MilliSEC",
+            "value": "12"
+        },
+        {
+            "@id": "#28/7f2737-percentCPU",
+            "@type": "PropertyValue",
+            "name": "percentCPU",
+            "propertyID": "https://w3id.org/ro/terms/nf-trace#percentCPU",
+            "value": "80.0"
+        },
+        {
+            "@id": "#28/7f2737-peakRSS",
+            "@type": "PropertyValue",
+            "name": "peakRSS",
+            "propertyID": "https://w3id.org/ro/terms/nf-trace#peakRSS",
+            "unitCode": "https://qudt.org/vocab/unit/BYTE",
+            "value": "0"
+        },
+        {
+            "@id": "#28/7f2737-peakVMEM",
+            "@type": "PropertyValue",
+            "name": "peakVMEM",
+            "propertyID": "https://w3id.org/ro/terms/nf-trace#peakVMEM",
+            "unitCode": "https://qudt.org/vocab/unit/BYTE",
+            "value": "0"
+        },
+        {
+            "@id": "#28/7f2737-rChar",
+            "@type": "PropertyValue",
+            "name": "rChar",
+            "propertyID": "https://w3id.org/ro/terms/nf-trace#rChar",
+            "unitCode": "https://qudt.org/vocab/unit/BYTE",
+            "value": "155925"
+        },
+        {
+            "@id": "#28/7f2737-wChar",
+            "@type": "PropertyValue",
+            "name": "wChar",
+            "propertyID": "https://w3id.org/ro/terms/nf-trace#wChar",
+            "unitCode": "https://qudt.org/vocab/unit/BYTE",
+            "value": "199"
+        },
+        {
+            "@id": "#9f/7c259b",
+            "@type": "CreateAction",
+            "endTime": "2023-05-17T16:33:34.726000",
+            "instrument": {
+                "@id": "tutorial.nf#convertToUpper"
+            },
+            "name": "convertToUpper (1)",
+            "resourceUsage": [
+                {
+                    "@id": "#9f/7c259b-realTime"
+                },
+                {
+                    "@id": "#9f/7c259b-percentCPU"
+                },
+                {
+                    "@id": "#9f/7c259b-peakRSS"
+                },
+                {
+                    "@id": "#9f/7c259b-peakVMEM"
+                },
+                {
+                    "@id": "#9f/7c259b-rChar"
+                },
+                {
+                    "@id": "#9f/7c259b-wChar"
+                }
+            ],
+            "startTime": "2023-05-17T16:33:34.542000"
+        },
+        {
+            "@id": "#9f/7c259b-realTime",
+            "@type": "PropertyValue",
+            "name": "realTime",
+            "propertyID": "https://w3id.org/ro/terms/nf-trace#realTime",
+            "unitCode": "https://qudt.org/vocab/unit/MilliSEC",
+            "value": "9"
+        },
+        {
+            "@id": "#9f/7c259b-percentCPU",
+            "@type": "PropertyValue",
+            "name": "percentCPU",
+            "propertyID": "https://w3id.org/ro/terms/nf-trace#percentCPU",
+            "value": "133.3"
+        },
+        {
+            "@id": "#9f/7c259b-peakRSS",
+            "@type": "PropertyValue",
+            "name": "peakRSS",
+            "propertyID": "https://w3id.org/ro/terms/nf-trace#peakRSS",
+            "unitCode": "https://qudt.org/vocab/unit/BYTE",
+            "value": "0"
+        },
+        {
+            "@id": "#9f/7c259b-peakVMEM",
+            "@type": "PropertyValue",
+            "name": "peakVMEM",
+            "propertyID": "https://w3id.org/ro/terms/nf-trace#peakVMEM",
+            "unitCode": "https://qudt.org/vocab/unit/BYTE",
+            "value": "0"
+        },
+        {
+            "@id": "#9f/7c259b-rChar",
+            "@type": "PropertyValue",
+            "name": "rChar",
+            "propertyID": "https://w3id.org/ro/terms/nf-trace#rChar",
+            "unitCode": "https://qudt.org/vocab/unit/BYTE",
+            "value": "155926"
+        },
+        {
+            "@id": "#9f/7c259b-wChar",
+            "@type": "PropertyValue",
+            "name": "wChar",
+            "propertyID": "https://w3id.org/ro/terms/nf-trace#wChar",
+            "unitCode": "https://qudt.org/vocab/unit/BYTE",
+            "value": "200"
+        },
+        {
+            "@id": "#132aa81f-ed90-4185-b618-50c855225b13",
+            "@type": "CreateAction",
+            "instrument": {
+                "@id": "tutorial.nf"
+            },
+            "name": "Execution of tutorial.nf"
+        }
+    ]
+}
