@@ -9,7 +9,7 @@ The workflow stored in the crate (`packed.cwl`) is a [packed](https://www.common
 ```
 MIT License
 
-Copyright (c) 2021-2023 CRS4
+Copyright (c) 2021-2024 CRS4
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
