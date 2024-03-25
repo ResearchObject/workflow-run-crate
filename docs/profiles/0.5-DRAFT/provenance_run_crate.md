@@ -459,6 +459,44 @@ In some workflow systems (e.g., CWL, Galaxy), tools are typically wrappers for a
 Some workflow languages provide a mechanism to execute a step only when some condition is verified. An example of this is the [when](https://www.commonwl.org/v1.2/Workflow.html#Conditional_execution_(Optional)) clause in CWL. If an execution of a step is skipped in this way, the corresponding action SHOULD NOT be included in the RO-Crate metadata, while the step itself and the tool it executes MAY be represented.
 
 
+## Representing resource usage
+
+It can often be desirable to have information on the resources used in the course of the execution: how much memory, CPU, etc. One obvious use for such information is as estimate of the amount of resources that will be needed for future runs. Representing resource usage for a tool run is OPTIONAL; if represented, it MUST link the corresponding [CreateAction](http://schema.org/CreateAction) to one or more [PropertyValue](http://schema.org/PropertyValue) instances via the `resourceUsage` property, defined in the <https://w3id.org/ro/terms/workflow-run> namespace. A `PropertyValue` instance used to represent an element of resource usage MUST have a unique identifier representing the quantity being measured as its [propertyID](http://schema.org/propertyID), and SHOULD refer to a unit of measurement via [unitCode](http://schema.org/unitCode), except for dimensionless numbers. Example:
+
+```json
+{
+    "@id": "#a1be3cab",
+    "@type": "CreateAction",
+    "instrument": {"@id": "foobar.nf#foo"},
+    "resourceUsage": [
+        {
+            "@id": "#a1be3cab-realTime"
+        },
+        {
+            "@id": "#a1be3cab-percentCPU"
+        }
+    ]
+},
+{
+    "@id": "#a1be3cab-realTime",
+    "@type": "PropertyValue",
+    "name": "realTime",
+    "propertyID": "https://w3id.org/ro/terms/nf-trace#realTime",
+    "unitCode": "https://qudt.org/vocab/unit/MilliSEC",
+    "value": "12"
+},
+{
+    "@id": "#a1be3cab-percentCPU",
+    "@type": "PropertyValue",
+    "name": "percentCPU",
+    "propertyID": "https://w3id.org/ro/terms/nf-trace#percentCPU",
+    "value": "80.0"
+}
+```
+
+The values of `propertyID` SHOULD be URLs that univocally identify the quantity. The set of possible `propertyID` values can be defined by the workflow engine that implements the profile; ideally, each URL would point to a detailed description of the quantity. In the above example, ro-terms is used to create a namespace for the `propertyID`s. In this case, [QUDT](https://qudt.org/) is used to specify the `unitCode`.
+
+
 ## Requirements
 
 The requirements of this profile are those of [Workflow Run Crate](workflow_run_crate) plus the ones listed below.
