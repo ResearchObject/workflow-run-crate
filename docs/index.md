@@ -33,8 +33,6 @@ Currently we have [bi-weekly meetings](https://docs.google.com/document/d/1shvko
 
 Post [here](https://github.com/ResearchObject/workflow-run-crate/issues/1) to join the working group.
 
-**Co-chairs**: Simone Leo, Laura Rodríguez-Navas
-
 **Members**:
 - Simone Leo <https://orcid.org/0000-0001-8271-5429>
 - Laura Rodríguez-Navas <https://orcid.org/0000-0003-4929-1219>
