@@ -71,6 +71,7 @@ Post [here](https://github.com/ResearchObject/workflow-run-crate/issues/1) to jo
 - Samuel Lampa <https://orcid.org/0000-0001-6740-9212>
 - Samuel Grayson <https://orcid.org/0000-0001-5411-356X>
 - Jörg F. Unger <https://orcid.org/0000-0003-0035-0951>
+- Felix Bartusch <https://orcid.org/0000-0003-0711-5196>
 - ... [you](https://github.com/ResearchObject/workflow-run-crate/issues/1)?
 
 ## Implementations & examples
