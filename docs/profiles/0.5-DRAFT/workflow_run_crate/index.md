@@ -7,7 +7,14 @@ title: Workflow Run Crate
 
 * Version: 0.5-DRAFT
 * Permalink: <https://w3id.org/ro/wfrun/workflow/0.5-DRAFT>
-* Authors: Workflow Run RO-Crate working group
+* Authors: [Workflow Run RO-Crate working group](https://www.researchobject.org/workflow-run-crate/#community)
+* License: [Apache License, version 2.0](https://www.apache.org/licenses/LICENSE-2.0) (SPDX: [`Apache-2.0`](http://spdx.org/licenses/Apache-2.0))
+* Profile Crate: [ro-crate-metadata.json](ro-crate-metadata.json) [ro-crate-preview.html](ro-crate-preview.html)
+* Extends:
+  - [Process Run Crate](https://w3id.org/ro/wfrun/process/0.5-DRAFT)
+  - [Workflow RO-Crate](https://w3id.org/workflowhub/workflow-ro-crate/)
+* JSON-LD context: <https://w3id.org/ro/terms/workflow-run>
+* Vocabulary terms:  <https://w3id.org/ro/terms/workflow-run#>
 
 This profile uses terminology from the [RO-Crate 1.1 specification](https://w3id.org/ro/crate/1.1).
 
@@ -26,7 +33,7 @@ Additional properties described in the [Bioschemas FormalParameter profile](http
 
 The following diagram shows the relationships between provenance-related entities. Note the distinction between *prospective* provenance (plans for activities, e.g. a workflow) and *retrospective* provenance (what actually happened, e.g. the execution of a workflow).
 
-<img alt="Entity-relationship diagram" src="img/er_diagram_workflow.svg" width="650" />
+<img alt="Entity-relationship diagram" src="../img/er_diagram_workflow.svg" width="650" />
 
 
 ## Example Metadata File (`ro-crate-metadata.json`)
