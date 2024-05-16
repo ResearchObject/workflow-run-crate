@@ -222,7 +222,7 @@ Note that the command line shown in the action's `description` is not directly r
   <tr>
    <td>actionStatus</td>
    <td>MAY</td>
-   <td>SHOULD be <a href="https://schema.org/CompletedActionStatus">CompletedActionStatus</a> if the process completed successfully or <a href="https://schema.org/FailedActionStatus">FailedActionStatus</a> if it failed to complete. In the latter case, consumers should be prepared for the absence of any dependent actions in the metadata. If this attribute is not specified, consumers should assume that the process completed successfully.</td>
+   <td>SHOULD be <a href="http://schema.org/CompletedActionStatus">CompletedActionStatus</a> if the process completed successfully or <a href="http://schema.org/FailedActionStatus">FailedActionStatus</a> if it failed to complete. In the latter case, consumers should be prepared for the absence of any dependent actions in the metadata. If this attribute is not specified, consumers should assume that the process completed successfully.</td>
   </tr>
 
   <tr>
