@@ -11,12 +11,22 @@
     {
       "@id": "ro-crate-metadata.json",
       "@type": "CreativeWork",
+      "license": {
+        "@id": "http://spdx.org/licenses/CC0-1.0"
+      },
       "conformsTo": {
         "@id": "https://w3id.org/ro/crate/1.2-DRAFT"
       },
       "about": {
         "@id": "https://w3id.org/ro/wfrun/process/0.5-DRAFT"
       }
+    },
+    {
+      "@id": "http://spdx.org/licenses/CC0-1.0",
+      "@type": "PropertyValue",
+      "propertyID": "http://spdx.org/rdf/terms#licenseId",
+      "name": "spdx",
+      "value": "CC0-1.0"
     },
     {
       "@id": "https://w3id.org/ro/wfrun/process/0.5-DRAFT",
@@ -30,11 +40,11 @@
       "identifier": "https://w3id.org/ro/wfrun/process/0.5-DRAFT",
       "name": "Process Run Crate profile",
       "version": "0.5-DRAFT",
-      "includedInDataCatalog": {
-        "@id": "https://w3id.org/ro/wfrun"
+      "license": {
+        "@id": "https://www.apache.org/licenses/LICENSE-2.0"
       },
       "author": {
-        "@id": "https://researchobject.org/workflow-run-crate/"
+        "@id": "https://www.researchobject.org/workflow-run-crate/"
       },
       "hasPart": [
         {
@@ -42,6 +52,12 @@
         },
         {
           "@id": "https://w3id.org/ro/terms/workflow-run#"
+        },
+        {
+          "@id": "https://w3id.org/ro/terms/workflow-run"
+        },
+        {
+          "@id": "https://gxy.io/GTN:T00343"
         }
       ],
       "hasResource": [
@@ -49,7 +65,13 @@
           "@id": "#hasSpecification"
         },
         {
+          "@id": "#hasConstraints"
+        },
+        {
           "@id": "#hasVocabulary"
+        },
+        {
+          "@id": "#hasGuidance"
         }
       ],
       "citation": {
@@ -57,7 +79,29 @@
       }
     },
     {
-      "@id": "https://researchobject.org/workflow-run-crate/",
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "license": {
+        "@id": "http://spdx.org/licenses/CC0-1.0"
+      },
+      "isBasedOn": {
+        "@id": "ro-crate-metadata.json"
+      },
+      "name": "RO-Crate preview of the Process Run Crate profile",
+      "encodingFormat": "text/html",
+      "about": "https://w3id.org/ro/wfrun/process/0.5-DRAFT"
+    },
+    {
+      "@id": "https://www.apache.org/licenses/LICENSE-2.0",
+      "@type": "CreativeWork",
+      "name": "Apache License 2.0",
+      "version": "2.0",
+      "identifier": {
+        "@id": "http://spdx.org/licenses/Apache-2.0"
+      }
+    },
+    {
+      "@id": "https://www.researchobject.org/workflow-run-crate/",
       "@type": "Project",
       "name": "Workflow Run Crate task force",
       "member": [
@@ -184,7 +228,12 @@
       "@id": "index.html",
       "@type": "File",
       "name": "Process Run Crate (HTML)",
-      "encodingFormat": "text/html"
+      "encodingFormat": [
+        "text/html",
+        {
+          "@id": "https://www.nationalarchives.gov.uk/PRONOM/fmt/471"
+        }
+      ]
     },
     {
       "@id": "https://w3id.org/ro/terms/workflow-run#",
@@ -239,14 +288,52 @@
       ]
     },
     {
+      "@id": "https://w3id.org/ro/terms/workflow-run",
+      "@type": "File",
+      "name": "JSON-LD context for workflow-run terms",
+      "contentUrl": "https://www.researchobject.org/ro-terms/workflow-run/context.json",
+      "conformsTo": {
+        "@id": "http://www.w3.org/ns/json-ld#Context"
+      },
+      "encodingFormat": "application/ld+json",
+      "isBasedOn": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1/context"
+        },
+        {
+          "@id": "https://w3id.org/ro/terms/workflow-run#"
+        }
+      ],
+      "license": {
+        "@id": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "@id": "https://gxy.io/GTN:T00343",
+      "@type": "LearningResource",
+      "name": "Workflow Run RO-Crate Introduction",
+      "author": {
+        "@id": "https://orcid.org/0000-0001-8271-5429"
+      }
+    },
+    {
       "@id": "#hasSpecification",
       "@type": "ResourceDescriptor",
-      "name": "",
       "hasRole": {
         "@id": "http://www.w3.org/ns/dx/prof/role/specification"
       },
       "hasArtifact": {
         "@id": "index.html"
+      }
+    },
+    {
+      "@id": "#hasConstraints",
+      "@type": "ResourceDescriptor",
+      "hasRole": {
+        "@id": "http://www.w3.org/ns/dx/prof/role/constraints"
+      },
+      "hasArtifact": {
+        "@id": "index.html#requirements"
       }
     },
     {
@@ -260,10 +347,76 @@
       }
     },
     {
+      "@id": "#hasGuidance",
+      "@type": "ResourceDescriptor",
+      "hasRole": {
+        "@id": "http://www.w3.org/ns/dx/prof/role/guidance"
+      },
+      "hasArtifact": {
+        "@id": "https://gxy.io/GTN:T00343"
+      }
+    },
+    {
       "@id": "https://doi.org/10.48550/arXiv.2312.07852",
       "@type": "ScholarlyArticle",
       "name": "Recording provenance of workflow runs with RO-Crate",
-      "creditText": "Simone Leo, Michael R.  Crusoe, Laura Rodríguez-Navas, Raül Sirvent, Alexander Kanitz, Paul De Geest, Rudolf Wittner, Luca Pireddu, Daniel Garijo, José M. Fernández, Iacopo Colonnelli, Matej Gallo, Tazro Ohta, Hirotaka Suetake, Salvador Capella-Gutierrez, Renske de Wit, Bruno de Paula Kinoshita, Stian Soiland-Reyes (2024): Recording provenance of workflow runs with RO-Crate. arXiv:2312.07852"
+      "author": [
+        {
+          "@id": "https://orcid.org/0000-0001-8271-5429"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-2961-9670"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-4929-1219"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-0606-2512"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-3468-0652"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-8940-4946"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-0003-2024"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-4663-5613"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-0454-7145"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-4806-5140"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-9290-2017"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-1119-1792"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-3777-5945"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-2765-0049"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-0309-604X"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-0902-0086"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-8250-4074"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-9842-9718"
+        }
+      ],
+      "creditText": "Simone Leo, et al. (2024): Recording provenance of workflow runs with RO-Crate. arXiv:2312.07852"
     },
     {
       "@id": "https://orcid.org/0000-0001-8271-5429",
@@ -459,6 +612,35 @@
       "@id": "https://www.researchobject.org/ro-crate/community",
       "@type": "Project",
       "name": "RO-Crate Community"
+    },
+    {
+      "@id": "index.html#requirements",
+      "@type": "WebPageElement",
+      "name": "Process Run Crate requirements"
+    },
+    {
+      "@id": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "@type": "CreativeWork",
+      "identifier": {
+        "@id": "http://spdx.org/licenses/CC0-1.0"
+      },
+      "name": "Creative Commons Zero v1.0 Universal",
+      "version": "1.0"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-4663-5613",
+      "@type": "Person",
+      "name": "Luca Pireddu"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-1119-1792",
+      "@type": "Person",
+      "name": "Matej Gallo"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-0309-604X",
+      "@type": "Person",
+      "name": "Salvador Capella-Gutierrez"
     },
     {
       "@id": "https://w3id.org/ro/terms/workflow-run#ParameterConnection",
@@ -750,6 +932,13 @@
       "@type": "DefinedTerm",
       "name": "MediaObject",
       "termCode": "file"
+    },
+    {
+      "@id": "http://spdx.org/licenses/Apache-2.0",
+      "@type": "PropertyValue",
+      "propertyID": "http://spdx.org/rdf/terms#licenseId",
+      "name": "spdx",
+      "value": "Apache-2.0"
     }
   ]
 }
@@ -824,7 +1013,7 @@ table.table {
                         </ul></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">author<span>&nbsp;</span><a href="http://schema.org/author">[?]</a></th>
-            <td style='text-align:left'><a href="#https%3A//researchobject.org/workflow-run-crate/">Workflow Run Crate task force</a></td>
+            <td style='text-align:left'><a href="#https%3A//www.researchobject.org/workflow-run-crate/">Workflow Run Crate task force</a></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">isProfileOf<span>&nbsp;</span><a href="http://www.w3.org/ns/dx/prof/isProfileOf">[?]</a></th>
             <td style='text-align:left'><a href="https://w3id.org/ro/crate/1.2-DRAFT">https://w3id.org/ro/crate/1.2-DRAFT</a></td>
@@ -835,21 +1024,29 @@ table.table {
             <th style="text-align:left;" class="prop">version<span>&nbsp;</span><a href="http://schema.org/version">[?]</a></th>
             <td style='text-align:left'><span>0.5-DRAFT</span></td>
             </tr><tr>
-            <th style="text-align:left;" class="prop">includedInDataCatalog<span>&nbsp;</span><a href="http://schema.org/includedInDataCatalog">[?]</a></th>
-            <td style='text-align:left'><a href="https://w3id.org/ro/wfrun">https://w3id.org/ro/wfrun</a></td>
+            <th style="text-align:left;" class="prop">license<span>&nbsp;</span><a href="http://schema.org/license">[?]</a></th>
+            <td style='text-align:left'><a href="#https%3A//www.apache.org/licenses/LICENSE-2.0">Apache License 2.0</a></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
             <td style='text-align:left'><ul>
                         <li><a href="#index.html">Process Run Crate (HTML)</a></li>
                         
                         <li><a href="#https%3A//w3id.org/ro/terms/workflow-run%23">Namespace for Common Provenance Model RO-Crate model</a></li>
+                        
+                        <li><a href="#https%3A//w3id.org/ro/terms/workflow-run">JSON-LD context for workflow-run terms</a></li>
+                        
+                        <li><a href="#https%3A//gxy.io/GTN%3AT00343">Workflow Run RO-Crate Introduction</a></li>
                         </ul></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">hasResource<span>&nbsp;</span><a href="http://www.w3.org/ns/dx/prof/hasResource">[?]</a></th>
             <td style='text-align:left'><ul>
                         <li><a href="#%23hasSpecification">#hasSpecification</a></li>
                         
+                        <li><a href="#%23hasConstraints">#hasConstraints</a></li>
+                        
                         <li><a href="#%23hasVocabulary">#hasVocabulary</a></li>
+                        
+                        <li><a href="#%23hasGuidance">#hasGuidance</a></li>
                         </ul></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">citation<span>&nbsp;</span><a href="http://schema.org/citation">[?]</a></th>
@@ -864,17 +1061,17 @@ table.table {
         </div>
         <hr/><br/><br/>
            <div>
-            <h3><a href="https://researchobject.org/workflow-run-crate/">Go to: </a> Workflow Run Crate task force</h3>
+            <h3><a href="https://www.researchobject.org/workflow-run-crate/">Go to: </a> Workflow Run Crate task force</h3>
             
             
             
             
-        <div id="https://researchobject.org/workflow-run-crate/">
+        <div id="https://www.researchobject.org/workflow-run-crate/">
             
             <table class="table metadata table-striped" >
                 <tbody><tr>
             <th style="text-align:left;" class="prop">@id</th>
-            <td style='text-align:left'><a href="https://researchobject.org/workflow-run-crate/">https://researchobject.org/workflow-run-crate/</a></td>
+            <td style='text-align:left'><a href="https://www.researchobject.org/workflow-run-crate/">https://www.researchobject.org/workflow-run-crate/</a></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
             <td style='text-align:left'><span>Workflow Run Crate task force</span></td>
@@ -971,7 +1168,40 @@ table.table {
         </div>
 
         </div>
-        <hr/><br/><br/><hr/><br/><br/><hr/><br/><br/>
+        <hr/><br/><br/><hr/><br/><br/>
+           <div>
+            <h3><a href="https://www.apache.org/licenses/LICENSE-2.0">Go to: </a> Apache License 2.0</h3>
+            
+            
+            
+            
+        <div id="https://www.apache.org/licenses/LICENSE-2.0">
+            
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><a href="https://www.apache.org/licenses/LICENSE-2.0">https://www.apache.org/licenses/LICENSE-2.0</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
+            <td style='text-align:left'><span>Apache License 2.0</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><span>CreativeWork</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">version<span>&nbsp;</span><a href="http://schema.org/version">[?]</a></th>
+            <td style='text-align:left'><span>2.0</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">identifier<span>&nbsp;</span><a href="http://schema.org/identifier">[?]</a></th>
+            <td style='text-align:left'>spdx: Apache-2.0</td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">license<span>&nbsp;</span><a href="http://schema.org/license">[?]</a></th>
+            <td style='text-align:left'><a href="#https%3A//w3id.org/ro/wfrun/process/0.5-DRAFT">Process Run Crate profile</a></td>
+            </tr></tbody>
+            </table>
+        </div>
+
+        </div>
+        <hr/><br/><br/>
            <div>
             <h3><a href="index.html">⬇️ Download: </a> Process Run Crate (HTML)</h3>
             
@@ -992,7 +1222,11 @@ table.table {
             <td style='text-align:left'><span>File</span></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">encodingFormat<span>&nbsp;</span><a href="http://schema.org/encodingFormat">[?]</a></th>
-            <td style='text-align:left'><span>text/html</span></td>
+            <td style='text-align:left'><ul>
+                        <li><span>text/html</span></li>
+                        
+                        <li><a href="https://www.nationalarchives.gov.uk/PRONOM/fmt/471">https://www.nationalarchives.gov.uk/PRONOM/fmt/471</a></li>
+                        </ul></td>
             </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
             <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
             <td style='text-align:left'><a href="#https%3A//w3id.org/ro/wfrun/process/0.5-DRAFT">Process Run Crate profile</a></td>
@@ -1060,8 +1294,90 @@ table.table {
             <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
             <td style='text-align:left'><a href="#https%3A//w3id.org/ro/wfrun/process/0.5-DRAFT">Process Run Crate profile</a></td>
             </tr><tr>
+            <th style="text-align:left;" class="prop">isBasedOn<span>&nbsp;</span><a href="http://schema.org/isBasedOn">[?]</a></th>
+            <td style='text-align:left'><a href="#https%3A//w3id.org/ro/terms/workflow-run">JSON-LD context for workflow-run terms</a></td>
+            </tr><tr>
             <th style="text-align:left;" class="prop">hasArtifact<span>&nbsp;</span><a href="http://www.w3.org/ns/dx/prof/hasArtifact">[?]</a></th>
             <td style='text-align:left'><a href="#%23hasVocabulary">#hasVocabulary</a></td>
+            </tr></tbody>
+            </table>
+        </div>
+
+        </div>
+        <hr/><br/><br/>
+           <div>
+            <h3><a href="https://w3id.org/ro/terms/workflow-run">Go to: </a> JSON-LD context for workflow-run terms</h3>
+            
+            
+            
+            
+        <div id="https://w3id.org/ro/terms/workflow-run">
+            
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><a href="https://w3id.org/ro/terms/workflow-run">https://w3id.org/ro/terms/workflow-run</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
+            <td style='text-align:left'><span>JSON-LD context for workflow-run terms</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><span>File</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">encodingFormat<span>&nbsp;</span><a href="http://schema.org/encodingFormat">[?]</a></th>
+            <td style='text-align:left'><span>application/ld+json</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">contentUrl<span>&nbsp;</span><a href="http://schema.org/contentUrl">[?]</a></th>
+            <td style='text-align:left'><a href="https://www.researchobject.org/ro-terms/workflow-run/context.json">https://www.researchobject.org/ro-terms/workflow-run/context.json</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">conformsTo<span>&nbsp;</span><a href="http://purl.org/dc/terms/conformsTo">[?]</a></th>
+            <td style='text-align:left'><a href="http://www.w3.org/ns/json-ld#Context">http://www.w3.org/ns/json-ld#Context</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">isBasedOn<span>&nbsp;</span><a href="http://schema.org/isBasedOn">[?]</a></th>
+            <td style='text-align:left'><ul>
+                        <li><a href="https://w3id.org/ro/crate/1.1/context">https://w3id.org/ro/crate/1.1/context</a></li>
+                        
+                        <li><a href="#https%3A//w3id.org/ro/terms/workflow-run%23">Namespace for Common Provenance Model RO-Crate model</a></li>
+                        </ul></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">license<span>&nbsp;</span><a href="http://schema.org/license">[?]</a></th>
+            <td style='text-align:left'><a href="#https%3A//creativecommons.org/publicdomain/zero/1.0/">Creative Commons Zero v1.0 Universal</a></td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
+            <td style='text-align:left'><a href="#https%3A//w3id.org/ro/wfrun/process/0.5-DRAFT">Process Run Crate profile</a></td>
+            </tr></tbody>
+            </table>
+        </div>
+
+        </div>
+        <hr/><br/><br/>
+           <div>
+            <h3><a href="https://gxy.io/GTN:T00343">Go to: </a> Workflow Run RO-Crate Introduction</h3>
+            
+            
+            
+            
+        <div id="https://gxy.io/GTN:T00343">
+            
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><a href="https://gxy.io/GTN:T00343">https://gxy.io/GTN:T00343</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
+            <td style='text-align:left'><span>Workflow Run RO-Crate Introduction</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><span>LearningResource</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">author<span>&nbsp;</span><a href="http://schema.org/author">[?]</a></th>
+            <td style='text-align:left'><a href="#https%3A//orcid.org/0000-0001-8271-5429">Simone Leo</a></td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
+            <td style='text-align:left'><a href="#https%3A//w3id.org/ro/wfrun/process/0.5-DRAFT">Process Run Crate profile</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">hasArtifact<span>&nbsp;</span><a href="http://www.w3.org/ns/dx/prof/hasArtifact">[?]</a></th>
+            <td style='text-align:left'><a href="#%23hasGuidance">#hasGuidance</a></td>
             </tr></tbody>
             </table>
         </div>
@@ -1081,9 +1397,6 @@ table.table {
             <th style="text-align:left;" class="prop">@id</th>
             <td style='text-align:left'><span>#hasSpecification</span></td>
             </tr><tr>
-            <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
-            <td style='text-align:left'></td>
-            </tr><tr>
             <th style="text-align:left;" class="prop">@type</th>
             <td style='text-align:left'><span>ResourceDescriptor</span></td>
             </tr><tr>
@@ -1092,6 +1405,36 @@ table.table {
             </tr><tr>
             <th style="text-align:left;" class="prop">hasArtifact<span>&nbsp;</span><a href="http://www.w3.org/ns/dx/prof/hasArtifact">[?]</a></th>
             <td style='text-align:left'><a href="#index.html">Process Run Crate (HTML)</a></td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">hasResource<span>&nbsp;</span><a href="http://www.w3.org/ns/dx/prof/hasResource">[?]</a></th>
+            <td style='text-align:left'><a href="#https%3A//w3id.org/ro/wfrun/process/0.5-DRAFT">Process Run Crate profile</a></td>
+            </tr></tbody>
+            </table>
+        </div>
+
+        </div>
+        <hr/><br/><br/>
+           <div>
+            <h3> #hasConstraints</h3>
+            
+            
+            
+            
+        <div id="#hasConstraints">
+            
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><span>#hasConstraints</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><span>ResourceDescriptor</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">hasRole<span>&nbsp;</span><a href="http://www.w3.org/ns/dx/prof/hasRole">[?]</a></th>
+            <td style='text-align:left'><a href="http://www.w3.org/ns/dx/prof/role/constraints">http://www.w3.org/ns/dx/prof/role/constraints</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">hasArtifact<span>&nbsp;</span><a href="http://www.w3.org/ns/dx/prof/hasArtifact">[?]</a></th>
+            <td style='text-align:left'><a href="#index.html%23requirements">Process Run Crate requirements</a></td>
             </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
             <th style="text-align:left;" class="prop">hasResource<span>&nbsp;</span><a href="http://www.w3.org/ns/dx/prof/hasResource">[?]</a></th>
             <td style='text-align:left'><a href="#https%3A//w3id.org/ro/wfrun/process/0.5-DRAFT">Process Run Crate profile</a></td>
@@ -1132,6 +1475,36 @@ table.table {
         </div>
         <hr/><br/><br/>
            <div>
+            <h3> #hasGuidance</h3>
+            
+            
+            
+            
+        <div id="#hasGuidance">
+            
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><span>#hasGuidance</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><span>ResourceDescriptor</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">hasRole<span>&nbsp;</span><a href="http://www.w3.org/ns/dx/prof/hasRole">[?]</a></th>
+            <td style='text-align:left'><a href="http://www.w3.org/ns/dx/prof/role/guidance">http://www.w3.org/ns/dx/prof/role/guidance</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">hasArtifact<span>&nbsp;</span><a href="http://www.w3.org/ns/dx/prof/hasArtifact">[?]</a></th>
+            <td style='text-align:left'><a href="#https%3A//gxy.io/GTN%3AT00343">Workflow Run RO-Crate Introduction</a></td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">hasResource<span>&nbsp;</span><a href="http://www.w3.org/ns/dx/prof/hasResource">[?]</a></th>
+            <td style='text-align:left'><a href="#https%3A//w3id.org/ro/wfrun/process/0.5-DRAFT">Process Run Crate profile</a></td>
+            </tr></tbody>
+            </table>
+        </div>
+
+        </div>
+        <hr/><br/><br/>
+           <div>
             <h3><a href="https://doi.org/10.48550/arXiv.2312.07852">Go to: </a> Recording provenance of workflow runs with RO-Crate</h3>
             
             
@@ -1150,8 +1523,47 @@ table.table {
             <th style="text-align:left;" class="prop">@type</th>
             <td style='text-align:left'><span>ScholarlyArticle</span></td>
             </tr><tr>
+            <th style="text-align:left;" class="prop">author<span>&nbsp;</span><a href="http://schema.org/author">[?]</a></th>
+            <td style='text-align:left'><ul>
+                        <li><a href="#https%3A//orcid.org/0000-0001-8271-5429">Simone Leo</a></li>
+                        
+                        <li><a href="#https%3A//orcid.org/0000-0002-2961-9670">Michael R Crusoe</a></li>
+                        
+                        <li><a href="#https%3A//orcid.org/0000-0003-4929-1219">Laura Rodríguez-Navas</a></li>
+                        
+                        <li><a href="#https%3A//orcid.org/0000-0003-0606-2512">Raül Sirvent</a></li>
+                        
+                        <li><a href="#https%3A//orcid.org/0000-0002-3468-0652">Alexander Kanitz</a></li>
+                        
+                        <li><a href="#https%3A//orcid.org/0000-0002-8940-4946">Paul De Geest</a></li>
+                        
+                        <li><a href="#https%3A//orcid.org/0000-0002-0003-2024">Rudolf Wittner</a></li>
+                        
+                        <li><a href="#https%3A//orcid.org/0000-0002-4663-5613">Luca Pireddu</a></li>
+                        
+                        <li><a href="#https%3A//orcid.org/0000-0003-0454-7145">Daniel Garijo</a></li>
+                        
+                        <li><a href="#https%3A//orcid.org/0000-0002-4806-5140">José María Fernández</a></li>
+                        
+                        <li><a href="#https%3A//orcid.org/0000-0001-9290-2017">Iacopo Colonnelli</a></li>
+                        
+                        <li><a href="#https%3A//orcid.org/0000-0002-1119-1792">Matej Gallo</a></li>
+                        
+                        <li><a href="#https%3A//orcid.org/0000-0003-3777-5945">Tazro Ohta</a></li>
+                        
+                        <li><a href="#https%3A//orcid.org/0000-0003-2765-0049">Hirotaka Suetake</a></li>
+                        
+                        <li><a href="#https%3A//orcid.org/0000-0002-0309-604X">Salvador Capella-Gutierrez</a></li>
+                        
+                        <li><a href="#https%3A//orcid.org/0000-0003-0902-0086">Renske de Wit</a></li>
+                        
+                        <li><a href="#https%3A//orcid.org/0000-0001-8250-4074">Bruno P. Kinoshita</a></li>
+                        
+                        <li><a href="#https%3A//orcid.org/0000-0001-9842-9718">Stian Soiland-Reyes</a></li>
+                        </ul></td>
+            </tr><tr>
             <th style="text-align:left;" class="prop">creditText<span>&nbsp;</span><a href="http://schema.org/creditText">[?]</a></th>
-            <td style='text-align:left'><span>Simone Leo, Michael R.  Crusoe, Laura Rodríguez-Navas, Raül Sirvent, Alexander Kanitz, Paul De Geest, Rudolf Wittner, Luca Pireddu, Daniel Garijo, José M. Fernández, Iacopo Colonnelli, Matej Gallo, Tazro Ohta, Hirotaka Suetake, Salvador Capella-Gutierrez, Renske de Wit, Bruno de Paula Kinoshita, Stian Soiland-Reyes (2024): Recording provenance of workflow runs with RO-Crate. arXiv:2312.07852</span></td>
+            <td style='text-align:left'><span>Simone Leo, et al. (2024): Recording provenance of workflow runs with RO-Crate. arXiv:2312.07852</span></td>
             </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
             <th style="text-align:left;" class="prop">citation<span>&nbsp;</span><a href="http://schema.org/citation">[?]</a></th>
             <td style='text-align:left'><a href="#https%3A//w3id.org/ro/wfrun/process/0.5-DRAFT">Process Run Crate profile</a></td>

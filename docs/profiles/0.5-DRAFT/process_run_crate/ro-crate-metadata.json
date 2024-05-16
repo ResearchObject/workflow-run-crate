@@ -5,8 +5,18 @@
   {
     "@id": "ro-crate-metadata.json",
     "@type": "CreativeWork",
+    "license": { "@id": "http://spdx.org/licenses/CC0-1.0" },
     "conformsTo": {"@id": "https://w3id.org/ro/crate/1.2-DRAFT"},
     "about": {"@id": "https://w3id.org/ro/wfrun/process/0.5-DRAFT"}
+  },  
+  {
+    "@id": "ro-crate-preview.html",
+    "@type": "CreativeWork",
+    "license": { "@id": "http://spdx.org/licenses/CC0-1.0" },
+    "isBasedOn": {"@id": "ro-crate-metadata.json" },
+    "name": "RO-Crate preview of the Process Run Crate profile",
+    "encodingFormat": "text/html",
+    "about": "https://w3id.org/ro/wfrun/process/0.5-DRAFT"
   },  
   {
     "@id": "https://w3id.org/ro/wfrun/process/0.5-DRAFT",
@@ -17,22 +27,29 @@
     "identifier": "https://w3id.org/ro/wfrun/process/0.5-DRAFT",
     "name": "Process Run Crate profile",
     "version": "0.5-DRAFT",
-    "includedInDataCatalog": { "@id": "https://w3id.org/ro/wfrun" },
+    "license": {
+      "@id": "https://www.apache.org/licenses/LICENSE-2.0"
+    },
     "author": [
-     {"@id": "https://researchobject.org/workflow-run-crate/"}
+     {"@id": "https://www.researchobject.org/workflow-run-crate/"}
     ],
     "hasPart": [
         { "@id": "index.html" },
-        { "@id": "https://w3id.org/ro/terms/workflow-run#" }
+        { "@id": "https://w3id.org/ro/terms/workflow-run#" },
+        { "@id": "https://w3id.org/ro/terms/workflow-run" },
+        { "@id": "https://gxy.io/GTN:T00343" },
+        { "@id": "https://pypi.org/project/runcrate/" }
     ],
     "hasResource": [
         { "@id": "#hasSpecification" },
-        { "@id": "#hasVocabulary" }
+        { "@id": "#hasConstraints" },
+        { "@id": "#hasVocabulary" },
+        { "@id": "#hasGuidance" }
     ],
     "citation": { "@id": "https://doi.org/10.48550/arXiv.2312.07852" }    
   },
   {
-    "@id": "https://researchobject.org/workflow-run-crate/",
+    "@id": "https://www.researchobject.org/workflow-run-crate/",
     "@type": "Project",
     "name": "Workflow Run Crate task force",
     "member": [
@@ -87,14 +104,48 @@
     "@id": "index.html",
     "@type": "File",
     "name": "Process Run Crate (HTML)",
-    "encodingFormat": "text/html"
+    "encodingFormat": [
+      "text/html",
+      {"@id": "https://www.nationalarchives.gov.uk/PRONOM/fmt/471"}
+    ]
   },
+  {
+    "@id": "index.html#requirements",
+    "@type": "WebPageElement",
+    "name": "Process Run Crate requirements"
+  },
+  {
+    "@id": "https://w3id.org/ro/terms/workflow-run",
+    "@type": "File",
+    "name": "JSON-LD context for workflow-run terms",
+    "contentUrl": "https://www.researchobject.org/ro-terms/workflow-run/context.json",
+    "conformsTo": {
+      "@id": "http://www.w3.org/ns/json-ld#Context"
+    },
+    "encodingFormat": "application/ld+json",
+    "isBasedOn": [
+      {
+        "@id": "https://w3id.org/ro/crate/1.1/context"
+      },
+      {
+        "@id": "https://w3id.org/ro/terms/workflow-run#"
+      }
+    ],
+    "license": {
+      "@id": "https://creativecommons.org/publicdomain/zero/1.0/"
+    }
+  },    
   {
     "@id": "#hasSpecification",
     "@type": "ResourceDescriptor",
-    "name": "",
     "hasRole": { "@id": "http://www.w3.org/ns/dx/prof/role/specification" },
     "hasArtifact": {"@id": "index.html"}
+  },
+  {
+    "@id": "#hasConstraints",
+    "@type": "ResourceDescriptor",
+    "hasRole": { "@id": "http://www.w3.org/ns/dx/prof/role/constraints" },
+    "hasArtifact": {"@id": "index.html#requirements"}
   },
   {
     "@id": "#hasVocabulary",
@@ -102,10 +153,81 @@
     "hasRole": { "@id": "http://www.w3.org/ns/dx/prof/role/vocabulary" },
     "hasArtifact": {"@id": "https://w3id.org/ro/terms/workflow-run#"}
   },
+  {
+    "@id": "#hasGuidance",
+    "@type": "ResourceDescriptor",
+    "hasRole": { "@id": "http://www.w3.org/ns/dx/prof/role/guidance" },
+    "hasArtifact": {"@id": "https://gxy.io/GTN:T00343"}
+  },
+  { 
+    "@id": "https://gxy.io/GTN:T00343",
+    "@type": "LearningResource",
+    "name": "Workflow Run RO-Crate Introduction",
+    "author": {
+      "@id": "https://orcid.org/0000-0001-8271-5429"
+    }
+  },
   { "@id": "https://doi.org/10.48550/arXiv.2312.07852",
     "@type": "ScholarlyArticle",
     "name": "Recording provenance of workflow runs with RO-Crate",
-    "creditText": "Simone Leo, Michael R.  Crusoe, Laura Rodríguez-Navas, Raül Sirvent, Alexander Kanitz, Paul De Geest, Rudolf Wittner, Luca Pireddu, Daniel Garijo, José M. Fernández, Iacopo Colonnelli, Matej Gallo, Tazro Ohta, Hirotaka Suetake, Salvador Capella-Gutierrez, Renske de Wit, Bruno de Paula Kinoshita, Stian Soiland-Reyes (2024): Recording provenance of workflow runs with RO-Crate. arXiv:2312.07852"
+    "author": [
+      {
+        "@id": "https://orcid.org/0000-0001-8271-5429"
+      },
+      {
+        "@id": "https://orcid.org/0000-0002-2961-9670"
+      },
+      {
+        "@id": "https://orcid.org/0000-0003-4929-1219"
+      },
+      {
+        "@id": "https://orcid.org/0000-0003-0606-2512"
+      },
+      {
+        "@id": "https://orcid.org/0000-0002-3468-0652"
+      },
+      {
+        "@id": "https://orcid.org/0000-0002-8940-4946"
+      },
+      {
+        "@id": "https://orcid.org/0000-0002-0003-2024"
+      },
+      {
+        "@id": "https://orcid.org/0000-0002-4663-5613"
+      },
+      {
+        "@id": "https://orcid.org/0000-0003-0454-7145"
+      },
+      {
+        "@id": "https://orcid.org/0000-0002-4806-5140"
+      },
+      {
+        "@id": "https://orcid.org/0000-0001-9290-2017"
+      },
+      {
+        "@id": "https://orcid.org/0000-0002-1119-1792"
+      },
+      {
+        "@id": "https://orcid.org/0000-0003-3777-5945"
+      },
+      {
+        "@id": "https://orcid.org/0000-0003-2765-0049"
+      },
+      {
+        "@id": "https://orcid.org/0000-0002-0309-604X"
+      },
+      {
+        "@id": "https://orcid.org/0000-0003-0902-0086"
+      },
+      {
+        "@id": "https://orcid.org/0000-0001-8250-4074"
+      },
+      {
+        "@id": "https://orcid.org/0000-0001-9842-9718"
+      }
+    ],
+
+    "creditText": "Simone Leo, et al. (2024): Recording provenance of workflow runs with RO-Crate. arXiv:2312.07852"
   },
   {
     "@id": "https://w3id.org/ro/terms/workflow-run#",
@@ -313,7 +435,14 @@
     "rangeIncludes": [
       {"@id": "http://schema.org/Text"}
     ]
-  },  
+  },
+  {
+    "@id": "https://pypi.org/project/runcrate/",
+    "@type": "SoftwareApplication",
+    "name": "runcrate",
+    "version": "0.5.0",
+    "url": "https://pypi.org/project/runcrate/"
+  },
   { 
     "@id": "http://schema.org/MediaObject",
     "@type": "DefinedTerm",
@@ -529,7 +658,51 @@
   "@id": "https://orcid.org/0000-0003-0711-5196",
   "@type": "Person",
   "name": "Felix Bartusch"
+},
+{
+  "@id": "https://orcid.org/0000-0002-4663-5613",
+  "@type": "Person",
+  "name": "Luca Pireddu"
+},
+{
+  "@id": "https://orcid.org/0000-0002-1119-1792",
+  "@type": "Person",
+  "name": "Matej Gallo"
+},
+{
+  "@id": "https://orcid.org/0000-0002-0309-604X",
+  "@type": "Person",
+  "name": "Salvador Capella-Gutierrez"
+},
+{
+  "@id": "https://www.apache.org/licenses/LICENSE-2.0",
+  "@type": "CreativeWork",
+  "name": "Apache License 2.0",
+  "version": "2.0",
+  "identifier": { "@id": "http://spdx.org/licenses/Apache-2.0"}
+},
+{
+  "@id": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "@type": "CreativeWork",
+  "identifier": { "@id": "http://spdx.org/licenses/CC0-1.0"},
+  "name": "Creative Commons Zero v1.0 Universal",
+  "version": "1.0"
+},
+{ 
+  "@id": "http://spdx.org/licenses/Apache-2.0",
+  "@type": "PropertyValue",
+  "propertyID": "http://spdx.org/rdf/terms#licenseId",
+  "name": "spdx",
+  "value": "Apache-2.0"
+},
+{
+  "@id": "http://spdx.org/licenses/CC0-1.0",
+  "@type": "PropertyValue",
+  "propertyID": "http://spdx.org/rdf/terms#licenseId",
+  "name": "spdx",
+  "value": "CC0-1.0"
 }
+
 
 ]
 }
