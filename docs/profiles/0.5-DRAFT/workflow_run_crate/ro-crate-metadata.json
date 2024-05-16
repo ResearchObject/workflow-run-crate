@@ -83,7 +83,7 @@
         { "@id": "#hasConstraints" },
         { "@id": "#hasGuidance" },
         { "@id": "#shouldConformToWorkflowROCrate" },
-        { "@id": "#shouldConformToProcess" }        
+        { "@id": "#shouldConformToProcessCrateProfile" }        
     ],
     "citation": { "@id": "https://doi.org/10.48550/arXiv.2312.07852" }    
   },
@@ -199,12 +199,14 @@
   { 
     "@id": "#shouldConformToWorkflowROCrate",
     "@type": "ResourceDescriptor",
+    "name": "SHOULD conform to Workflow RO-Crate profile",
     "hasRole": { "@id": "http://purl.org/dc/terms/conformsTo" },
     "hasArtifact": {"@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"}
 },
 { 
-    "@id": "#shouldConformToProcess",
+    "@id": "#shouldConformToProcessCrateProfile",
     "@type": "ResourceDescriptor",
+    "name": "SHOULD conform to Process Crate profile",
     "hasRole": { "@id": "http://purl.org/dc/terms/conformsTo" },
     "hasArtifact": {"@id": "https://w3id.org/ro/wfrun/process/0.5-DRAFT"}
 },  
