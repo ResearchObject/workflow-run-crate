@@ -37,7 +37,32 @@
         { "@id": "https://w3id.org/ro/terms/workflow-run#" },
         { "@id": "https://w3id.org/ro/terms/workflow-run" },
         { "@id": "https://gxy.io/GTN:T00343" },
-        { "@id": "https://pypi.org/project/runcrate/" }
+        { "@id": "https://pypi.org/project/runcrate/" },
+        { "@id": "http://schema.org/SoftwareApplication" },
+        { "@id": "http://schema.org/SoftwareSourceCode" },   
+        { "@id": "https://bioschemas.org/ComputationalWorkflow" },
+        { "@id": "http://schema.org/CreateAction" },
+        { "@id": "http://schema.org/name" },
+        { "@id": "http://schema.org/description" },
+        { "@id": "http://schema.org/endTime" },
+        { "@id": "http://schema.org/startTime" },
+        { "@id": "http://schema.org/instrument" },
+        { "@id": "http://schema.org/agent" },
+        { "@id": "http://schema.org/Person" },
+        { "@id": "http://schema.org/Organization" },
+        { "@id": "http://schema.org/object" },
+        { "@id": "http://schema.org/result" },
+        { "@id": "http://schema.org/actionStatus" },
+        { "@id": "http://schema.org/error" },
+        { "@id": "http://schema.org/CompletedActionStatus" },
+        { "@id": "http://schema.org/FailedActionStatus" },
+        { "@id": "http://schema.org/MediaObject" },
+        { "@id": "http://schema.org/Dataset" },
+        { "@id": "http://schema.org/Collection" },
+        { "@id": "http://schema.org/CreativeWork" },
+        { "@id": "http://schema.org/PropertyValue" },
+        { "@id": "http://schema.org/alternateName" },
+        { "@id": "http://schema.org/mainEntity" }
     ],
     "hasResource": [
         { "@id": "#hasSpecification" },
@@ -468,7 +493,124 @@
     "@type": "DefinedTerm", 
     "name": "HowToStep" 
   },  
-{
+  { 
+    "@id": "http://schema.org/CreateAction",
+    "@type": "DefinedTerm",
+    "name": "CreateAction"
+  },
+  { 
+    "@id": "http://schema.org/name",
+    "@type": "DefinedTerm",
+    "name": "name"
+  },  
+  { 
+    "@id": "http://schema.org/description",
+    "@type": "DefinedTerm",
+    "name": "description"
+  },  
+  { 
+    "@id": "http://schema.org/endTime",
+    "@type": "DefinedTerm",
+    "name": "endTime"
+  },  
+  { 
+    "@id": "http://schema.org/startTime",
+    "@type": "DefinedTerm",
+    "name": "startTime"
+  },  
+  { 
+    "@id": "http://schema.org/instrument",
+    "@type": "DefinedTerm",
+    "name": "instrument"
+  },  
+  { 
+    "@id": "http://schema.org/agent",
+    "@type": "DefinedTerm",
+    "name": "agent"
+  },  
+  { 
+    "@id": "http://schema.org/Person",
+    "@type": "DefinedTerm",
+    "name": "Person"
+  },  
+  { 
+    "@id": "http://schema.org/Organization",
+    "@type": "DefinedTerm",
+    "name": "Organization"
+  },    
+  { 
+    "@id": "http://schema.org/object",
+    "@type": "DefinedTerm",
+    "name": "object"
+  },  
+  { 
+    "@id": "http://schema.org/result",
+    "@type": "DefinedTerm",
+    "name": "result"
+  },  
+  { 
+    "@id": "http://schema.org/actionStatus",
+    "@type": "DefinedTerm",
+    "name": "actionStatus"
+  },  
+  { 
+    "@id": "http://schema.org/CompletedActionStatus",
+    "@type": "DefinedTerm",
+    "name": "CompletedActionStatus"
+  },  
+  { 
+    "@id": "http://schema.org/FailedActionStatus",
+    "@type": "DefinedTerm",
+    "name": "FailedActionStatus"
+  },  
+  { 
+    "@id": "http://schema.org/error",
+    "@type": "DefinedTerm",
+    "name": "error"
+  },  
+  { 
+    "@id": "http://schema.org/Dataset",
+    "@type": "DefinedTerm",
+    "name": "Dataset"
+  },
+  { 
+    "@id": "http://schema.org/Collection",
+    "@type": "DefinedTerm",
+    "name": "Collection"
+  },
+  { 
+    "@id": "http://schema.org/CreativeWork",
+    "@type": "DefinedTerm",
+    "name": "CreativeWork"
+  },
+  { 
+    "@id": "http://schema.org/PropertyValue",
+    "@type": "DefinedTerm",
+    "name": "PropertyValue"
+  },
+  { 
+    "@id": "http://schema.org/alternateName",
+    "@type": "DefinedTerm",
+    "name": "alternateName"
+  },
+  { 
+    "@id": "http://schema.org/mainEntity",
+    "@type": "DefinedTerm",
+    "name": "mainEntity"
+  },
+  { 
+    "@id": "http://schema.org/SoftwareApplication",
+    "@type": "DefinedTerm",
+    "name": "SoftwareApplication"
+  },  
+  { 
+    "@id": "http://schema.org/SoftwareSourceCode",
+    "@type": "DefinedTerm",
+    "name": "SoftwareSourceCode"
+  },  
+  
+
+  {
   "@id": "https://orcid.org/0000-0001-8271-5429",
   "@type": "Person",
   "name": "Simone Leo"
