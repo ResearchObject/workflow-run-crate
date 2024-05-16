@@ -8,6 +8,7 @@ title: Process Run Crate
 * Version: 0.5-DRAFT
 * Permalink: <https://w3id.org/ro/wfrun/process/0.5-DRAFT>
 * Authors: Workflow Run RO-Crate working group
+* Profile Crate: [ro-crate-metadata.json](ro-crate-metadata.json) [ro-crate-preview.html](ro-crate-preview.html)
 
 This profile uses terminology from the [RO-Crate 1.1 specification](https://w3id.org/ro/crate/1.1), and [extends it](https://www.researchobject.org/ro-crate/1.1/appendix/jsonld.html#extending-ro-crate) with additional terms from the [workflow-run](https://github.com/ResearchObject/ro-terms/tree/master/workflow-run) ro-terms namespace.
 
@@ -22,7 +23,7 @@ This profile requires the indication of [Software used to create files](https://
 
 The following diagram shows the relationships between provenance-related entities. Note the distinction between *prospective* provenance (plans for activities, e.g., an application) and *retrospective* provenance (what actually happened, e.g. the execution of an application).
 
-<img alt="Entity-relationship diagram" src="img/er_diagram_process.svg" width="500" />
+<img alt="Entity-relationship diagram" src="../img/er_diagram_process.svg" width="500" />
 
 
 ## Example Metadata File (`ro-crate-metadata.json`)
@@ -236,7 +237,7 @@ Data entities involved in an application's input and output SHOULD have an `@id`
 
 A process crate can be used to indicate one single execution as a single `CreateAction`, or a series of processes that generate different data entities. These actions MAY form an *implicit workflow* by following the links between entities that appear as `result` in an action and as `object` in the following one, but a process crate is not required to ensure such consistency (e.g. there may be an intermediate action that has not been recorded).
 
-<img alt="Multiple processes diagram" src="img/multiple_processes.svg" width="800" />
+<img alt="Multiple processes diagram" src="../img/multiple_processes.svg" width="800" />
 
 
 ## Referencing configuration files
@@ -254,7 +255,7 @@ Some applications support the modification of their behavior via configuration f
         "object": [
             {"@id": "pics/2017-06-11%2012.56.14.jpg"},
             {"@id": "SepiaConversion_1/colors.xml"}
-        ]
+        ],
         "result": {"@id": "pics/sepia_fence.jpg"},
         "agent": {"@id": "https://orcid.org/0000-0001-9842-9718"}
     },
