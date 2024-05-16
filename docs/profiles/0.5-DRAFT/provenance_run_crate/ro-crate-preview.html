@@ -18,7 +18,7 @@
         "@id": "https://w3id.org/ro/crate/1.2-DRAFT"
       },
       "about": {
-        "@id": "https://w3id.org/ro/wfrun/workflow/0.5-DRAFT"
+        "@id": "https://w3id.org/ro/wfrun/provenance/0.5-DRAFT"
       }
     },
     {
@@ -29,7 +29,7 @@
       "value": "CC0-1.0"
     },
     {
-      "@id": "https://w3id.org/ro/wfrun/workflow/0.5-DRAFT",
+      "@id": "https://w3id.org/ro/wfrun/provenance/0.5-DRAFT",
       "@type": [
         "Dataset",
         "Profile"
@@ -37,8 +37,8 @@
       "isProfileOf": {
         "@id": "https://w3id.org/ro/crate/1.2-DRAFT"
       },
-      "identifier": "https://w3id.org/ro/wfrun/workflow/0.5-DRAFT",
-      "name": "Workflow Run Crate profile",
+      "identifier": "https://w3id.org/ro/wfrun/provenance/0.5-DRAFT",
+      "name": "Provenance Run Crate profile",
       "version": "0.5-DRAFT",
       "license": {
         "@id": "https://www.apache.org/licenses/LICENSE-2.0"
@@ -51,6 +51,9 @@
           "@id": "index.html"
         },
         {
+          "@id": "https://w3id.org/ro/terms/workflow-run#"
+        },
+        {
           "@id": "https://w3id.org/ro/terms/workflow-run"
         },
         {
@@ -60,70 +63,19 @@
           "@id": "https://pypi.org/project/runcrate/"
         },
         {
-          "@id": "https://w3id.org/ro/wfrun/process/0.5-DRAFT"
+          "@id": "https://w3id.org/ro/wfrun/workflow/0.5-DRAFT"
         },
         {
-          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+          "@id": "https://w3id.org/ro/terms/workflow-run#ParameterConnection"
         },
         {
-          "@id": "http://schema.org/MediaObject"
+          "@id": "https://w3id.org/ro/terms/workflow-run#connection"
         },
         {
-          "@id": "http://schema.org/additionalType"
+          "@id": "https://w3id.org/ro/terms/workflow-run#sourceParameter"
         },
         {
-          "@id": "http://schema.org/CreateAction"
-        },
-        {
-          "@id": "http://schema.org/exampleOfWork"
-        },
-        {
-          "@id": "http://schema.org/instrument"
-        },
-        {
-          "@id": "http://schema.org/name"
-        },
-        {
-          "@id": "http://schema.org/object"
-        },
-        {
-          "@id": "http://schema.org/PropertyValue"
-        },
-        {
-          "@id": "http://schema.org/result"
-        },
-        {
-          "@id": "http://schema.org/DataType"
-        },
-        {
-          "@id": "http://schema.org/Integer"
-        },
-        {
-          "@id": "http://schema.org/about"
-        },
-        {
-          "@id": "http://schema.org/defaultValue"
-        },
-        {
-          "@id": "http://schema.org/valueRequired"
-        },
-        {
-          "@id": "https://bioschemas.org/FormalParameter"
-        },
-        {
-          "@id": "https://bioschemas.org/ComputationalWorkflow"
-        },
-        {
-          "@id": "https://bioschemas.org/ComputationalWorkflow#input"
-        },
-        {
-          "@id": "https://bioschemas.org/ComputationalWorkflow#output"
-        },
-        {
-          "@id": "http://purl.org/dc/terms/conformsTo"
-        },
-        {
-          "@id": "https://w3id.org/ro/terms/workflow-run#environment"
+          "@id": "https://w3id.org/ro/terms/workflow-run#targetParameter"
         }
       ],
       "hasResource": [
@@ -134,13 +86,13 @@
           "@id": "#hasConstraints"
         },
         {
+          "@id": "#hasVocabulary"
+        },
+        {
           "@id": "#hasGuidance"
         },
         {
-          "@id": "#shouldConformToWorkflowROCrate"
-        },
-        {
-          "@id": "#shouldConformToProcess"
+          "@id": "#shouldConformToWorkflow"
         }
       ],
       "citation": {
@@ -156,9 +108,9 @@
       "isBasedOn": {
         "@id": "ro-crate-metadata.json"
       },
-      "name": "RO-Crate preview of the Workflow Run Crate profile",
+      "name": "RO-Crate preview of the Provenance Run Crate profile",
       "encodingFormat": "text/html",
-      "about": "https://w3id.org/ro/wfrun/workflow/0.5-DRAFT"
+      "about": "https://w3id.org/ro/wfrun/provenance/0.5-DRAFT"
     },
     {
       "@id": "https://www.apache.org/licenses/LICENSE-2.0",
@@ -172,7 +124,7 @@
     {
       "@id": "https://www.researchobject.org/workflow-run-crate/",
       "@type": "Project",
-      "name": "Workflow Run Crate task force",
+      "name": "Provenance Run Crate task force",
       "member": [
         {
           "@id": "https://orcid.org/0000-0001-8271-5429"
@@ -296,13 +248,18 @@
     {
       "@id": "index.html",
       "@type": "File",
-      "name": "Workflow Run Crate (HTML)",
+      "name": "Provenance Run Crate (HTML)",
       "encodingFormat": [
         "text/html",
         {
           "@id": "https://www.nationalarchives.gov.uk/PRONOM/fmt/471"
         }
       ]
+    },
+    {
+      "@id": "https://w3id.org/ro/terms/workflow-run#",
+      "@type": "DefinedTermSet",
+      "name": "Namespace for Common Provenance Model RO-Crate model"
     },
     {
       "@id": "https://w3id.org/ro/terms/workflow-run",
@@ -313,6 +270,14 @@
         "@id": "http://www.w3.org/ns/json-ld#Context"
       },
       "encodingFormat": "application/ld+json",
+      "isBasedOn": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1/context"
+        },
+        {
+          "@id": "https://w3id.org/ro/terms/workflow-run#"
+        }
+      ],
       "license": {
         "@id": "https://creativecommons.org/publicdomain/zero/1.0/"
       }
@@ -333,127 +298,53 @@
       "url": "https://pypi.org/project/runcrate/"
     },
     {
-      "@id": "https://w3id.org/ro/wfrun/process/0.5-DRAFT",
+      "@id": "https://w3id.org/ro/wfrun/workflow/0.5-DRAFT",
       "@type": [
         "CreativeWork",
         "Profile"
       ],
-      "name": "Process Run Crate profile",
+      "name": "Workflow Run Crate profile",
       "version": "0.5-DRAFT"
     },
     {
-      "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0",
-      "@type": [
-        "CreativeWork",
-        "Profile"
-      ],
-      "name": "Workflow RO-Crate profile",
-      "version": "1.0"
+      "@id": "https://w3id.org/ro/terms/workflow-run#ParameterConnection",
+      "@type": "DefinedTerm",
+      "termCode": "ParameterConnection",
+      "name": "Parameter Connection",
+      "inDefinedTermSet": {
+        "@id": "https://w3id.org/ro/terms/workflow-run#"
+      },
+      "description": "A connection between parameters of different applications"
     },
     {
-      "@id": "http://schema.org/MediaObject",
+      "@id": "https://w3id.org/ro/terms/workflow-run#connection",
       "@type": "DefinedTerm",
-      "name": "MediaObject",
-      "termCode": "File"
+      "termCode": "connection",
+      "name": "connection",
+      "inDefinedTermSet": {
+        "@id": "https://w3id.org/ro/terms/workflow-run#"
+      },
+      "description": "A parameter connection created by this workflow"
     },
     {
-      "@id": "http://schema.org/additionalType",
+      "@id": "https://w3id.org/ro/terms/workflow-run#sourceParameter",
       "@type": "DefinedTerm",
-      "name": "additionalType"
+      "termCode": "sourceParameter",
+      "name": "source parameter",
+      "inDefinedTermSet": {
+        "@id": "https://w3id.org/ro/terms/workflow-run#"
+      },
+      "description": "The source (upstream) parameter"
     },
     {
-      "@id": "http://schema.org/CreateAction",
+      "@id": "https://w3id.org/ro/terms/workflow-run#targetParameter",
       "@type": "DefinedTerm",
-      "name": "CreateAction"
-    },
-    {
-      "@id": "http://schema.org/exampleOfWork",
-      "@type": "DefinedTerm",
-      "name": "exampleOfWork"
-    },
-    {
-      "@id": "http://schema.org/instrument",
-      "@type": "DefinedTerm",
-      "name": "instrument"
-    },
-    {
-      "@id": "http://schema.org/name",
-      "@type": "DefinedTerm",
-      "name": "name"
-    },
-    {
-      "@id": "http://schema.org/object",
-      "@type": "DefinedTerm",
-      "name": "object"
-    },
-    {
-      "@id": "http://schema.org/PropertyValue",
-      "@type": "DefinedTerm",
-      "name": "PropertyValue"
-    },
-    {
-      "@id": "http://schema.org/result",
-      "@type": "DefinedTerm",
-      "name": "result"
-    },
-    {
-      "@id": "http://schema.org/DataType",
-      "@type": "DefinedTerm",
-      "name": "DataType"
-    },
-    {
-      "@id": "http://schema.org/Integer",
-      "@type": "DefinedTerm",
-      "name": "Integer"
-    },
-    {
-      "@id": "http://schema.org/about",
-      "@type": "DefinedTerm",
-      "name": "about"
-    },
-    {
-      "@id": "http://schema.org/defaultValue",
-      "@type": "DefinedTerm",
-      "name": "defaultValue"
-    },
-    {
-      "@id": "http://schema.org/valueRequired",
-      "@type": "DefinedTerm",
-      "name": "valueRequired"
-    },
-    {
-      "@id": "https://bioschemas.org/FormalParameter",
-      "@type": "DefinedTerm",
-      "name": "FormalParameter"
-    },
-    {
-      "@id": "https://bioschemas.org/ComputationalWorkflow",
-      "@type": "DefinedTerm",
-      "name": "ComputationalWorkflow"
-    },
-    {
-      "@id": "https://bioschemas.org/ComputationalWorkflow#input",
-      "@type": "DefinedTerm",
-      "termCode": "input",
-      "name": "input"
-    },
-    {
-      "@id": "https://bioschemas.org/ComputationalWorkflow#output",
-      "@type": "DefinedTerm",
-      "name": "output",
-      "termCode": "output"
-    },
-    {
-      "@id": "http://purl.org/dc/terms/conformsTo",
-      "@type": "DefinedTerm",
-      "name": "conformsTo",
-      "termCode": "conformsTo"
-    },
-    {
-      "@id": "https://w3id.org/ro/terms/workflow-run#environment",
-      "@type": "DefinedTerm",
-      "termCode": "environment",
-      "name": "environment"
+      "termCode": "targetParameter",
+      "name": "target parameter",
+      "inDefinedTermSet": {
+        "@id": "https://w3id.org/ro/terms/workflow-run#"
+      },
+      "description": "The target (upstream) parameter"
     },
     {
       "@id": "#hasSpecification",
@@ -476,6 +367,16 @@
       }
     },
     {
+      "@id": "#hasVocabulary",
+      "@type": "ResourceDescriptor",
+      "hasRole": {
+        "@id": "http://www.w3.org/ns/dx/prof/role/vocabulary"
+      },
+      "hasArtifact": {
+        "@id": "https://w3id.org/ro/terms/workflow-run#"
+      }
+    },
+    {
       "@id": "#hasGuidance",
       "@type": "ResourceDescriptor",
       "hasRole": {
@@ -486,23 +387,13 @@
       }
     },
     {
-      "@id": "#shouldConformToWorkflowROCrate",
+      "@id": "#shouldConformToWorkflow",
       "@type": "ResourceDescriptor",
       "hasRole": {
         "@id": "http://purl.org/dc/terms/conformsTo"
       },
       "hasArtifact": {
-        "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
-      }
-    },
-    {
-      "@id": "#shouldConformToProcess",
-      "@type": "ResourceDescriptor",
-      "hasRole": {
-        "@id": "http://purl.org/dc/terms/conformsTo"
-      },
-      "hasArtifact": {
-        "@id": "https://w3id.org/ro/wfrun/process/0.5-DRAFT"
+        "@id": "https://w3id.org/ro/wfrun/workflow/0.5-DRAFT"
       }
     },
     {
@@ -765,7 +656,7 @@
     {
       "@id": "index.html#requirements",
       "@type": "WebPageElement",
-      "name": "Workflow Run Crate requirements"
+      "name": "Provenance Run Crate requirements"
     },
     {
       "@id": "https://creativecommons.org/publicdomain/zero/1.0/",
@@ -792,9 +683,10 @@
       "name": "Salvador Capella-Gutierrez"
     },
     {
-      "@id": "https://w3id.org/ro/terms/workflow-run#",
-      "@type": "DefinedTermSet",
-      "name": "Namespace for Common Provenance Model RO-Crate model"
+      "@id": "http://schema.org/MediaObject",
+      "@type": "DefinedTerm",
+      "name": "MediaObject",
+      "termCode": "file"
     },
     {
       "@id": "http://spdx.org/licenses/Apache-2.0",
@@ -830,17 +722,17 @@ table.table {
   <nav class="navbar">
 
     <ul class="nav navbar-nav" >
-        <li ><a href="#"><span class="glyphicon glyphicon-home dataset_name">&nbsp;Workflow Run Crate profile</span></a></li>
+        <li ><a href="#"><span class="glyphicon glyphicon-home dataset_name">&nbsp;Provenance Run Crate profile</span></a></li>
     </ul>
 
   </nav>
 <div class="container">
 <div class="jumbotron">
 <h4 class="citation"></h3>
-<h3 class="item_name">Workflow Run Crate profile</h4>
+<h3 class="item_name">Provenance Run Crate profile</h4>
 
 
-<a href="./ro-crate-metadata.json">⬇️🏷️ Download all the metadata for <span class='name'>Workflow Run Crate profile</span> in JSON-LD format</a>
+<a href="./ro-crate-metadata.json">⬇️🏷️ Download all the metadata for <span class='name'>Provenance Run Crate profile</span> in JSON-LD format</a>
 
 
 <div id="check"></div>
@@ -853,20 +745,20 @@ table.table {
 <div id="summary">
 <div class='all-meta'>
            <div>
-            <h3><a href="https://w3id.org/ro/wfrun/workflow/0.5-DRAFT">Go to: </a> Workflow Run Crate profile</h3>
+            <h3><a href="https://w3id.org/ro/wfrun/provenance/0.5-DRAFT">Go to: </a> Provenance Run Crate profile</h3>
             
             
             
             
-        <div id="https://w3id.org/ro/wfrun/workflow/0.5-DRAFT">
+        <div id="https://w3id.org/ro/wfrun/provenance/0.5-DRAFT">
             
             <table class="table metadata table-striped" >
                 <tbody><tr>
             <th style="text-align:left;" class="prop">@id</th>
-            <td style='text-align:left'><a href="https://w3id.org/ro/wfrun/workflow/0.5-DRAFT">https://w3id.org/ro/wfrun/workflow/0.5-DRAFT</a></td>
+            <td style='text-align:left'><a href="https://w3id.org/ro/wfrun/provenance/0.5-DRAFT">https://w3id.org/ro/wfrun/provenance/0.5-DRAFT</a></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
-            <td style='text-align:left'><span>Workflow Run Crate profile</span></td>
+            <td style='text-align:left'><span>Provenance Run Crate profile</span></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">@type</th>
             <td style='text-align:left'><ul>
@@ -876,13 +768,13 @@ table.table {
                         </ul></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">author<span>&nbsp;</span><a href="http://schema.org/author">[?]</a></th>
-            <td style='text-align:left'><a href="#https%3A//www.researchobject.org/workflow-run-crate/">Workflow Run Crate task force</a></td>
+            <td style='text-align:left'><a href="#https%3A//www.researchobject.org/workflow-run-crate/">Provenance Run Crate task force</a></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">isProfileOf<span>&nbsp;</span><a href="http://www.w3.org/ns/dx/prof/isProfileOf">[?]</a></th>
             <td style='text-align:left'><a href="https://w3id.org/ro/crate/1.2-DRAFT">https://w3id.org/ro/crate/1.2-DRAFT</a></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">identifier<span>&nbsp;</span><a href="http://schema.org/identifier">[?]</a></th>
-            <td style='text-align:left'><a href="https://w3id.org/ro/wfrun/workflow/0.5-DRAFT">https://w3id.org/ro/wfrun/workflow/0.5-DRAFT</a></td>
+            <td style='text-align:left'><a href="https://w3id.org/ro/wfrun/provenance/0.5-DRAFT">https://w3id.org/ro/wfrun/provenance/0.5-DRAFT</a></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">version<span>&nbsp;</span><a href="http://schema.org/version">[?]</a></th>
             <td style='text-align:left'><span>0.5-DRAFT</span></td>
@@ -892,7 +784,9 @@ table.table {
             </tr><tr>
             <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
             <td style='text-align:left'><ul>
-                        <li><a href="#index.html">Workflow Run Crate (HTML)</a></li>
+                        <li><a href="#index.html">Provenance Run Crate (HTML)</a></li>
+                        
+                        <li><a href="#https%3A//w3id.org/ro/terms/workflow-run%23">Namespace for Common Provenance Model RO-Crate model</a></li>
                         
                         <li><a href="#https%3A//w3id.org/ro/terms/workflow-run">JSON-LD context for workflow-run terms</a></li>
                         
@@ -900,49 +794,15 @@ table.table {
                         
                         <li><a href="#https%3A//pypi.org/project/runcrate/">runcrate</a></li>
                         
-                        <li><a href="#https%3A//w3id.org/ro/wfrun/process/0.5-DRAFT">Process Run Crate profile</a></li>
+                        <li><a href="#https%3A//w3id.org/ro/wfrun/workflow/0.5-DRAFT">Workflow Run Crate profile</a></li>
                         
-                        <li><a href="#https%3A//w3id.org/workflowhub/workflow-ro-crate/1.0">Workflow RO-Crate profile</a></li>
+                        <li><a href="#https%3A//w3id.org/ro/terms/workflow-run%23ParameterConnection">Parameter Connection</a></li>
                         
-                        <li><a href="#http%3A//schema.org/MediaObject">MediaObject</a></li>
+                        <li><a href="#https%3A//w3id.org/ro/terms/workflow-run%23connection">connection</a></li>
                         
-                        <li><a href="#http%3A//schema.org/additionalType">additionalType</a></li>
+                        <li><a href="#https%3A//w3id.org/ro/terms/workflow-run%23sourceParameter">source parameter</a></li>
                         
-                        <li><a href="#http%3A//schema.org/CreateAction">CreateAction</a></li>
-                        
-                        <li><a href="#http%3A//schema.org/exampleOfWork">exampleOfWork</a></li>
-                        
-                        <li><a href="#http%3A//schema.org/instrument">instrument</a></li>
-                        
-                        <li><a href="#http%3A//schema.org/name">name</a></li>
-                        
-                        <li><a href="#http%3A//schema.org/object">object</a></li>
-                        
-                        <li><a href="#http%3A//schema.org/PropertyValue">PropertyValue</a></li>
-                        
-                        <li><a href="#http%3A//schema.org/result">result</a></li>
-                        
-                        <li><a href="#http%3A//schema.org/DataType">DataType</a></li>
-                        
-                        <li><a href="#http%3A//schema.org/Integer">Integer</a></li>
-                        
-                        <li><a href="#http%3A//schema.org/about">about</a></li>
-                        
-                        <li><a href="#http%3A//schema.org/defaultValue">defaultValue</a></li>
-                        
-                        <li><a href="#http%3A//schema.org/valueRequired">valueRequired</a></li>
-                        
-                        <li><a href="#https%3A//bioschemas.org/FormalParameter">FormalParameter</a></li>
-                        
-                        <li><a href="#https%3A//bioschemas.org/ComputationalWorkflow">ComputationalWorkflow</a></li>
-                        
-                        <li><a href="#https%3A//bioschemas.org/ComputationalWorkflow%23input">input</a></li>
-                        
-                        <li><a href="#https%3A//bioschemas.org/ComputationalWorkflow%23output">output</a></li>
-                        
-                        <li><a href="#http%3A//purl.org/dc/terms/conformsTo">conformsTo</a></li>
-                        
-                        <li><a href="#https%3A//w3id.org/ro/terms/workflow-run%23environment">environment</a></li>
+                        <li><a href="#https%3A//w3id.org/ro/terms/workflow-run%23targetParameter">target parameter</a></li>
                         </ul></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">hasResource<span>&nbsp;</span><a href="http://www.w3.org/ns/dx/prof/hasResource">[?]</a></th>
@@ -951,11 +811,11 @@ table.table {
                         
                         <li><a href="#%23hasConstraints">#hasConstraints</a></li>
                         
+                        <li><a href="#%23hasVocabulary">#hasVocabulary</a></li>
+                        
                         <li><a href="#%23hasGuidance">#hasGuidance</a></li>
                         
-                        <li><a href="#%23shouldConformToWorkflowROCrate">#shouldConformToWorkflowROCrate</a></li>
-                        
-                        <li><a href="#%23shouldConformToProcess">#shouldConformToProcess</a></li>
+                        <li><a href="#%23shouldConformToWorkflow">#shouldConformToWorkflow</a></li>
                         </ul></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">citation<span>&nbsp;</span><a href="http://schema.org/citation">[?]</a></th>
@@ -970,7 +830,7 @@ table.table {
         </div>
         <hr/><br/><br/>
            <div>
-            <h3><a href="https://www.researchobject.org/workflow-run-crate/">Go to: </a> Workflow Run Crate task force</h3>
+            <h3><a href="https://www.researchobject.org/workflow-run-crate/">Go to: </a> Provenance Run Crate task force</h3>
             
             
             
@@ -983,7 +843,7 @@ table.table {
             <td style='text-align:left'><a href="https://www.researchobject.org/workflow-run-crate/">https://www.researchobject.org/workflow-run-crate/</a></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
-            <td style='text-align:left'><span>Workflow Run Crate task force</span></td>
+            <td style='text-align:left'><span>Provenance Run Crate task force</span></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">@type</th>
             <td style='text-align:left'><span>Project</span></td>
@@ -1071,7 +931,7 @@ table.table {
             <td style='text-align:left'><a href="#https%3A//www.researchobject.org/ro-crate/community">RO-Crate Community</a></td>
             </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
             <th style="text-align:left;" class="prop">author<span>&nbsp;</span><a href="http://schema.org/author">[?]</a></th>
-            <td style='text-align:left'><a href="#https%3A//w3id.org/ro/wfrun/workflow/0.5-DRAFT">Workflow Run Crate profile</a></td>
+            <td style='text-align:left'><a href="#https%3A//w3id.org/ro/wfrun/provenance/0.5-DRAFT">Provenance Run Crate profile</a></td>
             </tr></tbody>
             </table>
         </div>
@@ -1104,7 +964,7 @@ table.table {
             <td style='text-align:left'>spdx: Apache-2.0</td>
             </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
             <th style="text-align:left;" class="prop">license<span>&nbsp;</span><a href="http://schema.org/license">[?]</a></th>
-            <td style='text-align:left'><a href="#https%3A//w3id.org/ro/wfrun/workflow/0.5-DRAFT">Workflow Run Crate profile</a></td>
+            <td style='text-align:left'><a href="#https%3A//w3id.org/ro/wfrun/provenance/0.5-DRAFT">Provenance Run Crate profile</a></td>
             </tr></tbody>
             </table>
         </div>
@@ -1112,7 +972,7 @@ table.table {
         </div>
         <hr/><br/><br/>
            <div>
-            <h3><a href="index.html">⬇️ Download: </a> Workflow Run Crate (HTML)</h3>
+            <h3><a href="index.html">⬇️ Download: </a> Provenance Run Crate (HTML)</h3>
             
             <iframe src='index.html' width='100%' height='500'></iframe>
             
@@ -1125,7 +985,7 @@ table.table {
             <td style='text-align:left'><span>index.html</span></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
-            <td style='text-align:left'><span>Workflow Run Crate (HTML)</span></td>
+            <td style='text-align:left'><span>Provenance Run Crate (HTML)</span></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">@type</th>
             <td style='text-align:left'><span>File</span></td>
@@ -1138,10 +998,54 @@ table.table {
                         </ul></td>
             </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
             <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
-            <td style='text-align:left'><a href="#https%3A//w3id.org/ro/wfrun/workflow/0.5-DRAFT">Workflow Run Crate profile</a></td>
+            <td style='text-align:left'><a href="#https%3A//w3id.org/ro/wfrun/provenance/0.5-DRAFT">Provenance Run Crate profile</a></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">hasArtifact<span>&nbsp;</span><a href="http://www.w3.org/ns/dx/prof/hasArtifact">[?]</a></th>
             <td style='text-align:left'><a href="#%23hasSpecification">#hasSpecification</a></td>
+            </tr></tbody>
+            </table>
+        </div>
+
+        </div>
+        <hr/><br/><br/>
+           <div>
+            <h3><a href="https://w3id.org/ro/terms/workflow-run#">Go to: </a> Namespace for Common Provenance Model RO-Crate model</h3>
+            
+            
+            
+            
+        <div id="https://w3id.org/ro/terms/workflow-run#">
+            
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><a href="https://w3id.org/ro/terms/workflow-run#">https://w3id.org/ro/terms/workflow-run#</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
+            <td style='text-align:left'><span>Namespace for Common Provenance Model RO-Crate model</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><span>DefinedTermSet</span></td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
+            <td style='text-align:left'><a href="#https%3A//w3id.org/ro/wfrun/provenance/0.5-DRAFT">Provenance Run Crate profile</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">isBasedOn<span>&nbsp;</span><a href="http://schema.org/isBasedOn">[?]</a></th>
+            <td style='text-align:left'><a href="#https%3A//w3id.org/ro/terms/workflow-run">JSON-LD context for workflow-run terms</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">hasArtifact<span>&nbsp;</span><a href="http://www.w3.org/ns/dx/prof/hasArtifact">[?]</a></th>
+            <td style='text-align:left'><a href="#%23hasVocabulary">#hasVocabulary</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">inDefinedTermSet<span>&nbsp;</span><a href="http://schema.org/inDefinedTermSet">[?]</a></th>
+            <td style='text-align:left'><ul>
+                        <li><a href="#https%3A//w3id.org/ro/terms/workflow-run%23ParameterConnection">Parameter Connection</a></li>
+                        
+                        <li><a href="#https%3A//w3id.org/ro/terms/workflow-run%23connection">connection</a></li>
+                        
+                        <li><a href="#https%3A//w3id.org/ro/terms/workflow-run%23sourceParameter">source parameter</a></li>
+                        
+                        <li><a href="#https%3A//w3id.org/ro/terms/workflow-run%23targetParameter">target parameter</a></li>
+                        </ul></td>
             </tr></tbody>
             </table>
         </div>
@@ -1176,11 +1080,18 @@ table.table {
             <th style="text-align:left;" class="prop">conformsTo<span>&nbsp;</span><a href="http://purl.org/dc/terms/conformsTo">[?]</a></th>
             <td style='text-align:left'><a href="http://www.w3.org/ns/json-ld#Context">http://www.w3.org/ns/json-ld#Context</a></td>
             </tr><tr>
+            <th style="text-align:left;" class="prop">isBasedOn<span>&nbsp;</span><a href="http://schema.org/isBasedOn">[?]</a></th>
+            <td style='text-align:left'><ul>
+                        <li><a href="https://w3id.org/ro/crate/1.1/context">https://w3id.org/ro/crate/1.1/context</a></li>
+                        
+                        <li><a href="#https%3A//w3id.org/ro/terms/workflow-run%23">Namespace for Common Provenance Model RO-Crate model</a></li>
+                        </ul></td>
+            </tr><tr>
             <th style="text-align:left;" class="prop">license<span>&nbsp;</span><a href="http://schema.org/license">[?]</a></th>
             <td style='text-align:left'><a href="#https%3A//creativecommons.org/publicdomain/zero/1.0/">Creative Commons Zero v1.0 Universal</a></td>
             </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
             <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
-            <td style='text-align:left'><a href="#https%3A//w3id.org/ro/wfrun/workflow/0.5-DRAFT">Workflow Run Crate profile</a></td>
+            <td style='text-align:left'><a href="#https%3A//w3id.org/ro/wfrun/provenance/0.5-DRAFT">Provenance Run Crate profile</a></td>
             </tr></tbody>
             </table>
         </div>
@@ -1210,7 +1121,7 @@ table.table {
             <td style='text-align:left'><a href="#https%3A//orcid.org/0000-0001-8271-5429">Simone Leo</a></td>
             </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
             <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
-            <td style='text-align:left'><a href="#https%3A//w3id.org/ro/wfrun/workflow/0.5-DRAFT">Workflow Run Crate profile</a></td>
+            <td style='text-align:left'><a href="#https%3A//w3id.org/ro/wfrun/provenance/0.5-DRAFT">Provenance Run Crate profile</a></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">hasArtifact<span>&nbsp;</span><a href="http://www.w3.org/ns/dx/prof/hasArtifact">[?]</a></th>
             <td style='text-align:left'><a href="#%23hasGuidance">#hasGuidance</a></td>
@@ -1246,7 +1157,7 @@ table.table {
             <td style='text-align:left'><a href="https://pypi.org/project/runcrate/">https://pypi.org/project/runcrate/</a></td>
             </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
             <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
-            <td style='text-align:left'><a href="#https%3A//w3id.org/ro/wfrun/workflow/0.5-DRAFT">Workflow Run Crate profile</a></td>
+            <td style='text-align:left'><a href="#https%3A//w3id.org/ro/wfrun/provenance/0.5-DRAFT">Provenance Run Crate profile</a></td>
             </tr></tbody>
             </table>
         </div>
@@ -1254,20 +1165,20 @@ table.table {
         </div>
         <hr/><br/><br/>
            <div>
-            <h3><a href="https://w3id.org/ro/wfrun/process/0.5-DRAFT">Go to: </a> Process Run Crate profile</h3>
+            <h3><a href="https://w3id.org/ro/wfrun/workflow/0.5-DRAFT">Go to: </a> Workflow Run Crate profile</h3>
             
             
             
             
-        <div id="https://w3id.org/ro/wfrun/process/0.5-DRAFT">
+        <div id="https://w3id.org/ro/wfrun/workflow/0.5-DRAFT">
             
             <table class="table metadata table-striped" >
                 <tbody><tr>
             <th style="text-align:left;" class="prop">@id</th>
-            <td style='text-align:left'><a href="https://w3id.org/ro/wfrun/process/0.5-DRAFT">https://w3id.org/ro/wfrun/process/0.5-DRAFT</a></td>
+            <td style='text-align:left'><a href="https://w3id.org/ro/wfrun/workflow/0.5-DRAFT">https://w3id.org/ro/wfrun/workflow/0.5-DRAFT</a></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
-            <td style='text-align:left'><span>Process Run Crate profile</span></td>
+            <td style='text-align:left'><span>Workflow Run Crate profile</span></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">@type</th>
             <td style='text-align:left'><ul>
@@ -1280,10 +1191,10 @@ table.table {
             <td style='text-align:left'><span>0.5-DRAFT</span></td>
             </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
             <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
-            <td style='text-align:left'><a href="#https%3A//w3id.org/ro/wfrun/workflow/0.5-DRAFT">Workflow Run Crate profile</a></td>
+            <td style='text-align:left'><a href="#https%3A//w3id.org/ro/wfrun/provenance/0.5-DRAFT">Provenance Run Crate profile</a></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">hasArtifact<span>&nbsp;</span><a href="http://www.w3.org/ns/dx/prof/hasArtifact">[?]</a></th>
-            <td style='text-align:left'><a href="#%23shouldConformToProcess">#shouldConformToProcess</a></td>
+            <td style='text-align:left'><a href="#%23shouldConformToWorkflow">#shouldConformToWorkflow</a></td>
             </tr></tbody>
             </table>
         </div>
@@ -1291,66 +1202,35 @@ table.table {
         </div>
         <hr/><br/><br/>
            <div>
-            <h3><a href="https://w3id.org/workflowhub/workflow-ro-crate/1.0">Go to: </a> Workflow RO-Crate profile</h3>
+            <h3><a href="https://w3id.org/ro/terms/workflow-run#ParameterConnection">Go to: </a> Parameter Connection</h3>
             
             
             
             
-        <div id="https://w3id.org/workflowhub/workflow-ro-crate/1.0">
-            
-            <table class="table metadata table-striped" >
-                <tbody><tr>
-            <th style="text-align:left;" class="prop">@id</th>
-            <td style='text-align:left'><a href="https://w3id.org/workflowhub/workflow-ro-crate/1.0">https://w3id.org/workflowhub/workflow-ro-crate/1.0</a></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
-            <td style='text-align:left'><span>Workflow RO-Crate profile</span></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">@type</th>
-            <td style='text-align:left'><ul>
-                        <li><span>CreativeWork</span></li>
-                        
-                        <li><span>Profile</span></li>
-                        </ul></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">version<span>&nbsp;</span><a href="http://schema.org/version">[?]</a></th>
-            <td style='text-align:left'><span>1.0</span></td>
-            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
-            <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
-            <td style='text-align:left'><a href="#https%3A//w3id.org/ro/wfrun/workflow/0.5-DRAFT">Workflow Run Crate profile</a></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">hasArtifact<span>&nbsp;</span><a href="http://www.w3.org/ns/dx/prof/hasArtifact">[?]</a></th>
-            <td style='text-align:left'><a href="#%23shouldConformToWorkflowROCrate">#shouldConformToWorkflowROCrate</a></td>
-            </tr></tbody>
-            </table>
-        </div>
-
-        </div>
-        <hr/><br/><br/>
-           <div>
-            <h3><a href="http://schema.org/MediaObject">Go to: </a> MediaObject</h3>
-            
-            
-            
-            
-        <div id="http://schema.org/MediaObject">
+        <div id="https://w3id.org/ro/terms/workflow-run#ParameterConnection">
             
             <table class="table metadata table-striped" >
                 <tbody><tr>
             <th style="text-align:left;" class="prop">@id</th>
-            <td style='text-align:left'><a href="http://schema.org/MediaObject">http://schema.org/MediaObject</a></td>
+            <td style='text-align:left'><a href="https://w3id.org/ro/terms/workflow-run#ParameterConnection">https://w3id.org/ro/terms/workflow-run#ParameterConnection</a></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
-            <td style='text-align:left'><span>MediaObject</span></td>
+            <td style='text-align:left'><span>Parameter Connection</span></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">@type</th>
             <td style='text-align:left'><span>DefinedTerm</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">description<span>&nbsp;</span><a href="http://schema.org/description">[?]</a></th>
+            <td style='text-align:left'><span>A connection between parameters of different applications</span></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">termCode<span>&nbsp;</span><a href="http://schema.org/termCode">[?]</a></th>
-            <td style='text-align:left'><span>File</span></td>
+            <td style='text-align:left'><span>ParameterConnection</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">inDefinedTermSet<span>&nbsp;</span><a href="http://schema.org/inDefinedTermSet">[?]</a></th>
+            <td style='text-align:left'><a href="#https%3A//w3id.org/ro/terms/workflow-run%23">Namespace for Common Provenance Model RO-Crate model</a></td>
             </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
             <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
-            <td style='text-align:left'><a href="#https%3A//w3id.org/ro/wfrun/workflow/0.5-DRAFT">Workflow Run Crate profile</a></td>
+            <td style='text-align:left'><a href="#https%3A//w3id.org/ro/wfrun/provenance/0.5-DRAFT">Provenance Run Crate profile</a></td>
             </tr></tbody>
             </table>
         </div>
@@ -1358,434 +1238,35 @@ table.table {
         </div>
         <hr/><br/><br/>
            <div>
-            <h3><a href="http://schema.org/additionalType">Go to: </a> additionalType</h3>
+            <h3><a href="https://w3id.org/ro/terms/workflow-run#connection">Go to: </a> connection</h3>
             
             
             
             
-        <div id="http://schema.org/additionalType">
-            
-            <table class="table metadata table-striped" >
-                <tbody><tr>
-            <th style="text-align:left;" class="prop">@id</th>
-            <td style='text-align:left'><a href="http://schema.org/additionalType">http://schema.org/additionalType</a></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
-            <td style='text-align:left'><span>additionalType</span></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">@type</th>
-            <td style='text-align:left'><span>DefinedTerm</span></td>
-            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
-            <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
-            <td style='text-align:left'><a href="#https%3A//w3id.org/ro/wfrun/workflow/0.5-DRAFT">Workflow Run Crate profile</a></td>
-            </tr></tbody>
-            </table>
-        </div>
-
-        </div>
-        <hr/><br/><br/>
-           <div>
-            <h3><a href="http://schema.org/CreateAction">Go to: </a> CreateAction</h3>
-            
-            
-            
-            
-        <div id="http://schema.org/CreateAction">
+        <div id="https://w3id.org/ro/terms/workflow-run#connection">
             
             <table class="table metadata table-striped" >
                 <tbody><tr>
             <th style="text-align:left;" class="prop">@id</th>
-            <td style='text-align:left'><a href="http://schema.org/CreateAction">http://schema.org/CreateAction</a></td>
+            <td style='text-align:left'><a href="https://w3id.org/ro/terms/workflow-run#connection">https://w3id.org/ro/terms/workflow-run#connection</a></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
-            <td style='text-align:left'><span>CreateAction</span></td>
+            <td style='text-align:left'><span>connection</span></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">@type</th>
             <td style='text-align:left'><span>DefinedTerm</span></td>
-            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
-            <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
-            <td style='text-align:left'><a href="#https%3A//w3id.org/ro/wfrun/workflow/0.5-DRAFT">Workflow Run Crate profile</a></td>
-            </tr></tbody>
-            </table>
-        </div>
-
-        </div>
-        <hr/><br/><br/>
-           <div>
-            <h3><a href="http://schema.org/exampleOfWork">Go to: </a> exampleOfWork</h3>
-            
-            
-            
-            
-        <div id="http://schema.org/exampleOfWork">
-            
-            <table class="table metadata table-striped" >
-                <tbody><tr>
-            <th style="text-align:left;" class="prop">@id</th>
-            <td style='text-align:left'><a href="http://schema.org/exampleOfWork">http://schema.org/exampleOfWork</a></td>
             </tr><tr>
-            <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
-            <td style='text-align:left'><span>exampleOfWork</span></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">@type</th>
-            <td style='text-align:left'><span>DefinedTerm</span></td>
-            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
-            <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
-            <td style='text-align:left'><a href="#https%3A//w3id.org/ro/wfrun/workflow/0.5-DRAFT">Workflow Run Crate profile</a></td>
-            </tr></tbody>
-            </table>
-        </div>
-
-        </div>
-        <hr/><br/><br/>
-           <div>
-            <h3><a href="http://schema.org/instrument">Go to: </a> instrument</h3>
-            
-            
-            
-            
-        <div id="http://schema.org/instrument">
-            
-            <table class="table metadata table-striped" >
-                <tbody><tr>
-            <th style="text-align:left;" class="prop">@id</th>
-            <td style='text-align:left'><a href="http://schema.org/instrument">http://schema.org/instrument</a></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
-            <td style='text-align:left'><span>instrument</span></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">@type</th>
-            <td style='text-align:left'><span>DefinedTerm</span></td>
-            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
-            <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
-            <td style='text-align:left'><a href="#https%3A//w3id.org/ro/wfrun/workflow/0.5-DRAFT">Workflow Run Crate profile</a></td>
-            </tr></tbody>
-            </table>
-        </div>
-
-        </div>
-        <hr/><br/><br/>
-           <div>
-            <h3><a href="http://schema.org/name">Go to: </a> name</h3>
-            
-            
-            
-            
-        <div id="http://schema.org/name">
-            
-            <table class="table metadata table-striped" >
-                <tbody><tr>
-            <th style="text-align:left;" class="prop">@id</th>
-            <td style='text-align:left'><a href="http://schema.org/name">http://schema.org/name</a></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
-            <td style='text-align:left'><span>name</span></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">@type</th>
-            <td style='text-align:left'><span>DefinedTerm</span></td>
-            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
-            <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
-            <td style='text-align:left'><a href="#https%3A//w3id.org/ro/wfrun/workflow/0.5-DRAFT">Workflow Run Crate profile</a></td>
-            </tr></tbody>
-            </table>
-        </div>
-
-        </div>
-        <hr/><br/><br/>
-           <div>
-            <h3><a href="http://schema.org/object">Go to: </a> object</h3>
-            
-            
-            
-            
-        <div id="http://schema.org/object">
-            
-            <table class="table metadata table-striped" >
-                <tbody><tr>
-            <th style="text-align:left;" class="prop">@id</th>
-            <td style='text-align:left'><a href="http://schema.org/object">http://schema.org/object</a></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
-            <td style='text-align:left'><span>object</span></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">@type</th>
-            <td style='text-align:left'><span>DefinedTerm</span></td>
-            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
-            <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
-            <td style='text-align:left'><a href="#https%3A//w3id.org/ro/wfrun/workflow/0.5-DRAFT">Workflow Run Crate profile</a></td>
-            </tr></tbody>
-            </table>
-        </div>
-
-        </div>
-        <hr/><br/><br/>
-           <div>
-            <h3><a href="http://schema.org/PropertyValue">Go to: </a> PropertyValue</h3>
-            
-            
-            
-            
-        <div id="http://schema.org/PropertyValue">
-            
-            <table class="table metadata table-striped" >
-                <tbody><tr>
-            <th style="text-align:left;" class="prop">@id</th>
-            <td style='text-align:left'><a href="http://schema.org/PropertyValue">http://schema.org/PropertyValue</a></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
-            <td style='text-align:left'><span>PropertyValue</span></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">@type</th>
-            <td style='text-align:left'><span>DefinedTerm</span></td>
-            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
-            <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
-            <td style='text-align:left'><a href="#https%3A//w3id.org/ro/wfrun/workflow/0.5-DRAFT">Workflow Run Crate profile</a></td>
-            </tr></tbody>
-            </table>
-        </div>
-
-        </div>
-        <hr/><br/><br/>
-           <div>
-            <h3><a href="http://schema.org/result">Go to: </a> result</h3>
-            
-            
-            
-            
-        <div id="http://schema.org/result">
-            
-            <table class="table metadata table-striped" >
-                <tbody><tr>
-            <th style="text-align:left;" class="prop">@id</th>
-            <td style='text-align:left'><a href="http://schema.org/result">http://schema.org/result</a></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
-            <td style='text-align:left'><span>result</span></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">@type</th>
-            <td style='text-align:left'><span>DefinedTerm</span></td>
-            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
-            <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
-            <td style='text-align:left'><a href="#https%3A//w3id.org/ro/wfrun/workflow/0.5-DRAFT">Workflow Run Crate profile</a></td>
-            </tr></tbody>
-            </table>
-        </div>
-
-        </div>
-        <hr/><br/><br/>
-           <div>
-            <h3><a href="http://schema.org/DataType">Go to: </a> DataType</h3>
-            
-            
-            
-            
-        <div id="http://schema.org/DataType">
-            
-            <table class="table metadata table-striped" >
-                <tbody><tr>
-            <th style="text-align:left;" class="prop">@id</th>
-            <td style='text-align:left'><a href="http://schema.org/DataType">http://schema.org/DataType</a></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
-            <td style='text-align:left'><span>DataType</span></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">@type</th>
-            <td style='text-align:left'><span>DefinedTerm</span></td>
-            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
-            <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
-            <td style='text-align:left'><a href="#https%3A//w3id.org/ro/wfrun/workflow/0.5-DRAFT">Workflow Run Crate profile</a></td>
-            </tr></tbody>
-            </table>
-        </div>
-
-        </div>
-        <hr/><br/><br/>
-           <div>
-            <h3><a href="http://schema.org/Integer">Go to: </a> Integer</h3>
-            
-            
-            
-            
-        <div id="http://schema.org/Integer">
-            
-            <table class="table metadata table-striped" >
-                <tbody><tr>
-            <th style="text-align:left;" class="prop">@id</th>
-            <td style='text-align:left'><a href="http://schema.org/Integer">http://schema.org/Integer</a></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
-            <td style='text-align:left'><span>Integer</span></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">@type</th>
-            <td style='text-align:left'><span>DefinedTerm</span></td>
-            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
-            <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
-            <td style='text-align:left'><a href="#https%3A//w3id.org/ro/wfrun/workflow/0.5-DRAFT">Workflow Run Crate profile</a></td>
-            </tr></tbody>
-            </table>
-        </div>
-
-        </div>
-        <hr/><br/><br/>
-           <div>
-            <h3><a href="http://schema.org/about">Go to: </a> about</h3>
-            
-            
-            
-            
-        <div id="http://schema.org/about">
-            
-            <table class="table metadata table-striped" >
-                <tbody><tr>
-            <th style="text-align:left;" class="prop">@id</th>
-            <td style='text-align:left'><a href="http://schema.org/about">http://schema.org/about</a></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
-            <td style='text-align:left'><span>about</span></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">@type</th>
-            <td style='text-align:left'><span>DefinedTerm</span></td>
-            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
-            <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
-            <td style='text-align:left'><a href="#https%3A//w3id.org/ro/wfrun/workflow/0.5-DRAFT">Workflow Run Crate profile</a></td>
-            </tr></tbody>
-            </table>
-        </div>
-
-        </div>
-        <hr/><br/><br/>
-           <div>
-            <h3><a href="http://schema.org/defaultValue">Go to: </a> defaultValue</h3>
-            
-            
-            
-            
-        <div id="http://schema.org/defaultValue">
-            
-            <table class="table metadata table-striped" >
-                <tbody><tr>
-            <th style="text-align:left;" class="prop">@id</th>
-            <td style='text-align:left'><a href="http://schema.org/defaultValue">http://schema.org/defaultValue</a></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
-            <td style='text-align:left'><span>defaultValue</span></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">@type</th>
-            <td style='text-align:left'><span>DefinedTerm</span></td>
-            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
-            <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
-            <td style='text-align:left'><a href="#https%3A//w3id.org/ro/wfrun/workflow/0.5-DRAFT">Workflow Run Crate profile</a></td>
-            </tr></tbody>
-            </table>
-        </div>
-
-        </div>
-        <hr/><br/><br/>
-           <div>
-            <h3><a href="http://schema.org/valueRequired">Go to: </a> valueRequired</h3>
-            
-            
-            
-            
-        <div id="http://schema.org/valueRequired">
-            
-            <table class="table metadata table-striped" >
-                <tbody><tr>
-            <th style="text-align:left;" class="prop">@id</th>
-            <td style='text-align:left'><a href="http://schema.org/valueRequired">http://schema.org/valueRequired</a></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
-            <td style='text-align:left'><span>valueRequired</span></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">@type</th>
-            <td style='text-align:left'><span>DefinedTerm</span></td>
-            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
-            <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
-            <td style='text-align:left'><a href="#https%3A//w3id.org/ro/wfrun/workflow/0.5-DRAFT">Workflow Run Crate profile</a></td>
-            </tr></tbody>
-            </table>
-        </div>
-
-        </div>
-        <hr/><br/><br/>
-           <div>
-            <h3><a href="https://bioschemas.org/FormalParameter">Go to: </a> FormalParameter</h3>
-            
-            
-            
-            
-        <div id="https://bioschemas.org/FormalParameter">
-            
-            <table class="table metadata table-striped" >
-                <tbody><tr>
-            <th style="text-align:left;" class="prop">@id</th>
-            <td style='text-align:left'><a href="https://bioschemas.org/FormalParameter">https://bioschemas.org/FormalParameter</a></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
-            <td style='text-align:left'><span>FormalParameter</span></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">@type</th>
-            <td style='text-align:left'><span>DefinedTerm</span></td>
-            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
-            <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
-            <td style='text-align:left'><a href="#https%3A//w3id.org/ro/wfrun/workflow/0.5-DRAFT">Workflow Run Crate profile</a></td>
-            </tr></tbody>
-            </table>
-        </div>
-
-        </div>
-        <hr/><br/><br/>
-           <div>
-            <h3><a href="https://bioschemas.org/ComputationalWorkflow">Go to: </a> ComputationalWorkflow</h3>
-            
-            
-            
-            
-        <div id="https://bioschemas.org/ComputationalWorkflow">
-            
-            <table class="table metadata table-striped" >
-                <tbody><tr>
-            <th style="text-align:left;" class="prop">@id</th>
-            <td style='text-align:left'><a href="https://bioschemas.org/ComputationalWorkflow">https://bioschemas.org/ComputationalWorkflow</a></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
-            <td style='text-align:left'><span>ComputationalWorkflow</span></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">@type</th>
-            <td style='text-align:left'><span>DefinedTerm</span></td>
-            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
-            <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
-            <td style='text-align:left'><a href="#https%3A//w3id.org/ro/wfrun/workflow/0.5-DRAFT">Workflow Run Crate profile</a></td>
-            </tr></tbody>
-            </table>
-        </div>
-
-        </div>
-        <hr/><br/><br/>
-           <div>
-            <h3><a href="https://bioschemas.org/ComputationalWorkflow#input">Go to: </a> input</h3>
-            
-            
-            
-            
-        <div id="https://bioschemas.org/ComputationalWorkflow#input">
-            
-            <table class="table metadata table-striped" >
-                <tbody><tr>
-            <th style="text-align:left;" class="prop">@id</th>
-            <td style='text-align:left'><a href="https://bioschemas.org/ComputationalWorkflow#input">https://bioschemas.org/ComputationalWorkflow#input</a></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
-            <td style='text-align:left'><span>input</span></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">@type</th>
-            <td style='text-align:left'><span>DefinedTerm</span></td>
+            <th style="text-align:left;" class="prop">description<span>&nbsp;</span><a href="http://schema.org/description">[?]</a></th>
+            <td style='text-align:left'><span>A parameter connection created by this workflow</span></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">termCode<span>&nbsp;</span><a href="http://schema.org/termCode">[?]</a></th>
-            <td style='text-align:left'><span>input</span></td>
+            <td style='text-align:left'><span>connection</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">inDefinedTermSet<span>&nbsp;</span><a href="http://schema.org/inDefinedTermSet">[?]</a></th>
+            <td style='text-align:left'><a href="#https%3A//w3id.org/ro/terms/workflow-run%23">Namespace for Common Provenance Model RO-Crate model</a></td>
             </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
             <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
-            <td style='text-align:left'><a href="#https%3A//w3id.org/ro/wfrun/workflow/0.5-DRAFT">Workflow Run Crate profile</a></td>
+            <td style='text-align:left'><a href="#https%3A//w3id.org/ro/wfrun/provenance/0.5-DRAFT">Provenance Run Crate profile</a></td>
             </tr></tbody>
             </table>
         </div>
@@ -1793,29 +1274,35 @@ table.table {
         </div>
         <hr/><br/><br/>
            <div>
-            <h3><a href="https://bioschemas.org/ComputationalWorkflow#output">Go to: </a> output</h3>
+            <h3><a href="https://w3id.org/ro/terms/workflow-run#sourceParameter">Go to: </a> source parameter</h3>
             
             
             
             
-        <div id="https://bioschemas.org/ComputationalWorkflow#output">
+        <div id="https://w3id.org/ro/terms/workflow-run#sourceParameter">
             
             <table class="table metadata table-striped" >
                 <tbody><tr>
             <th style="text-align:left;" class="prop">@id</th>
-            <td style='text-align:left'><a href="https://bioschemas.org/ComputationalWorkflow#output">https://bioschemas.org/ComputationalWorkflow#output</a></td>
+            <td style='text-align:left'><a href="https://w3id.org/ro/terms/workflow-run#sourceParameter">https://w3id.org/ro/terms/workflow-run#sourceParameter</a></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
-            <td style='text-align:left'><span>output</span></td>
+            <td style='text-align:left'><span>source parameter</span></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">@type</th>
             <td style='text-align:left'><span>DefinedTerm</span></td>
             </tr><tr>
+            <th style="text-align:left;" class="prop">description<span>&nbsp;</span><a href="http://schema.org/description">[?]</a></th>
+            <td style='text-align:left'><span>The source (upstream) parameter</span></td>
+            </tr><tr>
             <th style="text-align:left;" class="prop">termCode<span>&nbsp;</span><a href="http://schema.org/termCode">[?]</a></th>
-            <td style='text-align:left'><span>output</span></td>
+            <td style='text-align:left'><span>sourceParameter</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">inDefinedTermSet<span>&nbsp;</span><a href="http://schema.org/inDefinedTermSet">[?]</a></th>
+            <td style='text-align:left'><a href="#https%3A//w3id.org/ro/terms/workflow-run%23">Namespace for Common Provenance Model RO-Crate model</a></td>
             </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
             <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
-            <td style='text-align:left'><a href="#https%3A//w3id.org/ro/wfrun/workflow/0.5-DRAFT">Workflow Run Crate profile</a></td>
+            <td style='text-align:left'><a href="#https%3A//w3id.org/ro/wfrun/provenance/0.5-DRAFT">Provenance Run Crate profile</a></td>
             </tr></tbody>
             </table>
         </div>
@@ -1823,66 +1310,35 @@ table.table {
         </div>
         <hr/><br/><br/>
            <div>
-            <h3><a href="http://purl.org/dc/terms/conformsTo">Go to: </a> conformsTo</h3>
+            <h3><a href="https://w3id.org/ro/terms/workflow-run#targetParameter">Go to: </a> target parameter</h3>
             
             
             
             
-        <div id="http://purl.org/dc/terms/conformsTo">
-            
-            <table class="table metadata table-striped" >
-                <tbody><tr>
-            <th style="text-align:left;" class="prop">@id</th>
-            <td style='text-align:left'><a href="http://purl.org/dc/terms/conformsTo">http://purl.org/dc/terms/conformsTo</a></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
-            <td style='text-align:left'><span>conformsTo</span></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">@type</th>
-            <td style='text-align:left'><span>DefinedTerm</span></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">termCode<span>&nbsp;</span><a href="http://schema.org/termCode">[?]</a></th>
-            <td style='text-align:left'><span>conformsTo</span></td>
-            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
-            <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
-            <td style='text-align:left'><a href="#https%3A//w3id.org/ro/wfrun/workflow/0.5-DRAFT">Workflow Run Crate profile</a></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">hasRole<span>&nbsp;</span><a href="http://www.w3.org/ns/dx/prof/hasRole">[?]</a></th>
-            <td style='text-align:left'><ul>
-                        <li><a href="#%23shouldConformToWorkflowROCrate">#shouldConformToWorkflowROCrate</a></li>
-                        
-                        <li><a href="#%23shouldConformToProcess">#shouldConformToProcess</a></li>
-                        </ul></td>
-            </tr></tbody>
-            </table>
-        </div>
-
-        </div>
-        <hr/><br/><br/>
-           <div>
-            <h3><a href="https://w3id.org/ro/terms/workflow-run#environment">Go to: </a> environment</h3>
-            
-            
-            
-            
-        <div id="https://w3id.org/ro/terms/workflow-run#environment">
+        <div id="https://w3id.org/ro/terms/workflow-run#targetParameter">
             
             <table class="table metadata table-striped" >
                 <tbody><tr>
             <th style="text-align:left;" class="prop">@id</th>
-            <td style='text-align:left'><a href="https://w3id.org/ro/terms/workflow-run#environment">https://w3id.org/ro/terms/workflow-run#environment</a></td>
+            <td style='text-align:left'><a href="https://w3id.org/ro/terms/workflow-run#targetParameter">https://w3id.org/ro/terms/workflow-run#targetParameter</a></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
-            <td style='text-align:left'><span>environment</span></td>
+            <td style='text-align:left'><span>target parameter</span></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">@type</th>
             <td style='text-align:left'><span>DefinedTerm</span></td>
             </tr><tr>
+            <th style="text-align:left;" class="prop">description<span>&nbsp;</span><a href="http://schema.org/description">[?]</a></th>
+            <td style='text-align:left'><span>The target (upstream) parameter</span></td>
+            </tr><tr>
             <th style="text-align:left;" class="prop">termCode<span>&nbsp;</span><a href="http://schema.org/termCode">[?]</a></th>
-            <td style='text-align:left'><span>environment</span></td>
+            <td style='text-align:left'><span>targetParameter</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">inDefinedTermSet<span>&nbsp;</span><a href="http://schema.org/inDefinedTermSet">[?]</a></th>
+            <td style='text-align:left'><a href="#https%3A//w3id.org/ro/terms/workflow-run%23">Namespace for Common Provenance Model RO-Crate model</a></td>
             </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
             <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
-            <td style='text-align:left'><a href="#https%3A//w3id.org/ro/wfrun/workflow/0.5-DRAFT">Workflow Run Crate profile</a></td>
+            <td style='text-align:left'><a href="#https%3A//w3id.org/ro/wfrun/provenance/0.5-DRAFT">Provenance Run Crate profile</a></td>
             </tr></tbody>
             </table>
         </div>
@@ -1909,10 +1365,10 @@ table.table {
             <td style='text-align:left'><a href="http://www.w3.org/ns/dx/prof/role/specification">http://www.w3.org/ns/dx/prof/role/specification</a></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">hasArtifact<span>&nbsp;</span><a href="http://www.w3.org/ns/dx/prof/hasArtifact">[?]</a></th>
-            <td style='text-align:left'><a href="#index.html">Workflow Run Crate (HTML)</a></td>
+            <td style='text-align:left'><a href="#index.html">Provenance Run Crate (HTML)</a></td>
             </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
             <th style="text-align:left;" class="prop">hasResource<span>&nbsp;</span><a href="http://www.w3.org/ns/dx/prof/hasResource">[?]</a></th>
-            <td style='text-align:left'><a href="#https%3A//w3id.org/ro/wfrun/workflow/0.5-DRAFT">Workflow Run Crate profile</a></td>
+            <td style='text-align:left'><a href="#https%3A//w3id.org/ro/wfrun/provenance/0.5-DRAFT">Provenance Run Crate profile</a></td>
             </tr></tbody>
             </table>
         </div>
@@ -1939,10 +1395,40 @@ table.table {
             <td style='text-align:left'><a href="http://www.w3.org/ns/dx/prof/role/constraints">http://www.w3.org/ns/dx/prof/role/constraints</a></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">hasArtifact<span>&nbsp;</span><a href="http://www.w3.org/ns/dx/prof/hasArtifact">[?]</a></th>
-            <td style='text-align:left'><a href="#index.html%23requirements">Workflow Run Crate requirements</a></td>
+            <td style='text-align:left'><a href="#index.html%23requirements">Provenance Run Crate requirements</a></td>
             </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
             <th style="text-align:left;" class="prop">hasResource<span>&nbsp;</span><a href="http://www.w3.org/ns/dx/prof/hasResource">[?]</a></th>
-            <td style='text-align:left'><a href="#https%3A//w3id.org/ro/wfrun/workflow/0.5-DRAFT">Workflow Run Crate profile</a></td>
+            <td style='text-align:left'><a href="#https%3A//w3id.org/ro/wfrun/provenance/0.5-DRAFT">Provenance Run Crate profile</a></td>
+            </tr></tbody>
+            </table>
+        </div>
+
+        </div>
+        <hr/><br/><br/>
+           <div>
+            <h3> #hasVocabulary</h3>
+            
+            
+            
+            
+        <div id="#hasVocabulary">
+            
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><span>#hasVocabulary</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><span>ResourceDescriptor</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">hasRole<span>&nbsp;</span><a href="http://www.w3.org/ns/dx/prof/hasRole">[?]</a></th>
+            <td style='text-align:left'><a href="http://www.w3.org/ns/dx/prof/role/vocabulary">http://www.w3.org/ns/dx/prof/role/vocabulary</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">hasArtifact<span>&nbsp;</span><a href="http://www.w3.org/ns/dx/prof/hasArtifact">[?]</a></th>
+            <td style='text-align:left'><a href="#https%3A//w3id.org/ro/terms/workflow-run%23">Namespace for Common Provenance Model RO-Crate model</a></td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">hasResource<span>&nbsp;</span><a href="http://www.w3.org/ns/dx/prof/hasResource">[?]</a></th>
+            <td style='text-align:left'><a href="#https%3A//w3id.org/ro/wfrun/provenance/0.5-DRAFT">Provenance Run Crate profile</a></td>
             </tr></tbody>
             </table>
         </div>
@@ -1972,7 +1458,7 @@ table.table {
             <td style='text-align:left'><a href="#https%3A//gxy.io/GTN%3AT00343">Workflow Run RO-Crate Introduction</a></td>
             </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
             <th style="text-align:left;" class="prop">hasResource<span>&nbsp;</span><a href="http://www.w3.org/ns/dx/prof/hasResource">[?]</a></th>
-            <td style='text-align:left'><a href="#https%3A//w3id.org/ro/wfrun/workflow/0.5-DRAFT">Workflow Run Crate profile</a></td>
+            <td style='text-align:left'><a href="#https%3A//w3id.org/ro/wfrun/provenance/0.5-DRAFT">Provenance Run Crate profile</a></td>
             </tr></tbody>
             </table>
         </div>
@@ -1980,59 +1466,29 @@ table.table {
         </div>
         <hr/><br/><br/>
            <div>
-            <h3> #shouldConformToWorkflowROCrate</h3>
+            <h3> #shouldConformToWorkflow</h3>
             
             
             
             
-        <div id="#shouldConformToWorkflowROCrate">
+        <div id="#shouldConformToWorkflow">
             
             <table class="table metadata table-striped" >
                 <tbody><tr>
             <th style="text-align:left;" class="prop">@id</th>
-            <td style='text-align:left'><span>#shouldConformToWorkflowROCrate</span></td>
+            <td style='text-align:left'><span>#shouldConformToWorkflow</span></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">@type</th>
             <td style='text-align:left'><span>ResourceDescriptor</span></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">hasRole<span>&nbsp;</span><a href="http://www.w3.org/ns/dx/prof/hasRole">[?]</a></th>
-            <td style='text-align:left'><a href="#http%3A//purl.org/dc/terms/conformsTo">conformsTo</a></td>
+            <td style='text-align:left'><a href="http://purl.org/dc/terms/conformsTo">http://purl.org/dc/terms/conformsTo</a></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">hasArtifact<span>&nbsp;</span><a href="http://www.w3.org/ns/dx/prof/hasArtifact">[?]</a></th>
-            <td style='text-align:left'><a href="#https%3A//w3id.org/workflowhub/workflow-ro-crate/1.0">Workflow RO-Crate profile</a></td>
+            <td style='text-align:left'><a href="#https%3A//w3id.org/ro/wfrun/workflow/0.5-DRAFT">Workflow Run Crate profile</a></td>
             </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
             <th style="text-align:left;" class="prop">hasResource<span>&nbsp;</span><a href="http://www.w3.org/ns/dx/prof/hasResource">[?]</a></th>
-            <td style='text-align:left'><a href="#https%3A//w3id.org/ro/wfrun/workflow/0.5-DRAFT">Workflow Run Crate profile</a></td>
-            </tr></tbody>
-            </table>
-        </div>
-
-        </div>
-        <hr/><br/><br/>
-           <div>
-            <h3> #shouldConformToProcess</h3>
-            
-            
-            
-            
-        <div id="#shouldConformToProcess">
-            
-            <table class="table metadata table-striped" >
-                <tbody><tr>
-            <th style="text-align:left;" class="prop">@id</th>
-            <td style='text-align:left'><span>#shouldConformToProcess</span></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">@type</th>
-            <td style='text-align:left'><span>ResourceDescriptor</span></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">hasRole<span>&nbsp;</span><a href="http://www.w3.org/ns/dx/prof/hasRole">[?]</a></th>
-            <td style='text-align:left'><a href="#http%3A//purl.org/dc/terms/conformsTo">conformsTo</a></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">hasArtifact<span>&nbsp;</span><a href="http://www.w3.org/ns/dx/prof/hasArtifact">[?]</a></th>
-            <td style='text-align:left'><a href="#https%3A//w3id.org/ro/wfrun/process/0.5-DRAFT">Process Run Crate profile</a></td>
-            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
-            <th style="text-align:left;" class="prop">hasResource<span>&nbsp;</span><a href="http://www.w3.org/ns/dx/prof/hasResource">[?]</a></th>
-            <td style='text-align:left'><a href="#https%3A//w3id.org/ro/wfrun/workflow/0.5-DRAFT">Workflow Run Crate profile</a></td>
+            <td style='text-align:left'><a href="#https%3A//w3id.org/ro/wfrun/provenance/0.5-DRAFT">Provenance Run Crate profile</a></td>
             </tr></tbody>
             </table>
         </div>
@@ -2101,7 +1557,7 @@ table.table {
             <td style='text-align:left'><span>Simone Leo, et al. (2024): Recording provenance of workflow runs with RO-Crate. arXiv:2312.07852</span></td>
             </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
             <th style="text-align:left;" class="prop">citation<span>&nbsp;</span><a href="http://schema.org/citation">[?]</a></th>
-            <td style='text-align:left'><a href="#https%3A//w3id.org/ro/wfrun/workflow/0.5-DRAFT">Workflow Run Crate profile</a></td>
+            <td style='text-align:left'><a href="#https%3A//w3id.org/ro/wfrun/provenance/0.5-DRAFT">Provenance Run Crate profile</a></td>
             </tr></tbody>
             </table>
         </div>
