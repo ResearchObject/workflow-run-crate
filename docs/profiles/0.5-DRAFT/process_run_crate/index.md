@@ -7,8 +7,13 @@ title: Process Run Crate
 
 * Version: 0.5-DRAFT
 * Permalink: <https://w3id.org/ro/wfrun/process/0.5-DRAFT>
-* Authors: Workflow Run RO-Crate working group
+* Authors: [Workflow Run RO-Crate working group](https://www.researchobject.org/workflow-run-crate/#community)
+* License: [Apache License, version 2.0](https://www.apache.org/licenses/LICENSE-2.0) (SPDX: [`Apache-2.0`](http://spdx.org/licenses/Apache-2.0))
 * Profile Crate: [ro-crate-metadata.json](ro-crate-metadata.json) [ro-crate-preview.html](ro-crate-preview.html)
+* Extends:
+  - [RO-Crate 1.1 specification](https://w3id.org/ro/crate/1.1)
+* JSON-LD context: <https://w3id.org/ro/terms/workflow-run>
+* Vocabulary terms:  <https://w3id.org/ro/terms/workflow-run#>
 
 This profile uses terminology from the [RO-Crate 1.1 specification](https://w3id.org/ro/crate/1.1), and [extends it](https://www.researchobject.org/ro-crate/1.1/appendix/jsonld.html#extending-ro-crate) with additional terms from the [workflow-run](https://github.com/ResearchObject/ro-terms/tree/master/workflow-run) ro-terms namespace.
 
