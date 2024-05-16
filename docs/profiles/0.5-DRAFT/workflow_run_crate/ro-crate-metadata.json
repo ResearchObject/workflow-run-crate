@@ -34,17 +34,53 @@
     ],
     "hasPart": [
         { "@id": "index.html" },
-        { "@id": "https://w3id.org/ro/terms/workflow-run#" },
         { "@id": "https://w3id.org/ro/terms/workflow-run" },
         { "@id": "https://gxy.io/GTN:T00343" },
         { "@id": "https://pypi.org/project/runcrate/" },
         { "@id": "https://w3id.org/ro/wfrun/process/0.5-DRAFT" },
-        { "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0" }     
-    ],
+        { "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0" },
+        { "@id": "http://schema.org/MediaObject" },
+        { "@id": "http://schema.org/additionalType" },
+        { "@id": "http://schema.org/CreateAction" },
+        { "@id": "http://schema.org/exampleOfWork" },
+        { "@id": "http://schema.org/instrument" },
+        { "@id": "http://schema.org/name" },
+        { "@id": "http://schema.org/object" },
+        { "@id": "http://schema.org/PropertyValue" },
+        { "@id": "http://schema.org/result" },
+        { "@id": "http://schema.org/DataType" },
+        { "@id": "http://schema.org/Integer" },
+        { "@id": "http://schema.org/about" },
+        { "@id": "http://schema.org/defaultValue" },
+        { "@id": "http://schema.org/valueRequired" },
+        { "@id": "https://bioschemas.org/FormalParameter" },
+      { 
+        "@id": "https://bioschemas.org/ComputationalWorkflow"
+      },
+      { 
+        "@id": "http://schema.org/defaultValue"
+      },  
+      { 
+        "@id": "http://schema.org/valueRequired"
+      }, 
+      { 
+        "@id": "https://bioschemas.org/ComputationalWorkflow#input"
+      },
+      { 
+        "@id": "https://bioschemas.org/ComputationalWorkflow#output"
+      },  
+    {
+      "@id": "http://purl.org/dc/terms/conformsTo"
+    },
+    { 
+      "@id": "https://w3id.org/ro/terms/workflow-run#environment"
+    }
+        
+
+      ],
     "hasResource": [
         { "@id": "#hasSpecification" },
         { "@id": "#hasConstraints" },
-        { "@id": "#hasVocabulary" },
         { "@id": "#hasGuidance" },
         { "@id": "#shouldConformToWorkflowROCrate" },
         { "@id": "#shouldConformToProcess" }        
@@ -138,14 +174,6 @@
       "@id": "http://www.w3.org/ns/json-ld#Context"
     },
     "encodingFormat": "application/ld+json",
-    "isBasedOn": [
-      {
-        "@id": "https://w3id.org/ro/crate/1.1/context"
-      },
-      {
-        "@id": "https://w3id.org/ro/terms/workflow-run#"
-      }
-    ],
     "license": {
       "@id": "https://creativecommons.org/publicdomain/zero/1.0/"
     }
@@ -161,12 +189,6 @@
     "@type": "ResourceDescriptor",
     "hasRole": { "@id": "http://www.w3.org/ns/dx/prof/role/constraints" },
     "hasArtifact": {"@id": "index.html#requirements"}
-  },
-  {
-    "@id": "#hasVocabulary",
-    "@type": "ResourceDescriptor",
-    "hasRole": { "@id": "http://www.w3.org/ns/dx/prof/role/vocabulary" },
-    "hasArtifact": {"@id": "https://w3id.org/ro/terms/workflow-run#"}
   },
   {
     "@id": "#hasGuidance",
@@ -259,209 +281,7 @@
   {
     "@id": "https://w3id.org/ro/terms/workflow-run#",
     "@type": "DefinedTermSet",
-    "name": "Namespace for Common Provenance Model RO-Crate model",
-    "hasDefinedTerm": [
-      { "@id": "https://w3id.org/ro/terms/workflow-run#ParameterConnection" },
-      { "@id": "https://w3id.org/ro/terms/workflow-run#ContainerImage" },
-      { "@id": "https://w3id.org/ro/terms/workflow-run#DockerImage" },
-      { "@id": "https://w3id.org/ro/terms/workflow-run#SIFImage" },
-      { "@id": "https://w3id.org/ro/terms/workflow-run#connection" },
-      { "@id": "https://w3id.org/ro/terms/workflow-run#sourceParameter" },
-      { "@id": "https://w3id.org/ro/terms/workflow-run#targetParameter" },
-      { "@id": "https://w3id.org/ro/terms/workflow-run#environment" },
-      { "@id": "https://w3id.org/ro/terms/workflow-run#registry" },
-      { "@id": "https://w3id.org/ro/terms/workflow-run#tag" },
-      { "@id": "https://w3id.org/ro/terms/workflow-run#containerImage" },
-      { "@id": "https://w3id.org/ro/terms/workflow-run#md5" },
-      { "@id": "https://w3id.org/ro/terms/workflow-run#sha1" },
-      { "@id": "https://w3id.org/ro/terms/workflow-run#sha256" },
-      { "@id": "https://w3id.org/ro/terms/workflow-run#sha512" }
-    ]
-  },
-
-  { 
-    "@id": "https://w3id.org/ro/terms/workflow-run#ParameterConnection",
-    "@type": ["DefinedTerm", "rdfs:Class"],
-    "termCode": "ParameterConnection",
-    "name": "Parameter Connection",
-    "description": "A connection between parameters of different applications"
-  },
-  { 
-    "@id": "https://w3id.org/ro/terms/workflow-run#ContainerImage",
-    "@type": ["DefinedTerm", "rdfs:Class"],
-    "termCode": "ContainerImage",
-    "name": "Container Image",
-    "description": "A containerization software container image"
-  },
-  { 
-    "@id": "https://w3id.org/ro/terms/workflow-run#DockerImage",
-    "@type": ["DefinedTerm", "rdfs:Class"],
-    "termCode": "DockerImage",
-    "name": "Docker Image",
-    "description": "A docker container image"
-  },
-  { 
-    "@id": "https://w3id.org/ro/terms/workflow-run#SIFImage",
-    "@type": ["DefinedTerm", "rdfs:Class"],
-    "termCode": "SIFImage",
-    "name": "SIF Image",
-    "description": "A Singularity Image Format container image"
-  },
-  { 
-    "@id": "https://w3id.org/ro/terms/workflow-run#connection",
-    "@type": ["DefinedTerm", "rdf:Property"],
-    "termCode": "connection",
-    "name": "connection",
-    "description": "A parameter connection created by this workflow",
-    "domainIncludes": [
-	    {"@id": "https://bioschemas.org/ComputationalWorkflow"},
-	    {"@id": "http://schema.org/HowToStep"}
-    ],
-    "rangeIncludes": [
-      {"@id": "https://w3id.org/ro/terms/workflow-run#ParameterConnection"}
-    ]
-  },
-  { 
-    "@id": "https://w3id.org/ro/terms/workflow-run#sourceParameter",
-    "@type": ["DefinedTerm", "rdf:Property"],
-    "termCode": "sourceParameter",
-    "name": "source parameter",
-    "description": "The source (upstream) parameter",
-    "domainIncludes": [
-      {"@id": "https://w3id.org/ro/terms/workflow-run#ParameterConnection"}
-    ],
-    "rangeIncludes": [
-      {"@id": "https://bioschemas.org/FormalParameter"}
-    ]
-  },
-  { 
-    "@id": "https://w3id.org/ro/terms/workflow-run#targetParameter",
-    "@type": ["DefinedTerm", "rdf:Property"],
-    "termCode": "targetParameter",
-    "name": "target parameter",
-    "description": "The target (upstream) parameter",
-    "domainIncludes": [
-      {"@id": "https://w3id.org/ro/terms/workflow-run#ParameterConnection"}
-    ],
-    "rangeIncludes": [
-      {"@id": "https://bioschemas.org/FormalParameter"}
-    ]
-  },
-  { 
-    "@id": "https://w3id.org/ro/terms/workflow-run#environment",
-    "@type": ["DefinedTerm", "rdf:Property"],
-    "termCode": "environment",
-    "name": "environment",
-    "description": "environment variables used by the application",
-    "domainIncludes": [
-      {"@id": "http://schema.org/SoftwareApplication"},
-      {"@id": "http://schema.org/SoftwareSourceCode"},
-      {"@id": "http://schema.org/CreateAction"},
-      {"@id": "https://bioschema.org/ComputationalWorkflow"}
-    ],
-    "rangeIncludes": [
-      {"@id": "https://bioschemas.org/FormalParameter"},
-      {"@id": "http://schema.org/PropertyValue"}
-    ]
-  },
-  { 
-    "@id": "https://w3id.org/ro/terms/workflow-run#registry",
-    "@type": ["DefinedTerm", "rdf:Property"],
-    "termCode": "registry",
-    "name": "registry",
-    "description": "A service to register software products, such as container images",
-    "domainIncludes": [
-      { "@id": "https://w3id.org/ro/terms/workflow-run#ContainerImage" }
-    ],
-    "rangeIncludes": [
-      {"@id": "http://schema.org/Text"}
-    ]
-  },
-  { 
-    "@id": "https://w3id.org/ro/terms/workflow-run#tag",
-    "@type": ["DefinedTerm", "rdf:Property"],
-    "termCode": "tag",
-    "name": "tag",
-    "description": "A tag assigned to a software product, such as a container image",
-    "domainIncludes": [
-      { "@id": "https://w3id.org/ro/terms/workflow-run#ContainerImage" }
-    ],
-    "rangeIncludes": [
-      {"@id": "http://schema.org/Text"}
-    ]
-  },
-  { 
-    "@id": "https://w3id.org/ro/terms/workflow-run#containerImage",
-    "@type": ["DefinedTerm", "rdf:Property"],
-    "termCode": "containerImage",
-    "name": "container image",
-    "description": "A container image associated with this entity",
-    "domainIncludes": [
-      {"@id": "http://schema.org/CreateAction"}
-    ],
-    "rangeIncludes": [
-      { "@id": "https://w3id.org/ro/terms/workflow-run#ContainerImage" },
-      { "@id": "http://schema.org/URL" }
-    ]
-  },
-  { 
-    "@id": "https://w3id.org/ro/terms/workflow-run#md5",
-    "@type": ["DefinedTerm", "rdf:Property"],
-    "termCode": "md5",
-    "name": "md5 checksum",
-    "description": "md5 checksum as a hexadecimal string",
-    "domainIncludes": [
-      {"@id": "http://schema.org/MediaObject"},
-      { "@id": "https://w3id.org/ro/terms/workflow-run#ContainerImage" }
-    ],
-    "rangeIncludes": [
-      {"@id": "http://schema.org/Text"}
-    ]
-  },
-  { 
-    "@id": "https://w3id.org/ro/terms/workflow-run#sha1",
-    "@type": ["DefinedTerm", "rdf:Property"],
-    "termCode": "sha1",
-    "name": "sha1 checksum",
-    "description": "sha1 checksum as a hexadecimal string",
-    "domainIncludes": [
-      {"@id": "http://schema.org/MediaObject"},
-      { "@id": "https://w3id.org/ro/terms/workflow-run#ContainerImage" }
-    ],
-    "rangeIncludes": [
-      {"@id": "http://schema.org/Text"}
-    ]
-  },
-  { 
-    "@id": "https://w3id.org/ro/terms/workflow-run#sha256",
-    "@type": ["DefinedTerm", "rdf:Property"],
-    "termCode": "sha256",
-    "name": "sha256 checksum",
-    "description": "sha256 checksum as a hexadecimal string",
-    "domainIncludes": [
-      {"@id": "http://schema.org/MediaObject"},
-      { "@id": "https://w3id.org/ro/terms/workflow-run#ContainerImage" }
-    ],
-    "rangeIncludes": [
-      {"@id": "http://schema.org/Text"}
-    ],
-    "sameAs": { 
-      "@id": "http://schema.org/sha256"
-    }
-  },
-  { 
-    "@id": "https://w3id.org/ro/terms/workflow-run#sha512",
-    "@type": ["DefinedTerm", "rdf:Property"],
-    "termCode": "sha512",
-    "name": "sha512 checksum",
-    "description": "sha512 checksum as a hexadecimal string",
-    "domainIncludes": [
-      {"@id": "http://schema.org/MediaObject"},
-      { "@id": "https://w3id.org/ro/terms/workflow-run#ContainerImage" }
-    ],
-    "rangeIncludes": [
-      {"@id": "http://schema.org/Text"}
-    ]
+    "name": "Namespace for Common Provenance Model RO-Crate model"
   },
   {
     "@id": "https://pypi.org/project/runcrate/",
@@ -474,13 +294,64 @@
     "@id": "http://schema.org/MediaObject",
     "@type": "DefinedTerm",
     "name": "MediaObject",
-    "termCode": "file"
+    "termCode": "File"
   },
-  { 
-    "@id": "http://schema.org/Text",
+
+{
+    "@id": "http://schema.org/additionalType",
     "@type": "DefinedTerm",
-    "name": "Text"
-  },
+    "name": "additionalType"
+},
+{
+    "@id": "http://schema.org/CreateAction",
+    "@type": "DefinedTerm",
+    "name": "CreateAction"
+},
+{
+    "@id": "http://schema.org/exampleOfWork",
+    "@type": "DefinedTerm",
+    "name": "exampleOfWork"
+},
+{
+    "@id": "http://schema.org/instrument",
+    "@type": "DefinedTerm",
+    "name": "instrument"
+},
+{
+    "@id": "http://schema.org/name",
+    "@type": "DefinedTerm",
+    "name": "name"
+},
+{
+    "@id": "http://schema.org/object",
+    "@type": "DefinedTerm",
+    "name": "object"
+},
+{
+    "@id": "http://schema.org/PropertyValue",
+    "@type": "DefinedTerm",
+    "name": "PropertyValue"
+},
+{
+    "@id": "http://schema.org/result",
+    "@type": "DefinedTerm",
+    "name": "result"
+},
+{
+    "@id": "http://schema.org/DataType",
+    "@type": "DefinedTerm",
+    "name": "DataType"
+},
+{
+    "@id": "http://schema.org/Integer",
+    "@type": "DefinedTerm",
+    "name": "Integer"
+},
+{
+    "@id": "http://schema.org/about",
+    "@type": "DefinedTerm",
+    "name": "about"
+},
   { 
     "@id": "https://bioschemas.org/FormalParameter", 
     "@type": "DefinedTerm",
@@ -492,10 +363,40 @@
     "name": "ComputationalWorkflow"
   },
   { 
-    "@id": "http://schema.org/HowToStep",
-    "@type": "DefinedTerm", 
-    "name": "HowToStep" 
+    "@id": "http://schema.org/defaultValue",
+    "@type": "DefinedTerm",
+    "name": "defaultValue"
   },  
+  { 
+    "@id": "http://schema.org/valueRequired",
+    "@type": "DefinedTerm",
+    "name": "valueRequired"
+  },  
+  { 
+    "@id": "https://bioschemas.org/ComputationalWorkflow#input",
+    "@type": "DefinedTerm",
+    "termCode": "input",
+    "name": "input"
+  },
+  { 
+    "@id": "https://bioschemas.org/ComputationalWorkflow#output",
+    "@type": "DefinedTerm",
+    "name": "output",
+    "termCode": "output"
+  },  
+{
+  "@id": "http://purl.org/dc/terms/conformsTo",
+  "@type": "DefinedTerm",
+  "name": "conformsTo",
+  "termCode": "conformsTo"
+},
+{ 
+  "@id": "https://w3id.org/ro/terms/workflow-run#environment",
+  "@type": "DefinedTerm",
+  "termCode": "environment",
+  "name": "environment"
+},
+
 {
   "@id": "https://orcid.org/0000-0001-8271-5429",
   "@type": "Person",
