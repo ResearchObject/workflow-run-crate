@@ -7,7 +7,13 @@ title: Provenance Run Crate
 
 * Version: 0.5-DRAFT
 * Permalink: <https://w3id.org/ro/wfrun/provenance/0.5-DRAFT>
-* Authors: Workflow Run RO-Crate working group
+* Authors: [Workflow Run RO-Crate working group](https://www.researchobject.org/workflow-run-crate/#community)
+* License: [Apache License, version 2.0](https://www.apache.org/licenses/LICENSE-2.0) (SPDX: [`Apache-2.0`](http://spdx.org/licenses/Apache-2.0))
+* Profile Crate: [ro-crate-metadata.json](ro-crate-metadata.json) [ro-crate-preview.html](ro-crate-preview.html)
+* Extends:
+  - [Workflow Run Crate](https://w3id.org/ro/wfrun/workflow/0.5-DRAFT)
+* JSON-LD context: <https://w3id.org/ro/terms/workflow-run>
+* Vocabulary terms:  <https://w3id.org/ro/terms/workflow-run#>
 
 This profile uses terminology from the [RO-Crate 1.1 specification](https://w3id.org/ro/crate/1.1), and [extends it](https://www.researchobject.org/ro-crate/1.1/appendix/jsonld.html#extending-ro-crate) with additional terms from the [workflow-run](https://github.com/ResearchObject/ro-terms/tree/master/workflow-run) ro-terms namespace.
 
@@ -26,7 +32,7 @@ The tool that implements a step can in turn be a workflow (*nested workflow* or 
 
 The following diagram shows the relationships between all provenance-related entities. Note the distinction between *prospective* provenance (plans for activities, e.g. a workflow) and *retrospective* provenance (what actually happened, e.g. the execution of a workflow).
 
-<img alt="Entity-relationship diagram" src="img/er_diagram_provenance.svg" width="920" />
+<img alt="Entity-relationship diagram" src="../img/er_diagram_provenance.svg" width="920" />
 
 
 ## Example Metadata File (`ro-crate-metadata.json`)
@@ -329,7 +335,7 @@ The following diagram shows the relationships between all provenance-related ent
 
 In most workflows, the outputs of one or more steps are needed as input for subsequent steps: this creates a *connection* between the corresponding parameters of the tools that implement those steps. For instance, consider the "revsort" workflow represented in the above example:
 
-<p align="center"><img alt="revsort workflow diagram" src="img/revsort.svg" width="207" /></p>
+<p align="center"><img alt="revsort workflow diagram" src="../img/revsort.svg" width="207" /></p>
 
 In this workflow, the output of the `rev` step is used as input by the `sorted` step, creating a connection between the `output` parameter of `revtool.cwl` and the `input` parameter of `sorttool.cwl`. A connection can also occur between tool parameters and workflow parameters: looking again at the above example, the `reverse_sort` workflow parameter is connected to the `reverse` parameter of `sorttool.cwl`.
 
