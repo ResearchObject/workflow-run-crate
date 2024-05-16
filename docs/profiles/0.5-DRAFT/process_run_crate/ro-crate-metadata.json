@@ -471,7 +471,7 @@
     "@id": "http://schema.org/MediaObject",
     "@type": "DefinedTerm",
     "name": "MediaObject",
-    "termCode": "file"
+    "termCode": "File"
   },
   { 
     "@id": "http://schema.org/Text",
