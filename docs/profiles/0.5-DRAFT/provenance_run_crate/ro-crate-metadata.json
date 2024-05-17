@@ -34,6 +34,7 @@
     ],
     "hasPart": [
         { "@id": "index.html" },
+        { "@id": "example3/" },
         { "@id": "https://w3id.org/ro/terms/workflow-run#" },
         { "@id": "https://w3id.org/ro/terms/workflow-run" },
         { "@id": "https://gxy.io/GTN:T00343" },
@@ -51,6 +52,7 @@
         { "@id": "#hasConstraints" },
         { "@id": "#hasVocabulary" },
         { "@id": "#hasGuidance" },
+        { "@id": "#hasExample" },
         { "@id": "#shouldConformToWorkflowROCrate" },
         { "@id": "#shouldConformToProcessCrateProfile" },
         { "@id": "#shouldConformToWorkflowCrateProfile" }     
@@ -142,6 +144,32 @@
     "name": "Provenance Run Crate requirements"
   },
   {
+    "@id": "example3/",
+    "@type": "Dataset",
+    "name": "Example Process Run Crate",
+    "conformsTo": [
+      { "@id": "https://w3id.org/ro/crate" },
+      { "@id": "https://w3id.org/ro/wfrun/process/0.4" },
+      { "@id": "https://w3id.org/ro/wfrun/workflow/0.4" },
+      { "@id": "https://w3id.org/ro/wfrun/provenance/0.4" },
+      { "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0" }
+    ], 
+    "subjectOf": [
+      { "@id": "example3/ro-crate-metadata.json" },
+      { "@id": "example3/ro-crate-preview.html" }
+    ]
+  },
+  {
+    "@id": "example3/ro-crate-metadata.json",
+    "@type": "CreativeWork",
+    "encodingFormat": "application/ld+json"
+  },
+  {
+    "@id": "example3/ro-crate-preview.html",
+    "@type": "CreativeWork",
+    "encodingFormat": "text/html"
+  },    
+  {
     "@id": "https://w3id.org/ro/terms/workflow-run",
     "@type": "File",
     "name": "JSON-LD context for workflow-run terms",
@@ -186,6 +214,13 @@
     "hasRole": { "@id": "http://www.w3.org/ns/dx/prof/role/guidance" },
     "hasArtifact": {"@id": "https://gxy.io/GTN:T00343"}
   },
+  { 
+    "@id": "#hasExample",
+    "@type": "ResourceDescriptor",
+    "hasRole": { "@id": "http://www.w3.org/ns/dx/prof/role/example" },
+    "hasArtifact": { "@id": "example3/" }
+  },
+
   { 
     "@id": "#shouldConformToWorkflowROCrate",
     "@type": "ResourceDescriptor",
