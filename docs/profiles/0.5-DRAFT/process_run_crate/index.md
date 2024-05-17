@@ -34,6 +34,11 @@ The following diagram shows the relationships between provenance-related entitie
 
 ## Example Metadata File (`ro-crate-metadata.json`)
 
+* [ro-crate-metadata.json](example1/ro-crate-metadata.json)
+* [ro-crate-preview.html](example1/ro-crate-preview.html)
+
+<!-- Remember to update above as well as below! -->
+
 ```json
 { "@context": "https://w3id.org/ro/crate/1.1/context", 
   "@graph": [
@@ -46,7 +51,7 @@ The following diagram shows the relationships between provenance-related entitie
     {
         "@id": "./",
         "@type": "Dataset",
-        "conformsTo": {"@id": "https://w3id.org/ro/wfrun/process/0.1"},
+        "conformsTo": {"@id": "https://w3id.org/ro/wfrun/process/0.4"},
         "hasPart": [
             {"@id": "pics/2017-06-11%2012.56.14.jpg"},
             {"@id": "pics/sepia_fence.jpg"}
@@ -54,7 +59,7 @@ The following diagram shows the relationships between provenance-related entitie
         "mentions": {"@id": "#SepiaConversion_1"},
         "name": "My Pictures"
     },
-    {   "@id": "https://w3id.org/ro/wfrun/process/0.1",
+    {   "@id": "https://w3id.org/ro/wfrun/process/0.4",
         "@type": "CreativeWork",
         "name": "Process Run Crate",
         "version": "0.1"
@@ -119,7 +124,7 @@ Note that the command line shown in the action's `description` is not directly r
   <tr>
    <td>conformsTo</td>
    <td>MUST</td>
-   <td>MUST reference a <code>CreativeWork</code> entity with an <code>@id</code> URI that is consistent with the versioned <em>Permalink</em> of this document, e.g. <code>{"@id": "https://w3id.org/ro/wfrun/process/0.1"}</code></td>
+   <td>MUST reference a <code>CreativeWork</code> entity with an <code>@id</code> URI that is consistent with the versioned <em>Permalink</em> of this document, e.g. <code>{"@id": "https://w3id.org/ro/wfrun/process/0.4"}</code></td>
   </tr>
 
   <tr>

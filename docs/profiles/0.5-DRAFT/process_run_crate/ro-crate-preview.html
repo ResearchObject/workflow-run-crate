@@ -328,12 +328,17 @@
           "@id": "https://w3id.org/ro/crate"
         },
         {
-          "@id": "https://w3id.org/ro/wfrun/process/0.5-DRAFT"
+          "@id": "https://w3id.org/ro/wfrun/process/0.4"
         }
       ],
-      "subjectOf": {
-        "@id": "example1/ro-crate-metadata.json"
-      }
+      "subjectOf": [
+        {
+          "@id": "example1/ro-crate-metadata.json"
+        },
+        {
+          "@id": "example1/ro-crate-preview.html"
+        }
+      ]
     },
     {
       "@id": "https://w3id.org/ro/terms/workflow-run#",
@@ -867,6 +872,11 @@
       "encodingFormat": "application/ld+json"
     },
     {
+      "@id": "example1/ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "encodingFormat": "text/html"
+    },
+    {
       "@id": "https://creativecommons.org/publicdomain/zero/1.0/",
       "@type": "CreativeWork",
       "identifier": {
@@ -1347,9 +1357,6 @@ table.table {
             </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
             <th style="text-align:left;" class="prop">about<span>&nbsp;</span><a href="http://schema.org/about">[?]</a></th>
             <td style='text-align:left'><a href="#ro-crate-metadata.json">ro-crate-metadata.json</a></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">conformsTo<span>&nbsp;</span><a href="http://purl.org/dc/terms/conformsTo">[?]</a></th>
-            <td style='text-align:left'><a href="#example1/">Example Process Run Crate</a></td>
             </tr></tbody>
             </table>
         </div>
@@ -1558,11 +1565,15 @@ table.table {
             <td style='text-align:left'><ul>
                         <li><a href="https://w3id.org/ro/crate">https://w3id.org/ro/crate</a></li>
                         
-                        <li><a href="#https%3A//w3id.org/ro/wfrun/process/0.5-DRAFT">Process Run Crate profile</a></li>
+                        <li><a href="https://w3id.org/ro/wfrun/process/0.4">https://w3id.org/ro/wfrun/process/0.4</a></li>
                         </ul></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">subjectOf<span>&nbsp;</span><a href="http://schema.org/subjectOf">[?]</a></th>
-            <td style='text-align:left'><a href="#example1/ro-crate-metadata.json">example1/ro-crate-metadata.json</a></td>
+            <td style='text-align:left'><ul>
+                        <li><a href="#example1/ro-crate-metadata.json">example1/ro-crate-metadata.json</a></li>
+                        
+                        <li><a href="#example1/ro-crate-preview.html">example1/ro-crate-preview.html</a></li>
+                        </ul></td>
             </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
             <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
             <td style='text-align:left'><a href="#https%3A//w3id.org/ro/wfrun/process/0.5-DRAFT">Process Run Crate profile</a></td>

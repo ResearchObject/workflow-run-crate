@@ -34,6 +34,7 @@
     ],
     "hasPart": [
         { "@id": "index.html" },
+        { "@id": "example2/" },
         { "@id": "https://w3id.org/ro/terms/workflow-run" },
         { "@id": "https://gxy.io/GTN:T00343" },
         { "@id": "https://pypi.org/project/runcrate/" },
@@ -75,16 +76,15 @@
     { 
       "@id": "https://w3id.org/ro/terms/workflow-run#environment"
     }
-        
-
+      
       ],
     "hasResource": [
         { "@id": "#hasSpecification" },
         { "@id": "#hasConstraints" },
         { "@id": "#hasGuidance" },
+        { "@id": "#hasExample" },
         { "@id": "#shouldConformToWorkflowROCrate" },
-        { "@id": "#shouldConformToProcessCrateProfile" },
-        { "@id": "#hasExample" } 
+        { "@id": "#shouldConformToProcessCrateProfile" }
     ],
     "citation": { "@id": "https://doi.org/10.48550/arXiv.2312.07852" }    
   },

@@ -146,15 +146,23 @@
     "name": "Example Process Run Crate",
     "conformsTo": [
       { "@id": "https://w3id.org/ro/crate"},
-      { "@id": "https://w3id.org/ro/wfrun/process/0.5-DRAFT" }
+      { "@id": "https://w3id.org/ro/wfrun/process/0.4" }
     ], 
-    "subjectOf": { "@id": "example1/ro-crate-metadata.json" }
+    "subjectOf": [
+      { "@id": "example1/ro-crate-metadata.json" },
+      { "@id": "example1/ro-crate-preview.html" }
+    ]
   },
   {
     "@id": "example1/ro-crate-metadata.json",
     "@type": "CreativeWork",
     "encodingFormat": "application/ld+json"
   },
+  {
+    "@id": "example1/ro-crate-preview.html",
+    "@type": "CreativeWork",
+    "encodingFormat": "text/html"
+  },  
   {
     "@id": "https://w3id.org/ro/terms/workflow-run",
     "@type": "File",

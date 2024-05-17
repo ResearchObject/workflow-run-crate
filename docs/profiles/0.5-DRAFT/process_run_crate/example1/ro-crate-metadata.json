@@ -9,7 +9,7 @@
     {
         "@id": "./",
         "@type": "Dataset",
-        "conformsTo": {"@id": "https://w3id.org/ro/wfrun/process/0.1"},
+        "conformsTo": {"@id": "https://w3id.org/ro/wfrun/process/0.4"},
         "hasPart": [
             {"@id": "pics/2017-06-11%2012.56.14.jpg"},
             {"@id": "pics/sepia_fence.jpg"}
@@ -17,13 +17,14 @@
         "isBasedOn": {
             "@id": "https://doi.org/10.5281/zenodo.1009240"
         },
+        "license": {"@id": "http://spdx.org/licenses/CC0-1.0"},
         "mentions": {"@id": "#SepiaConversion_1"},
         "name": "My Pictures"
     },
-    {   "@id": "https://w3id.org/ro/wfrun/process/0.1",
+    {   "@id": "https://w3id.org/ro/wfrun/process/0.4",
         "@type": "CreativeWork",
         "name": "Process Run Crate",
-        "version": "0.1"
+        "version": "0.5"
     },
     {
         "@id": "https://www.imagemagick.org/",
