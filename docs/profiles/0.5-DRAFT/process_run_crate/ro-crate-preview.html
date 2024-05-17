@@ -51,6 +51,9 @@
           "@id": "index.html"
         },
         {
+          "@id": "example1/"
+        },
+        {
           "@id": "https://w3id.org/ro/terms/workflow-run#"
         },
         {
@@ -150,6 +153,9 @@
         },
         {
           "@id": "#hasGuidance"
+        },
+        {
+          "@id": "#hasExample"
         }
       ],
       "citation": {
@@ -312,6 +318,22 @@
           "@id": "https://www.nationalarchives.gov.uk/PRONOM/fmt/471"
         }
       ]
+    },
+    {
+      "@id": "example1/",
+      "@type": "Dataset",
+      "name": "Example Process Run Crate",
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate"
+        },
+        {
+          "@id": "https://w3id.org/ro/wfrun/process/0.5-DRAFT"
+        }
+      ],
+      "subjectOf": {
+        "@id": "example1/ro-crate-metadata.json"
+      }
     },
     {
       "@id": "https://w3id.org/ro/terms/workflow-run#",
@@ -565,6 +587,16 @@
       },
       "hasArtifact": {
         "@id": "https://gxy.io/GTN:T00343"
+      }
+    },
+    {
+      "@id": "#hasExample",
+      "@type": "ResourceDescriptor",
+      "hasRole": {
+        "@id": "http://www.w3.org/ns/dx/prof/role/example"
+      },
+      "hasArtifact": {
+        "@id": "example1/"
       }
     },
     {
@@ -828,6 +860,11 @@
       "@id": "index.html#requirements",
       "@type": "WebPageElement",
       "name": "Process Run Crate requirements"
+    },
+    {
+      "@id": "example1/ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "encodingFormat": "application/ld+json"
     },
     {
       "@id": "https://creativecommons.org/publicdomain/zero/1.0/",
@@ -1231,6 +1268,8 @@ table.table {
             <td style='text-align:left'><ul>
                         <li><a href="#index.html">Process Run Crate (HTML)</a></li>
                         
+                        <li><a href="#example1/">Example Process Run Crate</a></li>
+                        
                         <li><a href="#https%3A//w3id.org/ro/terms/workflow-run%23">Namespace for Common Provenance Model RO-Crate model</a></li>
                         
                         <li><a href="#https%3A//w3id.org/ro/terms/workflow-run">JSON-LD context for workflow-run terms</a></li>
@@ -1299,6 +1338,8 @@ table.table {
                         <li><a href="#%23hasVocabulary">#hasVocabulary</a></li>
                         
                         <li><a href="#%23hasGuidance">#hasGuidance</a></li>
+                        
+                        <li><a href="#%23hasExample">#hasExample</a></li>
                         </ul></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">citation<span>&nbsp;</span><a href="http://schema.org/citation">[?]</a></th>
@@ -1306,6 +1347,9 @@ table.table {
             </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
             <th style="text-align:left;" class="prop">about<span>&nbsp;</span><a href="http://schema.org/about">[?]</a></th>
             <td style='text-align:left'><a href="#ro-crate-metadata.json">ro-crate-metadata.json</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">conformsTo<span>&nbsp;</span><a href="http://purl.org/dc/terms/conformsTo">[?]</a></th>
+            <td style='text-align:left'><a href="#example1/">Example Process Run Crate</a></td>
             </tr></tbody>
             </table>
         </div>
@@ -1485,6 +1529,46 @@ table.table {
             </tr><tr>
             <th style="text-align:left;" class="prop">hasArtifact<span>&nbsp;</span><a href="http://www.w3.org/ns/dx/prof/hasArtifact">[?]</a></th>
             <td style='text-align:left'><a href="#%23hasSpecification">#hasSpecification</a></td>
+            </tr></tbody>
+            </table>
+        </div>
+
+        </div>
+        <hr/><br/><br/>
+           <div>
+            <h3> Example Process Run Crate</h3>
+            
+            
+            
+            
+        <div id="example1/">
+            
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><span>example1/</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
+            <td style='text-align:left'><span>Example Process Run Crate</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><span>Dataset</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">conformsTo<span>&nbsp;</span><a href="http://purl.org/dc/terms/conformsTo">[?]</a></th>
+            <td style='text-align:left'><ul>
+                        <li><a href="https://w3id.org/ro/crate">https://w3id.org/ro/crate</a></li>
+                        
+                        <li><a href="#https%3A//w3id.org/ro/wfrun/process/0.5-DRAFT">Process Run Crate profile</a></li>
+                        </ul></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">subjectOf<span>&nbsp;</span><a href="http://schema.org/subjectOf">[?]</a></th>
+            <td style='text-align:left'><a href="#example1/ro-crate-metadata.json">example1/ro-crate-metadata.json</a></td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
+            <td style='text-align:left'><a href="#https%3A//w3id.org/ro/wfrun/process/0.5-DRAFT">Process Run Crate profile</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">hasArtifact<span>&nbsp;</span><a href="http://www.w3.org/ns/dx/prof/hasArtifact">[?]</a></th>
+            <td style='text-align:left'><a href="#%23hasExample">#hasExample</a></td>
             </tr></tbody>
             </table>
         </div>
@@ -2488,6 +2572,36 @@ table.table {
             </tr><tr>
             <th style="text-align:left;" class="prop">hasArtifact<span>&nbsp;</span><a href="http://www.w3.org/ns/dx/prof/hasArtifact">[?]</a></th>
             <td style='text-align:left'><a href="#https%3A//gxy.io/GTN%3AT00343">Workflow Run RO-Crate Introduction</a></td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">hasResource<span>&nbsp;</span><a href="http://www.w3.org/ns/dx/prof/hasResource">[?]</a></th>
+            <td style='text-align:left'><a href="#https%3A//w3id.org/ro/wfrun/process/0.5-DRAFT">Process Run Crate profile</a></td>
+            </tr></tbody>
+            </table>
+        </div>
+
+        </div>
+        <hr/><br/><br/>
+           <div>
+            <h3> #hasExample</h3>
+            
+            
+            
+            
+        <div id="#hasExample">
+            
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><span>#hasExample</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><span>ResourceDescriptor</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">hasRole<span>&nbsp;</span><a href="http://www.w3.org/ns/dx/prof/hasRole">[?]</a></th>
+            <td style='text-align:left'><a href="http://www.w3.org/ns/dx/prof/role/example">http://www.w3.org/ns/dx/prof/role/example</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">hasArtifact<span>&nbsp;</span><a href="http://www.w3.org/ns/dx/prof/hasArtifact">[?]</a></th>
+            <td style='text-align:left'><a href="#example1/">Example Process Run Crate</a></td>
             </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
             <th style="text-align:left;" class="prop">hasResource<span>&nbsp;</span><a href="http://www.w3.org/ns/dx/prof/hasResource">[?]</a></th>
             <td style='text-align:left'><a href="#https%3A//w3id.org/ro/wfrun/process/0.5-DRAFT">Process Run Crate profile</a></td>

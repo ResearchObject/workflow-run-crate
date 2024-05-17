@@ -34,6 +34,7 @@
     ],
     "hasPart": [
         { "@id": "index.html" },
+        { "@id": "example1/" },
         { "@id": "https://w3id.org/ro/terms/workflow-run#" },
         { "@id": "https://w3id.org/ro/terms/workflow-run" },
         { "@id": "https://gxy.io/GTN:T00343" },
@@ -68,7 +69,8 @@
         { "@id": "#hasSpecification" },
         { "@id": "#hasConstraints" },
         { "@id": "#hasVocabulary" },
-        { "@id": "#hasGuidance" }
+        { "@id": "#hasGuidance" },
+        { "@id": "#hasExample" }
     ],
     "citation": { "@id": "https://doi.org/10.48550/arXiv.2312.07852" }    
   },
@@ -139,6 +141,21 @@
     "name": "Process Run Crate requirements"
   },
   {
+    "@id": "example1/",
+    "@type": "Dataset",
+    "name": "Example Process Run Crate",
+    "conformsTo": [
+      { "@id": "https://w3id.org/ro/crate"},
+      { "@id": "https://w3id.org/ro/wfrun/process/0.5-DRAFT" }
+    ], 
+    "subjectOf": { "@id": "example1/ro-crate-metadata.json" }
+  },
+  {
+    "@id": "example1/ro-crate-metadata.json",
+    "@type": "CreativeWork",
+    "encodingFormat": "application/ld+json"
+  },
+  {
     "@id": "https://w3id.org/ro/terms/workflow-run",
     "@type": "File",
     "name": "JSON-LD context for workflow-run terms",
@@ -182,6 +199,12 @@
     "@type": "ResourceDescriptor",
     "hasRole": { "@id": "http://www.w3.org/ns/dx/prof/role/guidance" },
     "hasArtifact": {"@id": "https://gxy.io/GTN:T00343"}
+  },
+  { 
+    "@id": "#hasExample",
+    "@type": "ResourceDescriptor",
+    "hasRole": { "@id": "http://www.w3.org/ns/dx/prof/role/example" },
+    "hasArtifact": { "@id": "example1/" }
   },
   { 
     "@id": "https://gxy.io/GTN:T00343",
