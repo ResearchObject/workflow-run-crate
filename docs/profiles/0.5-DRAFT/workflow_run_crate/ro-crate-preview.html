@@ -141,6 +141,9 @@
         },
         {
           "@id": "#shouldConformToProcessCrateProfile"
+        },
+        {
+          "@id": "#hasExample"
         }
       ],
       "citation": {
@@ -508,6 +511,16 @@
       }
     },
     {
+      "@id": "#hasExample",
+      "@type": "ResourceDescriptor",
+      "hasRole": {
+        "@id": "http://www.w3.org/ns/dx/prof/role/example"
+      },
+      "hasArtifact": {
+        "@id": "example2/"
+      }
+    },
+    {
       "@id": "https://doi.org/10.48550/arXiv.2312.07852",
       "@type": "ScholarlyArticle",
       "name": "Recording provenance of workflow runs with RO-Crate",
@@ -770,6 +783,43 @@
       "name": "Workflow Run Crate requirements"
     },
     {
+      "@id": "example2/",
+      "@type": "Dataset",
+      "name": "Example Workflow Run Crate",
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate"
+        },
+        {
+          "@id": "https://w3id.org/ro/wfrun/process/0.4"
+        },
+        {
+          "@id": "https://w3id.org/ro/wfrun/workflow/0.4"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ],
+      "subjectOf": [
+        {
+          "@id": "example2/ro-crate-metadata.json"
+        },
+        {
+          "@id": "example1/ro-crate-preview.html"
+        }
+      ]
+    },
+    {
+      "@id": "example2/ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "encodingFormat": "application/ld+json"
+    },
+    {
+      "@id": "example2/ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "encodingFormat": "text/html"
+    },
+    {
       "@id": "https://creativecommons.org/publicdomain/zero/1.0/",
       "@type": "CreativeWork",
       "identifier": {
@@ -958,6 +1008,8 @@ table.table {
                         <li><a href="#%23shouldConformToWorkflowROCrate">SHOULD conform to Workflow RO-Crate profile</a></li>
                         
                         <li><a href="#%23shouldConformToProcessCrateProfile">SHOULD conform to Process Crate profile</a></li>
+                        
+                        <li><a href="#%23hasExample">#hasExample</a></li>
                         </ul></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">citation<span>&nbsp;</span><a href="http://schema.org/citation">[?]</a></th>
@@ -1320,6 +1372,9 @@ table.table {
             </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
             <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
             <td style='text-align:left'><a href="#https%3A//w3id.org/ro/wfrun/workflow/0.5-DRAFT">Workflow Run Crate profile</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">conformsTo<span>&nbsp;</span><a href="http://purl.org/dc/terms/conformsTo">[?]</a></th>
+            <td style='text-align:left'><a href="#example2/">Example Workflow Run Crate</a></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">hasArtifact<span>&nbsp;</span><a href="http://www.w3.org/ns/dx/prof/hasArtifact">[?]</a></th>
             <td style='text-align:left'><a href="#%23shouldConformToWorkflowROCrate">SHOULD conform to Workflow RO-Crate profile</a></td>
@@ -2038,6 +2093,36 @@ table.table {
             </tr><tr>
             <th style="text-align:left;" class="prop">hasArtifact<span>&nbsp;</span><a href="http://www.w3.org/ns/dx/prof/hasArtifact">[?]</a></th>
             <td style='text-align:left'><a href="#https%3A//w3id.org/ro/wfrun/process/0.5-DRAFT">Process Run Crate profile</a></td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">hasResource<span>&nbsp;</span><a href="http://www.w3.org/ns/dx/prof/hasResource">[?]</a></th>
+            <td style='text-align:left'><a href="#https%3A//w3id.org/ro/wfrun/workflow/0.5-DRAFT">Workflow Run Crate profile</a></td>
+            </tr></tbody>
+            </table>
+        </div>
+
+        </div>
+        <hr/><br/><br/>
+           <div>
+            <h3> #hasExample</h3>
+            
+            
+            
+            
+        <div id="#hasExample">
+            
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><span>#hasExample</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><span>ResourceDescriptor</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">hasRole<span>&nbsp;</span><a href="http://www.w3.org/ns/dx/prof/hasRole">[?]</a></th>
+            <td style='text-align:left'><a href="http://www.w3.org/ns/dx/prof/role/example">http://www.w3.org/ns/dx/prof/role/example</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">hasArtifact<span>&nbsp;</span><a href="http://www.w3.org/ns/dx/prof/hasArtifact">[?]</a></th>
+            <td style='text-align:left'><a href="#example2/">Example Workflow Run Crate</a></td>
             </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
             <th style="text-align:left;" class="prop">hasResource<span>&nbsp;</span><a href="http://www.w3.org/ns/dx/prof/hasResource">[?]</a></th>
             <td style='text-align:left'><a href="#https%3A//w3id.org/ro/wfrun/workflow/0.5-DRAFT">Workflow Run Crate profile</a></td>

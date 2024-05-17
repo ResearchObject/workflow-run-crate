@@ -9,6 +9,7 @@ title: Workflow Run Crate
 * Permalink: <https://w3id.org/ro/wfrun/workflow/0.5-DRAFT>
 * Authors: [Workflow Run RO-Crate working group](https://www.researchobject.org/workflow-run-crate/#community)
 * License: [Apache License, version 2.0](https://www.apache.org/licenses/LICENSE-2.0) (SPDX: [`Apache-2.0`](http://spdx.org/licenses/Apache-2.0))
+* Example conforming crate: [ro-crate-metadata.json](example2/ro-crate-metadata.json) [ro-crate-preview.html](example2/ro-crate-preview.html)
 * Profile Crate: [ro-crate-metadata.json](ro-crate-metadata.json) [ro-crate-preview.html](ro-crate-preview.html)
 * Extends:
   - [Process Run Crate](https://w3id.org/ro/wfrun/process/0.5-DRAFT)
@@ -37,6 +38,11 @@ The following diagram shows the relationships between provenance-related entitie
 
 
 ## Example Metadata File (`ro-crate-metadata.json`)
+
+* [ro-crate-metadata.json](example2/ro-crate-metadata.json)
+* [ro-crate-preview.html](example2/ro-crate-preview.html)
+
+<!-- Remember to update above as well as below! -->
 
 ```json
 { "@context": "https://w3id.org/ro/crate/1.1/context",
