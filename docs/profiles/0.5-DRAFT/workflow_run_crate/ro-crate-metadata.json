@@ -178,7 +178,7 @@
     ], 
     "subjectOf": [
       { "@id": "example2/ro-crate-metadata.json" },
-      { "@id": "example1/ro-crate-preview.html" }
+      { "@id": "example2/ro-crate-preview.html" }
     ]
   },
   {
