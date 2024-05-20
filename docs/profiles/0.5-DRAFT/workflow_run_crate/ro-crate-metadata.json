@@ -351,7 +351,7 @@
   {
     "@id": "https://w3id.org/ro/terms/workflow-run#",
     "@type": "DefinedTermSet",
-    "name": "Namespace for Common Provenance Model RO-Crate model"
+    "name": "Namespace for Workflow Run RO-Crate model"
   },
   {
     "@id": "https://pypi.org/project/runcrate/",
