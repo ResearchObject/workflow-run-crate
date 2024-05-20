@@ -242,6 +242,14 @@ prov:hadPlan rdf:type owl:ObjectProperty ;
              rdfs:label "prov:hadPlan"@en-gb .
 
 
+###  http://www.w3.org/ns/prov#qualifiedAssociation
+prov:qualifiedAssociation rdf:type owl:ObjectProperty ;
+                          rdfs:subPropertyOf owl:topObjectProperty ;
+                          rdfs:domain prov:Activity ,
+                                      prov:Association ;
+                          rdfs:label "prov:qualifiedAssociation"@en-gb .
+
+
 ###  http://www.w3.org/ns/prov#used
 prov:used rdf:type owl:ObjectProperty ;
           rdfs:domain prov:Activity ;
@@ -329,6 +337,23 @@ wrroc:targetParameter rdf:type owl:ObjectProperty ;
                       rdfs:domain wrroc:ParameterConnection ;
                       rdfs:range bioschemas:FormalParameter ;
                       rdfs:label "wrroc:targetParameter"@en-gb .
+
+
+###  https://w3id.org/ro/wfrun/ontology#software
+:software rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf s:instrument ;
+          rdf:type owl:FunctionalProperty ;
+          owl:propertyChainAxiom ( prov:qualifiedAssociation
+                                   prov:hadPlan
+                                 ) ;
+          rdfs:label "software"@en-gb .
+
+
+###  https://w3id.org/ro/wfrun/ontology#workflow
+:workflow rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf :software ;
+          rdfs:range bioschemas:ComputationalWorkflow ;
+          rdfs:label "workflow"@en-gb .
 
 
 #################################################################
@@ -890,7 +915,11 @@ wrroc:SIFImage rdf:type owl:Class ;
                                                            ) ;
                                         rdf:type owl:Class
                                       ] ;
-                  rdfs:subClassOf s:Action ;
+                  rdfs:subClassOf s:Action ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty s:instrument ;
+                                    owl:cardinality "1"^^xsd:nonNegativeInteger
+                                  ] ;
                   rdfs:label "ProcessRunAction"@en-gb .
 
 
@@ -1108,8 +1137,8 @@ s:defaultValue rdfs:isDefinedBy <https://schema.org/version/latest/schemaorg-cur
                rdfs:label "s:defaultValue"@en-gb .
 
 
-s:encodingFormat rdfs:label "s:encodingFormat"@en-gb ;
-                 rdfs:isDefinedBy <https://schema.org/version/latest/schemaorg-current-http.ttl> .
+s:encodingFormat rdfs:isDefinedBy <https://schema.org/version/latest/schemaorg-current-http.ttl> ;
+                 rdfs:label "s:encodingFormat"@en-gb .
 
 
 s:identifier rdfs:isDefinedBy <https://schema.org/version/latest/schemaorg-current-http.ttl> ;
