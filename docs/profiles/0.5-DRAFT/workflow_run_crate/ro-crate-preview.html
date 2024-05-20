@@ -54,6 +54,9 @@
           "@id": "example2/"
         },
         {
+          "@id": "https://www.researchobject.org/workflow-run-crate-paper/mapping/"
+        },
+        {
           "@id": "https://w3id.org/ro/terms/workflow-run"
         },
         {
@@ -141,6 +144,9 @@
         },
         {
           "@id": "#hasExample"
+        },
+        {
+          "@id": "#hasMappingToProv"
         },
         {
           "@id": "#shouldConformToWorkflowROCrate"
@@ -338,6 +344,14 @@
       ]
     },
     {
+      "@id": "https://www.researchobject.org/workflow-run-crate-paper/mapping/",
+      "@type": "Dataset",
+      "name": "SSSOM mapping from PROV to Workflow Run Crate",
+      "isPartOf": {
+        "@id": "https://w3id.org/ro/doi/10.5281/zenodo.10368989"
+      }
+    },
+    {
       "@id": "https://w3id.org/ro/terms/workflow-run",
       "@type": "File",
       "name": "JSON-LD context for workflow-run terms",
@@ -526,6 +540,16 @@
       },
       "hasArtifact": {
         "@id": "example2/"
+      }
+    },
+    {
+      "@id": "#hasMappingToProv",
+      "@type": "ResourceDescriptor",
+      "hasRole": {
+        "@id": "http://www.w3.org/ns/dx/prof/role/mapping"
+      },
+      "hasArtifact": {
+        "@id": "https://www.researchobject.org/workflow-run-crate-paper/mapping/"
       }
     },
     {
@@ -832,6 +856,32 @@
       "version": "1.0"
     },
     {
+      "@id": "https://w3id.org/ro/doi/10.5281/zenodo.10368989",
+      "@type": "Dataset",
+      "name": "Recording provenance of workflow runs with RO-Crate (RO-Crate and mapping)",
+      "conformsTo": {
+        "@id": "https://w3id.org/ro/crate"
+      },
+      "subjectOf": [
+        {
+          "@id": "https://www.researchobject.org/workflow-run-crate-paper/ro-crate-metadata.jsonld"
+        },
+        {
+          "@id": "https://www.researchobject.org/workflow-run-crate-paper/ro-crate-preview.html"
+        }
+      ]
+    },
+    {
+      "@id": "https://www.researchobject.org/workflow-run-crate-paper/ro-crate-metadata.jsonld",
+      "@type": "CreativeWork",
+      "encodingFormat": "application/ld+json"
+    },
+    {
+      "@id": "https://www.researchobject.org/workflow-run-crate-paper/ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "encodingFormat": "text/html"
+    },
+    {
       "@id": "https://orcid.org/0000-0002-4663-5613",
       "@type": "Person",
       "name": "Luca Pireddu"
@@ -951,6 +1001,8 @@ table.table {
                         
                         <li><a href="#example2/">Example Workflow Run Crate</a></li>
                         
+                        <li><a href="#https%3A//www.researchobject.org/workflow-run-crate-paper/mapping/">SSSOM mapping from PROV to Workflow Run Crate</a></li>
+                        
                         <li><a href="#https%3A//w3id.org/ro/terms/workflow-run">JSON-LD context for workflow-run terms</a></li>
                         
                         <li><a href="#https%3A//gxy.io/GTN%3AT00343">Workflow Run RO-Crate Introduction</a></li>
@@ -1011,6 +1063,8 @@ table.table {
                         <li><a href="#%23hasGuidance">#hasGuidance</a></li>
                         
                         <li><a href="#%23hasExample">#hasExample</a></li>
+                        
+                        <li><a href="#%23hasMappingToProv">#hasMappingToProv</a></li>
                         
                         <li><a href="#%23shouldConformToWorkflowROCrate">SHOULD conform to Workflow RO-Crate profile</a></li>
                         
@@ -1249,6 +1303,39 @@ table.table {
             </tr><tr>
             <th style="text-align:left;" class="prop">hasArtifact<span>&nbsp;</span><a href="http://www.w3.org/ns/dx/prof/hasArtifact">[?]</a></th>
             <td style='text-align:left'><a href="#%23hasExample">#hasExample</a></td>
+            </tr></tbody>
+            </table>
+        </div>
+
+        </div>
+        <hr/><br/><br/>
+           <div>
+            <h3><a href="https://www.researchobject.org/workflow-run-crate-paper/mapping/">Go to: </a> SSSOM mapping from PROV to Workflow Run Crate</h3>
+            
+            
+            
+            
+        <div id="https://www.researchobject.org/workflow-run-crate-paper/mapping/">
+            
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><a href="https://www.researchobject.org/workflow-run-crate-paper/mapping/">https://www.researchobject.org/workflow-run-crate-paper/mapping/</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
+            <td style='text-align:left'><span>SSSOM mapping from PROV to Workflow Run Crate</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><span>Dataset</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">isPartOf<span>&nbsp;</span><a href="http://schema.org/isPartOf">[?]</a></th>
+            <td style='text-align:left'><a href="#https%3A//w3id.org/ro/doi/10.5281/zenodo.10368989">Recording provenance of workflow runs with RO-Crate (RO-Crate and mapping)</a></td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
+            <td style='text-align:left'><a href="#https%3A//w3id.org/ro/wfrun/workflow/0.5-DRAFT">Workflow Run Crate profile</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">hasArtifact<span>&nbsp;</span><a href="http://www.w3.org/ns/dx/prof/hasArtifact">[?]</a></th>
+            <td style='text-align:left'><a href="#%23hasMappingToProv">#hasMappingToProv</a></td>
             </tr></tbody>
             </table>
         </div>
@@ -2110,6 +2197,36 @@ table.table {
             </tr><tr>
             <th style="text-align:left;" class="prop">hasArtifact<span>&nbsp;</span><a href="http://www.w3.org/ns/dx/prof/hasArtifact">[?]</a></th>
             <td style='text-align:left'><a href="#example2/">Example Workflow Run Crate</a></td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">hasResource<span>&nbsp;</span><a href="http://www.w3.org/ns/dx/prof/hasResource">[?]</a></th>
+            <td style='text-align:left'><a href="#https%3A//w3id.org/ro/wfrun/workflow/0.5-DRAFT">Workflow Run Crate profile</a></td>
+            </tr></tbody>
+            </table>
+        </div>
+
+        </div>
+        <hr/><br/><br/>
+           <div>
+            <h3> #hasMappingToProv</h3>
+            
+            
+            
+            
+        <div id="#hasMappingToProv">
+            
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><span>#hasMappingToProv</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><span>ResourceDescriptor</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">hasRole<span>&nbsp;</span><a href="http://www.w3.org/ns/dx/prof/hasRole">[?]</a></th>
+            <td style='text-align:left'><a href="http://www.w3.org/ns/dx/prof/role/mapping">http://www.w3.org/ns/dx/prof/role/mapping</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">hasArtifact<span>&nbsp;</span><a href="http://www.w3.org/ns/dx/prof/hasArtifact">[?]</a></th>
+            <td style='text-align:left'><a href="#https%3A//www.researchobject.org/workflow-run-crate-paper/mapping/">SSSOM mapping from PROV to Workflow Run Crate</a></td>
             </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
             <th style="text-align:left;" class="prop">hasResource<span>&nbsp;</span><a href="http://www.w3.org/ns/dx/prof/hasResource">[?]</a></th>
             <td style='text-align:left'><a href="#https%3A//w3id.org/ro/wfrun/workflow/0.5-DRAFT">Workflow Run Crate profile</a></td>

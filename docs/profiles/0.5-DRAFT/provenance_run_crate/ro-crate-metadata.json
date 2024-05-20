@@ -35,6 +35,7 @@
     "hasPart": [
         { "@id": "index.html" },
         { "@id": "example3/" },
+        { "@id": "https://www.researchobject.org/workflow-run-crate-paper/mapping/"},
         { "@id": "https://w3id.org/ro/terms/workflow-run#" },
         { "@id": "https://w3id.org/ro/terms/workflow-run" },
         { "@id": "https://gxy.io/GTN:T00343" },
@@ -53,6 +54,7 @@
         { "@id": "#hasVocabulary" },
         { "@id": "#hasGuidance" },
         { "@id": "#hasExample" },
+        { "@id": "#hasMappingToProv" },
         { "@id": "#shouldConformToWorkflowROCrate" },
         { "@id": "#shouldConformToProcessCrateProfile" },
         { "@id": "#shouldConformToWorkflowCrateProfile" }     
@@ -220,7 +222,40 @@
     "hasRole": { "@id": "http://www.w3.org/ns/dx/prof/role/example" },
     "hasArtifact": { "@id": "example3/" }
   },
-
+  {
+    "@id": "#hasMappingToProv",
+    "@type": "ResourceDescriptor",
+    "hasRole": { "@id": "http://www.w3.org/ns/dx/prof/role/mapping" },
+    "hasArtifact": { "@id": "https://www.researchobject.org/workflow-run-crate-paper/mapping/" }
+  },
+  { 
+    "@id": "https://www.researchobject.org/workflow-run-crate-paper/mapping/",
+    "@type": "Dataset",
+    "name": "SSSOM mapping from PROV to Workflow Run Crate",
+    "isPartOf": { 
+      "@id": "https://w3id.org/ro/doi/10.5281/zenodo.10368989"
+    }
+  },
+  {
+    "@id": "https://w3id.org/ro/doi/10.5281/zenodo.10368989",
+    "@type": "Dataset",
+    "name": "Recording provenance of workflow runs with RO-Crate (RO-Crate and mapping)",
+    "conformsTo": { "@id": "https://w3id.org/ro/crate" },
+    "subjectOf": [
+      { "@id": "https://www.researchobject.org/workflow-run-crate-paper/ro-crate-metadata.jsonld" },
+      { "@id": "https://www.researchobject.org/workflow-run-crate-paper/ro-crate-preview.html" }
+    ]
+  },
+  {
+    "@id": "https://www.researchobject.org/workflow-run-crate-paper/ro-crate-metadata.jsonld",
+    "@type": "CreativeWork",
+    "encodingFormat": "application/ld+json"
+  },
+  {
+    "@id": "https://www.researchobject.org/workflow-run-crate-paper/ro-crate-preview.html",
+    "@type": "CreativeWork",
+    "encodingFormat": "text/html"
+  },
   { 
     "@id": "#shouldConformToWorkflowROCrate",
     "@type": "ResourceDescriptor",
