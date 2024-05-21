@@ -1,0 +1,456 @@
+{
+    "@context": [
+        "https://w3id.org/ro/crate/1.1/context",
+        {
+            "ParameterConnection": "https://w3id.org/ro/terms/workflow-run#ParameterConnection",
+            "ContainerImage": "https://w3id.org/ro/terms/workflow-run#ContainerImage",
+            "DockerImage": "https://w3id.org/ro/terms/workflow-run#DockerImage",
+            "SIFImage": "https://w3id.org/ro/terms/workflow-run#SIFImage",
+            "connection": "https://w3id.org/ro/terms/workflow-run#connection",
+            "sourceParameter": "https://w3id.org/ro/terms/workflow-run#sourceParameter",
+            "targetParameter": "https://w3id.org/ro/terms/workflow-run#targetParameter",
+            "md5": "https://w3id.org/ro/terms/workflow-run#md5",
+            "sha1": "https://w3id.org/ro/terms/workflow-run#sha1",
+            "sha256": "https://w3id.org/ro/terms/workflow-run#sha256",
+            "sha512": "https://w3id.org/ro/terms/workflow-run#sha512",
+            "environment": "https://w3id.org/ro/terms/workflow-run#environment",
+            "registry": "https://w3id.org/ro/terms/workflow-run#registry",
+            "tag": "https://w3id.org/ro/terms/workflow-run#tag",
+            "containerImage": "https://w3id.org/ro/terms/workflow-run#containerImage",
+
+	    "input": "https://bioschemas.org/properties/input",
+	    "output": "https://bioschemas.org/properties/output",
+            "wfrun": "https://w3id.org/ro/terms/workflow-run#",
+            "owl": "http://www.w3.org/2002/07/owl#",
+            "vann": "http://purl.org/vocab/vann/"
+        }
+    ],
+    "@graph": [
+        {
+            "@id": "wfrun:registry",
+            "rdfs:comment": {
+                "@language": "en-gb",
+                "@value": "A service to register software products, such as container images"
+            },
+            "rdfs:label": {
+                "@language": "en-gb",
+                "@value": "registry"
+            },
+            "rdfs:isDefinedBy": {
+                "@id": "https://w3id.org/ro/terms/workflow-run#"
+            },
+            "domainIncludes": {
+                "@id": "wfrun:ContainerImage"
+            },
+            "@type": "rdf:Property"
+        },
+        {
+            "@id": "https://w3id.org/ro/terms/workflow-run#",
+            "hasDefinedTerm": [
+                {
+                    "@id": "wfrun:sha256"
+                },
+                {
+                    "@id": "wfrun:SIFImage"
+                },
+                {
+                    "@id": "wfrun:tag"
+                },
+                {
+                    "@id": "wfrun:sourceParameter"
+                },
+                {
+                    "@id": "wfrun:environment"
+                },
+                {
+                    "@id": "wfrun:containerImage"
+                },
+                {
+                    "@id": "wfrun:md5"
+                },
+                {
+                    "@id": "wfrun:DockerImage"
+                },
+                {
+                    "@id": "wfrun:connection"
+                },
+                {
+                    "@id": "wfrun:ContainerImage"
+                },
+                {
+                    "@id": "wfrun:ParameterConnection"
+                },
+                {
+                    "@id": "wfrun:sha512"
+                },
+                {
+                    "@id": "wfrun:sha1"
+                },
+                {
+                    "@id": "wfrun:targetParameter"
+                },
+                {
+                    "@id": "wfrun:registry"
+                }
+            ],
+            "@type": [
+                "owl:Ontology",
+                "DefinedTermSet"
+            ],
+            "dct:title": "Workflow Run Crate namespace",
+            "license": {
+                "@id": "http://spdx.org/licenses/Apache-2.0"
+            },
+            "vann:preferredNamespaceUri": "https://w3id.org/ro/terms/workflow-run#",
+            "dct:license": {
+                "@id": "http://spdx.org/licenses/Apache-2.0"
+            },
+            "description": "A Schema.org style Schema definitin of WRROC terms",
+            "vann:preferredNamespacePrefix": "wfrun",
+            "version": "0.5.0",
+            "dct:description": "A Schema.org style Schema definitin of WRROC terms",
+            "dct:creator": {
+                "@id": "https://researchobject.org/workflow-run-crate/"
+            },
+            "url": "https://www.researchobject.org/ro-terms/workflow-run/",
+            "name": "Workflow Run Crate namespace",
+            "creator": {
+                "@id": "https://researchobject.org/workflow-run-crate/"
+            }
+        },
+        {
+            "@id": "wfrun:ContainerImage",
+            "rdfs:comment": {
+                "@language": "en-gb",
+                "@value": "A containerisation software container image"
+            },
+            "rdfs:label": {
+                "@language": "en-gb",
+                "@value": "ContainerImage"
+            },
+            "rdfs:isDefinedBy": {
+                "@id": "https://w3id.org/ro/terms/workflow-run#"
+            },
+            "rdfs:subClassOf": {
+                "@id": "CreativeWork"
+            },
+            "@type": "rdfs:Class"
+        },
+        {
+            "@id": "https://researchobject.org/workflow-run-crate/",
+            "name": {
+                "@language": "en-gb",
+                "@value": "Workflow Run Crate task force"
+            },
+            "@type": [
+                "dct:Agent",
+                "Project"
+            ]
+        },
+        {
+            "@id": "wfrun:sha512",
+            "rdfs:comment": {
+                "@language": "en-gb",
+                "@value": "sha512 checksum as a hexadecimal string"
+            },
+            "rdfs:label": {
+                "@language": "en-gb",
+                "@value": "sha512"
+            },
+            "rdfs:isDefinedBy": {
+                "@id": "https://w3id.org/ro/terms/workflow-run#"
+            },
+            "rangeIncludes": {
+                "@id": "Text"
+            },
+            "domainIncludes": [
+                {
+                    "@id": "wfrun:ContainerImage"
+                },
+                {
+                    "@id": "MediaObject"
+                }
+            ],
+            "@type": "rdf:Property"
+        },
+        {
+            "@id": "wfrun:sha256",
+            "rdfs:comment": {
+                "@language": "en-gb",
+                "@value": "sha256 checksum as a hexadecimal string"
+            },
+            "rdfs:label": {
+                "@language": "en-gb",
+                "@value": "sha256"
+            },
+            "rdfs:isDefinedBy": {
+                "@id": "https://w3id.org/ro/terms/workflow-run#"
+            },
+            "rangeIncludes": {
+                "@id": "Text"
+            },
+            "domainIncludes": [
+                {
+                    "@id": "wfrun:ContainerImage"
+                },
+                {
+                    "@id": "MediaObject"
+                }
+            ],
+            "@type": "rdf:Property"
+        },
+        {
+            "@id": "wfrun:connection",
+            "rdfs:comment": {
+                "@language": "en-gb",
+                "@value": "A parameter connection created by this workflow"
+            },
+            "rdfs:label": {
+                "@language": "en-gb",
+                "@value": "connection"
+            },
+            "rdfs:isDefinedBy": {
+                "@id": "https://w3id.org/ro/terms/workflow-run#"
+            },
+            "rangeIncludes": {
+                "@id": "wfrun:ParameterConnection"
+            },
+            "domainIncludes": [
+                {
+                    "@id": "ComputationalWorkflow"
+                },
+                {
+                    "@id": "HowToStep"
+                }
+            ],
+            "@type": "rdf:Property"
+        },
+        {
+            "@id": "wfrun:ParameterConnection",
+            "rdfs:comment": {
+                "@language": "en-gb",
+                "@value": "A connection between parameters of different applications"
+            },
+            "rdfs:label": {
+                "@language": "en-gb",
+                "@value": "ParameterConnection"
+            },
+            "rdfs:isDefinedBy": {
+                "@id": "https://w3id.org/ro/terms/workflow-run#"
+            },
+            "rdfs:subClassOf": {
+                "@id": "Intangible"
+            },
+            "@type": "rdfs:Class"
+        },
+        {
+            "@id": "wfrun:SIFImage",
+            "rdfs:comment": {
+                "@language": "en-gb",
+                "@value": "A Singularity Image Format container image"
+            },
+            "rdfs:label": {
+                "@language": "en-gb",
+                "@value": "SIFImage"
+            },
+            "rdfs:isDefinedBy": {
+                "@id": "https://w3id.org/ro/terms/workflow-run#"
+            },
+            "rdfs:subClassOf": {
+                "@id": "wfrun:ContainerImage"
+            },
+            "@type": "rdfs:Class"
+        },
+        {
+            "@id": "wfrun:targetParameter",
+            "rdfs:comment": {
+                "@language": "en-gb",
+                "@value": "The target (downstream) parameter"
+            },
+            "rdfs:label": {
+                "@language": "en-gb",
+                "@value": "targetParameter"
+            },
+            "rdfs:isDefinedBy": {
+                "@id": "https://w3id.org/ro/terms/workflow-run#"
+            },
+            "rangeIncludes": {
+                "@id": "FormalParameter"
+            },
+            "domainIncludes": {
+                "@id": "wfrun:ParameterConnection"
+            },
+            "@type": "rdf:Property"
+        },
+        {
+            "@id": "wfrun:DockerImage",
+            "rdfs:comment": {
+                "@language": "en-gb",
+                "@value": "A Docker container image"
+            },
+            "rdfs:label": {
+                "@language": "en-gb",
+                "@value": "DockerImage"
+            },
+            "rdfs:isDefinedBy": {
+                "@id": "https://w3id.org/ro/terms/workflow-run#"
+            },
+            "rdfs:subClassOf": {
+                "@id": "wfrun:ContainerImage"
+            },
+            "@type": "rdfs:Class"
+        },
+        {
+            "@id": "wfrun:tag",
+            "rdfs:comment": {
+                "@language": "en-gb",
+                "@value": "A tag assigned to a software product, such as a container image"
+            },
+            "rdfs:label": {
+                "@language": "en-gb",
+                "@value": "tag"
+            },
+            "rdfs:isDefinedBy": {
+                "@id": "https://w3id.org/ro/terms/workflow-run#"
+            },
+            "rangeIncludes": {
+                "@id": "Text"
+            },
+            "domainIncludes": {
+                "@id": "wfrun:ContainerImage"
+            },
+            "@type": "rdf:Property"
+        },
+        {
+            "@id": "wfrun:sourceParameter",
+            "rdfs:comment": {
+                "@language": "en-gb",
+                "@value": "The source (upstream) parameter"
+            },
+            "rdfs:label": {
+                "@language": "en-gb",
+                "@value": "sourceParameter"
+            },
+            "rdfs:isDefinedBy": {
+                "@id": "https://w3id.org/ro/terms/workflow-run#"
+            },
+            "rangeIncludes": {
+                "@id": "FormalParameter"
+            },
+            "domainIncludes": {
+                "@id": "wfrun:ParameterConnection"
+            },
+            "@type": "rdf:Property"
+        },
+        {
+            "@id": "wfrun:environment",
+            "@type": "rdf:Property",
+            "domainIncludes": [
+                {
+                    "@id": "CreateAction"
+                },
+                {
+                    "@id": "SoftwareApplication"
+                },
+                {
+                    "@id": "ComputationalWorkflow"
+                },
+                {
+                    "@id": "SoftwareSourceCode"
+                }
+            ],
+            "rangeIncludes": [
+                {
+                    "@id": "FormalParameter"
+                },
+                {
+                    "@id": "PropertyValue"
+                }
+            ],
+            "rdfs:comment": {
+                "@language": "en-gb",
+                "@value": "Environment variables used by the application"
+            },
+            "rdfs:label": {
+                "@language": "en-gb",
+                "@value": "environment"
+            },
+            "rdfs:isDefinedBy": {
+                "@id": "https://w3id.org/ro/terms/workflow-run#"
+            }
+        },
+        {
+            "@id": "wfrun:containerImage",
+            "rdfs:comment": {
+                "@language": "en-gb",
+                "@value": "A container image associated with this entity"
+            },
+            "rdfs:label": {
+                "@language": "en-gb",
+                "@value": "containerImage"
+            },
+            "rdfs:isDefinedBy": {
+                "@id": "https://w3id.org/ro/terms/workflow-run#"
+            },
+            "rangeIncludes": {
+                "@id": "wfrun:ContainerImage"
+            },
+            "domainIncludes": {
+                "@id": "CreateAction"
+            },
+            "@type": "rdf:Property"
+        },
+        {
+            "@id": "wfrun:md5",
+            "rdfs:comment": {
+                "@language": "en-gb",
+                "@value": "md5 checksum as a hexadecimal string"
+            },
+            "rdfs:label": {
+                "@language": "en-gb",
+                "@value": "md5"
+            },
+            "rdfs:isDefinedBy": {
+                "@id": "https://w3id.org/ro/terms/workflow-run#"
+            },
+            "rangeIncludes": {
+                "@id": "Text"
+            },
+            "domainIncludes": [
+                {
+                    "@id": "wfrun:ContainerImage"
+                },
+                {
+                    "@id": "MediaObject"
+                }
+            ],
+            "@type": "rdf:Property"
+        },
+        {
+            "@id": "wfrun:sha1",
+            "rdfs:comment": {
+                "@language": "en-gb",
+                "@value": "sha1 checksum as a hexadecimal string"
+            },
+            "rdfs:label": {
+                "@language": "en-gb",
+                "@value": "sha1"
+            },
+            "rdfs:isDefinedBy": {
+                "@id": "https://w3id.org/ro/terms/workflow-run#"
+            },
+            "rangeIncludes": {
+                "@id": "Text"
+            },
+            "domainIncludes": [
+                {
+                    "@id": "wfrun:ContainerImage"
+                },
+                {
+                    "@id": "MediaObject"
+                }
+            ],
+            "@type": "rdf:Property"
+        }
+    ]
+}

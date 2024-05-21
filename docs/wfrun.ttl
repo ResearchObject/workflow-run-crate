@@ -4,7 +4,7 @@
 @prefix wfrun: <https://w3id.org/ro/terms/workflow-run#> .
 @prefix bioschemas: <https://bioschemas.org/> .
 @prefix vann: <http://purl.org/vocab/vann/> .
-@prefix dct: <http://purl.org/dc/terms/>
+@prefix dct: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 
 wfrun: a s:DefinedTermSet, owl:Ontology ; 
@@ -50,7 +50,7 @@ wfrun:connection rdf:type rdf:Property ;
 
 wfrun:containerImage rdf:type rdf:Property ;
                      s:domainIncludes s:CreateAction ;
-                     s:rangeIncludes :ContainerImage ;
+                     s:rangeIncludes wfrun:ContainerImage ;
                      rdfs:isDefinedBy wfrun: ;
                      rdfs:label "containerImage"@en-gb ;
                      rdfs:comment "A container image associated with this entity"@en-gb .
