@@ -1,0 +1,133 @@
+Building DAG of jobs...
+Pulling singularity image docker://ilveroluca/crypt4gh:1.5.
+Pulling singularity image docker://ilveroluca/fair-crcc-vips:0.1.1.
+Using shell: /usr/bin/bash
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Job stats:
+job                      count    min threads    max threads
+---------------------  -------  -------------  -------------
+all_encrypted_tiffs          1              1              1
+all_tiff_checksums           1              1              1
+compute_file_checksum        1              1              1
+crypt_file                   2              1              1
+slide_to_ometiff             1              2              2
+slide_to_thumbnail           1              1              1
+total                        7              1              2
+
+Select jobs to execute...
+
+[Fri Oct 27 16:08:25 2023]
+rule slide_to_ometiff:
+    input: /home/ubuntu/wf-prov/Biobank_CMB-PCA_v1/CMB-PCA/MSB-02917-01-02.svs
+    output: tiffs/CMB-PCA/MSB-02917-01-02.ome.tiff
+    log: logs/slide_to_ometiff/CMB-PCA/MSB-02917-01-02.log
+    jobid: 2
+    benchmark: bench/slide_to_ometiff/CMB-PCA/MSB-02917-01-02.bench
+    reason: Missing output files: tiffs/CMB-PCA/MSB-02917-01-02.ome.tiff
+    wildcards: slide=CMB-PCA/MSB-02917-01-02
+    threads: 2
+    resources: tmpdir=/tmp, mem_mb=2000
+
+
+[Fri Oct 27 16:08:25 2023]
+rule slide_to_thumbnail:
+    input: /home/ubuntu/wf-prov/Biobank_CMB-PCA_v1/CMB-PCA/MSB-02917-01-02.svs
+    output: tiffs/CMB-PCA/MSB-02917-01-02_thumb.jpg
+    log: logs/slide_to_thumbnail/CMB-PCA/MSB-02917-01-02_thumb.log
+    jobid: 4
+    benchmark: bench/slide_to_thumbnail/CMB-PCA/MSB-02917-01-02_thumb.bench
+    reason: Missing output files: tiffs/CMB-PCA/MSB-02917-01-02_thumb.jpg
+    wildcards: slide=CMB-PCA/MSB-02917-01-02
+    resources: tmpdir=/tmp, mem_mb=2000
+
+Activating singularity image /home/ubuntu/wf-prov/workspace/.snakemake/singularity/2280ebe8d3467cf9e3128b1b4d419d65.simg
+Activating singularity image /home/ubuntu/wf-prov/workspace/.snakemake/singularity/2280ebe8d3467cf9e3128b1b4d419d65.simg
+Write-protecting output file tiffs/CMB-PCA/MSB-02917-01-02_thumb.jpg.
+[Fri Oct 27 16:08:27 2023]
+Finished job 4.
+1 of 7 steps (14%) done
+Select jobs to execute...
+
+[Fri Oct 27 16:08:27 2023]
+rule crypt_file:
+    input: tiffs/CMB-PCA/MSB-02917-01-02_thumb.jpg
+    output: c4gh/CMB-PCA/MSB-02917-01-02_thumb.jpg.c4gh, c4gh/CMB-PCA/MSB-02917-01-02_thumb.jpg.c4gh.sha
+    log: logs/crypt_file/CMB-PCA/MSB-02917-01-02_thumb.jpg.log
+    jobid: 3
+    benchmark: bench/crypt_file/CMB-PCA/MSB-02917-01-02_thumb.jpg.bench
+    reason: Missing output files: c4gh/CMB-PCA/MSB-02917-01-02_thumb.jpg.c4gh; Input files updated by another job: tiffs/CMB-PCA/MSB-02917-01-02_thumb.jpg
+    wildcards: slide=CMB-PCA/MSB-02917-01-02_thumb.jpg
+    resources: tmpdir=/tmp, mem_mb=1024
+
+Activating singularity image /home/ubuntu/wf-prov/workspace/.snakemake/singularity/7e1f9ce8367d14156eb4fd2104c5a96e.simg
+Write-protecting output file c4gh/CMB-PCA/MSB-02917-01-02_thumb.jpg.c4gh.
+[Fri Oct 27 16:08:28 2023]
+Finished job 3.
+2 of 7 steps (29%) done
+Write-protecting output file tiffs/CMB-PCA/MSB-02917-01-02.ome.tiff.
+[Fri Oct 27 16:10:34 2023]
+Finished job 2.
+3 of 7 steps (43%) done
+Select jobs to execute...
+
+[Fri Oct 27 16:10:34 2023]
+rule crypt_file:
+    input: tiffs/CMB-PCA/MSB-02917-01-02.ome.tiff
+    output: c4gh/CMB-PCA/MSB-02917-01-02.ome.tiff.c4gh, c4gh/CMB-PCA/MSB-02917-01-02.ome.tiff.c4gh.sha
+    log: logs/crypt_file/CMB-PCA/MSB-02917-01-02.ome.tiff.log
+    jobid: 1
+    benchmark: bench/crypt_file/CMB-PCA/MSB-02917-01-02.ome.tiff.bench
+    reason: Missing output files: c4gh/CMB-PCA/MSB-02917-01-02.ome.tiff.c4gh.sha, c4gh/CMB-PCA/MSB-02917-01-02.ome.tiff.c4gh; Input files updated by another job: tiffs/CMB-PCA/MSB-02917-01-02.ome.tiff
+    wildcards: slide=CMB-PCA/MSB-02917-01-02.ome.tiff
+    resources: tmpdir=/tmp, mem_mb=1024
+
+Activating singularity image /home/ubuntu/wf-prov/workspace/.snakemake/singularity/7e1f9ce8367d14156eb4fd2104c5a96e.simg
+
+[Fri Oct 27 16:10:34 2023]
+rule compute_file_checksum:
+    input: tiffs/CMB-PCA/MSB-02917-01-02.ome.tiff
+    output: tiffs/CMB-PCA/MSB-02917-01-02.ome.tiff.sha
+    log: logs/compute_file_checksum/CMB-PCA/MSB-02917-01-02.ome.tiff.sha.log
+    jobid: 6
+    benchmark: bench/compute_file_checksum/CMB-PCA/MSB-02917-01-02.ome.tiff.sha.bench
+    reason: Missing output files: tiffs/CMB-PCA/MSB-02917-01-02.ome.tiff.sha; Input files updated by another job: tiffs/CMB-PCA/MSB-02917-01-02.ome.tiff
+    wildcards: slide=CMB-PCA/MSB-02917-01-02.ome
+    resources: tmpdir=/tmp, mem_mb=64
+
+Activating singularity image /home/ubuntu/wf-prov/workspace/.snakemake/singularity/7e1f9ce8367d14156eb4fd2104c5a96e.simg
+[Fri Oct 27 16:10:36 2023]
+Finished job 6.
+4 of 7 steps (57%) done
+Select jobs to execute...
+
+[Fri Oct 27 16:10:36 2023]
+rule all_tiff_checksums:
+    input: tiffs/CMB-PCA/MSB-02917-01-02.ome.tiff.sha
+    output: tiffs/tiff_checksums
+    log: logs/tiff_checksums.log
+    jobid: 5
+    reason: Missing output files: tiffs/tiff_checksums; Input files updated by another job: tiffs/CMB-PCA/MSB-02917-01-02.ome.tiff.sha
+    resources: tmpdir=/tmp, mem_mb=512
+
+Activating singularity image /home/ubuntu/wf-prov/workspace/.snakemake/singularity/7e1f9ce8367d14156eb4fd2104c5a96e.simg
+[Fri Oct 27 16:10:36 2023]
+Finished job 5.
+5 of 7 steps (71%) done
+Write-protecting output file c4gh/CMB-PCA/MSB-02917-01-02.ome.tiff.c4gh.
+[Fri Oct 27 16:10:38 2023]
+Finished job 1.
+6 of 7 steps (86%) done
+Select jobs to execute...
+
+[Fri Oct 27 16:10:38 2023]
+localrule all_encrypted_tiffs:
+    input: c4gh/CMB-PCA/MSB-02917-01-02.ome.tiff.c4gh, c4gh/CMB-PCA/MSB-02917-01-02.ome.tiff.c4gh.sha, c4gh/CMB-PCA/MSB-02917-01-02_thumb.jpg.c4gh, tiffs/tiff_checksums
+    jobid: 0
+    reason: Input files updated by another job: c4gh/CMB-PCA/MSB-02917-01-02_thumb.jpg.c4gh, tiffs/tiff_checksums, c4gh/CMB-PCA/MSB-02917-01-02.ome.tiff.c4gh.sha, c4gh/CMB-PCA/MSB-02917-01-02.ome.tiff.c4gh
+    resources: tmpdir=/tmp
+
+[Fri Oct 27 16:10:38 2023]
+Finished job 0.
+7 of 7 steps (100%) done
+Complete log: .snakemake/log/2023-10-27T160820.872758.snakemake.log

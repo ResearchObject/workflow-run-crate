@@ -5,8 +5,8 @@ title: Process Run Crate
 
 # Process Run Crate
 
-* Version: 0.4-DRAFT
-* Permalink: <https://w3id.org/ro/wfrun/process/0.4-DRAFT>
+* Version: 0.4
+* Permalink: <https://w3id.org/ro/wfrun/process/0.4>
 * Authors: Workflow Run RO-Crate working group
 
 This profile uses terminology from the [RO-Crate 1.1 specification](https://w3id.org/ro/crate/1.1), and [extends it](https://www.researchobject.org/ro-crate/1.1/appendix/jsonld.html#extending-ro-crate) with additional terms from the [workflow-run](https://github.com/ResearchObject/ro-terms/tree/master/workflow-run) ro-terms namespace.
@@ -464,5 +464,26 @@ Alternatively, the `containerImage` could point to a `URL`. For instance:
     "instrument": {"@id": "bam2fastq.cwl"},
     ...
     "containerImage": "https://example.com/samtools.sif"
+}
+```
+
+
+## Specifying software dependencies
+
+Software dependencies MAY be specified using `softwareRequirements` to a `SoftwareApplication`:
+
+```json
+{
+    "@id": "script.py",
+    "@type": "SoftwareApplication",
+    "name": "Analysis Script",
+    "version": "0.1",
+    "softwareRequirements": {"@id": "https://pypi.org/project/numpy/1.26.2/"}
+},
+{
+    "@id": "https://pypi.org/project/numpy/1.26.2/",
+    "@type": "SoftwareApplication",
+    "name": "NumPy",
+    "version": "1.26.2"
 }
 ```

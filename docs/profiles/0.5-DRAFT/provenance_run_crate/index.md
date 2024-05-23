@@ -5,9 +5,16 @@ title: Provenance Run Crate
 
 # Provenance Run Crate
 
-* Version: 0.4-DRAFT
-* Permalink: <https://w3id.org/ro/wfrun/provenance/0.4-DRAFT>
-* Authors: Workflow Run RO-Crate working group
+* Version: 0.5-DRAFT
+* Permalink: <https://w3id.org/ro/wfrun/provenance/0.5-DRAFT>
+* Authors: [Workflow Run RO-Crate working group](https://www.researchobject.org/workflow-run-crate/#community)
+* License: [Apache License, version 2.0](https://www.apache.org/licenses/LICENSE-2.0) (SPDX: [`Apache-2.0`](http://spdx.org/licenses/Apache-2.0))
+* Example conforming crate: [ro-crate-metadata.json](example3/ro-crate-metadata.json) [ro-crate-preview.html](example3/ro-crate-preview.html)
+* Profile Crate: [ro-crate-metadata.json](ro-crate-metadata.json) [ro-crate-preview.html](ro-crate-preview.html)
+* Extends:
+  - [Workflow Run Crate](https://w3id.org/ro/wfrun/workflow/0.5-DRAFT)
+* JSON-LD context: <https://w3id.org/ro/terms/workflow-run>
+* Vocabulary terms:  <https://w3id.org/ro/terms/workflow-run#>
 
 This profile uses terminology from the [RO-Crate 1.1 specification](https://w3id.org/ro/crate/1.1), and [extends it](https://www.researchobject.org/ro-crate/1.1/appendix/jsonld.html#extending-ro-crate) with additional terms from the [workflow-run](https://github.com/ResearchObject/ro-terms/tree/master/workflow-run) ro-terms namespace.
 
@@ -26,10 +33,16 @@ The tool that implements a step can in turn be a workflow (*nested workflow* or 
 
 The following diagram shows the relationships between all provenance-related entities. Note the distinction between *prospective* provenance (plans for activities, e.g. a workflow) and *retrospective* provenance (what actually happened, e.g. the execution of a workflow).
 
-<img alt="Entity-relationship diagram" src="img/er_diagram_provenance.svg" width="920" />
+<img alt="Entity-relationship diagram" src="../img/er_diagram_provenance.svg" width="920" />
 
 
 ## Example Metadata File (`ro-crate-metadata.json`)
+
+* [ro-crate-metadata.json](example3/ro-crate-metadata.json)
+* [ro-crate-preview.html](example3/ro-crate-preview.html)
+
+<!-- Remember to update above as well as below! -->
+
 
 ```json
 { "@context": "https://w3id.org/ro/crate/1.1/context",
@@ -329,7 +342,7 @@ The following diagram shows the relationships between all provenance-related ent
 
 In most workflows, the outputs of one or more steps are needed as input for subsequent steps: this creates a *connection* between the corresponding parameters of the tools that implement those steps. For instance, consider the "revsort" workflow represented in the above example:
 
-<p align="center"><img alt="revsort workflow diagram" src="img/revsort.svg" width="207" /></p>
+<p align="center"><img alt="revsort workflow diagram" src="../img/revsort.svg" width="207" /></p>
 
 In this workflow, the output of the `rev` step is used as input by the `sorted` step, creating a connection between the `output` parameter of `revtool.cwl` and the `input` parameter of `sorttool.cwl`. A connection can also occur between tool parameters and workflow parameters: looking again at the above example, the `reverse_sort` workflow parameter is connected to the `reverse` parameter of `sorttool.cwl`.
 
@@ -426,6 +439,77 @@ A workflow engine may support configuration through a configuration file. In thi
 See also the [section on referencing configuration files of executed tools](process_run_crate#referencing-configuration-files).
 
 
+## Tool wrapper dependencies
+
+In some workflow systems (e.g., CWL, Galaxy), tools are typically wrappers for an executable written in a scripting programming language. This MAY be represented by listing the wrapped tool and its dependencies as described in [Specifying software dependencies](process_run_crate#specifying-software-dependencies). The wrapped tool can be highlighted by using `mainEntity`:
+
+```json
+{
+    "@id": "data_analysis_tool.cwl",
+    "@type": "SoftwareApplication",
+    "softwareRequirements": [
+        {"@id": "scripts/data_analysis_script.py"},
+        {"@id": "https://pypi.org/project/numpy/1.26.2/"}
+    ],
+    "mainEntity": {"@id": "scripts/data_analysis_script.py"}
+},
+{
+    "@id": "scripts/data_analysis_script.py",
+    "@type": "SoftwareApplication",
+    "version": "0.1"
+},
+{
+    "@id": "https://pypi.org/project/numpy/1.26.2/",
+    "@type": "SoftwareApplication",
+    "name": "NumPy",
+    "version": "1.26.2"
+}
+```
+
+
+## Conditional step execution
+
+Some workflow languages provide a mechanism to execute a step only when some condition is verified. An example of this is the [when](https://www.commonwl.org/v1.2/Workflow.html#Conditional_execution_(Optional)) clause in CWL. If an execution of a step is skipped in this way, the corresponding action SHOULD NOT be included in the RO-Crate metadata, while the step itself and the tool it executes MAY be represented.
+
+
+## Representing resource usage
+
+It can often be desirable to have information on the resources used in the course of the execution: how much memory, CPU, etc. One obvious use for such information is as estimate of the amount of resources that will be needed for future runs. Representing resource usage for a tool run is OPTIONAL; if represented, it MUST link the corresponding [CreateAction](http://schema.org/CreateAction) to one or more [PropertyValue](http://schema.org/PropertyValue) instances via the `resourceUsage` property, defined in the <https://w3id.org/ro/terms/workflow-run> namespace. A `PropertyValue` instance used to represent an element of resource usage MUST have a unique identifier representing the quantity being measured as its [propertyID](http://schema.org/propertyID), and SHOULD refer to a unit of measurement via [unitCode](http://schema.org/unitCode), except for dimensionless numbers. Example:
+
+```json
+{
+    "@id": "#a1be3cab",
+    "@type": "CreateAction",
+    "instrument": {"@id": "foobar.nf#foo"},
+    "resourceUsage": [
+        {
+            "@id": "#a1be3cab-realTime"
+        },
+        {
+            "@id": "#a1be3cab-percentCPU"
+        }
+    ]
+},
+{
+    "@id": "#a1be3cab-realTime",
+    "@type": "PropertyValue",
+    "name": "realTime",
+    "propertyID": "https://w3id.org/ro/terms/nf-trace#realTime",
+    "unitCode": "https://qudt.org/vocab/unit/MilliSEC",
+    "value": "12"
+},
+{
+    "@id": "#a1be3cab-percentCPU",
+    "@type": "PropertyValue",
+    "name": "percentCPU",
+    "propertyID": "https://w3id.org/ro/terms/nf-trace#percentCPU",
+    "value": "80.0"
+}
+```
+
+The values of `propertyID` SHOULD be URLs that univocally identify the quantity. The set of possible `propertyID` values can be defined by the workflow engine that implements the profile; ideally, each URL would point to a detailed description of the quantity. In the above example, ro-terms is used to create a namespace for the `propertyID`s. In this case, [QUDT](https://qudt.org/) is used to specify the `unitCode`.
+
+
 ## Requirements
 
 The requirements of this profile are those of [Workflow Run Crate](workflow_run_crate) plus the ones listed below.
@@ -444,7 +528,7 @@ The requirements of this profile are those of [Workflow Run Crate](workflow_run_
   <tr>
    <td>conformsTo</td>
    <td>MUST</td>
-   <td>Array MUST reference a <code>CreativeWork</code> entity with an <code>@id</code> URI that is consistent with the versioned <em>Permalink</em> of this document, and SHOULD also reference versioned permalinks for <a href="https://w3id.org/ro/wfrun/process/0.1">Process Run Crate</a>, <a href="https://w3id.org/ro/wfrun/workflow/0.1">Workflow Run Crate</a> and <a href="https://w3id.org/workflowhub/workflow-ro-crate/1.0">Workflow RO-Crate</a>.</td>
+   <td>Array MUST reference a <code>CreativeWork</code> entity with an <code>@id</code> URI that is consistent with the versioned <em>Permalink</em> of this document, and SHOULD also reference versioned permalinks for <a href="https://w3id.org/ro/wfrun/process/0.5-DRAFT">Process Run Crate</a>, <a href="https://w3id.org/ro/wfrun/workflow/0.5-DRAFT">Workflow Run Crate</a> and <a href="https://w3id.org/workflowhub/workflow-ro-crate/1.0">Workflow RO-Crate</a>.</td>
   </tr>
 
   <tr>
@@ -504,7 +588,7 @@ The requirements of this profile are those of [Workflow Run Crate](workflow_run_
   <tr>
    <td>actionStatus</td>
    <td>MAY</td>
-   <td>SHOULD be <a href="https://schema.org/CompletedActionStatus">CompletedActionStatus</a> if the step completed successfully or <a href="https://schema.org/FailedActionStatus">FailedActionStatus</a> if it failed to complete. In the latter case, consumers should be prepared for the absence of any dependent actions (i.e., <code>CreateAction</code> instances corresponding to tool executions; the opposite is not necessarily true: a step can be successful even if some of its associated tool executions failed, e.g. in fault tolerant engines). If this attribute is not specified, consumers should assume that the step completed successfully.</td>
+   <td>SHOULD be <a href="http://schema.org/CompletedActionStatus">CompletedActionStatus</a> if the step completed successfully or <a href="http://schema.org/FailedActionStatus">FailedActionStatus</a> if it failed to complete. In the latter case, consumers should be prepared for the absence of any dependent actions (i.e., <code>CreateAction</code> instances corresponding to tool executions; the opposite is not necessarily true: a step can be successful even if some of its associated tool executions failed, e.g. in fault tolerant engines). If this attribute is not specified, consumers should assume that the step completed successfully.</td>
 
   <tr>
    <td>error</td>
@@ -539,7 +623,7 @@ The requirements of this profile are those of [Workflow Run Crate](workflow_run_
   <tr>
    <td>actionStatus</td>
    <td>MAY</td>
-   <td>SHOULD be <a href="https://schema.org/CompletedActionStatus">CompletedActionStatus</a> if the engine execution was successful or <a href="https://schema.org/FailedActionStatus">FailedActionStatus</a> if it failed. In the latter case, consumers should be prepared for the absence of any dependent actions (i.e., <code>CreateAction</code> instances corresponding to workflow and tool executions, <code>ControlAction</code> instances corresponding to step executions). If this attribute is not specified, consumers should assume that the execution was successful.</td>
+   <td>SHOULD be <a href="http://schema.org/CompletedActionStatus">CompletedActionStatus</a> if the engine execution was successful or <a href="http://schema.org/FailedActionStatus">FailedActionStatus</a> if it failed. In the latter case, consumers should be prepared for the absence of any dependent actions (i.e., <code>CreateAction</code> instances corresponding to workflow and tool executions, <code>ControlAction</code> instances corresponding to step executions). If this attribute is not specified, consumers should assume that the execution was successful.</td>
 
   <tr>
    <td>error</td>

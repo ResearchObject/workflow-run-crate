@@ -2,12 +2,25 @@
 title: Workflow Run RO-Crate
 ---
 
+![Workflow Run RO-Crate](img/ro-crate-workflow-run.svg)
+
 Workflow Run RO-Crate is a working group for defining [RO-Crate](https://w3id.org/ro/crate) profiles for capturing the provenance of an execution of a computational workflow.
 
 
-## Profiles
+## WRROC Profiles
 
-The [Workflow Run RO-Crate profile collection](profiles) is the main outcome of the group's activities.
+The [Workflow Run RO-Crate (WRROC) profile collection](profiles) is the main outcome of the group's activities.
+
+Workflow Run RO-Crate is an extension of [RO-Crate](https://w3id.org/ro/crate) (Research Object Crate) and Schema.org to capture the provenance of the execution of computational workflows at different levels of granularity and bundle together all their associated products (inputs, outputs, code, etc.).
+
+## Citation and publications
+
+Simone Leo, Michael R. Crusoe, Laura Rodríguez-Navas, Raül Sirvent, Alexander Kanitz, Paul De Geest, Rudolf Wittner, Luca Pireddu, Daniel Garijo, José M. Fernández, Iacopo Colonnelli, Matej Gallo, Tazro Ohta, Hirotaka Suetake, Salvador Capella-Gutierrez, Renske de Wit, Bruno de Paula Kinoshita, Stian Soiland-Reyes (2023):  
+[**Recording provenance of workflow runs with RO-Crate**](https://arxiv.org/pdf/2312.07852.pdf).  
+_arXiv_:2312.07852  
+<https://doi.org/10.48550/arXiv.2312.07852>
+
+See [Outreach](outreach) for other citations, publications and presentations on Workflow Run RO-Crate
 
 
 ## Community
@@ -19,8 +32,6 @@ We coordinate using the channel [#ro-crate on seek4science.slack.com](https://se
 Currently we have [bi-weekly meetings](https://docs.google.com/document/d/1shvkoowuCVUy8E2ujnVPclaoQO4jGKmZpafjOR0OfBw/edit) you are welcome to attend.
 
 Post [here](https://github.com/ResearchObject/workflow-run-crate/issues/1) to join the working group.
-
-**Co-chairs**: Simone Leo, Laura Rodríguez-Navas
 
 **Members**:
 - Simone Leo <https://orcid.org/0000-0001-8271-5429>
@@ -58,18 +69,41 @@ Post [here](https://github.com/ResearchObject/workflow-run-crate/issues/1) to jo
 - Renske de Wit <https://orcid.org/0000-0003-0902-0086>
 - Jasper Koehorst <https://orcid.org/0000-0001-8172-8981>
 - Samuel Lampa <https://orcid.org/0000-0001-6740-9212>
+- Samuel Grayson <https://orcid.org/0000-0001-5411-356X>
+- Jörg F. Unger <https://orcid.org/0000-0003-0035-0951>
+- Felix Bartusch <https://orcid.org/0000-0003-0711-5196>
 - ... [you](https://github.com/ResearchObject/workflow-run-crate/issues/1)?
 
+## Implementations & examples
 
-## Examples
+Several workflow engines have implemented the [WRROC profiles](https://www.researchobject.org/workflow-run-crate/profiles/) or are planning to do so:
 
-These RO-Crates are being co-developed as examples of using the [Workflow Run profiles](profiles):
+**Implementation**  | **Profile** | **Version URL/DOI**    | **Example**             |
+------------| ----------- | ---------------------- | ----------------------- |
+[runcrate](http://www.researchobject.org/runcrate/)   | Provenance  | [runcrate 0.5.0](https://github.com/ResearchObject/runcrate/releases/tag/0.5.0) or later  |  [10.5281/zenodo.7774351](https://doi.org/10.5281/zenodo.7774351)  |
+[Galaxy](https://galaxyproject.org/)      | Workflow    | [Galaxy 23.1.1](https://github.com/galaxyproject/galaxy/releases/tag/v23.1.1) or later   |  [10.5281/zenodo.7785861](https://doi.org/10.5281/zenodo.7785861)  |
+[COMPSs](https://www.bsc.es/research-and-development/software-and-apps/software-list/comp-superscalar)     | Workflow    | [compss 3.2 or later](https://github.com/bsc-wdc/compss/releases/tag/v3.2)    |  [10.5281/zenodo.7788030](https://doi.org/10.5281/zenodo.7788030)      |
+[StreamFlow](https://streamflow.di.unito.it/)  | Provenance  | [Streamflow 0.2.0.dev10](https://github.com/alpha-unito/streamflow/releases/tag/0.2.0.dev10) |  [10.5281/zenodo.7911906](https://doi.org/10.5281/zenodo.7911906) |
+[WfExS](https://wfexs-backend.readthedocs.io/)       | Workflow    | [WfExS 0.10.1](https://github.com/inab/WfExS-backend/releases/tag/0.10.1) or later  |  [10.5281/zenodo.10091550](https://doi.org/10.5281/zenodo.10091550) |
+[Sapporo](https://github.com/sapporo-wes/sapporo)     | Workflow    | [sapporo-service 1.5.1](https://github.com/sapporo-wes/sapporo-service/releases/tag/1.5.1)  or later  |  [10.5281/zenodo.10134581](https://doi.org/10.5281/zenodo.10134581)  |
+[Autosubmit](https://autosubmit.readthedocs.io/)  | Workflow    | [Autosubmit v4.0.100](https://pypi.org/project/autosubmit/4.0.100/) or later    |  [10.5281/zenodo.8144612](https://doi.org/10.5281/zenodo.8144612)   |
+[Nextflow](https://nextflow.io/)  | Provenance    | (nf-prov [in development](https://github.com/nextflow-io/nf-prov/pull/19))   |  [example](https://github.com/nextflow-io/nf-prov/files/13070992/ro-crate-metadata.json)   |
 
-- [Provenance Run Crate Example](examples/draft/revsort-run-1-crate/), converted from the [CWLProv example](https://github.com/common-workflow-language/cwlprov/tree/ce3f469745f4c8a2c029f872d522a4c57fba947b/examples/revsort-run-1)
-- [Baseline Use Case: COVID-19 vaccine effectiveness assessment](https://by-covid.github.io/baseline-use-case-synthetic-crate/) -- a [process run crate](profiles/process_run_crate) from the BY-COVID project showing how synthetic dataset generation using Jupyter Notebook can be tracked
-- [Workflow Run RO-Crate for a ML prediction pipeline run](examples/draft/ml-predict-pipeline/) ([pipeline repo](https://github.com/crs4/deephealth-pipelines) -- part of the DeepHealth digital pathology platform)
-- [Machine learning pipeline example](examples/draft/ml-pipeline/) (conceptual draft from EOSC-Life WP6)
+The Process Crate profile can also be implemented outside workflow systems, see for example [BY-COVID WP5 T5.2 Baseline Use Case](https://w3id.org/ro/doi/10.5281/zenodo.6913045) and [combination with Common Provenance Model](https://doi.org/10.5281/zenodo.7676923). Editors like [Crate-O](https://language-research-technology.github.io/crate-o/) can be used for making such crates by hand.
 
+The Workflow Crate and Provenance Crate profiles extends the [Workflow RO-Crate](https://w3id.org/workflowhub/workflow-ro-crate/) profile, which is [supported by WorkflowHub](https://about.workflowhub.eu/developer/ro-crate-api/#submitting-workflows) registry.
+
+The Workflow Crate profiles have themselves been extended by the [Five Safes RO-Crate](https://w3id.org/5s-crate/), used by the projects [TRE-FX](https://trefx.uk/) and [EOSC-ENTRUST](https://esciencelab.org.uk/projects/eosc-entrust/).
+
+In addition, some computational workflow approaches have RO-Crate support which predate the WRROC profiles: [LivePublication](https://livepublication.github.io/LP_Pub_LID/) ([example](https://livepublication.github.io/LP_Pub_OrchestrationCrate/), [paper](https://doi.org/10.1109/e-Science58273.2023.10254857)), [RECUP](https://sites.google.com/view/recup-reproducibility/) ([paper](https://doi.org/10.1109/e-science58273.2023.10254808)), [FAIRSCAPE](https://fairscape.github.io/) ([paper](https://doi.org/10.1007/978-3-030-80960-7_3))
+
+## Training and outreach
+
+- [Workflow Run RO-Crate Introduction](https://training.galaxyproject.org/training-material/topics/fair/tutorials/ro-crate-workflow-run-ro-crate/tutorial.html)
+- [RO-Crate tutorial](https://www.researchobject.org/ro-crate/tutorials.html)
+- [Slides](https://slides.com/soilandreyes/2023-11-23-ro-crate-erga) -- _RO-Crate Use cases in biodiversity_
+- [Poster](https://doi.org/10.7490/f1000research.1119457.1) -- _WfExS-backend in the WRROC world?_
+- [Poster](https://doi.org/10.5281/zenodo.8004793) -- _Making workflow provenance FAIR across workflow systems with Workflow Run RO-Crate_
 
 ## Other resources
 
@@ -101,3 +135,22 @@ These RO-Crates are being co-developed as examples of using the [Workflow Run pr
 - [EOSC-Life Common Provenance Model](https://doi.org/10.5281/zenodo.4705074) (deliverable showing ISO 23494 model)
 - [P-Plan ontology](https://www.opmw.org/model/p-plan/), [OPMW ontology](https://www.opmw.org/model/OPMW/) and [OPMW-PROV](https://www.opmw.org/interoperability.html)
 - [ProvONE+: A Provenance Model for Scientific Workflows](https://doi.org/10.1007/978-3-030-62008-0_30) (not Open Access) [[PROV-One ontology](https://purl.dataone.org/provone-v1-dev)]
+
+
+## License for specifications
+
+© 2021--2024 The University of Manchester, UK  
+© 2022--2024 Centro di Ricerca, Sviluppo e Studi Superiori in Sardegna (CRS4), IT
+© 2022--2024 Workflow Run Crate task force contributors  
+
+Licensed under the Apache License, Version 2.0 (the “License”); you may not use this file except in compliance with the License. You may obtain a copy of the License at
+
+<http://www.apache.org/licenses/LICENSE-2.0>
+
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an “AS IS” BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License. 
+
+### License for examples
+
+Profile Crates and JSON-LD examples within this specification are distributed
+under [CC0 1.0 Universal (CC0 1.0) Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/).
+

@@ -1,0 +1,170 @@
+<rdf:RDF
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:s="http://schema.org/"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:bioschemas="https://bioschemas.org/"
+    xmlns:vann="http://purl.org/vocab/vann/"
+    xmlns:wfrun="https://w3id.org/ro/terms/workflow-run#" > 
+  <rdf:Description rdf:about="https://w3id.org/ro/terms/workflow-run#sourceParameter">
+    <rdfs:comment xml:lang="en-gb">The source (upstream) parameter</rdfs:comment>
+    <rdfs:label xml:lang="en-gb">sourceParameter</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/ro/terms/workflow-run#"/>
+    <s:rangeIncludes rdf:resource="https://bioschemas.org/FormalParameter"/>
+    <s:domainIncludes rdf:resource="https://w3id.org/ro/terms/workflow-run#ParameterConnection"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/ro/terms/workflow-run#DockerImage">
+    <rdfs:comment xml:lang="en-gb">A Docker container image</rdfs:comment>
+    <rdfs:label xml:lang="en-gb">DockerImage</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/ro/terms/workflow-run#"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/ro/terms/workflow-run#ContainerImage"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/ro/terms/workflow-run#sha1">
+    <rdfs:comment xml:lang="en-gb">sha1 checksum as a hexadecimal string</rdfs:comment>
+    <rdfs:label xml:lang="en-gb">sha1</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/ro/terms/workflow-run#"/>
+    <s:rangeIncludes rdf:resource="http://schema.org/Text"/>
+    <s:domainIncludes rdf:resource="https://w3id.org/ro/terms/workflow-run#ContainerImage"/>
+    <s:domainIncludes rdf:resource="http://schema.org/MediaObject"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/ro/terms/workflow-run#sha512">
+    <rdfs:comment xml:lang="en-gb">sha512 checksum as a hexadecimal string</rdfs:comment>
+    <rdfs:label xml:lang="en-gb">sha512</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/ro/terms/workflow-run#"/>
+    <s:rangeIncludes rdf:resource="http://schema.org/Text"/>
+    <s:domainIncludes rdf:resource="https://w3id.org/ro/terms/workflow-run#ContainerImage"/>
+    <s:domainIncludes rdf:resource="http://schema.org/MediaObject"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/ro/terms/workflow-run#tag">
+    <rdfs:comment xml:lang="en-gb">A tag assigned to a software product, such as a container image</rdfs:comment>
+    <rdfs:label xml:lang="en-gb">tag</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/ro/terms/workflow-run#"/>
+    <s:rangeIncludes rdf:resource="http://schema.org/Text"/>
+    <s:domainIncludes rdf:resource="https://w3id.org/ro/terms/workflow-run#ContainerImage"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/ro/terms/workflow-run#">
+    <s:hasDefinedTerm rdf:resource="https://w3id.org/ro/terms/workflow-run#sha256"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <rdf:type rdf:resource="http://schema.org/DefinedTermSet"/>
+    <dct:title>Workflow Run Crate namespace</dct:title>
+    <s:license rdf:resource="http://spdx.org/licenses/Apache-2.0"/>
+    <s:hasDefinedTerm rdf:resource="https://w3id.org/ro/terms/workflow-run#SIFImage"/>
+    <s:hasDefinedTerm rdf:resource="https://w3id.org/ro/terms/workflow-run#tag"/>
+    <vann:preferredNamespaceUri>https://w3id.org/ro/terms/workflow-run#</vann:preferredNamespaceUri>
+    <dct:license rdf:resource="http://spdx.org/licenses/Apache-2.0"/>
+    <s:hasDefinedTerm rdf:resource="https://w3id.org/ro/terms/workflow-run#sourceParameter"/>
+    <s:hasDefinedTerm rdf:resource="https://w3id.org/ro/terms/workflow-run#environment"/>
+    <s:hasDefinedTerm rdf:resource="https://w3id.org/ro/terms/workflow-run#containerImage"/>
+    <s:description>A Schema.org style Schema definitin of WRROC terms</s:description>
+    <s:hasDefinedTerm rdf:resource="https://w3id.org/ro/terms/workflow-run#md5"/>
+    <s:hasDefinedTerm rdf:resource="https://w3id.org/ro/terms/workflow-run#DockerImage"/>
+    <s:hasDefinedTerm rdf:resource="https://w3id.org/ro/terms/workflow-run#connection"/>
+    <s:hasDefinedTerm rdf:resource="https://w3id.org/ro/terms/workflow-run#ContainerImage"/>
+    <vann:preferredNamespacePrefix>wfrun</vann:preferredNamespacePrefix>
+    <s:version>0.5.0</s:version>
+    <dct:description>A Schema.org style Schema definitin of WRROC terms</dct:description>
+    <s:hasDefinedTerm rdf:resource="https://w3id.org/ro/terms/workflow-run#ParameterConnection"/>
+    <dct:creator rdf:resource="https://researchobject.org/workflow-run-crate/"/>
+    <s:hasDefinedTerm rdf:resource="https://w3id.org/ro/terms/workflow-run#sha512"/>
+    <s:hasDefinedTerm rdf:resource="https://w3id.org/ro/terms/workflow-run#sha1"/>
+    <s:url>https://www.researchobject.org/ro-terms/workflow-run/</s:url>
+    <s:hasDefinedTerm rdf:resource="https://w3id.org/ro/terms/workflow-run#targetParameter"/>
+    <s:name>Workflow Run Crate namespace</s:name>
+    <s:creator rdf:resource="https://researchobject.org/workflow-run-crate/"/>
+    <s:hasDefinedTerm rdf:resource="https://w3id.org/ro/terms/workflow-run#registry"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/ro/terms/workflow-run#containerImage">
+    <rdfs:comment xml:lang="en-gb">A container image associated with this entity</rdfs:comment>
+    <rdfs:label xml:lang="en-gb">containerImage</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/ro/terms/workflow-run#"/>
+    <s:rangeIncludes rdf:resource="https://w3id.org/ro/terms/workflow-run#ContainerImage"/>
+    <s:domainIncludes rdf:resource="http://schema.org/CreateAction"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/ro/terms/workflow-run#ParameterConnection">
+    <rdfs:comment xml:lang="en-gb">A connection between parameters of different applications</rdfs:comment>
+    <rdfs:label xml:lang="en-gb">ParameterConnection</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/ro/terms/workflow-run#"/>
+    <rdfs:subClassOf rdf:resource="http://schema.org/Intangible"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/ro/terms/workflow-run#SIFImage">
+    <rdfs:comment xml:lang="en-gb">A Singularity Image Format container image</rdfs:comment>
+    <rdfs:label xml:lang="en-gb">SIFImage</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/ro/terms/workflow-run#"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/ro/terms/workflow-run#ContainerImage"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://researchobject.org/workflow-run-crate/">
+    <s:name xml:lang="en-gb">Workflow Run Crate task force</s:name>
+    <rdf:type rdf:resource="http://purl.org/dc/terms/Agent"/>
+    <rdf:type rdf:resource="http://schema.org/Project"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/ro/terms/workflow-run#sha256">
+    <rdfs:comment xml:lang="en-gb">sha256 checksum as a hexadecimal string</rdfs:comment>
+    <rdfs:label xml:lang="en-gb">sha256</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/ro/terms/workflow-run#"/>
+    <s:rangeIncludes rdf:resource="http://schema.org/Text"/>
+    <s:domainIncludes rdf:resource="https://w3id.org/ro/terms/workflow-run#ContainerImage"/>
+    <s:domainIncludes rdf:resource="http://schema.org/MediaObject"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/ro/terms/workflow-run#connection">
+    <rdfs:comment xml:lang="en-gb">A parameter connection created by this workflow</rdfs:comment>
+    <rdfs:label xml:lang="en-gb">connection</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/ro/terms/workflow-run#"/>
+    <s:rangeIncludes rdf:resource="https://w3id.org/ro/terms/workflow-run#ParameterConnection"/>
+    <s:domainIncludes rdf:resource="https://bioschemas.org/ComputationalWorkflow"/>
+    <s:domainIncludes rdf:resource="http://schema.org/HowToStep"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/ro/terms/workflow-run#targetParameter">
+    <rdfs:comment xml:lang="en-gb">The target (downstream) parameter</rdfs:comment>
+    <rdfs:label xml:lang="en-gb">targetParameter</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/ro/terms/workflow-run#"/>
+    <s:rangeIncludes rdf:resource="https://bioschemas.org/FormalParameter"/>
+    <s:domainIncludes rdf:resource="https://w3id.org/ro/terms/workflow-run#ParameterConnection"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/ro/terms/workflow-run#environment">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <s:domainIncludes rdf:resource="http://schema.org/CreateAction"/>
+    <s:domainIncludes rdf:resource="http://schema.org/SoftwareApplication"/>
+    <s:rangeIncludes rdf:resource="https://bioschemas.org/FormalParameter"/>
+    <rdfs:comment xml:lang="en-gb">Environment variables used by the application</rdfs:comment>
+    <rdfs:label xml:lang="en-gb">environment</rdfs:label>
+    <s:domainIncludes rdf:resource="https://bioschemas.org/ComputationalWorkflow"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/ro/terms/workflow-run#"/>
+    <s:rangeIncludes rdf:resource="http://schema.org/PropertyValue"/>
+    <s:domainIncludes rdf:resource="http://schema.org/SoftwareSourceCode"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/ro/terms/workflow-run#ContainerImage">
+    <rdfs:comment xml:lang="en-gb">A containerisation software container image</rdfs:comment>
+    <rdfs:label xml:lang="en-gb">ContainerImage</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/ro/terms/workflow-run#"/>
+    <rdfs:subClassOf rdf:resource="http://schema.org/CreativeWork"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/ro/terms/workflow-run#registry">
+    <rdfs:comment xml:lang="en-gb">A service to register software products, such as container images</rdfs:comment>
+    <rdfs:label xml:lang="en-gb">registry</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/ro/terms/workflow-run#"/>
+    <s:domainIncludes rdf:resource="https://w3id.org/ro/terms/workflow-run#ContainerImage"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/ro/terms/workflow-run#md5">
+    <rdfs:comment xml:lang="en-gb">md5 checksum as a hexadecimal string</rdfs:comment>
+    <rdfs:label xml:lang="en-gb">md5</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/ro/terms/workflow-run#"/>
+    <s:rangeIncludes rdf:resource="http://schema.org/Text"/>
+    <s:domainIncludes rdf:resource="https://w3id.org/ro/terms/workflow-run#ContainerImage"/>
+    <s:domainIncludes rdf:resource="http://schema.org/MediaObject"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+</rdf:RDF>

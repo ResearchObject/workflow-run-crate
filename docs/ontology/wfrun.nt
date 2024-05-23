@@ -1,0 +1,126 @@
+<https://w3id.org/ro/terms/workflow-run#> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/DefinedTermSet> .
+<https://w3id.org/ro/terms/workflow-run#> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<https://w3id.org/ro/terms/workflow-run#> <http://schema.org/name> "Workflow Run Crate namespace" .
+<https://w3id.org/ro/terms/workflow-run#> <http://purl.org/dc/terms/title> "Workflow Run Crate namespace" .
+<https://w3id.org/ro/terms/workflow-run#> <http://purl.org/vocab/vann/preferredNamespacePrefix> "wfrun" .
+<https://w3id.org/ro/terms/workflow-run#> <http://purl.org/vocab/vann/preferredNamespaceUri> "https://w3id.org/ro/terms/workflow-run#" .
+<https://w3id.org/ro/terms/workflow-run#> <http://schema.org/description> "A Schema.org style Schema definitin of WRROC terms" .
+<https://w3id.org/ro/terms/workflow-run#> <http://purl.org/dc/terms/description> "A Schema.org style Schema definitin of WRROC terms" .
+<https://w3id.org/ro/terms/workflow-run#> <http://schema.org/url> "https://www.researchobject.org/ro-terms/workflow-run/" .
+<https://w3id.org/ro/terms/workflow-run#> <http://schema.org/creator> <https://researchobject.org/workflow-run-crate/> .
+<https://w3id.org/ro/terms/workflow-run#> <http://purl.org/dc/terms/creator> <https://researchobject.org/workflow-run-crate/> .
+<https://w3id.org/ro/terms/workflow-run#> <http://schema.org/license> <http://spdx.org/licenses/Apache-2.0> .
+<https://w3id.org/ro/terms/workflow-run#> <http://purl.org/dc/terms/license> <http://spdx.org/licenses/Apache-2.0> .
+<https://w3id.org/ro/terms/workflow-run#> <http://schema.org/version> "0.5.0" .
+<https://w3id.org/ro/terms/workflow-run#> <http://schema.org/hasDefinedTerm> <https://w3id.org/ro/terms/workflow-run#connection> .
+<https://w3id.org/ro/terms/workflow-run#> <http://schema.org/hasDefinedTerm> <https://w3id.org/ro/terms/workflow-run#containerImage> .
+<https://w3id.org/ro/terms/workflow-run#> <http://schema.org/hasDefinedTerm> <https://w3id.org/ro/terms/workflow-run#environment> .
+<https://w3id.org/ro/terms/workflow-run#> <http://schema.org/hasDefinedTerm> <https://w3id.org/ro/terms/workflow-run#md5> .
+<https://w3id.org/ro/terms/workflow-run#> <http://schema.org/hasDefinedTerm> <https://w3id.org/ro/terms/workflow-run#registry> .
+<https://w3id.org/ro/terms/workflow-run#> <http://schema.org/hasDefinedTerm> <https://w3id.org/ro/terms/workflow-run#sha1> .
+<https://w3id.org/ro/terms/workflow-run#> <http://schema.org/hasDefinedTerm> <https://w3id.org/ro/terms/workflow-run#sha256> .
+<https://w3id.org/ro/terms/workflow-run#> <http://schema.org/hasDefinedTerm> <https://w3id.org/ro/terms/workflow-run#sha512> .
+<https://w3id.org/ro/terms/workflow-run#> <http://schema.org/hasDefinedTerm> <https://w3id.org/ro/terms/workflow-run#sourceParameter> .
+<https://w3id.org/ro/terms/workflow-run#> <http://schema.org/hasDefinedTerm> <https://w3id.org/ro/terms/workflow-run#tag> .
+<https://w3id.org/ro/terms/workflow-run#> <http://schema.org/hasDefinedTerm> <https://w3id.org/ro/terms/workflow-run#targetParameter> .
+<https://w3id.org/ro/terms/workflow-run#> <http://schema.org/hasDefinedTerm> <https://w3id.org/ro/terms/workflow-run#ContainerImage> .
+<https://w3id.org/ro/terms/workflow-run#> <http://schema.org/hasDefinedTerm> <https://w3id.org/ro/terms/workflow-run#DockerImage> .
+<https://w3id.org/ro/terms/workflow-run#> <http://schema.org/hasDefinedTerm> <https://w3id.org/ro/terms/workflow-run#ParameterConnection> .
+<https://w3id.org/ro/terms/workflow-run#> <http://schema.org/hasDefinedTerm> <https://w3id.org/ro/terms/workflow-run#SIFImage> .
+<https://researchobject.org/workflow-run-crate/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/Project> .
+<https://researchobject.org/workflow-run-crate/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/dc/terms/Agent> .
+<https://researchobject.org/workflow-run-crate/> <http://schema.org/name> "Workflow Run Crate task force"@en-gb .
+<https://w3id.org/ro/terms/workflow-run#connection> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<https://w3id.org/ro/terms/workflow-run#connection> <http://schema.org/domainIncludes> <http://schema.org/HowToStep> .
+<https://w3id.org/ro/terms/workflow-run#connection> <http://schema.org/domainIncludes> <https://bioschemas.org/ComputationalWorkflow> .
+<https://w3id.org/ro/terms/workflow-run#connection> <http://schema.org/rangeIncludes> <https://w3id.org/ro/terms/workflow-run#ParameterConnection> .
+<https://w3id.org/ro/terms/workflow-run#connection> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ro/terms/workflow-run#> .
+<https://w3id.org/ro/terms/workflow-run#connection> <http://www.w3.org/2000/01/rdf-schema#label> "connection"@en-gb .
+<https://w3id.org/ro/terms/workflow-run#connection> <http://www.w3.org/2000/01/rdf-schema#comment> "A parameter connection created by this workflow"@en-gb .
+<https://w3id.org/ro/terms/workflow-run#containerImage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<https://w3id.org/ro/terms/workflow-run#containerImage> <http://schema.org/domainIncludes> <http://schema.org/CreateAction> .
+<https://w3id.org/ro/terms/workflow-run#containerImage> <http://schema.org/rangeIncludes> <https://w3id.org/ro/terms/workflow-run#ContainerImage> .
+<https://w3id.org/ro/terms/workflow-run#containerImage> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ro/terms/workflow-run#> .
+<https://w3id.org/ro/terms/workflow-run#containerImage> <http://www.w3.org/2000/01/rdf-schema#label> "containerImage"@en-gb .
+<https://w3id.org/ro/terms/workflow-run#containerImage> <http://www.w3.org/2000/01/rdf-schema#comment> "A container image associated with this entity"@en-gb .
+<https://w3id.org/ro/terms/workflow-run#environment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<https://w3id.org/ro/terms/workflow-run#environment> <http://schema.org/domainIncludes> <http://schema.org/CreateAction> .
+<https://w3id.org/ro/terms/workflow-run#environment> <http://schema.org/domainIncludes> <http://schema.org/SoftwareApplication> .
+<https://w3id.org/ro/terms/workflow-run#environment> <http://schema.org/domainIncludes> <http://schema.org/SoftwareSourceCode> .
+<https://w3id.org/ro/terms/workflow-run#environment> <http://schema.org/domainIncludes> <https://bioschemas.org/ComputationalWorkflow> .
+<https://w3id.org/ro/terms/workflow-run#environment> <http://schema.org/rangeIncludes> <http://schema.org/PropertyValue> .
+<https://w3id.org/ro/terms/workflow-run#environment> <http://schema.org/rangeIncludes> <https://bioschemas.org/FormalParameter> .
+<https://w3id.org/ro/terms/workflow-run#environment> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ro/terms/workflow-run#> .
+<https://w3id.org/ro/terms/workflow-run#environment> <http://www.w3.org/2000/01/rdf-schema#label> "environment"@en-gb .
+<https://w3id.org/ro/terms/workflow-run#environment> <http://www.w3.org/2000/01/rdf-schema#comment> "Environment variables used by the application"@en-gb .
+<https://w3id.org/ro/terms/workflow-run#md5> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<https://w3id.org/ro/terms/workflow-run#md5> <http://schema.org/domainIncludes> <http://schema.org/MediaObject> .
+<https://w3id.org/ro/terms/workflow-run#md5> <http://schema.org/domainIncludes> <https://w3id.org/ro/terms/workflow-run#ContainerImage> .
+<https://w3id.org/ro/terms/workflow-run#md5> <http://schema.org/rangeIncludes> <http://schema.org/Text> .
+<https://w3id.org/ro/terms/workflow-run#md5> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ro/terms/workflow-run#> .
+<https://w3id.org/ro/terms/workflow-run#md5> <http://www.w3.org/2000/01/rdf-schema#label> "md5"@en-gb .
+<https://w3id.org/ro/terms/workflow-run#md5> <http://www.w3.org/2000/01/rdf-schema#comment> "md5 checksum as a hexadecimal string"@en-gb .
+<https://w3id.org/ro/terms/workflow-run#registry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<https://w3id.org/ro/terms/workflow-run#registry> <http://schema.org/domainIncludes> <https://w3id.org/ro/terms/workflow-run#ContainerImage> .
+<https://w3id.org/ro/terms/workflow-run#registry> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ro/terms/workflow-run#> .
+<https://w3id.org/ro/terms/workflow-run#registry> <http://www.w3.org/2000/01/rdf-schema#label> "registry"@en-gb .
+<https://w3id.org/ro/terms/workflow-run#registry> <http://www.w3.org/2000/01/rdf-schema#comment> "A service to register software products, such as container images"@en-gb .
+<https://w3id.org/ro/terms/workflow-run#sha1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<https://w3id.org/ro/terms/workflow-run#sha1> <http://schema.org/domainIncludes> <http://schema.org/MediaObject> .
+<https://w3id.org/ro/terms/workflow-run#sha1> <http://schema.org/domainIncludes> <https://w3id.org/ro/terms/workflow-run#ContainerImage> .
+<https://w3id.org/ro/terms/workflow-run#sha1> <http://schema.org/rangeIncludes> <http://schema.org/Text> .
+<https://w3id.org/ro/terms/workflow-run#sha1> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ro/terms/workflow-run#> .
+<https://w3id.org/ro/terms/workflow-run#sha1> <http://www.w3.org/2000/01/rdf-schema#label> "sha1"@en-gb .
+<https://w3id.org/ro/terms/workflow-run#sha1> <http://www.w3.org/2000/01/rdf-schema#comment> "sha1 checksum as a hexadecimal string"@en-gb .
+<https://w3id.org/ro/terms/workflow-run#sha256> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<https://w3id.org/ro/terms/workflow-run#sha256> <http://schema.org/domainIncludes> <http://schema.org/MediaObject> .
+<https://w3id.org/ro/terms/workflow-run#sha256> <http://schema.org/domainIncludes> <https://w3id.org/ro/terms/workflow-run#ContainerImage> .
+<https://w3id.org/ro/terms/workflow-run#sha256> <http://schema.org/rangeIncludes> <http://schema.org/Text> .
+<https://w3id.org/ro/terms/workflow-run#sha256> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ro/terms/workflow-run#> .
+<https://w3id.org/ro/terms/workflow-run#sha256> <http://www.w3.org/2000/01/rdf-schema#label> "sha256"@en-gb .
+<https://w3id.org/ro/terms/workflow-run#sha256> <http://www.w3.org/2000/01/rdf-schema#comment> "sha256 checksum as a hexadecimal string"@en-gb .
+<https://w3id.org/ro/terms/workflow-run#sha512> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<https://w3id.org/ro/terms/workflow-run#sha512> <http://schema.org/domainIncludes> <http://schema.org/MediaObject> .
+<https://w3id.org/ro/terms/workflow-run#sha512> <http://schema.org/domainIncludes> <https://w3id.org/ro/terms/workflow-run#ContainerImage> .
+<https://w3id.org/ro/terms/workflow-run#sha512> <http://schema.org/rangeIncludes> <http://schema.org/Text> .
+<https://w3id.org/ro/terms/workflow-run#sha512> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ro/terms/workflow-run#> .
+<https://w3id.org/ro/terms/workflow-run#sha512> <http://www.w3.org/2000/01/rdf-schema#label> "sha512"@en-gb .
+<https://w3id.org/ro/terms/workflow-run#sha512> <http://www.w3.org/2000/01/rdf-schema#comment> "sha512 checksum as a hexadecimal string"@en-gb .
+<https://w3id.org/ro/terms/workflow-run#sourceParameter> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<https://w3id.org/ro/terms/workflow-run#sourceParameter> <http://schema.org/domainIncludes> <https://w3id.org/ro/terms/workflow-run#ParameterConnection> .
+<https://w3id.org/ro/terms/workflow-run#sourceParameter> <http://schema.org/rangeIncludes> <https://bioschemas.org/FormalParameter> .
+<https://w3id.org/ro/terms/workflow-run#sourceParameter> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ro/terms/workflow-run#> .
+<https://w3id.org/ro/terms/workflow-run#sourceParameter> <http://www.w3.org/2000/01/rdf-schema#label> "sourceParameter"@en-gb .
+<https://w3id.org/ro/terms/workflow-run#sourceParameter> <http://www.w3.org/2000/01/rdf-schema#comment> "The source (upstream) parameter"@en-gb .
+<https://w3id.org/ro/terms/workflow-run#targetParameter> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<https://w3id.org/ro/terms/workflow-run#targetParameter> <http://schema.org/domainIncludes> <https://w3id.org/ro/terms/workflow-run#ParameterConnection> .
+<https://w3id.org/ro/terms/workflow-run#targetParameter> <http://schema.org/rangeIncludes> <https://bioschemas.org/FormalParameter> .
+<https://w3id.org/ro/terms/workflow-run#targetParameter> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ro/terms/workflow-run#> .
+<https://w3id.org/ro/terms/workflow-run#targetParameter> <http://www.w3.org/2000/01/rdf-schema#label> "targetParameter"@en-gb .
+<https://w3id.org/ro/terms/workflow-run#targetParameter> <http://www.w3.org/2000/01/rdf-schema#comment> "The target (downstream) parameter"@en-gb .
+<https://w3id.org/ro/terms/workflow-run#tag> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<https://w3id.org/ro/terms/workflow-run#tag> <http://schema.org/domainIncludes> <https://w3id.org/ro/terms/workflow-run#ContainerImage> .
+<https://w3id.org/ro/terms/workflow-run#tag> <http://schema.org/rangeIncludes> <http://schema.org/Text> .
+<https://w3id.org/ro/terms/workflow-run#tag> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ro/terms/workflow-run#> .
+<https://w3id.org/ro/terms/workflow-run#tag> <http://www.w3.org/2000/01/rdf-schema#label> "tag"@en-gb .
+<https://w3id.org/ro/terms/workflow-run#tag> <http://www.w3.org/2000/01/rdf-schema#comment> "A tag assigned to a software product, such as a container image"@en-gb .
+<https://w3id.org/ro/terms/workflow-run#ContainerImage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<https://w3id.org/ro/terms/workflow-run#ContainerImage> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/CreativeWork> .
+<https://w3id.org/ro/terms/workflow-run#ContainerImage> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ro/terms/workflow-run#> .
+<https://w3id.org/ro/terms/workflow-run#ContainerImage> <http://www.w3.org/2000/01/rdf-schema#label> "ContainerImage"@en-gb .
+<https://w3id.org/ro/terms/workflow-run#ContainerImage> <http://www.w3.org/2000/01/rdf-schema#comment> "A containerisation software container image"@en-gb .
+<https://w3id.org/ro/terms/workflow-run#DockerImage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<https://w3id.org/ro/terms/workflow-run#DockerImage> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/ro/terms/workflow-run#ContainerImage> .
+<https://w3id.org/ro/terms/workflow-run#DockerImage> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ro/terms/workflow-run#> .
+<https://w3id.org/ro/terms/workflow-run#DockerImage> <http://www.w3.org/2000/01/rdf-schema#label> "DockerImage"@en-gb .
+<https://w3id.org/ro/terms/workflow-run#DockerImage> <http://www.w3.org/2000/01/rdf-schema#comment> "A Docker container image"@en-gb .
+<https://w3id.org/ro/terms/workflow-run#ParameterConnection> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<https://w3id.org/ro/terms/workflow-run#ParameterConnection> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/Intangible> .
+<https://w3id.org/ro/terms/workflow-run#ParameterConnection> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ro/terms/workflow-run#> .
+<https://w3id.org/ro/terms/workflow-run#ParameterConnection> <http://www.w3.org/2000/01/rdf-schema#label> "ParameterConnection"@en-gb .
+<https://w3id.org/ro/terms/workflow-run#ParameterConnection> <http://www.w3.org/2000/01/rdf-schema#comment> "A connection between parameters of different applications"@en-gb .
+<https://w3id.org/ro/terms/workflow-run#SIFImage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<https://w3id.org/ro/terms/workflow-run#SIFImage> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/ro/terms/workflow-run#ContainerImage> .
+<https://w3id.org/ro/terms/workflow-run#SIFImage> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ro/terms/workflow-run#> .
+<https://w3id.org/ro/terms/workflow-run#SIFImage> <http://www.w3.org/2000/01/rdf-schema#label> "SIFImage"@en-gb .
+<https://w3id.org/ro/terms/workflow-run#SIFImage> <http://www.w3.org/2000/01/rdf-schema#comment> "A Singularity Image Format container image"@en-gb .

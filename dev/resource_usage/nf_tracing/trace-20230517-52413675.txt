@@ -1,0 +1,4 @@
+task_id	hash	native_id	name	status	exit	submit	duration	realtime	%cpu	peak_rss	peak_vmem	rchar	wchar
+1	cd/ca5a2f	1273	splitLetters	COMPLETED	0	1684334014290	178	5	66.7	0	0	145813	223
+3	28/7f2737	1350	convertToUpper (2)	COMPLETED	0	1684334014534	186	12	80.0	0	0	155925	199
+2	9f/7c259b	1353	convertToUpper (1)	COMPLETED	0	1684334014542	184	9	133.3	0	0	155926	200

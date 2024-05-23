@@ -1,0 +1,2 @@
+Writing the tiff.  Arguments: {'bigtiff': True, 'tile': True, 'tile_width': 512, 'tile_height': 512, 'properties': False, 'compression': 'jpeg', 'pyramid': False, 'subifd': False, 'Q': 90}
+Running time: 127.538145
