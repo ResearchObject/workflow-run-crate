@@ -7,7 +7,14 @@ title: Process Run Crate
 
 * Version: 0.5-DRAFT
 * Permalink: <https://w3id.org/ro/wfrun/process/0.5-DRAFT>
-* Authors: Workflow Run RO-Crate working group
+* Authors: [Workflow Run RO-Crate working group](https://www.researchobject.org/workflow-run-crate/#community)
+* License: [Apache License, version 2.0](https://www.apache.org/licenses/LICENSE-2.0) (SPDX: [`Apache-2.0`](http://spdx.org/licenses/Apache-2.0))
+* Example conforming crate: [ro-crate-metadata.json](example1/ro-crate-metadata.json) [ro-crate-preview.html](example1/ro-crate-preview.html)
+* Profile Crate: [ro-crate-metadata.json](ro-crate-metadata.json) [ro-crate-preview.html](ro-crate-preview.html)
+* Extends:
+  - [RO-Crate 1.1 specification](https://w3id.org/ro/crate/1.1)
+* JSON-LD context: <https://w3id.org/ro/terms/workflow-run>
+* Vocabulary terms:  <https://w3id.org/ro/terms/workflow-run#>
 
 This profile uses terminology from the [RO-Crate 1.1 specification](https://w3id.org/ro/crate/1.1), and [extends it](https://www.researchobject.org/ro-crate/1.1/appendix/jsonld.html#extending-ro-crate) with additional terms from the [workflow-run](https://github.com/ResearchObject/ro-terms/tree/master/workflow-run) ro-terms namespace.
 
@@ -22,10 +29,15 @@ This profile requires the indication of [Software used to create files](https://
 
 The following diagram shows the relationships between provenance-related entities. Note the distinction between *prospective* provenance (plans for activities, e.g., an application) and *retrospective* provenance (what actually happened, e.g. the execution of an application).
 
-<img alt="Entity-relationship diagram" src="img/er_diagram_process.svg" width="500" />
+<img alt="Entity-relationship diagram" src="../img/er_diagram_process.svg" width="500" />
 
 
 ## Example Metadata File (`ro-crate-metadata.json`)
+
+* [ro-crate-metadata.json](example1/ro-crate-metadata.json)
+* [ro-crate-preview.html](example1/ro-crate-preview.html)
+
+<!-- Remember to update above as well as below! -->
 
 ```json
 { "@context": "https://w3id.org/ro/crate/1.1/context", 
@@ -39,7 +51,7 @@ The following diagram shows the relationships between provenance-related entitie
     {
         "@id": "./",
         "@type": "Dataset",
-        "conformsTo": {"@id": "https://w3id.org/ro/wfrun/process/0.1"},
+        "conformsTo": {"@id": "https://w3id.org/ro/wfrun/process/0.4"},
         "hasPart": [
             {"@id": "pics/2017-06-11%2012.56.14.jpg"},
             {"@id": "pics/sepia_fence.jpg"}
@@ -47,7 +59,7 @@ The following diagram shows the relationships between provenance-related entitie
         "mentions": {"@id": "#SepiaConversion_1"},
         "name": "My Pictures"
     },
-    {   "@id": "https://w3id.org/ro/wfrun/process/0.1",
+    {   "@id": "https://w3id.org/ro/wfrun/process/0.4",
         "@type": "CreativeWork",
         "name": "Process Run Crate",
         "version": "0.1"
@@ -112,7 +124,7 @@ Note that the command line shown in the action's `description` is not directly r
   <tr>
    <td>conformsTo</td>
    <td>MUST</td>
-   <td>MUST reference a <code>CreativeWork</code> entity with an <code>@id</code> URI that is consistent with the versioned <em>Permalink</em> of this document, e.g. <code>{"@id": "https://w3id.org/ro/wfrun/process/0.1"}</code></td>
+   <td>MUST reference a <code>CreativeWork</code> entity with an <code>@id</code> URI that is consistent with the versioned <em>Permalink</em> of this document, e.g. <code>{"@id": "https://w3id.org/ro/wfrun/process/0.4"}</code></td>
   </tr>
 
   <tr>
@@ -216,7 +228,7 @@ Note that the command line shown in the action's `description` is not directly r
   <tr>
    <td>actionStatus</td>
    <td>MAY</td>
-   <td>SHOULD be <a href="https://schema.org/CompletedActionStatus">CompletedActionStatus</a> if the process completed successfully or <a href="https://schema.org/FailedActionStatus">FailedActionStatus</a> if it failed to complete. In the latter case, consumers should be prepared for the absence of any dependent actions in the metadata. If this attribute is not specified, consumers should assume that the process completed successfully.</td>
+   <td>SHOULD be <a href="http://schema.org/CompletedActionStatus">CompletedActionStatus</a> if the process completed successfully or <a href="http://schema.org/FailedActionStatus">FailedActionStatus</a> if it failed to complete. In the latter case, consumers should be prepared for the absence of any dependent actions in the metadata. If this attribute is not specified, consumers should assume that the process completed successfully.</td>
   </tr>
 
   <tr>
@@ -236,7 +248,7 @@ Data entities involved in an application's input and output SHOULD have an `@id`
 
 A process crate can be used to indicate one single execution as a single `CreateAction`, or a series of processes that generate different data entities. These actions MAY form an *implicit workflow* by following the links between entities that appear as `result` in an action and as `object` in the following one, but a process crate is not required to ensure such consistency (e.g. there may be an intermediate action that has not been recorded).
 
-<img alt="Multiple processes diagram" src="img/multiple_processes.svg" width="800" />
+<img alt="Multiple processes diagram" src="../img/multiple_processes.svg" width="800" />
 
 
 ## Referencing configuration files
@@ -254,7 +266,7 @@ Some applications support the modification of their behavior via configuration f
         "object": [
             {"@id": "pics/2017-06-11%2012.56.14.jpg"},
             {"@id": "SepiaConversion_1/colors.xml"}
-        ]
+        ],
         "result": {"@id": "pics/sepia_fence.jpg"},
         "agent": {"@id": "https://orcid.org/0000-0001-9842-9718"}
     },

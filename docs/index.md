@@ -135,3 +135,22 @@ In addition, some computational workflow approaches have RO-Crate support which 
 - [EOSC-Life Common Provenance Model](https://doi.org/10.5281/zenodo.4705074) (deliverable showing ISO 23494 model)
 - [P-Plan ontology](https://www.opmw.org/model/p-plan/), [OPMW ontology](https://www.opmw.org/model/OPMW/) and [OPMW-PROV](https://www.opmw.org/interoperability.html)
 - [ProvONE+: A Provenance Model for Scientific Workflows](https://doi.org/10.1007/978-3-030-62008-0_30) (not Open Access) [[PROV-One ontology](https://purl.dataone.org/provone-v1-dev)]
+
+
+## License for specifications
+
+© 2021--2024 The University of Manchester, UK  
+© 2022--2024 Centro di Ricerca, Sviluppo e Studi Superiori in Sardegna (CRS4), IT
+© 2022--2024 Workflow Run Crate task force contributors  
+
+Licensed under the Apache License, Version 2.0 (the “License”); you may not use this file except in compliance with the License. You may obtain a copy of the License at
+
+<http://www.apache.org/licenses/LICENSE-2.0>
+
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an “AS IS” BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License. 
+
+### License for examples
+
+Profile Crates and JSON-LD examples within this specification are distributed
+under [CC0 1.0 Universal (CC0 1.0) Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/).
+

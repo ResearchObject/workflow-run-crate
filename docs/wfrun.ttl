@@ -1,0 +1,153 @@
+@prefix s: <http://schema.org/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix wfrun: <https://w3id.org/ro/terms/workflow-run#> .
+@prefix bioschemas: <https://bioschemas.org/> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+wfrun: a s:DefinedTermSet, owl:Ontology ; 
+  s:name "Workflow Run Crate namespace" ;
+  dct:title"Workflow Run Crate namespace" ;
+  vann:preferredNamespacePrefix "wfrun" ;
+  vann:preferredNamespaceUri "https://w3id.org/ro/terms/workflow-run#";
+  s:description "A Schema.org style Schema definitin of WRROC terms" ;
+  dct:description "A Schema.org style Schema definitin of WRROC terms" ;
+  s:url "https://www.researchobject.org/ro-terms/workflow-run/" ;
+  s:creator <https://researchobject.org/workflow-run-crate/>;
+  dct:creator <https://researchobject.org/workflow-run-crate/>;
+  s:license <http://spdx.org/licenses/Apache-2.0> ;
+  dct:license <http://spdx.org/licenses/Apache-2.0> ;
+  
+  s:version "0.5.0" ;
+  s:hasDefinedTerm 
+	wfrun:connection,
+	wfrun:containerImage,
+	wfrun:environment,
+	wfrun:md5,
+	wfrun:registry,
+	wfrun:sha1,
+	wfrun:sha256,
+	wfrun:sha512,
+	wfrun:sourceParameter,
+	wfrun:tag,
+	wfrun:targetParameter,
+	wfrun:ContainerImage,
+	wfrun:DockerImage,
+	wfrun:ParameterConnection,
+	wfrun:SIFImage .
+
+<https://researchobject.org/workflow-run-crate/> a s:Project, dct:Agent ;
+  s:name "Workflow Run Crate task force"@en-gb .
+
+wfrun:connection rdf:type rdf:Property ;
+        s:domainIncludes s:HowToStep, bioschemas:ComputationalWorkflow;
+        s:rangeIncludes wfrun:ParameterConnection ;
+        rdfs:isDefinedBy wfrun: ;
+        rdfs:label "connection"@en-gb ;
+        rdfs:comment "A parameter connection created by this workflow"@en-gb .
+
+wfrun:containerImage rdf:type rdf:Property ;
+                     s:domainIncludes s:CreateAction ;
+                     s:rangeIncludes wfrun:ContainerImage ;
+                     rdfs:isDefinedBy wfrun: ;
+                     rdfs:label "containerImage"@en-gb ;
+                     rdfs:comment "A container image associated with this entity"@en-gb .
+
+wfrun:environment rdf:type rdf:Property ;
+                  s:domainIncludes  s:CreateAction,
+                                    s:SoftwareApplication,
+                                    s:SoftwareSourceCode,
+                                    bioschemas:ComputationalWorkflow ;
+                  s:rangeIncludes s:PropertyValue, bioschemas:FormalParameter ;
+                  rdfs:isDefinedBy wfrun: ;
+                  rdfs:label "environment"@en-gb ;
+                  rdfs:comment "Environment variables used by the application"@en-gb .
+
+wfrun:md5 rdf:type rdf:Property ;
+          s:domainIncludes s:MediaObject, wfrun:ContainerImage ;
+          s:rangeIncludes s:Text ;
+          rdfs:isDefinedBy wfrun: ;
+          rdfs:label "md5"@en-gb ;
+          rdfs:comment "md5 checksum as a hexadecimal string"@en-gb .
+
+
+
+
+wfrun:registry rdf:type rdf:Property ;
+               s:domainIncludes wfrun:ContainerImage ;
+               rdfs:isDefinedBy wfrun: ;
+               rdfs:label "registry"@en-gb ;
+               rdfs:comment "A service to register software products, such as container images"@en-gb .
+
+wfrun:sha1 rdf:type rdf:Property ;
+           s:domainIncludes s:MediaObject, wfrun:ContainerImage ;
+           s:rangeIncludes s:Text ;
+           rdfs:isDefinedBy wfrun: ;
+           rdfs:label "sha1"@en-gb ;
+           rdfs:comment "sha1 checksum as a hexadecimal string"@en-gb .
+
+wfrun:sha256 rdf:type rdf:Property ;
+             s:domainIncludes s:MediaObject, wfrun:ContainerImage ;
+             s:rangeIncludes s:Text ; 
+             rdfs:isDefinedBy wfrun: ;
+             rdfs:label "sha256"@en-gb ;
+             rdfs:comment "sha256 checksum as a hexadecimal string"@en-gb .
+
+wfrun:sha512 rdf:type rdf:Property ;
+             s:domainIncludes s:MediaObject, wfrun:ContainerImage ;
+             s:rangeIncludes s:Text ; 
+             rdfs:isDefinedBy wfrun: ;
+             rdfs:label "sha512"@en-gb ;
+             rdfs:comment "sha512 checksum as a hexadecimal string"@en-gb .
+
+wfrun:sourceParameter rdf:type rdf:Property ;
+                      s:domainIncludes wfrun:ParameterConnection ;
+                      s:rangeIncludes bioschemas:FormalParameter ;
+                      rdfs:isDefinedBy wfrun: ;
+                      rdfs:label "sourceParameter"@en-gb ;
+                      rdfs:comment "The source (upstream) parameter"@en-gb .
+
+wfrun:targetParameter rdf:type rdf:Property ;
+                      s:domainIncludes wfrun:ParameterConnection ;
+                      s:rangeIncludes bioschemas:FormalParameter ;
+                      rdfs:isDefinedBy wfrun: ;
+                      rdfs:label "targetParameter"@en-gb ;
+                      rdfs:comment "The target (downstream) parameter"@en-gb .
+
+wfrun:tag rdf:type rdf:Property ;
+          s:domainIncludes wfrun:ContainerImage ;
+          s:rangeIncludes s:Text ;
+          rdfs:isDefinedBy wfrun: ;
+          rdfs:label "tag"@en-gb ;
+          rdfs:comment "A tag assigned to a software product, such as a container image"@en-gb .
+
+wfrun:ContainerImage rdf:type rdfs:Class ;
+                     rdfs:subClassOf s:CreativeWork ;
+                     rdfs:isDefinedBy wfrun: ;
+                     rdfs:label "ContainerImage"@en-gb ;
+                     rdfs:comment "A containerisation software container image"@en-gb .
+
+wfrun:DockerImage rdf:type rdfs:Class ;
+                  rdfs:subClassOf wfrun:ContainerImage ;
+                  rdfs:isDefinedBy wfrun: ;
+                  rdfs:label "DockerImage"@en-gb ;
+                  rdfs:comment "A Docker container image"@en-gb .
+
+wfrun:ParameterConnection rdf:type rdfs:Class ;
+                          rdfs:subClassOf s:Intangible ;
+                          rdfs:isDefinedBy wfrun: ;
+                          rdfs:label "ParameterConnection"@en-gb ;
+                          rdfs:comment "A connection between parameters of different applications"@en-gb .
+
+wfrun:SIFImage rdf:type rdfs:Class ;
+               rdfs:subClassOf wfrun:ContainerImage ;
+               rdfs:isDefinedBy wfrun: ;
+               rdfs:label "SIFImage"@en-gb ;
+               rdfs:comment "A Singularity Image Format container image"@en-gb .
+
+
+
+
+
