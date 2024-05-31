@@ -9,7 +9,7 @@ starting time of the action corresponding to the workflow's execution.
 import rdflib
 from pathlib import Path
 
-CRATE = Path("ml-predict-pipeline-cwltool-runcrate")
+CRATE = Path("crate")
 
 g = rdflib.Graph()
 g.parse(CRATE/"ro-crate-metadata.json")
