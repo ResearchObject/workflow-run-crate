@@ -521,6 +521,17 @@
                 "SoftwareApplication",
                 "File"
             ],
+            "softwareRequirements": [
+                {
+                    "@id": "scripts/classify_tumor.py"
+                },
+                {
+                    "@id": "https://pypi.org/project/numpy/1.26.2/"
+                }
+            ],
+            "mainEntity": {
+                "@id": "scripts/classify_tumor.py"
+            },
             "input": [
                 {
                     "@id": "classify_tumor.cwl#batch-size"
@@ -554,6 +565,17 @@
                 }
             ],
             "sha1": "0f504b9b002b943ca3e564af1d3f9297ca637317"
+        },
+        {
+            "@id": "scripts/classify_tumor.py",
+            "@type": "SoftwareApplication",
+            "version": "0.1"
+        },
+        {
+            "@id": "https://pypi.org/project/numpy/1.26.2/",
+            "@type": "SoftwareApplication",
+            "name": "NumPy",
+            "version": "1.26.2"
         },
         {
             "@id": "predictions.cwl#extract-tissue-low",
