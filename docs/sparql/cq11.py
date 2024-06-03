@@ -2,10 +2,8 @@
 This script contains the SPARQL query for Competency Question 11 "How
 were workflow parameters used in tool runs?". The discussion on
 https://github.com/ResearchObject/workflow-run-crate/issues/25 resulted
-in the specification on describing parameter connection added with pull
-requests https://github.com/ResearchObject/workflow-run-crate/pull/13 ,
-https://github.com/ResearchObject/workflow-run-crate/pull/34 and
-https://github.com/ResearchObject/workflow-run-crate/pull/35 .
+in the specification on describing parameter connections added with pull
+request https://github.com/ResearchObject/workflow-run-crate/pull/35.
 """
 
 import rdflib
