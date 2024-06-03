@@ -6,7 +6,8 @@
             "connection": "https://w3id.org/ro/terms/workflow-run#connection",
             "sha1": "https://w3id.org/ro/terms/workflow-run#sha1",
             "sourceParameter": "https://w3id.org/ro/terms/workflow-run#sourceParameter",
-            "targetParameter": "https://w3id.org/ro/terms/workflow-run#targetParameter"
+            "targetParameter": "https://w3id.org/ro/terms/workflow-run#targetParameter",
+            "resourceUsage": "https://w3id.org/ro/terms/workflow-run#resourceUsage"
         }
     ],
     "@graph": [
@@ -1110,6 +1111,14 @@
                 "@id": "extract_tissue.cwl"
             },
             "name": "Run of workflow/predictions.cwl#extract-tissue-low",
+            "resourceUsage": [
+                {
+                    "@id": "#457c80d0-75e8-46d6-bada-b3fe82ea0ef1-realTime"
+                },
+                {
+                    "@id": "#457c80d0-75e8-46d6-bada-b3fe82ea0ef1-percentCPU"
+                }
+            ],
             "object": [
                 {
                     "@id": "#523fc064-1d20-418f-81ce-eaa34fbbcb87"
@@ -1127,6 +1136,21 @@
                 }
             ],
             "startTime": "2023-05-09T05:10:55.236742+00:00"
+        },
+        {
+            "@id": "#457c80d0-75e8-46d6-bada-b3fe82ea0ef1-realTime",
+            "@type": "PropertyValue",
+            "name": "realTime",
+            "propertyID": "https://example.com/terms/realTime",
+            "unitCode": "https://qudt.org/vocab/unit/MilliSEC",
+            "value": "543"
+        },
+        {
+            "@id": "#457c80d0-75e8-46d6-bada-b3fe82ea0ef1-percentCPU",
+            "@type": "PropertyValue",
+            "name": "percentCPU",
+            "propertyID": "https://example.com/terms/percentCPU",
+            "value": "89.4"
         },
         {
             "@id": "#bce6fae4-50c9-4f81-9973-d947a6bb991f",
