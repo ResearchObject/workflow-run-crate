@@ -2,6 +2,8 @@
 This script contains the SPARQL query for Competency Question 1 "What
 container images (e.g., Docker) were used by the run?". The discussion on
 https://github.com/ResearchObject/workflow-run-crate/issues/9 resulted in
+the specification on describing container images added with pull request
+https://github.com/ResearchObject/workflow-run-crate/pull/64.
 """
 
 import rdflib
