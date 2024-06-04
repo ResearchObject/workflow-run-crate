@@ -336,6 +336,7 @@
       { "@id": "https://w3id.org/ro/terms/workflow-run#registry" },
       { "@id": "https://w3id.org/ro/terms/workflow-run#tag" },
       { "@id": "https://w3id.org/ro/terms/workflow-run#containerImage" },
+      { "@id": "https://w3id.org/ro/terms/workflow-run#resourceUsage" },
       { "@id": "https://w3id.org/ro/terms/workflow-run#md5" },
       { "@id": "https://w3id.org/ro/terms/workflow-run#sha1" },
       { "@id": "https://w3id.org/ro/terms/workflow-run#sha256" },
@@ -469,6 +470,19 @@
     ]
   },
   { 
+    "@id": "https://w3id.org/ro/terms/workflow-run#resourceUsage",
+    "@type": ["DefinedTerm", "rdf:Property"],
+    "termCode": "resourceUsage",
+    "name": "resource usage",
+    "description": "A resource usage item, such as peak memory",
+    "domainIncludes": [
+      {"@id": "http://schema.org/CreateAction"}
+    ],
+    "rangeIncludes": [
+      { "@id": "http://schema.org/PropertyValue" }
+    ]
+  },
+  {
     "@id": "https://w3id.org/ro/terms/workflow-run#md5",
     "@type": ["DefinedTerm", "rdf:Property"],
     "termCode": "md5",
