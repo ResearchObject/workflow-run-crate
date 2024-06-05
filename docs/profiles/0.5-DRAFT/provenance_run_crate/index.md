@@ -468,7 +468,7 @@ In some workflow systems (e.g., CWL, Galaxy), tools are typically wrappers for a
 
 ## Tool runtime environment 
 
-While the `softwareRequirements` of a tool can [specify software dependencies](process_run_crate#specifying-software-dependencies) (as above) in terms of naming software, a more reproducible definition of a tool's runtime environment may need to include a particular set of binaries that are compiled and/or distributed to work together. (Note that _runtime environment_ here refers to a set of software, configuration and other dependency files, not [environment variables](workflow_run_crate#environment-variables-as-formal-parameters)).
+While the `softwareRequirements` of a tool can [specify software dependencies](../process_run_crate#specifying-software-dependencies) (as above) in terms of naming software, a more reproducible definition of a tool's runtime environment may need to include a particular set of binaries that are compiled and/or distributed to work together. (Note that _runtime environment_ here refers to a set of software, configuration and other dependency files, not [environment variables](../workflow_run_crate#environment-variables-as-formal-parameters)).
 
 Some workflow engines support such package systems as a way to distribute tool dependencies, typically by referring to an _environment file_ which can be programmatically instansiated to retrieve and install a given set of binaries. In a Provenance Crate, environment files are indicated as `buildInstructions` for either the `HowToStep` (for a given step) or the `HowTo` (for the whole workflow).
 
