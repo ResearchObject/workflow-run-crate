@@ -46,7 +46,8 @@
         { "@id": "https://w3id.org/ro/terms/workflow-run#ParameterConnection" },
         { "@id": "https://w3id.org/ro/terms/workflow-run#connection" },
         { "@id": "https://w3id.org/ro/terms/workflow-run#sourceParameter" },
-        { "@id": "https://w3id.org/ro/terms/workflow-run#targetParameter" }
+        { "@id": "https://w3id.org/ro/terms/workflow-run#targetParameter" },
+        { "@id": "https://codemeta.github.io/terms/buildInstructions" }
     ],
     "hasResource": [
         { "@id": "#hasSpecification" },
@@ -384,6 +385,21 @@
     "name": "target parameter",
     "inDefinedTermSet": { "@id": "https://w3id.org/ro/terms/workflow-run#" },
     "description": "The target (upstream) parameter"
+  },
+  {
+    "@id": "https://codemeta.github.io/terms/buildInstructions",
+    "@type": "DefinedTerm",
+    "name": "buildInstructions",
+    "termCode": "buildInstructions",
+    "description": "Build environment file (e.g. for Conda)",
+    "inDefinedTermSet": { "@id": "https://codemeta.github.io/terms/" }
+  }, 
+  {
+    "@id": "https://codemeta.github.io/terms/",
+    "@type": "DefinedTermSet",
+    "name": "Codemeta Terms",
+    "url": "https://codemeta.github.io/terms/",
+    "version": "3.0"
   },
   {
     "@id": "https://pypi.org/project/runcrate/",
