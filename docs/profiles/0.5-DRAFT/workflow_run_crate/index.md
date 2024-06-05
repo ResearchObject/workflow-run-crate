@@ -14,7 +14,7 @@ title: Workflow Run Crate
 * Extends:
   - [Process Run Crate](https://w3id.org/ro/wfrun/process/0.5-DRAFT)
   - [Workflow RO-Crate](https://w3id.org/workflowhub/workflow-ro-crate/)
-* JSON-LD context: <https://w3id.org/ro/terms/workflow-run>
+* JSON-LD context: <https://w3id.org/ro/terms/workflow-run/context.json>
 * Vocabulary terms:  <https://w3id.org/ro/terms/workflow-run#>
 
 This profile uses terminology from the [RO-Crate 1.1 specification](https://w3id.org/ro/crate/1.1).
@@ -24,11 +24,11 @@ This profile uses terminology from the [RO-Crate 1.1 specification](https://w3id
 
 This profile is used to describe the execution of a computational tool that has orchestrated the execution of other tools. Such a tool is represented as a [workflow](https://www.researchobject.org/ro-crate/1.1/workflows.html) that can be executed using a *Workflow Management System (WMS)*, or *workflow engine* (e.g. [cwltool](https://github.com/common-workflow-language/cwltool)).
 
-Workflow Run Crate is a combination of [Process Run Crate](process_run_crate) and [Workflow RO-Crate](https://w3id.org/workflowhub/workflow-ro-crate/). In particular, the RO-Crate MUST have a `ComputationalWorkflow` [mainEntity](http://schema.org/mainEntity) described according to the Workflow RO-Crate specification (*main workflow*), and `CreateAction` instances corresponding to its execution (thus having the main workflow as `instrument`) MUST be described as specified in Process Run Crate and this profile. Details regarding the execution of individual workflow steps can be described with the [Provenance Run Crate](provenance_run_crate) profile.
+Workflow Run Crate is a combination of [Process Run Crate](../process_run_crate) and [Workflow RO-Crate](https://w3id.org/workflowhub/workflow-ro-crate/). In particular, the RO-Crate MUST have a `ComputationalWorkflow` [mainEntity](http://schema.org/mainEntity) described according to the Workflow RO-Crate specification (*main workflow*), and `CreateAction` instances corresponding to its execution (thus having the main workflow as `instrument`) MUST be described as specified in Process Run Crate and this profile. Details regarding the execution of individual workflow steps can be described with the [Provenance Run Crate](../provenance_run_crate) profile.
 
 Workflows can have multiple input and output parameter slots that have to be mapped to actual files, directories or other values (e.g., a string or a number) before they can be executed. It is OPTIONAL to define such entities for a `ComputationalWorkflow`. If included, parameter definitions MUST be provided as [FormalParameter](https://bioschemas.org/types/FormalParameter/1.0-RELEASE) entities and referenced from the `ComputationalWorkflow` via `input` and `output` (see the [Bioschemas ComputationalWorkflow profile](https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE)).
 
-A data entity or `PropertyValue` that realizes a `FormalParameter` definition SHOULD refer to it via [exampleOfWork](https://schema.org/exampleOfWork); additionally, if the data entity or `PropertyValue` is an illustrative example of the parameter, the latter MAY refer back to the former using the reverse property [workExample](https://schema.org/workExample). This links the `input` of a `ComputationalWorkflow` to the `object` of a `CreateAction`, and the `output` of a `ComputationalWorkflow` to the `result` of a `CreateAction`. An `object` item that does not match a slot in the workflow's input interface (e.g., a [configuration file](process_run_crate#referencing-configuration-files) read from a predefined path) MUST NOT refer to a `FormalParameter` of the `ComputationalWorkflow` via `exampleOfWork`. A `FormalParameter` that maps to a `PropertyValue` SHOULD have a subclass of [DataType](https://schema.org/DataType) (e.g., [Integer](https://schema.org/Integer)) &mdash; or [PropertyValue](https://schema.org/PropertyValue), in the case of dictionary-like structured types &mdash; as its `additionalType`. See [CWL parameter mapping](/workflow-run-crate/cwl_param_mapping) for an example. To support reproducibility, the `name` field of a `FormalParameter` instance SHOULD match the name of the corresponding workflow parameter slot.
+A data entity or `PropertyValue` that realizes a `FormalParameter` definition SHOULD refer to it via [exampleOfWork](https://schema.org/exampleOfWork); additionally, if the data entity or `PropertyValue` is an illustrative example of the parameter, the latter MAY refer back to the former using the reverse property [workExample](https://schema.org/workExample). This links the `input` of a `ComputationalWorkflow` to the `object` of a `CreateAction`, and the `output` of a `ComputationalWorkflow` to the `result` of a `CreateAction`. An `object` item that does not match a slot in the workflow's input interface (e.g., a [configuration file](../process_run_crate#referencing-configuration-files) read from a predefined path) MUST NOT refer to a `FormalParameter` of the `ComputationalWorkflow` via `exampleOfWork`. A `FormalParameter` that maps to a `PropertyValue` SHOULD have a subclass of [DataType](https://schema.org/DataType) (e.g., [Integer](https://schema.org/Integer)) &mdash; or [PropertyValue](https://schema.org/PropertyValue), in the case of dictionary-like structured types &mdash; as its `additionalType`. See [CWL parameter mapping](/workflow-run-crate/cwl_param_mapping) for an example. To support reproducibility, the `name` field of a `FormalParameter` instance SHOULD match the name of the corresponding workflow parameter slot.
 
 Additional properties described in the [Bioschemas FormalParameter profile](https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE) (e.g., `defaultValue`) MAY be used to provide additional information, but strict conformance is not required. A `FormalParameter` definition that strictly conforms to the Bioschemas profile SHOULD reference the relevant versioned URL via `conformsTo`.
 
@@ -253,7 +253,7 @@ Some engines are able to generate contextual information about workflow runs in 
 
 ## Environment variables as formal parameters
 
-The Process Run Crate profile specifies how to [represent environment variable settings](process_run_crate#representing-environment-variable-settings) that affected the execution of a particular action via `environment`. A workflow, in turn, MAY indicate that it is affected by a certain environment variable by using the same `environment` property and having it point to a `FormalParameter` whose `name` is equal to the variable's name. If an action corresponding to an execution of the workflow sets that variable, the `PropertyValue` SHOULD point to the `FormalParameter` via `exampleOfWork`:
+The Process Run Crate profile specifies how to [represent environment variable settings](../process_run_crate#representing-environment-variable-settings) that affected the execution of a particular action via `environment`. A workflow, in turn, MAY indicate that it is affected by a certain environment variable by using the same `environment` property and having it point to a `FormalParameter` whose `name` is equal to the variable's name. If an action corresponding to an execution of the workflow sets that variable, the `PropertyValue` SHOULD point to the `FormalParameter` via `exampleOfWork`:
 
 ```json
 {
@@ -291,7 +291,7 @@ The Process Run Crate profile specifies how to [represent environment variable s
 
 ## Requirements
 
-This profile inherits the requirements of [Process Run Crate](process_run_crate) and [Workflow RO-Crate](https://w3id.org/workflowhub/workflow-ro-crate/). Additional specifications are listed below.
+This profile inherits the requirements of [Process Run Crate](../process_run_crate) and [Workflow RO-Crate](https://w3id.org/workflowhub/workflow-ro-crate/). Additional specifications are listed below.
 
 <table>
 
@@ -345,7 +345,7 @@ This profile inherits the requirements of [Process Run Crate](process_run_crate)
   <tr>
    <td>additionalType</td>
    <td>MUST</td>
-   <td>SHOULD include: <code>File</code>, <code>Dataset</code> or <code>Collection</code> if it maps to a file, directory or <a href="process_run_crate#representing-multi-file-objects">multi-file dataset</a>, respectively; <code>PropertyValue</code> if it maps to a dictionary-like structured value (e.g. a CWL <em>record</em>); <a href="http://schema.org/DataType">DataType</a> or one of its subtypes (e.g. <a href="http://schema.org/Integer">Integer</a>) if it maps to a non-structured value.</td>
+   <td>SHOULD include: <code>File</code>, <code>Dataset</code> or <code>Collection</code> if it maps to a file, directory or <a href="../process_run_crate#representing-multi-file-objects">multi-file dataset</a>, respectively; <code>PropertyValue</code> if it maps to a dictionary-like structured value (e.g. a CWL <em>record</em>); <a href="http://schema.org/DataType">DataType</a> or one of its subtypes (e.g. <a href="http://schema.org/Integer">Integer</a>) if it maps to a non-structured value.</td>
   </tr>
 
 </table>

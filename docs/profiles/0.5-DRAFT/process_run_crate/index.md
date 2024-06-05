@@ -13,7 +13,7 @@ title: Process Run Crate
 * Profile Crate: [ro-crate-metadata.json](ro-crate-metadata.json) [ro-crate-preview.html](ro-crate-preview.html)
 * Extends:
   - [RO-Crate 1.1 specification](https://w3id.org/ro/crate/1.1)
-* JSON-LD context: <https://w3id.org/ro/terms/workflow-run>
+* JSON-LD context: <https://w3id.org/ro/terms/workflow-run/context.json>
 * Vocabulary terms:  <https://w3id.org/ro/terms/workflow-run#>
 
 This profile uses terminology from the [RO-Crate 1.1 specification](https://w3id.org/ro/crate/1.1), and [extends it](https://www.researchobject.org/ro-crate/1.1/appendix/jsonld.html#extending-ro-crate) with additional terms from the [workflow-run](https://github.com/ResearchObject/ro-terms/tree/master/workflow-run) ro-terms namespace.
@@ -105,7 +105,7 @@ The following diagram shows the relationships between provenance-related entitie
 }
 ```
 
-Note that the command line shown in the action's `description` is not directly re-executable, as file paths are not required to match the RO-Crate locations. For a more structural and reproducible description of tool executions, see [Workflow Run Crate](workflow_run_crate).
+Note that the command line shown in the action's `description` is not directly re-executable, as file paths are not required to match the RO-Crate locations. For a more structural and reproducible description of tool executions, see [Workflow Run Crate](../workflow_run_crate).
 
 
 ## Requirements
