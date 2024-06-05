@@ -466,6 +466,59 @@ In some workflow systems (e.g., CWL, Galaxy), tools are typically wrappers for a
 }
 ```
 
+## Tool runtime environment 
+
+While the `softwareRequirements` of a tool can [specify software dependencies](process_run_crate#specifying-software-dependencies) (as above) in terms of naming software, a more reproducible definition of a tool's runtime environment may need to include a particular set of binaries that are compiled and/or distributed to work together. 
+
+Some workflow engines support such package systems as a way to distribute tool dependencies, typically by referring to an _environment file_ which can be programmatically instansiated to retrieve and install a given set of binaries. In a Provenance Crate, environment files are indicated as `buildInstructions` for either the `HowToStep` (for a given step) or the `HowTo` (for the whole workflow).
+
+For instance, to indicate a [Conda environment](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html) for a Nextflow workflow:
+
+```json
+{
+    "@id": "main.nf",
+    "@type": ["File", "SoftwareSourceCode", "ComputationalWorkflow", "HowTo"],
+    "name": "Hello world in Nexflow",
+    "programmingLanguage": {
+        "@id": "https://w3id.org/workflowhub/workflow-ro-crate#nextflow"
+    },
+    "buildInstructions": {
+        "@id": "environment.yml"
+    }
+},
+{ 
+    "@id": "environment.yml",
+    "@type": "File",
+    "name": "Conda environment",
+    "encodingFormat": "application/yaml", 
+    "conformsTo": { 
+        "@id": "https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#create-env-file-manually",
+    }
+},
+{ 
+    "@id": "https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#create-env-file-manually",
+    "@type": "WebPageElement",
+    "name": "Conda environment file"
+}
+```
+
+
+The `encodingFormat` and/or contextual identifier for `conformsTo` SHOULD be provided for machine-readable build/dependency environment fileds, but it is currently out of scope for this profile to list all possible package environment systems.
+
+The term `buildInstructions` is taken from [CodeMeta terms](https://codemeta.github.io/terms/), which are [scheduled to be included](https://github.com/ResearchObject/ro-crate/pull/276) in the RO-Crate 1.2 JSON-LD context. For RO-Crate 1.1, the term must be added to the `@context` as:
+
+```json
+{
+    "@context": [
+        "https://w3id.org/ro/crate/1.1/context",
+        "https://w3id.org/ro/terms/workflow-run",
+        { "buildInstructions": "https://codemeta.github.io/terms/buildInstructions" }
+    ],
+    "@graph": [...]
+}
+```
+
+
 
 ## Conditional step execution
 
