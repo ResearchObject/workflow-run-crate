@@ -13,7 +13,7 @@ title: Provenance Run Crate
 * Profile Crate: [ro-crate-metadata.json](ro-crate-metadata.json) [ro-crate-preview.html](ro-crate-preview.html)
 * Extends:
   - [Workflow Run Crate](https://w3id.org/ro/wfrun/workflow/0.5-DRAFT)
-* JSON-LD context: <https://w3id.org/ro/terms/workflow-run/context.json>
+* JSON-LD context: <https://w3id.org/ro/terms/workflow-run/context>
 * Vocabulary terms:  <https://w3id.org/ro/terms/workflow-run#>
 
 This profile uses terminology from the [RO-Crate 1.1 specification](https://w3id.org/ro/crate/1.1), and [extends it](https://www.researchobject.org/ro-crate/specification/1.1/appendix/jsonld.html#extending-ro-crate) with additional terms from the [workflow-run](https://github.com/ResearchObject/ro-terms/tree/master/workflow-run) ro-terms namespace.
@@ -45,7 +45,10 @@ The following diagram shows the relationships between all provenance-related ent
 
 
 ```json
-{ "@context": "https://w3id.org/ro/crate/1.1/context",
+{ "@context": [
+    "https://w3id.org/ro/crate/1.1/context",
+    "https://w3id.org/ro/terms/workflow-run/context"
+  ],
   "@graph": [
     {
         "@id": "ro-crate-metadata.json",
@@ -392,7 +395,7 @@ Note that the `workflow-run` terms are not part of the standard RO-Crate context
 {
     "@context": [
         "https://w3id.org/ro/crate/1.1/context",
-        "https://w3id.org/ro/terms/workflow-run"
+        "https://w3id.org/ro/terms/workflow-run/context"
     ],
     "@graph": [...]
 }
