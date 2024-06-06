@@ -16,7 +16,7 @@ title: Process Run Crate
 * JSON-LD context: <https://w3id.org/ro/terms/workflow-run/context.json>
 * Vocabulary terms:  <https://w3id.org/ro/terms/workflow-run#>
 
-This profile uses terminology from the [RO-Crate 1.1 specification](https://w3id.org/ro/crate/specification/1.1), and [extends it](https://www.researchobject.org/ro-crate/specification/1.1/appendix/jsonld.html#extending-ro-crate) with additional terms from the [workflow-run](https://github.com/ResearchObject/ro-terms/tree/master/workflow-run) ro-terms namespace.
+This profile uses terminology from the [RO-Crate 1.1 specification](https://w3id.org/ro/crate/1.1), and [extends it](https://www.researchobject.org/ro-crate/specification/1.1/appendix/jsonld.html#extending-ro-crate) with additional terms from the [workflow-run](https://github.com/ResearchObject/ro-terms/tree/master/workflow-run) ro-terms namespace.
 
 
 ## Overview
