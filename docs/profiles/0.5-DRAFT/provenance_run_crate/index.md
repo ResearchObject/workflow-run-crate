@@ -13,23 +13,23 @@ title: Provenance Run Crate
 * Profile Crate: [ro-crate-metadata.json](ro-crate-metadata.json) [ro-crate-preview.html](ro-crate-preview.html)
 * Extends:
   - [Workflow Run Crate](https://w3id.org/ro/wfrun/workflow/0.5-DRAFT)
-* JSON-LD context: <https://w3id.org/ro/terms/workflow-run>
+* JSON-LD context: <https://w3id.org/ro/terms/workflow-run/context>
 * Vocabulary terms:  <https://w3id.org/ro/terms/workflow-run#>
 
-This profile uses terminology from the [RO-Crate 1.1 specification](https://w3id.org/ro/crate/1.1), and [extends it](https://www.researchobject.org/ro-crate/1.1/appendix/jsonld.html#extending-ro-crate) with additional terms from the [workflow-run](https://github.com/ResearchObject/ro-terms/tree/master/workflow-run) ro-terms namespace.
+This profile uses terminology from the [RO-Crate 1.1 specification](https://w3id.org/ro/crate/1.1), and [extends it](https://www.researchobject.org/ro-crate/specification/1.1/appendix/jsonld.html#extending-ro-crate) with additional terms from the [workflow-run](https://github.com/ResearchObject/ro-terms/tree/master/workflow-run) ro-terms namespace.
 
 
 ## Overview
 
-This profile extends [Workflow Run Crate](workflow_run_crate) with specifications to describe internal details of the workflow run, such as step executions and intermediate outputs.
+This profile extends [Workflow Run Crate](../workflow_run_crate) with specifications to describe internal details of the workflow run, such as step executions and intermediate outputs.
 
-A Provenance Run Crate MUST record the details of *tool* executions orchestrated by the workflow through additional [CreateAction](http://schema.org/CreateAction) entities, each of which MUST refer to an entity representing the tool itself via [instrument](http://schema.org/instrument) as specified in [Process Run Crate](process_run_crate). Entities representing the tools MAY reference formal parameter definitions via `input` and `output` (and `environment`, in the case of [environment variables](workflow_run_crate#environment-variables-as-formal-parameters)) as specified in [Workflow Run Crate](workflow_run_crate). The workflow MUST refer to the orchestrated tools via [hasPart](http://schema.org/hasPart) (the usage of `hasPart` for this purpose follows the Bioschemas [ComputationalWorkflow profile](http://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE)).
+A Provenance Run Crate MUST record the details of *tool* executions orchestrated by the workflow through additional [CreateAction](http://schema.org/CreateAction) entities, each of which MUST refer to an entity representing the tool itself via [instrument](http://schema.org/instrument) as specified in [Process Run Crate](../process_run_crate). Entities representing the tools MAY reference formal parameter definitions via `input` and `output` (and `environment`, in the case of [environment variables](../workflow_run_crate#environment-variables-as-formal-parameters)) as specified in [Workflow Run Crate](../workflow_run_crate). The workflow MUST refer to the orchestrated tools via [hasPart](http://schema.org/hasPart) (the usage of `hasPart` for this purpose follows the Bioschemas [ComputationalWorkflow profile](http://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE)).
 
 The crate SHOULD also record *step* executions via [ControlAction](http://schema.org/ControlAction) instances, each of which MUST reference: a [HowToStep](http://schema.org/HowToStep) instance representing the step via `instrument`; the `CreateAction` representing the corresponding tool run via `object`. The workflow MUST reference any `HowToStep` instances that represent its steps via [step](http://schema.org/step). Each `HowToStep` instance MUST reference the entity that represents its corresponding tool via [workExample](http://schema.org/workExample), and MAY indicate its position in the execution order via [position](http://schema.org/position). In addition to `File`, `SoftwareSourceCode` and `ComputationalWorkflow`, a workflow that points to step metadata via `step` MUST have a type of [HowTo](http://schema.org/HowTo).
 
 The crate MAY also include an [OrganizeAction](http://schema.org/OrganizeAction) representing the execution of the workflow *engine* (e.g. cwltool), which MUST point to: an entity representing the workflow engine (e.g. a [SoftwareApplication](http://schema.org/SoftwareApplication)) via `instrument`; the `CreateAction` that represents the workflow run via `result`; the `ControlAction` instances representing the step executions via `object`.
 
-The tool that implements a step can in turn be a workflow (*nested workflow* or *subworkflow*): in this case, it MUST be represented as a `ComputationalWorkflow`, and all of the above directions apply to it recursively. If the subworkflow is described in a section of the main workflow (e.g. as in [packed CWL workflows](https://www.commonwl.org/v1.2/CommandLineTool.html#Packed_documents)), rather than in a file of its own, it SHOULD be added to the crate as a [contextual entity](https://www.researchobject.org/ro-crate/1.1/contextual-entities.html): in this case, its type list MUST NOT include `File`.
+The tool that implements a step can in turn be a workflow (*nested workflow* or *subworkflow*): in this case, it MUST be represented as a `ComputationalWorkflow`, and all of the above directions apply to it recursively. If the subworkflow is described in a section of the main workflow (e.g. as in [packed CWL workflows](https://www.commonwl.org/v1.2/CommandLineTool.html#Packed_documents)), rather than in a file of its own, it SHOULD be added to the crate as a [contextual entity](https://www.researchobject.org/ro-crate/specification/1.1/contextual-entities.html): in this case, its type list MUST NOT include `File`.
 
 The following diagram shows the relationships between all provenance-related entities. Note the distinction between *prospective* provenance (plans for activities, e.g. a workflow) and *retrospective* provenance (what actually happened, e.g. the execution of a workflow).
 
@@ -45,7 +45,10 @@ The following diagram shows the relationships between all provenance-related ent
 
 
 ```json
-{ "@context": "https://w3id.org/ro/crate/1.1/context",
+{ "@context": [
+    "https://w3id.org/ro/crate/1.1/context",
+    "https://w3id.org/ro/terms/workflow-run/context"
+  ],
   "@graph": [
     {
         "@id": "ro-crate-metadata.json",
@@ -392,7 +395,7 @@ Note that the `workflow-run` terms are not part of the standard RO-Crate context
 {
     "@context": [
         "https://w3id.org/ro/crate/1.1/context",
-        "https://w3id.org/ro/terms/workflow-run"
+        "https://w3id.org/ro/terms/workflow-run/context"
     ],
     "@graph": [...]
 }
@@ -436,12 +439,12 @@ A workflow engine may support configuration through a configuration file. In thi
 ...
 ```
 
-See also the [section on referencing configuration files of executed tools](process_run_crate#referencing-configuration-files).
+See also the [section on referencing configuration files of executed tools](../process_run_crate#referencing-configuration-files).
 
 
 ## Tool wrapper dependencies
 
-In some workflow systems (e.g., CWL, Galaxy), tools are typically wrappers for an executable written in a scripting programming language. This MAY be represented by listing the wrapped tool and its dependencies as described in [Specifying software dependencies](process_run_crate#specifying-software-dependencies). The wrapped tool can be highlighted by using `mainEntity`:
+In some workflow systems (e.g., CWL, Galaxy), tools are typically wrappers for an executable written in a scripting programming language. This MAY be represented by listing the wrapped tool and its dependencies as described in [Specifying software dependencies](../process_run_crate#specifying-software-dependencies). The wrapped tool can be highlighted by using `mainEntity`:
 
 ```json
 {
@@ -512,7 +515,7 @@ The values of `propertyID` SHOULD be URLs that univocally identify the quantity.
 
 ## Requirements
 
-The requirements of this profile are those of [Workflow Run Crate](workflow_run_crate) plus the ones listed below.
+The requirements of this profile are those of [Workflow Run Crate](../workflow_run_crate) plus the ones listed below.
 
 <table>
 
@@ -544,7 +547,7 @@ The requirements of this profile are those of [Workflow Run Crate](workflow_run_
   <tr>
    <td>hasPart</td>
    <td>MUST</td>
-   <td>Identifiers of the <em>tools</em> (including subworkflows) orchestrated by this workflow, represented as specified in the <a href="process_run_crate#requirements">Process Run Crate requirements</a> under "SoftwareApplication". The referenced tools MAY also incude formal parameter definitions via <code>input</code> and <code>output</code> as specified in <a href="workflow_run_crate">Workflow Run Crate</a>. In the case of subworkflows, the type MUST include <code>ComputationalWorkflow</code></td>
+   <td>Identifiers of the <em>tools</em> (including subworkflows) orchestrated by this workflow, represented as specified in the <a href="../process_run_crate#requirements">Process Run Crate requirements</a> under "SoftwareApplication". The referenced tools MAY also incude formal parameter definitions via <code>input</code> and <code>output</code> as specified in <a href="../workflow_run_crate">Workflow Run Crate</a>. In the case of subworkflows, the type MUST include <code>ComputationalWorkflow</code></td>
   </tr>
 
   <tr>
