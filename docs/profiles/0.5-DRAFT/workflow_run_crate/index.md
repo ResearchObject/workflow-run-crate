@@ -14,7 +14,7 @@ title: Workflow Run Crate
 * Extends:
   - [Process Run Crate](https://w3id.org/ro/wfrun/process/0.5-DRAFT)
   - [Workflow RO-Crate](https://w3id.org/workflowhub/workflow-ro-crate/)
-* JSON-LD context: <https://w3id.org/ro/terms/workflow-run/context.json>
+* JSON-LD context: <https://w3id.org/ro/terms/workflow-run/context>
 * Vocabulary terms:  <https://w3id.org/ro/terms/workflow-run#>
 
 This profile uses terminology from the [RO-Crate 1.1 specification](https://w3id.org/ro/crate/1.1).
@@ -45,7 +45,10 @@ The following diagram shows the relationships between provenance-related entitie
 <!-- Remember to update above as well as below! -->
 
 ```json
-{ "@context": "https://w3id.org/ro/crate/1.1/context",
+{ "@context": [
+    "https://w3id.org/ro/crate/1.1/context",
+    "https://w3id.org/ro/terms/workflow-run/context"
+  ],
   "@graph": [
     {
         "@id": "ro-crate-metadata.json",
