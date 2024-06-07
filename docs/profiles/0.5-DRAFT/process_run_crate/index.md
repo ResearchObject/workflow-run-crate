@@ -403,7 +403,7 @@ The use case shown here is an example of a situation where it's important to ref
 
 ## Representing environment variable settings
 
-The behavior of some applications may be modified by setting appropriate environment variables. These are different from ordinary application inputs in that they are part of the environment in which the process runs, rather than parameters supplied through a command line or a graphical interface. To represent the fact that an environment variable was set to a certain value during the execution of an action, use the `environment` property from the [workflow-run](https://w3id.org/ro/terms/workflow-run#https://w3id.org/ro/terms/workflow-run/context) ro-terms namespace, making it point to a `PropertyValue` that describes the setting:
+The behavior of some applications may be modified by setting appropriate environment variables. These are different from ordinary application inputs in that they are part of the environment in which the process runs, rather than parameters supplied through a command line or a graphical interface. To represent the fact that an environment variable was set to a certain value during the execution of an action, use the `environment` property from the [workflow-run](https://w3id.org/ro/terms/workflow-run#) ro-terms namespace, making it point to a `PropertyValue` that describes the setting:
 
 ```json
 {
