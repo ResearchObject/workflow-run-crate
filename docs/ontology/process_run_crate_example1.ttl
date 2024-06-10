@@ -1,0 +1,56 @@
+@base          <https://www.researchobject.org/workflow-run-crate/profiles/0.5-DRAFT/process_run_crate/example1/ro-crate-metadata.json> .
+
+<#> rdf:type owl:Ontology ;
+   owl:imports  <https://w3id.org/ro/wfrun/ontology#> .
+
+<https://orcid.org/0000-0002-3545-944X>
+        a                         <http://schema.org/Person> ;
+        <http://schema.org/name>  "Peter Sefton" .
+
+<pics/sepia_fence.jpg>
+        a                         <http://schema.org/MediaObject> ;
+        <http://schema.org/description>
+                "The converted picture, now sepia-colored" ;
+        <http://schema.org/encodingFormat>
+                "image/jpeg" ;
+        <http://schema.org/name>  "sepia_fence (output)" .
+
+<#SepiaConversion_1>  a                 <http://schema.org/CreateAction> ;
+        <http://schema.org/agent>       <https://orcid.org/0000-0001-9842-9718> ;
+        <http://schema.org/description>
+                "convert -sepia-tone 80% pics/2017-06-11\\ 12.56.14.jpg pics/sepia_fence.jpg" ;
+        <http://schema.org/endTime>     "2024-05-17T01:04:52+01:00" ;
+        <http://schema.org/instrument>  <https://www.imagemagick.org/> ;
+        <http://schema.org/name>        "Convert dog image to sepia" ;
+        <http://schema.org/result>      <pics/sepia_fence.jpg> .
+
+<https://orcid.org/0000-0001-9842-9718>
+        a                         <http://schema.org/Person> ;
+        <http://schema.org/name>  "Stian Soiland-Reyes" .
+
+<>      a                          <http://schema.org/CreativeWork> ;
+        <http://purl.org/dc/terms/conformsTo>
+                <https://w3id.org/ro/crate/1.1> ;
+        <http://schema.org/about>  <.> .
+
+<https://w3id.org/ro/wfrun/process/0.4>
+        a                            <http://schema.org/CreativeWork> ;
+        <http://schema.org/name>     "Process Run Crate" ;
+        <http://schema.org/version>  "0.5" .
+
+<https://www.imagemagick.org/>
+        a                         <http://schema.org/SoftwareApplication> ;
+        <http://schema.org/name>  "ImageMagick" ;
+        <http://schema.org/softwareVersion>
+                "6.9.7-4" ;
+        <http://schema.org/url>   "https://www.imagemagick.org/" .
+
+
+<.>     a                              <http://schema.org/Dataset> ;
+        <http://purl.org/dc/terms/conformsTo>
+                <https://w3id.org/ro/wfrun/process/0.4> ;
+        <http://schema.org/hasPart>    <pics/sepia_fence.jpg> ;
+        <http://schema.org/isBasedOn>  <https://doi.org/10.5281/zenodo.1009240> ;
+        <http://schema.org/license>    <http://spdx.org/licenses/CC0-1.0> ;
+        <http://schema.org/mentions>   <#SepiaConversion_1> ;
+        <http://schema.org/name>       "My Pictures" .

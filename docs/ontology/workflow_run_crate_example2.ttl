@@ -1,0 +1,166 @@
+@base          <https://www.researchobject.org/workflow-run-crate/profiles/0.5-DRAFT/workflow_run_crate/example2/ro-crate-metadata.json> .
+
+<#> rdf:type owl:Ontology ;
+   owl:imports  <https://w3id.org/ro/wfrun/ontology#> .
+
+<outputs/tac_on_data_360_1.txt>
+        a                         <http://schema.org/MediaObject> ;
+        <http://schema.org/description>
+                "Example output of the reversed lines" ;
+        <http://schema.org/encodingFormat>
+                "text/plain" ;
+        <http://schema.org/exampleOfWork>
+                <#reversed> ;
+        <http://schema.org/name>  "tac_on_data_360_1 (output)" .
+
+<#wfrun-5a5970ab-4375-444d-9a87-a764a66e3a47>
+        a                               <http://schema.org/CreateAction> ;
+        <http://schema.org/endTime>     "2018-09-19T17:01:07+10:00" ;
+        <http://schema.org/instrument>  <Galaxy-Workflow-Hello_World.ga> ;
+        <http://schema.org/name>        "Galaxy workflow run 5a5970ab-4375-444d-9a87-a764a66e3a47" ;
+        <http://schema.org/object>      <#verbose-pv> , <inputs/abcdef.txt> ;
+        <http://schema.org/result>      <outputs/tac_on_data_360_1.txt> , <outputs/Select_first_on_data_1_2.txt> ;
+        <http://schema.org/subjectOf>   <https://usegalaxy.eu/u/5dbf7f05329e49c98b31243b5f35045c/p/invocation-report-a3a1d27edb703e5c> .
+
+<#simple_input>  a                <https://bioschemas.org/FormalParameter> ;
+        <http://purl.org/dc/terms/conformsTo>
+                <https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE> ;
+        <http://schema.org/additionalType>
+                "File" ;
+        <http://schema.org/description>
+                "A simple set of lines in a text file" ;
+        <http://schema.org/encodingFormat>
+                "text/plain" ;
+        <http://schema.org/encodingFormat>
+                <http://edamontology.org/format_2330> ;
+        <http://schema.org/name>  "simple_input" ;
+        <http://schema.org/valueRequired>
+                "True" ;
+        <http://schema.org/workExample>
+                <inputs/abcdef.txt> .
+
+<https://w3id.org/ro/wfrun/process/0.4>
+        a                            <http://schema.org/CreativeWork> ;
+        <http://schema.org/name>     "Process Run Crate" ;
+        <http://schema.org/version>  "0.4" .
+
+<#reversed>  a                    <https://bioschemas.org/FormalParameter> ;
+        <http://purl.org/dc/terms/conformsTo>
+                <https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE> ;
+        <http://schema.org/additionalType>
+                "File" ;
+        <http://schema.org/description>
+                "All the lines, reversed" ;
+        <http://schema.org/encodingFormat>
+                "text/plain" ;
+        <http://schema.org/encodingFormat>
+                <http://edamontology.org/format_2330> ;
+        <http://schema.org/name>  "reversed" ;
+        <http://schema.org/workExample>
+                <outputs/tac_on_data_360_1.txt> .
+
+<https://w3id.org/ro/wfrun/workflow/0.4>
+        a                            <http://schema.org/CreativeWork> ;
+        <http://schema.org/name>     "Workflow Run Crate" ;
+        <http://schema.org/version>  "0.4" .
+
+<#verbose-param>  a               <https://bioschemas.org/FormalParameter> ;
+        <http://purl.org/dc/terms/conformsTo>
+                <https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE> ;
+        <http://schema.org/additionalType>
+                "Boolean" ;
+        <http://schema.org/description>
+                "Increase logging output" ;
+        <http://schema.org/name>  "verbose" ;
+        <http://schema.org/valueRequired>
+                "False" ;
+        <http://schema.org/workExample>
+                <#verbose-pv> .
+
+<https://orcid.org/0000-0001-9842-9718>
+        a                         <http://schema.org/Person> ;
+        <http://schema.org/name>  "Stian Soiland-Reyes" .
+
+<outputs/Select_first_on_data_1_2.txt>
+        a                         <http://schema.org/MediaObject> ;
+        <http://schema.org/description>
+                "Example output of the last (aka first of reversed) lines" ;
+        <http://schema.org/encodingFormat>
+                "text/plain" ;
+        <http://schema.org/exampleOfWork>
+                <#last_lines> ;
+        <http://schema.org/name>  "Select_first_on_data_1_2 (output)" .
+
+<#verbose-pv>  a                   <http://schema.org/PropertyValue> ;
+        <http://schema.org/exampleOfWork>
+                <#verbose-param> ;
+        <http://schema.org/name>   "verbose" ;
+        <http://schema.org/value>  "True" .
+
+<Galaxy-Workflow-Hello_World.ga>
+        a                            <http://schema.org/SoftwareSourceCode> , <https://bioschemas.org/ComputationalWorkflow> , <http://schema.org/MediaObject> ;
+        <http://schema.org/author>   <https://orcid.org/0000-0001-9842-9718> ;
+        <http://schema.org/creator>  <https://orcid.org/0000-0001-9842-9718> ;
+        <http://schema.org/name>     "Hello World (Galaxy Workflow)" ;
+        <http://schema.org/programmingLanguage>
+                <https://w3id.org/workflowhub/workflow-ro-crate#galaxy> ;
+        <https://bioschemas.org/ComputationalWorkflow#input>
+                <#verbose-param> , <#simple_input> ;
+        <https://bioschemas.org/ComputationalWorkflow#output>
+                <#reversed> , <#last_lines> .
+
+<>      a                          <http://schema.org/CreativeWork> ;
+        <http://purl.org/dc/terms/conformsTo>
+                <https://w3id.org/workflowhub/workflow-ro-crate/1.0> , <https://w3id.org/ro/crate/1.1> ;
+        <http://schema.org/about>  <.> .
+
+<https://w3id.org/workflowhub/workflow-ro-crate#galaxy>
+        a                               <http://schema.org/ComputerLanguage> ;
+        <http://schema.org/identifier>  "https://galaxyproject.org/" ;
+        <http://schema.org/name>        "Galaxy" ;
+        <http://schema.org/url>         "https://galaxyproject.org/" .
+
+<inputs/abcdef.txt>  a  <http://schema.org/MediaObject> ;
+        <http://schema.org/description>
+                "Example input, a simple text file" ;
+        <http://schema.org/encodingFormat>
+                "text/plain" ;
+        <http://schema.org/exampleOfWork>
+                <#simple_input> .
+
+<https://w3id.org/workflowhub/workflow-ro-crate/1.0>
+        a                            <http://schema.org/CreativeWork> ;
+        <http://schema.org/name>     "Workflow RO-Crate" ;
+        <http://schema.org/version>  "1.0" .
+
+<#last_lines>  a                  <https://bioschemas.org/FormalParameter> ;
+        <http://purl.org/dc/terms/conformsTo>
+                <https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE> ;
+        <http://schema.org/additionalType>
+                "File" ;
+        <http://schema.org/description>
+                "The last lines of workflow input are the first lines of the reversed input" ;
+        <http://schema.org/encodingFormat>
+                "text/plain" ;
+        <http://schema.org/encodingFormat>
+                <http://edamontology.org/format_2330> ;
+        <http://schema.org/name>  "last_lines" ;
+        <http://schema.org/workExample>
+                <outputs/Select_first_on_data_1_2.txt> .
+
+<https://usegalaxy.eu/u/5dbf7f05329e49c98b31243b5f35045c/p/invocation-report-a3a1d27edb703e5c>
+        a                         <http://schema.org/CreativeWork> ;
+        <http://schema.org/datePublished>
+                "2021-11-18T02:02:00Z" ;
+        <http://schema.org/encodingFormat>
+                "text/html" ;
+        <http://schema.org/name>  "Workflow Execution Summary of Hello World" .
+
+<.>     a                               <http://schema.org/Dataset> ;
+        <http://purl.org/dc/terms/conformsTo>
+                <https://w3id.org/ro/wfrun/workflow/0.4> , <https://w3id.org/workflowhub/workflow-ro-crate/1.0> , <https://w3id.org/ro/wfrun/process/0.4> ;
+        <http://schema.org/hasPart>     <outputs/Select_first_on_data_1_2.txt> , <Galaxy-Workflow-Hello_World.ga> , <outputs/tac_on_data_360_1.txt> , <inputs/abcdef.txt> ;
+        <http://schema.org/license>     <http://spdx.org/licenses/CC0-1.0> ;
+        rdfs:label "Workflow Execution Summary of Hello World" ;
+        <http://schema.org/mainEntity>  <Galaxy-Workflow-Hello_World.ga> ;
+        <http://schema.org/mentions>    <#wfrun-5a5970ab-4375-444d-9a87-a764a66e3a47> .

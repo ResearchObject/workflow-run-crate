@@ -1,0 +1,228 @@
+@base          <https://www.researchobject.org/workflow-run-crate/profiles/0.5-DRAFT/provenance_run_crate/example3/ro-crate-metadata.json> .
+
+<#> rdf:type owl:Ontology ;
+   owl:imports  <https://w3id.org/ro/wfrun/ontology#> .
+
+
+<.>     a                               <http://schema.org/Dataset> ;
+        <http://purl.org/dc/terms/conformsTo>
+                <https://w3id.org/ro/wfrun/process/0.4> , <https://w3id.org/ro/wfrun/provenance/0.4> , <https://w3id.org/workflowhub/workflow-ro-crate/1.0> , <https://w3id.org/ro/wfrun/workflow/0.4> ;
+        <http://schema.org/hasPart>     <b9214658cc453331b62c2282b772a5c063dbd284> , <327fc7aedf4f6b69a42a7c8b808dc5a7aff61376> , <packed.cwl> , <97fe1b50b4582cebc7d853796ebd62e3e163aa3f> ;
+        <http://schema.org/mainEntity>  <packed.cwl> ;
+        <http://schema.org/mentions>    <#4154dad3-00cc-4e35-bb8f-a2de5cd7dc49> .
+
+<packed.cwl#main/output>
+        a                         <https://bioschemas.org/FormalParameter> ;
+        <http://schema.org/additionalType>
+                "File" ;
+        <http://schema.org/name>  "main/output" .
+
+<>      a                          <http://schema.org/CreativeWork> ;
+        <http://purl.org/dc/terms/conformsTo>
+                <https://w3id.org/workflowhub/workflow-ro-crate/1.0> , <https://w3id.org/ro/crate/1.1> ;
+        <http://schema.org/about>  <.> .
+
+<327fc7aedf4f6b69a42a7c8b808dc5a7aff61376>
+        a       <http://schema.org/MediaObject> ;
+        <http://schema.org/exampleOfWork>
+                <packed.cwl#revtool.cwl/input> , <packed.cwl#main/input> .
+
+<#793b3df4-cbb7-4d17-94d4-0edb18566ed3>
+        a                               <http://schema.org/ControlAction> ;
+        <http://schema.org/instrument>  <packed.cwl#main/sorted> ;
+        <http://schema.org/name>        "orchestrate sorttool.cwl" ;
+        <http://schema.org/object>      <#9eac64b2-c2c8-401f-9af8-7cfb0e998107> .
+
+<https://w3id.org/ro/wfrun/process/0.4>
+        a                            <http://schema.org/CreativeWork> ;
+        <http://schema.org/name>     "Process Run Crate" ;
+        <http://schema.org/version>  "0.4" .
+
+<packed.cwl#revtool.cwl/output>
+        a                         <https://bioschemas.org/FormalParameter> ;
+        <http://schema.org/additionalType>
+                "File" ;
+        <http://schema.org/name>  "revtool.cwl/output" .
+
+<#a73fd902-8d14-48c9-835b-a5ba2f9149fd>
+        a                         <http://schema.org/SoftwareApplication> ;
+        <http://schema.org/name>  "cwltool 1.0.20181012180214" .
+
+<https://w3id.org/ro/wfrun/workflow/0.4>
+        a                            <http://schema.org/CreativeWork> ;
+        <http://schema.org/name>     "Workflow Run Crate" ;
+        <http://schema.org/version>  "0.4" .
+
+<b9214658cc453331b62c2282b772a5c063dbd284>
+        a       <http://schema.org/MediaObject> ;
+        <http://schema.org/exampleOfWork>
+                <packed.cwl#sorttool.cwl/output> , <packed.cwl#main/output> .
+
+<#6933cce1-f8f0-4032-8848-e0fc9166e92f>
+        a                               <http://schema.org/CreateAction> ;
+        <http://schema.org/endTime>     "2018-10-25T15:46:36.967359" ;
+        <http://schema.org/instrument>  <packed.cwl#revtool.cwl> ;
+        <http://schema.org/name>        "Run of workflow/packed.cwl#main/rev" ;
+        <http://schema.org/object>      <327fc7aedf4f6b69a42a7c8b808dc5a7aff61376> ;
+        <http://schema.org/result>      <97fe1b50b4582cebc7d853796ebd62e3e163aa3f> ;
+        <http://schema.org/startTime>   "2018-10-25T15:46:35.314101" .
+
+<packed.cwl#sorttool.cwl/reverse>
+        a                         <https://bioschemas.org/FormalParameter> ;
+        <http://schema.org/additionalType>
+                "Boolean" ;
+        <http://schema.org/name>  "sorttool.cwl/reverse" .
+
+<packed.cwl>  a                      <http://schema.org/SoftwareSourceCode> , <http://schema.org/HowTo> , <https://bioschemas.org/ComputationalWorkflow> , <http://schema.org/MediaObject> ;
+        <http://schema.org/hasPart>  <packed.cwl#revtool.cwl> , <packed.cwl#sorttool.cwl> ;
+        <http://schema.org/name>     "packed.cwl" ;
+        <http://schema.org/programmingLanguage>
+                <https://w3id.org/workflowhub/workflow-ro-crate#cwl> ;
+        <http://schema.org/step>     <packed.cwl#main/rev> , <packed.cwl#main/sorted> ;
+        <https://bioschemas.org/ComputationalWorkflow#input>
+                <packed.cwl#main/reverse_sort> , <packed.cwl#main/input> ;
+        <https://bioschemas.org/ComputationalWorkflow#output>
+                <packed.cwl#main/output> .
+
+<https://w3id.org/ro/wfrun/provenance/0.4>
+        a                            <http://schema.org/CreativeWork> ;
+        <http://schema.org/name>     "Provenance Run Crate" ;
+        <http://schema.org/version>  "0.4" .
+
+<https://orcid.org/0000-0001-9842-9718>
+        a                         <http://schema.org/Person> ;
+        <http://schema.org/name>  "Stian Soiland-Reyes" .
+
+<packed.cwl#main/input>
+        a                         <https://bioschemas.org/FormalParameter> ;
+        <http://schema.org/additionalType>
+                "File" ;
+        <http://schema.org/defaultValue>
+                "file:///home/stain/src/cwltool/tests/wf/hello.txt" ;
+        <http://schema.org/encodingFormat>
+                "https://www.iana.org/assignments/media-types/text/plain" ;
+        <http://schema.org/name>  "main/input" .
+
+<packed.cwl#revtool.cwl>
+        a                         <http://schema.org/SoftwareApplication> ;
+        <http://schema.org/description>
+                "Reverse each line using the `rev` command" ;
+        <http://schema.org/name>  "revtool.cwl" ;
+        <https://bioschemas.org/ComputationalWorkflow#input>
+                <packed.cwl#revtool.cwl/input> ;
+        <https://bioschemas.org/ComputationalWorkflow#output>
+                <packed.cwl#revtool.cwl/output> .
+
+<#d6ab3175-88f5-4b6a-b028-1b13e6d1a158>
+        a                               <http://schema.org/OrganizeAction> ;
+        <http://schema.org/agent>       <https://orcid.org/0000-0001-9842-9718> ;
+        <http://schema.org/instrument>  <#a73fd902-8d14-48c9-835b-a5ba2f9149fd> ;
+        <http://schema.org/name>        "Run of cwltool 1.0.20181012180214" ;
+        <http://schema.org/object>      <#793b3df4-cbb7-4d17-94d4-0edb18566ed3> , <#4f7f887f-1b9b-4417-9beb-58618a125cc5> ;
+        <http://schema.org/result>      <#4154dad3-00cc-4e35-bb8f-a2de5cd7dc49> ;
+        <http://schema.org/startTime>   "2018-10-25T15:46:35.210973" .
+
+<#4154dad3-00cc-4e35-bb8f-a2de5cd7dc49>
+        a                               <http://schema.org/CreateAction> ;
+        <http://schema.org/endTime>     "2018-10-25T15:46:43.020168" ;
+        <http://schema.org/instrument>  <packed.cwl> ;
+        <http://schema.org/name>        "Run of workflow/packed.cwl#main" ;
+        <http://schema.org/object>      <#pv-main/reverse_sort> , <327fc7aedf4f6b69a42a7c8b808dc5a7aff61376> ;
+        <http://schema.org/result>      <b9214658cc453331b62c2282b772a5c063dbd284> ;
+        <http://schema.org/startTime>   "2018-10-25T15:46:35.211153" .
+
+<packed.cwl#sorttool.cwl/output>
+        a                         <https://bioschemas.org/FormalParameter> ;
+        <http://schema.org/additionalType>
+                "File" ;
+        <http://schema.org/name>  "sorttool.cwl/output" .
+
+<packed.cwl#sorttool.cwl/input>
+        a                         <https://bioschemas.org/FormalParameter> ;
+        <http://schema.org/additionalType>
+                "File" ;
+        <http://schema.org/name>  "sorttool.cwl/input" .
+
+<packed.cwl#main/rev>
+        a                             <http://schema.org/HowToStep> ;
+        <http://schema.org/position>  "0" ;
+        <http://schema.org/workExample>
+                <packed.cwl#revtool.cwl> .
+
+<packed.cwl#revtool.cwl/input>
+        a                         <https://bioschemas.org/FormalParameter> ;
+        <http://schema.org/additionalType>
+                "File" ;
+        <http://schema.org/name>  "revtool.cwl/input" .
+
+<#9eac64b2-c2c8-401f-9af8-7cfb0e998107>
+        a                               <http://schema.org/CreateAction> ;
+        <http://schema.org/endTime>     "2018-10-25T15:46:38.069110" ;
+        <http://schema.org/instrument>  <packed.cwl#sorttool.cwl> ;
+        <http://schema.org/name>        "Run of workflow/packed.cwl#main/sorted" ;
+        <http://schema.org/object>      <#pv-main/sorted/reverse> , <97fe1b50b4582cebc7d853796ebd62e3e163aa3f> ;
+        <http://schema.org/result>      <b9214658cc453331b62c2282b772a5c063dbd284> ;
+        <http://schema.org/startTime>   "2018-10-25T15:46:36.975235" .
+
+<https://w3id.org/workflowhub/workflow-ro-crate#cwl>
+        a                               <http://schema.org/ComputerLanguage> ;
+        <http://schema.org/alternateName>
+                "CWL" ;
+        <http://schema.org/identifier>  <https://w3id.org/cwl/v1.0/> ;
+        <http://schema.org/name>        "Common Workflow Language" ;
+        <http://schema.org/url>         <https://www.commonwl.org/> ;
+        <http://schema.org/version>     "v1.0" .
+
+<#4f7f887f-1b9b-4417-9beb-58618a125cc5>
+        a                               <http://schema.org/ControlAction> ;
+        <http://schema.org/instrument>  <packed.cwl#main/rev> ;
+        <http://schema.org/name>        "orchestrate revtool.cwl" ;
+        <http://schema.org/object>      <#6933cce1-f8f0-4032-8848-e0fc9166e92f> .
+
+<packed.cwl#sorttool.cwl>
+        a                         <http://schema.org/SoftwareApplication> ;
+        <http://schema.org/description>
+                "Sort lines using the `sort` command" ;
+        <http://schema.org/name>  "sorttool.cwl" ;
+        <https://bioschemas.org/ComputationalWorkflow#input>
+                <packed.cwl#sorttool.cwl/input> , <packed.cwl#sorttool.cwl/reverse> ;
+        <https://bioschemas.org/ComputationalWorkflow#output>
+                <packed.cwl#sorttool.cwl/output> .
+
+<https://w3id.org/workflowhub/workflow-ro-crate/1.0>
+        a                            <http://schema.org/CreativeWork> ;
+        <http://schema.org/name>     "Workflow RO-Crate" ;
+        <http://schema.org/version>  "1.0" .
+
+<packed.cwl#main/reverse_sort>
+        a                         <https://bioschemas.org/FormalParameter> ;
+        <http://schema.org/additionalType>
+                "Boolean" ;
+        <http://schema.org/defaultValue>
+                "True" ;
+        <http://schema.org/name>  "main/reverse_sort" .
+
+<packed.cwl#main/sorted>
+        a                             <http://schema.org/HowToStep> ;
+        <http://schema.org/position>  "1" ;
+        <http://schema.org/workExample>
+                <packed.cwl#sorttool.cwl> .
+
+<#pv-main/sorted/reverse>
+        a                          <http://schema.org/PropertyValue> ;
+        <http://schema.org/exampleOfWork>
+                <packed.cwl#sorttool.cwl/reverse> ;
+        <http://schema.org/name>   "main/sorted/reverse" ;
+        <http://schema.org/value>  "True" .
+
+<#pv-main/reverse_sort>
+        a                          <http://schema.org/PropertyValue> ;
+        <http://schema.org/exampleOfWork>
+                <packed.cwl#main/reverse_sort> ;
+        <http://schema.org/name>   "main/reverse_sort" ;
+        <http://schema.org/value>  "True" .
+
+<97fe1b50b4582cebc7d853796ebd62e3e163aa3f>
+        a       <http://schema.org/MediaObject> ;
+        <http://schema.org/exampleOfWork>
+                <packed.cwl#sorttool.cwl/input> , <packed.cwl#revtool.cwl/output> .
