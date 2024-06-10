@@ -13,19 +13,19 @@ title: Process Run Crate
 * Profile Crate: [ro-crate-metadata.json](ro-crate-metadata.json) [ro-crate-preview.html](ro-crate-preview.html)
 * Extends:
   - [RO-Crate 1.1 specification](https://w3id.org/ro/crate/1.1)
-* JSON-LD context: <https://w3id.org/ro/terms/workflow-run>
+* JSON-LD context: <https://w3id.org/ro/terms/workflow-run/context>
 * Vocabulary terms:  <https://w3id.org/ro/terms/workflow-run#>
 
-This profile uses terminology from the [RO-Crate 1.1 specification](https://w3id.org/ro/crate/1.1), and [extends it](https://www.researchobject.org/ro-crate/1.1/appendix/jsonld.html#extending-ro-crate) with additional terms from the [workflow-run](https://github.com/ResearchObject/ro-terms/tree/master/workflow-run) ro-terms namespace.
+This profile uses terminology from the [RO-Crate 1.1 specification](https://w3id.org/ro/crate/1.1), and [extends it](https://www.researchobject.org/ro-crate/specification/1.1/appendix/jsonld.html#extending-ro-crate) with additional terms from the [workflow-run](https://github.com/ResearchObject/ro-terms/tree/master/workflow-run) ro-terms namespace.
 
 
 ## Overview
 
-This profile is used to describe the execution of an _implicit_ workflow, indicating that one or more computational tools have been executed, typically generating some result files that are represented as [data entities](https://www.researchobject.org/ro-crate/1.1/data-entities.html) in the RO-Crate.
+This profile is used to describe the execution of an _implicit_ workflow, indicating that one or more computational tools have been executed, typically generating some result files that are represented as [data entities](https://www.researchobject.org/ro-crate/specification/1.1/data-entities.html) in the RO-Crate.
 
 By "implicit workflow" we mean that the composition of these tools may have been done by hand (a user executes one tool following another) or by some script that has not yet been included as part of the crate (for instance because it is an embedded part of a larger application).
 
-This profile requires the indication of [Software used to create files](https://www.researchobject.org/ro-crate/1.1/provenance.html#software-used-to-create-files), namely a [SoftwareApplication](http://schema.org/SoftwareApplication) (the tool) and a [CreateAction](http://schema.org/CreateAction) (the execution of said tool).
+This profile requires the indication of [Software used to create files](https://www.researchobject.org/ro-crate/specification/1.1/provenance.html#software-used-to-create-files), namely a [SoftwareApplication](http://schema.org/SoftwareApplication) (the tool) and a [CreateAction](http://schema.org/CreateAction) (the execution of said tool).
 
 The following diagram shows the relationships between provenance-related entities. Note the distinction between *prospective* provenance (plans for activities, e.g., an application) and *retrospective* provenance (what actually happened, e.g. the execution of an application).
 
@@ -40,7 +40,10 @@ The following diagram shows the relationships between provenance-related entitie
 <!-- Remember to update above as well as below! -->
 
 ```json
-{ "@context": "https://w3id.org/ro/crate/1.1/context", 
+{ "@context": [
+    "https://w3id.org/ro/crate/1.1/context",
+    "https://w3id.org/ro/terms/workflow-run/context"
+  ],
   "@graph": [
     {
         "@id": "ro-crate-metadata.json",
@@ -105,7 +108,7 @@ The following diagram shows the relationships between provenance-related entitie
 }
 ```
 
-Note that the command line shown in the action's `description` is not directly re-executable, as file paths are not required to match the RO-Crate locations. For a more structural and reproducible description of tool executions, see [Workflow Run Crate](workflow_run_crate).
+Note that the command line shown in the action's `description` is not directly re-executable, as file paths are not required to match the RO-Crate locations. For a more structural and reproducible description of tool executions, see [Workflow Run Crate](../workflow_run_crate).
 
 
 ## Requirements
@@ -400,13 +403,13 @@ The use case shown here is an example of a situation where it's important to ref
 
 ## Representing environment variable settings
 
-The behavior of some applications may be modified by setting appropriate environment variables. These are different from ordinary application inputs in that they are part of the environment in which the process runs, rather than parameters supplied through a command line or a graphical interface. To represent the fact that an environment variable was set to a certain value during the execution of an action, use the `environment` property from the [workflow-run](https://github.com/ResearchObject/ro-terms/tree/master/workflow-run) ro-terms namespace, making it point to a `PropertyValue` that describes the setting:
+The behavior of some applications may be modified by setting appropriate environment variables. These are different from ordinary application inputs in that they are part of the environment in which the process runs, rather than parameters supplied through a command line or a graphical interface. To represent the fact that an environment variable was set to a certain value during the execution of an action, use the `environment` property from the [workflow-run](https://w3id.org/ro/terms/workflow-run#) ro-terms namespace, making it point to a `PropertyValue` that describes the setting:
 
 ```json
 {
     "@context": [
         "https://w3id.org/ro/crate/1.1/context",
-        "https://w3id.org/ro/terms/workflow-run"
+        "https://w3id.org/ro/terms/workflow-run/context"
     ],
     "@graph": [
         ...
