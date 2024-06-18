@@ -6,7 +6,12 @@
 
 <script type="application/ld+json"> 
   {
-  "@context": "https://w3id.org/ro/crate/1.2-DRAFT/context",
+  "@context": [
+    "https://w3id.org/ro/crate/1.2-DRAFT/context",
+    {
+      "@base": "https://www.researchobject.org/workflow-run-crate/profiles/0.5/workflow_run_crate/"
+    }
+  ],
   "@graph": [
     {
       "@id": "ro-crate-metadata.json",
