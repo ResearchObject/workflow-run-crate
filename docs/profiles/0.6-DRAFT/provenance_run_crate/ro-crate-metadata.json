@@ -6,7 +6,7 @@
     "@type": "CreativeWork",
     "license": { "@id": "http://spdx.org/licenses/CC0-1.0" },
     "conformsTo": {"@id": "https://w3id.org/ro/crate/1.2-DRAFT"},
-    "about": {"@id": "https://w3id.org/ro/wfrun/provenance/0.5-DRAFT"}
+    "about": {"@id": "https://w3id.org/ro/wfrun/provenance/0.6-DRAFT"}
   },  
   {
     "@id": "ro-crate-preview.html",
@@ -15,17 +15,17 @@
     "isBasedOn": {"@id": "ro-crate-metadata.json" },
     "name": "RO-Crate preview of the Provenance Run Crate profile",
     "encodingFormat": "text/html",
-    "about": "https://w3id.org/ro/wfrun/provenance/0.5-DRAFT"
+    "about": "https://w3id.org/ro/wfrun/provenance/0.6-DRAFT"
   },  
   {
-    "@id": "https://w3id.org/ro/wfrun/provenance/0.5-DRAFT",
+    "@id": "https://w3id.org/ro/wfrun/provenance/0.6-DRAFT",
     "@type": ["Dataset","Profile"],
     "isProfileOf": [
         {"@id": "https://w3id.org/ro/crate/1.2-DRAFT"}
     ],
-    "identifier": "https://w3id.org/ro/wfrun/provenance/0.5-DRAFT",
+    "identifier": "https://w3id.org/ro/wfrun/provenance/0.6-DRAFT",
     "name": "Provenance Run Crate profile",
-    "version": "0.5-DRAFT",
+    "version": "0.6-DRAFT",
     "license": {
       "@id": "https://www.apache.org/licenses/LICENSE-2.0"
     },
@@ -40,8 +40,8 @@
         { "@id": "https://w3id.org/ro/terms/workflow-run" },
         { "@id": "https://gxy.io/GTN:T00343" },
         { "@id": "https://pypi.org/project/runcrate/" },
-        { "@id": "https://w3id.org/ro/wfrun/process/0.5-DRAFT" },
-        { "@id": "https://w3id.org/ro/wfrun/workflow/0.5-DRAFT" },
+        { "@id": "https://w3id.org/ro/wfrun/process/0.6-DRAFT" },
+        { "@id": "https://w3id.org/ro/wfrun/workflow/0.6-DRAFT" },
         { "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0" },
         { "@id": "https://w3id.org/ro/terms/workflow-run#ParameterConnection" },
         { "@id": "https://w3id.org/ro/terms/workflow-run#connection" },
@@ -115,10 +115,10 @@
     "name": "RO-Crate Community"
   },
   {
-    "@id": "https://w3id.org/ro/wfrun/process/0.5-DRAFT",
+    "@id": "https://w3id.org/ro/wfrun/process/0.6-DRAFT",
     "@type": ["CreativeWork", "Profile"],
     "name": "Process Run Crate profile",
-    "version": "0.5-DRAFT"
+    "version": "0.6-DRAFT"
 },
 {
     "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0",
@@ -127,10 +127,10 @@
     "version": "1.0"
 },    
   {
-    "@id": "https://w3id.org/ro/wfrun/workflow/0.5-DRAFT",
+    "@id": "https://w3id.org/ro/wfrun/workflow/0.6-DRAFT",
     "@type": ["CreativeWork", "Profile"],
     "name": "Workflow Run Crate profile",
-    "version": "0.5-DRAFT"
+    "version": "0.6-DRAFT"
   },
   {
     "@id": "index.html",
@@ -269,14 +269,14 @@
     "@type": "ResourceDescriptor",
     "name": "SHOULD conform to Process Crate profile",
     "hasRole": { "@id": "http://purl.org/dc/terms/conformsTo" },
-    "hasArtifact": {"@id": "https://w3id.org/ro/wfrun/process/0.5-DRAFT"}
+    "hasArtifact": {"@id": "https://w3id.org/ro/wfrun/process/0.6-DRAFT"}
 },  
 { 
     "@id": "#shouldConformToWorkflowCrateProfile",
     "@type": "ResourceDescriptor",
     "name": "SHOULD conform to Workflow Crate profile",
     "hasRole": { "@id": "http://purl.org/dc/terms/conformsTo" },
-    "hasArtifact": {"@id": "https://w3id.org/ro/wfrun/workflow/0.5-DRAFT"}
+    "hasArtifact": {"@id": "https://w3id.org/ro/wfrun/workflow/0.6-DRAFT"}
 },  
   { 
     "@id": "https://gxy.io/GTN:T00343",

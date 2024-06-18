@@ -6,7 +6,7 @@
     "@type": "CreativeWork",
     "license": { "@id": "http://spdx.org/licenses/CC0-1.0" },
     "conformsTo": {"@id": "https://w3id.org/ro/crate/1.2-DRAFT"},
-    "about": {"@id": "https://w3id.org/ro/wfrun/process/0.5-DRAFT"}
+    "about": {"@id": "https://w3id.org/ro/wfrun/process/0.6-DRAFT"}
   },  
   {
     "@id": "ro-crate-preview.html",
@@ -15,17 +15,17 @@
     "isBasedOn": {"@id": "ro-crate-metadata.json" },
     "name": "RO-Crate preview of the Process Run Crate profile",
     "encodingFormat": "text/html",
-    "about": "https://w3id.org/ro/wfrun/process/0.5-DRAFT"
+    "about": "https://w3id.org/ro/wfrun/process/0.6-DRAFT"
   },  
   {
-    "@id": "https://w3id.org/ro/wfrun/process/0.5-DRAFT",
+    "@id": "https://w3id.org/ro/wfrun/process/0.6-DRAFT",
     "@type": ["Dataset","Profile"],
     "isProfileOf": [
         {"@id": "https://w3id.org/ro/crate/1.2-DRAFT"}
     ],
-    "identifier": "https://w3id.org/ro/wfrun/process/0.5-DRAFT",
+    "identifier": "https://w3id.org/ro/wfrun/process/0.6-DRAFT",
     "name": "Process Run Crate profile",
-    "version": "0.5-DRAFT",
+    "version": "0.6-DRAFT",
     "license": {
       "@id": "https://www.apache.org/licenses/LICENSE-2.0"
     },

@@ -5,8 +5,8 @@ title: Process Run Crate
 
 # Process Run Crate
 
-* Version: 0.5-DRAFT
-* Permalink: <https://w3id.org/ro/wfrun/process/0.5-DRAFT>
+* Version: 0.6-DRAFT
+* Permalink: <https://w3id.org/ro/wfrun/process/0.6-DRAFT>
 * Authors: [Workflow Run RO-Crate working group](https://www.researchobject.org/workflow-run-crate/#community)
 * License: [Apache License, version 2.0](https://www.apache.org/licenses/LICENSE-2.0) (SPDX: [`Apache-2.0`](http://spdx.org/licenses/Apache-2.0))
 * Example conforming crate: [ro-crate-metadata.json](example1/ro-crate-metadata.json) [ro-crate-preview.html](example1/ro-crate-preview.html)
