@@ -23,9 +23,12 @@
         ],
         "hasPart": [
             {"@id": "packed.cwl"},
-            {"@id": "327fc7aedf4f6b69a42a7c8b808dc5a7aff61376"},
-            {"@id": "b9214658cc453331b62c2282b772a5c063dbd284"},            
-            {"@id": "97fe1b50b4582cebc7d853796ebd62e3e163aa3f"}
+            { "@id": "https://raw.githubusercontent.com/common-workflow-language/cwltool/3.1.20240508115724/cwltool.Dockerfile" },
+            { "@id": "environment.yml" },
+            { "@id": "revtool/Dockerfile" },
+            { "@id": "327fc7aedf4f6b69a42a7c8b808dc5a7aff61376" },
+            { "@id": "b9214658cc453331b62c2282b772a5c063dbd284" },            
+            { "@id": "97fe1b50b4582cebc7d853796ebd62e3e163aa3f" }
         ],
         "mainEntity": {"@id": "packed.cwl"},
         "mentions": [
