@@ -54,7 +54,7 @@ The following diagram shows the relationships between provenance-related entitie
     {
         "@id": "./",
         "@type": "Dataset",
-        "conformsTo": {"@id": "https://w3id.org/ro/wfrun/process/0.4"},
+        "conformsTo": {"@id": "https://w3id.org/ro/wfrun/process/0.6"},
         "hasPart": [
             {"@id": "pics/2017-06-11%2012.56.14.jpg"},
             {"@id": "pics/sepia_fence.jpg"}
@@ -62,7 +62,7 @@ The following diagram shows the relationships between provenance-related entitie
         "mentions": {"@id": "#SepiaConversion_1"},
         "name": "My Pictures"
     },
-    {   "@id": "https://w3id.org/ro/wfrun/process/0.4",
+    {   "@id": "https://w3id.org/ro/wfrun/process/0.6",
         "@type": "CreativeWork",
         "name": "Process Run Crate",
         "version": "0.1"
@@ -127,7 +127,7 @@ Note that the command line shown in the action's `description` is not directly r
   <tr>
    <td>conformsTo</td>
    <td>MUST</td>
-   <td>MUST reference a <code>CreativeWork</code> entity with an <code>@id</code> URI that is consistent with the versioned <em>Permalink</em> of this document, e.g. <code>{"@id": "https://w3id.org/ro/wfrun/process/0.4"}</code></td>
+   <td>MUST reference a <code>CreativeWork</code> entity with an <code>@id</code> URI that is consistent with the versioned <em>Permalink</em> of this document, e.g. <code>{"@id": "https://w3id.org/ro/wfrun/process/0.6"}</code></td>
   </tr>
 
   <tr>
@@ -318,7 +318,7 @@ An application that reads [this format](https://openslide.org/formats/mirax/) ne
     "@type": "SoftwareApplication",
     "url": "https://openslide.org/",
     "name": "OpenSlide",
-    "version": "3.4.1"
+    "softwareVersion": "3.4.1"
 },
 {
     "@id": "#conversion_1",
@@ -468,7 +468,7 @@ An application may use one or more container images (e.g. [Docker](https://www.d
 }
 ```
 
-The `ContainerImage` type (note the leading lowercase "C") and most of the properties shown above are also defined in the workflow-run namespace. The `additionalType` describes the specific image type (e.g., `DockerImage`, `SIFImage`); the registry is the service that hosts the image (e.g., "docker.io", "quay.io"); the `name` is the identifier of the image within the registry; `tag` describes the image tag and `sha256` its sha256 checksum. A `ContainerImage` entity SHOULD list at least the `additionalType`, `registry` and `name` properties.
+The `ContainerImage` type (note the leading uppercase "C") and most of the properties shown above are also defined in the workflow-run namespace. The `additionalType` describes the specific image type (e.g., `DockerImage`, `SIFImage`); the registry is the service that hosts the image (e.g., "docker.io", "quay.io"); the `name` is the identifier of the image within the registry; `tag` describes the image tag and `sha256` its sha256 checksum. A `ContainerImage` entity SHOULD list at least the `additionalType`, `registry` and `name` properties.
 
 Alternatively, the `containerImage` could point to a `URL`. For instance:
 
@@ -492,13 +492,13 @@ Software dependencies MAY be specified using `softwareRequirements` to a `Softwa
     "@id": "script.py",
     "@type": "SoftwareApplication",
     "name": "Analysis Script",
-    "version": "0.1",
+    "softwareVersion": "0.1",
     "softwareRequirements": {"@id": "https://pypi.org/project/numpy/1.26.2/"}
 },
 {
     "@id": "https://pypi.org/project/numpy/1.26.2/",
     "@type": "SoftwareApplication",
     "name": "NumPy",
-    "version": "1.26.2"
+    "softwareVersion": "1.26.2"
 }
 ```
