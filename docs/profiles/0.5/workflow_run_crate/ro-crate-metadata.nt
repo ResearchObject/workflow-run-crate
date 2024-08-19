@@ -1,0 +1,337 @@
+<https://www.researchobject.org/workflow-run-crate/profiles/0.5/workflow_run_crate/#shouldConformToProcessCrateProfile> <http://www.w3.org/ns/dx/prof/hasRole> <http://purl.org/dc/terms/conformsTo> .
+<https://orcid.org/0000-0002-1119-1792> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/Person> .
+<https://doi.org/10.48550/arXiv.2312.07852> <http://schema.org/author> <https://orcid.org/0000-0001-9290-2017> .
+<https://orcid.org/0000-0003-0035-0951> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/Person> .
+<https://www.researchobject.org/workflow-run-crate/profiles/0.5/workflow_run_crate/#shouldConformToWorkflowROCrate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/dx/prof/ResourceDescriptor> .
+<https://www.researchobject.org/workflow-run-crate/profiles/0.5/workflow_run_crate/index.html> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/MediaObject> .
+<https://w3id.org/ro/wfrun/workflow/0.5> <http://schema.org/hasPart> <https://bioschemas.org/ComputationalWorkflow> .
+<https://orcid.org/0000-0001-9818-9320> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/Person> .
+<https://orcid.org/0000-0003-0606-2512> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/Person> .
+<https://orcid.org/0000-0002-5432-2748> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/Person> .
+<http://spdx.org/licenses/Apache-2.0> <http://schema.org/value> "Apache-2.0" .
+<https://doi.org/10.48550/arXiv.2312.07852> <http://schema.org/creditText> "Simone Leo, et al. (2024): Recording provenance of workflow runs with RO-Crate. arXiv:2312.07852" .
+<https://orcid.org/0000-0003-4929-1219> <http://schema.org/name> "Laura Rodríguez-Navas" .
+<https://www.researchobject.org/workflow-run-crate/profiles/0.5/workflow_run_crate/index.html#requirements> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/WebPageElement> .
+<https://www.researchobject.org/workflow-run-crate/profiles/0.5/workflow_run_crate/#hasMappingToProv> <http://www.w3.org/ns/dx/prof/hasRole> <http://www.w3.org/ns/dx/prof/role/mapping> .
+<https://www.researchobject.org/workflow-run-crate/> <http://schema.org/member> <https://orcid.org/0000-0001-9818-9320> .
+<https://www.researchobject.org/workflow-run-crate/profiles/0.5/workflow_run_crate/#hasGuidance> <http://www.w3.org/ns/dx/prof/hasRole> <http://www.w3.org/ns/dx/prof/role/guidance> .
+<https://orcid.org/0000-0001-9228-2882> <http://schema.org/name> "Abigail Miller" .
+<https://orcid.org/0000-0002-8940-4946> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/Person> .
+<https://orcid.org/0000-0002-9464-6640> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/Person> .
+<https://www.researchobject.org/workflow-run-crate-paper/ro-crate-metadata.jsonld> <http://schema.org/encodingFormat> "application/ld+json" .
+<https://orcid.org/0000-0003-3156-2105> <http://schema.org/name> "Alan R Williams" .
+<https://www.researchobject.org/workflow-run-crate/profiles/0.5/workflow_run_crate/ro-crate-preview.html> <http://schema.org/name> "RO-Crate preview of the Workflow Run Crate profile" .
+<https://w3id.org/ro/wfrun/workflow/0.5> <http://www.w3.org/ns/dx/prof/hasResource> <https://www.researchobject.org/workflow-run-crate/profiles/0.5/workflow_run_crate/#hasGuidance> .
+<http://schema.org/MediaObject> <http://schema.org/termCode> "File" .
+<http://schema.org/DataType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/DefinedTerm> .
+<http://schema.org/result> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/DefinedTerm> .
+<https://orcid.org/0000-0002-5358-616X> <http://schema.org/name> "Petr Holub" .
+<https://www.researchobject.org/workflow-run-crate/profiles/0.5/workflow_run_crate/#hasExample> <http://www.w3.org/ns/dx/prof/hasRole> <http://www.w3.org/ns/dx/prof/role/example> .
+<https://www.researchobject.org/workflow-run-crate/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/Project> .
+<http://schema.org/MediaObject> <http://schema.org/name> "MediaObject" .
+<https://w3id.org/ro/terms/workflow-run> <http://schema.org/name> "JSON-LD context for workflow-run terms" .
+<https://orcid.org/0000-0001-5411-356X> <http://schema.org/name> "Samuel Grayson" .
+<https://orcid.org/0000-0002-0309-604X> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/Person> .
+<https://www.researchobject.org/workflow-run-crate/profiles/0.5/workflow_run_crate/index.html#requirements> <http://schema.org/name> "Workflow Run Crate requirements" .
+<https://doi.org/10.48550/arXiv.2312.07852> <http://schema.org/author> <https://orcid.org/0000-0002-3468-0652> .
+<http://schema.org/result> <http://schema.org/name> "result" .
+<https://bioschemas.org/FormalParameter> <http://schema.org/name> "FormalParameter" .
+<https://orcid.org/0000-0002-6190-122X> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/Person> .
+<https://www.researchobject.org/workflow-run-crate/profiles/0.5/workflow_run_crate/#hasExample> <http://www.w3.org/ns/dx/prof/hasArtifact> <https://www.researchobject.org/workflow-run-crate/profiles/0.5/workflow_run_crate/example2/> .
+<https://w3id.org/ro/wfrun/workflow/0.5> <http://www.w3.org/ns/dx/prof/hasResource> <https://www.researchobject.org/workflow-run-crate/profiles/0.5/workflow_run_crate/#hasConstraints> .
+<https://www.researchobject.org/workflow-run-crate/profiles/0.5/workflow_run_crate/example2/ro-crate-preview.html> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/CreativeWork> .
+<https://creativecommons.org/publicdomain/zero/1.0/> <http://schema.org/version> "1.0" .
+<https://orcid.org/0000-0003-0617-9219> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/Person> .
+<http://schema.org/additionalType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/DefinedTerm> .
+<https://orcid.org/0000-0003-3156-2105> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/Person> .
+<https://doi.org/10.48550/arXiv.2312.07852> <http://schema.org/author> <https://orcid.org/0000-0003-2765-0049> .
+<https://www.researchobject.org/workflow-run-crate-paper/mapping/> <http://schema.org/name> "SSSOM mapping from PROV to Workflow Run Crate" .
+<http://schema.org/MediaObject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/DefinedTerm> .
+<https://bioschemas.org/ComputationalWorkflow#output> <http://schema.org/name> "output" .
+<https://www.researchobject.org/workflow-run-crate/profiles/0.5/workflow_run_crate/example2/> <http://purl.org/dc/terms/conformsTo> <https://w3id.org/ro/wfrun/workflow/0.4> .
+<https://doi.org/10.48550/arXiv.2312.07852> <http://schema.org/author> <https://orcid.org/0000-0002-0003-2024> .
+<http://schema.org/PropertyValue> <http://schema.org/name> "PropertyValue" .
+<https://w3id.org/workflowhub/workflow-ro-crate/1.0> <http://schema.org/version> "1.0" .
+<https://www.researchobject.org/workflow-run-crate/profiles/0.5/workflow_run_crate/index.html> <http://schema.org/encodingFormat> <https://www.nationalarchives.gov.uk/PRONOM/fmt/471> .
+<https://w3id.org/ro/wfrun/workflow/0.5> <http://schema.org/hasPart> <http://schema.org/valueRequired> .
+<https://www.researchobject.org/workflow-run-crate/profiles/0.5/workflow_run_crate/#hasSpecification> <http://www.w3.org/ns/dx/prof/hasArtifact> <https://www.researchobject.org/workflow-run-crate/profiles/0.5/workflow_run_crate/index.html> .
+<https://orcid.org/0000-0001-8250-4074> <http://schema.org/name> "Bruno P. Kinoshita" .
+<https://www.researchobject.org/workflow-run-crate/> <http://schema.org/member> <https://orcid.org/0000-0003-4929-1219> .
+<https://w3id.org/ro/terms/workflow-run> <http://schema.org/encodingFormat> "application/ld+json" .
+<https://orcid.org/0000-0002-5358-616X> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/Person> .
+<https://www.researchobject.org/workflow-run-crate-paper/mapping/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/Dataset> .
+<https://doi.org/10.48550/arXiv.2312.07852> <http://schema.org/author> <https://orcid.org/0000-0002-2961-9670> .
+<https://w3id.org/ro/wfrun/workflow/0.5> <http://schema.org/hasPart> <http://schema.org/PropertyValue> .
+<https://bioschemas.org/FormalParameter> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/DefinedTerm> .
+<http://schema.org/Integer> <http://schema.org/name> "Integer" .
+<https://w3id.org/ro/terms/workflow-run> <http://schema.org/license> <https://creativecommons.org/publicdomain/zero/1.0/> .
+<https://orcid.org/0000-0001-8271-5429> <http://schema.org/name> "Simone Leo" .
+<https://www.researchobject.org/workflow-run-crate/profiles/0.5/workflow_run_crate/#shouldConformToProcessCrateProfile> <http://schema.org/name> "SHOULD conform to Process Crate profile" .
+<https://doi.org/10.48550/arXiv.2312.07852> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/ScholarlyArticle> .
+<https://doi.org/10.48550/arXiv.2312.07852> <http://schema.org/name> "Recording provenance of workflow runs with RO-Crate" .
+<https://www.researchobject.org/workflow-run-crate/profiles/0.5/workflow_run_crate/example2/> <http://schema.org/subjectOf> <https://www.researchobject.org/workflow-run-crate/profiles/0.5/workflow_run_crate/example2/ro-crate-metadata.json> .
+<https://pypi.org/project/runcrate/> <http://schema.org/name> "runcrate" .
+<https://orcid.org/0000-0001-8250-4074> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/Person> .
+<https://www.researchobject.org/workflow-run-crate/profiles/0.5/workflow_run_crate/ro-crate-preview.html> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/CreativeWork> .
+<https://orcid.org/0000-0002-5477-287X> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/Person> .
+<https://www.apache.org/licenses/LICENSE-2.0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/CreativeWork> .
+<https://pypi.org/project/runcrate/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/SoftwareApplication> .
+<https://orcid.org/0000-0002-2961-9670> <http://schema.org/name> "Michael R Crusoe" .
+<http://schema.org/CreateAction> <http://schema.org/name> "CreateAction" .
+<https://w3id.org/ro/wfrun/workflow/0.5> <http://schema.org/hasPart> <http://schema.org/CreateAction> .
+<https://w3id.org/ro/wfrun/process/0.5> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/dx/prof/Profile> .
+<https://w3id.org/ro/wfrun/process/0.5> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/CreativeWork> .
+<https://www.researchobject.org/workflow-run-crate/profiles/0.5/workflow_run_crate/ro-crate-preview.html> <http://schema.org/license> <http://spdx.org/licenses/CC0-1.0> .
+<https://www.researchobject.org/workflow-run-crate/profiles/0.5/workflow_run_crate/#hasGuidance> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/dx/prof/ResourceDescriptor> .
+<https://doi.org/10.48550/arXiv.2312.07852> <http://schema.org/author> <https://orcid.org/0000-0002-4663-5613> .
+<http://schema.org/name> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/DefinedTerm> .
+<https://www.researchobject.org/workflow-run-crate/profiles/0.5/workflow_run_crate/ro-crate-preview.html> <http://schema.org/encodingFormat> "text/html" .
+<https://www.researchobject.org/workflow-run-crate/profiles/0.5/workflow_run_crate/#shouldConformToWorkflowROCrate> <http://schema.org/name> "SHOULD conform to Workflow RO-Crate profile" .
+<https://www.researchobject.org/workflow-run-crate/> <http://schema.org/member> <https://orcid.org/0000-0002-5477-287X> .
+<https://bioschemas.org/ComputationalWorkflow> <http://schema.org/name> "ComputationalWorkflow" .
+<https://w3id.org/ro/wfrun/workflow/0.5> <http://schema.org/hasPart> <http://purl.org/dc/terms/conformsTo> .
+<https://orcid.org/0000-0001-8172-8981> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/Person> .
+<https://www.researchobject.org/workflow-run-crate/> <http://schema.org/member> <https://orcid.org/0000-0003-4073-7456> .
+<https://www.researchobject.org/workflow-run-crate/> <http://schema.org/member> <https://orcid.org/0000-0003-0035-0951> .
+<https://www.researchobject.org/workflow-run-crate/> <http://schema.org/member> <https://orcid.org/0000-0003-3777-5945> .
+<http://schema.org/exampleOfWork> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/DefinedTerm> .
+<https://bioschemas.org/ComputationalWorkflow#output> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/DefinedTerm> .
+<https://orcid.org/0000-0003-0606-2512> <http://schema.org/name> "Raül Sirvent" .
+<https://orcid.org/0000-0002-8330-4071> <http://schema.org/name> "Mahnoor Zulfiqar" .
+<https://www.researchobject.org/workflow-run-crate/> <http://schema.org/member> <https://orcid.org/0000-0002-4405-6802> .
+<https://gxy.io/GTN:T00343> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/LearningResource> .
+<https://w3id.org/ro/wfrun/process/0.5> <http://schema.org/version> "0.5" .
+<https://w3id.org/ro/wfrun/workflow/0.5> <http://schema.org/license> <https://www.apache.org/licenses/LICENSE-2.0> .
+<https://www.apache.org/licenses/LICENSE-2.0> <http://schema.org/version> "2.0" .
+<https://orcid.org/0000-0002-6190-122X> <http://schema.org/name> "Ignacio Eguinoa" .
+<https://www.researchobject.org/workflow-run-crate/> <http://schema.org/member> <https://orcid.org/0000-0003-0454-7145> .
+<https://www.apache.org/licenses/LICENSE-2.0> <http://schema.org/name> "Apache License 2.0" .
+<http://spdx.org/licenses/Apache-2.0> <http://schema.org/propertyID> "http://spdx.org/rdf/terms#licenseId" .
+<https://www.researchobject.org/workflow-run-crate/profiles/0.5/workflow_run_crate/#hasExample> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/dx/prof/ResourceDescriptor> .
+<https://orcid.org/0000-0001-9842-9718> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/Person> .
+<https://www.researchobject.org/workflow-run-crate/profiles/0.5/workflow_run_crate/ro-crate-metadata.json> <http://schema.org/license> <http://spdx.org/licenses/CC0-1.0> .
+<https://orcid.org/0000-0003-3986-0510> <http://schema.org/name> "LJ Garcia Castro" .
+<https://www.researchobject.org/workflow-run-crate-paper/ro-crate-metadata.jsonld> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/CreativeWork> .
+<https://www.researchobject.org/workflow-run-crate/> <http://schema.org/member> <https://orcid.org/0000-0001-8250-4074> .
+<https://orcid.org/0000-0001-8172-8981> <http://schema.org/name> "Jasper Koehorst" .
+<https://www.researchobject.org/workflow-run-crate/profiles/0.5/workflow_run_crate/ro-crate-preview.html> <http://schema.org/isBasedOn> <https://www.researchobject.org/workflow-run-crate/profiles/0.5/workflow_run_crate/ro-crate-metadata.json> .
+<https://www.researchobject.org/workflow-run-crate/profiles/0.5/workflow_run_crate/example2/> <http://purl.org/dc/terms/conformsTo> <https://w3id.org/ro/crate> .
+<https://orcid.org/0000-0002-0309-604X> <http://schema.org/name> "Salvador Capella-Gutierrez" .
+<https://gxy.io/GTN:T00343> <http://schema.org/name> "Workflow Run RO-Crate Introduction" .
+<https://doi.org/10.48550/arXiv.2312.07852> <http://schema.org/author> <https://orcid.org/0000-0002-1119-1792> .
+<https://w3id.org/ro/wfrun/workflow/0.5> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/dx/prof/Profile> .
+<https://w3id.org/ro/wfrun/workflow/0.5> <http://schema.org/hasPart> <http://schema.org/name> .
+<https://w3id.org/ro/wfrun/workflow/0.5> <http://www.w3.org/ns/dx/prof/hasResource> <https://www.researchobject.org/workflow-run-crate/profiles/0.5/workflow_run_crate/#shouldConformToProcessCrateProfile> .
+<http://schema.org/CreateAction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/DefinedTerm> .
+<https://orcid.org/0000-0003-0454-7145> <http://schema.org/name> "Daniel Garijo" .
+<http://schema.org/valueRequired> <http://schema.org/name> "valueRequired" .
+<https://orcid.org/0000-0003-3777-5945> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/Person> .
+<https://w3id.org/ro/wfrun/workflow/0.5> <http://schema.org/hasPart> <https://w3id.org/workflowhub/workflow-ro-crate/1.0> .
+<http://schema.org/instrument> <http://schema.org/name> "instrument" .
+<http://purl.org/dc/terms/conformsTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/DefinedTerm> .
+<https://orcid.org/0000-0003-3898-9451> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/Person> .
+<http://schema.org/defaultValue> <http://schema.org/name> "defaultValue" .
+<https://doi.org/10.48550/arXiv.2312.07852> <http://schema.org/author> <https://orcid.org/0000-0003-4929-1219> .
+<https://orcid.org/0000-0001-6740-9212> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/Person> .
+<https://w3id.org/ro/wfrun/workflow/0.5> <http://www.w3.org/ns/dx/prof/hasResource> <https://www.researchobject.org/workflow-run-crate/profiles/0.5/workflow_run_crate/#hasMappingToProv> .
+<https://orcid.org/0000-0003-4894-4660> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/Person> .
+<https://www.researchobject.org/workflow-run-crate/> <http://schema.org/member> <https://orcid.org/0000-0002-4806-5140> .
+<https://gxy.io/GTN:T00343> <http://schema.org/author> <https://orcid.org/0000-0001-8271-5429> .
+<https://w3id.org/ro/wfrun/workflow/0.5> <http://schema.org/hasPart> <http://schema.org/additionalType> .
+<http://schema.org/object> <http://schema.org/name> "object" .
+<https://www.researchobject.org/workflow-run-crate/profiles/0.5/workflow_run_crate/example2/ro-crate-metadata.json> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/CreativeWork> .
+<https://orcid.org/0000-0003-4073-7456> <http://schema.org/name> "Romain David" .
+<https://orcid.org/0000-0002-8330-4071> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/Person> .
+<https://www.researchobject.org/workflow-run-crate/> <http://schema.org/member> <https://orcid.org/0000-0001-6740-9212> .
+<http://spdx.org/licenses/CC0-1.0> <http://schema.org/propertyID> "http://spdx.org/rdf/terms#licenseId" .
+<https://w3id.org/ro/wfrun/workflow/0.5> <http://schema.org/hasPart> <http://schema.org/exampleOfWork> .
+<https://www.researchobject.org/workflow-run-crate/> <http://schema.org/member> <https://orcid.org/0000-0002-5358-616X> .
+<https://www.researchobject.org/workflow-run-crate/profiles/0.5/workflow_run_crate/index.html> <http://schema.org/name> "Workflow Run Crate (HTML)" .
+<https://www.apache.org/licenses/LICENSE-2.0> <http://schema.org/identifier> <http://spdx.org/licenses/Apache-2.0> .
+<https://www.researchobject.org/workflow-run-crate/> <http://schema.org/member> <https://orcid.org/0000-0001-5411-356X> .
+<https://www.researchobject.org/workflow-run-crate/profiles/0.5/workflow_run_crate/#shouldConformToWorkflowROCrate> <http://www.w3.org/ns/dx/prof/hasRole> <http://purl.org/dc/terms/conformsTo> .
+<https://www.researchobject.org/workflow-run-crate/profiles/0.5/workflow_run_crate/#shouldConformToProcessCrateProfile> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/dx/prof/ResourceDescriptor> .
+<https://orcid.org/0000-0003-1361-7301> <http://schema.org/name> "Maciek Bąk" .
+<https://w3id.org/ro/wfrun/workflow/0.5> <http://schema.org/hasPart> <http://schema.org/result> .
+<https://w3id.org/ro/wfrun/process/0.5> <http://schema.org/name> "Process Run Crate profile" .
+<https://w3id.org/ro/wfrun/workflow/0.5> <http://schema.org/hasPart> <http://schema.org/MediaObject> .
+<https://w3id.org/ro/doi/10.5281/zenodo.10368989> <http://schema.org/name> "Recording provenance of workflow runs with RO-Crate (RO-Crate and mapping)" .
+<https://www.researchobject.org/workflow-run-crate/profiles/0.5/workflow_run_crate/#hasConstraints> <http://www.w3.org/ns/dx/prof/hasRole> <http://www.w3.org/ns/dx/prof/role/constraints> .
+<https://orcid.org/0000-0003-4073-7456> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/Person> .
+<https://w3id.org/ro/wfrun/workflow/0.5> <http://schema.org/hasPart> <https://w3id.org/ro/terms/workflow-run> .
+<https://w3id.org/ro/wfrun/workflow/0.5> <http://schema.org/hasPart> <https://bioschemas.org/ComputationalWorkflow#input> .
+<http://schema.org/instrument> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/DefinedTerm> .
+<https://www.researchobject.org/workflow-run-crate/> <http://schema.org/member> <https://orcid.org/0000-0003-0617-9219> .
+<https://w3id.org/ro/wfrun/workflow/0.5> <http://www.w3.org/ns/dx/prof/isProfileOf> <https://w3id.org/ro/crate/1.2-DRAFT> .
+<https://bioschemas.org/ComputationalWorkflow#input> <http://schema.org/termCode> "input" .
+<https://orcid.org/0000-0001-5845-8880> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/Person> .
+<https://orcid.org/0000-0002-5432-2748> <http://schema.org/name> "Paul Brack" .
+<https://w3id.org/ro/wfrun/workflow/0.5> <http://schema.org/hasPart> <https://bioschemas.org/ComputationalWorkflow#output> .
+<http://purl.org/dc/terms/conformsTo> <http://schema.org/termCode> "conformsTo" .
+<https://orcid.org/0000-0003-3898-9451> <http://schema.org/name> "Stelios Ninidakis" .
+<https://www.researchobject.org/workflow-run-crate/profiles/0.5/workflow_run_crate/#hasMappingToProv> <http://www.w3.org/ns/dx/prof/hasArtifact> <https://www.researchobject.org/workflow-run-crate-paper/mapping/> .
+<https://w3id.org/ro/wfrun/workflow/0.5> <http://schema.org/identifier> "https://w3id.org/ro/wfrun/workflow/0.5" .
+<https://www.researchobject.org/workflow-run-crate/> <http://schema.org/member> <https://orcid.org/0000-0003-0711-5196> .
+<https://www.researchobject.org/workflow-run-crate/> <http://schema.org/member> <https://orcid.org/0000-0001-9842-9718> .
+<https://orcid.org/0000-0003-4929-1219> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/Person> .
+<https://w3id.org/ro/wfrun/workflow/0.5> <http://schema.org/name> "Workflow Run Crate profile" .
+<https://doi.org/10.48550/arXiv.2312.07852> <http://schema.org/author> <https://orcid.org/0000-0003-3777-5945> .
+<https://w3id.org/ro/wfrun/workflow/0.5> <http://schema.org/hasPart> <https://www.researchobject.org/workflow-run-crate/profiles/0.5/workflow_run_crate/example2/> .
+<https://orcid.org/0000-0002-9464-6640> <http://schema.org/name> "Wolfgang Maier" .
+<https://orcid.org/0000-0002-4663-5613> <http://schema.org/name> "Luca Pireddu" .
+<https://w3id.org/workflowhub/workflow-ro-crate/1.0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/dx/prof/Profile> .
+<https://orcid.org/0000-0001-6740-9212> <http://schema.org/name> "Samuel Lampa" .
+<https://w3id.org/ro/wfrun/workflow/0.5> <http://schema.org/hasPart> <http://schema.org/defaultValue> .
+<https://w3id.org/ro/wfrun/workflow/0.5> <http://schema.org/hasPart> <https://pypi.org/project/runcrate/> .
+<https://bioschemas.org/ComputationalWorkflow#input> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/DefinedTerm> .
+<https://orcid.org/0000-0003-0617-9219> <http://schema.org/name> "Jake Emerson" .
+<https://doi.org/10.48550/arXiv.2312.07852> <http://schema.org/author> <https://orcid.org/0000-0002-0309-604X> .
+<https://w3id.org/workflowhub/workflow-ro-crate/1.0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/CreativeWork> .
+<https://doi.org/10.48550/arXiv.2312.07852> <http://schema.org/author> <https://orcid.org/0000-0003-0454-7145> .
+<http://schema.org/DataType> <http://schema.org/name> "DataType" .
+<https://orcid.org/0000-0003-2765-0049> <http://schema.org/name> "Hirotaka Suetake" .
+<https://w3id.org/ro/wfrun/workflow/0.5> <http://schema.org/version> "0.5" .
+<https://www.researchobject.org/workflow-run-crate/> <http://schema.org/member> <https://orcid.org/0000-0002-8940-4946> .
+<https://w3id.org/ro/wfrun/workflow/0.5> <http://www.w3.org/ns/dx/prof/hasResource> <https://www.researchobject.org/workflow-run-crate/profiles/0.5/workflow_run_crate/#shouldConformToWorkflowROCrate> .
+<http://spdx.org/licenses/Apache-2.0> <http://schema.org/name> "spdx" .
+<https://orcid.org/0000-0002-1119-1792> <http://schema.org/name> "Matej Gallo" .
+<https://doi.org/10.48550/arXiv.2312.07852> <http://schema.org/author> <https://orcid.org/0000-0001-8250-4074> .
+<http://schema.org/additionalType> <http://schema.org/name> "additionalType" .
+<https://w3id.org/workflowhub/workflow-ro-crate/1.0> <http://schema.org/name> "Workflow RO-Crate profile" .
+<https://www.researchobject.org/workflow-run-crate/> <http://schema.org/member> <https://orcid.org/0000-0002-8330-4071> .
+<https://orcid.org/0000-0003-0711-5196> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/Person> .
+<https://orcid.org/0000-0003-0902-0086> <http://schema.org/name> "Renske de Wit" .
+<https://orcid.org/0000-0002-8122-9522> <http://schema.org/name> "Luiz Gadelha" .
+<https://www.researchobject.org/workflow-run-crate/> <http://schema.org/member> <https://orcid.org/0000-0002-9464-6640> .
+<https://orcid.org/0000-0003-2765-0049> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/Person> .
+<https://www.researchobject.org/workflow-run-crate/> <http://schema.org/member> <https://orcid.org/0000-0002-5432-2748> .
+<https://w3id.org/ro/terms/workflow-run> <http://schema.org/contentUrl> "https://www.researchobject.org/ro-terms/workflow-run/context.json" .
+<https://www.researchobject.org/workflow-run-crate/profiles/0.5/workflow_run_crate/example2/ro-crate-preview.html> <http://schema.org/encodingFormat> "text/html" .
+<https://w3id.org/ro/wfrun/workflow/0.5> <http://schema.org/citation> <https://doi.org/10.48550/arXiv.2312.07852> .
+<https://w3id.org/ro/terms/workflow-run> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/MediaObject> .
+<https://bioschemas.org/ComputationalWorkflow#input> <http://schema.org/name> "input" .
+<https://orcid.org/0000-0002-0003-2024> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/Person> .
+<https://www.researchobject.org/workflow-run-crate/profiles/0.5/workflow_run_crate/#hasGuidance> <http://www.w3.org/ns/dx/prof/hasArtifact> <https://gxy.io/GTN:T00343> .
+<http://purl.org/dc/terms/conformsTo> <http://schema.org/name> "conformsTo" .
+<https://orcid.org/0000-0003-1361-7301> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/Person> .
+<https://w3id.org/ro/wfrun/workflow/0.5> <http://schema.org/hasPart> <http://schema.org/about> .
+<https://www.researchobject.org/workflow-run-crate/> <http://schema.org/member> <https://orcid.org/0000-0003-4894-4660> .
+<https://w3id.org/ro/wfrun/workflow/0.5> <http://schema.org/author> <https://www.researchobject.org/workflow-run-crate/> .
+<https://doi.org/10.48550/arXiv.2312.07852> <http://schema.org/author> <https://orcid.org/0000-0002-4806-5140> .
+<https://bioschemas.org/ComputationalWorkflow#output> <http://schema.org/termCode> "output" .
+<https://w3id.org/ro/wfrun/workflow/0.5> <http://schema.org/hasPart> <https://bioschemas.org/FormalParameter> .
+<http://spdx.org/licenses/CC0-1.0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/PropertyValue> .
+<https://www.researchobject.org/workflow-run-crate/> <http://schema.org/member> <https://orcid.org/0000-0003-0606-2512> .
+<https://www.researchobject.org/workflow-run-crate/profiles/0.5/workflow_run_crate/example2/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/Dataset> .
+<https://creativecommons.org/publicdomain/zero/1.0/> <http://schema.org/name> "Creative Commons Zero v1.0 Universal" .
+<https://www.researchobject.org/workflow-run-crate/> <http://schema.org/member> <https://orcid.org/0000-0001-8271-5429> .
+<https://www.researchobject.org/workflow-run-crate-paper/ro-crate-preview.html> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/CreativeWork> .
+<http://spdx.org/licenses/CC0-1.0> <http://schema.org/value> "CC0-1.0" .
+<https://www.researchobject.org/workflow-run-crate/profiles/0.5/workflow_run_crate/ro-crate-preview.html> <http://schema.org/about> "https://w3id.org/ro/wfrun/workflow/0.5" .
+<https://www.researchobject.org/workflow-run-crate/> <http://schema.org/member> <https://orcid.org/0000-0003-0902-0086> .
+<https://orcid.org/0000-0003-0035-0951> <http://schema.org/name> "Jörg F. Unger" .
+<https://www.researchobject.org/workflow-run-crate/> <http://schema.org/member> <https://orcid.org/0000-0001-5845-8880> .
+<https://w3id.org/ro/wfrun/workflow/0.5> <http://schema.org/hasPart> <http://schema.org/Integer> .
+<https://www.researchobject.org/workflow-run-crate/profiles/0.5/workflow_run_crate/example2/> <http://purl.org/dc/terms/conformsTo> <https://w3id.org/ro/wfrun/process/0.4> .
+<https://orcid.org/0000-0003-3777-5945> <http://schema.org/name> "Tazro Ohta" .
+<https://orcid.org/0000-0002-8122-9522> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/Person> .
+<https://www.researchobject.org/workflow-run-crate/> <http://schema.org/member> <https://orcid.org/0000-0002-6190-122X> .
+<https://orcid.org/0000-0002-3468-0652> <http://schema.org/name> "Alexander Kanitz" .
+<https://www.researchobject.org/workflow-run-crate/profiles/0.5/workflow_run_crate/#shouldConformToWorkflowROCrate> <http://www.w3.org/ns/dx/prof/hasArtifact> <https://w3id.org/workflowhub/workflow-ro-crate/1.0> .
+<https://www.researchobject.org/workflow-run-crate/> <http://schema.org/parentOrganization> <https://www.researchobject.org/ro-crate/community> .
+<https://w3id.org/ro/wfrun/workflow/0.5> <http://schema.org/hasPart> <https://w3id.org/ro/terms/workflow-run#environment> .
+<https://w3id.org/ro/terms/workflow-run#environment> <http://schema.org/termCode> "environment" .
+<https://www.researchobject.org/ro-crate/community> <http://schema.org/name> "RO-Crate Community" .
+<http://schema.org/exampleOfWork> <http://schema.org/name> "exampleOfWork" .
+<http://schema.org/object> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/DefinedTerm> .
+<https://www.researchobject.org/workflow-run-crate/profiles/0.5/workflow_run_crate/example2/ro-crate-metadata.json> <http://schema.org/encodingFormat> "application/ld+json" .
+<https://orcid.org/0000-0002-2961-9670> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/Person> .
+<https://doi.org/10.48550/arXiv.2312.07852> <http://schema.org/author> <https://orcid.org/0000-0001-9842-9718> .
+<https://www.researchobject.org/workflow-run-crate/profiles/0.5/workflow_run_crate/#shouldConformToProcessCrateProfile> <http://www.w3.org/ns/dx/prof/hasArtifact> <https://w3id.org/ro/wfrun/process/0.5> .
+<http://schema.org/Integer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/DefinedTerm> .
+<https://www.researchobject.org/workflow-run-crate/profiles/0.5/workflow_run_crate/ro-crate-metadata.json> <http://schema.org/about> <https://w3id.org/ro/wfrun/workflow/0.5> .
+<https://www.researchobject.org/workflow-run-crate/> <http://schema.org/member> <https://orcid.org/0000-0001-9290-2017> .
+<http://schema.org/about> <http://schema.org/name> "about" .
+<https://www.researchobject.org/ro-crate/community> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/Project> .
+<http://schema.org/about> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/DefinedTerm> .
+<https://orcid.org/0000-0002-8940-4946> <http://schema.org/name> "Paul De Geest" .
+<https://www.researchobject.org/workflow-run-crate/profiles/0.5/workflow_run_crate/index.html> <http://schema.org/encodingFormat> "text/html" .
+<http://spdx.org/licenses/CC0-1.0> <http://schema.org/name> "spdx" .
+<https://orcid.org/0000-0003-4894-4660> <http://schema.org/name> "Kevin Jablonka" .
+<https://w3id.org/ro/doi/10.5281/zenodo.10368989> <http://purl.org/dc/terms/conformsTo> <https://w3id.org/ro/crate> .
+<http://schema.org/name> <http://schema.org/name> "name" .
+<https://orcid.org/0000-0001-9842-9718> <http://schema.org/name> "Stian Soiland-Reyes" .
+<https://orcid.org/0000-0001-9290-2017> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/Person> .
+<https://doi.org/10.48550/arXiv.2312.07852> <http://schema.org/author> <https://orcid.org/0000-0002-8940-4946> .
+<https://orcid.org/0000-0002-4405-6802> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/Person> .
+<https://www.researchobject.org/workflow-run-crate/> <http://schema.org/member> <https://orcid.org/0000-0003-3156-2105> .
+<https://w3id.org/ro/terms/workflow-run> <http://purl.org/dc/terms/conformsTo> <http://www.w3.org/ns/json-ld#Context> .
+<https://www.researchobject.org/workflow-run-crate/> <http://schema.org/member> <https://orcid.org/0000-0003-1361-7301> .
+<https://orcid.org/0000-0002-4806-5140> <http://schema.org/name> "José María Fernández" .
+<https://orcid.org/0000-0001-5411-356X> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/Person> .
+<https://www.researchobject.org/workflow-run-crate/profiles/0.5/workflow_run_crate/example2/> <http://purl.org/dc/terms/conformsTo> <https://w3id.org/workflowhub/workflow-ro-crate/1.0> .
+<http://schema.org/PropertyValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/DefinedTerm> .
+<https://www.researchobject.org/workflow-run-crate/> <http://schema.org/member> <https://orcid.org/0000-0003-3986-0510> .
+<https://w3id.org/ro/wfrun/workflow/0.5> <http://schema.org/hasPart> <https://w3id.org/ro/wfrun/process/0.5> .
+<https://orcid.org/0000-0001-9818-9320> <http://schema.org/name> "Johannes Köster" .
+<https://w3id.org/ro/terms/workflow-run#> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/DefinedTermSet> .
+<https://www.researchobject.org/workflow-run-crate/profiles/0.5/workflow_run_crate/#hasConstraints> <http://www.w3.org/ns/dx/prof/hasArtifact> <https://www.researchobject.org/workflow-run-crate/profiles/0.5/workflow_run_crate/index.html#requirements> .
+<https://www.researchobject.org/workflow-run-crate/> <http://schema.org/member> <https://orcid.org/0000-0002-8122-9522> .
+<https://w3id.org/ro/terms/workflow-run#environment> <http://schema.org/name> "environment" .
+<https://w3id.org/ro/terms/workflow-run#environment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/DefinedTerm> .
+<https://w3id.org/ro/terms/workflow-run#> <http://schema.org/name> "Namespace for Workflow Run RO-Crate model" .
+<https://www.researchobject.org/workflow-run-crate/profiles/0.5/workflow_run_crate/#hasConstraints> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/dx/prof/ResourceDescriptor> .
+<https://www.researchobject.org/workflow-run-crate/> <http://schema.org/member> <https://orcid.org/0000-0002-3468-0652> .
+<https://orcid.org/0000-0001-9290-2017> <http://schema.org/name> "Iacopo Colonnelli" .
+<https://w3id.org/ro/wfrun/workflow/0.5> <http://schema.org/hasPart> <http://schema.org/instrument> .
+<https://orcid.org/0000-0003-3986-0510> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/Person> .
+<https://orcid.org/0000-0003-0454-7145> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/Person> .
+<https://orcid.org/0000-0003-0902-0086> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/Person> .
+<https://www.researchobject.org/workflow-run-crate/profiles/0.5/workflow_run_crate/example2/> <http://schema.org/subjectOf> <https://www.researchobject.org/workflow-run-crate/profiles/0.5/workflow_run_crate/example2/ro-crate-preview.html> .
+<https://orcid.org/0000-0001-9228-2882> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/Person> .
+<http://schema.org/valueRequired> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/DefinedTerm> .
+<https://www.researchobject.org/workflow-run-crate/> <http://schema.org/member> <https://orcid.org/0000-0001-8172-8981> .
+<https://orcid.org/0000-0002-0003-2024> <http://schema.org/name> "Rudolf Wittner" .
+<https://w3id.org/ro/wfrun/workflow/0.5> <http://schema.org/hasPart> <https://gxy.io/GTN:T00343> .
+<https://w3id.org/ro/wfrun/workflow/0.5> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/Dataset> .
+<https://creativecommons.org/publicdomain/zero/1.0/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/CreativeWork> .
+<https://orcid.org/0000-0003-0711-5196> <http://schema.org/name> "Felix Bartusch" .
+<https://pypi.org/project/runcrate/> <http://schema.org/url> "https://pypi.org/project/runcrate/" .
+<https://orcid.org/0000-0002-4806-5140> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/Person> .
+<https://w3id.org/ro/wfrun/workflow/0.5> <http://schema.org/hasPart> <https://www.researchobject.org/workflow-run-crate/profiles/0.5/workflow_run_crate/index.html> .
+<https://www.researchobject.org/workflow-run-crate/profiles/0.5/workflow_run_crate/example2/> <http://schema.org/name> "Example Workflow Run Crate" .
+<https://doi.org/10.48550/arXiv.2312.07852> <http://schema.org/author> <https://orcid.org/0000-0003-0606-2512> .
+<https://www.researchobject.org/workflow-run-crate/> <http://schema.org/member> <https://orcid.org/0000-0003-2765-0049> .
+<https://www.researchobject.org/workflow-run-crate-paper/mapping/> <http://schema.org/isPartOf> <https://w3id.org/ro/doi/10.5281/zenodo.10368989> .
+<https://w3id.org/ro/wfrun/workflow/0.5> <http://schema.org/hasPart> <http://schema.org/object> .
+<https://doi.org/10.48550/arXiv.2312.07852> <http://schema.org/author> <https://orcid.org/0000-0001-8271-5429> .
+<https://www.researchobject.org/workflow-run-crate/> <http://schema.org/member> <https://orcid.org/0000-0002-0003-2024> .
+<https://bioschemas.org/ComputationalWorkflow> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/DefinedTerm> .
+<https://www.researchobject.org/workflow-run-crate/profiles/0.5/workflow_run_crate/#hasSpecification> <http://www.w3.org/ns/dx/prof/hasRole> <http://www.w3.org/ns/dx/prof/role/specification> .
+<https://w3id.org/ro/wfrun/workflow/0.5> <http://schema.org/hasPart> <http://schema.org/DataType> .
+<https://w3id.org/ro/wfrun/workflow/0.5> <http://www.w3.org/ns/dx/prof/hasResource> <https://www.researchobject.org/workflow-run-crate/profiles/0.5/workflow_run_crate/#hasExample> .
+<https://orcid.org/0000-0002-5477-287X> <http://schema.org/name> "Milan Markovic" .
+<https://creativecommons.org/publicdomain/zero/1.0/> <http://schema.org/identifier> <http://spdx.org/licenses/CC0-1.0> .
+<https://doi.org/10.48550/arXiv.2312.07852> <http://schema.org/author> <https://orcid.org/0000-0003-0902-0086> .
+<http://spdx.org/licenses/Apache-2.0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/PropertyValue> .
+<https://www.researchobject.org/workflow-run-crate-paper/ro-crate-preview.html> <http://schema.org/encodingFormat> "text/html" .
+<https://w3id.org/ro/doi/10.5281/zenodo.10368989> <http://schema.org/subjectOf> <https://www.researchobject.org/workflow-run-crate-paper/ro-crate-metadata.jsonld> .
+<https://orcid.org/0000-0001-8271-5429> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/Person> .
+<http://schema.org/defaultValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/DefinedTerm> .
+<https://www.researchobject.org/workflow-run-crate/profiles/0.5/workflow_run_crate/#hasSpecification> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/dx/prof/ResourceDescriptor> .
+<https://w3id.org/ro/doi/10.5281/zenodo.10368989> <http://schema.org/subjectOf> <https://www.researchobject.org/workflow-run-crate-paper/ro-crate-preview.html> .
+<https://orcid.org/0000-0002-4405-6802> <http://schema.org/name> "Haris Zafeiropoulos" .
+<https://www.researchobject.org/workflow-run-crate/profiles/0.5/workflow_run_crate/ro-crate-metadata.json> <http://purl.org/dc/terms/conformsTo> <https://w3id.org/ro/crate/1.2-DRAFT> .
+<https://www.researchobject.org/workflow-run-crate/> <http://schema.org/name> "Workflow Run Crate task force" .
+<https://www.researchobject.org/workflow-run-crate/profiles/0.5/workflow_run_crate/#hasMappingToProv> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/dx/prof/ResourceDescriptor> .
+<https://orcid.org/0000-0001-5845-8880> <http://schema.org/name> "Sebastiaan Huber" .
+<https://www.researchobject.org/workflow-run-crate/profiles/0.5/workflow_run_crate/ro-crate-metadata.json> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/CreativeWork> .
+<https://www.researchobject.org/workflow-run-crate/> <http://schema.org/member> <https://orcid.org/0000-0002-2961-9670> .
+<https://w3id.org/ro/wfrun/workflow/0.5> <http://www.w3.org/ns/dx/prof/hasResource> <https://www.researchobject.org/workflow-run-crate/profiles/0.5/workflow_run_crate/#hasSpecification> .
+<https://w3id.org/ro/wfrun/workflow/0.5> <http://schema.org/hasPart> <https://www.researchobject.org/workflow-run-crate-paper/mapping/> .
+<https://orcid.org/0000-0002-4663-5613> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/Person> .
+<https://orcid.org/0000-0002-3468-0652> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/Person> .
+<https://pypi.org/project/runcrate/> <http://schema.org/version> "0.5.0" .
+<https://w3id.org/ro/doi/10.5281/zenodo.10368989> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/Dataset> .
+<https://www.researchobject.org/workflow-run-crate/> <http://schema.org/member> <https://orcid.org/0000-0001-9228-2882> .
+<https://www.researchobject.org/workflow-run-crate/> <http://schema.org/member> <https://orcid.org/0000-0003-3898-9451> .

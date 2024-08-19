@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+  xmlns:schema="http://schema.org/"
+  xmlns:prof="http://www.w3.org/ns/dx/prof/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:dct="http://purl.org/dc/terms/"
+>
+  <schema:CreativeWork rdf:about="https://www.researchobject.org/workflow-run-crate/profiles/0.5/provenance_run_crate/ro-crate-preview.html">
+    <schema:license>
+      <schema:PropertyValue rdf:about="http://spdx.org/licenses/CC0-1.0">
+        <schema:propertyID>http://spdx.org/rdf/terms#licenseId</schema:propertyID>
+        <schema:name>spdx</schema:name>
+        <schema:value>CC0-1.0</schema:value>
+      </schema:PropertyValue>
+    </schema:license>
+    <schema:isBasedOn>
+      <schema:CreativeWork rdf:about="https://www.researchobject.org/workflow-run-crate/profiles/0.5/provenance_run_crate/ro-crate-metadata.json">
+        <schema:license rdf:resource="http://spdx.org/licenses/CC0-1.0"/>
+        <dct:conformsTo rdf:resource="https://w3id.org/ro/crate/1.2-DRAFT"/>
+        <schema:about rdf:resource="https://w3id.org/ro/wfrun/provenance/0.5"/>
+      </schema:CreativeWork>
+    </schema:isBasedOn>
+    <schema:name>RO-Crate preview of the Provenance Run Crate profile</schema:name>
+    <schema:encodingFormat>text/html</schema:encodingFormat>
+    <schema:about>https://w3id.org/ro/wfrun/provenance/0.5</schema:about>
+  </schema:CreativeWork>
+  <schema:Dataset rdf:about="https://w3id.org/ro/wfrun/provenance/0.5">
+    <rdf:type rdf:resource="http://www.w3.org/ns/dx/prof/Profile"/>
+    <prof:isProfileOf rdf:resource="https://w3id.org/ro/crate/1.2-DRAFT"/>
+    <schema:identifier>https://w3id.org/ro/wfrun/provenance/0.5</schema:identifier>
+    <schema:name>Provenance Run Crate profile</schema:name>
+    <schema:version>0.5</schema:version>
+    <schema:license>
+      <schema:CreativeWork rdf:about="https://www.apache.org/licenses/LICENSE-2.0">
+        <schema:name>Apache License 2.0</schema:name>
+        <schema:version>2.0</schema:version>
+        <schema:identifier rdf:resource="http://spdx.org/licenses/Apache-2.0"/>
+      </schema:CreativeWork>
+    </schema:license>
+    <schema:author>
+      <schema:Project rdf:about="https://www.researchobject.org/workflow-run-crate/">
+        <schema:name>Provenance Run Crate task force</schema:name>
+        <schema:member rdf:resource="https://orcid.org/0000-0001-8271-5429"/>
+        <schema:member rdf:resource="https://orcid.org/0000-0003-4929-1219"/>
+        <schema:member rdf:resource="https://orcid.org/0000-0001-9842-9718"/>
+        <schema:member rdf:resource="https://orcid.org/0000-0002-5432-2748"/>
+        <schema:member rdf:resource="https://orcid.org/0000-0002-4806-5140"/>
+        <schema:member rdf:resource="https://orcid.org/0000-0003-3156-2105"/>
+        <schema:member rdf:resource="https://orcid.org/0000-0002-6190-122X"/>
+        <schema:member rdf:resource="https://orcid.org/0000-0003-0454-7145"/>
+        <schema:member rdf:resource="https://orcid.org/0000-0002-8940-4946"/>
+        <schema:member rdf:resource="https://orcid.org/0000-0003-0606-2512"/>
+        <schema:member rdf:resource="https://orcid.org/0000-0002-3468-0652"/>
+        <schema:member rdf:resource="https://orcid.org/0000-0002-2961-9670"/>
+        <schema:member rdf:resource="https://orcid.org/0000-0003-3986-0510"/>
+        <schema:member rdf:resource="https://orcid.org/0000-0002-0003-2024"/>
+        <schema:member rdf:resource="https://orcid.org/0000-0002-9464-6640"/>
+        <schema:member rdf:resource="https://orcid.org/0000-0001-5845-8880"/>
+        <schema:member rdf:resource="https://orcid.org/0000-0003-4894-4660"/>
+        <schema:member rdf:resource="https://orcid.org/0000-0002-4405-6802"/>
+        <schema:member rdf:resource="https://orcid.org/0000-0001-9290-2017"/>
+        <schema:member rdf:resource="https://orcid.org/0000-0003-0617-9219"/>
+        <schema:member rdf:resource="https://orcid.org/0000-0001-9228-2882"/>
+        <schema:member rdf:resource="https://orcid.org/0000-0003-3898-9451"/>
+        <schema:member rdf:resource="https://orcid.org/0000-0003-3777-5945"/>
+        <schema:member rdf:resource="https://orcid.org/0000-0003-2765-0049"/>
+        <schema:member rdf:resource="https://orcid.org/0000-0001-9818-9320"/>
+        <schema:member rdf:resource="https://orcid.org/0000-0002-8122-9522"/>
+        <schema:member rdf:resource="https://orcid.org/0000-0002-8330-4071"/>
+        <schema:member rdf:resource="https://orcid.org/0000-0003-4073-7456"/>
+        <schema:member rdf:resource="https://orcid.org/0000-0003-1361-7301"/>
+        <schema:member rdf:resource="https://orcid.org/0000-0002-5358-616X"/>
+        <schema:member rdf:resource="https://orcid.org/0000-0002-5477-287X"/>
+        <schema:member rdf:resource="https://orcid.org/0000-0001-8250-4074"/>
+        <schema:member rdf:resource="https://orcid.org/0000-0003-0902-0086"/>
+        <schema:member rdf:resource="https://orcid.org/0000-0001-8172-8981"/>
+        <schema:member rdf:resource="https://orcid.org/0000-0001-6740-9212"/>
+        <schema:member rdf:resource="https://orcid.org/0000-0001-5411-356X"/>
+        <schema:member rdf:resource="https://orcid.org/0000-0003-0035-0951"/>
+        <schema:member rdf:resource="https://orcid.org/0000-0003-0711-5196"/>
+        <schema:parentOrganization rdf:resource="https://www.researchobject.org/ro-crate/community"/>
+      </schema:Project>
+    </schema:author>
+    <schema:hasPart>
+      <schema:MediaObject rdf:about="https://www.researchobject.org/workflow-run-crate/profiles/0.5/provenance_run_crate/index.html">
+        <schema:name>Provenance Run Crate (HTML)</schema:name>
+        <schema:encodingFormat>text/html</schema:encodingFormat>
+        <schema:encodingFormat rdf:resource="https://www.nationalarchives.gov.uk/PRONOM/fmt/471"/>
+      </schema:MediaObject>
+    </schema:hasPart>
+    <schema:hasPart>
+      <schema:Dataset rdf:about="https://www.researchobject.org/workflow-run-crate/profiles/0.5/provenance_run_crate/example3/">
+        <schema:name>Example Process Run Crate</schema:name>
+        <dct:conformsTo rdf:resource="https://w3id.org/ro/crate"/>
+        <dct:conformsTo rdf:resource="https://w3id.org/ro/wfrun/process/0.4"/>
+        <dct:conformsTo rdf:resource="https://w3id.org/ro/wfrun/workflow/0.4"/>
+        <dct:conformsTo rdf:resource="https://w3id.org/ro/wfrun/provenance/0.4"/>
+        <dct:conformsTo rdf:resource="https://w3id.org/workflowhub/workflow-ro-crate/1.0"/>
+        <schema:subjectOf rdf:resource="https://www.researchobject.org/workflow-run-crate/profiles/0.5/provenance_run_crate/example3/ro-crate-metadata.json"/>
+        <schema:subjectOf rdf:resource="https://www.researchobject.org/workflow-run-crate/profiles/0.5/provenance_run_crate/example3/ro-crate-preview.html"/>
+      </schema:Dataset>
+    </schema:hasPart>
+    <schema:hasPart>
+      <schema:Dataset rdf:about="https://www.researchobject.org/workflow-run-crate-paper/mapping/">
+        <schema:name>SSSOM mapping from PROV to Workflow Run Crate</schema:name>
+        <schema:isPartOf rdf:resource="https://w3id.org/ro/doi/10.5281/zenodo.10368989"/>
+      </schema:Dataset>
+    </schema:hasPart>
+    <schema:hasPart>
+      <schema:DefinedTermSet rdf:about="https://w3id.org/ro/terms/workflow-run#">
+        <schema:name>Namespace for Workflow Run RO-Crate model</schema:name>
+      </schema:DefinedTermSet>
+    </schema:hasPart>
+    <schema:hasPart>
+      <schema:MediaObject rdf:about="https://w3id.org/ro/terms/workflow-run">
+        <schema:name>JSON-LD context for workflow-run terms</schema:name>
+        <schema:contentUrl>https://www.researchobject.org/ro-terms/workflow-run/context.json</schema:contentUrl>
+        <dct:conformsTo rdf:resource="http://www.w3.org/ns/json-ld#Context"/>
+        <schema:encodingFormat>application/ld+json</schema:encodingFormat>
+        <schema:isBasedOn rdf:resource="https://w3id.org/ro/crate/1.1/context"/>
+        <schema:isBasedOn rdf:resource="https://w3id.org/ro/terms/workflow-run#"/>
+        <schema:license rdf:resource="https://creativecommons.org/publicdomain/zero/1.0/"/>
+      </schema:MediaObject>
+    </schema:hasPart>
+    <schema:hasPart>
+      <schema:LearningResource rdf:about="https://gxy.io/GTN:T00343">
+        <schema:name>Workflow Run RO-Crate Introduction</schema:name>
+        <schema:author rdf:resource="https://orcid.org/0000-0001-8271-5429"/>
+      </schema:LearningResource>
+    </schema:hasPart>
+    <schema:hasPart>
+      <schema:SoftwareApplication rdf:about="https://pypi.org/project/runcrate/">
+        <schema:name>runcrate</schema:name>
+        <schema:version>0.5.0</schema:version>
+        <schema:url>https://pypi.org/project/runcrate/</schema:url>
+      </schema:SoftwareApplication>
+    </schema:hasPart>
+    <schema:hasPart>
+      <schema:CreativeWork rdf:about="https://w3id.org/ro/wfrun/process/0.5">
+        <rdf:type rdf:resource="http://www.w3.org/ns/dx/prof/Profile"/>
+        <schema:name>Process Run Crate profile</schema:name>
+        <schema:version>0.5</schema:version>
+      </schema:CreativeWork>
+    </schema:hasPart>
+    <schema:hasPart>
+      <schema:CreativeWork rdf:about="https://w3id.org/ro/wfrun/workflow/0.5">
+        <rdf:type rdf:resource="http://www.w3.org/ns/dx/prof/Profile"/>
+        <schema:name>Workflow Run Crate profile</schema:name>
+        <schema:version>0.5</schema:version>
+      </schema:CreativeWork>
+    </schema:hasPart>
+    <schema:hasPart>
+      <schema:CreativeWork rdf:about="https://w3id.org/workflowhub/workflow-ro-crate/1.0">
+        <rdf:type rdf:resource="http://www.w3.org/ns/dx/prof/Profile"/>
+        <schema:name>Workflow RO-Crate profile</schema:name>
+        <schema:version>1.0</schema:version>
+      </schema:CreativeWork>
+    </schema:hasPart>
+    <schema:hasPart>
+      <schema:DefinedTerm rdf:about="https://w3id.org/ro/terms/workflow-run#ParameterConnection">
+        <schema:termCode>ParameterConnection</schema:termCode>
+        <schema:name>Parameter Connection</schema:name>
+        <schema:inDefinedTermSet rdf:resource="https://w3id.org/ro/terms/workflow-run#"/>
+        <schema:description>A connection between parameters of different applications</schema:description>
+      </schema:DefinedTerm>
+    </schema:hasPart>
+    <schema:hasPart>
+      <schema:DefinedTerm rdf:about="https://w3id.org/ro/terms/workflow-run#connection">
+        <schema:termCode>connection</schema:termCode>
+        <schema:name>connection</schema:name>
+        <schema:inDefinedTermSet rdf:resource="https://w3id.org/ro/terms/workflow-run#"/>
+        <schema:description>A parameter connection created by this workflow</schema:description>
+      </schema:DefinedTerm>
+    </schema:hasPart>
+    <schema:hasPart>
+      <schema:DefinedTerm rdf:about="https://w3id.org/ro/terms/workflow-run#sourceParameter">
+        <schema:termCode>sourceParameter</schema:termCode>
+        <schema:name>source parameter</schema:name>
+        <schema:inDefinedTermSet rdf:resource="https://w3id.org/ro/terms/workflow-run#"/>
+        <schema:description>The source (upstream) parameter</schema:description>
+      </schema:DefinedTerm>
+    </schema:hasPart>
+    <schema:hasPart>
+      <schema:DefinedTerm rdf:about="https://w3id.org/ro/terms/workflow-run#targetParameter">
+        <schema:termCode>targetParameter</schema:termCode>
+        <schema:name>target parameter</schema:name>
+        <schema:inDefinedTermSet rdf:resource="https://w3id.org/ro/terms/workflow-run#"/>
+        <schema:description>The target (upstream) parameter</schema:description>
+      </schema:DefinedTerm>
+    </schema:hasPart>
+    <schema:hasPart>
+      <schema:DefinedTerm rdf:about="https://codemeta.github.io/terms/buildInstructions">
+        <schema:name>buildInstructions</schema:name>
+        <schema:termCode>buildInstructions</schema:termCode>
+        <schema:description>Build environment file (e.g. for Conda)</schema:description>
+        <schema:inDefinedTermSet rdf:resource="https://codemeta.github.io/terms/"/>
+      </schema:DefinedTerm>
+    </schema:hasPart>
+    <prof:hasResource>
+      <prof:ResourceDescriptor rdf:about="https://www.researchobject.org/workflow-run-crate/profiles/0.5/provenance_run_crate/#hasSpecification">
+        <prof:hasRole rdf:resource="http://www.w3.org/ns/dx/prof/role/specification"/>
+        <prof:hasArtifact rdf:resource="https://www.researchobject.org/workflow-run-crate/profiles/0.5/provenance_run_crate/index.html"/>
+      </prof:ResourceDescriptor>
+    </prof:hasResource>
+    <prof:hasResource>
+      <prof:ResourceDescriptor rdf:about="https://www.researchobject.org/workflow-run-crate/profiles/0.5/provenance_run_crate/#hasConstraints">
+        <prof:hasRole rdf:resource="http://www.w3.org/ns/dx/prof/role/constraints"/>
+        <prof:hasArtifact rdf:resource="https://www.researchobject.org/workflow-run-crate/profiles/0.5/provenance_run_crate/index.html#requirements"/>
+      </prof:ResourceDescriptor>
+    </prof:hasResource>
+    <prof:hasResource>
+      <prof:ResourceDescriptor rdf:about="https://www.researchobject.org/workflow-run-crate/profiles/0.5/provenance_run_crate/#hasVocabulary">
+        <prof:hasRole rdf:resource="http://www.w3.org/ns/dx/prof/role/vocabulary"/>
+        <prof:hasArtifact rdf:resource="https://w3id.org/ro/terms/workflow-run#"/>
+      </prof:ResourceDescriptor>
+    </prof:hasResource>
+    <prof:hasResource>
+      <prof:ResourceDescriptor rdf:about="https://www.researchobject.org/workflow-run-crate/profiles/0.5/provenance_run_crate/#hasGuidance">
+        <prof:hasRole rdf:resource="http://www.w3.org/ns/dx/prof/role/guidance"/>
+        <prof:hasArtifact rdf:resource="https://gxy.io/GTN:T00343"/>
+      </prof:ResourceDescriptor>
+    </prof:hasResource>
+    <prof:hasResource>
+      <prof:ResourceDescriptor rdf:about="https://www.researchobject.org/workflow-run-crate/profiles/0.5/provenance_run_crate/#hasExample">
+        <prof:hasRole rdf:resource="http://www.w3.org/ns/dx/prof/role/example"/>
+        <prof:hasArtifact rdf:resource="https://www.researchobject.org/workflow-run-crate/profiles/0.5/provenance_run_crate/example3/"/>
+      </prof:ResourceDescriptor>
+    </prof:hasResource>
+    <prof:hasResource>
+      <prof:ResourceDescriptor rdf:about="https://www.researchobject.org/workflow-run-crate/profiles/0.5/provenance_run_crate/#hasMappingToProv">
+        <prof:hasRole rdf:resource="http://www.w3.org/ns/dx/prof/role/mapping"/>
+        <prof:hasArtifact rdf:resource="https://www.researchobject.org/workflow-run-crate-paper/mapping/"/>
+      </prof:ResourceDescriptor>
+    </prof:hasResource>
+    <prof:hasResource>
+      <prof:ResourceDescriptor rdf:about="https://www.researchobject.org/workflow-run-crate/profiles/0.5/provenance_run_crate/#shouldConformToWorkflowROCrate">
+        <schema:name>SHOULD conform to Workflow RO-Crate profile</schema:name>
+        <prof:hasRole rdf:resource="http://purl.org/dc/terms/conformsTo"/>
+        <prof:hasArtifact rdf:resource="https://w3id.org/workflowhub/workflow-ro-crate/1.0"/>
+      </prof:ResourceDescriptor>
+    </prof:hasResource>
+    <prof:hasResource>
+      <prof:ResourceDescriptor rdf:about="https://www.researchobject.org/workflow-run-crate/profiles/0.5/provenance_run_crate/#shouldConformToProcessCrateProfile">
+        <schema:name>SHOULD conform to Process Crate profile</schema:name>
+        <prof:hasRole rdf:resource="http://purl.org/dc/terms/conformsTo"/>
+        <prof:hasArtifact rdf:resource="https://w3id.org/ro/wfrun/process/0.5"/>
+      </prof:ResourceDescriptor>
+    </prof:hasResource>
+    <prof:hasResource>
+      <prof:ResourceDescriptor rdf:about="https://www.researchobject.org/workflow-run-crate/profiles/0.5/provenance_run_crate/#shouldConformToWorkflowCrateProfile">
+        <schema:name>SHOULD conform to Workflow Crate profile</schema:name>
+        <prof:hasRole rdf:resource="http://purl.org/dc/terms/conformsTo"/>
+        <prof:hasArtifact rdf:resource="https://w3id.org/ro/wfrun/workflow/0.5"/>
+      </prof:ResourceDescriptor>
+    </prof:hasResource>
+    <schema:citation>
+      <schema:ScholarlyArticle rdf:about="https://doi.org/10.48550/arXiv.2312.07852">
+        <schema:name>Recording provenance of workflow runs with RO-Crate</schema:name>
+        <schema:author rdf:resource="https://orcid.org/0000-0001-8271-5429"/>
+        <schema:author rdf:resource="https://orcid.org/0000-0002-2961-9670"/>
+        <schema:author rdf:resource="https://orcid.org/0000-0003-4929-1219"/>
+        <schema:author rdf:resource="https://orcid.org/0000-0003-0606-2512"/>
+        <schema:author rdf:resource="https://orcid.org/0000-0002-3468-0652"/>
+        <schema:author rdf:resource="https://orcid.org/0000-0002-8940-4946"/>
+        <schema:author rdf:resource="https://orcid.org/0000-0002-0003-2024"/>
+        <schema:author rdf:resource="https://orcid.org/0000-0002-4663-5613"/>
+        <schema:author rdf:resource="https://orcid.org/0000-0003-0454-7145"/>
+        <schema:author rdf:resource="https://orcid.org/0000-0002-4806-5140"/>
+        <schema:author rdf:resource="https://orcid.org/0000-0001-9290-2017"/>
+        <schema:author rdf:resource="https://orcid.org/0000-0002-1119-1792"/>
+        <schema:author rdf:resource="https://orcid.org/0000-0003-3777-5945"/>
+        <schema:author rdf:resource="https://orcid.org/0000-0003-2765-0049"/>
+        <schema:author rdf:resource="https://orcid.org/0000-0002-0309-604X"/>
+        <schema:author rdf:resource="https://orcid.org/0000-0003-0902-0086"/>
+        <schema:author rdf:resource="https://orcid.org/0000-0001-8250-4074"/>
+        <schema:author rdf:resource="https://orcid.org/0000-0001-9842-9718"/>
+        <schema:creditText>Simone Leo, et al. (2024): Recording provenance of workflow runs with RO-Crate. arXiv:2312.07852</schema:creditText>
+      </schema:ScholarlyArticle>
+    </schema:citation>
+  </schema:Dataset>
+  <schema:Person rdf:about="https://orcid.org/0000-0002-1119-1792">
+    <schema:name>Matej Gallo</schema:name>
+  </schema:Person>
+  <schema:Person rdf:about="https://orcid.org/0000-0001-8172-8981">
+    <schema:name>Jasper Koehorst</schema:name>
+  </schema:Person>
+  <schema:PropertyValue rdf:about="http://spdx.org/licenses/Apache-2.0">
+    <schema:propertyID>http://spdx.org/rdf/terms#licenseId</schema:propertyID>
+    <schema:name>spdx</schema:name>
+    <schema:value>Apache-2.0</schema:value>
+  </schema:PropertyValue>
+  <schema:DefinedTerm rdf:about="http://schema.org/MediaObject">
+    <schema:name>MediaObject</schema:name>
+    <schema:termCode>file</schema:termCode>
+  </schema:DefinedTerm>
+  <schema:WebPageElement rdf:about="https://www.researchobject.org/workflow-run-crate/profiles/0.5/provenance_run_crate/index.html#requirements">
+    <schema:name>Provenance Run Crate requirements</schema:name>
+  </schema:WebPageElement>
+  <schema:Person rdf:about="https://orcid.org/0000-0002-5432-2748">
+    <schema:name>Paul Brack</schema:name>
+  </schema:Person>
+  <schema:CreativeWork rdf:about="https://www.researchobject.org/workflow-run-crate/profiles/0.5/provenance_run_crate/example3/ro-crate-metadata.json">
+    <schema:encodingFormat>application/ld+json</schema:encodingFormat>
+  </schema:CreativeWork>
+  <schema:CreativeWork rdf:about="https://creativecommons.org/publicdomain/zero/1.0/">
+    <schema:identifier rdf:resource="http://spdx.org/licenses/CC0-1.0"/>
+    <schema:name>Creative Commons Zero v1.0 Universal</schema:name>
+    <schema:version>1.0</schema:version>
+  </schema:CreativeWork>
+  <schema:Person rdf:about="https://orcid.org/0000-0002-4405-6802">
+    <schema:name>Haris Zafeiropoulos</schema:name>
+  </schema:Person>
+  <schema:Person rdf:about="https://orcid.org/0000-0003-4073-7456">
+    <schema:name>Romain David</schema:name>
+  </schema:Person>
+  <schema:Person rdf:about="https://orcid.org/0000-0001-9842-9718">
+    <schema:name>Stian Soiland-Reyes</schema:name>
+  </schema:Person>
+  <schema:Person rdf:about="https://orcid.org/0000-0002-8330-4071">
+    <schema:name>Mahnoor Zulfiqar</schema:name>
+  </schema:Person>
+  <schema:Person rdf:about="https://orcid.org/0000-0003-3986-0510">
+    <schema:name>LJ Garcia Castro</schema:name>
+  </schema:Person>
+  <schema:Person rdf:about="https://orcid.org/0000-0002-8122-9522">
+    <schema:name>Luiz Gadelha</schema:name>
+  </schema:Person>
+  <schema:Person rdf:about="https://orcid.org/0000-0003-3898-9451">
+    <schema:name>Stelios Ninidakis</schema:name>
+  </schema:Person>
+  <schema:Person rdf:about="https://orcid.org/0000-0003-0902-0086">
+    <schema:name>Renske de Wit</schema:name>
+  </schema:Person>
+  <schema:Person rdf:about="https://orcid.org/0000-0002-2961-9670">
+    <schema:name>Michael R Crusoe</schema:name>
+  </schema:Person>
+  <schema:Person rdf:about="https://orcid.org/0000-0003-3777-5945">
+    <schema:name>Tazro Ohta</schema:name>
+  </schema:Person>
+  <schema:Person rdf:about="https://orcid.org/0000-0003-0454-7145">
+    <schema:name>Daniel Garijo</schema:name>
+  </schema:Person>
+  <schema:Person rdf:about="https://orcid.org/0000-0001-8271-5429">
+    <schema:name>Simone Leo</schema:name>
+  </schema:Person>
+  <schema:CreativeWork rdf:about="https://www.researchobject.org/workflow-run-crate-paper/ro-crate-metadata.jsonld">
+    <schema:encodingFormat>application/ld+json</schema:encodingFormat>
+  </schema:CreativeWork>
+  <schema:CreativeWork rdf:about="https://www.researchobject.org/workflow-run-crate/profiles/0.5/provenance_run_crate/example3/ro-crate-preview.html">
+    <schema:encodingFormat>text/html</schema:encodingFormat>
+  </schema:CreativeWork>
+  <schema:Person rdf:about="https://orcid.org/0000-0002-8940-4946">
+    <schema:name>Paul De Geest</schema:name>
+  </schema:Person>
+  <schema:Project rdf:about="https://www.researchobject.org/ro-crate/community">
+    <schema:name>RO-Crate Community</schema:name>
+  </schema:Project>
+  <schema:Person rdf:about="https://orcid.org/0000-0003-3156-2105">
+    <schema:name>Alan R Williams</schema:name>
+  </schema:Person>
+  <schema:Person rdf:about="https://orcid.org/0000-0003-0617-9219">
+    <schema:name>Jake Emerson</schema:name>
+  </schema:Person>
+  <schema:Person rdf:about="https://orcid.org/0000-0002-4806-5140">
+    <schema:name>José María Fernández</schema:name>
+  </schema:Person>
+  <schema:Person rdf:about="https://orcid.org/0000-0002-0003-2024">
+    <schema:name>Rudolf Wittner</schema:name>
+  </schema:Person>
+  <schema:Person rdf:about="https://orcid.org/0000-0003-0606-2512">
+    <schema:name>Raül Sirvent</schema:name>
+  </schema:Person>
+  <schema:Person rdf:about="https://orcid.org/0000-0001-6740-9212">
+    <schema:name>Samuel Lampa</schema:name>
+  </schema:Person>
+  <schema:Person rdf:about="https://orcid.org/0000-0001-9228-2882">
+    <schema:name>Abigail Miller</schema:name>
+  </schema:Person>
+  <schema:Person rdf:about="https://orcid.org/0000-0003-4894-4660">
+    <schema:name>Kevin Jablonka</schema:name>
+  </schema:Person>
+  <schema:Person rdf:about="https://orcid.org/0000-0001-9818-9320">
+    <schema:name>Johannes Köster</schema:name>
+  </schema:Person>
+  <schema:Person rdf:about="https://orcid.org/0000-0002-9464-6640">
+    <schema:name>Wolfgang Maier</schema:name>
+  </schema:Person>
+  <schema:Person rdf:about="https://orcid.org/0000-0001-9290-2017">
+    <schema:name>Iacopo Colonnelli</schema:name>
+  </schema:Person>
+  <schema:Person rdf:about="https://orcid.org/0000-0001-8250-4074">
+    <schema:name>Bruno P. Kinoshita</schema:name>
+  </schema:Person>
+  <schema:Person rdf:about="https://orcid.org/0000-0002-3468-0652">
+    <schema:name>Alexander Kanitz</schema:name>
+  </schema:Person>
+  <schema:DefinedTermSet rdf:about="https://codemeta.github.io/terms/">
+    <schema:name>Codemeta Terms</schema:name>
+    <schema:url>https://codemeta.github.io/terms/</schema:url>
+    <schema:version>3.0</schema:version>
+  </schema:DefinedTermSet>
+  <schema:Person rdf:about="https://orcid.org/0000-0003-0711-5196">
+    <schema:name>Felix Bartusch</schema:name>
+  </schema:Person>
+  <schema:Dataset rdf:about="https://w3id.org/ro/doi/10.5281/zenodo.10368989">
+    <schema:name>Recording provenance of workflow runs with RO-Crate (RO-Crate and mapping)</schema:name>
+    <dct:conformsTo rdf:resource="https://w3id.org/ro/crate"/>
+    <schema:subjectOf rdf:resource="https://www.researchobject.org/workflow-run-crate-paper/ro-crate-metadata.jsonld"/>
+    <schema:subjectOf>
+      <schema:CreativeWork rdf:about="https://www.researchobject.org/workflow-run-crate-paper/ro-crate-preview.html">
+        <schema:encodingFormat>text/html</schema:encodingFormat>
+      </schema:CreativeWork>
+    </schema:subjectOf>
+  </schema:Dataset>
+  <schema:Person rdf:about="https://orcid.org/0000-0003-2765-0049">
+    <schema:name>Hirotaka Suetake</schema:name>
+  </schema:Person>
+  <schema:Person rdf:about="https://orcid.org/0000-0003-4929-1219">
+    <schema:name>Laura Rodríguez-Navas</schema:name>
+  </schema:Person>
+  <schema:Person rdf:about="https://orcid.org/0000-0002-0309-604X">
+    <schema:name>Salvador Capella-Gutierrez</schema:name>
+  </schema:Person>
+  <schema:Person rdf:about="https://orcid.org/0000-0001-5845-8880">
+    <schema:name>Sebastiaan Huber</schema:name>
+  </schema:Person>
+  <schema:Person rdf:about="https://orcid.org/0000-0002-6190-122X">
+    <schema:name>Ignacio Eguinoa</schema:name>
+  </schema:Person>
+  <schema:Person rdf:about="https://orcid.org/0000-0001-5411-356X">
+    <schema:name>Samuel Grayson</schema:name>
+  </schema:Person>
+  <schema:Person rdf:about="https://orcid.org/0000-0002-5477-287X">
+    <schema:name>Milan Markovic</schema:name>
+  </schema:Person>
+  <schema:Person rdf:about="https://orcid.org/0000-0003-1361-7301">
+    <schema:name>Maciek Bąk</schema:name>
+  </schema:Person>
+  <schema:Person rdf:about="https://orcid.org/0000-0003-0035-0951">
+    <schema:name>Jörg F. Unger</schema:name>
+  </schema:Person>
+  <schema:Person rdf:about="https://orcid.org/0000-0002-5358-616X">
+    <schema:name>Petr Holub</schema:name>
+  </schema:Person>
+  <schema:Person rdf:about="https://orcid.org/0000-0002-4663-5613">
+    <schema:name>Luca Pireddu</schema:name>
+  </schema:Person>
+</rdf:RDF>

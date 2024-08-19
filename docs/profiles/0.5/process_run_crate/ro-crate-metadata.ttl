@@ -1,0 +1,591 @@
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix prof: <http://www.w3.org/ns/dx/prof/> .
+@prefix profrole: <http://www.w3.org/ns/dx/prof/role/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+
+<https://w3id.org/ro/terms/workflow-run#ContainerImage> a schema:DefinedTerm,
+        rdfs:Class ;
+    schema:description "A containerization software container image" ;
+    schema:name "Container Image" ;
+    schema:termCode "ContainerImage" .
+
+<https://w3id.org/ro/terms/workflow-run#DockerImage> a schema:DefinedTerm,
+        rdfs:Class ;
+    schema:description "A docker container image" ;
+    schema:name "Docker Image" ;
+    schema:termCode "DockerImage" .
+
+<https://w3id.org/ro/terms/workflow-run#ParameterConnection> a schema:DefinedTerm,
+        rdfs:Class ;
+    schema:description "A connection between parameters of different applications" ;
+    schema:name "Parameter Connection" ;
+    schema:termCode "ParameterConnection" .
+
+<https://w3id.org/ro/terms/workflow-run#SIFImage> a schema:DefinedTerm,
+        rdfs:Class ;
+    schema:description "A Singularity Image Format container image" ;
+    schema:name "SIF Image" ;
+    schema:termCode "SIFImage" .
+
+<https://www.researchobject.org/workflow-run-crate/profiles/0.5/process_run_crate/ro-crate-preview.html> a schema:CreativeWork ;
+    schema:about "https://w3id.org/ro/wfrun/process/0.5" ;
+    schema:encodingFormat "text/html" ;
+    schema:isBasedOn <https://www.researchobject.org/workflow-run-crate/profiles/0.5/process_run_crate/ro-crate-metadata.json> ;
+    schema:license <http://spdx.org/licenses/CC0-1.0> ;
+    schema:name "RO-Crate preview of the Process Run Crate profile" .
+
+schema:Collection a schema:DefinedTerm ;
+    schema:name "Collection" .
+
+schema:CompletedActionStatus a schema:DefinedTerm ;
+    schema:name "CompletedActionStatus" .
+
+schema:FailedActionStatus a schema:DefinedTerm ;
+    schema:name "FailedActionStatus" .
+
+schema:HowToStep a schema:DefinedTerm ;
+    schema:name "HowToStep" .
+
+schema:Organization a schema:DefinedTerm ;
+    schema:name "Organization" .
+
+schema:actionStatus a schema:DefinedTerm ;
+    schema:name "actionStatus" .
+
+schema:agent a schema:DefinedTerm ;
+    schema:name "agent" .
+
+schema:alternateName a schema:DefinedTerm ;
+    schema:name "alternateName" .
+
+schema:description a schema:DefinedTerm ;
+    schema:name "description" .
+
+schema:endTime a schema:DefinedTerm ;
+    schema:name "endTime" .
+
+schema:error a schema:DefinedTerm ;
+    schema:name "error" .
+
+schema:instrument a schema:DefinedTerm ;
+    schema:name "instrument" .
+
+schema:mainEntity a schema:DefinedTerm ;
+    schema:name "mainEntity" .
+
+schema:name a schema:DefinedTerm ;
+    schema:name "name" .
+
+schema:object a schema:DefinedTerm ;
+    schema:name "object" .
+
+schema:result a schema:DefinedTerm ;
+    schema:name "result" .
+
+schema:startTime a schema:DefinedTerm ;
+    schema:name "startTime" .
+
+<http://spdx.org/licenses/Apache-2.0> a schema:PropertyValue ;
+    schema:name "spdx" ;
+    schema:propertyID "http://spdx.org/rdf/terms#licenseId" ;
+    schema:value "Apache-2.0" .
+
+<https://creativecommons.org/publicdomain/zero/1.0/> a schema:CreativeWork ;
+    schema:identifier <http://spdx.org/licenses/CC0-1.0> ;
+    schema:name "Creative Commons Zero v1.0 Universal" ;
+    schema:version "1.0" .
+
+<https://doi.org/10.48550/arXiv.2312.07852> a schema:ScholarlyArticle ;
+    schema:author <https://orcid.org/0000-0001-8250-4074>,
+        <https://orcid.org/0000-0001-8271-5429>,
+        <https://orcid.org/0000-0001-9290-2017>,
+        <https://orcid.org/0000-0001-9842-9718>,
+        <https://orcid.org/0000-0002-0003-2024>,
+        <https://orcid.org/0000-0002-0309-604X>,
+        <https://orcid.org/0000-0002-1119-1792>,
+        <https://orcid.org/0000-0002-2961-9670>,
+        <https://orcid.org/0000-0002-3468-0652>,
+        <https://orcid.org/0000-0002-4663-5613>,
+        <https://orcid.org/0000-0002-4806-5140>,
+        <https://orcid.org/0000-0002-8940-4946>,
+        <https://orcid.org/0000-0003-0454-7145>,
+        <https://orcid.org/0000-0003-0606-2512>,
+        <https://orcid.org/0000-0003-0902-0086>,
+        <https://orcid.org/0000-0003-2765-0049>,
+        <https://orcid.org/0000-0003-3777-5945>,
+        <https://orcid.org/0000-0003-4929-1219> ;
+    schema:creditText "Simone Leo, et al. (2024): Recording provenance of workflow runs with RO-Crate. arXiv:2312.07852" ;
+    schema:name "Recording provenance of workflow runs with RO-Crate" .
+
+<https://orcid.org/0000-0001-5411-356X> a schema:Person ;
+    schema:name "Samuel Grayson" .
+
+<https://orcid.org/0000-0001-5845-8880> a schema:Person ;
+    schema:name "Sebastiaan Huber" .
+
+<https://orcid.org/0000-0001-6740-9212> a schema:Person ;
+    schema:name "Samuel Lampa" .
+
+<https://orcid.org/0000-0001-8172-8981> a schema:Person ;
+    schema:name "Jasper Koehorst" .
+
+<https://orcid.org/0000-0001-9228-2882> a schema:Person ;
+    schema:name "Abigail Miller" .
+
+<https://orcid.org/0000-0001-9818-9320> a schema:Person ;
+    schema:name "Johannes Köster" .
+
+<https://orcid.org/0000-0002-0309-604X> a schema:Person ;
+    schema:name "Salvador Capella-Gutierrez" .
+
+<https://orcid.org/0000-0002-1119-1792> a schema:Person ;
+    schema:name "Matej Gallo" .
+
+<https://orcid.org/0000-0002-4405-6802> a schema:Person ;
+    schema:name "Haris Zafeiropoulos" .
+
+<https://orcid.org/0000-0002-4663-5613> a schema:Person ;
+    schema:name "Luca Pireddu" .
+
+<https://orcid.org/0000-0002-5358-616X> a schema:Person ;
+    schema:name "Petr Holub" .
+
+<https://orcid.org/0000-0002-5432-2748> a schema:Person ;
+    schema:name "Paul Brack" .
+
+<https://orcid.org/0000-0002-5477-287X> a schema:Person ;
+    schema:name "Milan Markovic" .
+
+<https://orcid.org/0000-0002-6190-122X> a schema:Person ;
+    schema:name "Ignacio Eguinoa" .
+
+<https://orcid.org/0000-0002-8122-9522> a schema:Person ;
+    schema:name "Luiz Gadelha" .
+
+<https://orcid.org/0000-0002-8330-4071> a schema:Person ;
+    schema:name "Mahnoor Zulfiqar" .
+
+<https://orcid.org/0000-0002-9464-6640> a schema:Person ;
+    schema:name "Wolfgang Maier" .
+
+<https://orcid.org/0000-0003-0035-0951> a schema:Person ;
+    schema:name "Jörg F. Unger" .
+
+<https://orcid.org/0000-0003-0617-9219> a schema:Person ;
+    schema:name "Jake Emerson" .
+
+<https://orcid.org/0000-0003-0711-5196> a schema:Person ;
+    schema:name "Felix Bartusch" .
+
+<https://orcid.org/0000-0003-1361-7301> a schema:Person ;
+    schema:name "Maciek Bąk" .
+
+<https://orcid.org/0000-0003-3156-2105> a schema:Person ;
+    schema:name "Alan R Williams" .
+
+<https://orcid.org/0000-0003-3898-9451> a schema:Person ;
+    schema:name "Stelios Ninidakis" .
+
+<https://orcid.org/0000-0003-3986-0510> a schema:Person ;
+    schema:name "LJ Garcia Castro" .
+
+<https://orcid.org/0000-0003-4073-7456> a schema:Person ;
+    schema:name "Romain David" .
+
+<https://orcid.org/0000-0003-4894-4660> a schema:Person ;
+    schema:name "Kevin Jablonka" .
+
+<https://pypi.org/project/runcrate/> a schema:SoftwareApplication ;
+    schema:name "runcrate" ;
+    schema:url "https://pypi.org/project/runcrate/" ;
+    schema:version "0.5.0" .
+
+<https://w3id.org/ro/doi/10.5281/zenodo.10368989> a schema:Dataset ;
+    dct:conformsTo <https://w3id.org/ro/crate> ;
+    schema:name "Recording provenance of workflow runs with RO-Crate (RO-Crate and mapping)" ;
+    schema:subjectOf <https://www.researchobject.org/workflow-run-crate-paper/ro-crate-metadata.jsonld>,
+        <https://www.researchobject.org/workflow-run-crate-paper/ro-crate-preview.html> .
+
+<https://w3id.org/ro/terms/workflow-run> a schema:MediaObject ;
+    dct:conformsTo <http://www.w3.org/ns/json-ld#Context> ;
+    schema:contentUrl "https://www.researchobject.org/ro-terms/workflow-run/context.json" ;
+    schema:encodingFormat "application/ld+json" ;
+    schema:isBasedOn <https://w3id.org/ro/crate/1.1/context>,
+        <https://w3id.org/ro/terms/workflow-run#> ;
+    schema:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+    schema:name "JSON-LD context for workflow-run terms" .
+
+<https://w3id.org/ro/terms/workflow-run#connection> a schema:DefinedTerm,
+        rdf:Property ;
+    schema:description "A parameter connection created by this workflow" ;
+    schema:domainIncludes schema:HowToStep,
+        <https://bioschemas.org/ComputationalWorkflow> ;
+    schema:name "connection" ;
+    schema:rangeIncludes <https://w3id.org/ro/terms/workflow-run#ParameterConnection> ;
+    schema:termCode "connection" .
+
+<https://w3id.org/ro/terms/workflow-run#containerImage> a schema:DefinedTerm,
+        rdf:Property ;
+    schema:description "A container image associated with this entity" ;
+    schema:domainIncludes schema:CreateAction ;
+    schema:name "container image" ;
+    schema:rangeIncludes schema:URL,
+        <https://w3id.org/ro/terms/workflow-run#ContainerImage> ;
+    schema:termCode "containerImage" .
+
+<https://w3id.org/ro/terms/workflow-run#environment> a schema:DefinedTerm,
+        rdf:Property ;
+    schema:description "environment variables used by the application" ;
+    schema:domainIncludes schema:CreateAction,
+        schema:SoftwareApplication,
+        schema:SoftwareSourceCode,
+        <https://bioschema.org/ComputationalWorkflow> ;
+    schema:name "environment" ;
+    schema:rangeIncludes schema:PropertyValue,
+        <https://bioschemas.org/FormalParameter> ;
+    schema:termCode "environment" .
+
+<https://w3id.org/ro/terms/workflow-run#md5> a schema:DefinedTerm,
+        rdf:Property ;
+    schema:description "md5 checksum as a hexadecimal string" ;
+    schema:domainIncludes schema:MediaObject,
+        <https://w3id.org/ro/terms/workflow-run#ContainerImage> ;
+    schema:name "md5 checksum" ;
+    schema:rangeIncludes schema:Text ;
+    schema:termCode "md5" .
+
+<https://w3id.org/ro/terms/workflow-run#registry> a schema:DefinedTerm,
+        rdf:Property ;
+    schema:description "A service to register software products, such as container images" ;
+    schema:domainIncludes <https://w3id.org/ro/terms/workflow-run#ContainerImage> ;
+    schema:name "registry" ;
+    schema:rangeIncludes schema:Text ;
+    schema:termCode "registry" .
+
+<https://w3id.org/ro/terms/workflow-run#resourceUsage> a schema:DefinedTerm,
+        rdf:Property ;
+    schema:description "A resource usage item, such as peak memory" ;
+    schema:domainIncludes schema:CreateAction ;
+    schema:name "resource usage" ;
+    schema:rangeIncludes schema:PropertyValue ;
+    schema:termCode "resourceUsage" .
+
+<https://w3id.org/ro/terms/workflow-run#sha1> a schema:DefinedTerm,
+        rdf:Property ;
+    schema:description "sha1 checksum as a hexadecimal string" ;
+    schema:domainIncludes schema:MediaObject,
+        <https://w3id.org/ro/terms/workflow-run#ContainerImage> ;
+    schema:name "sha1 checksum" ;
+    schema:rangeIncludes schema:Text ;
+    schema:termCode "sha1" .
+
+<https://w3id.org/ro/terms/workflow-run#sha256> a schema:DefinedTerm,
+        rdf:Property ;
+    schema:description "sha256 checksum as a hexadecimal string" ;
+    schema:domainIncludes schema:MediaObject,
+        <https://w3id.org/ro/terms/workflow-run#ContainerImage> ;
+    schema:name "sha256 checksum" ;
+    schema:rangeIncludes schema:Text ;
+    schema:sameAs schema:sha256 ;
+    schema:termCode "sha256" .
+
+<https://w3id.org/ro/terms/workflow-run#sha512> a schema:DefinedTerm,
+        rdf:Property ;
+    schema:description "sha512 checksum as a hexadecimal string" ;
+    schema:domainIncludes schema:MediaObject,
+        <https://w3id.org/ro/terms/workflow-run#ContainerImage> ;
+    schema:name "sha512 checksum" ;
+    schema:rangeIncludes schema:Text ;
+    schema:termCode "sha512" .
+
+<https://w3id.org/ro/terms/workflow-run#sourceParameter> a schema:DefinedTerm,
+        rdf:Property ;
+    schema:description "The source (upstream) parameter" ;
+    schema:domainIncludes <https://w3id.org/ro/terms/workflow-run#ParameterConnection> ;
+    schema:name "source parameter" ;
+    schema:rangeIncludes <https://bioschemas.org/FormalParameter> ;
+    schema:termCode "sourceParameter" .
+
+<https://w3id.org/ro/terms/workflow-run#tag> a schema:DefinedTerm,
+        rdf:Property ;
+    schema:description "A tag assigned to a software product, such as a container image" ;
+    schema:domainIncludes <https://w3id.org/ro/terms/workflow-run#ContainerImage> ;
+    schema:name "tag" ;
+    schema:rangeIncludes schema:Text ;
+    schema:termCode "tag" .
+
+<https://w3id.org/ro/terms/workflow-run#targetParameter> a schema:DefinedTerm,
+        rdf:Property ;
+    schema:description "The target (upstream) parameter" ;
+    schema:domainIncludes <https://w3id.org/ro/terms/workflow-run#ParameterConnection> ;
+    schema:name "target parameter" ;
+    schema:rangeIncludes <https://bioschemas.org/FormalParameter> ;
+    schema:termCode "targetParameter" .
+
+<https://w3id.org/ro/wfrun/process/0.5> a schema:Dataset,
+        prof:Profile ;
+    schema:author <https://www.researchobject.org/workflow-run-crate/> ;
+    schema:citation <https://doi.org/10.48550/arXiv.2312.07852> ;
+    schema:hasPart schema:Collection,
+        schema:CompletedActionStatus,
+        schema:CreateAction,
+        schema:CreativeWork,
+        schema:Dataset,
+        schema:FailedActionStatus,
+        schema:MediaObject,
+        schema:Organization,
+        schema:Person,
+        schema:PropertyValue,
+        schema:SoftwareApplication,
+        schema:SoftwareSourceCode,
+        schema:actionStatus,
+        schema:agent,
+        schema:alternateName,
+        schema:description,
+        schema:endTime,
+        schema:error,
+        schema:instrument,
+        schema:mainEntity,
+        schema:name,
+        schema:object,
+        schema:result,
+        schema:startTime,
+        <https://bioschemas.org/ComputationalWorkflow>,
+        <https://gxy.io/GTN:T00343>,
+        <https://pypi.org/project/runcrate/>,
+        <https://w3id.org/ro/terms/workflow-run>,
+        <https://w3id.org/ro/terms/workflow-run#>,
+        <https://www.researchobject.org/workflow-run-crate-paper/mapping/>,
+        <https://www.researchobject.org/workflow-run-crate/profiles/0.5/process_run_crate/example1/>,
+        <https://www.researchobject.org/workflow-run-crate/profiles/0.5/process_run_crate/index.html> ;
+    schema:identifier "https://w3id.org/ro/wfrun/process/0.5" ;
+    schema:license <https://www.apache.org/licenses/LICENSE-2.0> ;
+    schema:name "Process Run Crate profile" ;
+    schema:version "0.5" ;
+    prof:hasResource <https://www.researchobject.org/workflow-run-crate/profiles/0.5/process_run_crate/#hasConstraints>,
+        <https://www.researchobject.org/workflow-run-crate/profiles/0.5/process_run_crate/#hasExample>,
+        <https://www.researchobject.org/workflow-run-crate/profiles/0.5/process_run_crate/#hasGuidance>,
+        <https://www.researchobject.org/workflow-run-crate/profiles/0.5/process_run_crate/#hasMappingToProv>,
+        <https://www.researchobject.org/workflow-run-crate/profiles/0.5/process_run_crate/#hasSpecification>,
+        <https://www.researchobject.org/workflow-run-crate/profiles/0.5/process_run_crate/#hasVocabulary> ;
+    prof:isProfileOf <https://w3id.org/ro/crate/1.2-DRAFT> .
+
+<https://www.apache.org/licenses/LICENSE-2.0> a schema:CreativeWork ;
+    schema:identifier <http://spdx.org/licenses/Apache-2.0> ;
+    schema:name "Apache License 2.0" ;
+    schema:version "2.0" .
+
+<https://www.researchobject.org/ro-crate/community> a schema:Project ;
+    schema:name "RO-Crate Community" .
+
+<https://www.researchobject.org/workflow-run-crate-paper/ro-crate-metadata.jsonld> a schema:CreativeWork ;
+    schema:encodingFormat "application/ld+json" .
+
+<https://www.researchobject.org/workflow-run-crate-paper/ro-crate-preview.html> a schema:CreativeWork ;
+    schema:encodingFormat "text/html" .
+
+<https://www.researchobject.org/workflow-run-crate/> a schema:Project ;
+    schema:member <https://orcid.org/0000-0001-5411-356X>,
+        <https://orcid.org/0000-0001-5845-8880>,
+        <https://orcid.org/0000-0001-6740-9212>,
+        <https://orcid.org/0000-0001-8172-8981>,
+        <https://orcid.org/0000-0001-8250-4074>,
+        <https://orcid.org/0000-0001-8271-5429>,
+        <https://orcid.org/0000-0001-9228-2882>,
+        <https://orcid.org/0000-0001-9290-2017>,
+        <https://orcid.org/0000-0001-9818-9320>,
+        <https://orcid.org/0000-0001-9842-9718>,
+        <https://orcid.org/0000-0002-0003-2024>,
+        <https://orcid.org/0000-0002-2961-9670>,
+        <https://orcid.org/0000-0002-3468-0652>,
+        <https://orcid.org/0000-0002-4405-6802>,
+        <https://orcid.org/0000-0002-4806-5140>,
+        <https://orcid.org/0000-0002-5358-616X>,
+        <https://orcid.org/0000-0002-5432-2748>,
+        <https://orcid.org/0000-0002-5477-287X>,
+        <https://orcid.org/0000-0002-6190-122X>,
+        <https://orcid.org/0000-0002-8122-9522>,
+        <https://orcid.org/0000-0002-8330-4071>,
+        <https://orcid.org/0000-0002-8940-4946>,
+        <https://orcid.org/0000-0002-9464-6640>,
+        <https://orcid.org/0000-0003-0035-0951>,
+        <https://orcid.org/0000-0003-0454-7145>,
+        <https://orcid.org/0000-0003-0606-2512>,
+        <https://orcid.org/0000-0003-0617-9219>,
+        <https://orcid.org/0000-0003-0711-5196>,
+        <https://orcid.org/0000-0003-0902-0086>,
+        <https://orcid.org/0000-0003-1361-7301>,
+        <https://orcid.org/0000-0003-2765-0049>,
+        <https://orcid.org/0000-0003-3156-2105>,
+        <https://orcid.org/0000-0003-3777-5945>,
+        <https://orcid.org/0000-0003-3898-9451>,
+        <https://orcid.org/0000-0003-3986-0510>,
+        <https://orcid.org/0000-0003-4073-7456>,
+        <https://orcid.org/0000-0003-4894-4660>,
+        <https://orcid.org/0000-0003-4929-1219> ;
+    schema:name "Workflow Run Crate task force" ;
+    schema:parentOrganization <https://www.researchobject.org/ro-crate/community> .
+
+<https://www.researchobject.org/workflow-run-crate/profiles/0.5/process_run_crate/#hasConstraints> a prof:ResourceDescriptor ;
+    prof:hasArtifact <https://www.researchobject.org/workflow-run-crate/profiles/0.5/process_run_crate/index.html#requirements> ;
+    prof:hasRole profrole:constraints .
+
+<https://www.researchobject.org/workflow-run-crate/profiles/0.5/process_run_crate/#hasExample> a prof:ResourceDescriptor ;
+    prof:hasArtifact <https://www.researchobject.org/workflow-run-crate/profiles/0.5/process_run_crate/example1/> ;
+    prof:hasRole profrole:example .
+
+<https://www.researchobject.org/workflow-run-crate/profiles/0.5/process_run_crate/#hasGuidance> a prof:ResourceDescriptor ;
+    prof:hasArtifact <https://gxy.io/GTN:T00343> ;
+    prof:hasRole profrole:guidance .
+
+<https://www.researchobject.org/workflow-run-crate/profiles/0.5/process_run_crate/#hasMappingToProv> a prof:ResourceDescriptor ;
+    prof:hasArtifact <https://www.researchobject.org/workflow-run-crate-paper/mapping/> ;
+    prof:hasRole profrole:mapping .
+
+<https://www.researchobject.org/workflow-run-crate/profiles/0.5/process_run_crate/#hasSpecification> a prof:ResourceDescriptor ;
+    prof:hasArtifact <https://www.researchobject.org/workflow-run-crate/profiles/0.5/process_run_crate/index.html> ;
+    prof:hasRole profrole:specification .
+
+<https://www.researchobject.org/workflow-run-crate/profiles/0.5/process_run_crate/#hasVocabulary> a prof:ResourceDescriptor ;
+    prof:hasArtifact <https://w3id.org/ro/terms/workflow-run#> ;
+    prof:hasRole profrole:vocabulary .
+
+<https://www.researchobject.org/workflow-run-crate/profiles/0.5/process_run_crate/example1/ro-crate-metadata.json> a schema:CreativeWork ;
+    schema:encodingFormat "application/ld+json" .
+
+<https://www.researchobject.org/workflow-run-crate/profiles/0.5/process_run_crate/example1/ro-crate-preview.html> a schema:CreativeWork ;
+    schema:encodingFormat "text/html" .
+
+<https://www.researchobject.org/workflow-run-crate/profiles/0.5/process_run_crate/index.html#requirements> a schema:WebPageElement ;
+    schema:name "Process Run Crate requirements" .
+
+<https://www.researchobject.org/workflow-run-crate/profiles/0.5/process_run_crate/ro-crate-metadata.json> a schema:CreativeWork ;
+    dct:conformsTo <https://w3id.org/ro/crate/1.2-DRAFT> ;
+    schema:about <https://w3id.org/ro/wfrun/process/0.5> ;
+    schema:license <http://spdx.org/licenses/CC0-1.0> .
+
+schema:SoftwareSourceCode a schema:DefinedTerm ;
+    schema:name "SoftwareSourceCode" .
+
+<https://bioschemas.org/ComputationalWorkflow> a schema:DefinedTerm ;
+    schema:name "ComputationalWorkflow" .
+
+<https://gxy.io/GTN:T00343> a schema:LearningResource ;
+    schema:author <https://orcid.org/0000-0001-8271-5429> ;
+    schema:name "Workflow Run RO-Crate Introduction" .
+
+<https://orcid.org/0000-0001-8250-4074> a schema:Person ;
+    schema:name "Bruno P. Kinoshita" .
+
+<https://orcid.org/0000-0001-9290-2017> a schema:Person ;
+    schema:name "Iacopo Colonnelli" .
+
+<https://orcid.org/0000-0001-9842-9718> a schema:Person ;
+    schema:name "Stian Soiland-Reyes" .
+
+<https://orcid.org/0000-0002-0003-2024> a schema:Person ;
+    schema:name "Rudolf Wittner" .
+
+<https://orcid.org/0000-0002-2961-9670> a schema:Person ;
+    schema:name "Michael R Crusoe" .
+
+<https://orcid.org/0000-0002-3468-0652> a schema:Person ;
+    schema:name "Alexander Kanitz" .
+
+<https://orcid.org/0000-0002-4806-5140> a schema:Person ;
+    schema:name "José María Fernández" .
+
+<https://orcid.org/0000-0002-8940-4946> a schema:Person ;
+    schema:name "Paul De Geest" .
+
+<https://orcid.org/0000-0003-0454-7145> a schema:Person ;
+    schema:name "Daniel Garijo" .
+
+<https://orcid.org/0000-0003-0606-2512> a schema:Person ;
+    schema:name "Raül Sirvent" .
+
+<https://orcid.org/0000-0003-0902-0086> a schema:Person ;
+    schema:name "Renske de Wit" .
+
+<https://orcid.org/0000-0003-2765-0049> a schema:Person ;
+    schema:name "Hirotaka Suetake" .
+
+<https://orcid.org/0000-0003-3777-5945> a schema:Person ;
+    schema:name "Tazro Ohta" .
+
+<https://orcid.org/0000-0003-4929-1219> a schema:Person ;
+    schema:name "Laura Rodríguez-Navas" .
+
+<https://www.researchobject.org/workflow-run-crate-paper/mapping/> a schema:Dataset ;
+    schema:isPartOf <https://w3id.org/ro/doi/10.5281/zenodo.10368989> ;
+    schema:name "SSSOM mapping from PROV to Workflow Run Crate" .
+
+<https://www.researchobject.org/workflow-run-crate/profiles/0.5/process_run_crate/example1/> a schema:Dataset ;
+    dct:conformsTo <https://w3id.org/ro/crate>,
+        <https://w3id.org/ro/wfrun/process/0.4> ;
+    schema:name "Example Process Run Crate" ;
+    schema:subjectOf <https://www.researchobject.org/workflow-run-crate/profiles/0.5/process_run_crate/example1/ro-crate-metadata.json>,
+        <https://www.researchobject.org/workflow-run-crate/profiles/0.5/process_run_crate/example1/ro-crate-preview.html> .
+
+<https://www.researchobject.org/workflow-run-crate/profiles/0.5/process_run_crate/index.html> a schema:MediaObject ;
+    schema:encodingFormat <https://www.nationalarchives.gov.uk/PRONOM/fmt/471>,
+        "text/html" ;
+    schema:name "Process Run Crate (HTML)" .
+
+schema:SoftwareApplication a schema:DefinedTerm ;
+    schema:name "SoftwareApplication" .
+
+<http://spdx.org/licenses/CC0-1.0> a schema:PropertyValue ;
+    schema:name "spdx" ;
+    schema:propertyID "http://spdx.org/rdf/terms#licenseId" ;
+    schema:value "CC0-1.0" .
+
+<https://bioschemas.org/FormalParameter> a schema:DefinedTerm ;
+    schema:name "FormalParameter" .
+
+<https://orcid.org/0000-0001-8271-5429> a schema:Person ;
+    schema:name "Simone Leo" .
+
+<https://w3id.org/ro/terms/workflow-run#> a schema:DefinedTermSet ;
+    schema:hasDefinedTerm <https://w3id.org/ro/terms/workflow-run#ContainerImage>,
+        <https://w3id.org/ro/terms/workflow-run#DockerImage>,
+        <https://w3id.org/ro/terms/workflow-run#ParameterConnection>,
+        <https://w3id.org/ro/terms/workflow-run#SIFImage>,
+        <https://w3id.org/ro/terms/workflow-run#connection>,
+        <https://w3id.org/ro/terms/workflow-run#containerImage>,
+        <https://w3id.org/ro/terms/workflow-run#environment>,
+        <https://w3id.org/ro/terms/workflow-run#md5>,
+        <https://w3id.org/ro/terms/workflow-run#registry>,
+        <https://w3id.org/ro/terms/workflow-run#resourceUsage>,
+        <https://w3id.org/ro/terms/workflow-run#sha1>,
+        <https://w3id.org/ro/terms/workflow-run#sha256>,
+        <https://w3id.org/ro/terms/workflow-run#sha512>,
+        <https://w3id.org/ro/terms/workflow-run#sourceParameter>,
+        <https://w3id.org/ro/terms/workflow-run#tag>,
+        <https://w3id.org/ro/terms/workflow-run#targetParameter> ;
+    schema:name "Namespace for Workflow Run RO-Crate model" .
+
+schema:CreateAction a schema:DefinedTerm ;
+    schema:name "CreateAction" .
+
+schema:Dataset a schema:DefinedTerm ;
+    schema:name "Dataset" .
+
+schema:PropertyValue a schema:DefinedTerm ;
+    schema:name "PropertyValue" .
+
+schema:Text a schema:DefinedTerm ;
+    schema:name "Text" .
+
+schema:MediaObject a schema:DefinedTerm ;
+    schema:name "MediaObject" ;
+    schema:termCode "File" .
+
+schema:CreativeWork a schema:DefinedTerm ;
+    schema:name "CreativeWork" .
+
+schema:Person a schema:DefinedTerm ;
+    schema:name "Person" .
+
