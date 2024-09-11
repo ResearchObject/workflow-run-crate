@@ -76,7 +76,7 @@
         { "@id": "#hasExample" },
         { "@id": "#hasMappingToProv"}
     ],
-    "citation": { "@id": "https://doi.org/10.48550/arXiv.2312.07852" }    
+    "citation": { "@id": "https://doi.org/10.1371/journal.pone.0309210" }    
   },
   {
     "@id": "https://www.researchobject.org/workflow-run-crate/",
@@ -260,7 +260,7 @@
       "@id": "https://orcid.org/0000-0001-8271-5429"
     }
   },
-  { "@id": "https://doi.org/10.48550/arXiv.2312.07852",
+  { "@id": "https://doi.org/10.1371/journal.pone.0309210",
     "@type": "ScholarlyArticle",
     "name": "Recording provenance of workflow runs with RO-Crate",
     "author": [
@@ -320,7 +320,7 @@
       }
     ],
 
-    "creditText": "Simone Leo, et al. (2024): Recording provenance of workflow runs with RO-Crate. arXiv:2312.07852"
+    "creditText": "Simone Leo, et al. (2024) Recording provenance of workflow runs with RO-Crate. PLoS ONE 19(9): e0309210."
   },
   {
     "@id": "https://w3id.org/ro/terms/workflow-run#",
