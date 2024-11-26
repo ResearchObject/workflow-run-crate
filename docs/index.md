@@ -73,6 +73,7 @@ Post [here](https://github.com/ResearchObject/workflow-run-crate/issues/1) to jo
 - Jörg F. Unger <https://orcid.org/0000-0003-0035-0951>
 - Felix Bartusch <https://orcid.org/0000-0003-0711-5196>
 - Daniel Wheeler <https://orcid.org/0000-0002-2653-7418>
+- Luca Pireddu <https://orcid.org/0000-0002-4663-5613>
 - ... [you](https://github.com/ResearchObject/workflow-run-crate/issues/1)?
 
 ## Implementations & examples
