@@ -688,3 +688,5 @@ The requirements of this profile are those of [Workflow Run Crate](../workflow_r
   </tr>
 
 </table>
+
+{% include callout.html type="tip" content="For each entity described in the table, the most important Schema.org related terms are highlighted. The rest of Schema.org terms supported by each entity can be also added (they are an implicit MAY requirement). See [Extending RO-Crate](https://www.researchobject.org/ro-crate/specification/1.1/appendix/jsonld.html#extending-ro-crate) for more details on term definitions" %}

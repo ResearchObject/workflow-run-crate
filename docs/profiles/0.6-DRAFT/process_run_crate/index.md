@@ -242,6 +242,8 @@ Note that the command line shown in the action's `description` is not directly r
 
 </table>
 
+{% include callout.html type="tip" content="For each entity described in the table, the most important Schema.org related terms are highlighted. The rest of Schema.org terms supported by each entity can be also added (they are an implicit MAY requirement). See [Extending RO-Crate](https://www.researchobject.org/ro-crate/specification/1.1/appendix/jsonld.html#extending-ro-crate) for more details on term definitions" %}
+
 Entities referenced by an action's [object](http://schema.org/object) or [result](http://schema.org/result) SHOULD be of type `File` (an RO-Crate alias for [MediaObject](http://schema.org/MediaObject)) for files, [Dataset](http://schema.org/Dataset) for directories and [Collection](http://schema.org/Collection) for [multi-file datasets](#representing-multi-file-objects), but MAY be a [CreativeWork](http://schema.org/CreativeWork) for other types of data (e.g. an online database); they MAY be of type [PropertyValue](http://schema.org/PropertyValue) to capture numbers/strings that are not stored as files.
 
 Data entities involved in an application's input and output SHOULD have an `@id` that reflects the original file or directory name as processed by the application, but MAY be renamed to avoid clashes with other entities in the crate. In this case, they SHOULD refer to the original name via [alternateName](http://schema.org/alternateName). This is particularly important to support reproducibility in cases where an application expects to find input in specific locations and with specific names (see the MIRAX example in [Representing multi-file objects](#representing-multi-file-objects)).
