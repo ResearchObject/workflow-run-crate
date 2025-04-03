@@ -645,13 +645,12 @@ The requirements of this profile are those of [Workflow Run Crate](../workflow_r
    <td>actionStatus</td>
    <td>MAY</td>
    <td>SHOULD be <a href="http://schema.org/CompletedActionStatus">CompletedActionStatus</a> if the step completed successfully or <a href="http://schema.org/FailedActionStatus">FailedActionStatus</a> if it failed to complete. In the latter case, consumers should be prepared for the absence of any dependent actions (i.e., <code>CreateAction</code> instances corresponding to tool executions; the opposite is not necessarily true: a step can be successful even if some of its associated tool executions failed, e.g. in fault tolerant engines). If this attribute is not specified, consumers should assume that the step completed successfully.</td>
+  </tr>
 
   <tr>
    <td>error</td>
    <td>MAY</td>
    <td>Additional information on the cause of the failure, if available. SHOULD NOT be specified unless <code>actionStatus</code> is set to <code>FailedActionStatus</code>.</td>
-  </tr>
-
   </tr>
 
   <tr>
@@ -680,6 +679,7 @@ The requirements of this profile are those of [Workflow Run Crate](../workflow_r
    <td>actionStatus</td>
    <td>MAY</td>
    <td>SHOULD be <a href="http://schema.org/CompletedActionStatus">CompletedActionStatus</a> if the engine execution was successful or <a href="http://schema.org/FailedActionStatus">FailedActionStatus</a> if it failed. In the latter case, consumers should be prepared for the absence of any dependent actions (i.e., <code>CreateAction</code> instances corresponding to workflow and tool executions, <code>ControlAction</code> instances corresponding to step executions). If this attribute is not specified, consumers should assume that the execution was successful.</td>
+  </tr>
 
   <tr>
    <td>error</td>
@@ -688,3 +688,5 @@ The requirements of this profile are those of [Workflow Run Crate](../workflow_r
   </tr>
 
 </table>
+
+For each entity described in the table, the most important properties are highlighted. Other properties supported by the entity (e.g. [minValue](http://schema.org/minValue) for a [PropertyValue](http://schema.org/PropertyValue)) can also be used (they are an implicit MAY requirement). See also [Extending RO-Crate](https://www.researchobject.org/ro-crate/specification/1.1/appendix/jsonld.html#extending-ro-crate) for guidance on defining and using terms not included in the RO-Crate context.
