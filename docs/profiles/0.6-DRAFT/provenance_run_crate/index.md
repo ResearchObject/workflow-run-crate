@@ -550,7 +550,7 @@ It can often be desirable to have information on the resources used in the cours
     "@id": "#a1be3cab-realTime",
     "@type": "PropertyValue",
     "name": "realTime",
-    "propertyID": "https://w3id.org/ro/terms/nf-trace#realTime",
+    "propertyID": "https://example.com/nf-trace#realTime",
     "unitCode": "https://qudt.org/vocab/unit/MilliSEC",
     "value": "12"
 },
@@ -558,12 +558,12 @@ It can often be desirable to have information on the resources used in the cours
     "@id": "#a1be3cab-percentCPU",
     "@type": "PropertyValue",
     "name": "percentCPU",
-    "propertyID": "https://w3id.org/ro/terms/nf-trace#percentCPU",
+    "propertyID": "https://example.com/nf-trace#percentCPU",
     "value": "80.0"
 }
 ```
 
-The values of `propertyID` SHOULD be URLs that univocally identify the quantity. The set of possible `propertyID` values can be defined by the workflow engine that implements the profile; ideally, each URL would point to a detailed description of the quantity. In the above example, ro-terms is used to create a namespace for the `propertyID`s. In this case, [QUDT](https://qudt.org/) is used to specify the `unitCode`.
+The values of `propertyID` SHOULD be URLs that univocally identify the quantity. The set of possible `propertyID` values can be defined by the workflow engine that implements the profile; ideally, each URL would point to a detailed description of the quantity. In the above example, the fictional `https://example.com/nf-trace` namespace is used for the `propertyID`s. In this case, [QUDT](https://qudt.org/) is used to specify the `unitCode`.
 
 
 ## Requirements
