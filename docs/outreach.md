@@ -47,6 +47,50 @@ _Zenodo_
 
 ## Publications
 
+### 2025
+
+
+Sean Wilkinson, Meznah Aloqalaa, Khalid Belhajjame, Michael R. Crusoe, Bruno de Paula Kinoshita, Luiz Gadelha, Daniel Garijo, Ove Johan Ragnar Gustafsson, Nick Juty, Sehrish Kanwal, Farah Zaib Khan, Johannes Köster, Karsten Peters-von Gehlen, Line Pouchard, Randy K. Rannow, Stian Soiland-Reyes, Nicola Soranzo, Shoaib Sufi, Ziheng Sun, Baiba Vilne, Merridee A. Wouters, Denis Yuen, Carole Goble (2025):  
+**Applying the FAIR Principles to Computational Workflows**.  
+_Scientific Data_ **12**:328
+<https://doi.org/10.1038/s41597-025-04451-9>
+
+Stian Soiland-Reyes, Stuart Wheater, Thomas Giles, Jonathan Couldridge, Phil Quinlan, Carole Goble (2025):  
+**Five Safes RO-Crate**: FAIR Digital Objects for Trusted Research Environments.  
+_International FAIR Digital Objects Implementation Summit 2024_, Berlin, Germany, 2024-03-20/–21.  
+_Open Conference Proceedings_ **5*  
+<https://doi.org/10.52825/ocp.v5i.1419>
+
+Ove Johan Ragnar Gustafsson, Sean R. Wilkinson, Finn Bacall, Stian Soiland-Reyes, Simone Leo, Luca Pireddu, Stuart Owen, Nick Juty, José Mª Fernández, Tom Brown, Hervé Ménager, Björn Grüning, Salvador Capella-Gutierrez, Frederik Coppens, Carole Goble (2025):  
+**WorkflowHub**: a registry for computational workflows.  
+_Scientific Data_ **12**:837  
+<https://doi.org/10.1038/s41597-025-04786-3>
+
+Paula Iborra, José M. Fernández, Laia Codo, Eugenio Gonzalo, Alexander Hambley, Stian Soiland-Reyes, Jonathan Couldridge, Carole Goble, Philip Quinlan, Salvador Capella-Gutierrez (2025):  
+**ENTRUSTing WfExS 1.0 with WES and TES**.  (Poster)  
+_ELIXIR All Hands Meeting_ 2025  
+<https://doi.org/10.7490/f1000research.1120178.1>
+
+Polina Shpilker, Line Pouchard (2025):  
+**Automatic Metadata Capture and Processing for High-Performance Workflows**.  
+_arXiv_:2506.15537 [cs.DC]  
+<https://doi.org/10.48550/arXiv.2506.15537>
+
+Mouna El Garb, Emmanuel Coquery, Fabien Duchateau, and Nicolas Lumineau (2025):  
+**Improving reproducibility in bioinformatics workflows with BioFlow-Model.**  
+_2025 ACM Conference on Reproducibility and Replicability_ (under revision)  
+[[preprint](https://perso.liris.cnrs.fr/fabien.duchateau/docs/papers/rep-2025.pdf))
+
+H. Omidi, L. Sacco, V. Hutter, G. Irsiegler, M. Claus, M. Schobben, A. Jacob, M. Schramm, S. Fiore (2025):
+**Towards Provenance-Aware Earth Observation Workflows**: the openEO Case Study    
+_IEEE eScience 2025_  
+[[arXiv:2506.08597](https://doi.org/10.48550/arXiv.2506.08597)]
+
+Sean R. Wilkinson, Johan Gustafsson, Finn Bacall, Khalid Belhajjame, Salvador Capella, Jose Maria Fernandez Gonzalez, Jacob Fosso Tande, Luiz Gadelha, Daniel Garijo, Patricia Grubel, Bjorn Grüning, Farah Zaib Khan, Sehrish Kanwal, Simone Leo, Stuart Owen, Luca Pireddu, Line Pouchard, Laura Rodríguez-Navas, Beatriz Serrano-Solano, Stian Soiland-Reyes, Baiba Vilne, Alan Williams, Merridee Ann Wouters, Frederik Coppens, Carole Goble (2025):  
+**An Ecosystem of Services for FAIR Computational Workflows**.  
+Book chapter, draft  
+_arXiv_ 2505.15988 [cs.DC]
+<https://doi.org/10.48550/arXiv.2505.15988>
 
 ### 2024
 
@@ -89,7 +133,12 @@ Eleni Adamidi, Panagiotis Deligiannis, Aikaterina Mastoraki, Thanasis Vergoulis 
 **Proposing a New RO-Crate Profile for Enhanced Reproducibility in Computational Experiments**.  
 _ 8th World Conference on Research Integrity (WCRI 2024)_, Athens  
 <https://doi.org/10.5281/zenodo.11200097>
-    
+
+Ludovica Sacco, Carolina Sopranzetti, Sandro Fiore (2024):  
+**Enabling Provenance Tracking in Workflow Management Systems**.  
+_2024 IEEE International Conference on Big Data (BigData)_  
+<https://doi.org/10.1109/BigData62323.2024.10825405> (no preprint available?)
+
 
 ### 2023
 
