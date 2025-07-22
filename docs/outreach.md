@@ -85,7 +85,7 @@ _arXiv_:2506.15537 [cs.DC]
 Mouna El Garb, Emmanuel Coquery, Fabien Duchateau, and Nicolas Lumineau (2025):  
 **Improving reproducibility in bioinformatics workflows with BioFlow-Model.**  
 _2025 ACM Conference on Reproducibility and Replicability_ (under revision)  
-[[preprint](https://perso.liris.cnrs.fr/fabien.duchateau/docs/papers/rep-2025.pdf))
+[[preprint](https://perso.liris.cnrs.fr/fabien.duchateau/docs/papers/rep-2025.pdf)]
 
 H. Omidi, L. Sacco, V. Hutter, G. Irsiegler, M. Claus, M. Schobben, A. Jacob, M. Schramm, S. Fiore (2025):
 **Towards Provenance-Aware Earth Observation Workflows**: the openEO Case Study    
