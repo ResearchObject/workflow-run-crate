@@ -7,17 +7,17 @@ published/used/presented Workflow Run RO-Crate!
 
 ### Cite Workflow Run RO-Crate
 
-Simone Leo, Michael R. Crusoe, Laura Rodríguez-Navas, Raül Sirvent, Alexander Kanitz, Paul De Geest, Rudolf Wittner, Luca Pireddu, Daniel Garijo, José M. Fernández, Iacopo Colonnelli, Matej Gallo, Tazro Ohta, Hirotaka Suetake, Salvador Capella-Gutierrez, Renske de Wit, Bruno P. Kinoshita, Stian Soiland-Reyes (2024)
-Recording provenance of workflow runs with RO-Crate.
-PLoS ONE 19(9): e0309210.
+Simone Leo, Michael R. Crusoe, Laura Rodríguez-Navas, Raül Sirvent, Alexander Kanitz, Paul De Geest, Rudolf Wittner, Luca Pireddu, Daniel Garijo, José M. Fernández, Iacopo Colonnelli, Matej Gallo, Tazro Ohta, Hirotaka Suetake, Salvador Capella-Gutierrez, Renske de Wit, Bruno P. Kinoshita, Stian Soiland-Reyes (2024):  
+**Recording provenance of workflow runs with RO-Crate**.  
+_PLoS ONE_ **19**(9):e0309210
 <https://doi.org/10.1371/journal.pone.0309210>
 
 
 ### Cite RO-Crate
 
-Stian Soiland-Reyes, Peter Sefton, Mercè Crosas, Leyla Jael Castro, Frederik Coppens, José M. Fernández, Daniel Garijo, Björn Grüning, Marco La Rosa, Simone Leo, Eoghan Ó Carragáin, Marc Portier, Ana Trisovic, RO-Crate Community, Paul Groth, Carole Goble (2022):
-**Packaging research artefacts with RO-Crate**.
-_Data Science_ **5**(2)
+Stian Soiland-Reyes, Peter Sefton, Mercè Crosas, Leyla Jael Castro, Frederik Coppens, José M. Fernández, Daniel Garijo, Björn Grüning, Marco La Rosa, Simone Leo, Eoghan Ó Carragáin, Marc Portier, Ana Trisovic, RO-Crate Community, Paul Groth, Carole Goble (2022): 
+**Packaging research artefacts with RO-Crate**.  
+_Data Science_ **5**(2)  
 <https://doi.org/10.3233/DS-210053>
 
 
@@ -25,23 +25,23 @@ _Data Science_ **5**(2)
 
 To cite a particular [Workflow Run RO-Crate profile](/workflow-run-crate/profiles/), use its `https://w3id.org/` persistent identifier (Permalink) or a citation using the Zenodo DOI:
 
-Workflow Run RO-Crate working group (2023):   
-**Process Run Crate specification**. Version 0.4  
+Workflow Run RO-Crate working group (2024):   
+**Process Run Crate specification**. Version 0.5  
 _Zenodo_   
-<https://w3id.org/ro/wfrun/process/0.4>   
-<https://doi.org/10.5281/zenodo.10203944>
+<https://w3id.org/ro/wfrun/process/0.5>   
+<https://doi.org/10.5281/zenodo.12158562>
 
-Workflow Run RO-Crate working group (2023):  
-**Workflow Run Crate specification**. Version 0.4  
+Workflow Run RO-Crate working group (2024):  
+**Workflow Run Crate specification**. Version 0.5  
 _Zenodo_  
-https://w3id.org/ro/wfrun/workflow/0.4>  
-https://doi.org/10.5281/zenodo.10203971>
+<https://w3id.org/ro/wfrun/workflow/0.5>  
+<https://doi.org/10.5281/zenodo.12159311>
 
-Workflow Run RO-Crate working group (2023):  
-**Provenance Run Crate specification**. Version 0.4  
+Workflow Run RO-Crate working group (2024):  
+**Provenance Run Crate specification**. Version 0.5  
 _Zenodo_  
-<https://w3id.org/ro/wfrun/provenance/0.4>  
-<https://doi.org/10.5281/zenodo.10203978>
+<https://w3id.org/ro/wfrun/provenance/0.5>  
+<https://doi.org/10.5281/zenodo.12160782>
 
 
 
@@ -50,9 +50,9 @@ _Zenodo_
 
 ### 2024
 
-Simone Leo, Michael R. Crusoe, Laura Rodríguez-Navas, Raül Sirvent, Alexander Kanitz, Paul De Geest, Rudolf Wittner, Luca Pireddu, Daniel Garijo, José M. Fernández, Iacopo Colonnelli, Matej Gallo, Tazro Ohta, Hirotaka Suetake, Salvador Capella-Gutierrez, Renske de Wit, Bruno P. Kinoshita, Stian Soiland-Reyes (2024)
-Recording provenance of workflow runs with RO-Crate.
-PLoS ONE 19(9): e0309210.
+Simone Leo, Michael R. Crusoe, Laura Rodríguez-Navas, Raül Sirvent, Alexander Kanitz, Paul De Geest, Rudolf Wittner, Luca Pireddu, Daniel Garijo, José M. Fernández, Iacopo Colonnelli, Matej Gallo, Tazro Ohta, Hirotaka Suetake, Salvador Capella-Gutierrez, Renske de Wit, Bruno P. Kinoshita, Stian Soiland-Reyes (2024):  
+**Recording provenance of workflow runs with RO-Crate**.  
+_PLoS ONE_ **19**(9):e0309210
 <https://doi.org/10.1371/journal.pone.0309210>
 
 Mahnoor Zulfiqar, Michael R. Crusoe, Birgitta König-Ries, Christoph Steinbeck,Kristian Peters Luiz Gadelha (2024):
@@ -65,6 +65,31 @@ David Bouyssié, Pınar Altıner, Salvador Capella-Gutierrez, José M. Fernánde
 _Journal of Proteome Research_ **23**(1)  
 <https://doi.org/10.1021/acs.jproteome.3c00636>
 
+The Galaxy Community (2024):  
+***The Galaxy platform for accessible, reproducible, and collaborative data analyses**: 2024 update.  
+_Nucleic Acids Research_ **52**(W1)  
+<https://doi.org/10.1093/nar/gkae410>
+
+Pablo Orviz, Daniele Lezzi, Miguel Caballer, Michele Carpenè, Mario David, Samuel Bernardo, Raül Sirvent, DT-GEO (2024):  
+**DT-GEO Deliverable: D2.2 DT-GEO Interfaces and 1st Software Release**.  
+_Digital.CSIC_
+<https://doi.org/10.20350/digitalCSIC/16578>
+
+Keith Jeffery, Pablo Orviz, DT-GEO (2024):  
+**DT-GEO Deliverable: D4.1 Requirement analysis for the architecture of the assets supply**.  
+_Digital.CSIC_
+<https://doi.org/10.20350/digitalCSIC/16580>
+
+Keith Jeffery, Pablo Orviz, Rossana Paciello, DT-GEO (2024):  
+**DT-GEO Deliverable: D2.4 Metadata Description of the Workflow Components**.  
+_Digital.CSIC_
+<https://doi.org/10.20350/digitalCSIC/17054>
+
+Eleni Adamidi, Panagiotis Deligiannis, Aikaterina Mastoraki, Thanasis Vergoulis (2024):  
+**Proposing a New RO-Crate Profile for Enhanced Reproducibility in Computational Experiments**.  
+_ 8th World Conference on Research Integrity (WCRI 2024)_, Athens  
+<https://doi.org/10.5281/zenodo.11200097>
+    
 
 ### 2023
 
