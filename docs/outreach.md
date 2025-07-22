@@ -98,6 +98,27 @@ Book chapter, draft
 _arXiv_ 2505.15988 [cs.DC]
 <https://doi.org/10.48550/arXiv.2505.15988>
 
+Irene Celino, Mario Scrocca, Agnese Chiatti (2025):  
+**Mutual Understanding between People and Systems via Neurosymbolic AI and Knowledge Graphs**.  
+_Handbook on Neurosymbolic AI and Knowledge Graphs_  
+_Frontiers in Artificial Intelligence and Applications_ **400**  
+<https://doi.org/10.3233/FAIA250241>  [[arXiv:2504.11200](https://doi.org/10.48550/arXiv.2504.11200)]
+
+Chris Card, Rachel Heaven, Andrew Kingdon, Patrick Bell, Alex Baldwin, Jeremy Carter, Jonathan Coney, Jonathan Cooper, Itahisa Gonzalez Alvarez, Michael Hollaway, Matthew McCormack, David Poulter, Ag Stephens, Philip Trembath (2025):  
+**Publishing Environmental Data APIs for use in AI workflows**: recommendations and demonstrators of a standard approach within the NERC Environmental Data Service.  
+_NERC_ (OR/25/045)  
+<https://nora.nerc.ac.uk/id/eprint/539708>
+
+
+Gabriele Padovani, Valentine Anantharaj, Sandro Fiore (2025):  
+**Provenance Tracking in Large-Scale Machine Learning Systems**.  
+_arXiv_:2507.01075 [cs.LG]  
+<https://doi.org/10.48550/arXiv.2507.01075>
+
+Raül Sirvent, Rocío Carratalá-Saez, Amal Gueroudji, Tanzima Islam, Line Pouchard,  Michela Taufer (2025):  
+**Reproducibility for HPC and Distributed Environments**:Committees, Nondeterminism, Performance, and Workflows.  
+_Proceedings of 2025 ACM Conference on Reproducibility and Replicability (ACM REP’25)._ (in print)  
+
 ### 2024
 
 Simone Leo, Michael R. Crusoe, Laura Rodríguez-Navas, Raül Sirvent, Alexander Kanitz, Paul De Geest, Rudolf Wittner, Luca Pireddu, Daniel Garijo, José M. Fernández, Iacopo Colonnelli, Matej Gallo, Tazro Ohta, Hirotaka Suetake, Salvador Capella-Gutierrez, Renske de Wit, Bruno P. Kinoshita, Stian Soiland-Reyes (2024):  
