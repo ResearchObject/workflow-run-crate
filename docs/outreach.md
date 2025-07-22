@@ -61,6 +61,12 @@ _International FAIR Digital Objects Implementation Summit 2024_, Berlin, Germany
 _Open Conference Proceedings_ **5*  
 <https://doi.org/10.52825/ocp.v5i.1419>
 
+Bruno de Paula Kinoshita, Edgar Garriga Nogales, Manuel Giménez de Castro Marciani,  Miguel Castrillo Melguizo (2024):  
+**FAIR Digital Objects in Autosubmit Workflows**.  
+_International FAIR Digital Objects Implementation Summit 2024_, Berlin, Germany, 2024-03-20/–21.  
+_Open Conference Proceedings_ **5*  
+<https://doi.org/10.52825/ocp.v5i.1416>
+
 Ove Johan Ragnar Gustafsson, Sean R. Wilkinson, Finn Bacall, Stian Soiland-Reyes, Simone Leo, Luca Pireddu, Stuart Owen, Nick Juty, José Mª Fernández, Tom Brown, Hervé Ménager, Björn Grüning, Salvador Capella-Gutierrez, Frederik Coppens, Carole Goble (2025):  
 **WorkflowHub**: a registry for computational workflows.  
 _Scientific Data_ **12**:837  
@@ -139,6 +145,32 @@ Ludovica Sacco, Carolina Sopranzetti, Sandro Fiore (2024):
 _2024 IEEE International Conference on Big Data (BigData)_  
 <https://doi.org/10.1109/BigData62323.2024.10825405> (no preprint available?)
 
+Alexander Rogers, Famke Bäuerle, Martin Beracochea, Alireza Heidari, Matt Burridge, Benedikt Osterholz, Alexander Sczyrba, Mahfouz Shehu, Tom Tubbesing, Anil Wipat (2024):  
+**Enhancing multi-omic analyses through a federated microbiome analysis service**.  
+_BioHackrXiv_  
+<https://doi.org/10.37044/osf.io/3x274>
+
+José María Fernández González, Paula Iborra, Sebastien Moretti, Arun Isaac, Paul De Geest, Stian Soiland-Reyes (2024):  
+**BioHackEU23: FAIR Workflow Execution with WfExS and Workflow Run Crate**.  
+_BioHackrXiv_  
+<https://doi.org/10.37044/osf.io/7f94w>
+
+Stian Soiland-Reyes, Eli Chadwick, Finn Bacall, José Mª Fernández, Björn Grüning, Hakan Bayındır (2024):  
+**EuroScienceGateway D2.1: Reproducible FAIR Digital Objects for Workflows**.
+(project deliverable)  
+_Zenodo_  
+<https://doi.org/10.5281/zenodo.13225792>
+
+Stian Soiland-Reyes, Eli Chadwick,, Armin Dadras, Björn Grüning, Catalin Condurache, Sebastian Luna-Valero, Volodymyr Savchenko (2025):  
+**EuroScienceGateway D2.2: Publishing workflow enriched FDOs to EOSC**. 
+(project deliverable)  
+_Zenodo_ 
+<https://doi.org/10.5281/zenodo.15094824>
+
+Bruno De Paula Kinoshita, Daniel Beltran Mora, Manuel G. Marciani, Luiggi Tenorio Ku (2024):  
+**Workflow Provenance with RO-Crate in Autosubmit**.  
+_EGU General Assembly 2024_  
+<https://doi.org/10.5194/egusphere-egu24-20642>
 
 ### 2023
 
@@ -162,7 +194,7 @@ Simone Leo, Laura Rodríguez-Navas, José M. Fernández, Paul De Geest, Luca Pir
 **Making workflow provenance FAIR across workflow systems with Workflow Run RO-Crate**.  
 ELIXIR All Hands meeting 2023 (poster), Dublin, Ireland, 2023-06-05/–08  
 _F100Research_ **12**(ELIXIR):592 (poster)  
-<https://doi.org/10.7490/f1000research.1119445.1>
+<https://doi.org/10.7490/f1000research.1119445.1>BioHackEU23
 
 Simone Leo (2023):  
 **RO-Crate for workflow run provenance**.  
@@ -175,6 +207,7 @@ Hirotaka Suetake, Tsukasa Fukusato, Takeo Igarashi, Tazro Ohta (2023):
 **A workflow reproducibility scale for automatic validation of biological interpretation results**.  
 _GigaScience_ **12**:giad031  
 <https://doi.org/10.1093/gigascience/giad031>
+
 
 
 ### 2022
@@ -196,3 +229,7 @@ Florence Bietrix, José Maria Carazo, Salvador Capella-Gutierrez, Frederik Coppe
 _Zenodo_, EOSC-Life project deliverable  
 <https://doi.org/10.5281/zenodo.7137743>
 
+Raül Sirvent, Javier Conejero, Francesc Lordan, Jorge Ejarque, Laura Rodríguez-Navas, José M. Fernández (2022):  
+**Automatic, Efficient and Scalable Provenance Registration for FAIR HPC Workflows**.  
+_2022 IEEE/ACM Workshop on Workflows in Support of Large-Scale Science (WORKS)_  
+<https://doi.org/10.1109/WORKS56498.2022.00006>
