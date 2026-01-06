@@ -27,6 +27,7 @@
     ],
     "identifier": "https://w3id.org/ro/wfrun/provenance/0.6-DRAFT",
     "name": "Provenance Run Crate profile",
+    "description": "This profile extends Workflow Run Crate with specifications to describe internal details of the workflow run, such as step executions and intermediate outputs.",
     "version": "0.6-DRAFT",
     "datePublished": "2024-06-19",
     "license": {
