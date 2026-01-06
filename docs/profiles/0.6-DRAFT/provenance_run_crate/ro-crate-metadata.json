@@ -194,7 +194,7 @@
     "encodingFormat": "application/ld+json",
     "isBasedOn": [
       {
-        "@id": "https://w3id.org/ro/crate/1.1/context"
+        "@id": "https://w3id.org/ro/crate/1.2/context"
       },
       {
         "@id": "https://w3id.org/ro/terms/workflow-run#"
