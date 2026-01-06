@@ -12,20 +12,20 @@ title: Process Run Crate
 * Example conforming crate: [ro-crate-metadata.json](example1/ro-crate-metadata.json) [ro-crate-preview.html](example1/ro-crate-preview.html)
 * Profile Crate: [ro-crate-metadata.json](ro-crate-metadata.json) [ro-crate-preview.html](ro-crate-preview.html)
 * Extends:
-  - [RO-Crate 1.1 specification](https://w3id.org/ro/crate/1.1)
+  - [RO-Crate 1.2 specification](https://w3id.org/ro/crate/1.2)
 * JSON-LD context: <https://w3id.org/ro/terms/workflow-run/context>
 * Vocabulary terms:  <https://w3id.org/ro/terms/workflow-run#>
 
-This profile uses terminology from the [RO-Crate 1.1 specification](https://w3id.org/ro/crate/1.1), and [extends it](https://www.researchobject.org/ro-crate/specification/1.1/appendix/jsonld.html#extending-ro-crate) with additional terms from the [workflow-run](https://github.com/ResearchObject/ro-terms/tree/master/workflow-run) ro-terms namespace.
+This profile uses terminology from the [RO-Crate 1.2 specification](https://w3id.org/ro/crate/1.2), and [extends it](https://www.researchobject.org/ro-crate/specification/1.2/appendix/jsonld.html#extending-ro-crate) with additional terms from the [workflow-run](https://github.com/ResearchObject/ro-terms/tree/master/workflow-run) ro-terms namespace.
 
 
 ## Overview
 
-This profile is used to describe the execution of an _implicit_ workflow, indicating that one or more computational tools have been executed, typically generating some result files that are represented as [data entities](https://www.researchobject.org/ro-crate/specification/1.1/data-entities.html) in the RO-Crate.
+This profile is used to describe the execution of an _implicit_ workflow, indicating that one or more computational tools have been executed, typically generating some result files that are represented as [data entities](https://www.researchobject.org/ro-crate/specification/1.2/data-entities.html) in the RO-Crate.
 
 By "implicit workflow" we mean that the composition of these tools may have been done by hand (a user executes one tool following another) or by some script that has not yet been included as part of the crate (for instance because it is an embedded part of a larger application).
 
-This profile requires the indication of [Software used to create files](https://www.researchobject.org/ro-crate/specification/1.1/provenance.html#software-used-to-create-files), namely a [SoftwareApplication](http://schema.org/SoftwareApplication) (the tool) and a [CreateAction](http://schema.org/CreateAction) (the execution of said tool).
+This profile requires the indication of [Software used to create files](https://www.researchobject.org/ro-crate/specification/1.2/provenance.html#software-used-to-create-files), namely a [SoftwareApplication](http://schema.org/SoftwareApplication) (the tool) and a [CreateAction](http://schema.org/CreateAction) (the execution of said tool).
 
 The following diagram shows the relationships between provenance-related entities. Note the distinction between *prospective* provenance (plans for activities, e.g., an application) and *retrospective* provenance (what actually happened, e.g. the execution of an application).
 
@@ -41,14 +41,14 @@ The following diagram shows the relationships between provenance-related entitie
 
 ```json
 { "@context": [
-    "https://w3id.org/ro/crate/1.1/context",
+    "https://w3id.org/ro/crate/1.2/context",
     "https://w3id.org/ro/terms/workflow-run/context"
   ],
   "@graph": [
     {
         "@id": "ro-crate-metadata.json",
         "@type": "CreativeWork",
-        "conformsTo": {"@id": "https://w3id.org/ro/crate/1.1"},
+        "conformsTo": {"@id": "https://w3id.org/ro/crate/1.2"},
         "about": {"@id": "./"}
     },
     {
@@ -122,7 +122,7 @@ Note that the command line shown in the action's `description` is not directly r
   </tr>
 
   <tr>
-   <th colspan="3"><strong>Dataset</strong> (the <a href="https://www.researchobject.org/ro-crate/1.1/root-data-entity.html">root data entity</a>, e.g. <code>"@id": "./"</code>)</th>
+   <th colspan="3"><strong>Dataset</strong> (the <a href="https://www.researchobject.org/ro-crate/1.2/root-data-entity.html">root data entity</a>, e.g. <code>"@id": "./"</code>)</th>
   </tr>
   <tr>
    <td>conformsTo</td>
@@ -177,7 +177,7 @@ Note that the command line shown in the action's `description` is not directly r
   <tr>
    <td>@id</td>
    <td>MUST</td>
-   <td>A unique identifier for the execution, e.g. <code>"urn:uuid:50ec5c76-1f7a-4130-8ef6-846756b228c1"</code>, <code>"#f99a8e6c"</code>. MAY be an absolute URI, e.g. <a href="http://example.com/runs/846756b228c1">http://example.com/runs/846756b228c1</a>. The use of randomly generated <a href="https://datatracker.ietf.org/doc/html/rfc4122">UUIDs</a> (type 4) is RECOMMENDED. SHOULD be listed under <a href="http://schema.org/mentions">mentions</a> of the <a href="https://www.researchobject.org/ro-crate/1.1/root-data-entity.html">root data entity</a>.</td>
+   <td>A unique identifier for the execution, e.g. <code>"urn:uuid:50ec5c76-1f7a-4130-8ef6-846756b228c1"</code>, <code>"#f99a8e6c"</code>. MAY be an absolute URI, e.g. <a href="http://example.com/runs/846756b228c1">http://example.com/runs/846756b228c1</a>. The use of randomly generated <a href="https://datatracker.ietf.org/doc/html/rfc4122">UUIDs</a> (type 4) is RECOMMENDED. SHOULD be listed under <a href="http://schema.org/mentions">mentions</a> of the <a href="https://www.researchobject.org/ro-crate/1.2/root-data-entity.html">root data entity</a>.</td>
   </tr>
 
   <tr>
@@ -213,7 +213,7 @@ Note that the command line shown in the action's `description` is not directly r
   <tr>
    <td>agent</td>
    <td>SHOULD</td>
-   <td>Identifier of a <a href="https://www.researchobject.org/ro-crate/1.1/contextual-entities.html#people">Person</a> or <a href="https://www.researchobject.org/ro-crate/1.1/contextual-entities.html#organizations-as-values">Organization</a> contextual entity that started/executed this tool.</td>
+   <td>Identifier of a <a href="https://www.researchobject.org/ro-crate/1.2/contextual-entities.html#people">Person</a> or <a href="https://www.researchobject.org/ro-crate/1.2/contextual-entities.html#organizations-as-values">Organization</a> contextual entity that started/executed this tool.</td>
   </tr>
 
   <tr>
@@ -242,7 +242,7 @@ Note that the command line shown in the action's `description` is not directly r
 
 </table>
 
-For each entity described in the table, the most important properties are highlighted. Other properties supported by the entity (e.g. [minValue](http://schema.org/minValue) for a [PropertyValue](http://schema.org/PropertyValue)) can also be used (they are an implicit MAY requirement). See also [Extending RO-Crate](https://www.researchobject.org/ro-crate/specification/1.1/appendix/jsonld.html#extending-ro-crate) for guidance on defining and using terms not included in the RO-Crate context.
+For each entity described in the table, the most important properties are highlighted. Other properties supported by the entity (e.g. [minValue](http://schema.org/minValue) for a [PropertyValue](http://schema.org/PropertyValue)) can also be used (they are an implicit MAY requirement). See also [Extending RO-Crate](https://www.researchobject.org/ro-crate/specification/1.2/appendix/jsonld.html#extending-ro-crate) for guidance on defining and using terms not included in the RO-Crate context.
 
 Entities referenced by an action's [object](http://schema.org/object) or [result](http://schema.org/result) SHOULD be of type `File` (an RO-Crate alias for [MediaObject](http://schema.org/MediaObject)) for files, [Dataset](http://schema.org/Dataset) for directories and [Collection](http://schema.org/Collection) for [multi-file datasets](#representing-multi-file-objects), but MAY be a [CreativeWork](http://schema.org/CreativeWork) for other types of data (e.g. an online database); they MAY be of type [PropertyValue](http://schema.org/PropertyValue) to capture numbers/strings that are not stored as files.
 
@@ -299,7 +299,7 @@ Mirax2-Fluorescence-2/Data0001.dat
 Mirax2-Fluorescence-2/Data0023.dat
 ```
 
-An application that reads [this format](https://openslide.org/formats/mirax/) needs to be pointed to the `.mrxs` file, and expects to find a directory containing the other files in the same location as the `.mrxs` file, with the same name minus the extension. Thus, even though an application that processes MIRAX files would probably take only the `.mrxs` file as argument, the other ones must be present in the expected location and with the expected names (in CWL, this kind of relationship is expressed via `secondaryFiles`). In this case, the object SHOULD be represented by a [contextual entity](https://www.researchobject.org/ro-crate/1.1/contextual-entities.html) of type [Collection](http://schema.org/Collection) listing all files under `hasPart`, with a `mainEntity` referencing the main file. The collection SHOULD be referenced from the root data entity via `mentions`.
+An application that reads [this format](https://openslide.org/formats/mirax/) needs to be pointed to the `.mrxs` file, and expects to find a directory containing the other files in the same location as the `.mrxs` file, with the same name minus the extension. Thus, even though an application that processes MIRAX files would probably take only the `.mrxs` file as argument, the other ones must be present in the expected location and with the expected names (in CWL, this kind of relationship is expressed via `secondaryFiles`). In this case, the object SHOULD be represented by a [contextual entity](https://www.researchobject.org/ro-crate/1.2/contextual-entities.html) of type [Collection](http://schema.org/Collection) listing all files under `hasPart`, with a `mainEntity` referencing the main file. The collection SHOULD be referenced from the root data entity via `mentions`.
 
 ```json
 {
@@ -410,7 +410,7 @@ The behavior of some applications may be modified by setting appropriate environ
 ```json
 {
     "@context": [
-        "https://w3id.org/ro/crate/1.1/context",
+        "https://w3id.org/ro/crate/1.2/context",
         "https://w3id.org/ro/terms/workflow-run/context"
     ],
     "@graph": [
