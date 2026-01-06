@@ -28,6 +28,7 @@
     "identifier": "https://w3id.org/ro/wfrun/process/0.6-DRAFT",
     "name": "Process Run Crate profile",
     "version": "0.6-DRAFT",
+    "datePublished": "2024-06-19",
     "license": {
       "@id": "https://www.apache.org/licenses/LICENSE-2.0"
     },
