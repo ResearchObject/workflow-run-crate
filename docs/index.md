@@ -92,7 +92,7 @@ Several workflow engines have implemented the [WRROC profiles](https://www.resea
 [WfExS](https://wfexs-backend.readthedocs.io/)       | Workflow    | [WfExS 0.10.1](https://github.com/inab/WfExS-backend/releases/tag/0.10.1) or later  |  [10.5281/zenodo.10091550](https://doi.org/10.5281/zenodo.10091550) |
 [Sapporo](https://github.com/sapporo-wes/sapporo)     | Workflow    | [sapporo-service 1.5.1](https://github.com/sapporo-wes/sapporo-service/releases/tag/1.5.1)  or later  |  [10.5281/zenodo.10134581](https://doi.org/10.5281/zenodo.10134581)  |
 [Autosubmit](https://autosubmit.readthedocs.io/)  | Workflow    | [Autosubmit v4.0.100](https://pypi.org/project/autosubmit/4.0.100/) or later    |  [10.5281/zenodo.8144612](https://doi.org/10.5281/zenodo.8144612)   |
-[Nextflow](https://nextflow.io/)  | Provenance    | ([nf-prov](https://github.com/nextflow-io/nf-prov/blob/main/docs/WRROC.md) 1.4.0 or later  |  [example](https://github.com/nextflow-io/nf-prov/files/13070992/ro-crate-metadata.json)   |
+[Nextflow](https://nextflow.io/)  | Provenance    | [nf-prov](https://github.com/nextflow-io/nf-prov/blob/main/docs/WRROC.md) 1.4.0 or later  |  [example](https://github.com/nextflow-io/nf-prov/files/13070992/ro-crate-metadata.json)   |
 
 The Process Crate profile can also be implemented outside workflow systems, see for example [BY-COVID WP5 T5.2 Baseline Use Case](https://w3id.org/ro/doi/10.5281/zenodo.6913045) and [combination with Common Provenance Model](https://doi.org/10.5281/zenodo.7676923). Editors like [Crate-O](https://language-research-technology.github.io/crate-o/) can be used for making such crates by hand.
 
@@ -158,4 +158,3 @@ Unless required by applicable law or agreed to in writing, software distributed 
 
 Profile Crates and JSON-LD examples within this specification are distributed
 under [CC0 1.0 Universal (CC0 1.0) Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/).
-
