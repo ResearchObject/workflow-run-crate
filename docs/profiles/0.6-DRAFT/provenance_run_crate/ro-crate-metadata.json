@@ -35,6 +35,13 @@
     "author": [
      {"@id": "https://www.researchobject.org/workflow-run-crate/"}
     ],
+    "keywords": [
+      "informatics",
+      "process",
+      "provenance",
+      "workflow",
+      "workflow execution"
+    ],
     "hasPart": [
         { "@id": "index.html" },
         { "@id": "example3/" },
