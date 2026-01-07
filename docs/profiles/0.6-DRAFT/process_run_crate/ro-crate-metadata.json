@@ -183,14 +183,6 @@
       "@id": "http://www.w3.org/ns/json-ld#Context"
     },
     "encodingFormat": "application/ld+json",
-    "isBasedOn": [
-      {
-        "@id": "https://w3id.org/ro/crate/1.2/context"
-      },
-      {
-        "@id": "https://w3id.org/ro/terms/workflow-run#"
-      }
-    ],
     "license": {
       "@id": "https://creativecommons.org/publicdomain/zero/1.0/"
     }
