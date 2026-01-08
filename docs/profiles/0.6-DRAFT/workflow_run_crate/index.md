@@ -77,15 +77,15 @@ The following diagram shows the relationships between provenance-related entitie
         "mainEntity": {"@id": "Galaxy-Workflow-Hello_World.ga"},
         "mentions": {"@id": "#wfrun-5a5970ab-4375-444d-9a87-a764a66e3a47"}
     },
-    {   "@id": "https://w3id.org/ro/wfrun/process/0.1",
+    {   "@id": "https://w3id.org/ro/wfrun/process/0.6-DRAFT",
         "@type": "CreativeWork",
         "name": "Process Run Crate",
-        "version": "0.1"
+        "version": "0.6-DRAFT"
     },
-    {   "@id": "https://w3id.org/ro/wfrun/workflow/0.1",
+    {   "@id": "https://w3id.org/ro/wfrun/workflow/0.6-DRAFT",
         "@type": "CreativeWork",
         "name": "Workflow Run Crate",
-        "version": "0.1"
+        "version": "0.6-DRAFT"
     },
     {   "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0",
         "@type": "CreativeWork",
