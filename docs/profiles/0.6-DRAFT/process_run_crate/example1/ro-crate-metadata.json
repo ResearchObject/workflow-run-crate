@@ -9,7 +9,7 @@
     {
         "@id": "./",
         "@type": "Dataset",
-        "conformsTo": {"@id": "https://w3id.org/ro/wfrun/process/0.4"},
+        "conformsTo": {"@id": "https://w3id.org/ro/wfrun/process/0.6-DRAFT"},
         "hasPart": [
             {"@id": "pics/2017-06-11%2012.56.14.jpg"},
             {"@id": "pics/sepia_fence.jpg"}
@@ -21,10 +21,10 @@
         "mentions": {"@id": "#SepiaConversion_1"},
         "name": "My Pictures"
     },
-    {   "@id": "https://w3id.org/ro/wfrun/process/0.4",
+    {   "@id": "https://w3id.org/ro/wfrun/process/0.6-DRAFT",
         "@type": "CreativeWork",
         "name": "Process Run Crate",
-        "version": "0.5"
+        "version": "0.6-DRAFT"
     },
     {
         "@id": "https://www.imagemagick.org/",

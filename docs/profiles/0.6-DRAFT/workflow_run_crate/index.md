@@ -63,8 +63,8 @@ The following diagram shows the relationships between provenance-related entitie
         "@id": "./",
         "@type": "Dataset",
         "conformsTo": [
-            {"@id": "https://w3id.org/ro/wfrun/process/0.1"},
-            {"@id": "https://w3id.org/ro/wfrun/workflow/0.1"},
+            {"@id": "https://w3id.org/ro/wfrun/process/0.6-DRAFT"},
+            {"@id": "https://w3id.org/ro/wfrun/workflow/0.6-DRAFT"},
             {"@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"}
         ],
         "hasPart": [

@@ -13,9 +13,9 @@
         "@id": "./",
         "@type": "Dataset",
         "conformsTo": [
-            {"@id": "https://w3id.org/ro/wfrun/process/0.4"},
-            {"@id": "https://w3id.org/ro/wfrun/workflow/0.4"},
-            {"@id": "https://w3id.org/ro/wfrun/provenance/0.4"},
+            {"@id": "https://w3id.org/ro/wfrun/process/0.6-DRAFT"},
+            {"@id": "https://w3id.org/ro/wfrun/workflow/0.6-DRAFT"},
+            {"@id": "https://w3id.org/ro/wfrun/provenance/0.6-DRAFT"},
             {"@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"}
         ],
         "hasPart": [
@@ -29,20 +29,20 @@
             {"@id": "#4154dad3-00cc-4e35-bb8f-a2de5cd7dc49"}
         ]
     },
-    {   "@id": "https://w3id.org/ro/wfrun/process/0.4",
+    {   "@id": "https://w3id.org/ro/wfrun/process/0.6-DRAFT",
         "@type": "CreativeWork",
         "name": "Process Run Crate",
-        "version": "0.4"
+        "version": "0.6-DRAFT"
     },
-    {   "@id": "https://w3id.org/ro/wfrun/workflow/0.4",
+    {   "@id": "https://w3id.org/ro/wfrun/workflow/0.6-DRAFT",
         "@type": "CreativeWork",
         "name": "Workflow Run Crate",
-        "version": "0.4"
+        "version": "0.6-DRAFT"
     },
-    {   "@id": "https://w3id.org/ro/wfrun/provenance/0.4",
+    {   "@id": "https://w3id.org/ro/wfrun/provenance/0.6-DRAFT",
         "@type": "CreativeWork",
         "name": "Provenance Run Crate",
-        "version": "0.4"
+        "version": "0.6-DRAFT"
     },
     {   "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0",
         "@type": "CreativeWork",

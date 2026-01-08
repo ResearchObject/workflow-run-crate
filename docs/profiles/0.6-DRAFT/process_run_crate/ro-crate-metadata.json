@@ -157,7 +157,7 @@
     "name": "Example Process Run Crate",
     "conformsTo": [
       { "@id": "https://w3id.org/ro/crate"},
-      { "@id": "https://w3id.org/ro/wfrun/process/0.4" }
+      { "@id": "https://w3id.org/ro/wfrun/process/0.6-DRAFT" }
     ], 
     "subjectOf": [
       { "@id": "example1/ro-crate-metadata.json" },
