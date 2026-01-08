@@ -56,7 +56,6 @@ The following diagram shows the relationships between provenance-related entitie
         "about": {"@id": "./"},
         "conformsTo": [
             {"@id": "https://w3id.org/ro/crate/1.2"},
-            {"@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"}
         ]
     },
     {
@@ -65,7 +64,7 @@ The following diagram shows the relationships between provenance-related entitie
         "conformsTo": [
             {"@id": "https://w3id.org/ro/wfrun/process/0.6-DRAFT"},
             {"@id": "https://w3id.org/ro/wfrun/workflow/0.6-DRAFT"},
-            {"@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"}
+            {"@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.1"}
         ],
         "hasPart": [
             {"@id": "Galaxy-Workflow-Hello_World.ga"},
@@ -87,10 +86,10 @@ The following diagram shows the relationships between provenance-related entitie
         "name": "Workflow Run Crate",
         "version": "0.6-DRAFT"
     },
-    {   "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0",
+    {   "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.1",
         "@type": "CreativeWork",
         "name": "Workflow RO-Crate",
-        "version": "1.0"
+        "version": "1.1"
     },
     {
         "@id": "Galaxy-Workflow-Hello_World.ga",
@@ -310,7 +309,7 @@ This profile inherits the requirements of [Process Run Crate](../process_run_cra
   <tr>
    <td>conformsTo</td>
    <td>MUST</td>
-   <td>Array MUST reference a <code>CreativeWork</code> entity with an <code>@id</code> URI that is consistent with the versioned <em>Permalink</em> of this document, and SHOULD also reference versioned permalinks for <a href="https://w3id.org/ro/wfrun/process/0.6-DRAFT">Process Run Crate</a> and <a href="https://w3id.org/workflowhub/workflow-ro-crate/1.0">Workflow RO-Crate</a>.</td>
+   <td>Array MUST reference a <code>CreativeWork</code> entity with an <code>@id</code> URI that is consistent with the versioned <em>Permalink</em> of this document, and SHOULD also reference versioned permalinks for <a href="https://w3id.org/ro/wfrun/process/0.6-DRAFT">Process Run Crate</a> and <a href="https://w3id.org/workflowhub/workflow-ro-crate/1.1">Workflow RO-Crate</a>.</td>
   </tr>
 
   <tr>
