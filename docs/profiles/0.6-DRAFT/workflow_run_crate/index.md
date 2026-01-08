@@ -54,9 +54,7 @@ The following diagram shows the relationships between provenance-related entitie
         "@id": "ro-crate-metadata.json",
         "@type": "CreativeWork",
         "about": {"@id": "./"},
-        "conformsTo": [
-            {"@id": "https://w3id.org/ro/crate/1.2"},
-        ]
+        "conformsTo": {"@id": "https://w3id.org/ro/crate/1.2"}
     },
     {
         "@id": "./",
