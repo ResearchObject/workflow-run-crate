@@ -53,7 +53,7 @@
         { "@id": "https://pypi.org/project/runcrate/" },
         { "@id": "https://w3id.org/ro/wfrun/process/0.6-DRAFT" },
         { "@id": "https://w3id.org/ro/wfrun/workflow/0.6-DRAFT" },
-        { "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0" },
+        { "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.1" },
         { "@id": "https://w3id.org/ro/terms/workflow-run#ParameterConnection" },
         { "@id": "https://w3id.org/ro/terms/workflow-run#connection" },
         { "@id": "https://w3id.org/ro/terms/workflow-run#sourceParameter" },
@@ -132,10 +132,10 @@
     "version": "0.6-DRAFT"
 },
 {
-    "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0",
+    "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.1",
     "@type": ["CreativeWork", "Profile"],
     "name": "Workflow RO-Crate profile",
-    "version": "1.0"
+    "version": "1.1"
 },    
   {
     "@id": "https://w3id.org/ro/wfrun/workflow/0.6-DRAFT",
@@ -166,7 +166,7 @@
       { "@id": "https://w3id.org/ro/wfrun/process/0.6-DRAFT" },
       { "@id": "https://w3id.org/ro/wfrun/workflow/0.6-DRAFT" },
       { "@id": "https://w3id.org/ro/wfrun/provenance/0.6-DRAFT" },
-      { "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0" }
+      { "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.1" }
     ], 
     "subjectOf": [
       { "@id": "example3/ro-crate-metadata.json" },
@@ -263,9 +263,9 @@
   { 
     "@id": "#shouldConformToWorkflowROCrate",
     "@type": "ResourceDescriptor",
-    "name": "SHOULD conform to Workflow RO-Crate profile",
+    "name": "SHOULD conform to Workflow RO-Crate profile 1.1",
     "hasRole": { "@id": "http://purl.org/dc/terms/conformsTo" },
-    "hasArtifact": {"@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"}
+    "hasArtifact": {"@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.1"}
 },
 { 
     "@id": "#shouldConformToProcessCrateProfile",

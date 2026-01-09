@@ -12,7 +12,7 @@ title: Provenance Run Crate
 * Example conforming crate: [ro-crate-metadata.json](example3/ro-crate-metadata.json) [ro-crate-preview.html](example3/ro-crate-preview.html)
 * Profile Crate: [ro-crate-metadata.json](ro-crate-metadata.json) [ro-crate-preview.html](ro-crate-preview.html)
 * Extends:
-  - [Workflow Run Crate](https://w3id.org/ro/wfrun/workflow/0.6-DRAFT)
+  - [Workflow Run Crate 0.6-DRAFT](https://w3id.org/ro/wfrun/workflow/0.6-DRAFT)
 * JSON-LD context: <https://w3id.org/ro/terms/workflow-run/context>
 * Vocabulary terms:  <https://w3id.org/ro/terms/workflow-run#>
 
@@ -55,23 +55,22 @@ The following diagram shows the relationships between all provenance-related ent
         "@type": "CreativeWork",
         "about": {"@id": "./"},
         "conformsTo": [
-            {"@id": "https://w3id.org/ro/crate/1.2"},
-            {"@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"}
+            {"@id": "https://w3id.org/ro/crate/1.2"}
         ]
     },
     {
         "@id": "./",
         "@type": "Dataset",
         "conformsTo": [
-            {"@id": "https://w3id.org/ro/wfrun/process/0.1"},
-            {"@id": "https://w3id.org/ro/wfrun/workflow/0.1"},
-            {"@id": "https://w3id.org/ro/wfrun/provenance/0.1"},
-            {"@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"}
+            {"@id": "https://w3id.org/ro/wfrun/process/0.6-DRAFT"},
+            {"@id": "https://w3id.org/ro/wfrun/workflow/0.6-DRAFT"},
+            {"@id": "https://w3id.org/ro/wfrun/provenance/0.6-DRAFT"},
+            {"@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.1"}
         ],
         "hasPart": [
             {"@id": "packed.cwl"},
             {"@id": "327fc7aedf4f6b69a42a7c8b808dc5a7aff61376"},
-            {"@id": "b9214658cc453331b62c2282b772a5c063dbd284"},
+            {"@id": "b9214658cc453331b62c2282b772a5c063dbd284"},            
             {"@id": "97fe1b50b4582cebc7d853796ebd62e3e163aa3f"}
         ],
         "mainEntity": {"@id": "packed.cwl"},
@@ -79,25 +78,25 @@ The following diagram shows the relationships between all provenance-related ent
             {"@id": "#4154dad3-00cc-4e35-bb8f-a2de5cd7dc49"}
         ]
     },
-    {   "@id": "https://w3id.org/ro/wfrun/process/0.1",
+    {   "@id": "https://w3id.org/ro/wfrun/process/0.6-DRAFT",
         "@type": "CreativeWork",
         "name": "Process Run Crate",
-        "version": "0.1"
+        "version": "0.6-DRAFT"
     },
-    {   "@id": "https://w3id.org/ro/wfrun/workflow/0.1",
+    {   "@id": "https://w3id.org/ro/wfrun/workflow/0.6-DRAFT",
         "@type": "CreativeWork",
         "name": "Workflow Run Crate",
-        "version": "0.1"
+        "version": "0.6-DRAFT"
     },
-    {   "@id": "https://w3id.org/ro/wfrun/provenance/0.1",
+    {   "@id": "https://w3id.org/ro/wfrun/provenance/0.6-DRAFT",
         "@type": "CreativeWork",
         "name": "Provenance Run Crate",
-        "version": "0.1"
+        "version": "0.6-DRAFT"
     },
-    {   "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0",
+    {   "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.1",
         "@type": "CreativeWork",
         "name": "Workflow RO-Crate",
-        "version": "1.0"
+        "version": "1.1"
     },
     {
         "@id": "packed.cwl",
@@ -584,7 +583,7 @@ The requirements of this profile are those of [Workflow Run Crate](../workflow_r
   <tr>
    <td>conformsTo</td>
    <td>MUST</td>
-   <td>Array MUST reference a <code>CreativeWork</code> entity with an <code>@id</code> URI that is consistent with the versioned <em>Permalink</em> of this document, and SHOULD also reference versioned permalinks for <a href="https://w3id.org/ro/wfrun/process/0.6-DRAFT">Process Run Crate</a>, <a href="https://w3id.org/ro/wfrun/workflow/0.6-DRAFT">Workflow Run Crate</a> and <a href="https://w3id.org/workflowhub/workflow-ro-crate/1.0">Workflow RO-Crate</a>.</td>
+   <td>Array MUST reference a <code>CreativeWork</code> entity with an <code>@id</code> URI that is consistent with the versioned <em>Permalink</em> of this document, and SHOULD also reference versioned permalinks for <a href="https://w3id.org/ro/wfrun/process/0.6-DRAFT">Process Run Crate</a>, <a href="https://w3id.org/ro/wfrun/workflow/0.6-DRAFT">Workflow Run Crate</a> and <a href="https://w3id.org/workflowhub/workflow-ro-crate/1.1">Workflow RO-Crate</a>.</td>
   </tr>
 
   <tr>

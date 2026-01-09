@@ -12,8 +12,8 @@ title: Workflow Run Crate
 * Example conforming crate: [ro-crate-metadata.json](example2/ro-crate-metadata.json) [ro-crate-preview.html](example2/ro-crate-preview.html)
 * Profile Crate: [ro-crate-metadata.json](ro-crate-metadata.json) [ro-crate-preview.html](ro-crate-preview.html)
 * Extends:
-  - [Process Run Crate](https://w3id.org/ro/wfrun/process/0.6-DRAFT)
-  - [Workflow RO-Crate](https://w3id.org/workflowhub/workflow-ro-crate/) (compatible with version 1.0 and later minor versions)
+  - [Process Run Crate 0.6-DRAFT](https://w3id.org/ro/wfrun/process/0.6-DRAFT)
+  - [Workflow RO-Crate 1.1](https://w3id.org/workflowhub/workflow-ro-crate/1.1)
 * JSON-LD context: <https://w3id.org/ro/terms/workflow-run/context>
 * Vocabulary terms:  <https://w3id.org/ro/terms/workflow-run#>
 

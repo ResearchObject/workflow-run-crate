@@ -160,12 +160,6 @@
     "version": "0.6-DRAFT"
 },
 {
-    "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0",
-    "@type": ["CreativeWork", "Profile"],
-    "name": "Workflow RO-Crate profile",
-    "version": "1.0"
-},  
-{
     "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.1",
     "@type": ["CreativeWork", "Profile"],
     "name": "Workflow RO-Crate profile",
@@ -284,9 +278,9 @@
   { 
     "@id": "#shouldConformToWorkflowROCrate",
     "@type": "ResourceDescriptor",
-    "name": "SHOULD conform to Workflow RO-Crate profile 1.0 or later minor version",
+    "name": "SHOULD conform to Workflow RO-Crate profile 1.1",
     "hasRole": { "@id": "http://purl.org/dc/terms/conformsTo" },
-    "hasArtifact": {"@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"}
+    "hasArtifact": {"@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.1"}
 },
 { 
     "@id": "#shouldConformToProcessCrateProfile",

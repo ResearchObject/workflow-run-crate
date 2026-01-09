@@ -1,12 +1,14 @@
-{ "@context": "https://w3id.org/ro/crate/1.2/context",
+{ "@context": [
+    "https://w3id.org/ro/crate/1.2/context",
+    "https://w3id.org/ro/terms/workflow-run/context"
+  ],
   "@graph": [
     {
         "@id": "ro-crate-metadata.json",
         "@type": "CreativeWork",
         "about": {"@id": "./"},
         "conformsTo": [
-            {"@id": "https://w3id.org/ro/crate/1.2"},
-            {"@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"}
+            {"@id": "https://w3id.org/ro/crate/1.2"}
         ]
     },
     {
@@ -16,7 +18,7 @@
             {"@id": "https://w3id.org/ro/wfrun/process/0.6-DRAFT"},
             {"@id": "https://w3id.org/ro/wfrun/workflow/0.6-DRAFT"},
             {"@id": "https://w3id.org/ro/wfrun/provenance/0.6-DRAFT"},
-            {"@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"}
+            {"@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.1"}
         ],
         "hasPart": [
             {"@id": "packed.cwl"},
@@ -44,10 +46,10 @@
         "name": "Provenance Run Crate",
         "version": "0.6-DRAFT"
     },
-    {   "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0",
+    {   "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.1",
         "@type": "CreativeWork",
         "name": "Workflow RO-Crate",
-        "version": "1.0"
+        "version": "1.1"
     },
     {
         "@id": "packed.cwl",
