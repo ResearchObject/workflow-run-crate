@@ -7,7 +7,8 @@
 <script type="application/ld+json"> 
   {
   "@context": [
-    "https://w3id.org/ro/crate/1.2/context"
+    "https://w3id.org/ro/crate/1.2/context",
+    "https://w3id.org/ro/terms/workflow-run/context"
   ],
   "@graph": [
     {
@@ -16,14 +17,9 @@
       "about": {
         "@id": "./"
       },
-      "conformsTo": [
-        {
-          "@id": "https://w3id.org/ro/crate/1.2"
-        },
-        {
-          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
-        }
-      ]
+      "conformsTo": {
+        "@id": "https://w3id.org/ro/crate/1.2"
+      }
     },
     {
       "@id": "./",
@@ -39,7 +35,7 @@
           "@id": "https://w3id.org/ro/wfrun/provenance/0.6-DRAFT"
         },
         {
-          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.1"
         }
       ],
       "hasPart": [
@@ -64,12 +60,6 @@
       }
     },
     {
-      "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0",
-      "@type": "CreativeWork",
-      "name": "Workflow RO-Crate",
-      "version": "1.0"
-    },
-    {
       "@id": "https://w3id.org/ro/wfrun/process/0.6-DRAFT",
       "@type": "CreativeWork",
       "name": "Process Run Crate",
@@ -86,6 +76,12 @@
       "@type": "CreativeWork",
       "name": "Provenance Run Crate",
       "version": "0.6-DRAFT"
+    },
+    {
+      "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.1",
+      "@type": "CreativeWork",
+      "name": "Workflow RO-Crate",
+      "version": "1.1"
     },
     {
       "@id": "packed.cwl",
@@ -476,7 +472,7 @@ table.table {
                         
                         <li><a href="#https%3A//w3id.org/ro/wfrun/provenance/0.6-DRAFT">Provenance Run Crate</a></li>
                         
-                        <li><a href="#https%3A//w3id.org/workflowhub/workflow-ro-crate/1.0">Workflow RO-Crate</a></li>
+                        <li><a href="#https%3A//w3id.org/workflowhub/workflow-ro-crate/1.1">Workflow RO-Crate</a></li>
                         </ul></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
@@ -591,17 +587,17 @@ table.table {
             </div>
         <hr/><br/><br/>
             <div>
-                <h3><a href="https://w3id.org/workflowhub/workflow-ro-crate/1.0">Go to: </a> Workflow RO-Crate</h3>
+                <h3><a href="https://w3id.org/workflowhub/workflow-ro-crate/1.1">Go to: </a> Workflow RO-Crate</h3>
                 
                 
                 
                 
-        <div id="https://w3id.org/workflowhub/workflow-ro-crate/1.0">
+        <div id="https://w3id.org/workflowhub/workflow-ro-crate/1.1">
             
             <table class="table metadata table-striped" >
                 <tbody><tr>
             <th style="text-align:left;" class="prop">@id</th>
-            <td style='text-align:left'><a href="https://w3id.org/workflowhub/workflow-ro-crate/1.0">https://w3id.org/workflowhub/workflow-ro-crate/1.0</a></td>
+            <td style='text-align:left'><a href="https://w3id.org/workflowhub/workflow-ro-crate/1.1">https://w3id.org/workflowhub/workflow-ro-crate/1.1</a></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
             <td style='text-align:left'><span>Workflow RO-Crate</span></td>
@@ -610,14 +606,10 @@ table.table {
             <td style='text-align:left'><span>CreativeWork</span></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">version<span>&nbsp;</span><a href="http://schema.org/version">[?]</a></th>
-            <td style='text-align:left'><span>1.0</span></td>
+            <td style='text-align:left'><span>1.1</span></td>
             </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
             <th style="text-align:left;" class="prop">conformsTo<span>&nbsp;</span><a href="http://purl.org/dc/terms/conformsTo">[?]</a></th>
-            <td style='text-align:left'><ul>
-                        <li><a href="#ro-crate-metadata.json">ro-crate-metadata.json</a></li>
-                        
-                        <li><a href="#./">./</a></li>
-                        </ul></td>
+            <td style='text-align:left'><a href="#./">./</a></td>
             </tr></tbody>
             </table>
         </div>
