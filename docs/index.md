@@ -144,9 +144,9 @@ In addition, some computational workflow approaches have RO-Crate support which 
 
 ## License for specifications
 
-© 2021--2026 The University of Manchester, UK
-© 2022--2026 Centro di Ricerca, Sviluppo e Studi Superiori in Sardegna (CRS4), IT
-© 2022--2026 Workflow Run Crate task force contributors
+* © 2021--2026 The University of Manchester, UK
+* © 2022--2026 Centro di Ricerca, Sviluppo e Studi Superiori in Sardegna (CRS4), IT
+* © 2022--2026 Workflow Run Crate task force contributors
 
 Licensed under the Apache License, Version 2.0 (the “License”); you may not use this file except in compliance with the License. You may obtain a copy of the License at
 
