@@ -49,6 +49,10 @@ _Zenodo_
 
 ### 2025
 
+Panna Lukács (2025):
+**Explaining AI Applications through Workflow Provenance**.
+Master thesis, Universitat Politècnica de Catalunya.
+<https://hdl.handle.net/2117/449230>
 
 Sean Wilkinson, Meznah Aloqalaa, Khalid Belhajjame, Michael R. Crusoe, Bruno de Paula Kinoshita, Luiz Gadelha, Daniel Garijo, Ove Johan Ragnar Gustafsson, Nick Juty, Sehrish Kanwal, Farah Zaib Khan, Johannes Köster, Karsten Peters-von Gehlen, Line Pouchard, Randy K. Rannow, Stian Soiland-Reyes, Nicola Soranzo, Shoaib Sufi, Ziheng Sun, Baiba Vilne, Merridee A. Wouters, Denis Yuen, Carole Goble (2025):  
 **Applying the FAIR Principles to Computational Workflows**.  
