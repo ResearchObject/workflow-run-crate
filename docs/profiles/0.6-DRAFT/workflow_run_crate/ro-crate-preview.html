@@ -7,7 +7,7 @@
 <script type="application/ld+json"> 
   {
   "@context": [
-    "https://w3id.org/ro/crate/1.2-DRAFT/context",
+    "https://w3id.org/ro/crate/1.2/context",
     {
       "@base": "https://www.researchobject.org/workflow-run-crate/profiles/0.6-DRAFT/workflow_run_crate/"
     }
@@ -20,7 +20,7 @@
         "@id": "http://spdx.org/licenses/CC0-1.0"
       },
       "conformsTo": {
-        "@id": "https://w3id.org/ro/crate/1.2-DRAFT"
+        "@id": "https://w3id.org/ro/crate/1.2"
       },
       "about": {
         "@id": "https://w3id.org/ro/wfrun/workflow/0.6-DRAFT"
@@ -40,17 +40,26 @@
         "Profile"
       ],
       "isProfileOf": {
-        "@id": "https://w3id.org/ro/crate/1.2-DRAFT"
+        "@id": "https://w3id.org/ro/crate/1.2"
       },
       "identifier": "https://w3id.org/ro/wfrun/workflow/0.6-DRAFT",
       "name": "Workflow Run Crate profile",
+      "description": "This profile is used to describe the execution of a computational tool that has orchestrated the execution of other tools. Such a tool is represented as a workflow that can be executed using a Workflow Management System (WMS), or workflow engine (e.g. cwltool).",
       "version": "0.6-DRAFT",
+      "datePublished": "2024-06-19",
       "license": {
         "@id": "https://www.apache.org/licenses/LICENSE-2.0"
       },
       "author": {
         "@id": "https://www.researchobject.org/workflow-run-crate/"
       },
+      "keywords": [
+        "informatics",
+        "process",
+        "provenance",
+        "workflow",
+        "workflow execution"
+      ],
       "hasPart": [
         {
           "@id": "index.html"
@@ -74,7 +83,7 @@
           "@id": "https://w3id.org/ro/wfrun/process/0.6-DRAFT"
         },
         {
-          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.1"
         },
         {
           "@id": "http://schema.org/MediaObject"
@@ -125,10 +134,10 @@
           "@id": "https://bioschemas.org/ComputationalWorkflow"
         },
         {
-          "@id": "https://bioschemas.org/ComputationalWorkflow#input"
+          "@id": "https://bioschemas.org/properties/input"
         },
         {
-          "@id": "https://bioschemas.org/ComputationalWorkflow#output"
+          "@id": "https://bioschemas.org/properties/output"
         },
         {
           "@id": "http://purl.org/dc/terms/conformsTo"
@@ -330,13 +339,13 @@
           "@id": "https://w3id.org/ro/crate"
         },
         {
-          "@id": "https://w3id.org/ro/wfrun/process/0.4"
+          "@id": "https://w3id.org/ro/wfrun/process/0.6-DRAFT"
         },
         {
-          "@id": "https://w3id.org/ro/wfrun/workflow/0.4"
+          "@id": "https://w3id.org/ro/wfrun/workflow/0.6-DRAFT"
         },
         {
-          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.1"
         }
       ],
       "subjectOf": [
@@ -394,13 +403,13 @@
       "version": "0.6-DRAFT"
     },
     {
-      "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0",
+      "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.1",
       "@type": [
         "CreativeWork",
         "Profile"
       ],
       "name": "Workflow RO-Crate profile",
-      "version": "1.0"
+      "version": "1.1"
     },
     {
       "@id": "http://schema.org/MediaObject",
@@ -484,13 +493,13 @@
       "name": "ComputationalWorkflow"
     },
     {
-      "@id": "https://bioschemas.org/ComputationalWorkflow#input",
+      "@id": "https://bioschemas.org/properties/input",
       "@type": "DefinedTerm",
       "termCode": "input",
       "name": "input"
     },
     {
-      "@id": "https://bioschemas.org/ComputationalWorkflow#output",
+      "@id": "https://bioschemas.org/properties/output",
       "@type": "DefinedTerm",
       "name": "output",
       "termCode": "output"
@@ -560,12 +569,12 @@
     {
       "@id": "#shouldConformToWorkflowROCrate",
       "@type": "ResourceDescriptor",
-      "name": "SHOULD conform to Workflow RO-Crate profile",
+      "name": "SHOULD conform to Workflow RO-Crate profile 1.1",
       "hasRole": {
         "@id": "http://purl.org/dc/terms/conformsTo"
       },
       "hasArtifact": {
-        "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.1"
       }
     },
     {
@@ -946,8 +955,8 @@ table.table {
   </nav>
 <div class="container">
 <div class="jumbotron">
-<h4 class="citation"></h3>
-<h3 class="item_name">Workflow Run Crate profile</h4>
+<h4 class="citation"></h4>
+<h3 class="item_name">Workflow Run Crate profile</h3>
 
 
 <a href="./ro-crate-metadata.json">⬇️🏷️ Download all the metadata for <span class='name'>Workflow Run Crate profile</span> in JSON-LD format</a>
@@ -962,12 +971,12 @@ table.table {
 
 <div id="summary">
 <div class='all-meta'>
-           <div>
-            <h3><a href="https://w3id.org/ro/wfrun/workflow/0.6-DRAFT">Go to: </a> Workflow Run Crate profile</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://w3id.org/ro/wfrun/workflow/0.6-DRAFT">Go to: </a> Workflow Run Crate profile</h3>
+                
+                
+                
+                
         <div id="https://w3id.org/ro/wfrun/workflow/0.6-DRAFT">
             
             <table class="table metadata table-striped" >
@@ -985,11 +994,17 @@ table.table {
                         <li><span>Profile</span></li>
                         </ul></td>
             </tr><tr>
+            <th style="text-align:left;" class="prop">description<span>&nbsp;</span><a href="http://schema.org/description">[?]</a></th>
+            <td style='text-align:left'><span>This profile is used to describe the execution of a computational tool that has orchestrated the execution of other tools. Such a tool is represented as a workflow that can be executed using a Workflow Management System (WMS), or workflow engine (e.g. cwltool).</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">datePublished<span>&nbsp;</span><a href="http://schema.org/datePublished">[?]</a></th>
+            <td style='text-align:left'><span>2024-06-19</span></td>
+            </tr><tr>
             <th style="text-align:left;" class="prop">author<span>&nbsp;</span><a href="http://schema.org/author">[?]</a></th>
             <td style='text-align:left'><a href="#https%3A//www.researchobject.org/workflow-run-crate/">Workflow Run Crate task force</a></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">isProfileOf<span>&nbsp;</span><a href="http://www.w3.org/ns/dx/prof/isProfileOf">[?]</a></th>
-            <td style='text-align:left'><a href="https://w3id.org/ro/crate/1.2-DRAFT">https://w3id.org/ro/crate/1.2-DRAFT</a></td>
+            <td style='text-align:left'><a href="https://w3id.org/ro/crate/1.2">https://w3id.org/ro/crate/1.2</a></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">identifier<span>&nbsp;</span><a href="http://schema.org/identifier">[?]</a></th>
             <td style='text-align:left'><a href="https://w3id.org/ro/wfrun/workflow/0.6-DRAFT">https://w3id.org/ro/wfrun/workflow/0.6-DRAFT</a></td>
@@ -999,6 +1014,19 @@ table.table {
             </tr><tr>
             <th style="text-align:left;" class="prop">license<span>&nbsp;</span><a href="http://schema.org/license">[?]</a></th>
             <td style='text-align:left'><a href="#https%3A//www.apache.org/licenses/LICENSE-2.0">Apache License 2.0</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">keywords<span>&nbsp;</span><a href="http://schema.org/keywords">[?]</a></th>
+            <td style='text-align:left'><ul>
+                        <li><span>informatics</span></li>
+                        
+                        <li><span>process</span></li>
+                        
+                        <li><span>provenance</span></li>
+                        
+                        <li><span>workflow</span></li>
+                        
+                        <li><span>workflow execution</span></li>
+                        </ul></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
             <td style='text-align:left'><ul>
@@ -1016,7 +1044,7 @@ table.table {
                         
                         <li><a href="#https%3A//w3id.org/ro/wfrun/process/0.6-DRAFT">Process Run Crate profile</a></li>
                         
-                        <li><a href="#https%3A//w3id.org/workflowhub/workflow-ro-crate/1.0">Workflow RO-Crate profile</a></li>
+                        <li><a href="#https%3A//w3id.org/workflowhub/workflow-ro-crate/1.1">Workflow RO-Crate profile</a></li>
                         
                         <li><a href="#http%3A//schema.org/MediaObject">MediaObject</a></li>
                         
@@ -1050,9 +1078,9 @@ table.table {
                         
                         <li><a href="#https%3A//bioschemas.org/ComputationalWorkflow">ComputationalWorkflow</a></li>
                         
-                        <li><a href="#https%3A//bioschemas.org/ComputationalWorkflow%23input">input</a></li>
+                        <li><a href="#https%3A//bioschemas.org/properties/input">input</a></li>
                         
-                        <li><a href="#https%3A//bioschemas.org/ComputationalWorkflow%23output">output</a></li>
+                        <li><a href="#https%3A//bioschemas.org/properties/output">output</a></li>
                         
                         <li><a href="#http%3A//purl.org/dc/terms/conformsTo">conformsTo</a></li>
                         
@@ -1071,7 +1099,7 @@ table.table {
                         
                         <li><a href="#%23hasMappingToProv">#hasMappingToProv</a></li>
                         
-                        <li><a href="#%23shouldConformToWorkflowROCrate">SHOULD conform to Workflow RO-Crate profile</a></li>
+                        <li><a href="#%23shouldConformToWorkflowROCrate">SHOULD conform to Workflow RO-Crate profile 1.1</a></li>
                         
                         <li><a href="#%23shouldConformToProcessCrateProfile">SHOULD conform to Process Crate profile</a></li>
                         </ul></td>
@@ -1081,18 +1109,20 @@ table.table {
             </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
             <th style="text-align:left;" class="prop">about<span>&nbsp;</span><a href="http://schema.org/about">[?]</a></th>
             <td style='text-align:left'><a href="#ro-crate-metadata.json">ro-crate-metadata.json</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">conformsTo<span>&nbsp;</span><a href="http://purl.org/dc/terms/conformsTo">[?]</a></th>
+            <td style='text-align:left'><a href="#example2/">Example Workflow Run Crate</a></td>
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://www.researchobject.org/workflow-run-crate/">Go to: </a> Workflow Run Crate task force</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://www.researchobject.org/workflow-run-crate/">Go to: </a> Workflow Run Crate task force</h3>
+                
+                
+                
+                
         <div id="https://www.researchobject.org/workflow-run-crate/">
             
             <table class="table metadata table-striped" >
@@ -1193,15 +1223,14 @@ table.table {
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/><hr/><br/><br/>
-           <div>
-            <h3><a href="https://www.apache.org/licenses/LICENSE-2.0">Go to: </a> Apache License 2.0</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://www.apache.org/licenses/LICENSE-2.0">Go to: </a> Apache License 2.0</h3>
+                
+                
+                
+                
         <div id="https://www.apache.org/licenses/LICENSE-2.0">
             
             <table class="table metadata table-striped" >
@@ -1226,15 +1255,14 @@ table.table {
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="index.html">⬇️ Download: </a> Workflow Run Crate (HTML)</h3>
-            
-            <iframe src='index.html' width='100%' height='500'></iframe>
-            
-            
+            <div>
+                <h3><a href="index.html">⬇️ Download: </a> Workflow Run Crate (HTML)</h3>
+                
+                <iframe src='index.html' width='100%' height='500'></iframe>
+                
+                
         <div id="index.html">
             
             <table class="table metadata table-striped" >
@@ -1263,15 +1291,14 @@ table.table {
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3> Example Workflow Run Crate</h3>
-            
-            
-            
-            
+            <div>
+                <h3> Example Workflow Run Crate</h3>
+                
+                
+                
+                
         <div id="example2/">
             
             <table class="table metadata table-striped" >
@@ -1289,11 +1316,11 @@ table.table {
             <td style='text-align:left'><ul>
                         <li><a href="https://w3id.org/ro/crate">https://w3id.org/ro/crate</a></li>
                         
-                        <li><a href="https://w3id.org/ro/wfrun/process/0.4">https://w3id.org/ro/wfrun/process/0.4</a></li>
+                        <li><a href="#https%3A//w3id.org/ro/wfrun/process/0.6-DRAFT">Process Run Crate profile</a></li>
                         
-                        <li><a href="https://w3id.org/ro/wfrun/workflow/0.4">https://w3id.org/ro/wfrun/workflow/0.4</a></li>
+                        <li><a href="#https%3A//w3id.org/ro/wfrun/workflow/0.6-DRAFT">Workflow Run Crate profile</a></li>
                         
-                        <li><a href="#https%3A//w3id.org/workflowhub/workflow-ro-crate/1.0">Workflow RO-Crate profile</a></li>
+                        <li><a href="#https%3A//w3id.org/workflowhub/workflow-ro-crate/1.1">Workflow RO-Crate profile</a></li>
                         </ul></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">subjectOf<span>&nbsp;</span><a href="http://schema.org/subjectOf">[?]</a></th>
@@ -1311,15 +1338,14 @@ table.table {
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://www.researchobject.org/workflow-run-crate-paper/mapping/">Go to: </a> SSSOM mapping from PROV to Workflow Run Crate</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://www.researchobject.org/workflow-run-crate-paper/mapping/">Go to: </a> SSSOM mapping from PROV to Workflow Run Crate</h3>
+                
+                
+                
+                
         <div id="https://www.researchobject.org/workflow-run-crate-paper/mapping/">
             
             <table class="table metadata table-striped" >
@@ -1344,15 +1370,14 @@ table.table {
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://w3id.org/ro/terms/workflow-run">Go to: </a> JSON-LD context for workflow-run terms</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://w3id.org/ro/terms/workflow-run">Go to: </a> JSON-LD context for workflow-run terms</h3>
+                
+                
+                
+                
         <div id="https://w3id.org/ro/terms/workflow-run">
             
             <table class="table metadata table-striped" >
@@ -1383,15 +1408,14 @@ table.table {
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://gxy.io/GTN:T00343">Go to: </a> Workflow Run RO-Crate Introduction</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://gxy.io/GTN:T00343">Go to: </a> Workflow Run RO-Crate Introduction</h3>
+                
+                
+                
+                
         <div id="https://gxy.io/GTN:T00343">
             
             <table class="table metadata table-striped" >
@@ -1416,15 +1440,14 @@ table.table {
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://pypi.org/project/runcrate/">Go to: </a> runcrate</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://pypi.org/project/runcrate/">Go to: </a> runcrate</h3>
+                
+                
+                
+                
         <div id="https://pypi.org/project/runcrate/">
             
             <table class="table metadata table-striped" >
@@ -1449,15 +1472,14 @@ table.table {
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://w3id.org/ro/wfrun/process/0.6-DRAFT">Go to: </a> Process Run Crate profile</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://w3id.org/ro/wfrun/process/0.6-DRAFT">Go to: </a> Process Run Crate profile</h3>
+                
+                
+                
+                
         <div id="https://w3id.org/ro/wfrun/process/0.6-DRAFT">
             
             <table class="table metadata table-striped" >
@@ -1481,26 +1503,28 @@ table.table {
             <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
             <td style='text-align:left'><a href="#https%3A//w3id.org/ro/wfrun/workflow/0.6-DRAFT">Workflow Run Crate profile</a></td>
             </tr><tr>
+            <th style="text-align:left;" class="prop">conformsTo<span>&nbsp;</span><a href="http://purl.org/dc/terms/conformsTo">[?]</a></th>
+            <td style='text-align:left'><a href="#example2/">Example Workflow Run Crate</a></td>
+            </tr><tr>
             <th style="text-align:left;" class="prop">hasArtifact<span>&nbsp;</span><a href="http://www.w3.org/ns/dx/prof/hasArtifact">[?]</a></th>
             <td style='text-align:left'><a href="#%23shouldConformToProcessCrateProfile">SHOULD conform to Process Crate profile</a></td>
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://w3id.org/workflowhub/workflow-ro-crate/1.0">Go to: </a> Workflow RO-Crate profile</h3>
-            
-            
-            
-            
-        <div id="https://w3id.org/workflowhub/workflow-ro-crate/1.0">
+            <div>
+                <h3><a href="https://w3id.org/workflowhub/workflow-ro-crate/1.1">Go to: </a> Workflow RO-Crate profile</h3>
+                
+                
+                
+                
+        <div id="https://w3id.org/workflowhub/workflow-ro-crate/1.1">
             
             <table class="table metadata table-striped" >
                 <tbody><tr>
             <th style="text-align:left;" class="prop">@id</th>
-            <td style='text-align:left'><a href="https://w3id.org/workflowhub/workflow-ro-crate/1.0">https://w3id.org/workflowhub/workflow-ro-crate/1.0</a></td>
+            <td style='text-align:left'><a href="https://w3id.org/workflowhub/workflow-ro-crate/1.1">https://w3id.org/workflowhub/workflow-ro-crate/1.1</a></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
             <td style='text-align:left'><span>Workflow RO-Crate profile</span></td>
@@ -1513,7 +1537,7 @@ table.table {
                         </ul></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">version<span>&nbsp;</span><a href="http://schema.org/version">[?]</a></th>
-            <td style='text-align:left'><span>1.0</span></td>
+            <td style='text-align:left'><span>1.1</span></td>
             </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
             <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
             <td style='text-align:left'><a href="#https%3A//w3id.org/ro/wfrun/workflow/0.6-DRAFT">Workflow Run Crate profile</a></td>
@@ -1522,19 +1546,18 @@ table.table {
             <td style='text-align:left'><a href="#example2/">Example Workflow Run Crate</a></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">hasArtifact<span>&nbsp;</span><a href="http://www.w3.org/ns/dx/prof/hasArtifact">[?]</a></th>
-            <td style='text-align:left'><a href="#%23shouldConformToWorkflowROCrate">SHOULD conform to Workflow RO-Crate profile</a></td>
+            <td style='text-align:left'><a href="#%23shouldConformToWorkflowROCrate">SHOULD conform to Workflow RO-Crate profile 1.1</a></td>
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="http://schema.org/MediaObject">Go to: </a> MediaObject</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="http://schema.org/MediaObject">Go to: </a> MediaObject</h3>
+                
+                
+                
+                
         <div id="http://schema.org/MediaObject">
             
             <table class="table metadata table-striped" >
@@ -1556,15 +1579,14 @@ table.table {
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="http://schema.org/additionalType">Go to: </a> additionalType</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="http://schema.org/additionalType">Go to: </a> additionalType</h3>
+                
+                
+                
+                
         <div id="http://schema.org/additionalType">
             
             <table class="table metadata table-striped" >
@@ -1583,15 +1605,14 @@ table.table {
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="http://schema.org/CreateAction">Go to: </a> CreateAction</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="http://schema.org/CreateAction">Go to: </a> CreateAction</h3>
+                
+                
+                
+                
         <div id="http://schema.org/CreateAction">
             
             <table class="table metadata table-striped" >
@@ -1610,15 +1631,14 @@ table.table {
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="http://schema.org/exampleOfWork">Go to: </a> exampleOfWork</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="http://schema.org/exampleOfWork">Go to: </a> exampleOfWork</h3>
+                
+                
+                
+                
         <div id="http://schema.org/exampleOfWork">
             
             <table class="table metadata table-striped" >
@@ -1637,15 +1657,14 @@ table.table {
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="http://schema.org/instrument">Go to: </a> instrument</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="http://schema.org/instrument">Go to: </a> instrument</h3>
+                
+                
+                
+                
         <div id="http://schema.org/instrument">
             
             <table class="table metadata table-striped" >
@@ -1664,15 +1683,14 @@ table.table {
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="http://schema.org/name">Go to: </a> name</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="http://schema.org/name">Go to: </a> name</h3>
+                
+                
+                
+                
         <div id="http://schema.org/name">
             
             <table class="table metadata table-striped" >
@@ -1691,15 +1709,14 @@ table.table {
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="http://schema.org/object">Go to: </a> object</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="http://schema.org/object">Go to: </a> object</h3>
+                
+                
+                
+                
         <div id="http://schema.org/object">
             
             <table class="table metadata table-striped" >
@@ -1718,15 +1735,14 @@ table.table {
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="http://schema.org/PropertyValue">Go to: </a> PropertyValue</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="http://schema.org/PropertyValue">Go to: </a> PropertyValue</h3>
+                
+                
+                
+                
         <div id="http://schema.org/PropertyValue">
             
             <table class="table metadata table-striped" >
@@ -1745,15 +1761,14 @@ table.table {
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="http://schema.org/result">Go to: </a> result</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="http://schema.org/result">Go to: </a> result</h3>
+                
+                
+                
+                
         <div id="http://schema.org/result">
             
             <table class="table metadata table-striped" >
@@ -1772,15 +1787,14 @@ table.table {
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="http://schema.org/DataType">Go to: </a> DataType</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="http://schema.org/DataType">Go to: </a> DataType</h3>
+                
+                
+                
+                
         <div id="http://schema.org/DataType">
             
             <table class="table metadata table-striped" >
@@ -1799,15 +1813,14 @@ table.table {
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="http://schema.org/Integer">Go to: </a> Integer</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="http://schema.org/Integer">Go to: </a> Integer</h3>
+                
+                
+                
+                
         <div id="http://schema.org/Integer">
             
             <table class="table metadata table-striped" >
@@ -1826,15 +1839,14 @@ table.table {
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="http://schema.org/about">Go to: </a> about</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="http://schema.org/about">Go to: </a> about</h3>
+                
+                
+                
+                
         <div id="http://schema.org/about">
             
             <table class="table metadata table-striped" >
@@ -1853,15 +1865,14 @@ table.table {
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="http://schema.org/defaultValue">Go to: </a> defaultValue</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="http://schema.org/defaultValue">Go to: </a> defaultValue</h3>
+                
+                
+                
+                
         <div id="http://schema.org/defaultValue">
             
             <table class="table metadata table-striped" >
@@ -1880,15 +1891,14 @@ table.table {
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="http://schema.org/valueRequired">Go to: </a> valueRequired</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="http://schema.org/valueRequired">Go to: </a> valueRequired</h3>
+                
+                
+                
+                
         <div id="http://schema.org/valueRequired">
             
             <table class="table metadata table-striped" >
@@ -1907,15 +1917,14 @@ table.table {
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://bioschemas.org/FormalParameter">Go to: </a> FormalParameter</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://bioschemas.org/FormalParameter">Go to: </a> FormalParameter</h3>
+                
+                
+                
+                
         <div id="https://bioschemas.org/FormalParameter">
             
             <table class="table metadata table-striped" >
@@ -1934,15 +1943,14 @@ table.table {
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://bioschemas.org/ComputationalWorkflow">Go to: </a> ComputationalWorkflow</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://bioschemas.org/ComputationalWorkflow">Go to: </a> ComputationalWorkflow</h3>
+                
+                
+                
+                
         <div id="https://bioschemas.org/ComputationalWorkflow">
             
             <table class="table metadata table-striped" >
@@ -1961,21 +1969,20 @@ table.table {
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://bioschemas.org/ComputationalWorkflow#input">Go to: </a> input</h3>
-            
-            
-            
-            
-        <div id="https://bioschemas.org/ComputationalWorkflow#input">
+            <div>
+                <h3><a href="https://bioschemas.org/properties/input">Go to: </a> input</h3>
+                
+                
+                
+                
+        <div id="https://bioschemas.org/properties/input">
             
             <table class="table metadata table-striped" >
                 <tbody><tr>
             <th style="text-align:left;" class="prop">@id</th>
-            <td style='text-align:left'><a href="https://bioschemas.org/ComputationalWorkflow#input">https://bioschemas.org/ComputationalWorkflow#input</a></td>
+            <td style='text-align:left'><a href="https://bioschemas.org/properties/input">https://bioschemas.org/properties/input</a></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
             <td style='text-align:left'><span>input</span></td>
@@ -1991,21 +1998,20 @@ table.table {
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://bioschemas.org/ComputationalWorkflow#output">Go to: </a> output</h3>
-            
-            
-            
-            
-        <div id="https://bioschemas.org/ComputationalWorkflow#output">
+            <div>
+                <h3><a href="https://bioschemas.org/properties/output">Go to: </a> output</h3>
+                
+                
+                
+                
+        <div id="https://bioschemas.org/properties/output">
             
             <table class="table metadata table-striped" >
                 <tbody><tr>
             <th style="text-align:left;" class="prop">@id</th>
-            <td style='text-align:left'><a href="https://bioschemas.org/ComputationalWorkflow#output">https://bioschemas.org/ComputationalWorkflow#output</a></td>
+            <td style='text-align:left'><a href="https://bioschemas.org/properties/output">https://bioschemas.org/properties/output</a></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
             <td style='text-align:left'><span>output</span></td>
@@ -2021,15 +2027,14 @@ table.table {
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="http://purl.org/dc/terms/conformsTo">Go to: </a> conformsTo</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="http://purl.org/dc/terms/conformsTo">Go to: </a> conformsTo</h3>
+                
+                
+                
+                
         <div id="http://purl.org/dc/terms/conformsTo">
             
             <table class="table metadata table-striped" >
@@ -2051,22 +2056,21 @@ table.table {
             </tr><tr>
             <th style="text-align:left;" class="prop">hasRole<span>&nbsp;</span><a href="http://www.w3.org/ns/dx/prof/hasRole">[?]</a></th>
             <td style='text-align:left'><ul>
-                        <li><a href="#%23shouldConformToWorkflowROCrate">SHOULD conform to Workflow RO-Crate profile</a></li>
+                        <li><a href="#%23shouldConformToWorkflowROCrate">SHOULD conform to Workflow RO-Crate profile 1.1</a></li>
                         
                         <li><a href="#%23shouldConformToProcessCrateProfile">SHOULD conform to Process Crate profile</a></li>
                         </ul></td>
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://w3id.org/ro/terms/workflow-run#environment">Go to: </a> environment</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://w3id.org/ro/terms/workflow-run#environment">Go to: </a> environment</h3>
+                
+                
+                
+                
         <div id="https://w3id.org/ro/terms/workflow-run#environment">
             
             <table class="table metadata table-striped" >
@@ -2088,15 +2092,14 @@ table.table {
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3> #hasSpecification</h3>
-            
-            
-            
-            
+            <div>
+                <h3> #hasSpecification</h3>
+                
+                
+                
+                
         <div id="#hasSpecification">
             
             <table class="table metadata table-striped" >
@@ -2118,15 +2121,14 @@ table.table {
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3> #hasConstraints</h3>
-            
-            
-            
-            
+            <div>
+                <h3> #hasConstraints</h3>
+                
+                
+                
+                
         <div id="#hasConstraints">
             
             <table class="table metadata table-striped" >
@@ -2148,15 +2150,14 @@ table.table {
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3> #hasGuidance</h3>
-            
-            
-            
-            
+            <div>
+                <h3> #hasGuidance</h3>
+                
+                
+                
+                
         <div id="#hasGuidance">
             
             <table class="table metadata table-striped" >
@@ -2178,15 +2179,14 @@ table.table {
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3> #hasExample</h3>
-            
-            
-            
-            
+            <div>
+                <h3> #hasExample</h3>
+                
+                
+                
+                
         <div id="#hasExample">
             
             <table class="table metadata table-striped" >
@@ -2208,15 +2208,14 @@ table.table {
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3> #hasMappingToProv</h3>
-            
-            
-            
-            
+            <div>
+                <h3> #hasMappingToProv</h3>
+                
+                
+                
+                
         <div id="#hasMappingToProv">
             
             <table class="table metadata table-striped" >
@@ -2238,15 +2237,14 @@ table.table {
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3> SHOULD conform to Workflow RO-Crate profile</h3>
-            
-            
-            
-            
+            <div>
+                <h3> SHOULD conform to Workflow RO-Crate profile 1.1</h3>
+                
+                
+                
+                
         <div id="#shouldConformToWorkflowROCrate">
             
             <table class="table metadata table-striped" >
@@ -2255,7 +2253,7 @@ table.table {
             <td style='text-align:left'><span>#shouldConformToWorkflowROCrate</span></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
-            <td style='text-align:left'><span>SHOULD conform to Workflow RO-Crate profile</span></td>
+            <td style='text-align:left'><span>SHOULD conform to Workflow RO-Crate profile 1.1</span></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">@type</th>
             <td style='text-align:left'><span>ResourceDescriptor</span></td>
@@ -2264,22 +2262,21 @@ table.table {
             <td style='text-align:left'><a href="#http%3A//purl.org/dc/terms/conformsTo">conformsTo</a></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">hasArtifact<span>&nbsp;</span><a href="http://www.w3.org/ns/dx/prof/hasArtifact">[?]</a></th>
-            <td style='text-align:left'><a href="#https%3A//w3id.org/workflowhub/workflow-ro-crate/1.0">Workflow RO-Crate profile</a></td>
+            <td style='text-align:left'><a href="#https%3A//w3id.org/workflowhub/workflow-ro-crate/1.1">Workflow RO-Crate profile</a></td>
             </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
             <th style="text-align:left;" class="prop">hasResource<span>&nbsp;</span><a href="http://www.w3.org/ns/dx/prof/hasResource">[?]</a></th>
             <td style='text-align:left'><a href="#https%3A//w3id.org/ro/wfrun/workflow/0.6-DRAFT">Workflow Run Crate profile</a></td>
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3> SHOULD conform to Process Crate profile</h3>
-            
-            
-            
-            
+            <div>
+                <h3> SHOULD conform to Process Crate profile</h3>
+                
+                
+                
+                
         <div id="#shouldConformToProcessCrateProfile">
             
             <table class="table metadata table-striped" >
@@ -2304,15 +2301,14 @@ table.table {
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://doi.org/10.1371/journal.pone.0309210">Go to: </a> Recording provenance of workflow runs with RO-Crate</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://doi.org/10.1371/journal.pone.0309210">Go to: </a> Recording provenance of workflow runs with RO-Crate</h3>
+                
+                
+                
+                
         <div id="https://doi.org/10.1371/journal.pone.0309210">
             
             <table class="table metadata table-striped" >
@@ -2373,8 +2369,7 @@ table.table {
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/></div>
 </div>
 

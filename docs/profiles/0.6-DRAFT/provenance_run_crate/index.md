@@ -12,11 +12,11 @@ title: Provenance Run Crate
 * Example conforming crate: [ro-crate-metadata.json](example3/ro-crate-metadata.json) [ro-crate-preview.html](example3/ro-crate-preview.html)
 * Profile Crate: [ro-crate-metadata.json](ro-crate-metadata.json) [ro-crate-preview.html](ro-crate-preview.html)
 * Extends:
-  - [Workflow Run Crate](https://w3id.org/ro/wfrun/workflow/0.6-DRAFT)
+  - [Workflow Run Crate 0.6-DRAFT](https://w3id.org/ro/wfrun/workflow/0.6-DRAFT)
 * JSON-LD context: <https://w3id.org/ro/terms/workflow-run/context>
 * Vocabulary terms:  <https://w3id.org/ro/terms/workflow-run#>
 
-This profile uses terminology from the [RO-Crate 1.1 specification](https://w3id.org/ro/crate/1.1), and [extends it](https://www.researchobject.org/ro-crate/specification/1.1/appendix/jsonld.html#extending-ro-crate) with additional terms from the [workflow-run](https://github.com/ResearchObject/ro-terms/tree/master/workflow-run) ro-terms namespace.
+This profile uses terminology from the [RO-Crate 1.2 specification](https://w3id.org/ro/crate/1.2), and [extends it](https://www.researchobject.org/ro-crate/specification/1.2/appendix/jsonld.html#extending-ro-crate) with additional terms from the [workflow-run](https://github.com/ResearchObject/ro-terms/tree/master/workflow-run) ro-terms namespace.
 
 
 ## Overview
@@ -29,7 +29,7 @@ The crate SHOULD also record *step* executions via [ControlAction](http://schema
 
 The crate MAY also include an [OrganizeAction](http://schema.org/OrganizeAction) representing the execution of the workflow *engine* (e.g. cwltool), which MUST point to: an entity representing the workflow engine (e.g. a [SoftwareApplication](http://schema.org/SoftwareApplication)) via `instrument`; the `CreateAction` that represents the workflow run via `result`; the `ControlAction` instances representing the step executions via `object`.
 
-The tool that implements a step can in turn be a workflow (*nested workflow* or *subworkflow*): in this case, it MUST be represented as a `ComputationalWorkflow`, and all of the above directions apply to it recursively. If the subworkflow is described in a section of the main workflow (e.g. as in [packed CWL workflows](https://www.commonwl.org/v1.2/CommandLineTool.html#Packed_documents)), rather than in a file of its own, it SHOULD be added to the crate as a [contextual entity](https://www.researchobject.org/ro-crate/specification/1.1/contextual-entities.html): in this case, its type list MUST NOT include `File`.
+The tool that implements a step can in turn be a workflow (*nested workflow* or *subworkflow*): in this case, it MUST be represented as a `ComputationalWorkflow`, and all of the above directions apply to it recursively. If the subworkflow is described in a section of the main workflow (e.g. as in [packed CWL workflows](https://www.commonwl.org/v1.2/CommandLineTool.html#Packed_documents)), rather than in a file of its own, it SHOULD be added to the crate as a [contextual entity](https://www.researchobject.org/ro-crate/specification/1.2/contextual-entities.html): in this case, its type list MUST NOT include `File`.
 
 The following diagram shows the relationships between all provenance-related entities. Note the distinction between *prospective* provenance (plans for activities, e.g. a workflow) and *retrospective* provenance (what actually happened, e.g. the execution of a workflow).
 
@@ -46,7 +46,7 @@ The following diagram shows the relationships between all provenance-related ent
 
 ```json
 { "@context": [
-    "https://w3id.org/ro/crate/1.1/context",
+    "https://w3id.org/ro/crate/1.2/context",
     "https://w3id.org/ro/terms/workflow-run/context"
   ],
   "@graph": [
@@ -55,23 +55,22 @@ The following diagram shows the relationships between all provenance-related ent
         "@type": "CreativeWork",
         "about": {"@id": "./"},
         "conformsTo": [
-            {"@id": "https://w3id.org/ro/crate/1.1"},
-            {"@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"}
+            {"@id": "https://w3id.org/ro/crate/1.2"}
         ]
     },
     {
         "@id": "./",
         "@type": "Dataset",
         "conformsTo": [
-            {"@id": "https://w3id.org/ro/wfrun/process/0.1"},
-            {"@id": "https://w3id.org/ro/wfrun/workflow/0.1"},
-            {"@id": "https://w3id.org/ro/wfrun/provenance/0.1"},
-            {"@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"}
+            {"@id": "https://w3id.org/ro/wfrun/process/0.6-DRAFT"},
+            {"@id": "https://w3id.org/ro/wfrun/workflow/0.6-DRAFT"},
+            {"@id": "https://w3id.org/ro/wfrun/provenance/0.6-DRAFT"},
+            {"@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.1"}
         ],
         "hasPart": [
             {"@id": "packed.cwl"},
             {"@id": "327fc7aedf4f6b69a42a7c8b808dc5a7aff61376"},
-            {"@id": "b9214658cc453331b62c2282b772a5c063dbd284"},
+            {"@id": "b9214658cc453331b62c2282b772a5c063dbd284"},            
             {"@id": "97fe1b50b4582cebc7d853796ebd62e3e163aa3f"}
         ],
         "mainEntity": {"@id": "packed.cwl"},
@@ -79,25 +78,25 @@ The following diagram shows the relationships between all provenance-related ent
             {"@id": "#4154dad3-00cc-4e35-bb8f-a2de5cd7dc49"}
         ]
     },
-    {   "@id": "https://w3id.org/ro/wfrun/process/0.1",
+    {   "@id": "https://w3id.org/ro/wfrun/process/0.6-DRAFT",
         "@type": "CreativeWork",
         "name": "Process Run Crate",
-        "version": "0.1"
+        "version": "0.6-DRAFT"
     },
-    {   "@id": "https://w3id.org/ro/wfrun/workflow/0.1",
+    {   "@id": "https://w3id.org/ro/wfrun/workflow/0.6-DRAFT",
         "@type": "CreativeWork",
         "name": "Workflow Run Crate",
-        "version": "0.1"
+        "version": "0.6-DRAFT"
     },
-    {   "@id": "https://w3id.org/ro/wfrun/provenance/0.1",
+    {   "@id": "https://w3id.org/ro/wfrun/provenance/0.6-DRAFT",
         "@type": "CreativeWork",
         "name": "Provenance Run Crate",
-        "version": "0.1"
+        "version": "0.6-DRAFT"
     },
-    {   "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0",
+    {   "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.1",
         "@type": "CreativeWork",
         "name": "Workflow RO-Crate",
-        "version": "1.0"
+        "version": "1.1"
     },
     {
         "@id": "packed.cwl",
@@ -394,7 +393,7 @@ Note that the `workflow-run` terms are not part of the standard RO-Crate context
 ```json
 {
     "@context": [
-        "https://w3id.org/ro/crate/1.1/context",
+        "https://w3id.org/ro/crate/1.2/context",
         "https://w3id.org/ro/terms/workflow-run/context"
     ],
     "@graph": [...]
@@ -508,12 +507,12 @@ For instance, to indicate a [Conda environment](https://conda.io/projects/conda/
 
 The `encodingFormat` and/or contextual identifier for `conformsTo` SHOULD be provided for machine-readable build/dependency environment files, but it is currently out of scope for this profile to list all possible package environment systems.
 
-The term `buildInstructions` is taken from [CodeMeta terms](https://codemeta.github.io/terms/), which are [scheduled to be included](https://github.com/ResearchObject/ro-crate/pull/276) in the RO-Crate 1.2 JSON-LD context. For RO-Crate 1.1, the term must be added to the `@context` as:
+The term `buildInstructions` is taken from [CodeMeta terms](https://codemeta.github.io/terms/), which are [scheduled to be included](https://github.com/ResearchObject/ro-crate/pull/276) in the RO-Crate 1.2 JSON-LD context. For RO-Crate 1.2, the term must be added to the `@context` as:
 
 ```json
 {
     "@context": [
-        "https://w3id.org/ro/crate/1.1/context",
+        "https://w3id.org/ro/crate/1.2/context",
         "https://w3id.org/ro/terms/workflow-run",
         { "buildInstructions": "https://codemeta.github.io/terms/buildInstructions" }
     ],
@@ -579,12 +578,12 @@ The requirements of this profile are those of [Workflow Run Crate](../workflow_r
   </tr>
 
   <tr>
-   <th colspan="3"><strong>Dataset</strong> (the <a href="https://www.researchobject.org/ro-crate/1.1/root-data-entity.html">root data entity</a>, e.g. <code>"@id": "./"</code>)</th>
+   <th colspan="3"><strong>Dataset</strong> (the <a href="https://www.researchobject.org/ro-crate/1.2/root-data-entity.html">root data entity</a>, e.g. <code>"@id": "./"</code>)</th>
   </tr>
   <tr>
    <td>conformsTo</td>
    <td>MUST</td>
-   <td>Array MUST reference a <code>CreativeWork</code> entity with an <code>@id</code> URI that is consistent with the versioned <em>Permalink</em> of this document, and SHOULD also reference versioned permalinks for <a href="https://w3id.org/ro/wfrun/process/0.6-DRAFT">Process Run Crate</a>, <a href="https://w3id.org/ro/wfrun/workflow/0.6-DRAFT">Workflow Run Crate</a> and <a href="https://w3id.org/workflowhub/workflow-ro-crate/1.0">Workflow RO-Crate</a>.</td>
+   <td>Array MUST reference a <code>CreativeWork</code> entity with an <code>@id</code> URI that is consistent with the versioned <em>Permalink</em> of this document, and SHOULD also reference versioned permalinks for <a href="https://w3id.org/ro/wfrun/process/0.6-DRAFT">Process Run Crate</a>, <a href="https://w3id.org/ro/wfrun/workflow/0.6-DRAFT">Workflow Run Crate</a> and <a href="https://w3id.org/workflowhub/workflow-ro-crate/1.1">Workflow RO-Crate</a>.</td>
   </tr>
 
   <tr>
@@ -689,4 +688,4 @@ The requirements of this profile are those of [Workflow Run Crate](../workflow_r
 
 </table>
 
-For each entity described in the table, the most important properties are highlighted. Other properties supported by the entity (e.g. [minValue](http://schema.org/minValue) for a [PropertyValue](http://schema.org/PropertyValue)) can also be used (they are an implicit MAY requirement). See also [Extending RO-Crate](https://www.researchobject.org/ro-crate/specification/1.1/appendix/jsonld.html#extending-ro-crate) for guidance on defining and using terms not included in the RO-Crate context.
+For each entity described in the table, the most important properties are highlighted. Other properties supported by the entity (e.g. [minValue](http://schema.org/minValue) for a [PropertyValue](http://schema.org/PropertyValue)) can also be used (they are an implicit MAY requirement). See also [Extending RO-Crate](https://www.researchobject.org/ro-crate/specification/1.2/appendix/jsonld.html#extending-ro-crate) for guidance on defining and using terms not included in the RO-Crate context.
