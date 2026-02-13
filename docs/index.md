@@ -77,6 +77,8 @@ Post [here](https://github.com/ResearchObject/workflow-run-crate/issues/1) to jo
 - Jilong Liu <https://orcid.org/0009-0006-6236-1073>
 - Ernest Prabhakar <https://orcid.org/0009-0003-3768-3781>
 - Saleha Muzammil <https://orcid.org/0009-0009-6097-592X>
+- Eli Chadwick <https://orcid.org/0000-0002-0035-6475>
+- Andreas Czerniak <https://orcid.org/0000-0003-3883-4169>
 - ... [you](https://github.com/ResearchObject/workflow-run-crate/issues/1)?
 
 ## Implementations & examples
