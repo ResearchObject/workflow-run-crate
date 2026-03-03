@@ -1,5 +1,5 @@
 { "@context": [
-  "https://w3id.org/ro/crate/1.2-DRAFT/context",
+  "https://w3id.org/ro/crate/1.2/context",
   { "@base": "https://www.researchobject.org/workflow-run-crate/profiles/0.6-DRAFT/provenance_run_crate/"}
   ],
   "@graph": [
@@ -7,7 +7,7 @@
     "@id": "ro-crate-metadata.json",
     "@type": "CreativeWork",
     "license": { "@id": "http://spdx.org/licenses/CC0-1.0" },
-    "conformsTo": {"@id": "https://w3id.org/ro/crate/1.2-DRAFT"},
+    "conformsTo": {"@id": "https://w3id.org/ro/crate/1.2"},
     "about": {"@id": "https://w3id.org/ro/wfrun/provenance/0.6-DRAFT"}
   },  
   {
@@ -23,16 +23,25 @@
     "@id": "https://w3id.org/ro/wfrun/provenance/0.6-DRAFT",
     "@type": ["Dataset","Profile"],
     "isProfileOf": [
-        {"@id": "https://w3id.org/ro/crate/1.2-DRAFT"}
+        {"@id": "https://w3id.org/ro/crate/1.2"}
     ],
     "identifier": "https://w3id.org/ro/wfrun/provenance/0.6-DRAFT",
     "name": "Provenance Run Crate profile",
+    "description": "This profile extends Workflow Run Crate with specifications to describe internal details of the workflow run, such as step executions and intermediate outputs.",
     "version": "0.6-DRAFT",
+    "datePublished": "2024-06-19",
     "license": {
       "@id": "https://www.apache.org/licenses/LICENSE-2.0"
     },
     "author": [
      {"@id": "https://www.researchobject.org/workflow-run-crate/"}
+    ],
+    "keywords": [
+      "informatics",
+      "process",
+      "provenance",
+      "workflow",
+      "workflow execution"
     ],
     "hasPart": [
         { "@id": "index.html" },
@@ -44,7 +53,7 @@
         { "@id": "https://pypi.org/project/runcrate/" },
         { "@id": "https://w3id.org/ro/wfrun/process/0.6-DRAFT" },
         { "@id": "https://w3id.org/ro/wfrun/workflow/0.6-DRAFT" },
-        { "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0" },
+        { "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.1" },
         { "@id": "https://w3id.org/ro/terms/workflow-run#ParameterConnection" },
         { "@id": "https://w3id.org/ro/terms/workflow-run#connection" },
         { "@id": "https://w3id.org/ro/terms/workflow-run#sourceParameter" },
@@ -123,10 +132,10 @@
     "version": "0.6-DRAFT"
 },
 {
-    "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0",
+    "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.1",
     "@type": ["CreativeWork", "Profile"],
     "name": "Workflow RO-Crate profile",
-    "version": "1.0"
+    "version": "1.1"
 },    
   {
     "@id": "https://w3id.org/ro/wfrun/workflow/0.6-DRAFT",
@@ -154,10 +163,10 @@
     "name": "Example Process Run Crate",
     "conformsTo": [
       { "@id": "https://w3id.org/ro/crate" },
-      { "@id": "https://w3id.org/ro/wfrun/process/0.4" },
-      { "@id": "https://w3id.org/ro/wfrun/workflow/0.4" },
-      { "@id": "https://w3id.org/ro/wfrun/provenance/0.4" },
-      { "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0" }
+      { "@id": "https://w3id.org/ro/wfrun/process/0.6-DRAFT" },
+      { "@id": "https://w3id.org/ro/wfrun/workflow/0.6-DRAFT" },
+      { "@id": "https://w3id.org/ro/wfrun/provenance/0.6-DRAFT" },
+      { "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.1" }
     ], 
     "subjectOf": [
       { "@id": "example3/ro-crate-metadata.json" },
@@ -183,14 +192,6 @@
       "@id": "http://www.w3.org/ns/json-ld#Context"
     },
     "encodingFormat": "application/ld+json",
-    "isBasedOn": [
-      {
-        "@id": "https://w3id.org/ro/crate/1.1/context"
-      },
-      {
-        "@id": "https://w3id.org/ro/terms/workflow-run#"
-      }
-    ],
     "license": {
       "@id": "https://creativecommons.org/publicdomain/zero/1.0/"
     }
@@ -262,9 +263,9 @@
   { 
     "@id": "#shouldConformToWorkflowROCrate",
     "@type": "ResourceDescriptor",
-    "name": "SHOULD conform to Workflow RO-Crate profile",
+    "name": "SHOULD conform to Workflow RO-Crate profile 1.1",
     "hasRole": { "@id": "http://purl.org/dc/terms/conformsTo" },
-    "hasArtifact": {"@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"}
+    "hasArtifact": {"@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.1"}
 },
 { 
     "@id": "#shouldConformToProcessCrateProfile",

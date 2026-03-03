@@ -1,5 +1,5 @@
 { "@context": [
-  "https://w3id.org/ro/crate/1.2-DRAFT/context",
+  "https://w3id.org/ro/crate/1.2/context",
   { "@base": "https://www.researchobject.org/workflow-run-crate/profiles/0.6-DRAFT/workflow_run_crate/"}
   ],
   "@graph": [
@@ -7,7 +7,7 @@
     "@id": "ro-crate-metadata.json",
     "@type": "CreativeWork",
     "license": { "@id": "http://spdx.org/licenses/CC0-1.0" },
-    "conformsTo": {"@id": "https://w3id.org/ro/crate/1.2-DRAFT"},
+    "conformsTo": {"@id": "https://w3id.org/ro/crate/1.2"},
     "about": {"@id": "https://w3id.org/ro/wfrun/workflow/0.6-DRAFT"}
   },  
   {
@@ -23,16 +23,25 @@
     "@id": "https://w3id.org/ro/wfrun/workflow/0.6-DRAFT",
     "@type": ["Dataset","Profile"],
     "isProfileOf": [
-        {"@id": "https://w3id.org/ro/crate/1.2-DRAFT"}
+        {"@id": "https://w3id.org/ro/crate/1.2"}
     ],
     "identifier": "https://w3id.org/ro/wfrun/workflow/0.6-DRAFT",
     "name": "Workflow Run Crate profile",
+    "description": "This profile is used to describe the execution of a computational tool that has orchestrated the execution of other tools. Such a tool is represented as a workflow that can be executed using a Workflow Management System (WMS), or workflow engine (e.g. cwltool).",
     "version": "0.6-DRAFT",
+    "datePublished": "2024-06-19",
     "license": {
       "@id": "https://www.apache.org/licenses/LICENSE-2.0"
     },
     "author": [
      {"@id": "https://www.researchobject.org/workflow-run-crate/"}
+    ],
+    "keywords": [
+      "informatics",
+      "process",
+      "provenance",
+      "workflow",
+      "workflow execution"
     ],
     "hasPart": [
         { "@id": "index.html" },
@@ -42,7 +51,7 @@
         { "@id": "https://gxy.io/GTN:T00343" },
         { "@id": "https://pypi.org/project/runcrate/" },
         { "@id": "https://w3id.org/ro/wfrun/process/0.6-DRAFT" },
-        { "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0" },
+        { "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.1" },
         { "@id": "http://schema.org/MediaObject" },
         { "@id": "http://schema.org/additionalType" },
         { "@id": "http://schema.org/CreateAction" },
@@ -68,10 +77,10 @@
         "@id": "http://schema.org/valueRequired"
       }, 
       { 
-        "@id": "https://bioschemas.org/ComputationalWorkflow#input"
+        "@id": "https://bioschemas.org/properties/input"
       },
       { 
-        "@id": "https://bioschemas.org/ComputationalWorkflow#output"
+        "@id": "https://bioschemas.org/properties/output"
       },  
     {
       "@id": "http://purl.org/dc/terms/conformsTo"
@@ -151,10 +160,10 @@
     "version": "0.6-DRAFT"
 },
 {
-    "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0",
+    "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.1",
     "@type": ["CreativeWork", "Profile"],
     "name": "Workflow RO-Crate profile",
-    "version": "1.0"
+    "version": "1.1"
 },  
   {
     "@id": "index.html",
@@ -176,9 +185,9 @@
     "name": "Example Workflow Run Crate",
     "conformsTo": [
       { "@id": "https://w3id.org/ro/crate"},
-      { "@id": "https://w3id.org/ro/wfrun/process/0.4" },
-      { "@id": "https://w3id.org/ro/wfrun/workflow/0.4" },
-      { "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0" }
+      { "@id": "https://w3id.org/ro/wfrun/process/0.6-DRAFT" },
+      { "@id": "https://w3id.org/ro/wfrun/workflow/0.6-DRAFT" },
+      { "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.1" }
     ], 
     "subjectOf": [
       { "@id": "example2/ro-crate-metadata.json" },
@@ -269,9 +278,9 @@
   { 
     "@id": "#shouldConformToWorkflowROCrate",
     "@type": "ResourceDescriptor",
-    "name": "SHOULD conform to Workflow RO-Crate profile",
+    "name": "SHOULD conform to Workflow RO-Crate profile 1.1",
     "hasRole": { "@id": "http://purl.org/dc/terms/conformsTo" },
-    "hasArtifact": {"@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"}
+    "hasArtifact": {"@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.1"}
 },
 { 
     "@id": "#shouldConformToProcessCrateProfile",
@@ -445,13 +454,13 @@
     "name": "valueRequired"
   },  
   { 
-    "@id": "https://bioschemas.org/ComputationalWorkflow#input",
+    "@id": "https://bioschemas.org/properties/input",
     "@type": "DefinedTerm",
     "termCode": "input",
     "name": "input"
   },
   { 
-    "@id": "https://bioschemas.org/ComputationalWorkflow#output",
+    "@id": "https://bioschemas.org/properties/output",
     "@type": "DefinedTerm",
     "name": "output",
     "termCode": "output"
