@@ -47,6 +47,13 @@ _Zenodo_
 
 ## Publications
 
+### 2026
+
+Nicolò Giacomini (2026):
+**Metadata capture, knowledge extraction, and predictive analysis for HPC workflows**.
+Master thesis, UPC, Facultat d'Informàtica de Barcelona, Departament d'Arquitectura de Computadors.
+<https://hdl.handle.net/2117/460572>
+
 ### 2025
 
 Panna Lukács (2025):
