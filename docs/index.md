@@ -79,6 +79,7 @@ Post [here](https://github.com/ResearchObject/workflow-run-crate/issues/1) to jo
 - Saleha Muzammil <https://orcid.org/0009-0009-6097-592X>
 - Eli Chadwick <https://orcid.org/0000-0002-0035-6475>
 - Andreas Czerniak <https://orcid.org/0000-0003-3883-4169>
+- Débora Pina <https://orcid.org/0000-0001-6616-0291>
 - ... [you](https://github.com/ResearchObject/workflow-run-crate/issues/1)?
 
 ## Implementations & examples
