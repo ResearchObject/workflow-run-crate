@@ -80,6 +80,7 @@ Post [here](https://github.com/ResearchObject/workflow-run-crate/issues/1) to jo
 - Eli Chadwick <https://orcid.org/0000-0002-0035-6475>
 - Andreas Czerniak <https://orcid.org/0000-0003-3883-4169>
 - Débora Pina <https://orcid.org/0000-0001-6616-0291>
+- Friedrich Schwarz <https://orcid.org/0009-0001-1167-8365>
 - ... [you](https://github.com/ResearchObject/workflow-run-crate/issues/1)?
 
 ## Implementations & examples
