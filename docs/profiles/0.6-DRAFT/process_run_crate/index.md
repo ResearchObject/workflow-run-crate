@@ -18,6 +18,7 @@ title: Process Run Crate
 
 This profile uses terminology from the [RO-Crate 1.3 specification](https://w3id.org/ro/crate/1.3), and [extends it](https://www.researchobject.org/ro-crate/specification/1.3/appendix/jsonld.html#extending-ro-crate) with additional terms from the [workflow-run](https://github.com/ResearchObject/ro-terms/tree/master/workflow-run) ro-terms namespace.
 
+**Note**: The IRI mappings for `ComputationalWorkflow` and other Bioschemas terms were updated in the [RO-Crate 1.3 JSON-LD context](https://www.researchobject.org/ro-crate/specification/1.3/context.jsonld) - see the [changelog](../changelog.md) for details.
 
 ## Overview
 
