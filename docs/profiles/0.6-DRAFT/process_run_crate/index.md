@@ -137,7 +137,7 @@ Note that the command line shown in the action's `description` is not directly r
   <tr>
    <td>@type</td>
    <td>MUST</td>
-   <td>SHOULD include <a href="http://schema.org/SoftwareApplication">SoftwareApplication</a>, <a href="http://schema.org/SoftwareSourceCode">SoftwareSourceCode</a> or <a href="https://bioschemas.org/ComputationalWorkflow">ComputationalWorkflow</a></td>
+   <td>SHOULD include <a href="http://schema.org/SoftwareApplication">SoftwareApplication</a>, <a href="http://schema.org/SoftwareSourceCode">SoftwareSourceCode</a> or <a href="https://bioschemas.org/terms/ComputationalWorkflow">ComputationalWorkflow</a></td>
   </tr>
 
   <tr>

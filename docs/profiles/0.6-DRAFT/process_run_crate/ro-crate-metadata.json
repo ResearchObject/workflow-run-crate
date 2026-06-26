@@ -90,7 +90,7 @@
           "@id": "http://schema.org/SoftwareSourceCode"
         },
         {
-          "@id": "https://bioschemas.org/ComputationalWorkflow"
+          "@id": "https://bioschemas.org/terms/ComputationalWorkflow"
         },
         {
           "@id": "http://schema.org/CreateAction"
@@ -642,7 +642,7 @@
       "description": "A parameter connection created by this workflow",
       "domainIncludes": [
         {
-          "@id": "https://bioschemas.org/ComputationalWorkflow"
+          "@id": "https://bioschemas.org/terms/ComputationalWorkflow"
         },
         {
           "@id": "http://schema.org/HowToStep"
@@ -670,7 +670,7 @@
       ],
       "rangeIncludes": [
         {
-          "@id": "https://bioschemas.org/FormalParameter"
+          "@id": "https://bioschemas.org/terms/FormalParameter"
         }
       ]
     },
@@ -690,7 +690,7 @@
       ],
       "rangeIncludes": [
         {
-          "@id": "https://bioschemas.org/FormalParameter"
+          "@id": "https://bioschemas.org/terms/FormalParameter"
         }
       ]
     },
@@ -719,7 +719,7 @@
       ],
       "rangeIncludes": [
         {
-          "@id": "https://bioschemas.org/FormalParameter"
+          "@id": "https://bioschemas.org/terms/FormalParameter"
         },
         {
           "@id": "http://schema.org/PropertyValue"
@@ -923,12 +923,12 @@
       "name": "Text"
     },
     {
-      "@id": "https://bioschemas.org/FormalParameter",
+      "@id": "https://bioschemas.org/terms/FormalParameter",
       "@type": "DefinedTerm",
       "name": "FormalParameter"
     },
     {
-      "@id": "https://bioschemas.org/ComputationalWorkflow",
+      "@id": "https://bioschemas.org/terms/ComputationalWorkflow",
       "@type": "DefinedTerm",
       "name": "ComputationalWorkflow"
     },
