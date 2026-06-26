@@ -17,12 +17,12 @@ title: Workflow Run Crate
 * JSON-LD context: <https://w3id.org/ro/terms/workflow-run/context>
 * Vocabulary terms:  <https://w3id.org/ro/terms/workflow-run#>
 
-This profile uses terminology from the [RO-Crate 1.2 specification](https://w3id.org/ro/crate/1.2).
+This profile uses terminology from the [RO-Crate 1.3 specification](https://w3id.org/ro/crate/1.3).
 
 
 ## Overview
 
-This profile is used to describe the execution of a computational tool that has orchestrated the execution of other tools. Such a tool is represented as a [workflow](https://www.researchobject.org/ro-crate/specification/1.2/workflows.html) that can be executed using a *Workflow Management System (WMS)*, or *workflow engine* (e.g. [cwltool](https://github.com/common-workflow-language/cwltool)).
+This profile is used to describe the execution of a computational tool that has orchestrated the execution of other tools. Such a tool is represented as a [workflow](https://www.researchobject.org/ro-crate/specification/1.3/workflows.html) that can be executed using a *Workflow Management System (WMS)*, or *workflow engine* (e.g. [cwltool](https://github.com/common-workflow-language/cwltool)).
 
 Workflow Run Crate is a combination of [Process Run Crate](../process_run_crate) and [Workflow RO-Crate](https://w3id.org/workflowhub/workflow-ro-crate/). In particular, the RO-Crate MUST have a `ComputationalWorkflow` [mainEntity](http://schema.org/mainEntity) described according to the Workflow RO-Crate specification (*main workflow*), and `CreateAction` instances corresponding to its execution (thus having the main workflow as `instrument`) MUST be described as specified in Process Run Crate and this profile. Details regarding the execution of individual workflow steps can be described with the [Provenance Run Crate](../provenance_run_crate) profile.
 
@@ -46,7 +46,7 @@ The following diagram shows the relationships between provenance-related entitie
 
 ```json
 { "@context": [
-    "https://w3id.org/ro/crate/1.2/context",
+    "https://w3id.org/ro/crate/1.3/context",
     "https://w3id.org/ro/terms/workflow-run/context"
   ],
   "@graph": [
@@ -54,7 +54,7 @@ The following diagram shows the relationships between provenance-related entitie
         "@id": "ro-crate-metadata.json",
         "@type": "CreativeWork",
         "about": {"@id": "./"},
-        "conformsTo": {"@id": "https://w3id.org/ro/crate/1.2"}
+        "conformsTo": {"@id": "https://w3id.org/ro/crate/1.3"}
     },
     {
         "@id": "./",
@@ -302,7 +302,7 @@ This profile inherits the requirements of [Process Run Crate](../process_run_cra
   </tr>
 
   <tr>
-   <th colspan="3"><strong>Dataset</strong> (the <a href="https://www.researchobject.org/ro-crate/1.2/root-data-entity.html">root data entity</a>, e.g. <code>"@id": "./"</code>)</th>
+   <th colspan="3"><strong>Dataset</strong> (the <a href="https://www.researchobject.org/ro-crate/1.3/root-data-entity.html">root data entity</a>, e.g. <code>"@id": "./"</code>)</th>
   </tr>
   <tr>
    <td>conformsTo</td>
@@ -350,4 +350,4 @@ This profile inherits the requirements of [Process Run Crate](../process_run_cra
 
 </table>
 
-For each entity described in the table, the most important properties are highlighted. Other properties supported by the entity (e.g. [minValue](http://schema.org/minValue) for a [PropertyValue](http://schema.org/PropertyValue)) can also be used (they are an implicit MAY requirement). See also [Extending RO-Crate](https://www.researchobject.org/ro-crate/specification/1.2/appendix/jsonld.html#extending-ro-crate) for guidance on defining and using terms not included in the RO-Crate context.
+For each entity described in the table, the most important properties are highlighted. Other properties supported by the entity (e.g. [minValue](http://schema.org/minValue) for a [PropertyValue](http://schema.org/PropertyValue)) can also be used (they are an implicit MAY requirement). See also [Extending RO-Crate](https://www.researchobject.org/ro-crate/specification/1.3/appendix/jsonld.html#extending-ro-crate) for guidance on defining and using terms not included in the RO-Crate context.
