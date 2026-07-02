@@ -121,8 +121,8 @@ In addition, some computational workflow approaches have RO-Crate support which 
 ### RO-Crate links
 
 - [RO-Crate homepage](https://w3id.org/ro/crate)
-- [RO-Crate specification 1.2](https://www.researchobject.org/ro-crate/1.2/)
-- [RO-Crate profiles](https://www.researchobject.org/ro-crate/1.2/profiles) (within the specification above)
+- [RO-Crate specification 1.3](https://w3id.org/ro/crate/1.3)
+- [RO-Crate profiles](https://www.researchobject.org/ro-crate/specification/1.3/profiles.html) (within the specification above)
 - [Workflow Crate](https://w3id.org/workflowhub/workflow-ro-crate/)  (profile for a workflow _definition_)
 - [Workflow Testing Crate](https://lifemonitor.eu/workflow_testing_ro_crate) (profile for defining workflow tests)
 - [Adding a ComputationalWorkflow in RO-Crate](https://www.researchobject.org/ro-crate/1.1/workflows.html)
