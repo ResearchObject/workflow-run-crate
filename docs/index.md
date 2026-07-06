@@ -81,6 +81,7 @@ Post [here](https://github.com/ResearchObject/workflow-run-crate/issues/1) to jo
 - Andreas Czerniak <https://orcid.org/0000-0003-3883-4169>
 - Débora Pina <https://orcid.org/0000-0001-6616-0291>
 - Friedrich Schwarz <https://orcid.org/0009-0001-1167-8365>
+- Mahdi Jafarkhani <https://orcid.org/0009-0008-6162-8404>
 - ... [you](https://github.com/ResearchObject/workflow-run-crate/issues/1)?
 
 ## Implementations & examples
