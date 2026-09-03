@@ -66,7 +66,7 @@ The following diagram shows the relationships between provenance-related entitie
     {   "@id": "https://w3id.org/ro/wfrun/process/0.6",
         "@type": "CreativeWork",
         "name": "Process Run Crate",
-        "version": "0.1"
+        "version": "0.6"
     },
     {
         "@id": "https://www.imagemagick.org/",
