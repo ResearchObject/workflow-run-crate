@@ -12,17 +12,18 @@ title: Workflow Run Crate
 * Example conforming crate: [ro-crate-metadata.json](example2/ro-crate-metadata.json) [ro-crate-preview.html](example2/ro-crate-preview.html)
 * Profile Crate: [ro-crate-metadata.json](ro-crate-metadata.json) [ro-crate-preview.html](ro-crate-preview.html)
 * Extends:
-  - [Process Run Crate](https://w3id.org/ro/wfrun/process/0.6-DRAFT)
-  - [Workflow RO-Crate](https://w3id.org/workflowhub/workflow-ro-crate/)
+  - [Process Run Crate 0.6-DRAFT](https://w3id.org/ro/wfrun/process/0.6-DRAFT)
+  - [Workflow RO-Crate 1.1](https://w3id.org/workflowhub/workflow-ro-crate/1.1)
 * JSON-LD context: <https://w3id.org/ro/terms/workflow-run/context>
 * Vocabulary terms:  <https://w3id.org/ro/terms/workflow-run#>
 
-This profile uses terminology from the [RO-Crate 1.1 specification](https://w3id.org/ro/crate/1.1).
+This profile uses terminology from the [RO-Crate 1.3 specification](https://w3id.org/ro/crate/1.3).
 
+**Note**: The IRI mappings for `ComputationalWorkflow`, `FormalParameter`, `input`, and `output` were updated in the [RO-Crate 1.3 JSON-LD context](https://www.researchobject.org/ro-crate/specification/1.3/context.jsonld) - see the [changelog](../changelog.md) for details.
 
 ## Overview
 
-This profile is used to describe the execution of a computational tool that has orchestrated the execution of other tools. Such a tool is represented as a [workflow](https://www.researchobject.org/ro-crate/specification/1.1/workflows.html) that can be executed using a *Workflow Management System (WMS)*, or *workflow engine* (e.g. [cwltool](https://github.com/common-workflow-language/cwltool)).
+This profile is used to describe the execution of a computational tool that has orchestrated the execution of other tools. Such a tool is represented as a [workflow](https://www.researchobject.org/ro-crate/specification/1.3/workflows.html) that can be executed using a *Workflow Management System (WMS)*, or *workflow engine* (e.g. [cwltool](https://github.com/common-workflow-language/cwltool)).
 
 Workflow Run Crate is a combination of [Process Run Crate](../process_run_crate) and [Workflow RO-Crate](https://w3id.org/workflowhub/workflow-ro-crate/). In particular, the RO-Crate MUST have a `ComputationalWorkflow` [mainEntity](http://schema.org/mainEntity) described according to the Workflow RO-Crate specification (*main workflow*), and `CreateAction` instances corresponding to its execution (thus having the main workflow as `instrument`) MUST be described as specified in Process Run Crate and this profile. Details regarding the execution of individual workflow steps can be described with the [Provenance Run Crate](../provenance_run_crate) profile.
 
@@ -46,7 +47,7 @@ The following diagram shows the relationships between provenance-related entitie
 
 ```json
 { "@context": [
-    "https://w3id.org/ro/crate/1.1/context",
+    "https://w3id.org/ro/crate/1.3/context",
     "https://w3id.org/ro/terms/workflow-run/context"
   ],
   "@graph": [
@@ -54,18 +55,15 @@ The following diagram shows the relationships between provenance-related entitie
         "@id": "ro-crate-metadata.json",
         "@type": "CreativeWork",
         "about": {"@id": "./"},
-        "conformsTo": [
-            {"@id": "https://w3id.org/ro/crate/1.1"},
-            {"@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"}
-        ]
+        "conformsTo": {"@id": "https://w3id.org/ro/crate/1.3"}
     },
     {
         "@id": "./",
         "@type": "Dataset",
         "conformsTo": [
-            {"@id": "https://w3id.org/ro/wfrun/process/0.1"},
-            {"@id": "https://w3id.org/ro/wfrun/workflow/0.1"},
-            {"@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"}
+            {"@id": "https://w3id.org/ro/wfrun/process/0.6-DRAFT"},
+            {"@id": "https://w3id.org/ro/wfrun/workflow/0.6-DRAFT"},
+            {"@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.1"}
         ],
         "hasPart": [
             {"@id": "Galaxy-Workflow-Hello_World.ga"},
@@ -77,20 +75,20 @@ The following diagram shows the relationships between provenance-related entitie
         "mainEntity": {"@id": "Galaxy-Workflow-Hello_World.ga"},
         "mentions": {"@id": "#wfrun-5a5970ab-4375-444d-9a87-a764a66e3a47"}
     },
-    {   "@id": "https://w3id.org/ro/wfrun/process/0.1",
+    {   "@id": "https://w3id.org/ro/wfrun/process/0.6-DRAFT",
         "@type": "CreativeWork",
         "name": "Process Run Crate",
-        "version": "0.1"
+        "version": "0.6-DRAFT"
     },
-    {   "@id": "https://w3id.org/ro/wfrun/workflow/0.1",
+    {   "@id": "https://w3id.org/ro/wfrun/workflow/0.6-DRAFT",
         "@type": "CreativeWork",
         "name": "Workflow Run Crate",
-        "version": "0.1"
+        "version": "0.6-DRAFT"
     },
-    {   "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0",
+    {   "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.1",
         "@type": "CreativeWork",
         "name": "Workflow RO-Crate",
-        "version": "1.0"
+        "version": "1.1"
     },
     {
         "@id": "Galaxy-Workflow-Hello_World.ga",
@@ -305,12 +303,12 @@ This profile inherits the requirements of [Process Run Crate](../process_run_cra
   </tr>
 
   <tr>
-   <th colspan="3"><strong>Dataset</strong> (the <a href="https://www.researchobject.org/ro-crate/1.1/root-data-entity.html">root data entity</a>, e.g. <code>"@id": "./"</code>)</th>
+   <th colspan="3"><strong>Dataset</strong> (the <a href="https://www.researchobject.org/ro-crate/specification/1.3/root-data-entity.html">root data entity</a>, e.g. <code>"@id": "./"</code>)</th>
   </tr>
   <tr>
    <td>conformsTo</td>
    <td>MUST</td>
-   <td>Array MUST reference a <code>CreativeWork</code> entity with an <code>@id</code> URI that is consistent with the versioned <em>Permalink</em> of this document, and SHOULD also reference versioned permalinks for <a href="https://w3id.org/ro/wfrun/process/0.6-DRAFT">Process Run Crate</a> and <a href="https://w3id.org/workflowhub/workflow-ro-crate/1.0">Workflow RO-Crate</a>.</td>
+   <td>Array MUST reference a <code>CreativeWork</code> entity with an <code>@id</code> URI that is consistent with the versioned <em>Permalink</em> of this document, and SHOULD also reference versioned permalinks for <a href="https://w3id.org/ro/wfrun/process/0.6-DRAFT">Process Run Crate</a> and <a href="https://w3id.org/workflowhub/workflow-ro-crate/1.1">Workflow RO-Crate</a>.</td>
   </tr>
 
   <tr>
@@ -353,4 +351,4 @@ This profile inherits the requirements of [Process Run Crate](../process_run_cra
 
 </table>
 
-For each entity described in the table, the most important properties are highlighted. Other properties supported by the entity (e.g. [minValue](http://schema.org/minValue) for a [PropertyValue](http://schema.org/PropertyValue)) can also be used (they are an implicit MAY requirement). See also [Extending RO-Crate](https://www.researchobject.org/ro-crate/specification/1.1/appendix/jsonld.html#extending-ro-crate) for guidance on defining and using terms not included in the RO-Crate context.
+For each entity described in the table, the most important properties are highlighted. Other properties supported by the entity (e.g. [minValue](http://schema.org/minValue) for a [PropertyValue](http://schema.org/PropertyValue)) can also be used (they are an implicit MAY requirement). See also [Extending RO-Crate](https://www.researchobject.org/ro-crate/specification/1.3/appendix/jsonld.html#extending-ro-crate) for guidance on defining and using terms not included in the RO-Crate context.
