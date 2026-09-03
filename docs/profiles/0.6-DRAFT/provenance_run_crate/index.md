@@ -508,20 +508,6 @@ For instance, to indicate a [Conda environment](https://conda.io/projects/conda/
 
 The `encodingFormat` and/or contextual identifier for `conformsTo` SHOULD be provided for machine-readable build/dependency environment files, but it is currently out of scope for this profile to list all possible package environment systems.
 
-The term `buildInstructions` is taken from [CodeMeta terms](https://codemeta.github.io/terms/), which are [scheduled to be included](https://github.com/ResearchObject/ro-crate/pull/276) in the RO-Crate 1.3 JSON-LD context. For RO-Crate 1.3, the term must be added to the `@context` as:
-
-```json
-{
-    "@context": [
-        "https://w3id.org/ro/crate/1.3/context",
-        "https://w3id.org/ro/terms/workflow-run",
-        { "buildInstructions": "https://codemeta.github.io/terms/buildInstructions" }
-    ],
-    "@graph": [...]
-}
-```
-
-
 
 ## Conditional step execution
 
