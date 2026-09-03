@@ -123,7 +123,7 @@ Note that the command line shown in the action's `description` is not directly r
   </tr>
 
   <tr>
-   <th colspan="3"><strong>Dataset</strong> (the <a href="https://www.researchobject.org/ro-crate/1.3/root-data-entity.html">root data entity</a>, e.g. <code>"@id": "./"</code>)</th>
+   <th colspan="3"><strong>Dataset</strong> (the <a href="https://www.researchobject.org/ro-crate/specification/1.3/root-data-entity.html">root data entity</a>, e.g. <code>"@id": "./"</code>)</th>
   </tr>
   <tr>
    <td>conformsTo</td>
@@ -178,7 +178,7 @@ Note that the command line shown in the action's `description` is not directly r
   <tr>
    <td>@id</td>
    <td>MUST</td>
-   <td>A unique identifier for the execution, e.g. <code>"urn:uuid:50ec5c76-1f7a-4130-8ef6-846756b228c1"</code>, <code>"#f99a8e6c"</code>. MAY be an absolute URI, e.g. <a href="http://example.com/runs/846756b228c1">http://example.com/runs/846756b228c1</a>. The use of randomly generated <a href="https://datatracker.ietf.org/doc/html/rfc4122">UUIDs</a> (type 4) is RECOMMENDED. SHOULD be listed under <a href="http://schema.org/mentions">mentions</a> of the <a href="https://www.researchobject.org/ro-crate/1.3/root-data-entity.html">root data entity</a>.</td>
+   <td>A unique identifier for the execution, e.g. <code>"urn:uuid:50ec5c76-1f7a-4130-8ef6-846756b228c1"</code>, <code>"#f99a8e6c"</code>. MAY be an absolute URI, e.g. <a href="http://example.com/runs/846756b228c1">http://example.com/runs/846756b228c1</a>. The use of randomly generated <a href="https://datatracker.ietf.org/doc/html/rfc4122">UUIDs</a> (type 4) is RECOMMENDED. SHOULD be listed under <a href="http://schema.org/mentions">mentions</a> of the <a href="https://www.researchobject.org/ro-crate/specification/1.3/root-data-entity.html">root data entity</a>.</td>
   </tr>
 
   <tr>
@@ -214,7 +214,7 @@ Note that the command line shown in the action's `description` is not directly r
   <tr>
    <td>agent</td>
    <td>SHOULD</td>
-   <td>Identifier of a <a href="https://www.researchobject.org/ro-crate/1.3/contextual-entities.html#people">Person</a> or <a href="https://www.researchobject.org/ro-crate/1.3/contextual-entities.html#organizations-as-values">Organization</a> contextual entity that started/executed this tool.</td>
+   <td>Identifier of a <a href="https://www.researchobject.org/ro-crate/specification/1.3/contextual-entities.html#people">Person</a> or <a href="https://www.researchobject.org/ro-crate/specification/1.3/contextual-entities.html#organizations-as-values">Organization</a> contextual entity that started/executed this tool.</td>
   </tr>
 
   <tr>
@@ -300,7 +300,7 @@ Mirax2-Fluorescence-2/Data0001.dat
 Mirax2-Fluorescence-2/Data0023.dat
 ```
 
-An application that reads [this format](https://openslide.org/formats/mirax/) needs to be pointed to the `.mrxs` file, and expects to find a directory containing the other files in the same location as the `.mrxs` file, with the same name minus the extension. Thus, even though an application that processes MIRAX files would probably take only the `.mrxs` file as argument, the other ones must be present in the expected location and with the expected names (in CWL, this kind of relationship is expressed via `secondaryFiles`). In this case, the object SHOULD be represented by a [contextual entity](https://www.researchobject.org/ro-crate/1.3/contextual-entities.html) of type [Collection](http://schema.org/Collection) listing all files under `hasPart`, with a `mainEntity` referencing the main file. The collection SHOULD be referenced from the root data entity via `mentions`.
+An application that reads [this format](https://openslide.org/formats/mirax/) needs to be pointed to the `.mrxs` file, and expects to find a directory containing the other files in the same location as the `.mrxs` file, with the same name minus the extension. Thus, even though an application that processes MIRAX files would probably take only the `.mrxs` file as argument, the other ones must be present in the expected location and with the expected names (in CWL, this kind of relationship is expressed via `secondaryFiles`). In this case, the object SHOULD be represented by a [contextual entity](https://www.researchobject.org/ro-crate/specification/1.3/contextual-entities.html) of type [Collection](http://schema.org/Collection) listing all files under `hasPart`, with a `mainEntity` referencing the main file. The collection SHOULD be referenced from the root data entity via `mentions`.
 
 ```json
 {
