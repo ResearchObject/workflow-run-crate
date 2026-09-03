@@ -185,7 +185,7 @@
     {
       "@id": "https://www.researchobject.org/workflow-run-crate/",
       "@type": "Project",
-      "name": "Workflow Run Crate task force",
+      "name": "Workflow Run RO-Crate task force",
       "member": [
         {
           "@id": "https://orcid.org/0000-0001-8271-5429"
@@ -300,6 +300,36 @@
         },
         {
           "@id": "https://orcid.org/0000-0003-0711-5196"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-2653-7418"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-4663-5613"
+        },
+        {
+          "@id": "https://orcid.org/0009-0006-6236-1073"
+        },
+        {
+          "@id": "https://orcid.org/0009-0003-3768-3781"
+        },
+        {
+          "@id": "https://orcid.org/0009-0009-6097-592X"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-0035-6475"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-3883-4169"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-6616-0291"
+        },
+        {
+          "@id": "https://orcid.org/0009-0001-1167-8365"
+        },
+        {
+          "@id": "https://orcid.org/0009-0008-6162-8404"
         }
       ],
       "parentOrganization": {
@@ -879,9 +909,54 @@
       "name": "Felix Bartusch"
     },
     {
+      "@id": "https://orcid.org/0000-0002-2653-7418",
+      "@type": "Person",
+      "name": "Daniel Wheeler"
+    },
+    {
       "@id": "https://orcid.org/0000-0002-4663-5613",
       "@type": "Person",
       "name": "Luca Pireddu"
+    },
+    {
+      "@id": "https://orcid.org/0009-0006-6236-1073",
+      "@type": "Person",
+      "name": "Jilong Liu"
+    },
+    {
+      "@id": "https://orcid.org/0009-0003-3768-3781",
+      "@type": "Person",
+      "name": "Ernest Prabhakar"
+    },
+    {
+      "@id": "https://orcid.org/0009-0009-6097-592X",
+      "@type": "Person",
+      "name": "Saleha Muzammil"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-0035-6475",
+      "@type": "Person",
+      "name": "Eli Chadwick"
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-3883-4169",
+      "@type": "Person",
+      "name": "Andreas Czerniak"
+    },
+    {
+      "@id": "https://orcid.org/0000-0001-6616-0291",
+      "@type": "Person",
+      "name": "Débora Pina"
+    },
+    {
+      "@id": "https://orcid.org/0009-0001-1167-8365",
+      "@type": "Person",
+      "name": "Friedrich Schwarz"
+    },
+    {
+      "@id": "https://orcid.org/0009-0008-6162-8404",
+      "@type": "Person",
+      "name": "Mahdi Jafarkhani"
     },
     {
       "@id": "https://orcid.org/0000-0002-1119-1792",
