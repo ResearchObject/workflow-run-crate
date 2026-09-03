@@ -303,7 +303,7 @@ This profile inherits the requirements of [Process Run Crate](../process_run_cra
   </tr>
 
   <tr>
-   <th colspan="3"><strong>Dataset</strong> (the <a href="https://www.researchobject.org/ro-crate/1.3/root-data-entity.html">root data entity</a>, e.g. <code>"@id": "./"</code>)</th>
+   <th colspan="3"><strong>Dataset</strong> (the <a href="https://www.researchobject.org/ro-crate/specification/1.3/root-data-entity.html">root data entity</a>, e.g. <code>"@id": "./"</code>)</th>
   </tr>
   <tr>
    <td>conformsTo</td>
