@@ -5,14 +5,14 @@ title: Provenance Run Crate
 
 # Provenance Run Crate
 
-* Version: 0.6-DRAFT
-* Permalink: <https://w3id.org/ro/wfrun/provenance/0.6-DRAFT>
+* Version: 0.6
+* Permalink: <https://w3id.org/ro/wfrun/provenance/0.6>
 * Authors: [Workflow Run RO-Crate working group](https://www.researchobject.org/workflow-run-crate/#community)
 * License: [Apache License, version 2.0](https://www.apache.org/licenses/LICENSE-2.0) (SPDX: [`Apache-2.0`](http://spdx.org/licenses/Apache-2.0))
 * Example conforming crate: [ro-crate-metadata.json](example3/ro-crate-metadata.json) [ro-crate-preview.html](example3/ro-crate-preview.html)
 * Profile Crate: [ro-crate-metadata.json](ro-crate-metadata.json) [ro-crate-preview.html](ro-crate-preview.html)
 * Extends:
-  - [Workflow Run Crate 0.6-DRAFT](https://w3id.org/ro/wfrun/workflow/0.6-DRAFT)
+  - [Workflow Run Crate 0.6](https://w3id.org/ro/wfrun/workflow/0.6)
 * JSON-LD context: <https://w3id.org/ro/terms/workflow-run/context>
 * Vocabulary terms:  <https://w3id.org/ro/terms/workflow-run#>
 
@@ -63,9 +63,9 @@ The following diagram shows the relationships between all provenance-related ent
         "@id": "./",
         "@type": "Dataset",
         "conformsTo": [
-            {"@id": "https://w3id.org/ro/wfrun/process/0.6-DRAFT"},
-            {"@id": "https://w3id.org/ro/wfrun/workflow/0.6-DRAFT"},
-            {"@id": "https://w3id.org/ro/wfrun/provenance/0.6-DRAFT"},
+            {"@id": "https://w3id.org/ro/wfrun/process/0.6"},
+            {"@id": "https://w3id.org/ro/wfrun/workflow/0.6"},
+            {"@id": "https://w3id.org/ro/wfrun/provenance/0.6"},
             {"@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.1"}
         ],
         "hasPart": [
@@ -79,20 +79,20 @@ The following diagram shows the relationships between all provenance-related ent
             {"@id": "#4154dad3-00cc-4e35-bb8f-a2de5cd7dc49"}
         ]
     },
-    {   "@id": "https://w3id.org/ro/wfrun/process/0.6-DRAFT",
+    {   "@id": "https://w3id.org/ro/wfrun/process/0.6",
         "@type": "CreativeWork",
         "name": "Process Run Crate",
-        "version": "0.6-DRAFT"
+        "version": "0.6"
     },
-    {   "@id": "https://w3id.org/ro/wfrun/workflow/0.6-DRAFT",
+    {   "@id": "https://w3id.org/ro/wfrun/workflow/0.6",
         "@type": "CreativeWork",
         "name": "Workflow Run Crate",
-        "version": "0.6-DRAFT"
+        "version": "0.6"
     },
-    {   "@id": "https://w3id.org/ro/wfrun/provenance/0.6-DRAFT",
+    {   "@id": "https://w3id.org/ro/wfrun/provenance/0.6",
         "@type": "CreativeWork",
         "name": "Provenance Run Crate",
-        "version": "0.6-DRAFT"
+        "version": "0.6"
     },
     {   "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.1",
         "@type": "CreativeWork",
@@ -570,7 +570,7 @@ The requirements of this profile are those of [Workflow Run Crate](../workflow_r
   <tr>
    <td>conformsTo</td>
    <td>MUST</td>
-   <td>Array MUST reference a <code>CreativeWork</code> entity with an <code>@id</code> URI that is consistent with the versioned <em>Permalink</em> of this document, and SHOULD also reference versioned permalinks for <a href="https://w3id.org/ro/wfrun/process/0.6-DRAFT">Process Run Crate</a>, <a href="https://w3id.org/ro/wfrun/workflow/0.6-DRAFT">Workflow Run Crate</a> and <a href="https://w3id.org/workflowhub/workflow-ro-crate/1.1">Workflow RO-Crate</a>.</td>
+   <td>Array MUST reference a <code>CreativeWork</code> entity with an <code>@id</code> URI that is consistent with the versioned <em>Permalink</em> of this document, and SHOULD also reference versioned permalinks for <a href="https://w3id.org/ro/wfrun/process/0.6">Process Run Crate</a>, <a href="https://w3id.org/ro/wfrun/workflow/0.6">Workflow Run Crate</a> and <a href="https://w3id.org/workflowhub/workflow-ro-crate/1.1">Workflow RO-Crate</a>.</td>
   </tr>
 
   <tr>

@@ -5,8 +5,8 @@ title: Process Run Crate
 
 # Process Run Crate
 
-* Version: 0.6-DRAFT
-* Permalink: <https://w3id.org/ro/wfrun/process/0.6-DRAFT>
+* Version: 0.6
+* Permalink: <https://w3id.org/ro/wfrun/process/0.6>
 * Authors: [Workflow Run RO-Crate working group](https://www.researchobject.org/workflow-run-crate/#community)
 * License: [Apache License, version 2.0](https://www.apache.org/licenses/LICENSE-2.0) (SPDX: [`Apache-2.0`](http://spdx.org/licenses/Apache-2.0))
 * Example conforming crate: [ro-crate-metadata.json](example1/ro-crate-metadata.json) [ro-crate-preview.html](example1/ro-crate-preview.html)
@@ -55,7 +55,7 @@ The following diagram shows the relationships between provenance-related entitie
     {
         "@id": "./",
         "@type": "Dataset",
-        "conformsTo": {"@id": "https://w3id.org/ro/wfrun/process/0.6-DRAFT"},
+        "conformsTo": {"@id": "https://w3id.org/ro/wfrun/process/0.6"},
         "hasPart": [
             {"@id": "pics/2017-06-11%2012.56.14.jpg"},
             {"@id": "pics/sepia_fence.jpg"}
@@ -63,10 +63,10 @@ The following diagram shows the relationships between provenance-related entitie
         "mentions": {"@id": "#SepiaConversion_1"},
         "name": "My Pictures"
     },
-    {   "@id": "https://w3id.org/ro/wfrun/process/0.6-DRAFT",
+    {   "@id": "https://w3id.org/ro/wfrun/process/0.6",
         "@type": "CreativeWork",
         "name": "Process Run Crate",
-        "version": "0.6-DRAFT"
+        "version": "0.6"
     },
     {
         "@id": "https://www.imagemagick.org/",
@@ -128,7 +128,7 @@ Note that the command line shown in the action's `description` is not directly r
   <tr>
    <td>conformsTo</td>
    <td>MUST</td>
-   <td>MUST reference a <code>CreativeWork</code> entity with an <code>@id</code> URI that is consistent with the versioned <em>Permalink</em> of this document, e.g. <code>{"@id": "https://w3id.org/ro/wfrun/process/0.6-DRAFT"}</code></td>
+   <td>MUST reference a <code>CreativeWork</code> entity with an <code>@id</code> URI that is consistent with the versioned <em>Permalink</em> of this document, e.g. <code>{"@id": "https://w3id.org/ro/wfrun/process/0.6"}</code></td>
   </tr>
 
   <tr>

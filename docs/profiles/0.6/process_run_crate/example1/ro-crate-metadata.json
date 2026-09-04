@@ -15,7 +15,7 @@
             "@id": "./",
             "@type": "Dataset",
             "conformsTo": {
-                "@id": "https://w3id.org/ro/wfrun/process/0.6-DRAFT"
+                "@id": "https://w3id.org/ro/wfrun/process/0.6"
             },
             "hasPart": [
                 {
@@ -37,10 +37,10 @@
             "name": "My Pictures"
         },
         {
-            "@id": "https://w3id.org/ro/wfrun/process/0.6-DRAFT",
+            "@id": "https://w3id.org/ro/wfrun/process/0.6",
             "@type": "CreativeWork",
             "name": "Process Run Crate",
-            "version": "0.6-DRAFT"
+            "version": "0.6"
         },
         {
             "@id": "https://www.imagemagick.org/",

@@ -5,14 +5,14 @@ title: Workflow Run Crate
 
 # Workflow Run Crate
 
-* Version: 0.6-DRAFT
-* Permalink: <https://w3id.org/ro/wfrun/workflow/0.6-DRAFT>
+* Version: 0.6
+* Permalink: <https://w3id.org/ro/wfrun/workflow/0.6>
 * Authors: [Workflow Run RO-Crate working group](https://www.researchobject.org/workflow-run-crate/#community)
 * License: [Apache License, version 2.0](https://www.apache.org/licenses/LICENSE-2.0) (SPDX: [`Apache-2.0`](http://spdx.org/licenses/Apache-2.0))
 * Example conforming crate: [ro-crate-metadata.json](example2/ro-crate-metadata.json) [ro-crate-preview.html](example2/ro-crate-preview.html)
 * Profile Crate: [ro-crate-metadata.json](ro-crate-metadata.json) [ro-crate-preview.html](ro-crate-preview.html)
 * Extends:
-  - [Process Run Crate 0.6-DRAFT](https://w3id.org/ro/wfrun/process/0.6-DRAFT)
+  - [Process Run Crate 0.6](https://w3id.org/ro/wfrun/process/0.6)
   - [Workflow RO-Crate 1.1](https://w3id.org/workflowhub/workflow-ro-crate/1.1)
 * JSON-LD context: <https://w3id.org/ro/terms/workflow-run/context>
 * Vocabulary terms:  <https://w3id.org/ro/terms/workflow-run#>
@@ -61,8 +61,8 @@ The following diagram shows the relationships between provenance-related entitie
         "@id": "./",
         "@type": "Dataset",
         "conformsTo": [
-            {"@id": "https://w3id.org/ro/wfrun/process/0.6-DRAFT"},
-            {"@id": "https://w3id.org/ro/wfrun/workflow/0.6-DRAFT"},
+            {"@id": "https://w3id.org/ro/wfrun/process/0.6"},
+            {"@id": "https://w3id.org/ro/wfrun/workflow/0.6"},
             {"@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.1"}
         ],
         "hasPart": [
@@ -75,15 +75,15 @@ The following diagram shows the relationships between provenance-related entitie
         "mainEntity": {"@id": "Galaxy-Workflow-Hello_World.ga"},
         "mentions": {"@id": "#wfrun-5a5970ab-4375-444d-9a87-a764a66e3a47"}
     },
-    {   "@id": "https://w3id.org/ro/wfrun/process/0.6-DRAFT",
+    {   "@id": "https://w3id.org/ro/wfrun/process/0.6",
         "@type": "CreativeWork",
         "name": "Process Run Crate",
-        "version": "0.6-DRAFT"
+        "version": "0.6"
     },
-    {   "@id": "https://w3id.org/ro/wfrun/workflow/0.6-DRAFT",
+    {   "@id": "https://w3id.org/ro/wfrun/workflow/0.6",
         "@type": "CreativeWork",
         "name": "Workflow Run Crate",
-        "version": "0.6-DRAFT"
+        "version": "0.6"
     },
     {   "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.1",
         "@type": "CreativeWork",
@@ -308,7 +308,7 @@ This profile inherits the requirements of [Process Run Crate](../process_run_cra
   <tr>
    <td>conformsTo</td>
    <td>MUST</td>
-   <td>Array MUST reference a <code>CreativeWork</code> entity with an <code>@id</code> URI that is consistent with the versioned <em>Permalink</em> of this document, and SHOULD also reference versioned permalinks for <a href="https://w3id.org/ro/wfrun/process/0.6-DRAFT">Process Run Crate</a> and <a href="https://w3id.org/workflowhub/workflow-ro-crate/1.1">Workflow RO-Crate</a>.</td>
+   <td>Array MUST reference a <code>CreativeWork</code> entity with an <code>@id</code> URI that is consistent with the versioned <em>Permalink</em> of this document, and SHOULD also reference versioned permalinks for <a href="https://w3id.org/ro/wfrun/process/0.6">Process Run Crate</a> and <a href="https://w3id.org/workflowhub/workflow-ro-crate/1.1">Workflow RO-Crate</a>.</td>
   </tr>
 
   <tr>
