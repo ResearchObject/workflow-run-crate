@@ -2,7 +2,7 @@
   "@context": [
     "https://w3id.org/ro/crate/1.3/context",
     {
-      "@base": "https://www.researchobject.org/workflow-run-crate/profiles/0.6-DRAFT/provenance_run_crate/"
+      "@base": "https://www.researchobject.org/workflow-run-crate/profiles/0.7-DRAFT/provenance_run_crate/"
     }
   ],
   "@graph": [
@@ -16,7 +16,7 @@
         "@id": "https://w3id.org/ro/crate/1.3"
       },
       "about": {
-        "@id": "https://w3id.org/ro/wfrun/provenance/0.6-DRAFT"
+        "@id": "https://w3id.org/ro/wfrun/provenance/0.7-DRAFT"
       }
     },
     {
@@ -30,10 +30,10 @@
       },
       "name": "RO-Crate preview of the Provenance Run Crate profile",
       "encodingFormat": "text/html",
-      "about": "https://w3id.org/ro/wfrun/provenance/0.6-DRAFT"
+      "about": "https://w3id.org/ro/wfrun/provenance/0.7-DRAFT"
     },
     {
-      "@id": "https://w3id.org/ro/wfrun/provenance/0.6-DRAFT",
+      "@id": "https://w3id.org/ro/wfrun/provenance/0.7-DRAFT",
       "@type": [
         "Dataset",
         "Profile"
@@ -43,10 +43,10 @@
           "@id": "https://w3id.org/ro/crate/1.3"
         }
       ],
-      "identifier": "https://w3id.org/ro/wfrun/provenance/0.6-DRAFT",
+      "identifier": "https://w3id.org/ro/wfrun/provenance/0.7-DRAFT",
       "name": "Provenance Run Crate profile",
       "description": "This profile extends Workflow Run Crate with specifications to describe internal details of the workflow run, such as step executions and intermediate outputs.",
-      "version": "0.6-DRAFT",
+      "version": "0.7-DRAFT",
       "datePublished": "2024-06-19",
       "license": {
         "@id": "https://www.apache.org/licenses/LICENSE-2.0"
@@ -86,10 +86,10 @@
           "@id": "https://pypi.org/project/runcrate/"
         },
         {
-          "@id": "https://w3id.org/ro/wfrun/process/0.6-DRAFT"
+          "@id": "https://w3id.org/ro/wfrun/process/0.7-DRAFT"
         },
         {
-          "@id": "https://w3id.org/ro/wfrun/workflow/0.6-DRAFT"
+          "@id": "https://w3id.org/ro/wfrun/workflow/0.7-DRAFT"
         },
         {
           "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.1"
@@ -303,13 +303,13 @@
       "name": "RO-Crate Community"
     },
     {
-      "@id": "https://w3id.org/ro/wfrun/process/0.6-DRAFT",
+      "@id": "https://w3id.org/ro/wfrun/process/0.7-DRAFT",
       "@type": [
         "CreativeWork",
         "Profile"
       ],
       "name": "Process Run Crate profile",
-      "version": "0.6-DRAFT"
+      "version": "0.7-DRAFT"
     },
     {
       "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.1",
@@ -321,13 +321,13 @@
       "version": "1.1"
     },
     {
-      "@id": "https://w3id.org/ro/wfrun/workflow/0.6-DRAFT",
+      "@id": "https://w3id.org/ro/wfrun/workflow/0.7-DRAFT",
       "@type": [
         "CreativeWork",
         "Profile"
       ],
       "name": "Workflow Run Crate profile",
-      "version": "0.6-DRAFT"
+      "version": "0.7-DRAFT"
     },
     {
       "@id": "index.html",
@@ -354,13 +354,13 @@
           "@id": "https://w3id.org/ro/crate"
         },
         {
-          "@id": "https://w3id.org/ro/wfrun/process/0.6-DRAFT"
+          "@id": "https://w3id.org/ro/wfrun/process/0.7-DRAFT"
         },
         {
-          "@id": "https://w3id.org/ro/wfrun/workflow/0.6-DRAFT"
+          "@id": "https://w3id.org/ro/wfrun/workflow/0.7-DRAFT"
         },
         {
-          "@id": "https://w3id.org/ro/wfrun/provenance/0.6-DRAFT"
+          "@id": "https://w3id.org/ro/wfrun/provenance/0.7-DRAFT"
         },
         {
           "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.1"
@@ -511,7 +511,7 @@
         "@id": "http://purl.org/dc/terms/conformsTo"
       },
       "hasArtifact": {
-        "@id": "https://w3id.org/ro/wfrun/process/0.6-DRAFT"
+        "@id": "https://w3id.org/ro/wfrun/process/0.7-DRAFT"
       }
     },
     {
@@ -522,7 +522,7 @@
         "@id": "http://purl.org/dc/terms/conformsTo"
       },
       "hasArtifact": {
-        "@id": "https://w3id.org/ro/wfrun/workflow/0.6-DRAFT"
+        "@id": "https://w3id.org/ro/wfrun/workflow/0.7-DRAFT"
       }
     },
     {
