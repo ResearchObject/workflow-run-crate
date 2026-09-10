@@ -47,7 +47,7 @@
       "name": "Provenance Run Crate profile",
       "description": "This profile extends Workflow Run Crate with specifications to describe internal details of the workflow run, such as step executions and intermediate outputs.",
       "version": "0.6",
-      "datePublished": "2024-06-19",
+      "datePublished": "2026-09-04",
       "license": {
         "@id": "https://www.apache.org/licenses/LICENSE-2.0"
       },

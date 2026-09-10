@@ -47,7 +47,7 @@
       "name": "Process Run Crate profile",
       "description": "This profile is used to describe the execution of an implicit workflow, indicating that one or more computational tools have been executed, typically generating some result files that are represented as data entities in the RO-Crate.",
       "version": "0.6",
-      "datePublished": "2024-06-19",
+      "datePublished": "2026-09-04",
       "license": {
         "@id": "https://www.apache.org/licenses/LICENSE-2.0"
       },

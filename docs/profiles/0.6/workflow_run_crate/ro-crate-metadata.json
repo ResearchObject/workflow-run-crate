@@ -47,7 +47,7 @@
       "name": "Workflow Run Crate profile",
       "description": "This profile is used to describe the execution of a computational tool that has orchestrated the execution of other tools. Such a tool is represented as a workflow that can be executed using a Workflow Management System (WMS), or workflow engine (e.g. cwltool).",
       "version": "0.6",
-      "datePublished": "2024-06-19",
+      "datePublished": "2026-09-04",
       "license": {
         "@id": "https://www.apache.org/licenses/LICENSE-2.0"
       },

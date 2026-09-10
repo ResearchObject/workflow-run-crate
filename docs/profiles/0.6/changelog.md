@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.6
+## 0.6 (2026-09-04)
 
 * Updated all three profiles and their examples to align with RO-Crate 1.3 and Workflow RO-Crate 1.1.
 * The IRI mappings for `ComputationalWorkflow`, `FormalParameter`, `input`, and `output` were updated in the [RO-Crate 1.3 JSON-LD context](https://www.researchobject.org/ro-crate/specification/1.3/context.jsonld). This means that from this version onward, Workflow Run Crate and Provenance Run Crate are not backward compatible with RO-Crate 1.1/Workflow RO-Crate 1.0. The changes are shown in the table below:
