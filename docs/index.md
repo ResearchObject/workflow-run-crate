@@ -125,6 +125,7 @@ Other RO-Crate profiles extend or recommend the WRROC profiles:
 
 ## Tools
 * [runcrate](https://github.com/ResearchObject/runcrate) -- Python library and `runcrate ` command line interface (CLI) for runcrate
+* [flwrCrate](https://pypi.org/project/flwrcrate/) -- Python library ([GitHub](https://github.com/eScienceLab/flwrCrate)) recording [Flower](https://flower.ai/) federated learning runs as RO-Crate, following the Federated Learning RO-Crate profile and Process Run Crate
 * [cwl2ro-crate](https://transpiler-mate.github.io/cwl2ro-crate/) -- `cwl2rocrate` command packaging CWL workflows as Workflow RO-Crate, or a [CWLProv](https://w3id.org/cwl/prov/0.6.0) run directory as Provenance Run Crate
 * [roc-validator](https://rocrate-validator.readthedocs.io/) -- RO-Crate validator supporting all three WRROC profiles (Process, Workflow and Provenance Run Crate)
 * [pycompss-cli](https://pypi.org/project/pycompss-cli/) -- Command Line Interface to inspect Provenance Run Crate including from COMPSS, see [Workflow Provenance](https://compss-doc.readthedocs.io/en/3.3.1/Sections/05_Tools/04_Workflow_Provenance.html) docs.
@@ -161,6 +162,7 @@ Other RO-Crate profiles extend or recommend the WRROC profiles:
 
 ### Related Work
 
+- [Federated Learning RO-Crate profile](https://esciencelab.org.uk/federated-learning-ro-crate-profile/) (draft, eScienceLab / ELIXIR Fed-A-Crate) -- capturing federated learning processes and models; used by [flwrCrate](https://github.com/eScienceLab/flwrCrate), which models runs as Process Run Crate `CreateAction`
 - [Packaging research artefacts with RO-Crate](https://www.researchobject.org/2021-packaging-research-artefacts-with-ro-crate/manuscript.html) (RO-rate article)
 - [Sharing interoperable workflow provenance: A review of best practices and their practical application in CWLProv ](https://doi.org/10.1093/gigascience/giz095) (RO-Bundle+PROV for CWL, -- see also [examples](https://w3id.org/cwl/prov/0.6.0))
 - [Towards a Common Standard for Data and Specimen Provenance in Life Sciences](https://doi.org/10.5281/zenodo.5093125) (article on ISO 23494 Common Provenance Model)
