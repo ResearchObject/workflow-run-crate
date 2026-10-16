@@ -101,6 +101,7 @@ Several workflow engines have implemented the [WRROC profiles](https://www.resea
 [Autosubmit](https://autosubmit.readthedocs.io/)  | Workflow    | [Autosubmit v4.0.100](https://pypi.org/project/autosubmit/4.0.100/) or later    |  [10.5281/zenodo.8144612](https://doi.org/10.5281/zenodo.8144612)   |
 [Nextflow](https://nextflow.io/)  | Provenance    | [nf-prov](https://github.com/nextflow-io/nf-prov/blob/main/docs/WRROC.md) 1.4.0 or later  |  [example](https://github.com/nextflow-io/nf-prov/files/13070992/ro-crate-metadata.json)   |
 [Snakemake](https://snakemake.readthedocs.io/) | Provenance | [snakemake-report-plugin-rocrate](https://github.com/snakemake/snakemake-report-plugin-rocrate) | `poisson-equation-workflow-run.zip` built within GitHub repo |
+[FAIR Data Registry](https://github.com/FAIRDataPipeline/data-registry) | Process | [data-registry 1.4.0](https://github.com/FAIRDataPipeline/data-registry/blob/v1.4.0/data_management/rocrate.py) (see inline docs) | |
  
 Further WfExS-backend examples from the [EOSC-ENTRUST](https://esciencelab.org.uk/projects/eosc-entrust/) project show execution in Trusted Research Environments with GA4GH TES: [nf-core Sarek](https://doi.org/10.5281/zenodo.21134855) and [hello pipeline](https://doi.org/10.5281/zenodo.22640966).
 
