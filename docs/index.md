@@ -98,7 +98,8 @@ Several workflow engines have implemented the [WRROC profiles](https://www.resea
 [Sapporo](https://github.com/sapporo-wes/sapporo)     | Workflow    | [sapporo-service 1.5.1](https://github.com/sapporo-wes/sapporo-service/releases/tag/1.5.1)  or later  |  [10.5281/zenodo.10134581](https://doi.org/10.5281/zenodo.10134581)  |
 [Autosubmit](https://autosubmit.readthedocs.io/)  | Workflow    | [Autosubmit v4.0.100](https://pypi.org/project/autosubmit/4.0.100/) or later    |  [10.5281/zenodo.8144612](https://doi.org/10.5281/zenodo.8144612)   |
 [Nextflow](https://nextflow.io/)  | Provenance    | [nf-prov](https://github.com/nextflow-io/nf-prov/blob/main/docs/WRROC.md) 1.4.0 or later  |  [example](https://github.com/nextflow-io/nf-prov/files/13070992/ro-crate-metadata.json)   |
-
+[Snakemake](https://snakemake.readthedocs.io/) | Provenance | [snakemake-report-plugin-rocrate](https://github.com/snakemake/snakemake-report-plugin-rocrate) | `poisson-equation-workflow-run.zip` built within GitHub repo |
+ 
 The Process Crate profile can also be implemented outside workflow systems, see for example [BY-COVID WP5 T5.2 Baseline Use Case](https://w3id.org/ro/doi/10.5281/zenodo.6913045) and [combination with Common Provenance Model](https://doi.org/10.5281/zenodo.7676923). Editors like [Crate-O](https://language-research-technology.github.io/crate-o/) can be used for making such crates by hand.
 
 The Workflow Crate and Provenance Crate profiles extends the [Workflow RO-Crate](https://w3id.org/workflowhub/workflow-ro-crate/) profile, which is [supported by WorkflowHub](https://about.workflowhub.eu/developer/ro-crate-api/#submitting-workflows) registry.
@@ -106,6 +107,14 @@ The Workflow Crate and Provenance Crate profiles extends the [Workflow RO-Crate]
 The Workflow Crate profiles have themselves been extended by the [Five Safes RO-Crate](https://w3id.org/5s-crate/), used by the projects [TRE-FX](https://trefx.uk/) and [EOSC-ENTRUST](https://esciencelab.org.uk/projects/eosc-entrust/).
 
 In addition, some computational workflow approaches have RO-Crate support which predate the WRROC profiles: [LivePublication](https://livepublication.github.io/LP_Pub_LID/) ([example](https://livepublication.github.io/LP_Pub_OrchestrationCrate/), [paper](https://doi.org/10.1109/e-Science58273.2023.10254857)), [RECUP](https://sites.google.com/view/recup-reproducibility/) ([paper](https://doi.org/10.1109/e-science58273.2023.10254808)), [FAIRSCAPE](https://fairscape.github.io/) ([paper](https://doi.org/10.1007/978-3-030-80960-7_3))
+
+## AI agentic skills
+
+* [data-preparation-skills](https://github.com/stain/data-preparation-skills/tree/main/examples) includes an agentic skill for making Process Run Crate
+
+## Tools
+* [runcrate](https://github.com/ResearchObject/runcrate) -- Python library and `runcrate ` command line interface (CLI) for runcrate
+* [pycompss-cli](https://pypi.org/project/pycompss-cli/) -- Command Line Interface to inspect Provenance Run Crate including from COMPSS, see [Workflow Provenance](https://compss-doc.readthedocs.io/en/3.3.1/Sections/05_Tools/04_Workflow_Provenance.html) docs.
 
 ## Training and outreach
 
