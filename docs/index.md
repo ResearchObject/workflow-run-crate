@@ -109,11 +109,15 @@ The Process Crate profile can also be implemented outside workflow systems, see 
 
 The Workflow Crate and Provenance Crate profiles extends the [Workflow RO-Crate](https://w3id.org/workflowhub/workflow-ro-crate/) profile, which is [supported by WorkflowHub](https://about.workflowhub.eu/developer/ro-crate-api/#submitting-workflows) registry.
 
-The Workflow Crate profiles have themselves been extended by the [Five Safes RO-Crate](https://w3id.org/5s-crate/), used by the projects [TRE-FX](https://trefx.uk/) and [EOSC-ENTRUST](https://esciencelab.org.uk/projects/eosc-entrust/).
-
-The [ARC Workflow Run RO-Crate profile](https://doi.org/10.1515/jib-2025-0050) extends WROC/WRROC to combine ISA-based laboratory provenance with computational workflow runs in the same crate ([Annotated Research Context](https://nfdi4plants.org/)).
-
 In addition, some computational workflow approaches have RO-Crate support which predate the WRROC profiles: [LivePublication](https://livepublication.github.io/LP_Pub_LID/) ([example](https://livepublication.github.io/LP_Pub_OrchestrationCrate/), [paper](https://doi.org/10.1109/e-Science58273.2023.10254857)), [RECUP](https://sites.google.com/view/recup-reproducibility/) ([paper](https://doi.org/10.1109/e-science58273.2023.10254808)), [FAIRSCAPE](https://fairscape.github.io/) ([paper](https://doi.org/10.1007/978-3-030-80960-7_3))
+
+### Profiles building on WRROC
+
+Other RO-Crate profiles extend or recommend the WRROC profiles:
+
+* [Five Safes RO-Crate](https://w3id.org/5s-crate/) extends the Workflow Crate profiles, used by the projects [TRE-FX](https://trefx.uk/) and [EOSC-ENTRUST](https://esciencelab.org.uk/projects/eosc-entrust/).
+* [ARC Workflow Run RO-Crate profile](https://doi.org/10.1515/jib-2025-0050) extends WROC/WRROC to combine ISA-based laboratory provenance with computational workflow runs in the same crate ([Annotated Research Context](https://nfdi4plants.org/)).
+* [Quilt RO-Crate profile](https://w3id.org/quilt/ro-crate) (draft) lets instrument-produced crates be ingested into [Quilt](https://docs.quiltdata.com/) packages, and recommends Process Run Crate 0.6 for recording acquisition and processing actions. It does not formally extend it.
 
 ## AI agentic skills
 
