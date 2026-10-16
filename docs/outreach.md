@@ -25,17 +25,35 @@ _Data Science_ **5**(2)
 
 To cite a particular [Workflow Run RO-Crate profile](/workflow-run-crate/profiles/), use its `https://w3id.org/` persistent identifier (Permalink) or a citation using the Zenodo DOI:
 
+Workflow Run RO-Crate working group (2026):  
+**Process Run Crate specification**. Version 0.6  
+_Zenodo_  
+<https://w3id.org/ro/wfrun/process/0.6>  
+<https://doi.org/10.5281/zenodo.22643969>
+
 Workflow Run RO-Crate working group (2024):   
 **Process Run Crate specification**. Version 0.5  
 _Zenodo_   
 <https://w3id.org/ro/wfrun/process/0.5>   
 <https://doi.org/10.5281/zenodo.12158562>
 
+Workflow Run RO-Crate working group (2026):  
+**Workflow Run Crate specification**. Version 0.6  
+_Zenodo_  
+<https://w3id.org/ro/wfrun/workflow/0.6>  
+<https://doi.org/10.5281/zenodo.22644389>
+
 Workflow Run RO-Crate working group (2024):  
 **Workflow Run Crate specification**. Version 0.5  
 _Zenodo_  
 <https://w3id.org/ro/wfrun/workflow/0.5>  
 <https://doi.org/10.5281/zenodo.12159311>
+
+Workflow Run RO-Crate working group (2026):  
+**Provenance Run Crate specification**. Version 0.6  
+_Zenodo_  
+<https://w3id.org/ro/wfrun/provenance/0.6>  
+<https://doi.org/10.5281/zenodo.22644704>
 
 Workflow Run RO-Crate working group (2024):  
 **Provenance Run Crate specification**. Version 0.5  
@@ -48,6 +66,11 @@ _Zenodo_
 ## Publications
 
 ### 2026
+
+Caroline Ott, Kevin Schneider, Heinrich Lukas Weil, Florian Wetzels, David Zimmer, Christoph Garth, Timo Mühlhaus (2026):  
+**Fusion of computational and experimental provenance in RO-Crate**.  
+_Journal of Integrative Bioinformatics_ **22**(4):20250050  
+<https://doi.org/10.1515/jib-2025-0050>
 
 Nicolò Giacomini (2026):
 **Metadata capture, knowledge extraction, and predictive analysis for HPC workflows**.

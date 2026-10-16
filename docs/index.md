@@ -100,11 +100,13 @@ Several workflow engines have implemented the [WRROC profiles](https://www.resea
 [Nextflow](https://nextflow.io/)  | Provenance    | [nf-prov](https://github.com/nextflow-io/nf-prov/blob/main/docs/WRROC.md) 1.4.0 or later  |  [example](https://github.com/nextflow-io/nf-prov/files/13070992/ro-crate-metadata.json)   |
 [Snakemake](https://snakemake.readthedocs.io/) | Provenance | [snakemake-report-plugin-rocrate](https://github.com/snakemake/snakemake-report-plugin-rocrate) | `poisson-equation-workflow-run.zip` built within GitHub repo |
  
-The Process Crate profile can also be implemented outside workflow systems, see for example [BY-COVID WP5 T5.2 Baseline Use Case](https://w3id.org/ro/doi/10.5281/zenodo.6913045) and [combination with Common Provenance Model](https://doi.org/10.5281/zenodo.7676923). Editors like [Crate-O](https://language-research-technology.github.io/crate-o/) can be used for making such crates by hand.
+The Process Crate profile can also be implemented outside workflow systems, see for example [BY-COVID WP5 T5.2 Baseline Use Case](https://w3id.org/ro/doi/10.5281/zenodo.6913045) and [combination with Common Provenance Model](https://doi.org/10.5281/zenodo.7676923). Editors like [Crate-O](https://language-research-technology.github.io/crate-o/) can be used for making such crates by hand. Scripts can also generate crates directly, e.g. [FiPy execution of PFHub Benchmark 8a](https://doi.org/10.5281/zenodo.20647927) (phase-field simulation).
 
 The Workflow Crate and Provenance Crate profiles extends the [Workflow RO-Crate](https://w3id.org/workflowhub/workflow-ro-crate/) profile, which is [supported by WorkflowHub](https://about.workflowhub.eu/developer/ro-crate-api/#submitting-workflows) registry.
 
 The Workflow Crate profiles have themselves been extended by the [Five Safes RO-Crate](https://w3id.org/5s-crate/), used by the projects [TRE-FX](https://trefx.uk/) and [EOSC-ENTRUST](https://esciencelab.org.uk/projects/eosc-entrust/).
+
+The [ARC Workflow Run RO-Crate profile](https://doi.org/10.1515/jib-2025-0050) extends WROC/WRROC to combine ISA-based laboratory provenance with computational workflow runs in the same crate ([Annotated Research Context](https://nfdi4plants.org/)).
 
 In addition, some computational workflow approaches have RO-Crate support which predate the WRROC profiles: [LivePublication](https://livepublication.github.io/LP_Pub_LID/) ([example](https://livepublication.github.io/LP_Pub_OrchestrationCrate/), [paper](https://doi.org/10.1109/e-Science58273.2023.10254857)), [RECUP](https://sites.google.com/view/recup-reproducibility/) ([paper](https://doi.org/10.1109/e-science58273.2023.10254808)), [FAIRSCAPE](https://fairscape.github.io/) ([paper](https://doi.org/10.1007/978-3-030-80960-7_3))
 
