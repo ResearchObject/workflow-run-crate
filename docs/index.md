@@ -103,6 +103,8 @@ Several workflow engines have implemented the [WRROC profiles](https://www.resea
 [Snakemake](https://snakemake.readthedocs.io/) | Provenance | [snakemake-report-plugin-rocrate](https://github.com/snakemake/snakemake-report-plugin-rocrate) | `poisson-equation-workflow-run.zip` built within GitHub repo |
 [FAIR Data Registry](https://github.com/FAIRDataPipeline/data-registry) | Process | [data-registry 1.4.0](https://github.com/FAIRDataPipeline/data-registry/blob/v1.4.0/data_management/rocrate.py) (see inline docs) | |
  
+<!-- TODO: consider adding QRO-Crate (https://github.com/loganw234/QRO-Crate), an RO-Crate profile for quantum computing runs planned to use RO-Crate 1.3 with Process Run Crate 0.6. Too early as of 2026-10-16: repo created 2026-10-15, no released profile, w3id or example crate yet. -->
+
 Further WfExS-backend examples from the [EOSC-ENTRUST](https://esciencelab.org.uk/projects/eosc-entrust/) project show execution in Trusted Research Environments with GA4GH TES: [nf-core Sarek](https://doi.org/10.5281/zenodo.21134855) and [hello pipeline](https://doi.org/10.5281/zenodo.22640966).
 
 The Process Crate profile can also be implemented outside workflow systems, see for example [BY-COVID WP5 T5.2 Baseline Use Case](https://w3id.org/ro/doi/10.5281/zenodo.6913045) and [combination with Common Provenance Model](https://doi.org/10.5281/zenodo.7676923). Editors like [Crate-O](https://language-research-technology.github.io/crate-o/) can be used for making such crates by hand. Scripts can also generate crates directly, e.g. [FiPy execution of PFHub Benchmark 8a](https://doi.org/10.5281/zenodo.20647927) (phase-field simulation).
