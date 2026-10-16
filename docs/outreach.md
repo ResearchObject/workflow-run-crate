@@ -12,6 +12,8 @@ Simone Leo, Michael R. Crusoe, Laura Rodríguez-Navas, Raül Sirvent, Alexander 
 _PLoS ONE_ **19**(9):e0309210
 <https://doi.org/10.1371/journal.pone.0309210>
 
+Companion RO-Crate (including SKOS mapping from WRROC to W3C PROV): <https://doi.org/10.5281/zenodo.10368990>
+
 
 ### Cite RO-Crate
 

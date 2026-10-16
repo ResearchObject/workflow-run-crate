@@ -20,6 +20,8 @@ Recording provenance of workflow runs with RO-Crate.
 PLoS ONE 19(9): e0309210.
 <https://doi.org/10.1371/journal.pone.0309210>
 
+Companion RO-Crate (including SKOS mapping from WRROC to W3C PROV): <https://doi.org/10.5281/zenodo.10368990>
+
 See [Outreach](outreach) for other citations, publications and presentations on Workflow Run RO-Crate
 
 
@@ -100,6 +102,8 @@ Several workflow engines have implemented the [WRROC profiles](https://www.resea
 [Nextflow](https://nextflow.io/)  | Provenance    | [nf-prov](https://github.com/nextflow-io/nf-prov/blob/main/docs/WRROC.md) 1.4.0 or later  |  [example](https://github.com/nextflow-io/nf-prov/files/13070992/ro-crate-metadata.json)   |
 [Snakemake](https://snakemake.readthedocs.io/) | Provenance | [snakemake-report-plugin-rocrate](https://github.com/snakemake/snakemake-report-plugin-rocrate) | `poisson-equation-workflow-run.zip` built within GitHub repo |
  
+Further WfExS-backend examples from the [EOSC-ENTRUST](https://esciencelab.org.uk/projects/eosc-entrust/) project show execution in Trusted Research Environments with GA4GH TES: [nf-core Sarek](https://doi.org/10.5281/zenodo.21134855) and [hello pipeline](https://doi.org/10.5281/zenodo.22640966).
+
 The Process Crate profile can also be implemented outside workflow systems, see for example [BY-COVID WP5 T5.2 Baseline Use Case](https://w3id.org/ro/doi/10.5281/zenodo.6913045) and [combination with Common Provenance Model](https://doi.org/10.5281/zenodo.7676923). Editors like [Crate-O](https://language-research-technology.github.io/crate-o/) can be used for making such crates by hand. Scripts can also generate crates directly, e.g. [FiPy execution of PFHub Benchmark 8a](https://doi.org/10.5281/zenodo.20647927) (phase-field simulation).
 
 The Workflow Crate and Provenance Crate profiles extends the [Workflow RO-Crate](https://w3id.org/workflowhub/workflow-ro-crate/) profile, which is [supported by WorkflowHub](https://about.workflowhub.eu/developer/ro-crate-api/#submitting-workflows) registry.
@@ -116,11 +120,14 @@ In addition, some computational workflow approaches have RO-Crate support which 
 
 ## Tools
 * [runcrate](https://github.com/ResearchObject/runcrate) -- Python library and `runcrate ` command line interface (CLI) for runcrate
+* [cwl2ro-crate](https://transpiler-mate.github.io/cwl2ro-crate/) -- `cwl2rocrate` command packaging CWL workflows as Workflow RO-Crate, or a [CWLProv](https://w3id.org/cwl/prov/0.6.0) run directory as Provenance Run Crate
+* [roc-validator](https://rocrate-validator.readthedocs.io/) -- RO-Crate validator supporting all three WRROC profiles (Process, Workflow and Provenance Run Crate)
 * [pycompss-cli](https://pypi.org/project/pycompss-cli/) -- Command Line Interface to inspect Provenance Run Crate including from COMPSS, see [Workflow Provenance](https://compss-doc.readthedocs.io/en/3.3.1/Sections/05_Tools/04_Workflow_Provenance.html) docs.
 
 ## Training and outreach
 
 - [Workflow Run RO-Crate Introduction](https://training.galaxyproject.org/training-material/topics/fair/tutorials/ro-crate-workflow-run-ro-crate/tutorial.html)
+- [Exporting Workflow Run RO-Crates from Galaxy](https://training.galaxyproject.org/training-material/topics/fair/tutorials/ro-crate-in-galaxy/tutorial.html)
 - [RO-Crate tutorial](https://www.researchobject.org/ro-crate/tutorials.html)
 - [Slides](https://slides.com/soilandreyes/2023-11-23-ro-crate-erga) -- _RO-Crate Use cases in biodiversity_
 - [Poster](https://doi.org/10.7490/f1000research.1119457.1) -- _WfExS-backend in the WRROC world?_
