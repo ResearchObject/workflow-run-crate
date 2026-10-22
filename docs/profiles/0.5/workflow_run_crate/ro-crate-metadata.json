@@ -27,6 +27,7 @@
     ],
     "identifier": "https://w3id.org/ro/wfrun/workflow/0.5",
     "name": "Workflow Run Crate profile",
+    "description": "Workflow Run Crate profile",
     "version": "0.5.1",
     "dateModified": "2026-10-08",
     "datePublished": "2024-06-18",
@@ -80,8 +81,8 @@
     },
     { 
       "@id": "https://w3id.org/ro/terms/workflow-run#environment"
-    }
-      
+    },
+        { "@id": "https://w3id.org/ro/doi/10.5281/zenodo.10368989" }
       ],
     "hasResource": [
         { "@id": "#hasSpecification" },

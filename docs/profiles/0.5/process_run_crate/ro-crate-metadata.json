@@ -27,6 +27,7 @@
     ],
     "identifier": "https://w3id.org/ro/wfrun/process/0.5",
     "name": "Process Run Crate profile",
+    "description": "Process Run Crate profile",
     "version": "0.5.1",
     "dateModified": "2026-10-08",
     "datePublished": "2024-06-18",
@@ -68,7 +69,8 @@
         { "@id": "http://schema.org/CreativeWork" },
         { "@id": "http://schema.org/PropertyValue" },
         { "@id": "http://schema.org/alternateName" },
-        { "@id": "http://schema.org/mainEntity" }
+        { "@id": "http://schema.org/mainEntity" },
+        { "@id": "https://w3id.org/ro/doi/10.5281/zenodo.10368989" }
     ],
     "hasResource": [
         { "@id": "#hasSpecification" },
