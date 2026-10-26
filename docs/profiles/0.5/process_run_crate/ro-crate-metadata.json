@@ -27,7 +27,7 @@
     ],
     "identifier": "https://w3id.org/ro/wfrun/process/0.5",
     "name": "Process Run Crate profile",
-    "description": "Process Run Crate profile",
+    "description": "This profile is used to describe the execution of an implicit workflow, indicating that one or more computational tools have been executed, typically generating some result files that are represented as data entities in the RO-Crate.",
     "version": "0.5.1",
     "dateModified": "2026-10-08",
     "datePublished": "2024-06-18",

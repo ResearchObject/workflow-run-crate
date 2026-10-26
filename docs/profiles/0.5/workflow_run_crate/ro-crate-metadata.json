@@ -27,7 +27,7 @@
     ],
     "identifier": "https://w3id.org/ro/wfrun/workflow/0.5",
     "name": "Workflow Run Crate profile",
-    "description": "Workflow Run Crate profile",
+    "description": "This profile is used to describe the execution of a computational tool that has orchestrated the execution of other tools. Such a tool is represented as a workflow that can be executed using a Workflow Management System (WMS), or workflow engine (e.g. cwltool).",
     "version": "0.5.1",
     "dateModified": "2026-10-08",
     "datePublished": "2024-06-18",
