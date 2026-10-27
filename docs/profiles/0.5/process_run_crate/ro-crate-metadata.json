@@ -17,7 +17,7 @@
     "isBasedOn": {"@id": "ro-crate-metadata.json" },
     "name": "RO-Crate preview of the Process Run Crate profile",
     "encodingFormat": "text/html",
-    "about": "https://w3id.org/ro/wfrun/process/0.5"
+    "about": { "@id": "https://w3id.org/ro/wfrun/process/0.5" }
   },  
   {
     "@id": "https://w3id.org/ro/wfrun/process/0.5",

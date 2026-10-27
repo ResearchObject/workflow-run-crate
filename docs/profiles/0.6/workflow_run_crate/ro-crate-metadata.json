@@ -30,7 +30,7 @@
       },
       "name": "RO-Crate preview of the Workflow Run Crate profile",
       "encodingFormat": "text/html",
-      "about": "https://w3id.org/ro/wfrun/workflow/0.6"
+      "about": { "@id": "https://w3id.org/ro/wfrun/workflow/0.6" }
     },
     {
       "@id": "https://w3id.org/ro/wfrun/workflow/0.6",
