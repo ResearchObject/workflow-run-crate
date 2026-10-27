@@ -108,6 +108,9 @@
         },
         {
           "@id": "https://codemeta.github.io/terms/buildInstructions"
+        },
+        {
+          "@id": "https://w3id.org/ro/doi/10.5281/zenodo.10368989"
         }
       ],
       "hasResource": [

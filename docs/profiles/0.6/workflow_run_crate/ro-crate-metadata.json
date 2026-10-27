@@ -153,6 +153,9 @@
         },
         {
           "@id": "https://w3id.org/ro/terms/workflow-run#environment"
+        },
+        {
+          "@id": "https://w3id.org/ro/doi/10.5281/zenodo.10368989"
         }
       ],
       "hasResource": [
