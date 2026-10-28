@@ -30,7 +30,7 @@
       },
       "name": "RO-Crate preview of the Process Run Crate profile",
       "encodingFormat": "text/html",
-      "about": "https://w3id.org/ro/wfrun/process/0.7-DRAFT"
+      "about": { "@id": "https://w3id.org/ro/wfrun/process/0.7-DRAFT" }
     },
     {
       "@id": "https://w3id.org/ro/wfrun/process/0.7-DRAFT",
@@ -157,6 +157,9 @@
         },
         {
           "@id": "http://schema.org/mainEntity"
+        },
+        {
+          "@id": "https://w3id.org/ro/doi/10.5281/zenodo.10368989"
         }
       ],
       "hasResource": [
