@@ -314,6 +314,7 @@
               </j.1:CreativeWork>
             </j.1:license>
             <j.1:identifier>https://w3id.org/ro/wfrun/process/0.5</j.1:identifier>
+            <j.1:hasPart rdf:resource="https://w3id.org/ro/doi/10.5281/zenodo.10368989"/>
             <j.1:hasPart>
               <j.1:DefinedTerm rdf:about="http://schema.org/mainEntity">
                 <j.1:name>mainEntity</j.1:name>
@@ -412,6 +413,7 @@
               </j.1:DefinedTerm>
             </j.1:hasPart>
             <j.1:hasPart rdf:resource="http://schema.org/CreateAction"/>
+            <j.1:hasPart rdf:resource="https://bioschemas.org/ComputationalWorkflow"/>
             <rdf:type rdf:resource="http://www.w3.org/ns/dx/prof/Profile"/>
             <j.1:author>
               <j.1:Project rdf:about="https://www.researchobject.org/workflow-run-crate/">
@@ -647,6 +649,7 @@
             </j.1:citation>
             <j.1:dateModified>2026-10-08</j.1:dateModified>
             <j.1:datePublished>2024-06-18</j.1:datePublished>
+            <j.1:description>This profile is used to describe the execution of an implicit workflow, indicating that one or more computational tools have been executed, typically generating some result files that are represented as data entities in the RO-Crate.</j.1:description>
             <j.1:hasPart rdf:resource="https://www.researchobject.org/workflow-run-crate/profiles/0.5/process_run_crate/index.html"/>
             <j.1:hasPart rdf:resource="https://www.researchobject.org/workflow-run-crate/profiles/0.5/process_run_crate/example1/"/>
             <j.1:hasPart rdf:resource="https://www.researchobject.org/workflow-run-crate-paper/mapping/"/>
@@ -678,13 +681,12 @@
             </j.1:hasPart>
             <j.1:hasPart rdf:resource="http://schema.org/SoftwareApplication"/>
             <j.1:hasPart rdf:resource="http://schema.org/SoftwareSourceCode"/>
-            <j.1:hasPart rdf:resource="https://bioschemas.org/ComputationalWorkflow"/>
           </j.1:Dataset>
         </j.1:about>
         <j.0:conformsTo rdf:resource="https://w3id.org/ro/crate/1.2"/>
       </j.1:CreativeWork>
     </j.1:isBasedOn>
     <j.1:encodingFormat>text/html</j.1:encodingFormat>
-    <j.1:about>https://w3id.org/ro/wfrun/process/0.5</j.1:about>
+    <j.1:about rdf:resource="https://w3id.org/ro/wfrun/process/0.5"/>
   </j.1:CreativeWork>
 </rdf:RDF>

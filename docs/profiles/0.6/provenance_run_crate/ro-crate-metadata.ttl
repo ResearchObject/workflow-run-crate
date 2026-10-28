@@ -1,6 +1,6 @@
 <https://www.researchobject.org/workflow-run-crate/profiles/0.6/provenance_run_crate/ro-crate-preview.html>
         a                              <http://schema.org/CreativeWork>;
-        <http://schema.org/about>      "https://w3id.org/ro/wfrun/provenance/0.6";
+        <http://schema.org/about>      <https://w3id.org/ro/wfrun/provenance/0.6>;
         <http://schema.org/encodingFormat>
                 "text/html";
         <http://schema.org/isBasedOn>  <https://www.researchobject.org/workflow-run-crate/profiles/0.6/provenance_run_crate/ro-crate-metadata.json>;
@@ -159,7 +159,7 @@
                 "2026-09-07";
         <http://schema.org/description>
                 "This profile extends Workflow Run Crate with specifications to describe internal details of the workflow run, such as step executions and intermediate outputs.";
-        <http://schema.org/hasPart>     <https://codemeta.github.io/terms/buildInstructions> , <https://w3id.org/ro/terms/workflow-run#targetParameter> , <https://w3id.org/ro/terms/workflow-run#sourceParameter> , <https://w3id.org/ro/terms/workflow-run#connection> , <https://w3id.org/ro/terms/workflow-run#ParameterConnection> , <https://www.researchobject.org/workflow-run-crate/profiles/0.6/provenance_run_crate/index.html> , <https://www.researchobject.org/workflow-run-crate/profiles/0.6/provenance_run_crate/example3/> , <https://www.researchobject.org/workflow-run-crate-paper/mapping/> , <https://w3id.org/ro/terms/workflow-run#> , <https://w3id.org/ro/terms/workflow-run> , <https://gxy.io/GTN:T00343> , <https://pypi.org/project/runcrate/> , <https://w3id.org/ro/wfrun/process/0.6> , <https://w3id.org/ro/wfrun/workflow/0.6> , <https://w3id.org/workflowhub/workflow-ro-crate/1.1>;
+        <http://schema.org/hasPart>     <https://w3id.org/ro/doi/10.5281/zenodo.10368989> , <https://codemeta.github.io/terms/buildInstructions> , <https://w3id.org/ro/terms/workflow-run#targetParameter> , <https://w3id.org/ro/terms/workflow-run#sourceParameter> , <https://w3id.org/ro/terms/workflow-run#connection> , <https://w3id.org/ro/terms/workflow-run#ParameterConnection> , <https://www.researchobject.org/workflow-run-crate/profiles/0.6/provenance_run_crate/index.html> , <https://www.researchobject.org/workflow-run-crate/profiles/0.6/provenance_run_crate/example3/> , <https://www.researchobject.org/workflow-run-crate-paper/mapping/> , <https://w3id.org/ro/terms/workflow-run#> , <https://w3id.org/ro/terms/workflow-run> , <https://gxy.io/GTN:T00343> , <https://pypi.org/project/runcrate/> , <https://w3id.org/ro/wfrun/process/0.6> , <https://w3id.org/ro/wfrun/workflow/0.6> , <https://w3id.org/workflowhub/workflow-ro-crate/1.1>;
         <http://schema.org/identifier>  "https://w3id.org/ro/wfrun/provenance/0.6";
         <http://schema.org/keywords>    "workflow execution" , "workflow" , "provenance" , "process" , "informatics";
         <http://schema.org/license>     <https://www.apache.org/licenses/LICENSE-2.0>;

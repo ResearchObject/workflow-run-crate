@@ -155,6 +155,7 @@
               </j.1:CreativeWork>
             </j.1:license>
             <j.1:identifier>https://w3id.org/ro/wfrun/workflow/0.5</j.1:identifier>
+            <j.1:hasPart rdf:resource="https://w3id.org/ro/doi/10.5281/zenodo.10368989"/>
             <j.1:hasPart>
               <j.1:DefinedTerm rdf:about="https://w3id.org/ro/terms/workflow-run#environment">
                 <j.1:termCode>environment</j.1:termCode>
@@ -242,6 +243,11 @@
             <j.1:hasPart>
               <j.1:DefinedTerm rdf:about="http://schema.org/CreateAction">
                 <j.1:name>CreateAction</j.1:name>
+              </j.1:DefinedTerm>
+            </j.1:hasPart>
+            <j.1:hasPart>
+              <j.1:DefinedTerm rdf:about="http://schema.org/additionalType">
+                <j.1:name>additionalType</j.1:name>
               </j.1:DefinedTerm>
             </j.1:hasPart>
             <rdf:type rdf:resource="http://www.w3.org/ns/dx/prof/Profile"/>
@@ -479,6 +485,7 @@
             </j.1:citation>
             <j.1:dateModified>2026-10-08</j.1:dateModified>
             <j.1:datePublished>2024-06-18</j.1:datePublished>
+            <j.1:description>This profile is used to describe the execution of a computational tool that has orchestrated the execution of other tools. Such a tool is represented as a workflow that can be executed using a Workflow Management System (WMS), or workflow engine (e.g. cwltool).</j.1:description>
             <j.1:hasPart rdf:resource="https://www.researchobject.org/workflow-run-crate/profiles/0.5/workflow_run_crate/index.html"/>
             <j.1:hasPart rdf:resource="https://www.researchobject.org/workflow-run-crate/profiles/0.5/workflow_run_crate/example2/"/>
             <j.1:hasPart rdf:resource="https://www.researchobject.org/workflow-run-crate-paper/mapping/"/>
@@ -513,17 +520,12 @@
                 <j.1:name>MediaObject</j.1:name>
               </j.1:DefinedTerm>
             </j.1:hasPart>
-            <j.1:hasPart>
-              <j.1:DefinedTerm rdf:about="http://schema.org/additionalType">
-                <j.1:name>additionalType</j.1:name>
-              </j.1:DefinedTerm>
-            </j.1:hasPart>
           </j.1:Dataset>
         </j.1:about>
         <j.0:conformsTo rdf:resource="https://w3id.org/ro/crate/1.2"/>
       </j.1:CreativeWork>
     </j.1:isBasedOn>
     <j.1:encodingFormat>text/html</j.1:encodingFormat>
-    <j.1:about>https://w3id.org/ro/wfrun/workflow/0.5</j.1:about>
+    <j.1:about rdf:resource="https://w3id.org/ro/wfrun/workflow/0.5"/>
   </j.1:CreativeWork>
 </rdf:RDF>

@@ -160,6 +160,7 @@
             <j.1:keywords>process</j.1:keywords>
             <j.1:keywords>informatics</j.1:keywords>
             <j.1:identifier>https://w3id.org/ro/wfrun/workflow/0.6</j.1:identifier>
+            <j.1:hasPart rdf:resource="https://w3id.org/ro/doi/10.5281/zenodo.10368989"/>
             <j.1:hasPart>
               <j.1:DefinedTerm rdf:about="https://w3id.org/ro/terms/workflow-run#environment">
                 <j.1:termCode>environment</j.1:termCode>
@@ -575,6 +576,6 @@
       </j.1:CreativeWork>
     </j.1:isBasedOn>
     <j.1:encodingFormat>text/html</j.1:encodingFormat>
-    <j.1:about>https://w3id.org/ro/wfrun/workflow/0.6</j.1:about>
+    <j.1:about rdf:resource="https://w3id.org/ro/wfrun/workflow/0.6"/>
   </j.1:CreativeWork>
 </rdf:RDF>
