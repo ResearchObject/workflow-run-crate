@@ -30,7 +30,7 @@
       },
       "name": "RO-Crate preview of the Provenance Run Crate profile",
       "encodingFormat": "text/html",
-      "about": "https://w3id.org/ro/wfrun/provenance/0.6"
+      "about": { "@id": "https://w3id.org/ro/wfrun/provenance/0.6" }
     },
     {
       "@id": "https://w3id.org/ro/wfrun/provenance/0.6",
@@ -108,6 +108,9 @@
         },
         {
           "@id": "https://codemeta.github.io/terms/buildInstructions"
+        },
+        {
+          "@id": "https://w3id.org/ro/doi/10.5281/zenodo.10368989"
         }
       ],
       "hasResource": [

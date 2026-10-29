@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 
 
 <html>
@@ -7,7 +8,7 @@
 <script type="application/ld+json"> 
   {
   "@context": [
-    "https://w3id.org/ro/crate/1.2-DRAFT/context",
+    "https://w3id.org/ro/crate/1.2/context",
     {
       "@base": "https://www.researchobject.org/workflow-run-crate/profiles/0.5/provenance_run_crate/"
     }
@@ -20,7 +21,7 @@
         "@id": "http://spdx.org/licenses/CC0-1.0"
       },
       "conformsTo": {
-        "@id": "https://w3id.org/ro/crate/1.2-DRAFT"
+        "@id": "https://w3id.org/ro/crate/1.2"
       },
       "about": {
         "@id": "https://w3id.org/ro/wfrun/provenance/0.5"
@@ -39,18 +40,25 @@
         "Dataset",
         "Profile"
       ],
-      "isProfileOf": {
-        "@id": "https://w3id.org/ro/crate/1.2-DRAFT"
-      },
+      "isProfileOf": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        }
+      ],
       "identifier": "https://w3id.org/ro/wfrun/provenance/0.5",
       "name": "Provenance Run Crate profile",
-      "version": "0.5",
+      "description": "This profile extends Workflow Run Crate with specifications to describe internal details of the workflow run, such as step executions and intermediate outputs.",
+      "version": "0.5.1",
+      "dateModified": "2026-10-08",
+      "datePublished": "2024-06-18",
       "license": {
         "@id": "https://www.apache.org/licenses/LICENSE-2.0"
       },
-      "author": {
-        "@id": "https://www.researchobject.org/workflow-run-crate/"
-      },
+      "author": [
+        {
+          "@id": "https://www.researchobject.org/workflow-run-crate/"
+        }
+      ],
       "hasPart": [
         {
           "@id": "index.html"
@@ -96,6 +104,9 @@
         },
         {
           "@id": "https://codemeta.github.io/terms/buildInstructions"
+        },
+        {
+          "@id": "https://w3id.org/ro/doi/10.5281/zenodo.10368989"
         }
       ],
       "hasResource": [
@@ -142,7 +153,9 @@
       },
       "name": "RO-Crate preview of the Provenance Run Crate profile",
       "encodingFormat": "text/html",
-      "about": "https://w3id.org/ro/wfrun/provenance/0.5"
+      "about": {
+        "@id": "https://w3id.org/ro/wfrun/provenance/0.5"
+      }
     },
     {
       "@id": "https://www.apache.org/licenses/LICENSE-2.0",
@@ -443,6 +456,22 @@
       "inDefinedTermSet": {
         "@id": "https://codemeta.github.io/terms/"
       }
+    },
+    {
+      "@id": "https://w3id.org/ro/doi/10.5281/zenodo.10368989",
+      "@type": "Dataset",
+      "name": "Recording provenance of workflow runs with RO-Crate (RO-Crate and mapping)",
+      "conformsTo": {
+        "@id": "https://w3id.org/ro/crate"
+      },
+      "subjectOf": [
+        {
+          "@id": "https://www.researchobject.org/workflow-run-crate-paper/ro-crate-metadata.jsonld"
+        },
+        {
+          "@id": "https://www.researchobject.org/workflow-run-crate-paper/ro-crate-preview.html"
+        }
+      ]
     },
     {
       "@id": "#hasSpecification",
@@ -819,22 +848,6 @@
       "version": "1.0"
     },
     {
-      "@id": "https://w3id.org/ro/doi/10.5281/zenodo.10368989",
-      "@type": "Dataset",
-      "name": "Recording provenance of workflow runs with RO-Crate (RO-Crate and mapping)",
-      "conformsTo": {
-        "@id": "https://w3id.org/ro/crate"
-      },
-      "subjectOf": [
-        {
-          "@id": "https://www.researchobject.org/workflow-run-crate-paper/ro-crate-metadata.jsonld"
-        },
-        {
-          "@id": "https://www.researchobject.org/workflow-run-crate-paper/ro-crate-preview.html"
-        }
-      ]
-    },
-    {
       "@id": "https://www.researchobject.org/workflow-run-crate-paper/ro-crate-metadata.jsonld",
       "@type": "CreativeWork",
       "encodingFormat": "application/ld+json"
@@ -912,8 +925,8 @@ table.table {
   </nav>
 <div class="container">
 <div class="jumbotron">
-<h4 class="citation"></h3>
-<h3 class="item_name">Provenance Run Crate profile</h4>
+<h4 class="citation"></h4>
+<h3 class="item_name">Provenance Run Crate profile</h3>
 
 
 <a href="./ro-crate-metadata.json">⬇️🏷️ Download all the metadata for <span class='name'>Provenance Run Crate profile</span> in JSON-LD format</a>
@@ -928,12 +941,12 @@ table.table {
 
 <div id="summary">
 <div class='all-meta'>
-           <div>
-            <h3><a href="https://w3id.org/ro/wfrun/provenance/0.5">Go to: </a> Provenance Run Crate profile</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://w3id.org/ro/wfrun/provenance/0.5">Go to: </a> Provenance Run Crate profile</h3>
+                
+                
+                
+                
         <div id="https://w3id.org/ro/wfrun/provenance/0.5">
             
             <table class="table metadata table-striped" >
@@ -951,17 +964,26 @@ table.table {
                         <li><span>Profile</span></li>
                         </ul></td>
             </tr><tr>
+            <th style="text-align:left;" class="prop">description<span>&nbsp;</span><a href="http://schema.org/description">[?]</a></th>
+            <td style='text-align:left'><span>This profile extends Workflow Run Crate with specifications to describe internal details of the workflow run, such as step executions and intermediate outputs.</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">datePublished<span>&nbsp;</span><a href="http://schema.org/datePublished">[?]</a></th>
+            <td style='text-align:left'><span>2024-06-18</span></td>
+            </tr><tr>
             <th style="text-align:left;" class="prop">author<span>&nbsp;</span><a href="http://schema.org/author">[?]</a></th>
             <td style='text-align:left'><a href="#https%3A//www.researchobject.org/workflow-run-crate/">Provenance Run Crate task force</a></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">isProfileOf<span>&nbsp;</span><a href="http://www.w3.org/ns/dx/prof/isProfileOf">[?]</a></th>
-            <td style='text-align:left'><a href="https://w3id.org/ro/crate/1.2-DRAFT">https://w3id.org/ro/crate/1.2-DRAFT</a></td>
+            <td style='text-align:left'><a href="https://w3id.org/ro/crate/1.1">https://w3id.org/ro/crate/1.1</a></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">identifier<span>&nbsp;</span><a href="http://schema.org/identifier">[?]</a></th>
             <td style='text-align:left'><a href="https://w3id.org/ro/wfrun/provenance/0.5">https://w3id.org/ro/wfrun/provenance/0.5</a></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">version<span>&nbsp;</span><a href="http://schema.org/version">[?]</a></th>
-            <td style='text-align:left'><span>0.5</span></td>
+            <td style='text-align:left'><span>0.5.1</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">dateModified<span>&nbsp;</span><a href="http://schema.org/dateModified">[?]</a></th>
+            <td style='text-align:left'><span>2026-10-08</span></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">license<span>&nbsp;</span><a href="http://schema.org/license">[?]</a></th>
             <td style='text-align:left'><a href="#https%3A//www.apache.org/licenses/LICENSE-2.0">Apache License 2.0</a></td>
@@ -997,6 +1019,8 @@ table.table {
                         <li><a href="#https%3A//w3id.org/ro/terms/workflow-run%23targetParameter">target parameter</a></li>
                         
                         <li><a href="#https%3A//codemeta.github.io/terms/buildInstructions">buildInstructions</a></li>
+                        
+                        <li><a href="#https%3A//w3id.org/ro/doi/10.5281/zenodo.10368989">Recording provenance of workflow runs with RO-Crate (RO-Crate and mapping)</a></li>
                         </ul></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">hasResource<span>&nbsp;</span><a href="http://www.w3.org/ns/dx/prof/hasResource">[?]</a></th>
@@ -1024,19 +1048,22 @@ table.table {
             <td style='text-align:left'><a href="#https%3A//doi.org/10.48550/arXiv.2312.07852">Recording provenance of workflow runs with RO-Crate</a></td>
             </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
             <th style="text-align:left;" class="prop">about<span>&nbsp;</span><a href="http://schema.org/about">[?]</a></th>
-            <td style='text-align:left'><a href="#ro-crate-metadata.json">ro-crate-metadata.json</a></td>
+            <td style='text-align:left'><ul>
+                        <li><a href="#ro-crate-metadata.json">ro-crate-metadata.json</a></li>
+                        
+                        <li><a href="#ro-crate-preview.html">RO-Crate preview of the Provenance Run Crate profile</a></li>
+                        </ul></td>
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://www.researchobject.org/workflow-run-crate/">Go to: </a> Provenance Run Crate task force</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://www.researchobject.org/workflow-run-crate/">Go to: </a> Provenance Run Crate task force</h3>
+                
+                
+                
+                
         <div id="https://www.researchobject.org/workflow-run-crate/">
             
             <table class="table metadata table-striped" >
@@ -1137,15 +1164,14 @@ table.table {
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/><hr/><br/><br/>
-           <div>
-            <h3><a href="https://www.apache.org/licenses/LICENSE-2.0">Go to: </a> Apache License 2.0</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://www.apache.org/licenses/LICENSE-2.0">Go to: </a> Apache License 2.0</h3>
+                
+                
+                
+                
         <div id="https://www.apache.org/licenses/LICENSE-2.0">
             
             <table class="table metadata table-striped" >
@@ -1170,15 +1196,14 @@ table.table {
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="index.html">⬇️ Download: </a> Provenance Run Crate (HTML)</h3>
-            
-            <iframe src='index.html' width='100%' height='500'></iframe>
-            
-            
+            <div>
+                <h3><a href="index.html">⬇️ Download: </a> Provenance Run Crate (HTML)</h3>
+                
+                <iframe src='index.html' width='100%' height='500'></iframe>
+                
+                
         <div id="index.html">
             
             <table class="table metadata table-striped" >
@@ -1207,15 +1232,14 @@ table.table {
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3> Example Process Run Crate</h3>
-            
-            
-            
-            
+            <div>
+                <h3> Example Process Run Crate</h3>
+                
+                
+                
+                
         <div id="example3/">
             
             <table class="table metadata table-striped" >
@@ -1257,15 +1281,14 @@ table.table {
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://www.researchobject.org/workflow-run-crate-paper/mapping/">Go to: </a> SSSOM mapping from PROV to Workflow Run Crate</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://www.researchobject.org/workflow-run-crate-paper/mapping/">Go to: </a> SSSOM mapping from PROV to Workflow Run Crate</h3>
+                
+                
+                
+                
         <div id="https://www.researchobject.org/workflow-run-crate-paper/mapping/">
             
             <table class="table metadata table-striped" >
@@ -1290,15 +1313,14 @@ table.table {
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://w3id.org/ro/terms/workflow-run#">Go to: </a> Namespace for Workflow Run RO-Crate model</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://w3id.org/ro/terms/workflow-run#">Go to: </a> Namespace for Workflow Run RO-Crate model</h3>
+                
+                
+                
+                
         <div id="https://w3id.org/ro/terms/workflow-run#">
             
             <table class="table metadata table-striped" >
@@ -1334,15 +1356,14 @@ table.table {
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://w3id.org/ro/terms/workflow-run">Go to: </a> JSON-LD context for workflow-run terms</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://w3id.org/ro/terms/workflow-run">Go to: </a> JSON-LD context for workflow-run terms</h3>
+                
+                
+                
+                
         <div id="https://w3id.org/ro/terms/workflow-run">
             
             <table class="table metadata table-striped" >
@@ -1380,15 +1401,14 @@ table.table {
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://gxy.io/GTN:T00343">Go to: </a> Workflow Run RO-Crate Introduction</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://gxy.io/GTN:T00343">Go to: </a> Workflow Run RO-Crate Introduction</h3>
+                
+                
+                
+                
         <div id="https://gxy.io/GTN:T00343">
             
             <table class="table metadata table-striped" >
@@ -1413,15 +1433,14 @@ table.table {
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://pypi.org/project/runcrate/">Go to: </a> runcrate</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://pypi.org/project/runcrate/">Go to: </a> runcrate</h3>
+                
+                
+                
+                
         <div id="https://pypi.org/project/runcrate/">
             
             <table class="table metadata table-striped" >
@@ -1446,15 +1465,14 @@ table.table {
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://w3id.org/ro/wfrun/process/0.5">Go to: </a> Process Run Crate profile</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://w3id.org/ro/wfrun/process/0.5">Go to: </a> Process Run Crate profile</h3>
+                
+                
+                
+                
         <div id="https://w3id.org/ro/wfrun/process/0.5">
             
             <table class="table metadata table-striped" >
@@ -1483,15 +1501,14 @@ table.table {
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://w3id.org/ro/wfrun/workflow/0.5">Go to: </a> Workflow Run Crate profile</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://w3id.org/ro/wfrun/workflow/0.5">Go to: </a> Workflow Run Crate profile</h3>
+                
+                
+                
+                
         <div id="https://w3id.org/ro/wfrun/workflow/0.5">
             
             <table class="table metadata table-striped" >
@@ -1520,15 +1537,14 @@ table.table {
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://w3id.org/workflowhub/workflow-ro-crate/1.0">Go to: </a> Workflow RO-Crate profile</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://w3id.org/workflowhub/workflow-ro-crate/1.0">Go to: </a> Workflow RO-Crate profile</h3>
+                
+                
+                
+                
         <div id="https://w3id.org/workflowhub/workflow-ro-crate/1.0">
             
             <table class="table metadata table-striped" >
@@ -1560,15 +1576,14 @@ table.table {
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://w3id.org/ro/terms/workflow-run#ParameterConnection">Go to: </a> Parameter Connection</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://w3id.org/ro/terms/workflow-run#ParameterConnection">Go to: </a> Parameter Connection</h3>
+                
+                
+                
+                
         <div id="https://w3id.org/ro/terms/workflow-run#ParameterConnection">
             
             <table class="table metadata table-striped" >
@@ -1596,15 +1611,14 @@ table.table {
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://w3id.org/ro/terms/workflow-run#connection">Go to: </a> connection</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://w3id.org/ro/terms/workflow-run#connection">Go to: </a> connection</h3>
+                
+                
+                
+                
         <div id="https://w3id.org/ro/terms/workflow-run#connection">
             
             <table class="table metadata table-striped" >
@@ -1632,15 +1646,14 @@ table.table {
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://w3id.org/ro/terms/workflow-run#sourceParameter">Go to: </a> source parameter</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://w3id.org/ro/terms/workflow-run#sourceParameter">Go to: </a> source parameter</h3>
+                
+                
+                
+                
         <div id="https://w3id.org/ro/terms/workflow-run#sourceParameter">
             
             <table class="table metadata table-striped" >
@@ -1668,15 +1681,14 @@ table.table {
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://w3id.org/ro/terms/workflow-run#targetParameter">Go to: </a> target parameter</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://w3id.org/ro/terms/workflow-run#targetParameter">Go to: </a> target parameter</h3>
+                
+                
+                
+                
         <div id="https://w3id.org/ro/terms/workflow-run#targetParameter">
             
             <table class="table metadata table-striped" >
@@ -1704,15 +1716,14 @@ table.table {
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://codemeta.github.io/terms/buildInstructions">Go to: </a> buildInstructions</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://codemeta.github.io/terms/buildInstructions">Go to: </a> buildInstructions</h3>
+                
+                
+                
+                
         <div id="https://codemeta.github.io/terms/buildInstructions">
             
             <table class="table metadata table-striped" >
@@ -1740,15 +1751,53 @@ table.table {
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3> #hasSpecification</h3>
+            <div>
+                <h3><a href="https://w3id.org/ro/doi/10.5281/zenodo.10368989">Go to: </a> Recording provenance of workflow runs with RO-Crate (RO-Crate and mapping)</h3>
+                
+                
+                
+                
+        <div id="https://w3id.org/ro/doi/10.5281/zenodo.10368989">
             
-            
-            
-            
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><a href="https://w3id.org/ro/doi/10.5281/zenodo.10368989">https://w3id.org/ro/doi/10.5281/zenodo.10368989</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
+            <td style='text-align:left'><span>Recording provenance of workflow runs with RO-Crate (RO-Crate and mapping)</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><span>Dataset</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">conformsTo<span>&nbsp;</span><a href="http://purl.org/dc/terms/conformsTo">[?]</a></th>
+            <td style='text-align:left'><a href="https://w3id.org/ro/crate">https://w3id.org/ro/crate</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">subjectOf<span>&nbsp;</span><a href="http://schema.org/subjectOf">[?]</a></th>
+            <td style='text-align:left'><ul>
+                        <li><a href="#https%3A//www.researchobject.org/workflow-run-crate-paper/ro-crate-metadata.jsonld">https://www.researchobject.org/workflow-run-crate-paper/ro-crate-metadata.jsonld</a></li>
+                        
+                        <li><a href="#https%3A//www.researchobject.org/workflow-run-crate-paper/ro-crate-preview.html">https://www.researchobject.org/workflow-run-crate-paper/ro-crate-preview.html</a></li>
+                        </ul></td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
+            <td style='text-align:left'><a href="#https%3A//w3id.org/ro/wfrun/provenance/0.5">Provenance Run Crate profile</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">isPartOf<span>&nbsp;</span><a href="http://schema.org/isPartOf">[?]</a></th>
+            <td style='text-align:left'><a href="#https%3A//www.researchobject.org/workflow-run-crate-paper/mapping/">SSSOM mapping from PROV to Workflow Run Crate</a></td>
+            </tr></tbody>
+            </table>
+        </div>
+            </div>
+        <hr/><br/><br/>
+            <div>
+                <h3> #hasSpecification</h3>
+                
+                
+                
+                
         <div id="#hasSpecification">
             
             <table class="table metadata table-striped" >
@@ -1770,15 +1819,14 @@ table.table {
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3> #hasConstraints</h3>
-            
-            
-            
-            
+            <div>
+                <h3> #hasConstraints</h3>
+                
+                
+                
+                
         <div id="#hasConstraints">
             
             <table class="table metadata table-striped" >
@@ -1800,15 +1848,14 @@ table.table {
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3> #hasVocabulary</h3>
-            
-            
-            
-            
+            <div>
+                <h3> #hasVocabulary</h3>
+                
+                
+                
+                
         <div id="#hasVocabulary">
             
             <table class="table metadata table-striped" >
@@ -1830,15 +1877,14 @@ table.table {
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3> #hasGuidance</h3>
-            
-            
-            
-            
+            <div>
+                <h3> #hasGuidance</h3>
+                
+                
+                
+                
         <div id="#hasGuidance">
             
             <table class="table metadata table-striped" >
@@ -1860,15 +1906,14 @@ table.table {
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3> #hasExample</h3>
-            
-            
-            
-            
+            <div>
+                <h3> #hasExample</h3>
+                
+                
+                
+                
         <div id="#hasExample">
             
             <table class="table metadata table-striped" >
@@ -1890,15 +1935,14 @@ table.table {
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3> #hasMappingToProv</h3>
-            
-            
-            
-            
+            <div>
+                <h3> #hasMappingToProv</h3>
+                
+                
+                
+                
         <div id="#hasMappingToProv">
             
             <table class="table metadata table-striped" >
@@ -1920,15 +1964,14 @@ table.table {
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3> SHOULD conform to Workflow RO-Crate profile</h3>
-            
-            
-            
-            
+            <div>
+                <h3> SHOULD conform to Workflow RO-Crate profile</h3>
+                
+                
+                
+                
         <div id="#shouldConformToWorkflowROCrate">
             
             <table class="table metadata table-striped" >
@@ -1953,15 +1996,14 @@ table.table {
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3> SHOULD conform to Process Crate profile</h3>
-            
-            
-            
-            
+            <div>
+                <h3> SHOULD conform to Process Crate profile</h3>
+                
+                
+                
+                
         <div id="#shouldConformToProcessCrateProfile">
             
             <table class="table metadata table-striped" >
@@ -1986,15 +2028,14 @@ table.table {
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3> SHOULD conform to Workflow Crate profile</h3>
-            
-            
-            
-            
+            <div>
+                <h3> SHOULD conform to Workflow Crate profile</h3>
+                
+                
+                
+                
         <div id="#shouldConformToWorkflowCrateProfile">
             
             <table class="table metadata table-striped" >
@@ -2019,15 +2060,14 @@ table.table {
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://doi.org/10.48550/arXiv.2312.07852">Go to: </a> Recording provenance of workflow runs with RO-Crate</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://doi.org/10.48550/arXiv.2312.07852">Go to: </a> Recording provenance of workflow runs with RO-Crate</h3>
+                
+                
+                
+                
         <div id="https://doi.org/10.48550/arXiv.2312.07852">
             
             <table class="table metadata table-striped" >
@@ -2088,8 +2128,7 @@ table.table {
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/></div>
 </div>
 

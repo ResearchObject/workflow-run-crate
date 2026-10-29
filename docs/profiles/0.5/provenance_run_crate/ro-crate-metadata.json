@@ -1,5 +1,5 @@
 { "@context": [
-  "https://w3id.org/ro/crate/1.2-DRAFT/context",
+  "https://w3id.org/ro/crate/1.2/context",
   { "@base": "https://www.researchobject.org/workflow-run-crate/profiles/0.5/provenance_run_crate/"}
   ],
   "@graph": [
@@ -7,7 +7,7 @@
     "@id": "ro-crate-metadata.json",
     "@type": "CreativeWork",
     "license": { "@id": "http://spdx.org/licenses/CC0-1.0" },
-    "conformsTo": {"@id": "https://w3id.org/ro/crate/1.2-DRAFT"},
+    "conformsTo": {"@id": "https://w3id.org/ro/crate/1.2"},
     "about": {"@id": "https://w3id.org/ro/wfrun/provenance/0.5"}
   },  
   {
@@ -17,17 +17,20 @@
     "isBasedOn": {"@id": "ro-crate-metadata.json" },
     "name": "RO-Crate preview of the Provenance Run Crate profile",
     "encodingFormat": "text/html",
-    "about": "https://w3id.org/ro/wfrun/provenance/0.5"
+    "about": { "@id": "https://w3id.org/ro/wfrun/provenance/0.5" }
   },  
   {
     "@id": "https://w3id.org/ro/wfrun/provenance/0.5",
     "@type": ["Dataset","Profile"],
     "isProfileOf": [
-        {"@id": "https://w3id.org/ro/crate/1.2-DRAFT"}
+        {"@id": "https://w3id.org/ro/crate/1.1"}
     ],
     "identifier": "https://w3id.org/ro/wfrun/provenance/0.5",
     "name": "Provenance Run Crate profile",
-    "version": "0.5",
+    "description": "This profile extends Workflow Run Crate with specifications to describe internal details of the workflow run, such as step executions and intermediate outputs.",
+    "version": "0.5.1",
+    "dateModified": "2026-10-08",
+    "datePublished": "2024-06-18",
     "license": {
       "@id": "https://www.apache.org/licenses/LICENSE-2.0"
     },
@@ -49,7 +52,9 @@
         { "@id": "https://w3id.org/ro/terms/workflow-run#connection" },
         { "@id": "https://w3id.org/ro/terms/workflow-run#sourceParameter" },
         { "@id": "https://w3id.org/ro/terms/workflow-run#targetParameter" },
-        { "@id": "https://codemeta.github.io/terms/buildInstructions" }
+        { "@id": "https://codemeta.github.io/terms/buildInstructions" },
+        { "@id": "https://w3id.org/ro/doi/10.5281/zenodo.10368989" }
+
     ],
     "hasResource": [
         { "@id": "#hasSpecification" },

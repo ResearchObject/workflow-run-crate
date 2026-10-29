@@ -1,5 +1,5 @@
 { "@context": [
-    "https://w3id.org/ro/crate/1.2-DRAFT/context",
+    "https://w3id.org/ro/crate/1.2/context",
     { "@base": "https://www.researchobject.org/workflow-run-crate/profiles/0.5/process_run_crate/"}
   ],
   "@graph": [
@@ -7,7 +7,7 @@
     "@id": "ro-crate-metadata.json",
     "@type": "CreativeWork",
     "license": { "@id": "http://spdx.org/licenses/CC0-1.0" },
-    "conformsTo": {"@id": "https://w3id.org/ro/crate/1.2-DRAFT"},
+    "conformsTo": {"@id": "https://w3id.org/ro/crate/1.2"},
     "about": {"@id": "https://w3id.org/ro/wfrun/process/0.5"}
   },  
   {
@@ -17,17 +17,20 @@
     "isBasedOn": {"@id": "ro-crate-metadata.json" },
     "name": "RO-Crate preview of the Process Run Crate profile",
     "encodingFormat": "text/html",
-    "about": "https://w3id.org/ro/wfrun/process/0.5"
+    "about": { "@id": "https://w3id.org/ro/wfrun/process/0.5" }
   },  
   {
     "@id": "https://w3id.org/ro/wfrun/process/0.5",
     "@type": ["Dataset","Profile"],
     "isProfileOf": [
-        {"@id": "https://w3id.org/ro/crate/1.2-DRAFT"}
+        {"@id": "https://w3id.org/ro/crate/1.1"}
     ],
     "identifier": "https://w3id.org/ro/wfrun/process/0.5",
     "name": "Process Run Crate profile",
-    "version": "0.5",
+    "description": "This profile is used to describe the execution of an implicit workflow, indicating that one or more computational tools have been executed, typically generating some result files that are represented as data entities in the RO-Crate.",
+    "version": "0.5.1",
+    "dateModified": "2026-10-08",
+    "datePublished": "2024-06-18",
     "license": {
       "@id": "https://www.apache.org/licenses/LICENSE-2.0"
     },
@@ -66,7 +69,8 @@
         { "@id": "http://schema.org/CreativeWork" },
         { "@id": "http://schema.org/PropertyValue" },
         { "@id": "http://schema.org/alternateName" },
-        { "@id": "http://schema.org/mainEntity" }
+        { "@id": "http://schema.org/mainEntity" },
+        { "@id": "https://w3id.org/ro/doi/10.5281/zenodo.10368989" }
     ],
     "hasResource": [
         { "@id": "#hasSpecification" },

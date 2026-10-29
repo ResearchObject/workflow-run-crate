@@ -30,7 +30,7 @@
       },
       "name": "RO-Crate preview of the Workflow Run Crate profile",
       "encodingFormat": "text/html",
-      "about": "https://w3id.org/ro/wfrun/workflow/0.7-DRAFT"
+      "about": { "@id": "https://w3id.org/ro/wfrun/workflow/0.7-DRAFT" }
     },
     {
       "@id": "https://w3id.org/ro/wfrun/workflow/0.7-DRAFT",
@@ -153,6 +153,9 @@
         },
         {
           "@id": "https://w3id.org/ro/terms/workflow-run#environment"
+        },
+        {
+          "@id": "https://w3id.org/ro/doi/10.5281/zenodo.10368989"
         }
       ],
       "hasResource": [
